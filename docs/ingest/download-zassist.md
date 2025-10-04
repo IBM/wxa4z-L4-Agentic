@@ -33,7 +33,7 @@ conducting pilots. Follow the steps below to download and install *zassist*.
 
     ![](_attachments/zassist1.png)
 
-6. And finally, enable the client-side ingestion feature through a remote S3 source by running the following command on your local terminal / command-line:
+6. And finally, **enable the client-side ingestion feature** through a remote S3 source by running the following command on your local terminal / command-line:
    
     ***Mac users:***
     ```
