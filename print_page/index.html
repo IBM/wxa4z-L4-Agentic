@@ -2179,7 +2179,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><a class="glightbox" href="../ingest/_attachments/zassist1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist1.png"></a></p>
 </li>
 <li>
-<p>And finally, enable the client-side ingestion feature through a remote S3 source by running the following command on your local terminal / command-line:</p>
+<p>And finally, <strong>enable the client-side ingestion feature</strong> through a remote S3 source by running the following command on your local terminal / command-line:</p>
 <p><strong><em>Mac users:</em></strong>
 </p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#ingest-download-zassist-__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"clientIngestion": {"beta": {"enabled": true}}}}'
 </span></code></pre></div>
@@ -2187,7 +2187,40 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#ingest-download-zassist-__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"clientIngestion\": {\"beta\": {\"enabled\": true}}}}"
 </span></code></pre></div>
 </li>
-</ol></div></section><section class="print-page" id="ingest-cos-service-credentials" heading-number="5.3"><p>test</p></section><section class="print-page" id="ingest-ibmcloud-utility" heading-number="5.4"><p>test</p></section><section class="print-page" id="ingest-create-storage-bucket" heading-number="5.5"><p>test</p></section><section class="print-page" id="ingest-upload-docs" heading-number="5.6"><p>test</p></section><section class="print-page" id="ingest-execute-ingestion" heading-number="5.7"><p>test</p></section><section class="print-page" id="ingest-test-q%26a" heading-number="5.8"><p>test</p></section></section>
+</ol></div></section><section class="print-page" id="ingest-cos-service-credentials" heading-number="5.3"><div><h1 id="create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM Cloud Object Storage (COS)<a class="headerlink" href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos" title="Permanent link">#</a></h1>
+<p>Before uploading the provided sample documents to IBM Cloud Object Storage (COS), you must first create service credentials that you will use to connect to your instance.</p>
+<ol>
+<li>
+<p>Navigate to the <strong>Resource List</strong> of your provisioned SaaS services in IBM Cloud (ensuring you're in the correct IBM Cloud account). The steps to access your Resource List can be found by following the instructions in <strong><em>PLACEHOLDER</em></strong> Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan. </p>
+</li>
+<li>
+<p>In the <strong>Resource List</strong> page, click on the <strong>Storage</strong> drop-down and click on the name of your COS instance. </p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist2.png"></a></p>
+</li>
+<li>
+<p>Click on the <strong>Service credentials</strong> tab and then click on <strong>New Credential +</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist3.png"></a></p>
+</li>
+<li>
+<p>In the <strong>Create credentials</strong> window, set the following values and then click <strong>Add</strong>. </p>
+<p><strong>a</strong>. <strong>Name:</strong> <em>enter any name</em></p>
+<p><strong>b</strong>. <strong>Role:</strong> select <strong>Manager</strong></p>
+<p><strong>c</strong>. Toggle <strong><em>Include HMAC Credential</em></strong> to <strong>On</strong></p>
+<p><strong>d</strong>. Toggle the <strong><em>Control by Secrets Manager</em></strong> to the <strong>Off</strong> position</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist4.png"></a></p>
+</li>
+<li>
+<p>You should then see your new credential in the list. Click on the drop-down next to your credentials to display the credentials details.</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist5.png"></a></p>
+</li>
+<li>
+<p>Then you should see your credential details as shown below.</p>
+<p><strong>Copy and record</strong> your unique values for the following parameters as you will need them in the next steps: </p>
+<p><strong>a</strong>. <strong>access_key_id</strong></p>
+<p><strong>b</strong>. <strong>secret_access_key</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist6.png"></a></p>
+</li>
+</ol></div></section><section class="print-page" id="ingest-ibmcloud-utility" heading-number="5.4"><p>test</p></section><section class="print-page" id="ingest-create-storage-bucket" heading-number="5.5"><p>test</p></section><section class="print-page" id="ingest-upload-docs" heading-number="5.6"><p>test</p></section><section class="print-page" id="ingest-execute-ingestion" heading-number="5.7"><p>test</p></section><section class="print-page" id="ingest-test-q%26a" heading-number="5.8"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
                         <h1>Prepare watsonx.ai services for agent deployment<a class='headerlink' href='#section-6' title='Permanent link'></a>
                         </h1>

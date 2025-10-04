@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#create-service-credentials-for-ibm-cloud-object-storage-cos" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -833,6 +838,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1402,6 +1409,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1417,9 +1426,40 @@
 
 
 
-  <h1>Create Service Credentials for IBM COS</h1>
-
-<p>test</p>
+<div><h1 id="create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM Cloud Object Storage (COS)<a class="headerlink" href="#create-service-credentials-for-ibm-cloud-object-storage-cos" title="Permanent link">#</a></h1>
+<p>Before uploading the provided sample documents to IBM Cloud Object Storage (COS), you must first create service credentials that you will use to connect to your instance.</p>
+<ol>
+<li>
+<p>Navigate to the <strong>Resource List</strong> of your provisioned SaaS services in IBM Cloud (ensuring you're in the correct IBM Cloud account). The steps to access your Resource List can be found by following the instructions in <strong><em>PLACEHOLDER</em></strong> Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan. </p>
+</li>
+<li>
+<p>In the <strong>Resource List</strong> page, click on the <strong>Storage</strong> drop-down and click on the name of your COS instance. </p>
+<p><a class="glightbox" href="../_attachments/zassist2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist2.png"></a></p>
+</li>
+<li>
+<p>Click on the <strong>Service credentials</strong> tab and then click on <strong>New Credential +</strong></p>
+<p><a class="glightbox" href="../_attachments/zassist3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist3.png"></a></p>
+</li>
+<li>
+<p>In the <strong>Create credentials</strong> window, set the following values and then click <strong>Add</strong>. </p>
+<p><strong>a</strong>. <strong>Name:</strong> <em>enter any name</em></p>
+<p><strong>b</strong>. <strong>Role:</strong> select <strong>Manager</strong></p>
+<p><strong>c</strong>. Toggle <strong><em>Include HMAC Credential</em></strong> to <strong>On</strong></p>
+<p><strong>d</strong>. Toggle the <strong><em>Control by Secrets Manager</em></strong> to the <strong>Off</strong> position</p>
+<p><a class="glightbox" href="../_attachments/zassist4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist4.png"></a></p>
+</li>
+<li>
+<p>You should then see your new credential in the list. Click on the drop-down next to your credentials to display the credentials details.</p>
+<p><a class="glightbox" href="../_attachments/zassist5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist5.png"></a></p>
+</li>
+<li>
+<p>Then you should see your credential details as shown below.</p>
+<p><strong>Copy and record</strong> your unique values for the following parameters as you will need them in the next steps: </p>
+<p><strong>a</strong>. <strong>access_key_id</strong></p>
+<p><strong>b</strong>. <strong>secret_access_key</strong></p>
+<p><a class="glightbox" href="../_attachments/zassist6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist6.png"></a></p>
+</li>
+</ol></div>
 
 
 
