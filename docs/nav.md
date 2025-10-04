@@ -1,6 +1,7 @@
 * [Welcome](index.md)
 * [Reserve the IBM Technology Zone environment](TechZoneEnvironment.md)
-* [Deploy and configure zAssistantDeploy](zAssistantDeploy/Overview.md)
+* [Deploy and configure zAssistantDeploy]
+    * [Overview](zAssistantDeploy/Overview.md)
     * [Install the **oc** CLI and log into OpenShift](zAssistantDeploy/install-oc-utility.md)
     * [Install **IBM Certificate Manager**](zAssistantDeploy/install-cert-manager.md)
     * [Install the watsonx Assistant for Z **Operator**](zAssistantDeploy/install-wxa4z-operator.md)
