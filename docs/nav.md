@@ -26,11 +26,11 @@
     * [Execute doc ingestion](ingest/execute-ingestion.md)
     * [Test assistant Q&A with ingested documents](ingest/test-q&a.md)
 * Prepare watsonx.ai services for agent deployment
-    * PLACEHOLDER
+    * [PLACEHOLDER](watsonx-ai/placeholder.md)
 * Execute agent deployment 
-    * Introduction to Agent Deployment
+    * [Introduction to Agent Deployment](agentdeploy/Overview.md)
     * Setup for Agent Deployment
-        * Setup VS Code workspace
+        * [Setup VS Code workspace](agentdeploy/setup.md)
         * Overview of the wxa4z-agent-suite Helm charts
     * Configure shared (global) agent variables
     * Prepare for IBM Z Upgrade Agent
