@@ -1429,8 +1429,14 @@
 <div><h1 id="create-a-new-storage-bucket">Create a new storage bucket<a class="headerlink" href="#create-a-new-storage-bucket" title="Permanent link">#</a></h1>
 <p>Next you will create a new bucket in your COS instance which will you will later upload the provided sample documents to for ingestion.</p>
 <ol>
+<li>In your local workstation's command prompt or terminal window, run the following command to create a new bucket, replacing:</li>
+</ol>
+<ul>
 <li>
-<p>In your local workstation's command prompt or terminal window, run the following command to create a new bucket, replacing:</p>
+<p>asdfasdf</p>
+<ul>
+<li>test</li>
+</ul>
 <p><strong>a</strong>. <strong><unique_bucket_name>:</unique_bucket_name></strong> any unique name for your bucket</p>
 <p><strong>b</strong>. <strong><your_region>:</your_region></strong> replace with the region your <strong><em>Single Node OpenShift</em></strong> environment is provisioned in (check your environment details). Options include:</p>
 <ul>
@@ -1443,6 +1449,8 @@
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ibmcloud cos bucket-create --bucket &lt;unique_bucket_name&gt; --class standard --region &lt;your_region&gt;
 </span></code></pre></div>
 </li>
+</ul>
+<ol>
 <li>
 <p>If created successfully, you should see output similar to what's shown below:</p>
 <p><a class="glightbox" href="../_attachments/zassist10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist10.png"></a></p>
