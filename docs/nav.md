@@ -25,4 +25,16 @@
     * [Upload docs to storage bucket](ingest/upload-docs.md)
     * [Execute doc ingestion](ingest/execute-ingestion.md)
     * [Test assistant Q&A with ingested documents](ingest/test-q&a.md)
-
+* Prepare watsonx.ai services for agent deployment
+* Execute agent deployment 
+    * Introduction to Agent Deployment
+    * Setup for Agent Deployment
+        * Setup VS Code workspace
+        * Overview of the wxa4z-agent-suite Helm charts
+    * Configure shared (global) agent variables
+    * Prepare for IBM Z Upgrade Agent
+        * Summary of agent capabilities
+        * Configure the 'env' variables
+        * Configure the 'ptfJob' variables
+        * Configure the 'secrets.data' variables
+        * Configure the 'pvc' variable with storageClass
