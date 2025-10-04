@@ -31,11 +31,11 @@
     * [Introduction to Agent Deployment](agentdeploy/Overview.md)
     * Setup for Agent Deployment
         * [Setup VS Code workspace](agentdeploy/setup.md)
-        * Overview of the wxa4z-agent-suite Helm charts
-    * Configure shared (global) agent variables
+        * [Overview of the wxa4z-agent-suite Helm charts](agentdeploy/wxa4z-agent-suite.md)
+    * [Configure shared (global) agent variables](agentdeploy/configure-shared-variables.md)
     * Prepare for IBM Z Upgrade Agent
-        * Summary of agent capabilities
-        * Configure the 'env' variables
-        * Configure the 'ptfJob' variables
-        * Configure the 'secrets.data' variables
-        * Configure the 'pvc' variable with storageClass
+        * [Summary of agent capabilities](agentdeploy/upgradeagent/overview.md)
+        * [Configure the 'env' variables](agentdeploy/upgradeagent/env.md)
+        * [Configure the 'ptfJob' variables](agentdeploy/upgradeagent/ptfJob.md)
+        * [Configure the 'secrets.data' variables](agentdeploy/upgradeagent/secrets-data.md)
+        * [Configure the 'pvc' variable with storageClass](agentdeploy/upgradeagent/pvc.md)
