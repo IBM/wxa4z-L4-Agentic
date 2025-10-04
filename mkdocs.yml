@@ -1,0 +1,173 @@
+# Project info
+site_name: IBM wxa4z L4 Lab Guide
+site_description: IBM watsonx Assistant for Z for Technical Sales Level 4 Lab Guide 
+site_author: Max Weiss (maxwell.g.weiss@ibm.com)
+copyright: Copyright &copy; 2025 IBM - V 3.0
+
+# Repository
+repo_name:  IBM/wxa4z-L4-Agentic
+#repo_url: https://github.com/IBM/wxa4z-L4-Agentic.git
+#edit_uri: edit/master/docs
+docs_dir: docs
+
+# navigation menu moved to nav.md
+# nav:
+#   - 'Welcome': 'index.md'
+#   - 'Reserve the IBM Technology Zone environments': 'TechZoneEnvironment.md'
+#   - 'Next steps': 'NextSteps.md'
+
+# don't add the terminology file to the navigation
+not_in_nav: |
+  /terminology
+
+
+theme:
+  name: material
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+    # - content.tabs.link
+    - hide:                 # hide right hand side document toc
+        - toc
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+plugins:
+    - mkdocs-video
+    - macros
+    - search
+    - glightbox
+    # - autorefs
+    - literate-nav:
+        nav_file: nav.md
+    - print-site:
+        add_to_navigation: false
+        print_page_title: 'IBM watsonx Assistant for Z for Technical Sales Level 4 Lab Guide'
+        add_print_site_banner: false
+        # Table of contents
+        add_table_of_contents: true
+        toc_title: 'Table of Contents'
+        toc_depth: 6
+        # Content-related
+        add_full_urls: false
+        enumerate_headings: false
+        enumerate_figures: false
+        add_cover_page: true
+        cover_page_template: ""
+        path_to_pdf: ""
+        include_css: true
+        enabled: true
+        exclude:
+          - printInstructions.md
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+      toc_depth: "1-1"
+  - sane_lists
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - abbr
+  - pymdownx.details
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append: ["terminology"]
+      base_path: ["docs"]
+  - pymdownx.superfences
+  - pymdownx.keys
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.pathconverter:
+      base_path: '' # default: ''
+      relative_path: '' # default ''
+      absolute: false # default: false
+      tags: 'a script img link object embed'
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - style.css
+extra:
+  generator: false
+  supportEmailMailTo: "andrewj@us.ibm.com;maxwell.g.weiss@ibm.com"
+  supportEmail: "andrewj@us.ibm.com and maxwell.g.weiss@ibm.com"
+  supportSlack: 
+    name: "#watsonx-assistant-z-technical"
+    url: "https://ibm.enterprise.slack.com/archives/C07ARLXF2R1"
+  wxoSupportSlack:
+    name: "#wxo-practitioners"
+    url: "https://ibm.enterprise.slack.com/archives/C05B099DNG6"
+  gitRepo: "https://github.ibm.com/andrewj-us/wxa4z-l4"
+  learningplan:
+    name: "IBM watsonx Assistant for Z for Technical Sales Level 4"
+    YLurl: "https://yourlearning.ibm.com/activity/PLAN-93023CD29A04"
+    BPurl: "https://www.ibm.com/training/learning-path/ibm-watsonx-assistant-for-z-technical-sales-advanced-960"
+  level3learningplan:
+    name: "IBM watsonx Assistant for Z for Technical Sales Level 3"
+    YLurl: "https://yourlearning.ibm.com/activity/PLAN-FEA26E32C03A"
+    BPurl: "https://learn.ibm.com/course/view.php?id=17043"
+  level2learningplan:
+    name: "IBM watsonx Assistant for Z Level 2"
+    YLurl: "https://yourlearning.ibm.com/activity/PLAN-8281F4855A45"
+    BPurl: "https://learn.ibm.com/course/view.php?id=16848"
+  badge:
+    name: "IBM watsonx Assistant for Z Technical Sales Advanced"
+    url: "https://www.credly.com/org/ibm/badge/ibm-watsonx-assistant-for-z-technical-sales-advance"
+  offering:
+    name: "IBM watsonx Assistant for Z"
+  guide:
+    name: "IBM watsonx Assistant for Z for Technical Sales Level 4 Lab Guide"
+    lastUpdate: "26 December 2024"
+    url: "https://pages.github.ibm.com/andrewj-us/wxa4z-l4/"
+    pdf: "_pdf/IBM%20watsonx%20Assistant%20for%20Z%20Level%204%20Lab%20Guide.pdf"
+  itz:
+    account1: "2701257 - itz-watsonx-3"
+    account2: "2628583 - itz-shared-z"
+    collectionName: "IBM watsonx Assistant for Z"
+    collectionURL: "https://techzone.ibm.com/collection/ibm-watsonx-assistant-z"
+    orchestrateEnv: "https://techzone.ibm.com/my/reservations/create/66f6f414c428e2fc24fa1088"
+    aapEnv: "https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c"
+    snoEnv: "https://techzone.ibm.com/my/reservations/create/66f6f42ec428e2fc24fa1089"
+    hostedOpenSearchInstance: "https://wxa4z-opensearch-wrapper-wxa4z-v2-2-9.wxa4z-zassistantdeploys-47e063e6a3ad1f71bf2e58f91c3b4c2e-0000.us-east.containers.appdomain.cloud/v1/query"
+    hostedOpenSearchID: "admin"
+    hostedOpenSearchPW: "secureP@ssw0rd!"
