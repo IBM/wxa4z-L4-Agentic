@@ -26,6 +26,7 @@
     * [Execute doc ingestion](ingest/execute-ingestion.md)
     * [Test assistant Q&A with ingested documents](ingest/test-q&a.md)
 * Prepare watsonx.ai services for agent deployment
+    * PLACEHOLDER
 * Execute agent deployment 
     * Introduction to Agent Deployment
     * Setup for Agent Deployment
