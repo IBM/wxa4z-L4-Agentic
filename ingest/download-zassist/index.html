@@ -1442,7 +1442,27 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p>Locate the appropriate file for your local workstation's operating system. </p>
 <p><a class="glightbox" href="../_attachments/zassist-zip.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist-zip.png"></a></p>
 </li>
-</ol></div>
+<li>
+<p>Either copy the appropriate <em>zassist</em> file to a directory in your <strong>PATH</strong>, or add the appropriate directory to your <strong>PATH</strong> environment variable. </p>
+</li>
+</ol>
+<p>Additional information for doing this can be found here. </p>
+<p><strong><em>NOTE</em></strong>: <em>Windows users may need to rename the file to </em><em>zassist.exe</em><em> for proper execution</em></p>
+<ol start="5">
+<li>Run the following command to verify it's working:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>zassist
+</span></code></pre></div>
+<p><a class="glightbox" href="../_attachments/zassist1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist1.png"></a></p>
+<ol start="6">
+<li>And finally, enable the client-side ingestion feature through a remote S3 source by running the following command on your local terminal / command-line:</li>
+</ol>
+<p><strong><em>Mac users:</em></strong>
+   </p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"clientIngestion": {"beta": {"enabled": true}}}}'
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong>
+   </p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"clientIngestion\": {\"beta\": {\"enabled\": true}}}}"
+</span></code></pre></div></div>
 
 
 
