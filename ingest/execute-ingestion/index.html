@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#execute-document-ingestion" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -925,6 +930,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1402,6 +1409,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1417,9 +1426,78 @@
 
 
 
-  <h1>Execute doc ingestion</h1>
-
-<p>test</p>
+<div><h1 id="execute-document-ingestion">Execute Document Ingestion<a class="headerlink" href="#execute-document-ingestion" title="Permanent link">#</a></h1>
+<p>In this step you will log into your <strong>client ingestion server</strong> and kickoff the ingestion pipeline for your uploaded files.</p>
+<ol>
+<li>
+<p>Navigate to your local command-prompt or Terminal window and set the <strong>WXA4Z_TLS_VERIFY</strong> environment variable to <strong>false</strong> to skip server certificate verification by running the following command (depending on your operating system):</p>
+<p><strong><em>Mac users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export WXA4Z_TLS_VERIFY=false
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>set WXA4Z_TLS_VERIFY=false
+</span></code></pre></div>
+<p><strong><em>Windows PowerShell Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Set-Item Env:\WXA4Z_TLS_VERIFY “false”
+</span></code></pre></div>
+</li>
+<li>
+<p>Retrieve the <strong>Server URL</strong> for your Client Ingestion Server.</p>
+<p><strong><em>Mac users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
+</span></code></pre></div>
+<p><strong><em>Windows users (this method can also be used by Mac users):</em></strong>
+You can retrieve the URL in your OCP Web console by navigating to <strong>Networking -&gt; Routes</strong>, and then copy the URL for the <strong>wxa4z-client-ingestion</strong> route as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Retrieve the <strong>client-ingestion-authkey</strong> for your Client Ingestion server by running the following command: </p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc -n wxa4z-zad get secret client-ingestion-authkey -o jsonpath="{.data.authkey}" | base64 -d
+</span></code></pre></div>
+<p>The output of this command is your unique <strong>auth-key</strong> that you had previously set. You will need the output of both previous commands in the next step.</p>
+<div class="admonition warning">
+<p class="admonition-title">If the command doesn't work for you</p>
+<p>If the command doesn't work for you, you can find the <strong>authkey</strong> value by viewing the <strong><em>client-ingestion-secret.yaml</em></strong> file you modified, and copying the value set for the <strong><em>authkey</em></strong> parameter. </p>
+</div>
+</li>
+<li>
+<p>Log into your client ingestion server using the <strong>zassist</strong> utility by running the following command, replacing <code>&lt;server_url&gt;</code> with the value from <strong>step 2</strong> above:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>zassist login &lt;server_url&gt;
+</span></code></pre></div>
+</li>
+<li>
+<p>When prompted, enter the <strong>authkey</strong> value from <strong>step 3</strong> above. Then verify that a <strong>Success</strong> message is returned. </p>
+</li>
+<li>
+<p>Verify that you're connected by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist list
+</span></code></pre></div>
+<p>This command will return all connected remote sources to your client ingestion server. By default, you should see in the output that there are no connected sources under <code>ID</code>.</p>
+</li>
+<li>
+<p>Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (<strong><em>see below the command on how to retrieve each of the parameters listed</em></strong>):</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
+</span></code></pre></div>
+<p><strong>a</strong>. <strong>&lt;SOURCE_NAME&gt;</strong> : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. </p>
+<p><strong>b</strong>. <strong>&lt;S3_URL&gt;</strong>: </p>
+<ul>
+<li>To retrieve your <code>&lt;S3_URL&gt;</code>, navigate to your <strong>COS instance</strong> in IBM Cloud </li>
+<li>
+<p>Click on the <strong>Endpoints</strong> tab on the left-hand menu:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the <strong>'Select resiliency'</strong> drop-down, select <strong>Regional</strong>: </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the ‘<strong>Select location</strong>’ drop-down click on the region where you created your bucket. In the example shown earlier, the bucket was created in the <strong>eu-de</strong> region, so you would select the <strong>Europe – Frankfurt (eu-de)</strong> region as shown below.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>Make sure to select the region that corresponds to your own bucket</em></strong></p>
+</li>
+</ul>
+</li>
+</ol></div>
 
 
 
