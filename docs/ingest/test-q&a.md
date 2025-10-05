@@ -84,4 +84,60 @@ First, you will adjust the conversational search settings for your assistant in 
 
 ### Test client-specific Q&A with ingested documents
 
+Now that you’ve successfully ingested the sample customer documents and modified your conversational search settings, you’re ready to verify the assistant’s usage of the ingested documents.
+
+1. Navigate back to the **Preview** page by hovering your cursor over the left-side navigation and clicking **Preview**. 
+
+    **IMAGE**
+
+2. ***Enter the following prompts*** to your assistant that are specifically referencing the sampled documentation provided. For each of the provided prompts, an example output is provided which may be different from your assistant’s response. For each response, feel free to view the referenced citation to identify where the answer was taken from.
+
+    **PROMPT:**
+
+    ```
+    The customer application is failing with ERR-CBL-001, what does this internal error mean?
+    ```
+
+    ***Example Output:***
+
+    **SCREENSHOT**
+
+
+    ***Click the citations drop-down at the bottom of the response. Notice how your ingested documented is referenced. Feel free to click on the citation to check the reference.***
+
+    **IMAGE**
+
+    **PROMPT:**
+
+    ```
+    What specific syntax changes do I need to make in COBOL to call Java using the internal framework?
+    ```
+
+    ***Example Output:***
+
+    **SCREENSHOT**
+
+    **PROMPT:**
+
+    ```
+    What is the internal git lab link to execute the Java on z/OS pipeline?
+    ```
+
+    ***Example Output:***
+
+    **SCREENSHOT**
+
+    
+    **PROMPT:**
+
+    ```
+    Are there any production incidents that were resolved in relation to Data corruption in the production database? If yes who can I collaborate with to resolve a similar issue today and what are their names?
+    ```
+
+    ***Example Output:***
+
+    **SCREENSHOT**
+
+
+
 
