@@ -4,7 +4,7 @@ Next you will create a new bucket in your COS instance which will you will later
 
 1. In your local workstation's command prompt or terminal window, run the following command to create a new bucket, replacing:
 
-- **\<unique_bucket_name\>:** any unique name for your bucket
+- **<unique_bucket_name>:** any unique name for your bucket
 
 - **\<your_region\>:** replace with the region your ***Single Node OpenShift*** environment is provisioned in (check your environment details). Options include:
 
