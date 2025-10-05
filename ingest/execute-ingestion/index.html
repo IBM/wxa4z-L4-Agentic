@@ -1517,16 +1517,13 @@
 </li>
 <li>
 <p>Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:</p>
-</li>
-</ol>
 <p><a class="glightbox" href="../_attachments/zassist23.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist23.png"></a></p>
-<div class="highlight"><pre><span></span><code>!!! Tip "Command options used...."
-
-    Because you used the **--watch** flag in the command, it will begin monitoring the status of the ingested source. In our case there are 3 files to be ingested, as shown in the screenshot above.
-
-    Additionally, notice that you also used the **--skip-pii** flag at the end of your command. This will bypass any automatic PII checks that are done. This is suitable for the Lab as we’re using test data. For typical customer pilots, you should not be ingesting any PII data, otherwise cleaning the data to ensure no sensitive data is included.
-</code></pre></div>
-<ol start="9">
+<div class="admonition tip">
+<p class="admonition-title">Command options used....</p>
+<p>Because you used the <strong>--watch</strong> flag in the command, it will begin monitoring the status of the ingested source. In our case there are 3 files to be ingested, as shown in the screenshot above.</p>
+<p>Additionally, notice that you also used the <strong>--skip-pii</strong> flag at the end of your command. This will bypass any automatic PII checks that are done. This is suitable for the Lab as we’re using test data. For typical customer pilots, you should not be ingesting any PII data, otherwise cleaning the data to ensure no sensitive data is included.</p>
+</div>
+</li>
 <li>
 <p>Once the ingestion process completes (<strong><em>typically less than 5 min.</em></strong>) you will see something like what’s shown below, indicating that the new 3 files have been successfully ingested.</p>
 <p><a class="glightbox" href="../_attachments/zassist24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist24.png"></a></p>
