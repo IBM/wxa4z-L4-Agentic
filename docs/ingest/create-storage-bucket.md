@@ -4,9 +4,9 @@ Next you will create a new bucket in your COS instance which will you will later
 
 1. In your local workstation's command prompt or terminal window, run the following command to create a new bucket, replacing:
 
-- **<unique_bucket_name>:** any unique name for your bucket
+- **unique_bucket_name:** any unique name for your bucket
 
-- **<your_region>:** replace with the region your ***Single Node OpenShift*** environment is provisioned in (check your environment details). Options include:
+- **your_region:** replace with the region your ***Single Node OpenShift*** environment is provisioned in (check your environment details). Options include:
 
     - us-south
     - eu-de
@@ -15,7 +15,7 @@ Next you will create a new bucket in your COS instance which will you will later
     - ... 
       
     ```
-    ibmcloud cos bucket-create --bucket <unique_bucket_name> --class standard --region <your_region>
+    ibmcloud cos bucket-create --bucket *unique_bucket_name* --class standard --region <your_region>
     ```
 
 2. If created successfully, you should see output similar to what's shown below:
