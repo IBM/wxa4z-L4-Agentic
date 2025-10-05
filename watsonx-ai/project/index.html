@@ -2196,9 +2196,69 @@ referenced in a local notepad. This will make life much easier later on during t
 <code>&lt;WATSONX_PROJECT_ID&gt;</code>. This step will walk you through creating a <strong>Project</strong> in <strong>watsonx.ai</strong> and retrieving
 that secret for later use. </p>
 <ol>
-<li>Navigate to your <strong><em>Resources List</em></strong> in the IBM Cloud web console using the first Lab environment. Reference
+<li>
+<p>Navigate to your <strong><em>Resources List</em></strong> in the IBM Cloud web console using the first Lab environment. Reference
 the instructions in <code>Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan</code> for a reminder on
-how to get to your <strong>Resource List</strong>.</li>
+how to get to your <strong>Resource List</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Resource List</strong> page, click on the <strong>AI/Machine Learning</strong> drop-down and click on the name of your <strong>watsonx.ai Runtime</strong> resource:</p>
+<p><a class="glightbox" href="../_attachments/watson1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson1.png"></a></p>
+</li>
+<li>
+<p>On the <strong><em>watsonx.ai Runtime in Cloud Pak for Data</em></strong> resource page, click on the drop-down arrow next to
+<strong>‘Launch in’</strong> and click on <strong>IBM Cloud Pak for Data</strong></p>
+<p><a class="glightbox" href="../_attachments/watson2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson2.png"></a></p>
+</li>
+<li>
+<p>This should open up a new tab with a <strong>Getting started</strong> window. Exit out of the <strong>Getting started</strong> window and click on the ‘hamburger’ menu icon in the top-left corner of the screen:</p>
+<p><a class="glightbox" href="../_attachments/watson3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson3.png"></a></p>
+</li>
+<li>
+<p>Then click on the <strong>Projects</strong> drop-down and click on <strong>View all projects</strong>:</p>
+<p><a class="glightbox" href="../_attachments/watson4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson4.png"></a></p>
+</li>
+<li>
+<p>You should then see you don’t have any existing projects. Click on <strong>New project +</strong> in the top-right corner of the screen:</p>
+<p><a class="glightbox" href="../_attachments/watson5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson5.png"></a></p>
+</li>
+<li>
+<p>In the <strong><em>Create a project</em></strong> window:</p>
+</li>
+</ol>
+<ul>
+<li>enter any <strong>Name</strong> for the project</li>
+<li>Ensure a COS instance is selected for the <strong>Storage</strong> field</li>
+<li>
+<p>Click '<strong>Create</strong>'</p>
+<p><a class="glightbox" href="../_attachments/watson6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson6.png"></a></p>
+</li>
+</ul>
+<ol start="8">
+<li>
+<p>You will then see a ‘loading’ screen while your project is being created. Wait until the project finishes creating and you’ll see something similar to what’s shown below:</p>
+<p><a class="glightbox" href="../_attachments/watson7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson7.png"></a></p>
+</li>
+<li>
+<p>In the Project view, click on the <strong>Manage</strong> tab, and then select <strong>Services &amp; integrations</strong>, as shown below:</p>
+<p><a class="glightbox" href="../_attachments/watson8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson8.png"></a></p>
+</li>
+<li>
+<p>Then click on <strong>Associate service</strong>:</p>
+<p><a class="glightbox" href="../_attachments/watson9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson9.png"></a></p>
+</li>
+<li>
+<p>In the pop-up window, click the <strong>checkbox</strong> next to the displayed service and click <strong>Associate</strong>.</p>
+<p><a class="glightbox" href="../_attachments/watson10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson10.png"></a></p>
+</li>
+<li>
+<p>Once done, you should see the new service added to the Services &amp; integrations page.</p>
+</li>
+<li>
+<p>Finally, click on the <strong>General</strong> tab on the left-hand menu and copy and paste your <strong>Project ID</strong> to a local notepad for later reference.</p>
+<p><a class="glightbox" href="../_attachments/watson11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/watson11.png"></a></p>
+<p><em><strong>NOTE:</strong> make sure to copy and record your Project ID in a local notepad for later use. This will be referenced later during the configuration of your agents deployment.</em></p>
+</li>
 </ol></div>
 
 
