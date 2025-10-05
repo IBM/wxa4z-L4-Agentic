@@ -26,7 +26,7 @@ These documents include:
 
 3. On your local command-line, `cd` to that directory. Your working directory should contain the 3 included document files to later be ingested, as shown below:
    
-   **IMAGE**
+    ![](_attachments/zassist12.png)
 
 4. For each of the 3 documents in your directory, upload it to your bucket using the command below, replacing:
 
@@ -48,5 +48,32 @@ These documents include:
     ibmcloud cos object-put --bucket <your_bucket_name> --key <file_key> --body <local_file_path> --region <your_region>
     ```
 
-    ***EXAMPLE***
+    !!! Tip "EXAMPLE"
     
+        As an example, let’s say I previously created a bucket in the previous step with bucket_name ***demo-byod*** and I created it in the ***eu-de*** region as shown below:
+
+        ![](_attachments/zassist13.png)
+
+        In this case, I would upload each of my 3 sample files to the bucket using the commands below (one command for each local file):
+
+        ```
+        ibmcloud cos object-put --bucket demo-byod --key COBOL-CICS --body COBOL- CICS-to-Java-Internal-Framework.pdf --region eu-de
+        ```
+
+        ```
+        ibmcloud cos object-put --bucket demo-byod --key Error-Codes --body Mainframe_COBOL_Error_Codes.pdf --region eu-de
+        ```
+
+        ```
+        ibmcloud cos object-put --bucket demo-byod --key Incident-Logs --body Mainframe_Operational_Incidents_Logs.xlsx --region eu-de
+        ```
+
+
+
+5. Once, all three files have been successfully uploaded to your COS bucket, you should be able to verify they now exist by clicking on your bucket name in your COS instance within IBM Cloud.
+   
+    ![](_attachments/zassist14.png)
+
+    In your bucket, click on the **Objects** tab and you should see all 3 files present, as shown below:
+
+    ![](_attachments/zassist15.png)
