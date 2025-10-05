@@ -41,9 +41,9 @@ how to get to your **Resource List**.
 
 7. In the ***Create a project*** window:
 
-   - enter any **Name** for the project
-   - Ensure a COS instance is selected for the **Storage** field
-   - Click '**Create**'
+    - enter any **Name** for the project
+    - Ensure a COS instance is selected for the **Storage** field
+    - Click '**Create**'
   
     ![](_attachments/watson6.png)
 
