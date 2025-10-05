@@ -18,10 +18,10 @@ Next you will create a new bucket in your COS instance which will you will later
     ibmcloud cos bucket-create --bucket <unique_bucket_name> --class standard --region <your_region>
     ```
 
-1. If created successfully, you should see output similar to what's shown below:
+2. If created successfully, you should see output similar to what's shown below:
    
     ![](_attachments/zassist10.png)
 
-2. Verify the bucket was successfully created by going back to your **COS Instance** in IBM Cloud and clicking on the **Buckets tab**. You should see your new bucket listed.
+3. Verify the bucket was successfully created by going back to your **COS Instance** in IBM Cloud and clicking on the **Buckets tab**. You should see your new bucket listed.
    
     ![](_attachments/zassist11.png)
