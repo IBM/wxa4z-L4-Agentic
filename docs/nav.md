@@ -44,27 +44,27 @@
         * [Configure the 'secrets.data' variables](agentdeploy/upgrade-agent/secrets-data.md)
         * [Configure the 'pvc' variable with storageClass](agentdeploy/upgrade-agent/pvc.md)
     * Prepare for IBM Z Support Agent
-        * [Summary of agent capabilities]
-        * [Configure the 'env' variables]
-        * [Configure the 'secrets.data' variables]
+        * [Summary of agent capabilities](agentdeploy/support-agent/overview.md)
+        * [Configure the 'env' variables](agentdeploy/support-agent/env.md)
+        * [Configure the 'secrets.data' variables](agentdeploy/support-agent/secrets-data.md)
     * Prepare for IBM Z OMEGAMON Insights Agent
-        * [Summary of agent capabilities]
-        * [Configure the 'env' variables]
-        * [Configure the secrets.data variables]
-    * Execute Agent Deployment
+        * [Summary of agent capabilities](agentdeploy/omegamon-agent/overview.md)
+        * [Configure the 'env' variables](agentdeploy/omegamon-agent/env.md)
+        * [Configure the secrets.data variables](agentdeploy/omegamon-agent/secrets-data.md)
+    * [Execute Agent Deployment](agentdeploy/execute-deploy.md)
     * Access Agents and Test Demo Scenarios
-        * [Access your deployed agents]
-        * [Test the IBM Z Support Agent]
-        * [Test the IBM Z OMEGAMON Insights Agent]
-        * [Test the IBM Z Upgrade Agent]
-    * [Embed Agent Chat in Web Page]
+        * [Access your deployed agents](agentdeploy/demo-scenarios/access-agents.md)
+        * [Test the IBM Z Support Agent](agentdeploy/demo-scenarios/support-agent.md)
+        * [Test the IBM Z OMEGAMON Insights Agent](agentdeploy/demo-scenarios/omegamon-agent.md)
+        * [Test the IBM Z Upgrade Agent](agentdeploy/demo-scenarios/upgrade-agent.md)
+    * [Embed Agent Chat in Web Page](agentdeploy/embed.md)
 * Build your own agent using the Agent Development Kit (ADK)
-    * [Introduction to the Agent Development Kit (ADK)]
-    * [Installing and setting up ADK environment]
-    * [Configuring AAP and z/OS certificates]
-    * [Preparing VS Code workspace]
-    * [Creating a connection and configuring credentials]
-    * [Importing tools]
-    * [Deploy the agent]
-    * [Publish agent to 'Live' version]
-    * [Test agent execution flow]
+    * [Introduction to the Agent Development Kit (ADK)](agentdeploy/adk/intro.md)
+    * [Installing and setting up ADK environment](agentdeploy/adk/setup.md)
+    * [Configuring AAP and z/OS certificates](agentdeploy/adk/config-aap.md)
+    * [Preparing VS Code workspace](agentdeploy/adk/prepare-vscode.md)
+    * [Creating a connection and configuring credentials](agentdeploy/adk/connections.md)
+    * [Importing tools](agentdeploy/adk/tools.md)
+    * [Deploy the agent](agentdeploy/adk/deploy.md)
+    * [Publish agent to 'Live' version](agentdeploy/adk/publish.md)
+    * [Test agent execution flow](agentdeploy/adk/testing.md)
