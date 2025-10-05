@@ -3441,8 +3441,6 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Scroll down to the <strong>Metadata</strong> field and modify it to prioritize your newly ingested documents.</p>
-</li>
-</ol>
 <p>Currently, your <strong>Metadata</strong> field should look like what’s shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#ingest-test-q%26a-__codelineno-0-1"></a>{"doc_weight":
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#ingest-test-q%26a-__codelineno-0-2"></a>{"product_docs":0.5,
@@ -3452,15 +3450,13 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </span></code></pre></div>
 <p>Notice that <code>product_docs</code> and <code>customer_docs</code> are set equally (<code>0.5</code>). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. </p>
 <p>In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, <strong>set</strong> <code>product_docs</code> to <code>0.2</code> and set <code>customer_docs</code> to <code>0.8</code>. When done, your <strong>Metadata</strong> field should look like the following:</p>
-<div class="highlight"><pre><span></span><code>```
-{"doc_weight":
-{"product_docs":0.2,
-"customer_docs":0.8},
-"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-"customer_indices":"customer_*"}
-```
-</code></pre></div>
-<ol start="7">
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#ingest-test-q%26a-__codelineno-1-1"></a>{"doc_weight":
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#ingest-test-q%26a-__codelineno-1-2"></a>{"product_docs":0.2,
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#ingest-test-q%26a-__codelineno-1-3"></a>"customer_docs":0.8},
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#ingest-test-q%26a-__codelineno-1-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#ingest-test-q%26a-__codelineno-1-5"></a>"customer_indices":"customer_*"}
+</span></code></pre></div>
+</li>
 <li>
 <p>Secondly, you have the ability to set the scope of customer documentation that gets searched when generating a response. By default, <code>customer_indices</code> is set to <code>customer_*</code>.</p>
 <p>What this means is that all ingested documents from all of your ingested sources will be searched. In the case where you want to narrow the scope of the ingested documents to a single source, this can be modified to point to that source.</p>
@@ -3519,7 +3515,22 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
                     <section class='print-page md-section' id='section-6' heading-number='6'>
                         <h1>Prepare watsonx.ai services for agent deployment<a class='headerlink' href='#section-6' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="watsonx-ai-project" heading-number="6.1"><h1 id="watsonx-ai-project-create-watsonxai-project">Create watsonx.ai Project<a class="headerlink" href="#watsonx-ai-project-create-watsonxai-project" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-deployment-space" heading-number="6.2"><h1 id="watsonx-ai-deployment-space-create-deployment-space">Create Deployment Space<a class="headerlink" href="#watsonx-ai-deployment-space-create-deployment-space" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-api-key" heading-number="6.3"><h1 id="watsonx-ai-api-key-generate-ibm-cloud-api-key">Generate IBM Cloud API key<a class="headerlink" href="#watsonx-ai-api-key-generate-ibm-cloud-api-key" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-service-instance-url" heading-number="6.4"><h1 id="watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL<a class="headerlink" href="#watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-wml-base-url" heading-number="6.5"><h1 id="watsonx-ai-wml-base-url-locate-your-wml-base-url">Locate your WML Base URL<a class="headerlink" href="#watsonx-ai-wml-base-url-locate-your-wml-base-url" title="Permanent link">#</a></h1></section></section>
+                    <section class="print-page" id="watsonx-ai-project" heading-number="6.1"><div><h1 id="create-watsonxai-project">Create watsonx.ai Project<a class="headerlink" href="#watsonx-ai-project-create-watsonxai-project" title="Permanent link">#</a></h1>
+<p>Now that you’ve tested the conversational search features of your zRAG assistant and tested document ingestion
+using the sample documents provided, you will prepare for agent deployment of a subset of foundational agents
+entitled with watsonx Assistant for Z. As part of the deployment, you will first need to configure your <strong><em>watsonx.ai
+services</em></strong> and captured the needed secrets to provide in your agents’ deployment. This section covers this process
+in detail.</p>
+<p><strong><em>NOTE:</em></strong> as you complete each following sub-section, ensure you’re recording all of the values being
+referenced in a local notepad. This will make life much easier later on during the agent deploy</p>
+<p>The first secret needed in configuring your watsonx Assistant for Z agents for deployment is retrieving your
+<code>&lt;WATSONX_PROJECT_ID&gt;</code>. This step will walk you through creating a <strong>Project</strong> in <strong>watsonx.ai</strong> and retrieving
+that secret for later use. </p>
+<ol>
+<li>Navigate to your <strong><em>Resources List</em></strong> in the IBM Cloud web console using the first Lab environment. Reference
+the instructions in <code>Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan</code> for a reminder on
+how to get to your <strong>Resource List</strong>.</li>
+</ol></div></section><section class="print-page" id="watsonx-ai-deployment-space" heading-number="6.2"><h1 id="watsonx-ai-deployment-space-create-deployment-space">Create Deployment Space<a class="headerlink" href="#watsonx-ai-deployment-space-create-deployment-space" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-api-key" heading-number="6.3"><h1 id="watsonx-ai-api-key-generate-ibm-cloud-api-key">Generate IBM Cloud API key<a class="headerlink" href="#watsonx-ai-api-key-generate-ibm-cloud-api-key" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-service-instance-url" heading-number="6.4"><h1 id="watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL<a class="headerlink" href="#watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-wml-base-url" heading-number="6.5"><h1 id="watsonx-ai-wml-base-url-locate-your-wml-base-url">Locate your WML Base URL<a class="headerlink" href="#watsonx-ai-wml-base-url-locate-your-wml-base-url" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
                         <h1>Execute agent deployment <a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>

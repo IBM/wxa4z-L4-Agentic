@@ -2210,8 +2210,6 @@
 </li>
 <li>
 <p>Scroll down to the <strong>Metadata</strong> field and modify it to prioritize your newly ingested documents.</p>
-</li>
-</ol>
 <p>Currently, your <strong>Metadata</strong> field should look like what’s shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{"doc_weight":
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{"product_docs":0.5,
@@ -2221,15 +2219,13 @@
 </span></code></pre></div>
 <p>Notice that <code>product_docs</code> and <code>customer_docs</code> are set equally (<code>0.5</code>). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. </p>
 <p>In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, <strong>set</strong> <code>product_docs</code> to <code>0.2</code> and set <code>customer_docs</code> to <code>0.8</code>. When done, your <strong>Metadata</strong> field should look like the following:</p>
-<div class="highlight"><pre><span></span><code>```
-{"doc_weight":
-{"product_docs":0.2,
-"customer_docs":0.8},
-"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-"customer_indices":"customer_*"}
-```
-</code></pre></div>
-<ol start="7">
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{"doc_weight":
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{"product_docs":0.2,
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>"customer_docs":0.8},
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>"customer_indices":"customer_*"}
+</span></code></pre></div>
+</li>
 <li>
 <p>Secondly, you have the ability to set the scope of customer documentation that gets searched when generating a response. By default, <code>customer_indices</code> is set to <code>customer_*</code>.</p>
 <p>What this means is that all ingested documents from all of your ingested sources will be searched. In the case where you want to narrow the scope of the ingested documents to a single source, this can be modified to point to that source.</p>
