@@ -2454,12 +2454,46 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 </ul>
 <p><strong>c</strong>. <strong>&lt;S3_KEY_ID&gt;</strong>: replace this with the ‘<strong>access_key_id</strong>’ value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/zassist21.png)
-</code></pre></div>
+<p><a class="glightbox" href="../ingest/_attachments/zassist21.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist21.png"></a></p>
 <p><strong>d</strong>. <strong>&lt;S3_SECRET_KEY&gt;</strong>: replace this with the '<strong>secret_access_key</strong>' value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/zassist22.png)
-</code></pre></div>
+<p><a class="glightbox" href="../ingest/_attachments/zassist22.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist22.png"></a></p>
 <p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
+<p>The final result of the command (once you've plugged in your unique values) should look something like the example command below (<em>these values will not work for you</em>):</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#ingest-execute-ingestion-__codelineno-9-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+</span></code></pre></div>
+</li>
+<li>
+<p>Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../ingest/_attachments/zassist23.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist23.png"></a></p>
+<div class="highlight"><pre><span></span><code>!!! Tip "Command options used...."
+
+    Because you used the **--watch** flag in the command, it will begin monitoring the status of the ingested source. In our case there are 3 files to be ingested, as shown in the screenshot above.
+
+    Additionally, notice that you also used the **--skip-pii** flag at the end of your command. This will bypass any automatic PII checks that are done. This is suitable for the Lab as we’re using test data. For typical customer pilots, you should not be ingesting any PII data, otherwise cleaning the data to ensure no sensitive data is included.
+</code></pre></div>
+<ol start="9">
+<li>
+<p>Once the ingestion process completes (<strong><em>typically less than 5 min.</em></strong>) you will see something like what’s shown below, indicating that the new 3 files have been successfully ingested.</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist24.png"></a></p>
+</li>
+<li>
+<p>Finally, verify that the documents are now ingested in your remote S3 source by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#ingest-execute-ingestion-__codelineno-10-1"></a>zassist list
+</span></code></pre></div>
+<p>This will list all connected remote sources, as shown below:</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist25.png"></a></p>
+<p>In the above command, you can see the original <strong>Source Name</strong> that you inputted into the zassist ingest command parameter, as well as it’s <strong>ID</strong> and <strong>Status</strong>.</p>
+</li>
+<li>
+<p>To view detailed information about the source, run the following command, replacing <code>&lt;id&gt;</code> with the <strong>ID</strong> value returned in the previous command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#ingest-execute-ingestion-__codelineno-11-1"></a>zassist details &lt;id&gt;
+</span></code></pre></div>
+<p>This should return something similar to below:</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist26.png"></a></p>
+<p>In the returned output, you should see that the <strong>Completed</strong> state is set to ‘true’, and you should see all 3 files that you uploaded to your S3 bucket in your COS instance.</p>
+<p><strong><em>For more information on the zassist command syntax, reference the IBM docs page <a href="https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=ingestion-ingesting-data-through-remote-s3-source">here</a>.</em></strong></p>
 </li>
 </ol></div></section><section class="print-page" id="ingest-test-q%26a" heading-number="5.8"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
