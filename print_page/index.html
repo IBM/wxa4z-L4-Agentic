@@ -2393,9 +2393,9 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><strong><em>Mac users:</em></strong>
 </p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#ingest-execute-ingestion-__codelineno-3-1"></a>echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
 </span></code></pre></div>
-<p><strong><em>Windows users (this method can also be used by Mac users):</em></strong>
-You can retrieve the URL in your OCP Web console by navigating to <strong>Networking -&gt; Routes</strong>, and then copy the URL for the <strong>wxa4z-client-ingestion</strong> route as shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><strong><em>Windows users (this method can also be used by Mac users):</em></strong></p>
+<p>You can retrieve the URL in your OCP Web console by navigating to <strong>Networking -&gt; Routes</strong>, and then copy the URL for the <strong>wxa4z-client-ingestion</strong> route as shown below:</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist16.png"></a></p>
 </li>
 <li>
 <p>Retrieve the <strong>client-ingestion-authkey</strong> for your Client Ingestion server by running the following command: </p>
@@ -2431,18 +2431,35 @@ You can retrieve the URL in your OCP Web console by navigating to <strong>Networ
 <li>To retrieve your <code>&lt;S3_URL&gt;</code>, navigate to your <strong>COS instance</strong> in IBM Cloud </li>
 <li>
 <p>Click on the <strong>Endpoints</strong> tab on the left-hand menu:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist17.png"></a></p>
 </li>
 <li>
 <p>In the <strong>'Select resiliency'</strong> drop-down, select <strong>Regional</strong>: </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist18.png"></a></p>
 </li>
 <li>
 <p>In the ‘<strong>Select location</strong>’ drop-down click on the region where you created your bucket. In the example shown earlier, the bucket was created in the <strong>eu-de</strong> region, so you would select the <strong>Europe – Frankfurt (eu-de)</strong> region as shown below.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist19.png"></a></p>
 <p><strong><em>Make sure to select the region that corresponds to your own bucket</em></strong></p>
 </li>
+<li>
+<p>Based on the region you selected, copy and record the region's <strong>Public</strong> endpoint as shown below (<em>in this example, it's for the </em><em>eu-de</em><em> region</em>)</p>
+<p><a class="glightbox" href="../ingest/_attachments/zassist20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist20.png"></a></p>
+</li>
+<li>
+<p>After recording your <strong>Public endpoint</strong> in a local notepad, append <code>https://</code> to the front of it. In the example shown above, the new endpoint URL would become:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#ingest-execute-ingestion-__codelineno-8-1"></a>https://s3.eu-de.cloud-object-storage.appdomain.cloud
+</span></code></pre></div>
+<p><strong><em>This is the final value of your <s3_url> variable that you will use for the above zassist command.</s3_url></em></strong></p>
+</li>
 </ul>
+<p><strong>c</strong>. <strong>&lt;S3_KEY_ID&gt;</strong>: replace this with the ‘<strong>access_key_id</strong>’ value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/zassist21.png)
+</code></pre></div>
+<p><strong>d</strong>. <strong>&lt;S3_SECRET_KEY&gt;</strong>: replace this with the '<strong>secret_access_key</strong>' value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/zassist22.png)
+</code></pre></div>
+<p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
 </li>
 </ol></div></section><section class="print-page" id="ingest-test-q%26a" heading-number="5.8"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
