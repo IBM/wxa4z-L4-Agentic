@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#test-assistant-qa-with-newly-ingested-documents" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -948,6 +953,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1402,6 +1409,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1417,9 +1426,77 @@
 
 
 
-  <h1>Test assistant Q&A with ingested documents</h1>
-
-<p>test</p>
+<div><h1 id="test-assistant-qa-with-newly-ingested-documents">Test Assistant Q&amp;A with newly ingested documents<a class="headerlink" href="#test-assistant-qa-with-newly-ingested-documents" title="Permanent link">#</a></h1>
+<p>Now that you’ve successfully ingested the sample customer documents, you’ll be able to test the assistant’s ability to answer company-specific questions related to the internal documents. First you will adjust your assistant’s conversational search settings to prioritize the ingested documents. </p>
+<p>Secondly, you will prompt the assistant with questions related to those documents to gauge performance.</p>
+<h3 id="adjust-conversational-search-settings-for-ingested-documentation">Adjust conversational search settings for ingested documentation<a class="headerlink" href="#adjust-conversational-search-settings-for-ingested-documentation" title="Permanent link">#</a></h3>
+<p>First, you will adjust the conversational search settings for your assistant in order to prioritize the ingested documents for Q&amp;A.</p>
+<ol>
+<li>
+<p>Navigate back to the <strong>watsonx Orchestrate UI</strong>.</p>
+</li>
+<li>
+<p>Go to the <strong>Assistant Builder</strong> view by clicking on <strong>Build --&gt; Assistant Builder</strong>.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="3">
+<li>In the left-side navigation, click on <strong>Generative AI</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>At the bottom of the screen, click on <strong>View search integration</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="5">
+<li>
+<p>Then click <strong>Custom Service</strong>. </p>
+</li>
+<li>
+<p>Scroll down to the <strong>Metadata</strong> field and modify it to prioritize your newly ingested documents.</p>
+</li>
+</ol>
+<p>Currently, your <strong>Metadata</strong> field should look like what’s shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{"doc_weight":
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{"product_docs":0.5,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>"customer_docs":0.5},
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>"customer_indices":"customer_*"}
+</span></code></pre></div>
+<p>Notice that <code>product_docs</code> and <code>customer_docs</code> are set equally (<code>0.5</code>). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. </p>
+<p>In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, <strong>set</strong> <code>product_docs</code> to <code>0.2</code> and set <code>customer_docs</code> to <code>0.8</code>. When done, your <strong>Metadata</strong> field should look like the following:</p>
+<div class="highlight"><pre><span></span><code>```
+{"doc_weight":
+{"product_docs":0.2,
+"customer_docs":0.8},
+"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+"customer_indices":"customer_*"}
+```
+</code></pre></div>
+<ol start="7">
+<li>
+<p>Secondly, you have the ability to set the scope of customer documentation that gets searched when generating a response. By default, <code>customer_indices</code> is set to <code>customer_*</code>.</p>
+<p>What this means is that all ingested documents from all of your ingested sources will be searched. In the case where you want to narrow the scope of the ingested documents to a single source, this can be modified to point to that source.</p>
+<p>Recall the output of the <code>zassist list</code> command. For example:</p>
+<p><strong>IMAGE</strong></p>
+<p>In the example above, when running the command to ingest documents, the <code>&lt;source name&gt;</code> provided was <code>my_source</code>. <strong><em>Note</em></strong>: your source name may be different. To check, issue the <code>zassist list</code> command on your command-line.</p>
+<p>In this case, we’ve only created one source. But in the case you have multiple sources, each with their own set of ingested documents, it would be possible to narrow the scope of documents available to the assistant by configuring the <code>customer_indices</code> parameter in the <strong>Metadata</strong> field.</p>
+<p>To do this, <strong>modify</strong> the <code>customer_indices</code> value by replacing <code>customer_*</code> with <code>customer_&lt;your_source_name&gt;</code>.</p>
+<p>Using the screenshot above as an example, the new <strong>Metadata</strong> field would look like the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{"doc_weight":
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{"product_docs":0.2,
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>"customer_docs":0.8},
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>"customer_indices":"customer_my_source"}
+</span></code></pre></div>
+<p><strong>NOTE</strong>: do not copy and paste exactly what's shown above. Make sure to use your unique source name. </p>
+</li>
+<li>
+<p>Lastly, for the purpose of testing Q&amp;A for the ingested documents, set the <strong>Contextual awareness</strong> setting to <strong>Single turn</strong>. Then click <strong>Save</strong> and <strong>Close</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<h3 id="test-client-specific-qa-with-ingested-documents">Test client-specific Q&amp;A with ingested documents<a class="headerlink" href="#test-client-specific-qa-with-ingested-documents" title="Permanent link">#</a></h3></div>
 
 
 
