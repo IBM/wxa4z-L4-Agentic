@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#upload-sample-documents-to-storage-bucket" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -902,6 +907,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1402,6 +1409,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1417,9 +1426,63 @@
 
 
 
-  <h1>Upload docs to storage bucket</h1>
-
-<p>test</p>
+<div><h1 id="upload-sample-documents-to-storage-bucket">Upload sample documents to storage bucket<a class="headerlink" href="#upload-sample-documents-to-storage-bucket" title="Permanent link">#</a></h1>
+<p>Before you can begin the ingestion process, you must first upload your files to the S3 source (in this case your IBM COS bucket). In this lab, there are three sample documents provided to illustrate the types of internal documentation a customer may want to ingest, which you will use for the purpose of this lab.</p>
+<p>These documents include:</p>
+<ul>
+<li>
+<p><strong><em>Mainframe_COBOL_Error_Codes.pdf</em></strong>
+    This is a document containing company-specific mainframe COBOL error codes for their application. Developers within the organization typically review this document to quickly diagnose issues based on the application error codes returned.</p>
+</li>
+<li>
+<p><strong><em>Mainframe_Operational_Incidents_Logs.xlsx</em></strong></p>
+<p>This is an Excel spreadsheet that is leveraged by the organization’s operational support team and contains historical records of production-level incidents that occurred. For each incident, there’s a record of what the incident was, the date, how it was resolved and who was involved in resolving the incident.</p>
+</li>
+<li>
+<p><strong><em>COBOL-CICS-to-Java-Internal-Framework.pdf</em></strong></p>
+<p>This document is leveraged by the development team and contains details about the organization’s internal framework for developing applications consisting of legacy COBOL CICS interoperating with new Java code. Within the document contains company-specific coding practices and code syntax that the developers frequently reference.</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>Download the following <strong>BYOD.zip</strong> file containing the sample documents: </p>
+<p><a href="https://ibm.box.com/s/abvi4lujh01xxu2zw9frvfp5b5g48522" target="_blank">https://ibm.box.com/s/abvi4lujh01xxu2zw9frvfp5b5g48522</a></p>
+</li>
+<li>
+<p>Unzip the file on your local machine. </p>
+</li>
+<li>
+<p>On your local command-line, <code>cd</code> to that directory. Your working directory should contain the 3 included document files to later be ingested, as shown below:</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>For each of the 3 documents in your directory, upload it to your bucket using the command below, replacing:</li>
+</ol>
+<ul>
+<li>
+<p><strong>&lt;your_bucket_name&gt;:</strong> replace this with the name of your bucket used in section <strong><em>Create a storage bucket</em></strong></p>
+</li>
+<li>
+<p><strong>&lt;file_key&gt;:</strong> replace this with a unique name for the file - this is the file name that will appear in your bucket</p>
+</li>
+<li>
+<p><strong>&lt;local_file_path&gt;:</strong> replace this with the path to the file in your directory</p>
+</li>
+<li>
+<p><strong>&lt;your_region&gt;:</strong> replace this with the region in which you created your bucket in the previous step. Options include:</p>
+<ul>
+<li>us-south</li>
+<li>eu-de</li>
+<li>eu-gb</li>
+<li>us-east</li>
+<li>... </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ibmcloud cos object-put --bucket &lt;your_bucket_name&gt; --key &lt;file_key&gt; --body &lt;local_file_path&gt; --region &lt;your_region&gt;
+</span></code></pre></div>
+<p><strong><em>EXAMPLE</em></strong></p>
+</li>
+</ul></div>
 
 
 
