@@ -38,8 +38,33 @@
         * [Overview of the wxa4z-agent-suite Helm charts](agentdeploy/wxa4z-agent-suite.md)
     * [Configure shared (global) agent variables](agentdeploy/configure-shared-variables.md)
     * Prepare for IBM Z Upgrade Agent
-        * [Summary of agent capabilities](agentdeploy/upgradeagent/overview.md)
-        * [Configure the 'env' variables](agentdeploy/upgradeagent/env.md)
-        * [Configure the 'ptfJob' variables](agentdeploy/upgradeagent/ptfJob.md)
-        * [Configure the 'secrets.data' variables](agentdeploy/upgradeagent/secrets-data.md)
-        * [Configure the 'pvc' variable with storageClass](agentdeploy/upgradeagent/pvc.md)
+        * [Summary of agent capabilities](agentdeploy/upgrade-agent/overview.md)
+        * [Configure the 'env' variables](agentdeploy/upgrade-agent/env.md)
+        * [Configure the 'ptfJob' variables](agentdeploy/upgrade-agent/ptfJob.md)
+        * [Configure the 'secrets.data' variables](agentdeploy/upgrade-agent/secrets-data.md)
+        * [Configure the 'pvc' variable with storageClass](agentdeploy/upgrade-agent/pvc.md)
+    * Prepare for IBM Z Support Agent
+        * [Summary of agent capabilities]
+        * [Configure the 'env' variables]
+        * [Configure the 'secrets.data' variables]
+    * Prepare for IBM Z OMEGAMON Insights Agent
+        * [Summary of agent capabilities]
+        * [Configure the 'env' variables]
+        * [Configure the secrets.data variables]
+    * Execute Agent Deployment
+    * Access Agents and Test Demo Scenarios
+        * [Access your deployed agents]
+        * [Test the IBM Z Support Agent]
+        * [Test the IBM Z OMEGAMON Insights Agent]
+        * [Test the IBM Z Upgrade Agent]
+    * [Embed Agent Chat in Web Page]
+* Build your own agent using the Agent Development Kit (ADK)
+    * [Introduction to the Agent Development Kit (ADK)]
+    * [Installing and setting up ADK environment]
+    * [Configuring AAP and z/OS certificates]
+    * [Preparing VS Code workspace]
+    * [Creating a connection and configuring credentials]
+    * [Importing tools]
+    * [Deploy the agent]
+    * [Publish agent to 'Live' version]
+    * [Test agent execution flow]
