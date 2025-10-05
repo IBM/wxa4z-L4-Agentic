@@ -101,12 +101,59 @@ In this step you will log into your **client ingestion server** and kickoff the 
 
     **c**. **<S3_KEY_ID\>**: replace this with the ‘**access_key_id**’ value in the **Service Credentials** you created for your COS instance in **Step 6** of Section [Create service credentials for IBM COS](./cos-service-credentials.md#create-service-credentials-for-ibm-cloud-object-storage-cos)
 
-        ![](_attachments/zassist21.png)
+    ![](_attachments/zassist21.png)
     
 
     **d**. **<S3_SECRET_KEY\>**: replace this with the '**secret_access_key**' value in the **Service Credentials** you created for your COS instance in **Step 6** of Section [Create service credentials for IBM COS](./cos-service-credentials.md#create-service-credentials-for-ibm-cloud-object-storage-cos)
     
-        ![](_attachments/zassist22.png)
+    ![](_attachments/zassist22.png)
     
     **e**. **<BUCKET_NAME\>**: replace this with the name of your bucket you originally created in your COS instance.
+
+    The final result of the command (once you've plugged in your unique values) should look something like the example command below (*these values will not work for you*):
+
+    ```
+    zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+    ```
+
+8. Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:
+   
+   ![](_attachments/zassist23.png)
+
+    !!! Tip "Command options used...."
+    
+        Because you used the **--watch** flag in the command, it will begin monitoring the status of the ingested source. In our case there are 3 files to be ingested, as shown in the screenshot above.
+        
+        Additionally, notice that you also used the **--skip-pii** flag at the end of your command. This will bypass any automatic PII checks that are done. This is suitable for the Lab as we’re using test data. For typical customer pilots, you should not be ingesting any PII data, otherwise cleaning the data to ensure no sensitive data is included.
+
+9. Once the ingestion process completes (***typically less than 5 min.***) you will see something like what’s shown below, indicating that the new 3 files have been successfully ingested.
+
+    ![](_attachments/zassist24.png)
+
+10. Finally, verify that the documents are now ingested in your remote S3 source by running the following command:
+
+    ```
+    zassist list
+    ```
+    
+    This will list all connected remote sources, as shown below:
+
+    ![](_attachments/zassist25.png)
+
+    In the above command, you can see the original **Source Name** that you inputted into the zassist ingest command parameter, as well as it’s **ID** and **Status**.
+
+11. To view detailed information about the source, run the following command, replacing `<id>` with the **ID** value returned in the previous command:
+
+    ```
+    zassist details <id>
+    ```
+
+    This should return something similar to below:
+
+    ![](_attachments/zassist26.png)
+
+    In the returned output, you should see that the **Completed** state is set to ‘true’, and you should see all 3 files that you uploaded to your S3 bucket in your COS instance.
+
+
+    ***For more information on the zassist command syntax, reference the IBM docs page [here](https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=ingestion-ingesting-data-through-remote-s3-source).***
 
