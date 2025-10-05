@@ -118,7 +118,7 @@ In this step you will log into your **client ingestion server** and kickoff the 
 
 8. Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:
    
-   ![](_attachments/zassist23.png)
+    ![](_attachments/zassist23.png)
 
     !!! Tip "Command options used...."
     
