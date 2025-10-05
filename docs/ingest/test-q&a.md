@@ -12,16 +12,16 @@ First, you will adjust the conversational search settings for your assistant in 
 
 2. Go to the **Assistant Builder** view by clicking on **Build --> Assistant Builder**.
    
-   **IMAGE**
+    **IMAGE**
 
 
 3. In the left-side navigation, click on **Generative AI**.
    
-   **IMAGE**
+    **IMAGE**
 
 4. At the bottom of the screen, click on **View search integration**.
    
-   **IMAGE**
+    **IMAGE**
 
 5. Then click **Custom Service**. 
    

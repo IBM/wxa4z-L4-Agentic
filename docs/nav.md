@@ -26,7 +26,11 @@
     * [Execute doc ingestion](ingest/execute-ingestion.md)
     * [Test assistant Q&A with ingested documents](ingest/test-q&a.md)
 * Prepare watsonx.ai services for agent deployment
-    * [PLACEHOLDER](watsonx-ai/placeholder.md)
+    * [Create watsonx.ai Project](watsonx-ai/project.md)
+    * [Create Deployment Space](watsonx-ai/deployment-space.md)
+    * [Generate IBM Cloud API key](watsonx-ai/api-key.md)
+    * [Retrieve watsonx Orchestrate Service Instance URL](watsonx-ai/service-instance-url.md)
+    * [Locate your WML Base URL](watsonx-ai/wml-base-url.md)
 * Execute agent deployment 
     * [Introduction to Agent Deployment](agentdeploy/Overview.md)
     * Setup for Agent Deployment
