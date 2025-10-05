@@ -27,19 +27,19 @@ First, you will adjust the conversational search settings for your assistant in 
    
 6. Scroll down to the **Metadata** field and modify it to prioritize your newly ingested documents.
    
-   Currently, your **Metadata** field should look like what’s shown below:
+    Currently, your **Metadata** field should look like what’s shown below:
 
-   ```
-   {"doc_weight":
-   {"product_docs":0.5,
-   "customer_docs":0.5},
-   "ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-   "customer_indices":"customer_*"}
-   ```
+    ```
+    {"doc_weight":
+    {"product_docs":0.5,
+    "customer_docs":0.5},
+    "ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
+    "customer_indices":"customer_*"}
+    ```
 
-   Notice that `product_docs` and `customer_docs` are set equally (`0.5`). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. 
+    Notice that `product_docs` and `customer_docs` are set equally (`0.5`). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. 
 
-   In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, **set** `product_docs` to `0.2` and set `customer_docs` to `0.8`. When done, your **Metadata** field should look like the following:
+    In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, **set** `product_docs` to `0.2` and set `customer_docs` to `0.8`. When done, your **Metadata** field should look like the following:
 
     ```
     {"doc_weight":
