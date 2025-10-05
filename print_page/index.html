@@ -3652,7 +3652,63 @@ how to get to your <strong>Resource List</strong>.</p>
 <p><strong>Copy and record your API key value in a local notepad on your workstation for later use. This will later be referenced in your agents configuration as a shared secret.</strong></p>
 <p>Once recorded successfully, you can close out of the window and proceed to the next section.</p>
 </li>
-</ol></div></section><section class="print-page" id="watsonx-ai-service-instance-url" heading-number="6.4"><h1 id="watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL<a class="headerlink" href="#watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url" title="Permanent link">#</a></h1></section><section class="print-page" id="watsonx-ai-wml-base-url" heading-number="6.5"><h1 id="watsonx-ai-wml-base-url-locate-your-wml-base-url">Locate your WML Base URL<a class="headerlink" href="#watsonx-ai-wml-base-url-locate-your-wml-base-url" title="Permanent link">#</a></h1></section></section>
+</ol></div></section><section class="print-page" id="watsonx-ai-service-instance-url" heading-number="6.4"><div><h1 id="retrieve-watsonx-orchestrate-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL<a class="headerlink" href="#watsonx-ai-service-instance-url-retrieve-watsonx-orchestrate-service-instance-url" title="Permanent link">#</a></h1>
+<p>The last shared secret needed to configure for your agents’ deployment is the <code>&lt;ORCHESTRATE_ENV_URL&gt;</code>. This is the Service Instance URL of your watsonx Orchestrate tenant and is used for bootstrapping the deployment of agents to your watsonx Orchestrate environment. This section walks through the process of retrieving your Service Instance URL.</p>
+<ol>
+<li>
+<p>After generating your API key within IBM Cloud in the previous section, click on the ‘hamburger’ menu icon in the top-left corner of the IBM Cloud window and select <strong>Resource list</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once in the <strong>Resource list</strong>, click on the <strong>AI/Machine Learning</strong> drop-down and click on the name of your <strong>watsonx Orchestrate</strong> resource:</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="3">
+<li>Click <strong>Launch watsonx Orchestrate</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>In the watsonx Orchestrate UI, <strong>click on you profile icon</strong> in the top-right corner and then <strong>Settings</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="5">
+<li>In the <strong>Settings</strong> page, click on the <strong>API details</strong> tab, then copy and record your <strong>Service instance URL</strong> to a local notepad for later use.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<p><strong>NOTE:</strong> copy and record your Service instance URL in a local notepad, and label it as your <code>&lt;ORCHESTRATE_ENV_URL&gt;</code>.</p></div></section><section class="print-page" id="watsonx-ai-wml-base-url" heading-number="6.5"><div><h1 id="locate-your-wml-base-url">Locate your WML Base URL<a class="headerlink" href="#watsonx-ai-wml-base-url-locate-your-wml-base-url" title="Permanent link">#</a></h1>
+<p>The last shared secret needed to configure for your agents deployment is the <code>&lt;WATSONX_ML_URL&gt;</code> configuration parameter. </p>
+<p>This corresponds to the Base URL of your IBM watsonx.ai Runtime API endpoint. Follow the instructions below to locate and record the value for your environment.</p>
+<ol>
+<li>Assuming you’re still accessing the IBM Cloud account where your <strong><em>watsonx Orchestrate Trial/Standard Plan</em></strong> environment was accessed, navigate back to the <strong>Resource list</strong> within the Cloud console.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="2">
+<li>
+<p>Under the <strong>AI / Machine Learning</strong> resource drop-down, identify the <strong>Location</strong> associated with your services as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>NOTE:</em>* in the example above, the services are available in the </strong>us-south*<em> region. The region for your environment may be different.</em></p>
+<p><strong>Take note of your services’ region.</strong></p>
+</li>
+<li>
+<p>The URL value of your <code>&lt;WATSONX_ML_URL&gt;</code> variable will be one of the following URLs depending on the region of your services. Copy and paste the appropriate URL for your region and copy to a notepad, labeled as <code>&lt;WATSONX_ML_URL&gt;</code>. This will be used later on for the agents deployments.</p>
+<ul>
+<li><strong>us-south</strong></li>
+<li><code>https://us-south.ml.cloud.ibm.com</code></li>
+<li><strong>eu-gb</strong></li>
+<li><code>https://eu-gb.ml.cloud.ibm.com</code></li>
+<li><strong>eu-de</strong></li>
+<li><code>https://eu-de.ml.cloud.ibm.com</code></li>
+<li><strong>jp-tok</strong></li>
+<li><code>https://jp-tok.ml.cloud.ibm.com</code></li>
+<li><strong>au-syd</strong></li>
+<li><code>https://au-syd.ml.cloud.ibm.com</code></li>
+<li><strong>ca-tor</strong></li>
+<li><code>https://ca-tor.ml.cloud.ibm.com</code></li>
+</ul>
+<p>Reference the latest list of WML Endpoint URLs <a href="https://cloud.ibm.com/apidocs/machine-learning#endpoint-url">here</a>.</p>
+</li>
+</ol></div></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
                         <h1>Execute agent deployment <a class='headerlink' href='#section-7' title='Permanent link'></a>
                         </h1>
