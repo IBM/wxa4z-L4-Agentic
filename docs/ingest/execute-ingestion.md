@@ -27,9 +27,10 @@ In this step you will log into your **client ingestion server** and kickoff the 
     ```
 
     ***Windows users (this method can also be used by Mac users):***
+
     You can retrieve the URL in your OCP Web console by navigating to **Networking -> Routes**, and then copy the URL for the **wxa4z-client-ingestion** route as shown below:
 
-    **IMAGE**
+    ![](_attachments/zassist16.png)
 
 3. Retrieve the **client-ingestion-authkey** for your Client Ingestion server by running the following command: 
    
@@ -73,17 +74,39 @@ In this step you will log into your **client ingestion server** and kickoff the 
      - To retrieve your `<S3_URL>`, navigate to your **COS instance** in IBM Cloud 
      - Click on the **Endpoints** tab on the left-hand menu:
     
-         **IMAGE**
+         ![](_attachments/zassist17.png)
         
      - In the **'Select resiliency'** drop-down, select **Regional**: 
   
-         **IMAGE**
+         ![](_attachments/zassist18.png)
     
      - In the ‘**Select location**’ drop-down click on the region where you created your bucket. In the example shown earlier, the bucket was created in the **eu-de** region, so you would select the **Europe – Frankfurt (eu-de)** region as shown below.
   
-         **IMAGE**
+         ![](_attachments/zassist19.png)
 
         ***Make sure to select the region that corresponds to your own bucket***
 
+     - Based on the region you selected, copy and record the region's **Public** endpoint as shown below (*in this example, it's for the **eu-de** region*)
 
+         ![](_attachments/zassist20.png)
+
+     - After recording your **Public endpoint** in a local notepad, append `https://` to the front of it. In the example shown above, the new endpoint URL would become:
+  
+         ```
+         https://s3.eu-de.cloud-object-storage.appdomain.cloud
+         ```
+
+        ***This is the final value of your <S3_URL> variable that you will use for the above zassist command.***
+
+
+    **c**. **<S3_KEY_ID\>**: replace this with the ‘**access_key_id**’ value in the **Service Credentials** you created for your COS instance in **Step 6** of Section [Create service credentials for IBM COS](./cos-service-credentials.md#create-service-credentials-for-ibm-cloud-object-storage-cos)
+
+        ![](_attachments/zassist21.png)
+    
+
+    **d**. **<S3_SECRET_KEY\>**: replace this with the '**secret_access_key**' value in the **Service Credentials** you created for your COS instance in **Step 6** of Section [Create service credentials for IBM COS](./cos-service-credentials.md#create-service-credentials-for-ibm-cloud-object-storage-cos)
+    
+        ![](_attachments/zassist22.png)
+    
+    **e**. **<BUCKET_NAME\>**: replace this with the name of your bucket you originally created in your COS instance.
 
