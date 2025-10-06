@@ -3865,12 +3865,54 @@ how to get to your <strong>Resource List</strong>.</p>
 <p><strong>IMAGE</strong></p>
 <p><strong>This is the file that you will be modifying in the following sections to prepare for your agents’ deployment. Ensure that you have the contents of this file opened within your VS Code window.</strong></p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_type-global-variable">Configuring the <code>ORCHESTRATE_ENV_TYPE</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_type-global-variable" title="Permanent link">#</a></h3>
+<p>At the very top of your <code>values.yaml</code> file, under global , there is a <code>secrets.data</code> section. You should see the <code>ORCHESTRATE_ENV_TYPE</code> variable:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-configure-shared-variables-__codelineno-0-1"></a>secrets:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-configure-shared-variables-__codelineno-0-2"></a>  name: wxa4z-watsonx-credentials 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-configure-shared-variables-__codelineno-0-3"></a>  data:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-configure-shared-variables-__codelineno-0-4"></a>    ORCHESTRATE_ENV_TYPE:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-configure-shared-variables-__codelineno-0-5"></a>    ...
+</span></code></pre></div>
+<p>This is the instance type of your watsonx Orchestrate environment. Set the value to <code>ibm_iam</code> (for IBM Cloud). It should look like the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-configure-shared-variables-__codelineno-1-1"></a>secrets:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-configure-shared-variables-__codelineno-1-2"></a>  name: wxa4z-watsonx-credentials 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#agentdeploy-configure-shared-variables-__codelineno-1-3"></a>  data:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#agentdeploy-configure-shared-variables-__codelineno-1-4"></a>    ORCHESTRATE_ENV_TYPE: ibm_iam
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#agentdeploy-configure-shared-variables-__codelineno-1-5"></a>    ...
+</span></code></pre></div>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-watsonx_api_key-global-variable">Configuring the <code>WATSONX_API_KEY</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-watsonx_api_key-global-variable" title="Permanent link">#</a></h3>
+<p>Below the previous variable (also under <code>secrets.data</code>) there is a global variable labeled <code>WATSONX_API_KEY</code>.</p>
+<p><code>WATSONX_API_KEY: “”</code></p>
+<p>Within the double-quotes, copy and paste your unique <strong>API key</strong> that you generated in the IBM Cloud console and recorded during Section <strong><em><a href="#watsonx-ai-api-key">Generate IBM Cloud API key</a></em></strong>.</p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_url-global-variable">Configuring the <code>ORCHESTRATE_ENV_URL</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_url-global-variable" title="Permanent link">#</a></h3>
+<p>Next you will see the <code>ORCHESTRATE_ENV_URL</code> variable under <code>secrets.data</code>. Within the double-quotes, copy and paste the value of your unique URL which you recorded in Section <strong><em><a href="#watsonx-ai-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL</a></em></strong>.</p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-watsonx_deployment_space_id-global-variable">Configuring the <code>WATSONX_DEPLOYMENT_SPACE_ID</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-watsonx_deployment_space_id-global-variable" title="Permanent link">#</a></h3>
+<p>For the <code>WATSONX_DEPLOYMENT_SPACE_ID</code> global variable,copy and paste your unique Deployment Space ID within the double-quotes, which you recorded in Section <strong><em><a href="#watsonx-ai-deployment-space">Create Deployment Space</a></em></strong>.</p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-watsonx_ml_url-global-variable">Configuring the <code>WATSONX_ML_URL</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-watsonx_ml_url-global-variable" title="Permanent link">#</a></h3>
+<p>For the <code>WATSONX_ML_URL</code> global variable, copy and paste the value for your environment which you recorded in Section <strong><em><a href="#watsonx-ai-wml-base-url">Locate your WML Base URL</a></em></strong>.</p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-watsonx_project_id-global-variable">Configuring the <code>WATSONX_PROJECT_ID</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-watsonx_project_id-global-variable" title="Permanent link">#</a></h3>
+<p>Finally, for the <code>WATSONX_PROJECT_ID</code> global variable,copy and paste your unique Project ID that you recorded in Section <strong><em><a href="#watsonx-ai-project">Create watsonx.ai Project</a></em></strong>.</p>
 <h3 id="agentdeploy-configure-shared-variables-setting-your-registry-entitlement-key-for-wxa4z-for-foundational-agents">Setting your registry entitlement key for wxa4z (for foundational agents)<a class="headerlink" href="#agentdeploy-configure-shared-variables-setting-your-registry-entitlement-key-for-wxa4z-for-foundational-agents" title="Permanent link">#</a></h3>
+<p>After setting the above global variables within the <code>secrets.data</code> section of the <code>values.yaml</code> file, the last global secret to set is the registry image pull secret that will be used for pulling the images for the foundational agents. It should look like this by default under the <code>global</code> variables section:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#agentdeploy-configure-shared-variables-__codelineno-2-1"></a>registry:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#agentdeploy-configure-shared-variables-__codelineno-2-2"></a>    name: wxa4z-image-pull-secret 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#agentdeploy-configure-shared-variables-__codelineno-2-3"></a>    createSecret: true
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#agentdeploy-configure-shared-variables-__codelineno-2-4"></a>    server: cp.icr.io
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#agentdeploy-configure-shared-variables-__codelineno-2-5"></a>    username: cp 
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#agentdeploy-configure-shared-variables-__codelineno-2-6"></a>    entitlementKey: “”
+</span></code></pre></div>
+<p>For the <code>entitlementKey</code> parameter, copy and paste the entitlement key you used in Section <strong><em><a href="#zassistantdeploy-install-wxa4z-operator">Install the watsonx Assistant for Z Operator</a></em></strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">If you forget your entitlement key</p>
+<p>In the case that you don't remember the entitlement key you used and you need to generate a new one, follow these steps:</p>
+<ol>
+<li>
+<p>Access the entitlement keys page <a href="https://myibm.ibm.com/products-services/containerlibrary">here</a>.</p>
+</li>
+<li>
+<p>Locate your existing entitlement key and click <strong>copy</strong>.</p>
+</li>
+</ol>
+</div>
 <h3 id="agentdeploy-configure-shared-variables-set-catrustsyncenabled-to-false">Set <code>caTrustSync.enabled</code> to <code>false</code><a class="headerlink" href="#agentdeploy-configure-shared-variables-set-catrustsyncenabled-to-false" title="Permanent link">#</a></h3>
 <h3 id="agentdeploy-configure-shared-variables-disable-foundational-agents-not-in-scope">Disable foundational agents not in scope<a class="headerlink" href="#agentdeploy-configure-shared-variables-disable-foundational-agents-not-in-scope" title="Permanent link">#</a></h3></div></section>
                     <section class='print-page md-section' id='section-7-4' heading-number='7.4'>
