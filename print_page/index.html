@@ -4102,6 +4102,13 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <p><code>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"</code></p>
 </div>
 </li>
+<li>
+<p>Set the <code>INGESTION_URL</code> variable to the <strong>Server URL</strong> of your <strong>Client Ingestion Server</strong> that you recorded in Section <strong><em><a href="#ingest-execute-ingestion">Execute doc ingestion</a></em></strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">This can also be found by....</p>
+<p>This can also be retrieved by logging into the OCP Web console, navigating to <strong>Networking --&gt; Routes</strong>, and then copying the route location of the <code>wxa4z-client-ingestion</code> route. </p>
+</div>
+</li>
 </ol></div></section><section class="print-page" id="agentdeploy-upgrade-agent-ptfjob" heading-number="7.4.3"><h1 id="agentdeploy-upgrade-agent-ptfjob-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-ptfjob-placeholder" title="Permanent link">#</a></h1></section><section class="print-page" id="agentdeploy-upgrade-agent-secrets-data" heading-number="7.4.4"><h1 id="agentdeploy-upgrade-agent-secrets-data-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-placeholder" title="Permanent link">#</a></h1></section><section class="print-page" id="agentdeploy-upgrade-agent-pvc" heading-number="7.4.5"><h1 id="agentdeploy-upgrade-agent-pvc-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-pvc-placeholder" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-7-5' heading-number='7.5'>
                         <h1>Prepare for IBM Z Support Agent<a class='headerlink' href='#section-7-5' title='Permanent link'></a>
