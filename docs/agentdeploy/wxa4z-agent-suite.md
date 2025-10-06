@@ -25,8 +25,8 @@ The `wxa4z-agent-suite/values.yaml` file is the file you will be modifying to co
 - Setting your registry entitlement key for foundational agents
 - Disabling foundational agents not in scope of lab
 - Configuring agent-specific values for each respective agent in scope for the lab deployment:
-  - IBM Z Upgrade Agent
-  - IBM Z Support Agent
-  - IBM Z OMEGAMON Insights Agent
+    - IBM Z Upgrade Agent
+    - IBM Z Support Agent
+    - IBM Z OMEGAMON Insights Agent
 - Execute deployment via single `helm` command
 - Verify agents’ deployment status

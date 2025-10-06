@@ -12,7 +12,7 @@ This corresponds to the Base URL of your IBM watsonx.ai Runtime API endpoint. Fo
    
     ![](_attachments/wml2.png)
 
-    ***NOTE:** in the example above, the services are available in the **us-south** region. The region for your environment may be different.*
+    ***NOTE:*** in the example above, the services are available in the **us-south** region. The region for your environment may be different.
    
     **Take note of your services’ region.**
 

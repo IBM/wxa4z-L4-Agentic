@@ -5,8 +5,8 @@ In this section you will setup your VS Code workspace with the *IBM watsonx Assi
 1. The very first step in configuring the **Agent Suite** is to firstly download the **wxa4z-agent-suite** .zip file to your local workstation, which contains the Agent Suite Helm Charts.
 
     Navigate to the below link and download the provided .zip file from Box to your local workstation:
-    
-    https://ibm.box.com/s/a3u0am2wj2usqpnp69h272rz6x6ejuk0
+
+    <a href="https://ibm.box.com/s/a3u0am2wj2usqpnp69h272rz6x6ejuk0" target="_blank">https://ibm.box.com/s/a3u0am2wj2usqpnp69h272rz6x6ejuk0</a>
 
 2. After downloading the .zip file, unzip or extract the file to your local workstation.
 
