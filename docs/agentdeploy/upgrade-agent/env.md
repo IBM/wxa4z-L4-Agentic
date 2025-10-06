@@ -49,3 +49,12 @@ The below table describes each of the variables in the `env` variables section. 
 
         An example URL looks like the following:
         `https://wxa4z-opensearch-wrapper-wxa4z- zad.apps.68b1c328e1b1c3e282ce4781.eu1.techzone.ibm.com/v1/query`
+
+3. Set the `HOST_NAME` variable to the **clusterDomain** value you recorded and set in your `deploy-zad.yaml` file in Section ***[Deploy zAssistantDeploy service](../../zAssistantDeploy/deploy-zAssistantDeploy.md)***.
+
+    !!! Tip "This can also be found by...."
+    
+        This can also be retrieved again by running the following command:
+
+        `oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"`
+
