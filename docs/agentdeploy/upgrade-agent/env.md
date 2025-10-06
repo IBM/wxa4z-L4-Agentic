@@ -58,3 +58,8 @@ The below table describes each of the variables in the `env` variables section. 
 
         `oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"`
 
+4. Set the `INGESTION_URL` variable to the **Server URL** of your **Client Ingestion Server** that you recorded in Section ***[Execute doc ingestion](../../ingest/execute-ingestion.md)***.
+  
+    !!! Tip "This can also be found by...."
+    
+        This can also be retrieved by logging into the OCP Web console, navigating to **Networking --> Routes**, and then copying the route location of the `wxa4z-client-ingestion` route. 
