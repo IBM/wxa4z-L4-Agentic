@@ -2198,7 +2198,7 @@
 <h2 id="foundational-agents">Foundational Agents<a class="headerlink" href="#foundational-agents" title="Permanent link">#</a></h2>
 <p><strong>Foundational agents</strong> work together to collect all required information by leveraging integrated tools, and then provide a detailed and comprehensive answer to any query, enabling more informed decision making with limited human intervention.</p>
 <p>These agents are enabled by default and are available upon installing watsonx Assistant for Z. </p>
-<p>Below is a summary of the foundational agents that are available with the product:</p>
+<p><strong><em>Below is a summary of the foundational agents that are available with the product:</em></strong></p>
 <table>
 <thead>
 <tr>
@@ -2232,7 +2232,49 @@
 <h2 id="prebuilt-ibm-z-product-agents">Prebuilt IBM Z Product Agents<a class="headerlink" href="#prebuilt-ibm-z-product-agents" title="Permanent link">#</a></h2>
 <p>The Prebuilt IBM Z Product Agents across various IBM Z software solutions simplify complex tasks and enhance productivity through natural language interactions. Together, these agents streamline operations, deliver actionable insights, and make mainframe technologies more accessible and user-friendly.</p>
 <p>These agents require separate product entitlements in order to deploy and run on the watsonx Assistant for Z platform, and can be enabled as needed, according to each agent’s specific requirements.</p>
-<p>Below is a summary of the Pre-built IBM Z Product Agents:</p></div>
+<p><strong><em>Below is a summary of the Pre-built IBM Z Product Agents:</em></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Agent</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IBM CICS Transaction Server Agents for Z</strong></td>
+<td>The CICS agent is capable of answering questions related to CICS topology and assisting with problem diagnosis by interpreting transaction error codes. It helps users understand the structure and relationships within the CICS environment and supports troubleshooting by providing insights based on specific error inputs.</td>
+</tr>
+<tr>
+<td><strong>IBM Db2 for z/OS Agent</strong></td>
+<td>The IBM Db2 for z/OS Agent is an AI-powered assistant that allows users to access real-time information about Db2 for z/OS subsystems and database objects through a prompt-driven conversational interface. For instance, you can ask about the current value of a subsystem parameter, identify which buffer pool an index uses, or check if any utilities are running on a subsystem. Along with delivering the requested information, the agent also explains the approach it used to derive the response</td>
+</tr>
+<tr>
+<td><strong>IBM IMS Agents</strong></td>
+<td>IBM IMS Agents software handles general queries related to IMS command syntax and formatting. It also provides real-time visibility into the operational status of IMS systems, helping accelerate troubleshooting by simplifying the diagnostic process.</td>
+</tr>
+<tr>
+<td><strong>IBM IntelliMagic agent for Z</strong></td>
+<td>A system designed to recommend relevant IBM Z IntelliMagic Vision for z/OS charts and reports based on a user-specified topic or issue. These visualizations deliver comprehensive insights into the IBM Z environment, covering both performance and configuration aspects. The recommended outputs may include health evaluations, exception notifications, performance indicators, and configuration data. The system spans key components such as Db2, CICS, IMS, FICON Directors, and Storage Systems.</td>
+</tr>
+<tr>
+<td><strong>IBM Operations Agent for Z</strong></td>
+<td>Monitors key system metrics—including CPU usage, I/O activity, transaction volumes, response times, and storage availability. It identifies resource-heavy transactions and low-storage conditions, while tracking limits like MAXTASKS and concurrent transactions. Users gain visibility into active CICS regions, CICSPlexes, Sysplexes, LPARs, and workloads in z/OS environments. It provides Workload Management (WLM) analytics, covering transaction rates, response times, performance indexes, and goal achievement. Service classes missing objectives are flagged, and critical events are reported.</td>
+</tr>
+<tr>
+<td><strong>Functional Testing Agent (TAZ)</strong></td>
+<td>This AI-powered solution uses natural language inputs to automatically generate UI-driven functional test cases. By leveraging agentic AI, it transforms written requirements and manual test descriptions into executable Java Galasa tests. Integrated with Microsoft Visual Studio Code (VS Code), the tool enables users to explore transaction screen capabilities and seamlessly generate functional tests for them.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IMPORTANT</strong></p>
+<p><strong><em>For the purpose of this lab, the set of agents used for deployment will be scoped to the three following Foundational Agents:</em></strong></p>
+<ul>
+<li>IBM Z Upgrade Agent</li>
+<li>IBM Z Support Agent</li>
+<li>IBM Z OMEGAMON Insights Agent.</li>
+</ul>
+<p>For details and guidance on deploying any of the other agents, make sure to reference the official IBM documentation.</p></div>
 
 
 
