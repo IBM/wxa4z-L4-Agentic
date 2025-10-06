@@ -6,11 +6,11 @@ This corresponds to the Base URL of your IBM watsonx.ai Runtime API endpoint. Fo
 
 1. Assuming you’re still accessing the IBM Cloud account where your ***watsonx Orchestrate Trial/Standard Plan*** environment was accessed, navigate back to the **Resource list** within the Cloud console.
    
-   **IMAGE**
+    ![](_attachments/wml1.png)
 
 2. Under the **AI / Machine Learning** resource drop-down, identify the **Location** associated with your services as shown below:
    
-    **IMAGE**
+    ![](_attachments/wml2.png)
 
     ***NOTE:** in the example above, the services are available in the **us-south** region. The region for your environment may be different.*
    
