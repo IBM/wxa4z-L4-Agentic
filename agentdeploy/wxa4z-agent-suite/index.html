@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#overview-of-the-wxa4z-agent-suite-helm-charts" class="md-skip">
           Skip to content
         </a>
       
@@ -2186,7 +2186,32 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="overview-of-the-wxa4z-agent-suite-helm-charts">Overview of the wxa4z-agent-suite Helm Charts<a class="headerlink" href="#overview-of-the-wxa4z-agent-suite-helm-charts" title="Permanent link">#</a></h1>
+<p>Now, within the <strong>Explorer</strong> view of VS Code, you should see the agent suite structure as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>The <strong>wxa4z-agent-suite</strong> chart deploys a <strong>suite of z/OS agents</strong> with one command. Each agent remains an independent chart (own values, templates, and versioning) while the umbrella coordinates:</p>
+<ul>
+<li><strong>Single-command install/upgrade</strong> for all enabled agents</li>
+<li><strong>Shared, reusable config &amp; secrets</strong> (optional, via <code>global.*</code>)</li>
+</ul>
+<p>And below you can find a quick description of the repo layout:
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wxa4z-agent-suite/ # &lt;— umbrella chart
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ Chart.yaml # lists all agent dependencies
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ values.yaml # toggles &amp; optional shared config/secrets
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─ templates/ # (usually minimal; e.g., optional global secrets) └─ charts/ # populated by helm dependency update
+</span></code></pre></div>
+<p>The <code>wxa4z-agent-suite/values.yaml</code> file is the file you will be modifying to configure your agents deployment. The steps taken in later sections include:</p>
+<ul>
+<li>Configuring the agents’ global settings (created once, used everywhere)</li>
+<li>Setting your registry entitlement key for foundational agents</li>
+<li>Disabling foundational agents not in scope of lab</li>
+<li>Configuring agent-specific values for each respective agent in scope for the lab deployment:</li>
+<li>IBM Z Upgrade Agent</li>
+<li>IBM Z Support Agent</li>
+<li>IBM Z OMEGAMON Insights Agent</li>
+<li>Execute deployment via single <code>helm</code> command</li>
+<li>Verify agents’ deployment status</li>
+</ul></div>
 
 
 
