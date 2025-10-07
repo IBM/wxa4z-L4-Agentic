@@ -1695,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/execute-deploy.md" class="md-nav__link">
+      <a href="../agentdeploy/execute-deploy/" class="md-nav__link">
         
   
   
@@ -2643,6 +2643,15 @@
   <a href="#section-7-6" class="md-nav__link">
     <span class="md-ellipsis">
       Prepare for IBM Z OMEGAMON Insights Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentdeploy-execute-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute Agent Deployment
     </span>
   </a>
   
@@ -4500,7 +4509,62 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                     <section class='print-page md-section' id='section-7-6' heading-number='7.6'>
                         <h1>Prepare for IBM Z OMEGAMON Insights Agent<a class='headerlink' href='#section-7-6' title='Permanent link'></a>
                         </h1>
-                    </section>
+                    </section><section class="print-page" id="agentdeploy-execute-deploy" heading-number="7.7"><div><h1 id="execute-agent-deployment">Execute Agent Deployment<a class="headerlink" href="#agentdeploy-execute-deploy-execute-agent-deployment" title="Permanent link">#</a></h1>
+<p>Now that you’ve set the required <strong><code>global</code> (shared) agent variables</strong> and set the relevant agent-specific variables, you are ready to execute the deployment of the scoped agent set onto your OpenShift cluster. As part of the deployment process, the agents will be <em>automatically bootstrapped</em> to your <strong>watsonx Orchestrate</strong> environment so the agents will appear by default when you log in. As a recap, the agents you will deploy for this lab include:</p>
+<ul>
+<li>IBM Z Upgrade Agent</li>
+<li>IBM Z Support Agent</li>
+<li>IBM Z OMEGAMON Insights Agent</li>
+</ul>
+<ol>
+<li>
+<p>Within VS Code, open up a new terminal window by clicking on <strong>Terminal --&gt; New Terminal</strong>. </p>
+<p>For example (on Mac):</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>With the terminal window open, ensure your terminal’s current working directory is the <code>wxa4z-agent-suite</code> folder that you extracted from Box. See screenshot below as an example:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Download and install the <code>helm</code> command-line utility by following the instructions in the link below:</p>
+<p><a href="https://helm.sh/docs/intro/install/" target="_blank">https://helm.sh/docs/intro/install/</a></p>
+</li>
+<li>
+<p>Verify that <code>helm</code> was successfully installed by running the following command in your VS Code terminal:</p>
+<p><code>helm --help</code></p>
+</li>
+<li>
+<p>Within the terminal session, run the following command to deploy the agents:</p>
+<p><code>helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml - -wait</code></p>
+</li>
+<li>
+<p>After executing the above command, you should see something like the following:</p>
+<p><strong>IMAGE</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">What is the command doing?</p>
+<p>The above command will deploy all of the <code>enabled</code> agents simultaneously. </p>
+<p>Because the <code>--wait</code> flag was used, the command won't return until all the required agent images are pulled successfully.</p>
+</div>
+</li>
+<li>
+<p>Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<h3 id="agentdeploy-execute-deploy-verify-successful-deployment">Verify successful deployment<a class="headerlink" href="#agentdeploy-execute-deploy-verify-successful-deployment" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>To verify the successful deployment of your agents, navigate back to your OCP Web console and log in.</p>
+</li>
+<li>
+<p>Once logged in, navigate to <strong>Workloads --&gt; Pods</strong> within the <strong><em>wxa4z-zad</em></strong> namespace and verify that you see the 3 new pods (one for each agent), and that they’re in the <strong><em>Running</em></strong> status:</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>NOTE:</em>* you may also see pods with the </strong>bootstrap*<em> label. These are ephemeral pods used to register each of the agents to your Orchestrate environment. Once the bootstrapping job is completed, these pods will terminate on their own</em>.</p>
+</li>
+</ol>
+<p><strong><em>Congratulations! You’ve successfully deployed your first set of watsonx Assistant for Z agents. In the following section you will access and test each of the agents capabilities.</em></strong></p>
+<h3 id="agentdeploy-execute-deploy-troubleshooting">Troubleshooting<a class="headerlink" href="#agentdeploy-execute-deploy-troubleshooting" title="Permanent link">#</a></h3></div></section>
                     <section class='print-page md-section' id='section-7-8' heading-number='7.8'>
                         <h1>Access Agents and Test Demo Scenarios<a class='headerlink' href='#section-7-8' title='Permanent link'></a>
                         </h1>
@@ -5067,6 +5131,20 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                 .print-site-enumerate-headings #agentdeploy-support-agent-secrets-data h4 {  counter-increment: counter-agentdeploy-support-agent-secrets-data-4 }
             
 .print-site-enumerate-headings #section-7-6 > h1:before { content: '7.6 ' }
+.print-site-enumerate-headings #agentdeploy-execute-deploy > h1:before { content: '7.7 ' }
+
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h2:before { content: '7.7.' counter(counter-agentdeploy-execute-deploy-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h2 {  counter-reset: counter-agentdeploy-execute-deploy-3  counter-agentdeploy-execute-deploy-4  counter-agentdeploy-execute-deploy-5 ;  counter-increment: counter-agentdeploy-execute-deploy-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h3:before { content: '7.7.' counter(counter-agentdeploy-execute-deploy-2) '.' counter(counter-agentdeploy-execute-deploy-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h3 {  counter-reset: counter-agentdeploy-execute-deploy-4  counter-agentdeploy-execute-deploy-5 ;  counter-increment: counter-agentdeploy-execute-deploy-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h4:before { content: '7.7.' counter(counter-agentdeploy-execute-deploy-2) '.' counter(counter-agentdeploy-execute-deploy-3) '.' counter(counter-agentdeploy-execute-deploy-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h4 {  counter-reset: counter-agentdeploy-execute-deploy-5 ;  counter-increment: counter-agentdeploy-execute-deploy-4 }
+            
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h5:before { content: '7.7.' counter(counter-agentdeploy-execute-deploy-2) '.' counter(counter-agentdeploy-execute-deploy-3) '.' counter(counter-agentdeploy-execute-deploy-4) '.' counter(counter-agentdeploy-execute-deploy-5) ' ' }
+                .print-site-enumerate-headings #agentdeploy-execute-deploy h5 {  counter-increment: counter-agentdeploy-execute-deploy-5 }
+            
 .print-site-enumerate-headings #section-7-8 > h1:before { content: '7.8 ' }
 .print-site-enumerate-headings #section-8 > h1:before { content: '8 ' }</style>
 
