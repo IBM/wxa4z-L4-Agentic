@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="../install-oc-utility/">
+        <link rel="prev" href="../env/">
       
       
-        <link rel="next" href="../install-wxa4z-operator/">
+        <link rel="next" href="../../execute-deploy/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Install IBM Certificate Manager - IBM wxa4z L4 Lab Guide</title>
+        <title>Configure the secrets.data variables - IBM wxa4z L4 Lab Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,20 +91,20 @@
       
     
     
-      <link rel="stylesheet" href="../../css/print-site.css">
+      <link rel="stylesheet" href="../../../css/print-site.css">
     
-      <link rel="stylesheet" href="../../css/print-site-material.css">
+      <link rel="stylesheet" href="../../../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../style.css">
+      <link rel="stylesheet" href="../../../style.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -113,7 +113,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#configuring-the-secretsdata-variables" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -143,7 +148,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -163,7 +168,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Install IBM Certificate Manager
+              Configure the secrets.data variables
             
           </span>
         </div>
@@ -267,7 +272,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -285,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -307,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TechZoneEnvironment/" class="md-nav__link">
+      <a href="../../../TechZoneEnvironment/" class="md-nav__link">
         
   
   
@@ -326,20 +331,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -355,7 +358,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Deploy and configure zAssistantDeploy
@@ -369,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Overview/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/Overview/" class="md-nav__link">
         
   
   
@@ -392,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install-oc-utility/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/install-oc-utility/" class="md-nav__link">
         
   
   
@@ -412,17 +415,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../zAssistantDeploy/install-cert-manager/" class="md-nav__link">
         
   
   
@@ -433,7 +429,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -446,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install-wxa4z-operator/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/install-wxa4z-operator/" class="md-nav__link">
         
   
   
@@ -469,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-secrets/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/deploy-secrets/" class="md-nav__link">
         
   
   
@@ -492,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-zAssistantDeploy/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/deploy-zAssistantDeploy/" class="md-nav__link">
         
   
   
@@ -515,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../verify-deployment/" class="md-nav__link">
+      <a href="../../../zAssistantDeploy/verify-deployment/" class="md-nav__link">
         
   
   
@@ -583,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/Overview/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/Overview/" class="md-nav__link">
         
   
   
@@ -606,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/access-wxo/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/access-wxo/" class="md-nav__link">
         
   
   
@@ -629,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/create-assistant/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/create-assistant/" class="md-nav__link">
         
   
   
@@ -652,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/setup-conv-search/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/setup-conv-search/" class="md-nav__link">
         
   
   
@@ -675,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/configure-settings/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/configure-settings/" class="md-nav__link">
         
   
   
@@ -698,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/additional-config/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/additional-config/" class="md-nav__link">
         
   
   
@@ -721,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zRAG-Assistant/testing-conv-search/" class="md-nav__link">
+      <a href="../../../zRAG-Assistant/testing-conv-search/" class="md-nav__link">
         
   
   
@@ -789,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/Overview/" class="md-nav__link">
+      <a href="../../../ingest/Overview/" class="md-nav__link">
         
   
   
@@ -812,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/download-zassist/" class="md-nav__link">
+      <a href="../../../ingest/download-zassist/" class="md-nav__link">
         
   
   
@@ -835,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/cos-service-credentials/" class="md-nav__link">
+      <a href="../../../ingest/cos-service-credentials/" class="md-nav__link">
         
   
   
@@ -858,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/ibmcloud-utility/" class="md-nav__link">
+      <a href="../../../ingest/ibmcloud-utility/" class="md-nav__link">
         
   
   
@@ -881,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/create-storage-bucket/" class="md-nav__link">
+      <a href="../../../ingest/create-storage-bucket/" class="md-nav__link">
         
   
   
@@ -904,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/upload-docs/" class="md-nav__link">
+      <a href="../../../ingest/upload-docs/" class="md-nav__link">
         
   
   
@@ -927,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/execute-ingestion/" class="md-nav__link">
+      <a href="../../../ingest/execute-ingestion/" class="md-nav__link">
         
   
   
@@ -950,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ingest/test-q%26a/" class="md-nav__link">
+      <a href="../../../ingest/test-q%26a/" class="md-nav__link">
         
   
   
@@ -1018,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../watsonx-ai/project/" class="md-nav__link">
+      <a href="../../../watsonx-ai/project/" class="md-nav__link">
         
   
   
@@ -1041,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../watsonx-ai/deployment-space/" class="md-nav__link">
+      <a href="../../../watsonx-ai/deployment-space/" class="md-nav__link">
         
   
   
@@ -1064,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../watsonx-ai/api-key/" class="md-nav__link">
+      <a href="../../../watsonx-ai/api-key/" class="md-nav__link">
         
   
   
@@ -1087,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../watsonx-ai/service-instance-url/" class="md-nav__link">
+      <a href="../../../watsonx-ai/service-instance-url/" class="md-nav__link">
         
   
   
@@ -1110,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../watsonx-ai/wml-base-url/" class="md-nav__link">
+      <a href="../../../watsonx-ai/wml-base-url/" class="md-nav__link">
         
   
   
@@ -1137,18 +1132,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1164,7 +1161,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Execute agent deployment 
@@ -1178,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/Overview/" class="md-nav__link">
+      <a href="../../Overview/" class="md-nav__link">
         
   
   
@@ -1239,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/setup/" class="md-nav__link">
+      <a href="../../setup/" class="md-nav__link">
         
   
   
@@ -1262,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/wxa4z-agent-suite/" class="md-nav__link">
+      <a href="../../wxa4z-agent-suite/" class="md-nav__link">
         
   
   
@@ -1293,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/configure-shared-variables/" class="md-nav__link">
+      <a href="../../configure-shared-variables/" class="md-nav__link">
         
   
   
@@ -1354,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/upgrade-agent/overview/" class="md-nav__link">
+      <a href="../../upgrade-agent/overview/" class="md-nav__link">
         
   
   
@@ -1377,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/upgrade-agent/env/" class="md-nav__link">
+      <a href="../../upgrade-agent/env/" class="md-nav__link">
         
   
   
@@ -1400,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/upgrade-agent/ptfJob/" class="md-nav__link">
+      <a href="../../upgrade-agent/ptfJob/" class="md-nav__link">
         
   
   
@@ -1423,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/upgrade-agent/secrets-data/" class="md-nav__link">
+      <a href="../../upgrade-agent/secrets-data/" class="md-nav__link">
         
   
   
@@ -1446,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/upgrade-agent/pvc/" class="md-nav__link">
+      <a href="../../upgrade-agent/pvc/" class="md-nav__link">
         
   
   
@@ -1515,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/support-agent/overview/" class="md-nav__link">
+      <a href="../../support-agent/overview/" class="md-nav__link">
         
   
   
@@ -1538,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/support-agent/env/" class="md-nav__link">
+      <a href="../../support-agent/env/" class="md-nav__link">
         
   
   
@@ -1561,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/support-agent/secrets-data/" class="md-nav__link">
+      <a href="../../support-agent/secrets-data/" class="md-nav__link">
         
   
   
@@ -1589,18 +1586,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" checked>
         
           
           <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
@@ -1616,7 +1615,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_6">
             <span class="md-nav__icon md-icon"></span>
             Prepare for IBM Z OMEGAMON Insights Agent
@@ -1630,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/omegamon-agent/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1653,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/omegamon-agent/env/" class="md-nav__link">
+      <a href="../env/" class="md-nav__link">
         
   
   
@@ -1673,10 +1672,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agentdeploy/omegamon-agent/secrets-data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1687,6 +1695,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1707,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/execute-deploy/" class="md-nav__link">
+      <a href="../../execute-deploy/" class="md-nav__link">
         
   
   
@@ -1768,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/demo-scenarios/access-agents.md" class="md-nav__link">
+      <a href="../../demo-scenarios/access-agents.md" class="md-nav__link">
         
   
   
@@ -1791,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/demo-scenarios/support-agent.md" class="md-nav__link">
+      <a href="../../demo-scenarios/support-agent.md" class="md-nav__link">
         
   
   
@@ -1814,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/demo-scenarios/omegamon-agent.md" class="md-nav__link">
+      <a href="../../demo-scenarios/omegamon-agent.md" class="md-nav__link">
         
   
   
@@ -1837,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/demo-scenarios/upgrade-agent.md" class="md-nav__link">
+      <a href="../../demo-scenarios/upgrade-agent.md" class="md-nav__link">
         
   
   
@@ -1868,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/embed.md" class="md-nav__link">
+      <a href="../../embed.md" class="md-nav__link">
         
   
   
@@ -1936,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/intro.md" class="md-nav__link">
+      <a href="../../adk/intro.md" class="md-nav__link">
         
   
   
@@ -1959,7 +1968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/setup.md" class="md-nav__link">
+      <a href="../../adk/setup.md" class="md-nav__link">
         
   
   
@@ -1982,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/config-aap.md" class="md-nav__link">
+      <a href="../../adk/config-aap.md" class="md-nav__link">
         
   
   
@@ -2005,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/prepare-vscode.md" class="md-nav__link">
+      <a href="../../adk/prepare-vscode.md" class="md-nav__link">
         
   
   
@@ -2028,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/connections.md" class="md-nav__link">
+      <a href="../../adk/connections.md" class="md-nav__link">
         
   
   
@@ -2051,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/tools.md" class="md-nav__link">
+      <a href="../../adk/tools.md" class="md-nav__link">
         
   
   
@@ -2074,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/deploy.md" class="md-nav__link">
+      <a href="../../adk/deploy.md" class="md-nav__link">
         
   
   
@@ -2097,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/publish.md" class="md-nav__link">
+      <a href="../../adk/publish.md" class="md-nav__link">
         
   
   
@@ -2120,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/adk/testing.md" class="md-nav__link">
+      <a href="../../adk/testing.md" class="md-nav__link">
         
   
   
@@ -2160,6 +2169,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2175,9 +2186,82 @@
 
 
 
-  <h1>Install IBM Certificate Manager</h1>
-
-<p>test</p>
+<div><h1 id="configuring-the-secretsdata-variables">Configuring the <code>secrets.data</code> variables<a class="headerlink" href="#configuring-the-secretsdata-variables" title="Permanent link">#</a></h1>
+<p>Scrolling down further in the <strong>IBM Z OMEGAMON Insights Agent</strong> section of your <code>values.yaml</code> file, you will see a <strong><code>secrets.data</code></strong> section with additional variables you must configure. It will look like what’s shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>secrets:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  data:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    AIOPS_BASE_URL: ""
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    AIOPS_TOKEN: ""
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    AGENT_AUTH_TOKEN: ""
+</span></code></pre></div>
+<p>The below table provides a summary of each of those variables that must be set, some of which you can use the corresponding default values for. For the first two variables, you will need to get the appropriate values to use from the instructor.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Variable name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default value to set</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AIOPS_BASE_URL</strong></td>
+<td>URL of your AAP instance to login to the AAP web console.</td>
+<td>-------</td>
+</tr>
+<tr>
+<td><strong>AIOPS_TOKEN</strong></td>
+<td>Username for logging into your AAP Web console</td>
+<td>"admin"</td>
+</tr>
+<tr>
+<td><strong>AGENT_AUTH_TOKEN</strong></td>
+<td>Password for logging into your AAP Web console</td>
+<td>-------</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Set the <strong>default</strong> variable values for the rows above in your <code>values.yaml</code> file:</p>
+<ul>
+<li><code>AAP_USERNAME: "admin"</code></li>
+<li><code>AGENT_AUTH_TOKEN: "support_auth_token"</code></li>
+</ul>
+</li>
+<li>
+<p>Set the <code>AAP_ENDPOINT</code> variable to your <strong>AAP UI URL</strong> used for logging into the AAP web console. This can be retrieved from your environment details as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Set the <code>AAP_PASSWORD</code> variable to your <strong>AAP User Password</strong> used for logging into the AAP web console. This can be retrieved from your environment details as shown below:</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>
+<p>To generate the values for the <code>SEND_DUMP_TRANSFER_ID</code> and <code>SEND_DUMP_TRANSFER_PASSWORD</code>, you must first create a new <strong>IBM Support File Transfer ID</strong> on <strong><em>EcuRep</em></strong>. </p>
+<p>Follow the steps below to create and record your transfer ID credentials. </p>
+<ul>
+<li>
+<p>Create a new IBM Support File Transfer ID on ECuRep by accessing the link below:
+<a href="https://www.ecurep.ibm.com/transferids/" target="_blank">https://www.ecurep.ibm.com/transferids/</a></p>
+</li>
+<li>
+<p>Once authenticated, click on <strong>+ Generate a new transfer ID</strong></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>You will then be provided a <strong>Transfer ID</strong> and <strong>Password</strong>. The password will only be shown once, so make sure to <strong>record both details in a local notepad</strong>.</p>
+</li>
+<li>
+<p>In your <code>values.yaml</code> file under the <code>env</code> variables section, set the value of the <code>SEND_DUMP_TRANSFER_ID</code> variable to your recorded <strong>TransferID</strong>, and set the value of the <code>SEND_DUMP_TRANSFER_PASSWORD</code> variable to your recorded <strong>Transfer Password</strong>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Once you’ve modified the above variables for the <strong>IBM Z Support Agent</strong>, make sure to save your <code>values.yaml</code> file to ensure the changes get saved.</p>
+<p>Finally, you will proceed to setting up the needed variables for the <strong>IBM Z OMEGAMON Insights Agent</strong>.</p></div>
 
 
 
@@ -2207,7 +2291,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../install-oc-utility/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install the oc CLI and log into OpenShift">
+          <a href="../env/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configure the &#39;env&#39; variables">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2217,20 +2301,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Install the oc CLI and log into OpenShift
+                Configure the 'env' variables
               </div>
             </div>
           </a>
         
         
           
-          <a href="../install-wxa4z-operator/" class="md-footer__link md-footer__link--next" aria-label="Next: Install the watsonx Assistant for Z Operator">
+          <a href="../../execute-deploy/" class="md-footer__link md-footer__link--next" aria-label="Next: Execute Agent Deployment">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install the watsonx Assistant for Z Operator
+                Execute Agent Deployment
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2265,12 +2349,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../js/print-site.js"></script>
+        <script src="../../../js/print-site.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
