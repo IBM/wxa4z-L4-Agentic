@@ -4109,7 +4109,214 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <p>This can also be retrieved by logging into the OCP Web console, navigating to <strong>Networking --&gt; Routes</strong>, and then copying the route location of the <code>wxa4z-client-ingestion</code> route. </p>
 </div>
 </li>
-</ol></div></section><section class="print-page" id="agentdeploy-upgrade-agent-ptfjob" heading-number="7.4.3"><h1 id="agentdeploy-upgrade-agent-ptfjob-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-ptfjob-placeholder" title="Permanent link">#</a></h1></section><section class="print-page" id="agentdeploy-upgrade-agent-secrets-data" heading-number="7.4.4"><h1 id="agentdeploy-upgrade-agent-secrets-data-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-placeholder" title="Permanent link">#</a></h1></section><section class="print-page" id="agentdeploy-upgrade-agent-pvc" heading-number="7.4.5"><h1 id="agentdeploy-upgrade-agent-pvc-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-pvc-placeholder" title="Permanent link">#</a></h1></section></section>
+</ol></div></section><section class="print-page" id="agentdeploy-upgrade-agent-ptfjob" heading-number="7.4.3"><div><h1 id="configuring-the-ptfjob-variables">Configuring the <code>ptfJob</code> variables<a class="headerlink" href="#agentdeploy-upgrade-agent-ptfjob-configuring-the-ptfjob-variables" title="Permanent link">#</a></h1>
+<p>Once you’ve set the values for the <code>env</code> variables in the <strong>IBM Z Upgrade Agent</strong> section of your <code>values.yaml</code> file, scroll down to the <strong><code>ptfJob</code></strong> variable section directly following it.</p>
+<p>Below is a summary of each of the referenced variables within the <code>ptfJob</code> variable section.</p>
+<p><strong><em>Note:</em></strong> <em>for this section, you can copy and paste each of the defaults provided below</em>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Variable name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default value to set</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SMPNTS</strong></td>
+<td>Directory where z/OS SMP/E stores downloaded software packages</td>
+<td>"/u/smpe"</td>
+</tr>
+<tr>
+<td><strong>SMPWDIR_PATH</strong></td>
+<td>Temporary workspace used during SMP/E operations - i.e. RECEIVE, APPLY, ACCEPT, Internet-based orders (RECEIVE ORDER)</td>
+<td>"/u/smpwkdir"</td>
+</tr>
+<tr>
+<td><strong>SMPJHOME</strong></td>
+<td>Java SDK home directory used by SMP/E invoke Java-based services</td>
+<td>"/usr/lpp/java/java8/J8.0_64"</td>
+</tr>
+<tr>
+<td><strong>SMPCPATH</strong></td>
+<td>USS path to your internet configuration file, used during RECEIVE ORDER or other SMP/E operations that require internet access</td>
+<td>"/usr/lpp/smp/classes"</td>
+</tr>
+<tr>
+<td><strong>ORDER_SERVER_URL</strong></td>
+<td>URL of the IBM Enhanced Customer Center (ECC) gateway or other SMP/E order server used in RECEIVE ORDER operations</td>
+<td>"https://eccgw01.boulder.ibm.com/services/projects/ecc/ws/"</td>
+</tr>
+<tr>
+<td><strong>KEYRING</strong></td>
+<td>Name of RACF keyring where the SMP/E certificate is stored</td>
+<td>"IBMUSER/SMPERING"</td>
+</tr>
+<tr>
+<td><strong>CERT_NAME</strong></td>
+<td>Certificate label in keyring which is used in SMP/E operations to establish SSL/TLS secure connections</td>
+<td>"SMPE Client Certificate"</td>
+</tr>
+<tr>
+<td><strong>DOWNLOAD_METHOD</strong></td>
+<td>Download method for your environment configuration. Options include https, ftp, or sftp</td>
+<td>"https"</td>
+</tr>
+<tr>
+<td><strong>DOWNLOADKEYRING</strong></td>
+<td>RACF keyring used for securing outbound TLS connections, as required by z/OS</td>
+<td>"<em>AUTH</em>/*"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ACTION:</strong> <em>for each of the variables in the ptfJob section referenced above, copy and paste the corresponding <code>Default</code> value into your <code>values.yaml</code> file within the </em><em>IBM Z Upgrade Agent</em><em> section.</em></p>
+<p>The result should look similar to what’s shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-1"></a>ptfJob:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-2"></a>  SMPNTS: "/u/smpe"
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-3"></a>  SMPWDIR_PATH: "/u/smpwkdir"
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-4"></a>  SMPJHOME: "/usr/lpp/java/java8/J8.0_64"
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-5"></a>  SMPCPATH: "/usr/lpp/smp/classes"
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-6"></a>  ORDER_SERVER_URL: "https://eccgw01.boulder.ibm.com/services/projects/ecc/ws/"
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-7"></a>  KEYRING: "IBMUSER/SMPERING"
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-8"></a>  CERT_NAME: "SMPE Client Certificate"
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-9"></a>  DOWNLOAD_METHOD: "https"
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#agentdeploy-upgrade-agent-ptfjob-__codelineno-0-10"></a>  DOWNLOADKEYRING: "*AUTH*/*"
+</span></code></pre></div></div></section><section class="print-page" id="agentdeploy-upgrade-agent-secrets-data" heading-number="7.4.4"><div><h1 id="configuring-the-secretsdata-variables">Configuring the <code>secrets.data</code> variables<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-configuring-the-secretsdata-variables" title="Permanent link">#</a></h1>
+<p>Scrolling down further in the <strong>IBM Z Upgrade Agent</strong> section of your <code>values.yaml</code> file, you will see a <strong><code>secrets.data</code></strong> section with additional variables you must configure. It will look like what’s shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-1"></a>secrets:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-2"></a>  data:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-3"></a>    ZOSMF_ENDPOINT: ""
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-4"></a>    ZOSMF_USERNAME: ""
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-5"></a>    ZOSMF_PASSWORD: ""
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-6"></a>    AGENT_AUTH_TOKEN: ""
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-7"></a>    WRAPPER_USERNAME: ""
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-8"></a>    WRAPPER_PASSWORD: ""
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-0-9"></a>    INGESTION_PASSWORD: ""
+</span></code></pre></div>
+<p>The below table describes each of the variables in the <code>secrets.data</code> variables section. The rows with default values can be set to what's shown in the <code>Default value to set</code> column. The rows without default values are unique to your environment and will require you to set that value using the instructions below in this section. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Variable name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default value to set</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZOSMF_ENDPOINT</strong></td>
+<td>Endpoint URL for z/OSMF, provided by IBM for managing and interacting with z/OS systems.</td>
+<td>-------</td>
+</tr>
+<tr>
+<td><strong>ZOSMF_USERNAME</strong></td>
+<td>User ID for connecting to the z/OSMF endpoint</td>
+<td>"IBMUSER"</td>
+</tr>
+<tr>
+<td><strong>ZOSMF_PASSWORD</strong></td>
+<td>Password/Passphrase for connecting to the z/OSMF endpoint</td>
+<td>-------</td>
+</tr>
+<tr>
+<td><strong>AGENT_AUTH_TOKEN</strong></td>
+<td>Authentication token used to register the agent with WxO</td>
+<td>"upgrade_auth_token"</td>
+</tr>
+<tr>
+<td><strong>WRAPPER_USERNAME</strong></td>
+<td>Username for accessing the WRAPPER_URL endpoint</td>
+<td>"admin"</td>
+</tr>
+<tr>
+<td><strong>WRAPPER_PASSWORD</strong></td>
+<td>Password for accessing the WRAPPER_URL endpoint</td>
+<td>-------</td>
+</tr>
+<tr>
+<td><strong>INGESTION_PASSWORD</strong></td>
+<td>Password for accessing the INGESTION_URL endpoint</td>
+<td>-------</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ACTION:</strong> Set the <strong>default</strong> variable values for the rows above in your <code>values.yaml</code> file:</p>
+<ul>
+<li><code>ZOSMF_USERNAME: "IBMUSER"</code></li>
+<li><code>AGENT_AUTH_TOKEN: "upgrade_auth_token"</code></li>
+<li><code>WRAPPER_USERNAME: "admin"</code></li>
+</ul>
+<h3 id="agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_endpoint-variable">Set your <code>ZOSMF_ENDPOINT</code> variable<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_endpoint-variable" title="Permanent link">#</a></h3>
+<p>Now, you will set the <code>ZOSMF_ENDPOINT</code> variable to the unique z/OSMF endpoint URL of your Wazi z/OS environment. This can be gathered with the following steps. </p>
+<ol>
+<li>
+<p>Locate and record the value of your <strong><em>Ansible Automation Platform UI</em></strong> URL found in your environment details, i.e. https://itzvsi-aap-ebds04j.vsi.techzone.ibm.com</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Within your copied URL, change the <strong><code>aap</code></strong> string to <strong><code>zos</code></strong>. In the above example, it would then look like the following:</p>
+<p>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com</p>
+</li>
+<li>
+<p>And finally, append <strong><code>:10443/zosmf</code></strong> to the end of the string. The result should look similar to the following:</p>
+</li>
+</ol>
+<p>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf</p>
+<p>This would be the final value to set for the <code>ZOSMF_ENDPOINT</code> variable (<em><strong>note</strong> - your URL will be different and is dependent on your Lab environment</em>)</p>
+<h3 id="agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable">Set your <code>ZOSMF_PASSWORD</code> variable<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable" title="Permanent link">#</a></h3>
+<p>Set the <code>ZOSMF_PASSWORD</code> variable to a new RACF Password/Passphrase that the IBMUSER ID uses to log into TSO. </p>
+<p>Follow the below steps to reset your RACF passphrase for the IBMUSER user and set the value to the <code>ZOSMF_PASSWORD</code> variable.</p>
+<ol>
+<li>
+<p>Open and log into the <strong>Ansible Automation Platform (AAP) web console</strong> using the same <strong>AAP UI URL</strong> referenced above in your Lab env details.</p>
+</li>
+<li>
+<p>Click <strong>templates</strong> under the <strong>Resources</strong> section. </p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="3">
+<li>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>
+<p>Replace the default command with the command that follows, and substituting a <em>passphrase</em> of your choice for the string <strong><code>YOUR_PASSWORD_PHRASE</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE(‘YOUR_PASSWORD_PHRASE’) NOEXPIRE RESUME
+</span></code></pre></div>
+<details class="tip">
+<summary>Syntax rules for RACF Password Phrases (below)</summary>
+<ul>
+<li>minimum length: 9 characters</li>
+<li>Must contain at least 2 alphabetic characters (A - Z, a - z)</li>
+<li>Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)</li>
+<li>Must not contain more than 2 consecutive characters that are identical</li>
+</ul>
+</details>
+<p><strong>Note:</strong> <em>if you typed the command yourself, be sure to include the single-quotes before and after the password.</em> <strong><em>Record the password as it will be needed later.</em></strong></p>
+<p><strong>iMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Launch</strong>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Verify that the job is <strong>Successful</strong> by locating the message <code>"failed": false</code> in the job output. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Verify that you can log into z/OSMF in a new browser tab. Navigate to z/OSMF using the <code>ZOSMF_ENDPOINT</code> URL you previously recoreded and set in VS Code. </p>
+</li>
+<li>
+<p>Enter (<strong>a</strong>) <code>IBMUSER</code> for the z/OS USER ID, (<strong>b</strong>) the passphrase you just set for the z/OS PASSWORD, and then (<strong>c</strong>) click <strong>LOG IN</strong>. </p>
+<p><strong>IMAGE</strong></p>
+<p>Once successfully logged in, make sure to set the <code>ZOSMF_PASSWORD</code> variable in <code>values.yaml</code> to the passphrase you entered.</p>
+</li>
+</ol>
+<h3 id="agentdeploy-upgrade-agent-secrets-data-set-your-wrapper_password-variable">Set your <code>WRAPPER_PASSWORD</code> variable<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-set-your-wrapper_password-variable" title="Permanent link">#</a></h3>
+<p>Set the <strong><code>WRAPPER_PASSWORD</code></strong> variable to the <code>&lt;WRAPPER_PASSWORD&gt;</code> value you set in your <strong>wrapper-creds.yaml</strong> file in Section <strong><em><a href="#zassistantdeploy-deploy-secrets">Deploy secrets for OpenSearch and Client Ingestion</a></em></strong>.</p>
+<h3 id="agentdeploy-upgrade-agent-secrets-data-set-your-ingestion_password-variable">Set your <code>INGESTION_PASSWORD</code> variable<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-set-your-ingestion_password-variable" title="Permanent link">#</a></h3>
+<p>Finally, set the <code>INGESTION_PASSWORD</code> variable to the <strong>authkey</strong> value you set in your <strong>client-ingestion-secret.yaml</strong> file in Section <strong><em><a href="#zassistantdeploy-deploy-secrets">Deploy secrets for OpenSearch and Client Ingestion</a></em></strong>.</p></div></section><section class="print-page" id="agentdeploy-upgrade-agent-pvc" heading-number="7.4.5"><h1 id="agentdeploy-upgrade-agent-pvc-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-pvc-placeholder" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-7-5' heading-number='7.5'>
                         <h1>Prepare for IBM Z Support Agent<a class='headerlink' href='#section-7-5' title='Permanent link'></a>
                         </h1>

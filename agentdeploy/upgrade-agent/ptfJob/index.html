@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#configuring-the-ptfjob-variables" class="md-skip">
           Skip to content
         </a>
       
@@ -2186,7 +2186,79 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="configuring-the-ptfjob-variables">Configuring the <code>ptfJob</code> variables<a class="headerlink" href="#configuring-the-ptfjob-variables" title="Permanent link">#</a></h1>
+<p>Once you’ve set the values for the <code>env</code> variables in the <strong>IBM Z Upgrade Agent</strong> section of your <code>values.yaml</code> file, scroll down to the <strong><code>ptfJob</code></strong> variable section directly following it.</p>
+<p>Below is a summary of each of the referenced variables within the <code>ptfJob</code> variable section.</p>
+<p><strong><em>Note:</em></strong> <em>for this section, you can copy and paste each of the defaults provided below</em>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Variable name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default value to set</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SMPNTS</strong></td>
+<td>Directory where z/OS SMP/E stores downloaded software packages</td>
+<td>"/u/smpe"</td>
+</tr>
+<tr>
+<td><strong>SMPWDIR_PATH</strong></td>
+<td>Temporary workspace used during SMP/E operations - i.e. RECEIVE, APPLY, ACCEPT, Internet-based orders (RECEIVE ORDER)</td>
+<td>"/u/smpwkdir"</td>
+</tr>
+<tr>
+<td><strong>SMPJHOME</strong></td>
+<td>Java SDK home directory used by SMP/E invoke Java-based services</td>
+<td>"/usr/lpp/java/java8/J8.0_64"</td>
+</tr>
+<tr>
+<td><strong>SMPCPATH</strong></td>
+<td>USS path to your internet configuration file, used during RECEIVE ORDER or other SMP/E operations that require internet access</td>
+<td>"/usr/lpp/smp/classes"</td>
+</tr>
+<tr>
+<td><strong>ORDER_SERVER_URL</strong></td>
+<td>URL of the IBM Enhanced Customer Center (ECC) gateway or other SMP/E order server used in RECEIVE ORDER operations</td>
+<td>"https://eccgw01.boulder.ibm.com/services/projects/ecc/ws/"</td>
+</tr>
+<tr>
+<td><strong>KEYRING</strong></td>
+<td>Name of RACF keyring where the SMP/E certificate is stored</td>
+<td>"IBMUSER/SMPERING"</td>
+</tr>
+<tr>
+<td><strong>CERT_NAME</strong></td>
+<td>Certificate label in keyring which is used in SMP/E operations to establish SSL/TLS secure connections</td>
+<td>"SMPE Client Certificate"</td>
+</tr>
+<tr>
+<td><strong>DOWNLOAD_METHOD</strong></td>
+<td>Download method for your environment configuration. Options include https, ftp, or sftp</td>
+<td>"https"</td>
+</tr>
+<tr>
+<td><strong>DOWNLOADKEYRING</strong></td>
+<td>RACF keyring used for securing outbound TLS connections, as required by z/OS</td>
+<td>"<em>AUTH</em>/*"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ACTION:</strong> <em>for each of the variables in the ptfJob section referenced above, copy and paste the corresponding <code>Default</code> value into your <code>values.yaml</code> file within the </em><em>IBM Z Upgrade Agent</em><em> section.</em></p>
+<p>The result should look similar to what’s shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ptfJob:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  SMPNTS: "/u/smpe"
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  SMPWDIR_PATH: "/u/smpwkdir"
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  SMPJHOME: "/usr/lpp/java/java8/J8.0_64"
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  SMPCPATH: "/usr/lpp/smp/classes"
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ORDER_SERVER_URL: "https://eccgw01.boulder.ibm.com/services/projects/ecc/ws/"
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  KEYRING: "IBMUSER/SMPERING"
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  CERT_NAME: "SMPE Client Certificate"
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  DOWNLOAD_METHOD: "https"
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  DOWNLOADKEYRING: "*AUTH*/*"
+</span></code></pre></div></div>
 
 
 
