@@ -1877,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../embed.md" class="md-nav__link">
+      <a href="../../embed/" class="md-nav__link">
         
   
   
@@ -2256,7 +2256,7 @@
 <ol>
 <li>
 <p>Locate and record the value of your <strong><em>Ansible Automation Platform UI</em></strong> URL found in your environment details, i.e. https://itzvsi-aap-ebds04j.vsi.techzone.ibm.com</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/upgrade1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade1.png"></a></p>
 </li>
 <li>
 <p>Within your copied URL, change the <strong><code>aap</code></strong> string to <strong><code>zos</code></strong>. In the above example, it would then look like the following:</p>
@@ -2277,14 +2277,12 @@
 </li>
 <li>
 <p>Click <strong>templates</strong> under the <strong>Resources</strong> section. </p>
+<p><a class="glightbox" href="../_attachments/upgrade2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade2.png"></a></p>
 </li>
-</ol>
-<p><strong>IMAGE</strong></p>
-<ol start="3">
-<li>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</li>
-</ol>
-<p><strong>IMAGE</strong></p>
-<ol start="4">
+<li>
+<p>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</p>
+<p><a class="glightbox" href="../_attachments/upgrade3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade3.png"></a></p>
+</li>
 <li>
 <p>Replace the default command with the command that follows, and substituting a <em>passphrase</em> of your choice for the string <strong><code>YOUR_PASSWORD_PHRASE</code></strong>:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE(‘YOUR_PASSWORD_PHRASE’) NOEXPIRE RESUME
@@ -2299,22 +2297,22 @@
 </ul>
 </details>
 <p><strong>Note:</strong> <em>if you typed the command yourself, be sure to include the single-quotes before and after the password.</em> <strong><em>Record the password as it will be needed later.</em></strong></p>
-<p><strong>iMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/upgrade4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade4.png"></a></p>
 </li>
 <li>
 <p>Click <strong>Launch</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/upgrade5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade5.png"></a></p>
 </li>
 <li>
 <p>Verify that the job is <strong>Successful</strong> by locating the message <code>"failed": false</code> in the job output. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/upgrade6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade6.png"></a></p>
 </li>
 <li>
 <p>Verify that you can log into z/OSMF in a new browser tab. Navigate to z/OSMF using the <code>ZOSMF_ENDPOINT</code> URL you previously recoreded and set in VS Code. </p>
 </li>
 <li>
 <p>Enter (<strong>a</strong>) <code>IBMUSER</code> for the z/OS USER ID, (<strong>b</strong>) the passphrase you just set for the z/OS PASSWORD, and then (<strong>c</strong>) click <strong>LOG IN</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/upgrade7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade7.png"></a></p>
 <p>Once successfully logged in, make sure to set the <code>ZOSMF_PASSWORD</code> variable in <code>values.yaml</code> to the passphrase you entered.</p>
 </li>
 </ol>

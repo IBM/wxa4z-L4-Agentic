@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview-of-zassistantdeploy" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -374,6 +379,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1868,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/embed.md" class="md-nav__link">
+      <a href="../../agentdeploy/embed/" class="md-nav__link">
         
   
   
@@ -2160,6 +2167,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2175,12 +2184,33 @@
 
 
 
-  <h1>Overview</h1>
-
-<p>The <strong>zAssistantDeploy</strong> section will cover the following tasks:
-    - a
-    - b
-    - c</p>
+<div><h1 id="overview-of-zassistantdeploy">Overview of <em>zAssistantDeploy</em><a class="headerlink" href="#overview-of-zassistantdeploy" title="Permanent link">#</a></h1>
+<p>IBM watsonx Assistant for Z leverages <strong>Conversational AI</strong> to provide accurate answers to questions related to IBM Z with detailed steps and links to enhance learning. This feature is based on Large Language Model (LLM) coupled with domain-specific Retreival-Augmented Generation (RAG) which augments the LLM with IBM Z domain- specific knowledge base and information.</p>
+<p>As an Openshift-based solution, watsonx Assistant for Z provides this capability via the <strong>zAssistantDeploy</strong> service on OpenShift. With the purchase of watsonx Assistant for Z, customers acquire entitlement to the watsonx Assistant for Z <strong>operator</strong> which is usd to deploy and configure the zAssistantDeploy service.</p>
+<p><strong>zAssistantDeploy</strong> provides an OpenSearch deployment that is pre-installed with IBM Z documentation, along with a data ingestion service that can be used to load your own documents into the knowledge base. The solution’s search parameters can then be configured to fetch content from those ingested documents.</p>
+<p>In this section, you will be deploying and configuring the <strong>zAssistantDeploy</strong> component of the solution on your provided OpenShift cluster to enable the zRAG capabilities for conversational AI.</p>
+<p><em>Steps include:</em></p>
+<ul>
+<li>
+<p>Accessing and logging into your OpenShift cluster from your local workstation</p>
+</li>
+<li>
+<p>Installing IBM Cert Manager on your cluster</p>
+</li>
+<li>
+<p>Installing the watsonx Assistant for Z Operator</p>
+</li>
+<li>
+<p>Deploying secrets required for OpenSearch and the Client Ingestion service</p>
+</li>
+<li>
+<p>Deploying the zAsssistantDeploy service on your cluster</p>
+</li>
+<li>
+<p>Verifying successful deployment and acquiring your OpenSearch connection details</p>
+</li>
+</ul>
+<p>Following this section, you will learn how to connect assistants and agents to your OpenSearch instance in order to configure conversational search leveraging the zRAG, as well as the ability to ingest custom documentation into the RAG database.</p></div>
 
 
 

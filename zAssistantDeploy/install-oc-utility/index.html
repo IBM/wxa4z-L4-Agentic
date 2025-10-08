@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#install-the-oc-cli-and-log-into-openshift" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -397,6 +402,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1868,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/embed.md" class="md-nav__link">
+      <a href="../../agentdeploy/embed/" class="md-nav__link">
         
   
   
@@ -2160,6 +2167,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2175,9 +2184,88 @@
 
 
 
-  <h1>Install the oc CLI and log into OpenShift</h1>
-
-<p>test</p>
+<div><h1 id="install-the-oc-cli-and-log-into-openshift">Install the <code>oc</code> CLI and log into OpenShift<a class="headerlink" href="#install-the-oc-cli-and-log-into-openshift" title="Permanent link">#</a></h1>
+<h3 id="install-the-oc-command-line-utility">Install the <code>oc</code> command-line utility<a class="headerlink" href="#install-the-oc-command-line-utility" title="Permanent link">#</a></h3>
+<p>The Red Hat OpenShift command line interface (CLI) utility, which is known as <code>oc</code>, must be installed on your local workstation. If you already installed the <code>oc</code> utility, you can proceed to the next section.</p>
+<p>This can be verified by issuing the <code>oc</code> command on your local command-line. If you already installed the <code>oc</code> utility, you can proceed to the next section.</p>
+<ol>
+<li>
+<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by <strong><code>following the instructions in.....</code></strong></p>
+</li>
+<li>
+<p>Click the <strong>Help</strong> icon and then click <strong>Command Line Tools</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click the link under <strong>oc - OpenShift Command Line Interface (CLI)</strong> for the operating system of your local machine.</p>
+<p><strong>IMAGE</strong></p>
+<p>Clicking the preceding link automatically downloads either a <strong>.zip</strong> or <strong>.tar</strong> file specific to your operating system. Extract the file's content.</p>
+<p>Place the <strong>oc</strong> binary for your operating system (OS) in a directory that is in your default <code>PATH</code>, or set the <code>PATH</code> environment variable to include the location of the <strong>oc</strong> binary.</p>
+</li>
+<li>
+<p>Verify the installation by running the <code>oc</code> command on your local workstation. </p>
+<p><code>oc --help</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<h3 id="log-into-your-openshift-cluster-from-your-local-terminal">Log into your OpenShift cluster from your local terminal<a class="headerlink" href="#log-into-your-openshift-cluster-from-your-local-terminal" title="Permanent link">#</a></h3>
+<p><strong>Note:</strong> If you just installed the <code>oc</code> utility, you should already be logged into the cluster and can skip the first couple of steps.</p>
+<ol>
+<li>
+<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by <strong><code>following the instructions in.....</code></strong></p>
+</li>
+<li>
+<p>Click the <code>kube:admin</code> profile drop-down and click <strong>Copy login command</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Display Token</strong>.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>
+<p>Select and copy the <strong><em>Log in with this token</em></strong> string.</p>
+<p><em>For most operating systems, double-click the value, then right-click and select </em><em>Copy</em>**.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Open a command prompt or terminal window on your local workstation. Then paste the login command and press <strong>enter</strong>.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<h3 id="download-the-zassistantdeploy-configuration-folder">Download the <em>zAssistantDeploy</em> configuration folder<a class="headerlink" href="#download-the-zassistantdeploy-configuration-folder" title="Permanent link">#</a></h3>
+<p>In this step you will download a <strong>.zip</strong> file from Box containing the YAML files needed to deploy <strong>zAssistDeploy</strong>.</p>
+<ol>
+<li>
+<p>On your local workstation, click on this Box link to view the provided <strong>zAssistDeploy.zip</strong> file:</p>
+<p><a href="https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s" target="_blank">https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s</a></p>
+</li>
+<li>
+<p>Once you can view the file in Box, click <strong>Download</strong> to download the file to your local workstation.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="3">
+<li>
+<p>Once downloaded, go to your local workstation’s Downloads folder and extract/unzip the zAssistDeploy.zip file.</p>
+</li>
+<li>
+<p>You should then see the unzipped/extracted folder with the included YAML files as shown below (for Mac users):</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>On your local machine’s command-line, change to the <strong><em>zAssistDeploy</em></strong> directory. On Mac, this can be done by issuing the following command:</p>
+</li>
+</ol>
+<p><code>cd Downloads/zAssistDeploy</code></p>
+<p><em>Use the corresponding command for Windows users.</em></p>
+<ol start="6">
+<li>
+<p>Once you’ve changed to the extracted <strong><em>zAssistDeploy</em></strong> directory via command-line, you should be able to list the contained files. Below is an example for Mac users:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div>
 
 
 

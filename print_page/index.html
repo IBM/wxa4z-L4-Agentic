@@ -1856,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/embed.md" class="md-nav__link">
+      <a href="../agentdeploy/embed/" class="md-nav__link">
         
   
   
@@ -2699,6 +2699,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#agentdeploy-embed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embed Agent Chat in Web Page
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3138,10 +3147,150 @@
                     <section class='print-page md-section' id='section-3' heading-number='3'>
                         <h1>Deploy and configure zAssistantDeploy<a class='headerlink' href='#section-3' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="zassistantdeploy-overview" heading-number="3.1"><p>The <strong>zAssistantDeploy</strong> section will cover the following tasks:
-    - a
-    - b
-    - c</p></section><section class="print-page" id="zassistantdeploy-install-oc-utility" heading-number="3.2"><p>test</p></section><section class="print-page" id="zassistantdeploy-install-cert-manager" heading-number="3.3"><p>test</p></section><section class="print-page" id="zassistantdeploy-install-wxa4z-operator" heading-number="3.4"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-secrets" heading-number="3.5"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-zassistantdeploy" heading-number="3.6"><p>test</p></section><section class="print-page" id="zassistantdeploy-verify-deployment" heading-number="3.7"><p>test</p></section></section>
+                    <section class="print-page" id="zassistantdeploy-overview" heading-number="3.1"><div><h1 id="overview-of-zassistantdeploy">Overview of <em>zAssistantDeploy</em><a class="headerlink" href="#zassistantdeploy-overview-overview-of-zassistantdeploy" title="Permanent link">#</a></h1>
+<p>IBM watsonx Assistant for Z leverages <strong>Conversational AI</strong> to provide accurate answers to questions related to IBM Z with detailed steps and links to enhance learning. This feature is based on Large Language Model (LLM) coupled with domain-specific Retreival-Augmented Generation (RAG) which augments the LLM with IBM Z domain- specific knowledge base and information.</p>
+<p>As an Openshift-based solution, watsonx Assistant for Z provides this capability via the <strong>zAssistantDeploy</strong> service on OpenShift. With the purchase of watsonx Assistant for Z, customers acquire entitlement to the watsonx Assistant for Z <strong>operator</strong> which is usd to deploy and configure the zAssistantDeploy service.</p>
+<p><strong>zAssistantDeploy</strong> provides an OpenSearch deployment that is pre-installed with IBM Z documentation, along with a data ingestion service that can be used to load your own documents into the knowledge base. The solution’s search parameters can then be configured to fetch content from those ingested documents.</p>
+<p>In this section, you will be deploying and configuring the <strong>zAssistantDeploy</strong> component of the solution on your provided OpenShift cluster to enable the zRAG capabilities for conversational AI.</p>
+<p><em>Steps include:</em></p>
+<ul>
+<li>
+<p>Accessing and logging into your OpenShift cluster from your local workstation</p>
+</li>
+<li>
+<p>Installing IBM Cert Manager on your cluster</p>
+</li>
+<li>
+<p>Installing the watsonx Assistant for Z Operator</p>
+</li>
+<li>
+<p>Deploying secrets required for OpenSearch and the Client Ingestion service</p>
+</li>
+<li>
+<p>Deploying the zAsssistantDeploy service on your cluster</p>
+</li>
+<li>
+<p>Verifying successful deployment and acquiring your OpenSearch connection details</p>
+</li>
+</ul>
+<p>Following this section, you will learn how to connect assistants and agents to your OpenSearch instance in order to configure conversational search leveraging the zRAG, as well as the ability to ingest custom documentation into the RAG database.</p></div></section><section class="print-page" id="zassistantdeploy-install-oc-utility" heading-number="3.2"><div><h1 id="install-the-oc-cli-and-log-into-openshift">Install the <code>oc</code> CLI and log into OpenShift<a class="headerlink" href="#zassistantdeploy-install-oc-utility-install-the-oc-cli-and-log-into-openshift" title="Permanent link">#</a></h1>
+<h3 id="zassistantdeploy-install-oc-utility-install-the-oc-command-line-utility">Install the <code>oc</code> command-line utility<a class="headerlink" href="#zassistantdeploy-install-oc-utility-install-the-oc-command-line-utility" title="Permanent link">#</a></h3>
+<p>The Red Hat OpenShift command line interface (CLI) utility, which is known as <code>oc</code>, must be installed on your local workstation. If you already installed the <code>oc</code> utility, you can proceed to the next section.</p>
+<p>This can be verified by issuing the <code>oc</code> command on your local command-line. If you already installed the <code>oc</code> utility, you can proceed to the next section.</p>
+<ol>
+<li>
+<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by <strong><code>following the instructions in.....</code></strong></p>
+</li>
+<li>
+<p>Click the <strong>Help</strong> icon and then click <strong>Command Line Tools</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click the link under <strong>oc - OpenShift Command Line Interface (CLI)</strong> for the operating system of your local machine.</p>
+<p><strong>IMAGE</strong></p>
+<p>Clicking the preceding link automatically downloads either a <strong>.zip</strong> or <strong>.tar</strong> file specific to your operating system. Extract the file's content.</p>
+<p>Place the <strong>oc</strong> binary for your operating system (OS) in a directory that is in your default <code>PATH</code>, or set the <code>PATH</code> environment variable to include the location of the <strong>oc</strong> binary.</p>
+</li>
+<li>
+<p>Verify the installation by running the <code>oc</code> command on your local workstation. </p>
+<p><code>oc --help</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<h3 id="zassistantdeploy-install-oc-utility-log-into-your-openshift-cluster-from-your-local-terminal">Log into your OpenShift cluster from your local terminal<a class="headerlink" href="#zassistantdeploy-install-oc-utility-log-into-your-openshift-cluster-from-your-local-terminal" title="Permanent link">#</a></h3>
+<p><strong>Note:</strong> If you just installed the <code>oc</code> utility, you should already be logged into the cluster and can skip the first couple of steps.</p>
+<ol>
+<li>
+<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by <strong><code>following the instructions in.....</code></strong></p>
+</li>
+<li>
+<p>Click the <code>kube:admin</code> profile drop-down and click <strong>Copy login command</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Display Token</strong>.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>
+<p>Select and copy the <strong><em>Log in with this token</em></strong> string.</p>
+<p><em>For most operating systems, double-click the value, then right-click and select </em><em>Copy</em>**.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Open a command prompt or terminal window on your local workstation. Then paste the login command and press <strong>enter</strong>.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<h3 id="zassistantdeploy-install-oc-utility-download-the-zassistantdeploy-configuration-folder">Download the <em>zAssistantDeploy</em> configuration folder<a class="headerlink" href="#zassistantdeploy-install-oc-utility-download-the-zassistantdeploy-configuration-folder" title="Permanent link">#</a></h3>
+<p>In this step you will download a <strong>.zip</strong> file from Box containing the YAML files needed to deploy <strong>zAssistDeploy</strong>.</p>
+<ol>
+<li>
+<p>On your local workstation, click on this Box link to view the provided <strong>zAssistDeploy.zip</strong> file:</p>
+<p><a href="https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s" target="_blank">https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s</a></p>
+</li>
+<li>
+<p>Once you can view the file in Box, click <strong>Download</strong> to download the file to your local workstation.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="3">
+<li>
+<p>Once downloaded, go to your local workstation’s Downloads folder and extract/unzip the zAssistDeploy.zip file.</p>
+</li>
+<li>
+<p>You should then see the unzipped/extracted folder with the included YAML files as shown below (for Mac users):</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>On your local machine’s command-line, change to the <strong><em>zAssistDeploy</em></strong> directory. On Mac, this can be done by issuing the following command:</p>
+</li>
+</ol>
+<p><code>cd Downloads/zAssistDeploy</code></p>
+<p><em>Use the corresponding command for Windows users.</em></p>
+<ol start="6">
+<li>
+<p>Once you’ve changed to the extracted <strong><em>zAssistDeploy</em></strong> directory via command-line, you should be able to list the contained files. Below is an example for Mac users:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section><section class="print-page" id="zassistantdeploy-install-cert-manager" heading-number="3.3"><div><h1 id="install-ibm-cert-manager-on-cluster">Install IBM Cert Manager on cluster<a class="headerlink" href="#zassistantdeploy-install-cert-manager-install-ibm-cert-manager-on-cluster" title="Permanent link">#</a></h1>
+<ol>
+<li>
+<p>On your local command-line, apply the <strong>IBM Certificate Manager</strong> <strong><em>Operator</em></strong> in your OpenShift cluster by running the following command:</p>
+<p><code>oc apply -f catalogCertManager.yaml</code></p>
+<p>The preceding command should return a message that states the <em><strong>ibm-cert-manager-catalog</strong> was created</em>.</p>
+</li>
+<li>
+<p>In the OpenShift web console, click <strong>Operators</strong> and then select <strong>OperatorHub</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click the <strong>Project</strong> to pull-down menu and click the <strong>Show default projects</strong> toggle.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>Scroll down and select <strong>openshift-marketplace</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="5">
+<li>
+<p>Enter <strong>IBM Cert Manager</strong> in the search field and then click the <strong>IBM Cert Manager</strong> tile.</p>
+<p><strong><em>Note:</em>* it may take a minute or 2 for the </strong>IBM Cert Manager*<em> tile to appear. Click on a different tab and go back to it to refresh</em>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Keep the default settings and click <strong>Install</strong>.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>NOTE:</em></strong> <em>the installation process takes a few minutes. DO NOT continue until you see the following message: <code>Installed operator: ready for use</code>.</em></p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section><section class="print-page" id="zassistantdeploy-install-wxa4z-operator" heading-number="3.4"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-secrets" heading-number="3.5"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-zassistantdeploy" heading-number="3.6"><p>test</p></section><section class="print-page" id="zassistantdeploy-verify-deployment" heading-number="3.7"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-4' heading-number='4'>
                         <h1>Create an Assistant with zRAG documentation<a class='headerlink' href='#section-4' title='Permanent link'></a>
                         </h1>
@@ -3895,16 +4044,19 @@ how to get to your <strong>Resource List</strong>.</p>
 <li>
 <p>Once extracted, open up a new VS Code session (if not already open), and open your extracted <strong><em>wxa4z-agent-suite</em></strong> folder on your local workstation.</p>
 <ul>
-<li>If opening a new VS code window, this can be done by clicking <strong>Open Folder</strong></li>
-</ul>
-<p><strong>IMAGE</strong></p>
-<ul>
-<li>If using an existing VS code window, you can go to <strong>File --&gt; Open Folder...</strong></li>
+<li>
+<p>If opening a new VS code window, this can be done by clicking <strong>Open Folder</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/setup1.png"></a></p>
+</li>
+<li>
+<p>If using an existing VS code window, you can go to <strong>File --&gt; Open Folder...</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/setup2.png"></a></p>
+</li>
 </ul>
 </li>
 <li>
 <p>Then select your extracted <strong>wxa4z-agent-suite</strong> folder to access the folder in your VS Code window.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/setup3.png"></a></p>
 </li>
 </ol></div></section><section class="print-page" id="agentdeploy-wxa4z-agent-suite" heading-number="7.2.2"><div><h1 id="overview-of-the-wxa4z-agent-suite-helm-charts">Overview of the wxa4z-agent-suite Helm Charts<a class="headerlink" href="#agentdeploy-wxa4z-agent-suite-overview-of-the-wxa4z-agent-suite-helm-charts" title="Permanent link">#</a></h1>
 <p>Now, within the <strong>Explorer</strong> view of VS Code, you should see the agent suite structure as shown below:</p>
@@ -3937,7 +4089,7 @@ how to get to your <strong>Resource List</strong>.</p>
 <p>Within your <code>values.yaml</code> file of the <strong><em>wxa4z-agent-suite</em></strong> folder, the first section of the file references <code>global</code> variables that get set first and are used by each of the agents.</p>
 <p>After the global variables there are sections for each of the agents with agent-specific variables that must be set. In this section you will configure the global variables section of your <code>values.yaml</code> file.</p>
 <p><strong>ACTION:</strong> Within your VS Code window, click on the <code>values.yaml</code> file to open up the contents within VS Code.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/setup4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/setup4.png"></a></p>
 <p><strong>This is the file that you will be modifying in the following sections to prepare for your agents’ deployment. Ensure that you have the contents of this file opened within your VS Code window.</strong></p>
 <h3 id="agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_type-global-variable">Configuring the <code>ORCHESTRATE_ENV_TYPE</code> global variable<a class="headerlink" href="#agentdeploy-configure-shared-variables-configuring-the-orchestrate_env_type-global-variable" title="Permanent link">#</a></h3>
 <p>At the very top of your <code>values.yaml</code> file, under global , there is a <code>secrets.data</code> section. You should see the <code>ORCHESTRATE_ENV_TYPE</code> variable:</p>
@@ -4326,7 +4478,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <ol>
 <li>
 <p>Locate and record the value of your <strong><em>Ansible Automation Platform UI</em></strong> URL found in your environment details, i.e. https://itzvsi-aap-ebds04j.vsi.techzone.ibm.com</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade1.png"></a></p>
 </li>
 <li>
 <p>Within your copied URL, change the <strong><code>aap</code></strong> string to <strong><code>zos</code></strong>. In the above example, it would then look like the following:</p>
@@ -4347,14 +4499,12 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Click <strong>templates</strong> under the <strong>Resources</strong> section. </p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade2.png"></a></p>
 </li>
-</ol>
-<p><strong>IMAGE</strong></p>
-<ol start="3">
-<li>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</li>
-</ol>
-<p><strong>IMAGE</strong></p>
-<ol start="4">
+<li>
+<p>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade3.png"></a></p>
+</li>
 <li>
 <p>Replace the default command with the command that follows, and substituting a <em>passphrase</em> of your choice for the string <strong><code>YOUR_PASSWORD_PHRASE</code></strong>:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE(‘YOUR_PASSWORD_PHRASE’) NOEXPIRE RESUME
@@ -4369,22 +4519,22 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </ul>
 </details>
 <p><strong>Note:</strong> <em>if you typed the command yourself, be sure to include the single-quotes before and after the password.</em> <strong><em>Record the password as it will be needed later.</em></strong></p>
-<p><strong>iMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade4.png"></a></p>
 </li>
 <li>
 <p>Click <strong>Launch</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade5.png"></a></p>
 </li>
 <li>
 <p>Verify that the job is <strong>Successful</strong> by locating the message <code>"failed": false</code> in the job output. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade6.png"></a></p>
 </li>
 <li>
 <p>Verify that you can log into z/OSMF in a new browser tab. Navigate to z/OSMF using the <code>ZOSMF_ENDPOINT</code> URL you previously recoreded and set in VS Code. </p>
 </li>
 <li>
 <p>Enter (<strong>a</strong>) <code>IBMUSER</code> for the z/OS USER ID, (<strong>b</strong>) the passphrase you just set for the z/OS PASSWORD, and then (<strong>c</strong>) click <strong>LOG IN</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/upgrade-agent/_attachments/upgrade7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/upgrade-agent/_attachments/upgrade7.png"></a></p>
 <p>Once successfully logged in, make sure to set the <code>ZOSMF_PASSWORD</code> variable in <code>values.yaml</code> to the passphrase you entered.</p>
 </li>
 </ol>
@@ -4755,7 +4905,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                     <section class='print-page md-section' id='section-7-8' heading-number='7.8'>
                         <h1>Access Agents and Test Demo Scenarios<a class='headerlink' href='#section-7-8' title='Permanent link'></a>
                         </h1>
-                    </section></section>
+                    </section><section class="print-page" id="agentdeploy-embed" heading-number="7.9"><h1 id="agentdeploy-embed-placeholder">placeholder<a class="headerlink" href="#agentdeploy-embed-placeholder" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-8' heading-number='8'>
                         <h1>Build your own agent using the Agent Development Kit (ADK)<a class='headerlink' href='#section-8' title='Permanent link'></a>
                         </h1>
@@ -5366,6 +5516,20 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                 .print-site-enumerate-headings #agentdeploy-execute-deploy h5 {  counter-increment: counter-agentdeploy-execute-deploy-5 }
             
 .print-site-enumerate-headings #section-7-8 > h1:before { content: '7.8 ' }
+.print-site-enumerate-headings #agentdeploy-embed > h1:before { content: '7.9 ' }
+
+                .print-site-enumerate-headings #agentdeploy-embed h2:before { content: '7.9.' counter(counter-agentdeploy-embed-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-embed h2 {  counter-reset: counter-agentdeploy-embed-3  counter-agentdeploy-embed-4  counter-agentdeploy-embed-5 ;  counter-increment: counter-agentdeploy-embed-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-embed h3:before { content: '7.9.' counter(counter-agentdeploy-embed-2) '.' counter(counter-agentdeploy-embed-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-embed h3 {  counter-reset: counter-agentdeploy-embed-4  counter-agentdeploy-embed-5 ;  counter-increment: counter-agentdeploy-embed-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-embed h4:before { content: '7.9.' counter(counter-agentdeploy-embed-2) '.' counter(counter-agentdeploy-embed-3) '.' counter(counter-agentdeploy-embed-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-embed h4 {  counter-reset: counter-agentdeploy-embed-5 ;  counter-increment: counter-agentdeploy-embed-4 }
+            
+                .print-site-enumerate-headings #agentdeploy-embed h5:before { content: '7.9.' counter(counter-agentdeploy-embed-2) '.' counter(counter-agentdeploy-embed-3) '.' counter(counter-agentdeploy-embed-4) '.' counter(counter-agentdeploy-embed-5) ' ' }
+                .print-site-enumerate-headings #agentdeploy-embed h5 {  counter-increment: counter-agentdeploy-embed-5 }
+            
 .print-site-enumerate-headings #section-8 > h1:before { content: '8 ' }</style>
 
 

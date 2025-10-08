@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#install-ibm-cert-manager-on-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -420,6 +425,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1868,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentdeploy/embed.md" class="md-nav__link">
+      <a href="../../agentdeploy/embed/" class="md-nav__link">
         
   
   
@@ -2160,6 +2167,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2175,9 +2184,43 @@
 
 
 
-  <h1>Install IBM Certificate Manager</h1>
-
-<p>test</p>
+<div><h1 id="install-ibm-cert-manager-on-cluster">Install IBM Cert Manager on cluster<a class="headerlink" href="#install-ibm-cert-manager-on-cluster" title="Permanent link">#</a></h1>
+<ol>
+<li>
+<p>On your local command-line, apply the <strong>IBM Certificate Manager</strong> <strong><em>Operator</em></strong> in your OpenShift cluster by running the following command:</p>
+<p><code>oc apply -f catalogCertManager.yaml</code></p>
+<p>The preceding command should return a message that states the <em><strong>ibm-cert-manager-catalog</strong> was created</em>.</p>
+</li>
+<li>
+<p>In the OpenShift web console, click <strong>Operators</strong> and then select <strong>OperatorHub</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click the <strong>Project</strong> to pull-down menu and click the <strong>Show default projects</strong> toggle.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>Scroll down and select <strong>openshift-marketplace</strong>.</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="5">
+<li>
+<p>Enter <strong>IBM Cert Manager</strong> in the search field and then click the <strong>IBM Cert Manager</strong> tile.</p>
+<p><strong><em>Note:</em>* it may take a minute or 2 for the </strong>IBM Cert Manager*<em> tile to appear. Click on a different tab and go back to it to refresh</em>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Keep the default settings and click <strong>Install</strong>.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>NOTE:</em></strong> <em>the installation process takes a few minutes. DO NOT continue until you see the following message: <code>Installed operator: ready for use</code>.</em></p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div>
 
 
 
