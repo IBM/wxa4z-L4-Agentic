@@ -38,7 +38,7 @@ This can be verified by issuing the `oc` command on your local command-line. If 
 
 3. Click **Display Token**.
    
-   **IMAGE**
+    **IMAGE**
 
 4. Select and copy the ***Log in with this token*** string.
 
@@ -48,7 +48,7 @@ This can be verified by issuing the `oc` command on your local command-line. If 
 
 5. Open a command prompt or terminal window on your local workstation. Then paste the login command and press **enter**.
    
-   **IMAGE**
+    **IMAGE**
 
 ### Download the *zAssistantDeploy* configuration folder
 
@@ -60,7 +60,7 @@ In this step you will download a **.zip** file from Box containing the YAML file
 
 2. Once you can view the file in Box, click **Download** to download the file to your local workstation.
    
-   **IMAGE**
+    **IMAGE**
 
 3. Once downloaded, go to your local workstation’s Downloads folder and extract/unzip the zAssistDeploy.zip file.
 
@@ -70,9 +70,9 @@ In this step you will download a **.zip** file from Box containing the YAML file
 
 5. On your local machine’s command-line, change to the ***zAssistDeploy*** directory. On Mac, this can be done by issuing the following command:
    
-   `cd Downloads/zAssistDeploy`
+    `cd Downloads/zAssistDeploy`
 
-   *Use the corresponding command for Windows users.*
+    *Use the corresponding command for Windows users.*
 
 6. Once you’ve changed to the extracted ***zAssistDeploy*** directory via command-line, you should be able to list the contained files. Below is an example for Mac users:
    
