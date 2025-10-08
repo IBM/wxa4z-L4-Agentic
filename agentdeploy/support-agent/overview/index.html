@@ -1701,6 +1701,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../omegamon-agent/pvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure the 'pvc' variable with storageClass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2187,7 +2210,36 @@
 
 
 <div><h1 id="summary-of-agent-capbilities">Summary of Agent Capbilities<a class="headerlink" href="#summary-of-agent-capbilities" title="Permanent link">#</a></h1>
-<p>The <strong>IBM Z Support Agent</strong> enables users to run Ansible playbooks through Ansible Automation Platform, triggered by user input. Supported playbooks include:</p></div>
+<p>The <strong>IBM Z Support Agent</strong> enables users to run Ansible playbooks through Ansible Automation Platform, triggered by user input. </p>
+<p>Supported playbooks include:</p>
+<ul>
+<li><strong>Take z/OS Dump</strong>: Collects a dump from a specified z/OS address space</li>
+<li><strong>z/OS Send Dump</strong>: Collects and transfers a dump from a z/OS address space to a Support Ticket</li>
+</ul>
+<p>Additionally, the agent provides functionality to retrieve the status of initiated Ansible jobs and access job logs for monitoring and troubleshooting.</p>
+<p><em>Below is a summary of the agent capabilities:</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Agent capbility</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Take z/OS dump</strong></td>
+<td>Collect dump on a z/OS address space</td>
+</tr>
+<tr>
+<td><strong>Send z/OS dump</strong></td>
+<td>Transfer the dump collected on z/OS address space</td>
+</tr>
+<tr>
+<td><strong>Retrieve job status</strong></td>
+<td>Retrieve the launched ansible job status and logs</td>
+</tr>
+</tbody>
+</table></div>
 
 
 

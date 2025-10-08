@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#deploy-zassistantdeploy-service-on-your-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -489,6 +494,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1692,6 +1699,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentdeploy/omegamon-agent/pvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure the 'pvc' variable with storageClass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2160,6 +2190,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2175,9 +2207,53 @@
 
 
 
-  <h1>Deploy zAssistantDeploy service</h1>
-
-<p>test</p>
+<div><h1 id="deploy-zassistantdeploy-service-on-your-cluster">Deploy <em>zAssistantDeploy</em> service on your cluster<a class="headerlink" href="#deploy-zassistantdeploy-service-on-your-cluster" title="Permanent link">#</a></h1>
+<p>In this step you will deploy <strong><em>zAssistantDeploy</em></strong> to your OpenShift cluster. <strong>zAssistantDeploy</strong> provides an OpenSearch deployment that is pre-installed with IBM Z documentation along with a data ingestion service that a customer can use to load their own documents to establish an internal knowledge base with their own internal processes and assets for quickly getting answers to. After deploying, you will later ingest some sample documents provided in this lab guide to show how the conversational search capability works with customer ingested documentation.</p>
+<ol>
+<li>
+<p>On your local command-line or Terminal window, obtain and record your cluster domain that is used for routes by running the following command:</p>
+<p><code>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"</code></p>
+<p><em>The output should return something similar to the following:</em></p>
+<p><code>apps.672b79320c7a71b728e523b4.ocp.techzone.ibm.com</code></p>
+<p><strong><em>NOTE:</em></strong> <em>the value outputted </em><em>should not contain the ‘%’ character at the end</em><em>. DO NOT copy this character when pasting the output in the following step.</em></p>
+</li>
+<li>
+<p>In your existing directory, there is a <strong>deploy-zad.yaml</strong> file. </p>
+<p>Modify this file in a text editor of your choice, substituting the domain name recorded in the previous step for the <code>&lt;YOUR_CLUSTER_DOMAIN&gt;</code> string.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>Make sure to save the file before proceeding to the next step.</em></strong></p>
+</li>
+<li>
+<p>Then deploy the <strong>zAssistantDeploy</strong> service by running the following command:</p>
+<p><code>oc apply -f deploy-zad.yaml</code></p>
+<p>After running the above command, the new pods will start initializing in your <strong>wxa4z-zad</strong> namespace. </p>
+</li>
+<li>
+<p>After running the previous command while the new pods are initializing, run the following command to <strong>disable the dashboard deployment</strong> as this is not required nor supported in the TechZone environment:</p>
+<p><strong><em>Mac users:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"dashboard": {"enabled": false}}}'
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
+</span></code></pre></div>
+</li>
+<li>
+<p>Then run the following command to <strong>disable the assistantBootstrap feature</strong>:</p>
+<p><strong><em>Mac users:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong></p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
+</span></code></pre></div>
+</li>
+<li>
+<p>After following the above steps, the new pods will be created in your <strong>wxa4z-zad</strong> namespace. This process typically takes up to 15-20 minutes for the images to download and the deployment to complete.</p>
+<p>To view the progress of your pods creation, navigate back to your <strong>OpenShift web console</strong>. </p>
+<p>Then click on the <strong>Pods</strong> tab and select the <strong>wxa4z-zad</strong> project from the <strong>Projects</strong> drop-down within the OCP web console. </p>
+<p><strong>IMAGE</strong></p>
+<p><em><strong>REMINDER:</strong> the deployment process may take 15-20 min or so to complete. Use this time to take a coffee break and proceed with the following section</em></p>
+</li>
+</ol></div>
 
 
 

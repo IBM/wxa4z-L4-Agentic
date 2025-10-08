@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#configuring-the-pvcstorageclass-variable" class="md-skip">
           Skip to content
         </a>
       
@@ -1701,6 +1701,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../omegamon-agent/pvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure the 'pvc' variable with storageClass
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2186,7 +2209,16 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="configuring-the-pvcstorageclass-variable">Configuring the <code>pvc.storageClass</code> variable<a class="headerlink" href="#configuring-the-pvcstorageclass-variable" title="Permanent link">#</a></h1>
+<p>Scrolling to the end of the <strong>upgrade-agent</strong> section of <code>values.yaml</code>, you should see the <code>pvc</code> section as shown below:
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pvc:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
+</span></code></pre></div>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's storage class: <code>managed-nfs-storage</code>.</p>
+<p>After doing so, the result should look like the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pvc:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  storageClass: "managed-nfs-storage"
+</span></code></pre></div></div>
 
 
 
