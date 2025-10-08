@@ -14,13 +14,15 @@ In this section you will setup your VS Code workspace with the *IBM watsonx Assi
    
     * If opening a new VS code window, this can be done by clicking **Open Folder**
     
-    **IMAGE**
+        ![](_attachments/setup1.png)
 
     * If using an existing VS code window, you can go to **File --> Open Folder...**
+  
+        ![](_attachments/setup2.png)
 
 4. Then select your extracted **wxa4z-agent-suite** folder to access the folder in your VS Code window.
 
-    **IMAGE**
+    ![](_attachments/setup3.png)
 
 
     

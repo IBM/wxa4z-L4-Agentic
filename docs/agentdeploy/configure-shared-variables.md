@@ -6,7 +6,7 @@ After the global variables there are sections for each of the agents with agent-
 
 **ACTION:** Within your VS Code window, click on the `values.yaml` file to open up the contents within VS Code.
 
-**IMAGE**
+![](_attachments/setup4.png)
 
 **This is the file that you will be modifying in the following sections to prepare for your agents’ deployment. Ensure that you have the contents of this file opened within your VS Code window.**
 

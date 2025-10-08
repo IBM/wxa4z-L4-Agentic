@@ -39,7 +39,7 @@ Now, you will set the `ZOSMF_ENDPOINT` variable to the unique z/OSMF endpoint UR
 
 1. Locate and record the value of your ***Ansible Automation Platform UI*** URL found in your environment details, i.e. https://itzvsi-aap-ebds04j.vsi.techzone.ibm.com
 
-    **IMAGE**
+    ![](_attachments/upgrade1.png)
 
 2. Within your copied URL, change the **`aap`** string to **`zos`**. In the above example, it would then look like the following:
    
@@ -61,11 +61,11 @@ Follow the below steps to reset your RACF passphrase for the IBMUSER user and se
 
 2. Click **templates** under the **Resources** section. 
    
-   **IMAGE**
+    ![](_attachments/upgrade2.png)
 
 3. Click the **launch** icon for the `z/OS TSO Command(s)` template.
    
-   **IMAGE**
+    ![](_attachments/upgrade3.png)
 
 4. Replace the default command with the command that follows, and substituting a *passphrase* of your choice for the string **`YOUR_PASSWORD_PHRASE`**:
    
@@ -82,21 +82,21 @@ Follow the below steps to reset your RACF passphrase for the IBMUSER user and se
   
     **Note:** *if you typed the command yourself, be sure to include the single-quotes before and after the password.* ***Record the password as it will be needed later.***
 
-    **iMAGE**
+    ![](_attachments/upgrade4.png)
 
 5. Click **Launch**. 
     
-    **IMAGE**
+    ![](_attachments/upgrade5.png)
 
 6. Verify that the job is **Successful** by locating the message `"failed": false` in the job output. 
    
-    **IMAGE**
+    ![](_attachments/upgrade6.png)
 
 7. Verify that you can log into z/OSMF in a new browser tab. Navigate to z/OSMF using the `ZOSMF_ENDPOINT` URL you previously recoreded and set in VS Code. 
 
 8. Enter (**a**) `IBMUSER` for the z/OS USER ID, (**b**) the passphrase you just set for the z/OS PASSWORD, and then (**c**) click **LOG IN**. 
    
-    **IMAGE**
+    ![](_attachments/upgrade7.png)
    
     Once successfully logged in, make sure to set the `ZOSMF_PASSWORD` variable in `values.yaml` to the passphrase you entered.
 
