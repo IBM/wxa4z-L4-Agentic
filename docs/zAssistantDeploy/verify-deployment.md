@@ -1,1 +1,1 @@
-test
+# Verify deployment and acquire OpenSearch connection details

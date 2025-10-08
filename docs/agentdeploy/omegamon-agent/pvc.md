@@ -1,6 +1,6 @@
 # Configuring the `pvc.storageClass` variable
 
-Scrolling to the end of the **upgrade-agent** section of `values.yaml`, you should see the `pvc` section as shown below:
+Scrolling to the end of the **omegamon-insights-agent** section of `values.yaml`, you should see the `pvc` section as shown below:
 ```
 pvc:
   storageClass: "ocs-storagecluster-cephfs"

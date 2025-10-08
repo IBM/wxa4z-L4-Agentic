@@ -1,10 +1,10 @@
 # Configuring Shared (Global) Agent variables
 
-Within your `values.yaml` file of the ***wxa4z-agent-suite*** folder, the first section of the file references `global` variables that get set first and are used by each of the agents.
+Within your `values.yaml` file of the ***wxa4z-agent-suite*** sub-folder, the first section of the file references `global` variables that get set first and are used by each of the agents.
 
 After the global variables there are sections for each of the agents with agent-specific variables that must be set. In this section you will configure the global variables section of your `values.yaml` file.
 
-**ACTION:** Within your VS Code window, click on the `values.yaml` file to open up the contents within VS Code.
+**ACTION:** Within your VS Code window, click on the `values.yaml` file within the **wxa4z-agent-suite** sub-folder to open up the contents within VS Code.
 
 ![](_attachments/setup4.png)
 
@@ -13,7 +13,7 @@ After the global variables there are sections for each of the agents with agent-
 
 ### Configuring the `ORCHESTRATE_ENV_TYPE` global variable
 
-At the very top of your `values.yaml` file, under global , there is a `secrets.data` section. You should see the `ORCHESTRATE_ENV_TYPE` variable:
+At the very top of your `values.yaml` file, under global , there is a `secrets.data` section. You should see the first variable labeled `ORCHESTRATE_ENV_TYPE`:
 
 ```
 secrets:

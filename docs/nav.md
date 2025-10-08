@@ -51,6 +51,7 @@
         * [Summary of agent capabilities](agentdeploy/omegamon-agent/overview.md)
         * [Configure the 'env' variables](agentdeploy/omegamon-agent/env.md)
         * [Configure the secrets.data variables](agentdeploy/omegamon-agent/secrets-data.md)
+        * [Configure the 'pvc' variable with storageClass](agentdeploy/omegamon-agent/pvc.md)
     * [Execute Agent Deployment](agentdeploy/execute-deploy.md)
     * Access Agents and Test Demo Scenarios
         * [Access your deployed agents](agentdeploy/demo-scenarios/access-agents.md)

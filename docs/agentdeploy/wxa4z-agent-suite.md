@@ -1,6 +1,6 @@
 # Overview of the wxa4z-agent-suite Helm Charts
 
-Now, within the **Explorer** view of VS Code, you should see the agent suite structure as shown below:
+Now, within the **Explorer** view of VS Code, expand the **wxa4z-agent-suite** sub-folder. You should see the agent suite structure as shown below:
 
 **IMAGE**
 

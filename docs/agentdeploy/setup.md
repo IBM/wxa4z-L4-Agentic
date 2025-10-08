@@ -10,8 +10,11 @@ In this section you will setup your VS Code workspace with the *IBM watsonx Assi
 
     !!! Warning "**Guidance on the agent suite**"
 
-        For customers, the  **Agent Suite Helm Charts** are made publicly available via the Git repo found here. 
+        The  **Agent Suite Helm Charts** are made publicly available to customers via the Git repo found <a href="https://ibm.box.com/s/6s6khnvokxq1mxiw9bjzhqg6mcrikbo8" target="_blank">here</a>.
 
+        This public git repo hosts only the Agent Deployment Guide, and not the agents themselves, as a valid entitlement key must be obtained before agents can be properly deployed.
+
+        ***For the purpose of the lab***, the provided Helm charts are available to download from the Box link above, and have been slightly modified for quicker deployment.
 
 2. After downloading the .zip file, unzip or extract the file to your local workstation.
 
@@ -25,7 +28,7 @@ In this section you will setup your VS Code workspace with the *IBM watsonx Assi
   
         ![](_attachments/setup2.png)
 
-4. Then select your extracted **wxa4z-agent-suite** folder to access the folder in your VS Code window.
+4. Then select your extracted **z-ai-agents** folder to access the folder in your VS Code window.
 
     ![](_attachments/setup3.png)
 
