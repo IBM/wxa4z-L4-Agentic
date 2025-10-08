@@ -3209,10 +3209,8 @@
 </li>
 <li>
 <p>Click <strong>Display Token</strong>.</p>
-</li>
-</ol>
 <p><strong>IMAGE</strong></p>
-<ol start="4">
+</li>
 <li>
 <p>Select and copy the <strong><em>Log in with this token</em></strong> string.</p>
 <p><em>For most operating systems, double-click the value, then right-click and select </em><em>Copy</em>**.</p>
@@ -3220,9 +3218,9 @@
 </li>
 <li>
 <p>Open a command prompt or terminal window on your local workstation. Then paste the login command and press <strong>enter</strong>.</p>
+<p><strong>IMAGE</strong></p>
 </li>
 </ol>
-<p><strong>IMAGE</strong></p>
 <h3 id="zassistantdeploy-install-oc-utility-download-the-zassistantdeploy-configuration-folder">Download the <em>zAssistantDeploy</em> configuration folder<a class="headerlink" href="#zassistantdeploy-install-oc-utility-download-the-zassistantdeploy-configuration-folder" title="Permanent link">#</a></h3>
 <p>In this step you will download a <strong>.zip</strong> file from Box containing the YAML files needed to deploy <strong>zAssistDeploy</strong>.</p>
 <ol>
@@ -3232,10 +3230,8 @@
 </li>
 <li>
 <p>Once you can view the file in Box, click <strong>Download</strong> to download the file to your local workstation.</p>
-</li>
-</ol>
 <p><strong>IMAGE</strong></p>
-<ol start="3">
+</li>
 <li>
 <p>Once downloaded, go to your local workstation’s Downloads folder and extract/unzip the zAssistDeploy.zip file.</p>
 </li>
@@ -3245,11 +3241,9 @@
 </li>
 <li>
 <p>On your local machine’s command-line, change to the <strong><em>zAssistDeploy</em></strong> directory. On Mac, this can be done by issuing the following command:</p>
-</li>
-</ol>
 <p><code>cd Downloads/zAssistDeploy</code></p>
 <p><em>Use the corresponding command for Windows users.</em></p>
-<ol start="6">
+</li>
 <li>
 <p>Once you’ve changed to the extracted <strong><em>zAssistDeploy</em></strong> directory via command-line, you should be able to list the contained files. Below is an example for Mac users:</p>
 <p><strong>IMAGE</strong></p>
@@ -3290,7 +3284,105 @@
 <p><strong><em>NOTE:</em></strong> <em>the installation process takes a few minutes. DO NOT continue until you see the following message: <code>Installed operator: ready for use</code>.</em></p>
 <p><strong>IMAGE</strong></p>
 </li>
-</ol></div></section><section class="print-page" id="zassistantdeploy-install-wxa4z-operator" heading-number="3.4"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-secrets" heading-number="3.5"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-zassistantdeploy" heading-number="3.6"><p>test</p></section><section class="print-page" id="zassistantdeploy-verify-deployment" heading-number="3.7"><p>test</p></section></section>
+</ol></div></section><section class="print-page" id="zassistantdeploy-install-wxa4z-operator" heading-number="3.4"><div><h1 id="install-the-watsonx-assistant-for-z-operator">Install the watsonx Assistant for Z Operator<a class="headerlink" href="#zassistantdeploy-install-wxa4z-operator-install-the-watsonx-assistant-for-z-operator" title="Permanent link">#</a></h1>
+<p>In this step you will install the watsonx Assistant for Z operator to deploy and configure <strong>zAssistantDeploy</strong> on your cluster. First, you will need to deploy the catalog source using the provided YAML file.</p>
+<ol>
+<li>
+<p>In your local command prompt or terminal window, create 2 new namespaces called <code>wxa4z-operator</code> and <code>wxa4z-zad</code> in the cluster by issuing the following 2 commands in sequence:</p>
+<p><code>oc create namespace wxa4z-operator</code></p>
+<p><code>oc create namespace wxa4z-zad</code></p>
+</li>
+<li>
+<p>Next, you will need to create or obtain your IBM Container Software production entitlement key. This is required to pull the container images that get deployed by the operator.</p>
+<p>You can create or retrieve an entitlement key by accessing the <a href="https://myibm.ibm.com/products-services/containerlibrary">Entitlement keys</a> page here.</p>
+<p>If you don’t have an entitlement key at the above link, click the <strong>Add new key</strong> to create a new one. </p>
+<p>If extra assistance is needed, refer to this <a href="https://github.ibm.com/alchemy-registry/image-iam/blob/master/obtaining_entitlement.md">site</a>.</p>
+<p><strong><em>Locate your existing key or create a new one and continue to the next step.</em></strong></p>
+</li>
+<li>
+<p>Click <strong>copy</strong> and record your entitlement key for future use in a secure location.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In your command prompt or terminal window, set an environment variable with your production entitlement key.</p>
+<p>Substitute your production entitlement key copied in the last step for <code>&lt;entitlement key&gt;</code>.</p>
+<p><strong><em>Mac users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-0-1"></a>export IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-1-1"></a>set IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</span></code></pre></div>
+</li>
+<li>
+<p>Enter the following command (depending on operating system) to create a pull secret for the Container Registry.</p>
+<p><strong><em>Mac users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-2-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker- server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-3-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker- server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Create your <strong>catalog source</strong> resource in your OpenShift cluster by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-4-1"></a>oc apply -f catalogSource.yaml
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the OpenShift web console, click <strong>OperatorHub</strong>, toggle off <strong>‘Show default projects’</strong>, and then select the <strong>wxa4z-operator</strong> project.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Enter <code>ibm watsonx</code> in the search field and then click the <strong>IBM watsonx Assistant for Z</strong> Operator Catalog tile.</p>
+<p><em><strong>Note:</strong> it may take a minute or 2 for the tile to appear. Click on a different tab and go back to it to refresh.</em></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+<p><em><strong>Note:</strong> the current version of the operator may differ than what’s shown in the image below.</em></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Select <strong>A specific namespace on the cluster (a)</strong> under <strong>Installation mode</strong> and <strong>wxa4z-operator (b)</strong> for the <strong>Installed Namespace</strong>, then click <strong>Install (c)</strong>.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>NOTE:</em></strong> the installation process may take a few minutes. <strong>DO NOT CONTINUE</strong> until you see the following message: <strong><code>Installed operator: ready for use.</code></strong></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the OpenShift web console, under <strong>Workloads</strong>, click <strong>Pods</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Verify the two pods that start with <strong>ibm-wxa4z-operator</strong> have a status of <strong>Running</strong> and that all pods are Ready.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<h3 id="zassistantdeploy-install-wxa4z-operator-update-the-operator-group">Update the Operator Group<a class="headerlink" href="#zassistantdeploy-install-wxa4z-operator-update-the-operator-group" title="Permanent link">#</a></h3>
+<p>After the installation is completed, update the operator group targeting the namepsaces where you will deploy the <strong>zAssistantDeploy</strong> resources.</p>
+<ol>
+<li>
+<p>First, run the following command to retrieve the <strong>unique name</strong> of your operator group:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-5-1"></a>oc -n wxa4z-operator get operatorgroup
+</span></code></pre></div>
+<p>The output should contain a single operator group as shown in the following example:</p>
+<p><strong>IMAGE</strong></p>
+<p><em><strong>NOTE:</strong> record the outputted operatorgroup value as you will need it in the following step.</em></p>
+</li>
+<li>
+<p>Finally, run the following command (depending on operating system) to update the list of targeted namespaces, where <code>&lt;operatorgroup-name&gt;</code> is substituted with <strong>your</strong> unique operatorgroup name recorded in the previous step.</p>
+<p><strong><em>Mac users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-6-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p '{"spec": {"targetNamespaces": ["wxa4z-zad"]}}'
+</span></code></pre></div>
+<p><strong><em>Windows users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-7-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p "{\"spec\": {\"targetNamespaces\": [\"wxa4z-zad\"]}}"
+</span></code></pre></div>
+</li>
+<li>
+<p>If done successfully, you should see output returned like the following:</p>
+</li>
+</ol>
+<p><em><code>operatorgroup.operators.coreos.com/wxa4z-operator-fbtjx patched</code></em></p></div></section><section class="print-page" id="zassistantdeploy-deploy-secrets" heading-number="3.5"><p>test</p></section><section class="print-page" id="zassistantdeploy-deploy-zassistantdeploy" heading-number="3.6"><p>test</p></section><section class="print-page" id="zassistantdeploy-verify-deployment" heading-number="3.7"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-4' heading-number='4'>
                         <h1>Create an Assistant with zRAG documentation<a class='headerlink' href='#section-4' title='Permanent link'></a>
                         </h1>
@@ -4248,7 +4340,67 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                     <section class='print-page md-section' id='section-7-4' heading-number='7.4'>
                         <h1>Prepare for IBM Z Upgrade Agent<a class='headerlink' href='#section-7-4' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="agentdeploy-upgrade-agent-overview" heading-number="7.4.1"><h1 id="agentdeploy-upgrade-agent-overview-placeholder">placeholder<a class="headerlink" href="#agentdeploy-upgrade-agent-overview-placeholder" title="Permanent link">#</a></h1></section><section class="print-page" id="agentdeploy-upgrade-agent-env" heading-number="7.4.2"><div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#agentdeploy-upgrade-agent-env-configuring-the-env-variables" title="Permanent link">#</a></h1>
+                    <section class="print-page" id="agentdeploy-upgrade-agent-overview" heading-number="7.4.1"><div><h1 id="summary-of-ibm-z-upgrade-agent-capabilities">Summary of <strong>IBM Z Upgrade Agent</strong> capabilities<a class="headerlink" href="#agentdeploy-upgrade-agent-overview-summary-of-ibm-z-upgrade-agent-capabilities" title="Permanent link">#</a></h1>
+<p>The <strong>IBM Z Upgrade Agent</strong> enables system programmers to perform z/OS upgrades through the watsonx Assistant for Z chat interface. It provides precise responses by leveraging z/OSMF APIs and client-specific documentation stored in the zRAG.</p>
+<p>Below is a summary of the agent capabilities.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Agent capbility</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>List software products</strong></td>
+<td>Provides a comprehensive list of software products for a given system</td>
+</tr>
+<tr>
+<td><strong>List software instance details</strong></td>
+<td>Shows detailed metadata of a given software instance such as its Name, Description, Global Zone, Target Zone, and so on</td>
+</tr>
+<tr>
+<td><strong>Retrieve missing FIXCATs by software instance Retrieve missing FIXCATs by software product</strong></td>
+<td>Identifies missing FXCAT Updates for specific software instances and systems.</td>
+</tr>
+<tr>
+<td><strong>Acquire missing FIXCAT updates</strong></td>
+<td>Retrieves the required PTFs for the specified RESOLVERS or FIXCAT names.</td>
+</tr>
+<tr>
+<td><strong>Monitor PTF Acquisition status</strong></td>
+<td>Tracks the progress and current status of background jobs initiated to acquire PTFs.</td>
+</tr>
+<tr>
+<td><strong>Install the acquired PTFs</strong></td>
+<td>Begins the installation or update process for the requested PTFs.</td>
+</tr>
+<tr>
+<td><strong>Retrieve the installation or update status</strong></td>
+<td>Retrieves the status of installation or update processes using either the process ID or the names of the software instance and system.</td>
+</tr>
+<tr>
+<td><strong>Display HOLD data</strong></td>
+<td>Shows HOLD data related to any unresolved HOLDS.</td>
+</tr>
+<tr>
+<td><strong>Resume installation or update process</strong></td>
+<td>Continues the installation or update process if the user agrees to resolve all unresolved HOLDS.</td>
+</tr>
+<tr>
+<td><strong>Cancel the installation or update process</strong></td>
+<td>Cancels the installation or update process only upon user request.</td>
+</tr>
+<tr>
+<td><strong>Check hardware-compatibility for upgrade</strong></td>
+<td>Performs a check if the given system's hardware is compatible for an upgrade to a specified version</td>
+</tr>
+<tr>
+<td><strong>Retrieve content from agent documentation stored in zRAG</strong></td>
+<td>Answers the upgrade workflow-related queries using the ingested docs for the agent.</td>
+</tr>
+</tbody>
+</table></div></section><section class="print-page" id="agentdeploy-upgrade-agent-env" heading-number="7.4.2"><div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#agentdeploy-upgrade-agent-env-configuring-the-env-variables" title="Permanent link">#</a></h1>
 <p>Within your <code>values.yaml</code> file, locate the section for the <strong>IBM Z Upgrade Agent</strong> as shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-env-__codelineno-0-1"></a># ---------------------------------------------------------------------------- #
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-env-__codelineno-0-2"></a># Default: upgrade-agent

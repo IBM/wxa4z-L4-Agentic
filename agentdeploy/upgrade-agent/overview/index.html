@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#summary-of-ibm-z-upgrade-agent-capabilities" class="md-skip">
           Skip to content
         </a>
       
@@ -2186,7 +2186,67 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="summary-of-ibm-z-upgrade-agent-capabilities">Summary of <strong>IBM Z Upgrade Agent</strong> capabilities<a class="headerlink" href="#summary-of-ibm-z-upgrade-agent-capabilities" title="Permanent link">#</a></h1>
+<p>The <strong>IBM Z Upgrade Agent</strong> enables system programmers to perform z/OS upgrades through the watsonx Assistant for Z chat interface. It provides precise responses by leveraging z/OSMF APIs and client-specific documentation stored in the zRAG.</p>
+<p>Below is a summary of the agent capabilities.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Agent capbility</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>List software products</strong></td>
+<td>Provides a comprehensive list of software products for a given system</td>
+</tr>
+<tr>
+<td><strong>List software instance details</strong></td>
+<td>Shows detailed metadata of a given software instance such as its Name, Description, Global Zone, Target Zone, and so on</td>
+</tr>
+<tr>
+<td><strong>Retrieve missing FIXCATs by software instance Retrieve missing FIXCATs by software product</strong></td>
+<td>Identifies missing FXCAT Updates for specific software instances and systems.</td>
+</tr>
+<tr>
+<td><strong>Acquire missing FIXCAT updates</strong></td>
+<td>Retrieves the required PTFs for the specified RESOLVERS or FIXCAT names.</td>
+</tr>
+<tr>
+<td><strong>Monitor PTF Acquisition status</strong></td>
+<td>Tracks the progress and current status of background jobs initiated to acquire PTFs.</td>
+</tr>
+<tr>
+<td><strong>Install the acquired PTFs</strong></td>
+<td>Begins the installation or update process for the requested PTFs.</td>
+</tr>
+<tr>
+<td><strong>Retrieve the installation or update status</strong></td>
+<td>Retrieves the status of installation or update processes using either the process ID or the names of the software instance and system.</td>
+</tr>
+<tr>
+<td><strong>Display HOLD data</strong></td>
+<td>Shows HOLD data related to any unresolved HOLDS.</td>
+</tr>
+<tr>
+<td><strong>Resume installation or update process</strong></td>
+<td>Continues the installation or update process if the user agrees to resolve all unresolved HOLDS.</td>
+</tr>
+<tr>
+<td><strong>Cancel the installation or update process</strong></td>
+<td>Cancels the installation or update process only upon user request.</td>
+</tr>
+<tr>
+<td><strong>Check hardware-compatibility for upgrade</strong></td>
+<td>Performs a check if the given system's hardware is compatible for an upgrade to a specified version</td>
+</tr>
+<tr>
+<td><strong>Retrieve content from agent documentation stored in zRAG</strong></td>
+<td>Answers the upgrade workflow-related queries using the ingested docs for the agent.</td>
+</tr>
+</tbody>
+</table></div>
 
 
 
