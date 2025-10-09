@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../deployment-space/">
+        <link rel="prev" href="../orchestrate/">
       
       
-        <link rel="next" href="../service-instance-url/">
+        <link rel="next" href="../aap-zos/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Generate IBM Cloud API key - IBM wxa4z L4 Lab Guide</title>
+        <title>Single Node OpenShift cluster - IBM wxa4z L4 Lab Guide</title>
       
     
     
@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#generate-ibm-cloud-api-key" class="md-skip">
+        <a href="#single-node-openshift-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -168,7 +168,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generate IBM Cloud API key
+              Single Node OpenShift cluster
             
           </span>
         </div>
@@ -331,18 +331,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -358,7 +360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             TechZone Environment Reservations and Steps to Access
@@ -372,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../techzone/orchestrate/" class="md-nav__link">
+      <a href="../orchestrate/" class="md-nav__link">
         
   
   
@@ -392,10 +394,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../techzone/sno/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -406,6 +417,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -418,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../techzone/aap-zos/" class="md-nav__link">
+      <a href="../aap-zos/" class="md-nav__link">
         
   
   
@@ -1086,20 +1098,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1115,7 +1125,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Prepare watsonx.ai services for agent deployment
@@ -1129,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/" class="md-nav__link">
+      <a href="../../watsonx-ai/project/" class="md-nav__link">
         
   
   
@@ -1152,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment-space/" class="md-nav__link">
+      <a href="../../watsonx-ai/deployment-space/" class="md-nav__link">
         
   
   
@@ -1172,19 +1182,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../watsonx-ai/api-key/" class="md-nav__link">
         
   
   
@@ -1195,7 +1196,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1208,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../service-instance-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/service-instance-url/" class="md-nav__link">
         
   
   
@@ -1231,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wml-base-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/wml-base-url/" class="md-nav__link">
         
   
   
@@ -2321,37 +2321,14 @@
 
 
 
-<div><h1 id="generate-ibm-cloud-api-key">Generate IBM Cloud API key<a class="headerlink" href="#generate-ibm-cloud-api-key" title="Permanent link">#</a></h1>
-<p>In addition to the <strong>Project ID</strong> and <strong>Deployment Space ID</strong> secrets, you will also need an IBM Cloud <strong>API key</strong> configured as a secret in your agents’ deployment. This section walks through the creation of a new API key for later use.</p>
-<ol>
-<li>
-<p>Go back to your previous tab where you launched the <strong>watsonx.ai Runtime</strong> service in IBM Cloud. The screen should look similar to the following:</p>
-<p><a class="glightbox" href="../_attachments/api1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api1.png"></a></p>
-</li>
-<li>
-<p>Select <strong>Manage --&gt; Access (IAM)</strong></p>
-<p><a class="glightbox" href="../_attachments/api2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api2.png"></a></p>
-</li>
-<li>
-<p>In the <strong>IAM</strong> settings page, select <strong>API keys</strong> from the left-hand menu.</p>
-<p><a class="glightbox" href="../_attachments/api3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api3.png"></a></p>
-</li>
-<li>
-<p>In the <strong>API keys</strong> screen, click on <strong>Create +</strong>.</p>
-<p><a class="glightbox" href="../_attachments/api4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api4.png"></a></p>
-</li>
-<li>
-<p>Enter any <strong>Name</strong> for your <strong>API Key</strong> and click Create.</p>
-<p><a class="glightbox" href="../_attachments/api5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api5.png"></a></p>
-</li>
-<li>
-<p>You’ll then see a window appear “<em>API key successfully created</em>”</p>
-<p><strong>IMPORTANT:</strong> Make sure to <strong>Download</strong> and <strong>Copy</strong> your API key (this can only be retrieved once).</p>
-<p><a class="glightbox" href="../_attachments/api6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/api6.png"></a></p>
-<p><strong>Copy and record your API key value in a local notepad on your workstation for later use. This will later be referenced in your agents configuration as a shared secret.</strong></p>
-<p>Once recorded successfully, you can close out of the window and proceed to the next section.</p>
-</li>
-</ol></div>
+<div><h1 id="single-node-openshift-cluster">Single Node OpenShift Cluster<a class="headerlink" href="#single-node-openshift-cluster" title="Permanent link">#</a></h1>
+<h3 id="summary-of-the-environment">Summary of the environment<a class="headerlink" href="#summary-of-the-environment" title="Permanent link">#</a></h3>
+<p>The next Lab environment you will use is the <strong>Single Node OpenShift</strong> cluster deployed on IBM Cloud.</p>
+<p>The very first hands-on exercise in the Lab will be accessing your OpenShift cluster and deploying the <strong>zAssistantDeploy</strong> services with all dependent resources, including OpenSearch with the watsonx Assistant for Z RAG and the Client Ingestion service. This will service as a foundation for later deploying AI Agents onto your cluster that can be imported into watsonx Orchestrate for accessing and testing.</p>
+<p><strong><em>Disclaimer:</em></strong> The various components of watsonx Assistant for Z (i.e. zRAG OpenSearch database) are deployed and collocated alongside the deployment of watsonx Orchestrate. For this Lab, you will use a dedicated OpenShift cluster for the sole purpose of deployed these components, with the exception of watsonx Orchestrate (SaaS version), as well as AI agents which will be made accessible within watsonx Orchestrate SaaS.</p>
+<h3 id="making-the-techzone-reservation">Making the TechZone reservation<a class="headerlink" href="#making-the-techzone-reservation" title="Permanent link">#</a></h3>
+<p>-must use 32vcpu cluster when reserving the TZ reservation</p>
+<h3 id="accessing-the-environment">Accessing the environment<a class="headerlink" href="#accessing-the-environment" title="Permanent link">#</a></h3></div>
 
 
 
@@ -2381,7 +2358,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../deployment-space/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Create Deployment Space">
+          <a href="../orchestrate/" class="md-footer__link md-footer__link--prev" aria-label="Previous: watsonx Orchestrate">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2391,20 +2368,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Create Deployment Space
+                watsonx Orchestrate
               </div>
             </div>
           </a>
         
         
           
-          <a href="../service-instance-url/" class="md-footer__link md-footer__link--next" aria-label="Next: Retrieve watsonx Orchestrate Service Instance URL">
+          <a href="../aap-zos/" class="md-footer__link md-footer__link--next" aria-label="Next: Ansible Automation Platform(AAP) &amp; z/OS">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Retrieve watsonx Orchestrate Service Instance URL
+                Ansible Automation Platform(AAP) & z/OS
               </div>
             </div>
             <div class="md-footer__button md-icon">
