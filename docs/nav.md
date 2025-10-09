@@ -1,5 +1,9 @@
 * [Welcome](index.md)
 * [Reserve the IBM Technology Zone environment](TechZoneEnvironment.md)
+* TechZone Environment Reservations and Steps to Access
+    * [watsonx Orchestrate](techzone/orchestrate.md)
+    * [Single Node OpenShift cluster](techzone/sno.md)
+    * [Ansible Automation Platform(AAP) & z/OS](techzone/aap-zos.md)
 * Deploy and configure zAssistantDeploy
     * [Overview](zAssistantDeploy/Overview.md)
     * [Install the **oc** CLI and log into OpenShift](zAssistantDeploy/install-oc-utility.md)
