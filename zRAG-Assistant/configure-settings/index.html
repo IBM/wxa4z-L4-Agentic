@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#configure-settings-for-conversational-search" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -672,6 +677,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -2183,6 +2190,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2198,9 +2207,91 @@
 
 
 
-  <h1>Configure settings for conv search</h1>
-
-<p>test</p>
+<div><h1 id="configure-settings-for-conversational-search">Configure settings for conversational search<a class="headerlink" href="#configure-settings-for-conversational-search" title="Permanent link">#</a></h1>
+<p>After enabling conversational search by connecting your OpenSearch instance to the assistant, you’ll see additional settings that can be modified for fine-tuning how your assistant responds to questions. These settings can be updated based on your requirements. For example:</p>
+<ul>
+<li>
+<p><strong>Contextual awareness</strong></p>
+<p>Options include <strong>Single turn</strong> and <strong>Entire conversation</strong>.</p>
+<p><strong>Single turn</strong> is best for contexts that require only current input to retrieve search results and to generate answers. The assistant answers each question individually without building a context from previous questions and answers.</p>
+<p><strong>Entire conversation</strong> is used for context-dependent questions, which often considers previous inputs. </p>
+<p><strong><em>NOTE:</em></strong> <strong>Entire conversation</strong> uses the whole session to continue the conversation. It may bring back subjects that are no longer in the scope of the conversation. Therefore, irrelevant context may yield suboptimal results. When conversing with the AI Assistant, if there is a query that is not related to the current subject, it is recommended to restart the conversation and then type the query for more accurate results.</p>
+</li>
+<li>
+<p><strong>Define the text for the citations title</strong></p>
+<p>Specify the text that appears to instruct the user to expand the list of citations in the assistant (except web chat client). The <strong>Default</strong> is <code>How do we know?</code></p>
+</li>
+<li>
+<p><strong>Tendency to say <code>I don't know</code></strong></p>
+<p>Used to tune the tendency of your assistant to say “<em>I don’t know</em>” in conversational search. Options include:</p>
+<ul>
+<li>Rarely</li>
+<li>Less often</li>
+<li>More often</li>
+<li>Most often</li>
+</ul>
+<p>By default, <strong>Less often</strong> is selected, although the recommended option is <strong>Rarely</strong>, which allows the Assistant to provide a general answer to a query. However, if there are more incorrect answers than expected, you can raise the threshold to <strong>Less often</strong>.</p>
+<p>You can select the other options such as <strong>More often</strong> and <strong>Most often</strong>, as required. However, this increases the frequency of “I don’t know” responses.</p>
+</li>
+<li>
+<p><strong>Generated response length</strong></p>
+<p>The generated response-length feature customizes response lengths to best meet your needs. Options include:</p>
+<ul>
+<li>Concise</li>
+<li>Moderate</li>
+<li>Verbose</li>
+</ul>
+<p>This will adjust the length of responses that your assistant gives to better fit your needs in conversational search. The default setting is <strong>Moderate</strong>, but <strong>Verbose</strong> has performed well in testing for Q&amp;A.</p>
+<p>Learn more about tuning this setting <a href="https://cloud.ibm.com/docs/watson-assistant/watson-assistant?topic=watson-assistant-conversational-search#tuning-the-generated-response-length-in-conversational-search" target="_blank">here</a>.</p>
+</li>
+<li>
+<p><strong>Default filter</strong></p>
+<p>The <strong>Default filter</strong> field allows you to include or exclude specific products from your conversational search. For more details on how to set this filter as well as the full list of products that can be included or excluded, see step 10 <a href="https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=assistants-configuring-your-conversational-search#tasktask_k1z_vty_mdc__steps__1" target="_blank">here</a>.</p>
+</li>
+<li>
+<p><strong>Metadata</strong></p>
+<p>The <strong>Metadata</strong> field provides a way to adjust your assistant’s behavior during conversational search for your OpenSearch instance. You can specify which topics or document indicies are referenced in its content-grounded search. If you leave the metadata field empty, then it defaults to settings found to perform well. For example, OpenSearch searches all the default IBM-provided documentation and all of the ingested customer documentation with an equal weighting.</p>
+<p>As an example, the <strong><em>doc_weight</em></strong> parameter defines the weight distribution between IBM documents and customer documents. For example, if you provide the value 0.2 for <em>product_docs</em> and 0.8 for <em>customer_docs</em>, then the data search in customer documents is prioritized over product documents.</p>
+<p>For more details on the ways to configure the <strong>Metadata</strong> field, reference the documentation in Step 11 <a href="https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=assistants-configuring-your-conversational-search#tasktask_k1z_vty_mdc__steps__1" target="_blank">here</a>.</p>
+</li>
+<li>
+<p><strong>Search display text</strong></p>
+<p>The <strong>Search display</strong> text options speicy the default text displayed when no results are found or when connectivity issues to the backend search service occur. The defaults are usually sufficient.</p>
+</li>
+</ul>
+<p><strong><em>For more details on the conversational search settings, reference the <a href="https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=assistants-configuring-your-conversational-search" target="_blank">IBM Docs page here</a>.</em></strong></p>
+<ol>
+<li>
+<p>For the initial configuration of your AI assistant with the default zRAG documentation, set <strong>Contextual awareness</strong> to <strong><em>Single turn</em></strong>.</p>
+<p><a class="glightbox" href="../_attachments/config1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/config1.png"></a></p>
+</li>
+<li>
+<p>For the <strong><em>Tendency to say “I don’t know”</em></strong> option, select the recommended option of <strong>Rarely</strong>.</p>
+<p><a class="glightbox" href="../_attachments/config2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/config2.png"></a></p>
+</li>
+<li>
+<p>For the <strong><em>Generated response length</em></strong> option, select <strong>Verbose</strong>.</p>
+<p><a class="glightbox" href="../_attachments/config3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/config3.png"></a></p>
+</li>
+<li>
+<p>In the <strong>Metadata</strong> field text box, copy and paste the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{"doc_weight":
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{"product_docs":0.5,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>"customer_docs":0.5}, "ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate", "standardize":true,
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>"customer_indices":"customer_*"
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+</span></code></pre></div>
+<p><strong><em>NOTE:</em>* this is the </strong>default*<em> setting and won’t change the behavior of the conversational search. The result is weight product docs and customer ingested docs equally. Later in this Lab you will modify this field to prioritize customer ingested docs.</em></p>
+<p><a class="glightbox" href="../_attachments/config4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/config4.png"></a></p>
+</li>
+<li>
+<p>Leave all other defaults and click <strong>Save</strong>.</p>
+<p><a class="glightbox" href="../_attachments/config5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/config5.png"></a></p>
+</li>
+<li>
+<p>Finaly, click <strong>Close</strong>. </p>
+</li>
+</ol></div>
 
 
 
