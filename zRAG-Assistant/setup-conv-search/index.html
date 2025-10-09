@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setup-conversational-search" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -649,6 +654,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -2183,6 +2190,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2198,9 +2207,36 @@
 
 
 
-  <h1>Setup conversational search</h1>
-
-<p>test</p>
+<div><h1 id="setup-conversational-search">Setup Conversational Search<a class="headerlink" href="#setup-conversational-search" title="Permanent link">#</a></h1>
+<p>In this step, you will configure <strong>conversational search</strong> for your assistant with the <strong>OpenSearch instance</strong> you previously deployed. Exposing the zRAG database to your assistant will augment it with content-grounded knowledge for helping to answer a range of IBM Z related questions.</p>
+<ol>
+<li>
+<p>In the Assistant Builder view, hover your cursor over the left-side of the screen to reveal the side-bar and click the <strong>Generative AI</strong> menu item.</p>
+<p><a class="glightbox" href="../_attachments/setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup1.png"></a></p>
+</li>
+<li>
+<p>Under the <strong>Answer behavior</strong> section, click <strong>Set up your Search integration</strong>.</p>
+<p><a class="glightbox" href="../_attachments/setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup2.png"></a></p>
+<p><strong>Note:</strong> By default, conversational search is not enabled when an assistant is created.</p>
+</li>
+<li>
+<p>Click <strong>Customer service</strong>. </p>
+<p><a class="glightbox" href="../_attachments/setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup3.png"></a></p>
+</li>
+<li>
+<p>Complete the <strong>Custom service (a-e)</strong> form and then click <strong>Next (f)</strong>.</p>
+<p><strong>a.</strong> Select <strong>By providing credentials</strong>. </p>
+<p><strong>b.</strong> Copy and paste your unique <code>WRAPPER_URL</code> value that you recorded in Section <strong><em><a href="../../zAssistantDeploy/verify-deployment/">Verify deployment and acquire OpenSearch connection details</a></em></strong>.</p>
+<p><strong>c.</strong> Select <strong>Basic authentication</strong> in the drop-down list.</p>
+<p><strong>d.</strong> Enter <code>admin</code> in the <strong>Username</strong> field. </p>
+<p><strong>e.</strong> Copy and paste your <code>WRAPPER_PASSWORD</code> value that you recorded in Section <strong><em><a href="../../zAssistantDeploy/verify-deployment/">Verify deployment and acquire OpenSearch connection details</a></em></strong>.</p>
+<p><a class="glightbox" href="../_attachments/setup4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup4.png"></a></p>
+</li>
+<li>
+<p>Enable <strong>conversational search</strong> and then click <strong>Next</strong>. </p>
+<p><a class="glightbox" href="../_attachments/setup5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/setup5.png"></a></p>
+</li>
+</ol></div>
 
 
 

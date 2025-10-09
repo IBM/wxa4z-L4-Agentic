@@ -3579,7 +3579,36 @@ secure authentication key of your choosing (i.e. password). </p>
 <p>The assistant is now created.</p>
 <p><a class="glightbox" href="../zRAG-Assistant/_attachments/zrag6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/zrag6.png"></a></p>
 </li>
-</ol></div></section><section class="print-page" id="zrag-assistant-setup-conv-search" heading-number="4.4"><p>test</p></section><section class="print-page" id="zrag-assistant-configure-settings" heading-number="4.5"><p>test</p></section><section class="print-page" id="zrag-assistant-additional-config" heading-number="4.6"><p>test</p></section><section class="print-page" id="zrag-assistant-testing-conv-search" heading-number="4.7"><p>test</p></section></section>
+</ol></div></section><section class="print-page" id="zrag-assistant-setup-conv-search" heading-number="4.4"><div><h1 id="setup-conversational-search">Setup Conversational Search<a class="headerlink" href="#zrag-assistant-setup-conv-search-setup-conversational-search" title="Permanent link">#</a></h1>
+<p>In this step, you will configure <strong>conversational search</strong> for your assistant with the <strong>OpenSearch instance</strong> you previously deployed. Exposing the zRAG database to your assistant will augment it with content-grounded knowledge for helping to answer a range of IBM Z related questions.</p>
+<ol>
+<li>
+<p>In the Assistant Builder view, hover your cursor over the left-side of the screen to reveal the side-bar and click the <strong>Generative AI</strong> menu item.</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/setup1.png"></a></p>
+</li>
+<li>
+<p>Under the <strong>Answer behavior</strong> section, click <strong>Set up your Search integration</strong>.</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/setup2.png"></a></p>
+<p><strong>Note:</strong> By default, conversational search is not enabled when an assistant is created.</p>
+</li>
+<li>
+<p>Click <strong>Customer service</strong>. </p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/setup3.png"></a></p>
+</li>
+<li>
+<p>Complete the <strong>Custom service (a-e)</strong> form and then click <strong>Next (f)</strong>.</p>
+<p><strong>a.</strong> Select <strong>By providing credentials</strong>. </p>
+<p><strong>b.</strong> Copy and paste your unique <code>WRAPPER_URL</code> value that you recorded in Section <strong><em><a href="#zassistantdeploy-verify-deployment">Verify deployment and acquire OpenSearch connection details</a></em></strong>.</p>
+<p><strong>c.</strong> Select <strong>Basic authentication</strong> in the drop-down list.</p>
+<p><strong>d.</strong> Enter <code>admin</code> in the <strong>Username</strong> field. </p>
+<p><strong>e.</strong> Copy and paste your <code>WRAPPER_PASSWORD</code> value that you recorded in Section <strong><em><a href="#zassistantdeploy-verify-deployment">Verify deployment and acquire OpenSearch connection details</a></em></strong>.</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/setup4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/setup4.png"></a></p>
+</li>
+<li>
+<p>Enable <strong>conversational search</strong> and then click <strong>Next</strong>. </p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/setup5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/setup5.png"></a></p>
+</li>
+</ol></div></section><section class="print-page" id="zrag-assistant-configure-settings" heading-number="4.5"><p>test</p></section><section class="print-page" id="zrag-assistant-additional-config" heading-number="4.6"><p>test</p></section><section class="print-page" id="zrag-assistant-testing-conv-search" heading-number="4.7"><p>test</p></section></section>
                     <section class='print-page md-section' id='section-5' heading-number='5'>
                         <h1>Ingest customer documentation<a class='headerlink' href='#section-5' title='Permanent link'></a>
                         </h1>
