@@ -2207,7 +2207,41 @@
 
 
 
-<h1 id="verify-deployment-and-acquire-opensearch-connection-details">Verify deployment and acquire OpenSearch connection details<a class="headerlink" href="#verify-deployment-and-acquire-opensearch-connection-details" title="Permanent link">#</a></h1>
+<div><h1 id="verify-deployment-and-acquire-opensearch-connection-details">Verify deployment and acquire OpenSearch connection details<a class="headerlink" href="#verify-deployment-and-acquire-opensearch-connection-details" title="Permanent link">#</a></h1>
+<p>In this section you will verify the successful deployment of your zAssistDeploy service and gather the OpenSearch credentials needed to configure an assistant with conversational search for Q&amp;A.</p>
+<ol>
+<li>
+<p><strong><em>Before proceeding</em></strong>, ensure that all pods in your <strong>wxa4z-zad</strong> namespace have a status of <strong>Running</strong> or <strong>Completed</strong>, as shown below:</p>
+<p><a class="glightbox" href="../_attachments/verify1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/verify1.png"></a></p>
+</li>
+<li>
+<p>Under <strong>Networking</strong>, click <strong>Routes</strong>.</p>
+<p><a class="glightbox" href="../_attachments/verify2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/verify2.png"></a></p>
+</li>
+<li>
+<p>Copy and record the location of the <strong>wxa4z-opensearch-wrapper</strong> route.</p>
+<p><a class="glightbox" href="../_attachments/verify3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/verify3.png"></a></p>
+<p><strong>IMPORTANT:</strong> <em>Ensure you copy this URL to a notepad and saved for later as this value will be used frequently throughout the rest of the Lab.</em></p>
+</li>
+<li>
+<p>Once copied to a local notepad, append the string <code>/v1/query</code> to the end of the URL to complete the URL endpoint.</p>
+<p>The URL should look similar to:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://wxa4z-opensearch-wrapper-wxa4z-zad.apps.68b1c328e1b1c3e282ce4781.eu1.techzone.ibm.com/v1/query
+</span></code></pre></div>
+<p><em><strong>NOTE:</strong> the above URL will not work for you. Use the value of your specific OpenSearch instance.</em></p>
+</li>
+<li>
+<p>The final URL (<em>with the appended string at the end</em>) should be recorded in your notepad and labeled <code>WRAPPER_URL</code>. In later instructions, this value will be referred to as your ‘<code>WRAPPER_URL</code>’. Whenever you’re prompted for it, you can retrieve this URL value from your local notepad.</p>
+</li>
+<li>
+<p>Finally, the last thing you’ll need is your <strong>OpenSearch Wrapper Password</strong>. This is the value you added to your local <code>wrapper_creds.yaml</code> file, substituted for <wrapper_password>:</wrapper_password></p>
+<p><a class="glightbox" href="../_attachments/verify4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/verify4.png"></a></p>
+</li>
+<li>
+<p>Copy and record this password value to the same notepad, labelling it as your <code>WRAPPER_PASSWORD</code>.</p>
+<p><em>You will also be prompted for this value throughout the rest of the Lab. So ensure it’s recorded in your notepad for later use.</em></p>
+</li>
+</ol></div>
 
 
 
