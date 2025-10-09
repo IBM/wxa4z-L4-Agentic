@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#testing-conversational-search-with-zrag-connection" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -718,6 +723,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -2183,6 +2190,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2198,9 +2207,66 @@
 
 
 
-  <h1>Testing assistant's conv search capbilities</h1>
-
-<p>test</p>
+<div><h1 id="testing-conversational-search-with-zrag-connection">Testing conversational search with zRAG connection<a class="headerlink" href="#testing-conversational-search-with-zrag-connection" title="Permanent link">#</a></h1>
+<p>Now you can begin issuing queries to test the assistant’s responses. For more detailed responses, try appending <code>Please provide a detailed response</code> to the end of your question.</p>
+<p><strong>Important:</strong> Modify settings iteratively based on your assessment of response quality. Review and change them at any time. For example, add extra prompt instructions, change response verbosity, and modify OpenSearch indexes.</p>
+<ol>
+<li>
+<p>Hover your cursor over the left-side navigation and click <strong>Preview</strong>. </p>
+<p><a class="glightbox" href="../_attachments/test1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test1.png"></a></p>
+</li>
+<li>
+<p>In the <strong>Preview assistant</strong> screen, click <strong>Change layout</strong> at the top and then select <strong>Fullscreen -&gt; Save</strong> to make the chat window full screen.</p>
+<p><a class="glightbox" href="../_attachments/test2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test2.png"></a></p>
+</li>
+<li>
+<p>Experiment with different prompts and validate that the answers are reasonable and related to IBM Z.</p>
+<p>Other prompts and responses follow.</p>
+<p><strong>Note:</strong> The responses that you receive can vary from the ones shown.</p>
+<p><strong>Prompt:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>What is the APF list in z/OS?
+</span></code></pre></div>
+<p><strong><em>Example output:</em></strong>
+<a class="glightbox" href="../_attachments/test3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test3.png"></a></p>
+<p><strong>Prompt:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Why is Db2 different than other database systems?
+</span></code></pre></div>
+<p><strong><em>Example output:</em></strong>
+<a class="glightbox" href="../_attachments/test4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test4.png"></a></p>
+<p><strong>Prompt:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>What is the latest version of Db2 for z/OS?
+</span></code></pre></div>
+<p><strong><em>Example output:</em></strong>
+<a class="glightbox" href="../_attachments/test5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test5.png"></a></p>
+<p><strong>Prompt:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>What is the operator command used to check the Db2 for z/OS version level?
+</span></code></pre></div>
+<p><strong><em>Example output:</em></strong>
+<a class="glightbox" href="../_attachments/test6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test6.png"></a></p>
+<p><strong>Prompt:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>What happens during an IPL on IBM Z?
+</span></code></pre></div>
+<p><strong><em>Example output:</em></strong>
+<a class="glightbox" href="../_attachments/test7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test7.png"></a></p>
+</li>
+<li>
+<p>Experiment with the <strong>Multi-turn</strong> Q&amp;A capability by changing your custom service <strong>contextual awareness</strong> setting from <strong>Single turn</strong> to <strong>Entire conversation</strong>.</p>
+<p><a class="glightbox" href="../_attachments/test8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/test8.png"></a></p>
+</li>
+<li>
+<p>Go back to the <strong>Preview</strong> chat to test sequential prompts like those shown below. </p>
+<p><strong>NOTE:</strong> <em>make sure to restart the conversation after enabling multi-turn.</em></p>
+<p><strong>Prompts:</strong></p>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>What is the APF list in z/OS?
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>How do you add a library to it?
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Show me how if my library is PROD1.LOADLIB on volume PRD001.
+</span></code></pre></div>
+</li>
+</ol>
+<p><em>You have now created and deployed your own assistant with conversational search capabilities, and your client can understand how watsonx Assistant for Z provides its content-grounded responses to any Z-related questions. This was done by configuring your assistant to use the zRAG that has over 220 knowledge sources, and uses this knowledge to provide AI-generated responses.</em></p>
+<p><em>In the following section, you will demonstrate how clients can personalize their assistant with an internal knowledge base that contains documentation they add to the RAG. This will provide a level of context- awareness of their own internal processes and procedures when company-specific questions are asked to the assistant.</em></p></div>
 
 
 
