@@ -15,9 +15,9 @@ In this section of the Lab, you will create a new assistant that is intended to 
 - Accessing your watsonx Orchestrate environment and creating a new zRAG Assistant 
 - Configuring conversational search via your OpenSearch credentials for Q&A 
 - Adjusting settings for conversational search
-  - Contextual awareness
-  - Confidence thresholds
-  - Response lengths
-  - Metadata filtering
+    - Contextual awareness
+    - Confidence thresholds
+    - Response lengths
+    - Metadata filtering
 - Fine-tuning the assistant behavior with Prompt Instructions 
 - Verifying the assistant’s Q&A
