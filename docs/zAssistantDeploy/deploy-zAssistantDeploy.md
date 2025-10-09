@@ -17,7 +17,7 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
    
     Modify this file in a text editor of your choice, substituting the domain name recorded in the previous step for the `<YOUR_CLUSTER_DOMAIN>` string.
 
-    **IMAGE**
+    ![](_attachments/deploy1.png)
 
     ***Make sure to save the file before proceeding to the next step.***
 
@@ -61,7 +61,7 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
 
     Then click on the **Pods** tab and select the **wxa4z-zad** project from the **Projects** drop-down within the OCP web console. 
 
-    **IMAGE**
+    ![](_attachments/deploy2.png)
 
     ***REMINDER:** the deployment process may take 15-20 min or so to complete. Use this time to take a coffee break and proceed with the following section*
 
