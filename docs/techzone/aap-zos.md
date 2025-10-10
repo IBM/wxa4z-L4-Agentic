@@ -21,27 +21,27 @@ Follow the below instructions to access your ***Ansible Automation Platform (AAP
    
     <a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a>
 
-    **IMAGE**
+    ![](_attachments/aap_1.png)
 
 2. Click the **watsonx Assistant for Z Pilot - AAP & z/OS** tile.
    
-    **IMAGE**
+    ![](_attachments/aap_2.png)
 
 3. Locate and record the **AAP User Name (For UI access)** and **AAP User Password** fields.
 
-    **IMAGE**
+    ![](_attachments/aap_3.png)
 
 4. Record and then click the **Ansible Automation Platform UI** link.
    
-    **IMAGE**
+    ![](_attachments/aap_4.png)
 
 5. Enter the **Username** and **Password** that is recorded in step 3 and click **Log In**.
    
-    **IMAGE**
+    ![](_attachments/aap_5.png)
    
 6. Once logged in, you should be directed to the **Dashboard** view within the AAP Web console, as shown below:
    
-    **IMAGE**
+    ![](_attachments/aap_6.png)
 
 
 

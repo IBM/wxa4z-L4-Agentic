@@ -11,6 +11,39 @@ The very first hands-on exercise in the Lab will be accessing your OpenShift clu
 
 ### Accessing the environment
 
+Follow the below instructions to access your ***Single Node OpenShift*** environment.
+
+1. Click the following link to open a browser window to your ITZ reservations.
+   
+    <a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a>
+
+2. Click the **Single Node OpenShift** tile.
+   
+    ![](_attachments/sno1.png)
+
+3. Scroll down and record the **Cluster Admin Username** and **Cluster Admin Password**.
+   
+    ![](_attachments/sno2.png)
+
+4. Click the **OCP Console** link.
+   
+    ![](_attachments/sno3.png)
+
+5. Enter the **Cluster Admin Username** and **Cluster Admin Password** values from step 3 and click **Log in**.
+   
+    ![](_attachments/sno4.png)
+
+
+
+
+
+
+
+   
+
+
+
+
 
 
 
