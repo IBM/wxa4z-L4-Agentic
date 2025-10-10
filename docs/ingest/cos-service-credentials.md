@@ -2,7 +2,7 @@
 
 Before uploading the provided sample documents to IBM Cloud Object Storage (COS), you must first create service credentials that you will use to connect to your instance.
 
-1. Navigate to the **Resource List** of your provisioned SaaS services in IBM Cloud (ensuring you're in the correct IBM Cloud account). The steps to access your Resource List can be found by following the instructions in ***PLACEHOLDER*** Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan. 
+1. Navigate to the **Resource List** of your provisioned SaaS services in IBM Cloud (ensuring you're in the correct IBM Cloud account). The steps to access your Resource List can be found by following the instructions in Section ***[Accessing the environment](../techzone/orchestrate.md#accessing-the-environment)***.
 
 
 2. In the **Resource List** page, click on the **Storage** drop-down and click on the name of your COS instance. 

@@ -14,9 +14,7 @@ The first secret needed in configuring your watsonx Assistant for Z agents for d
 `<WATSONX_PROJECT_ID>`. This step will walk you through creating a **Project** in **watsonx.ai** and retrieving
 that secret for later use. 
 
-1. Navigate to your ***Resources List*** in the IBM Cloud web console using the first Lab environment. Reference
-the instructions in `Section 3.1: Accessing IBM watsonx Orchestrate Trial/Standard Plan` for a reminder on
-how to get to your **Resource List**.
+1. Navigate to your ***Resources List*** in the IBM Cloud web console using the first Lab environment. Reference the instructions in Section ***[Accessing the environment](../techzone/orchestrate.md#accessing-the-environment)*** for a reminder on how to get to your **Resource List**. 
 
 2. In the **Resource List** page, click on the **AI/Machine Learning** drop-down and click on the name of your **watsonx.ai Runtime** resource:
    
@@ -27,19 +25,19 @@ how to get to your **Resource List**.
 
     ![](_attachments/watson2.png)
 
-4. This should open up a new tab with a **Getting started** window. Exit out of the **Getting started** window and click on the ‘hamburger’ menu icon in the top-left corner of the screen:
+1. This should open up a new tab with a **Getting started** window. Exit out of the **Getting started** window and click on the ‘hamburger’ menu icon in the top-left corner of the screen:
    
     ![](_attachments/watson3.png)
 
-5. Then click on the **Projects** drop-down and click on **View all projects**:
+2. Then click on the **Projects** drop-down and click on **View all projects**:
    
     ![](_attachments/watson4.png)
 
-6. You should then see you don’t have any existing projects. Click on **New project +** in the top-right corner of the screen:
+3. You should then see you don’t have any existing projects. Click on **New project +** in the top-right corner of the screen:
    
     ![](_attachments/watson5.png)
 
-7. In the ***Create a project*** window:
+4. In the ***Create a project*** window:
 
     - enter any **Name** for the project
     - Ensure a COS instance is selected for the **Storage** field
