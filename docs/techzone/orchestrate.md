@@ -25,6 +25,66 @@ The first Lab environment is a set of ***IBM Cloud SaaS resources*** we’ll ref
 
 ### Accessing the environment
 
+Follow the below instructions to access your IBM Cloud SaaS environment containing dedicated resources for
+**watsonx Orchestrate**, **watsonx.ai Runtime (WML)**, and **Cloud Object Storage**:
+
+1. In the IBM Technology Zone portal, expand **My TechZone** and select **My Reservations**, or click the following link.
+
+    <a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a>
+
+    ![](_attachments/wxo1.png)
+
+2. Click the **watsonx Assistant for Z Pilot - watsonx Orchestrate** tile.
+   
+    ![](_attachments/wxo2.png)
+
+3. Record the ITZ IBM Cloud account name associated with the reservation.
+   
+    ![](_attachments/wxo3.png)
+
+4. Click the **IBM Cloud Login** link. 
+   
+    ![](_attachments/wxo4.png)
+
+5. After logging in, verify that the current IBM Cloud account is the same as the account name recorded in the previous step. If the account is not the same, switch to the proper account.
+   
+    ![](_attachments/wxo5.png)
+
+    **NOTE:** **if the cloud account is not listed in the possible options in the drop-down**, you will first need to **join the IBM Cloud account**. Follow the optional steps below to illustrate the process, and then repeat the above steps to access your cloud resources.
+
+    **a.** When you were invited to join the cloud account, you should have received an email invitation to join. The email should look like the following:
+
+    ![](_attachments/wxo6.png)
+
+    Click **Join now** in the email invitation.
+
+    **b.** In the **Join IBM Cloud** browser window that opens, select the **I accept the product Terms and Conditions** of the registration form, and then click **Join Account**.
+
+    ![](_attachments/wxo7.png)
+
+    **c.** After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.
+
+    ![](_attachments/wxo8.png)
+
+    ***Note:*** your cloud account will be different. Refer to your environment details to identify the correct cloud account.
+
+6. Once the appropriate Cloud account is selected from the drop-down, navigate to your **Resources** by clicking on the **Resources** icon.
+   
+    ![](_attachments/wxo9.png)
+
+7. Expand the **AI / Machine Learning** section and you should see the following resources available:
+   
+    ![](_attachments/wxo10.png)
+
+8. Additionally, you should have an instance of **Cloud Object Storage** available. Confirm the resource availability by scrolling down in the Resource list, and then expand the **Storage** section which should show your Cloud Object Storage instance as shown below:
+   
+    ![](_attachments/wxo11.png)
+
+    Once verified, you can proceed to the next section. Later on in this lab you will be instructed to access a particular resource within your IBM Cloud account. Ensure you follow the instructions above to reach your Resources list.
+
+
+
+
 
 
 
