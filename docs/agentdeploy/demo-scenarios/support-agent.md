@@ -80,8 +80,38 @@ In this section you will test the capabilities of the **IBM Z Support Agent**.
 
 ### Deploy the agent
 
+Once satisfied with the testing of your agent, you can then deploy/publish your agent - this activates the agent and makes it available to the *Live* environment. 
 
+By doing so, you can later embed your agent’s chat interface within a webpage, which will be covered in the following section.
 
+1. Optionally modify the welcome message and possible starter prompts, as shown below:
+   
+    ![](_attachments/support9.png)
 
+2. To deploy your agent to the *Live* version, click the **Deploy** icon in the top-right corner of the screen.
+   
+    ![](_attachments/support10.png)
+
+3. In the **Pre-deployment summary** page, click **Deploy** again.
+   
+    ![](_attachments/support11.png)
+
+4. The deployment process may take a few seconds. Once done, you should see a confirmation message as shown below. Click on **Manage agents**.
+   
+    ![](_attachments/support12.png)
+
+5. This will take you back to the **Agent builder** home page where you should now see a **Live** label in the tile for your IBM Z Support agent as shown below:
+   
+    ![](_attachments/support13.png)
+
+6. Finally, to test the Live version of your agent, access the **Agent chat** by clicking on the hamburger menu icon in the top-left of the screen and select **Chat**.
+   
+    ![](_attachments/support14.png)
+
+7. In the **Agent chat** home screen, click on the Agents drop-down and select your deployed IBM Z Support Agent.
+   
+    ![](_attachments/support15.png)
+
+    You will then be viewing the Live version of your IBM Z Support Agent with all your saved changes. Feel free to test the scenarios from this section or continue to the next section.
 
 
