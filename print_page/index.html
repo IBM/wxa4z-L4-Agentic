@@ -3614,14 +3614,14 @@
 </li>
 <li>
 <p>Next, you will need to create or obtain your IBM Container Software production entitlement key. This is required to pull the container images that get deployed by the operator.</p>
-<p>You can create or retrieve an entitlement key by accessing the <a href="https://myibm.ibm.com/products-services/containerlibrary">Entitlement keys</a> page here.</p>
+<p>You can create or retrieve an entitlement key by accessing the <a href="https://myibm.ibm.com/products-services/containerlibrary" target="_blank">Entitlement keys page here</a>.</p>
 <p>If you don’t have an entitlement key at the above link, click the <strong>Add new key</strong> to create a new one. </p>
-<p>If extra assistance is needed, refer to this <a href="https://github.ibm.com/alchemy-registry/image-iam/blob/master/obtaining_entitlement.md">site</a>.</p>
+<p>If extra assistance is needed, refer to this <a href="https://github.ibm.com/alchemy-registry/image-iam/blob/master/obtaining_entitlement.md" target="_blank">site</a>.</p>
 <p><strong><em>Locate your existing key or create a new one and continue to the next step.</em></strong></p>
 </li>
 <li>
 <p>Click <strong>copy</strong> and record your entitlement key for future use in a secure location.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op1.png"></a></p>
 </li>
 <li>
 <p>In your command prompt or terminal window, set an environment variable with your production entitlement key.</p>
@@ -3641,52 +3641,52 @@
 <p><strong><em>Windows users:</em></strong>
 </p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-3-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker- server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
 </span></code></pre></div>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op2.png"></a></p>
 </li>
 <li>
 <p>Create your <strong>catalog source</strong> resource in your OpenShift cluster by running the following command:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-4-1"></a>oc apply -f catalogSource.yaml
 </span></code></pre></div>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op3.png"></a></p>
 </li>
 <li>
 <p>In the OpenShift web console, click <strong>OperatorHub</strong>, toggle off <strong>‘Show default projects’</strong>, and then select the <strong>wxa4z-operator</strong> project.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op4.png"></a></p>
 </li>
 <li>
 <p>Enter <code>ibm watsonx</code> in the search field and then click the <strong>IBM watsonx Assistant for Z</strong> Operator Catalog tile.</p>
 <p><em><strong>Note:</strong> it may take a minute or 2 for the tile to appear. Click on a different tab and go back to it to refresh.</em></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op5.png"></a></p>
 </li>
 <li>
 <p>Click <strong>Install</strong>.</p>
 <p><em><strong>Note:</strong> the current version of the operator may differ than what’s shown in the image below.</em></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op6.png"></a></p>
 </li>
 <li>
 <p>Select <strong>A specific namespace on the cluster (a)</strong> under <strong>Installation mode</strong> and <strong>wxa4z-operator (b)</strong> for the <strong>Installed Namespace</strong>, then click <strong>Install (c)</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op7.png"></a></p>
 <p><strong><em>NOTE:</em></strong> the installation process may take a few minutes. <strong>DO NOT CONTINUE</strong> until you see the following message: <strong><code>Installed operator: ready for use.</code></strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op8.png"></a></p>
 </li>
 <li>
 <p>In the OpenShift web console, under <strong>Workloads</strong>, click <strong>Pods</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op9.png"></a></p>
 </li>
 <li>
 <p>Verify the two pods that start with <strong>ibm-wxa4z-operator</strong> have a status of <strong>Running</strong> and that all pods are Ready.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op10.png"></a></p>
 </li>
 </ol>
 <h3 id="zassistantdeploy-install-wxa4z-operator-update-the-operator-group">Update the Operator Group<a class="headerlink" href="#zassistantdeploy-install-wxa4z-operator-update-the-operator-group" title="Permanent link">#</a></h3>
-<p>After the installation is completed, update the operator group targeting the namepsaces where you will deploy the <strong>zAssistantDeploy</strong> resources.</p>
+<p>After the installation is completed, update the operator group targeting the namespaces where you will deploy the <strong>zAssistantDeploy</strong> resources.</p>
 <ol>
 <li>
 <p>First, run the following command to retrieve the <strong>unique name</strong> of your operator group:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-5-1"></a>oc -n wxa4z-operator get operatorgroup
 </span></code></pre></div>
 <p>The output should contain a single operator group as shown in the following example:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/op11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op11.png"></a></p>
 <p><em><strong>NOTE:</strong> record the outputted operatorgroup value as you will need it in the following step.</em></p>
 </li>
 <li>
