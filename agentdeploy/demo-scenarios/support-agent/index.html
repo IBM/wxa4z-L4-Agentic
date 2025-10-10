@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#test-the-ibm-z-support-agent" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1928,6 +1933,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2299,6 +2306,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2314,9 +2323,72 @@
 
 
 
-  <h1>Test the IBM Z Support Agent</h1>
-
-<p>test</p>
+<div><h1 id="test-the-ibm-z-support-agent">Test the IBM Z Support Agent<a class="headerlink" href="#test-the-ibm-z-support-agent" title="Permanent link">#</a></h1>
+<p>In this section you will test the capabilities of the <strong>IBM Z Support Agent</strong>.</p>
+<ol>
+<li>
+<p>Within the <strong>Agent Builder</strong> view, click on the tile for your <strong>IBM Z Support Agent</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>On the right-hand side of the screen, you should see the <strong>Preview chat</strong> window for your agent. Click in the text-box of the <strong>Preview</strong> chat window and prompt the agent with the following, replacing <code>&lt;dump title&gt;</code> with a unique name for your dump:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Take z/OS dump with dump title &lt;dump title&gt;
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>You’ll then get a response from the agent prompting you for more details. Respond with the following information:</p>
+<p><strong>a.</strong> <strong>storage areas</strong> (optional): provide a list of storage areas to include in the dump, or exclude to use the default</p>
+<p><strong>b.</strong> <strong>jobname</strong>: provide a unique job name for running the job on z/OS</p>
+<p><strong>c.</strong> <strong>dataset name</strong>: provide a unique dataset name used to capture the dump</p>
+<ul>
+<li>ensure your dataset name follows standard dataset naming conventions and rules on z/OS</li>
+</ul>
+<p><strong>d.</strong> <strong>verbosity</strong> (optional): provide a verbosity level to use, or exclude to use the default</p>
+<p><strong>For example:</strong></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>use jobname *MASTER* and dataset name IBMUSER.TEST.DUMP9
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Based on the inputs provided, the agent may request for more details in order to run the job. If provided enough details, the agent will then provide a summary of the parameters supplied and ask to approve or reject.</p>
+<p>Respond with <code>approve</code>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After approving the job, the agent will return a response, including the <strong>job_id</strong> and <strong>job_status</strong>. This initiates a run of the corresponding Ansible playbook in AAP to capture a z/OS system dump.</p>
+</li>
+<li>
+<p>You can next check the status of the job by prompting the agent with the following, replacing <code>&lt;job_id&gt;</code> with the <strong>job id</strong> returned by your agent.</p>
+<p><strong>For example:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Check status of job &lt;job_id&gt;
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the above example, the job status is <strong>successful</strong>. As a next step, you could initiate the transmitting of the z/OS dump to IBM support via a case number. For example, this can be done with the following prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Send z/OS dump from dataset &lt;dataset-name&gt; to case
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>number TS019840250
+</span></code></pre></div>
+<p><strong>NOTE:</strong> For this tool execution, you can use case # TS019840250.</p>
+</li>
+<li>
+<p>After prompting the agent, it will then provide a summary asking you to approve or reject, as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once approved, the agent will return a summary, including the <strong>job_id</strong> and <strong>job_status</strong> as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Like before, you can check the status by prompting the agent with the following, replacing <code>&lt;job_id&gt;</code> with the <strong>job id</strong> returned by your agent:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Check status of job &lt;job_id&gt;
+</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
+<p><strong>NOTE:</strong> you can continue monitoring the status of the job with the above command until the agent returns that the job was successful.</p>
+</li>
+</ol>
+<h3 id="deploy-the-agent">Deploy the agent<a class="headerlink" href="#deploy-the-agent" title="Permanent link">#</a></h3></div>
 
 
 
