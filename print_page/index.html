@@ -3355,7 +3355,54 @@
 <p>The last IBM Cloud SaaS service in scope for the Lab is <strong>IBM Cloud Object Storage (COS)</strong> which is used for ingesting customer documentation into the zRAG component of watsonx Assistant for Z. It will be used to demonstrate how clients can augment their agent and assistants’ conversational search capabilities by creating an internal knowledge base with their own documentation. This allows users to get insightful responses to a rnage of questions not possible with the default documentation within the zRAG.</p>
 </li>
 </ol>
-<h3 id="techzone-orchestrate-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-orchestrate-accessing-the-environment" title="Permanent link">#</a></h3></div></section><section class="print-page" id="techzone-sno" heading-number="3.2"><div><h1 id="single-node-openshift-cluster">Single Node OpenShift Cluster<a class="headerlink" href="#techzone-sno-single-node-openshift-cluster" title="Permanent link">#</a></h1>
+<h3 id="techzone-orchestrate-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-orchestrate-accessing-the-environment" title="Permanent link">#</a></h3>
+<p>Follow the below instructions to access your IBM Cloud SaaS environment containing dedicated resources for
+<strong>watsonx Orchestrate</strong>, <strong>watsonx.ai Runtime (WML)</strong>, and <strong>Cloud Object Storage</strong>:</p>
+<ol>
+<li>
+<p>In the IBM Technology Zone portal, expand <strong>My TechZone</strong> and select <strong>My Reservations</strong>, or click the following link.</p>
+<p><a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a></p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo1.png"></a></p>
+</li>
+<li>
+<p>Click the <strong>watsonx Assistant for Z Pilot - watsonx Orchestrate</strong> tile.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo2.png"></a></p>
+</li>
+<li>
+<p>Record the ITZ IBM Cloud account name associated with the reservation.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo3.png"></a></p>
+</li>
+<li>
+<p>Click the <strong>IBM Cloud Login</strong> link. </p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo4.png"></a></p>
+</li>
+<li>
+<p>After logging in, verify that the current IBM Cloud account is the same as the account name recorded in the previous step. If the account is not the same, switch to the proper account.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo5.png"></a></p>
+<p><strong>NOTE:</strong> <strong>if the cloud account is not listed in the possible options in the drop-down</strong>, you will first need to <strong>join the IBM Cloud account</strong>. Follow the optional steps below to illustrate the process, and then repeat the above steps to access your cloud resources.</p>
+<p><strong>a.</strong> When you were invited to join the cloud account, you should have received an email invitation to join. The email should look like the following:</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo6.png"></a></p>
+<p>Click <strong>Join now</strong> in the email invitation.</p>
+<p><strong>b.</strong> In the <strong>Join IBM Cloud</strong> browser window that opens, select the <strong>I accept the product Terms and Conditions</strong> of the registration form, and then click <strong>Join Account</strong>.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo7.png"></a></p>
+<p><strong>c.</strong> After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo8.png"></a></p>
+<p><strong><em>Note:</em></strong> your cloud account will be different. Refer to your environment details to identify the correct cloud account.</p>
+</li>
+<li>
+<p>Once the appropriate Cloud account is selected from the drop-down, navigate to your <strong>Resources</strong> by clicking on the <strong>Resources</strong> icon.</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo9.png"></a></p>
+</li>
+<li>
+<p>Expand the <strong>AI / Machine Learning</strong> section and you should see the following resources available:</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo10.png"></a></p>
+</li>
+<li>
+<p>Additionally, you should have an instance of <strong>Cloud Object Storage</strong> available. Confirm the resource availability by scrolling down in the Resource list, and then expand the <strong>Storage</strong> section which should show your Cloud Object Storage instance as shown below:</p>
+<p><a class="glightbox" href="../techzone/_attachments/wxo11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/wxo11.png"></a></p>
+<p>Once verified, you can proceed to the next section. Later on in this lab you will be instructed to access a particular resource within your IBM Cloud account. Ensure you follow the instructions above to reach your Resources list.</p>
+</li>
+</ol></div></section><section class="print-page" id="techzone-sno" heading-number="3.2"><div><h1 id="single-node-openshift-cluster">Single Node OpenShift Cluster<a class="headerlink" href="#techzone-sno-single-node-openshift-cluster" title="Permanent link">#</a></h1>
 <h3 id="techzone-sno-summary-of-the-environment">Summary of the environment<a class="headerlink" href="#techzone-sno-summary-of-the-environment" title="Permanent link">#</a></h3>
 <p>The next Lab environment you will use is the <strong>Single Node OpenShift</strong> cluster deployed on IBM Cloud.</p>
 <p>The very first hands-on exercise in the Lab will be accessing your OpenShift cluster and deploying the <strong>zAssistantDeploy</strong> services with all dependent resources, including OpenSearch with the watsonx Assistant for Z RAG and the Client Ingestion service. This will service as a foundation for later deploying AI Agents onto your cluster that can be imported into watsonx Orchestrate for accessing and testing.</p>
