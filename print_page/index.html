@@ -1893,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/demo-scenarios/access-agents.md" class="md-nav__link">
+      <a href="../agentdeploy/demo-scenarios/access-agents/" class="md-nav__link">
         
   
   
@@ -1916,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/demo-scenarios/support-agent.md" class="md-nav__link">
+      <a href="../agentdeploy/demo-scenarios/support-agent/" class="md-nav__link">
         
   
   
@@ -1939,7 +1939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/demo-scenarios/omegamon-agent.md" class="md-nav__link">
+      <a href="../agentdeploy/demo-scenarios/omegamon-agent/" class="md-nav__link">
         
   
   
@@ -1962,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/demo-scenarios/upgrade-agent.md" class="md-nav__link">
+      <a href="../agentdeploy/demo-scenarios/upgrade-agent/" class="md-nav__link">
         
   
   
@@ -2884,6 +2884,48 @@
       Access Agents and Test Demo Scenarios
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Access Agents and Test Demo Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agentdeploy-demo-scenarios-access-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access your deployed agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentdeploy-demo-scenarios-support-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the IBM Z Support Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentdeploy-demo-scenarios-omegamon-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the IBM Z OMEGAMON Insights Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentdeploy-demo-scenarios-upgrade-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test the IBM Z Upgrade Agent
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5880,7 +5922,31 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                     <section class='print-page md-section' id='section-8-8' heading-number='8.8'>
                         <h1>Access Agents and Test Demo Scenarios<a class='headerlink' href='#section-8-8' title='Permanent link'></a>
                         </h1>
-                    </section><section class="print-page" id="agentdeploy-embed" heading-number="8.9"><h1 id="agentdeploy-embed-placeholder">placeholder<a class="headerlink" href="#agentdeploy-embed-placeholder" title="Permanent link">#</a></h1></section></section>
+                    <section class="print-page" id="agentdeploy-demo-scenarios-access-agents" heading-number="8.8.1"><div><h1 id="access-your-deployed-agents">Access your deployed agents<a class="headerlink" href="#agentdeploy-demo-scenarios-access-agents-access-your-deployed-agents" title="Permanent link">#</a></h1>
+<p>By leveraging watsonx Assistant for Z for the pre-built Z agents, each agent deployment is automatically ‘bootstrapped’ to your watsonx Orchestrate environment where the agents are immediately accessible for testing.</p>
+<p>In this section, you will access each of the deployed agents, test the scenarios, and learn how to embed your agent’s chat within a webpage for external access.</p>
+<ol>
+<li>
+<p>Access your <strong>watsonx Orchestrate UI</strong> within the IBM Cloud web console. Once logged in, you should see the Agent Chat screen as shown below:</p>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/access1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/access1.png"></a></p>
+<p>The <strong>Agent Chat</strong> screen is where you can go to interact with your ‘deployed’ agents.</p>
+<p><strong><em>Note:</em></strong> each of the agents you previously deployed are bootstrapped to WxO as <em>draft</em> versions of each of the agents. Once each agent has been successfully tested within WxO, you can then deploy each agent to the <em>live</em> version to make it externally accessible.</p>
+</li>
+<li>
+<p>To access the <em>Draft</em> version of each of your 3 agents, click on the hamburger icon in the top-left corner of the WxO UI, then navigate to <strong>Build -&gt; Agent Builder</strong> as shown below:</p>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/access2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/access2.png"></a></p>
+</li>
+<li>
+<p>Once in the <strong>Agent Builder</strong> page, verify you can see a tile for each of your agents:</p>
+<ul>
+<li>IBM Z Upgrade Agent</li>
+<li>IBM Z Support Agent</li>
+<li>IBM Z OMEGAMON Insights Agent</li>
+</ul>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/access3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/access3.png"></a></p>
+<p><strong><em>Note:</em></strong> <em>by default, you may also see the ‘AskOrchestrate’ agent within your agent list. This can be ignored.</em></p>
+</li>
+</ol></div></section><section class="print-page" id="agentdeploy-demo-scenarios-support-agent" heading-number="8.8.2"><p>test</p></section><section class="print-page" id="agentdeploy-demo-scenarios-omegamon-agent" heading-number="8.8.3"><p>test</p></section><section class="print-page" id="agentdeploy-demo-scenarios-upgrade-agent" heading-number="8.8.4"><p>test</p></section></section><section class="print-page" id="agentdeploy-embed" heading-number="8.9"><h1 id="agentdeploy-embed-placeholder">placeholder<a class="headerlink" href="#agentdeploy-embed-placeholder" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-9' heading-number='9'>
                         <h1>Build your own agent using the Agent Development Kit (ADK)<a class='headerlink' href='#section-9' title='Permanent link'></a>
                         </h1>
@@ -6545,6 +6611,50 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                 .print-site-enumerate-headings #agentdeploy-execute-deploy h5 {  counter-increment: counter-agentdeploy-execute-deploy-5 }
             
 .print-site-enumerate-headings #section-8-8 > h1:before { content: '8.8 ' }
+.print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents > h1:before { content: '8.8.1 ' }
+
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h2:before { content: '8.8.1.' counter(counter-agentdeploy-demo-scenarios-access-agents-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h2 {  counter-reset: counter-agentdeploy-demo-scenarios-access-agents-3  counter-agentdeploy-demo-scenarios-access-agents-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-access-agents-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h3:before { content: '8.8.1.' counter(counter-agentdeploy-demo-scenarios-access-agents-2) '.' counter(counter-agentdeploy-demo-scenarios-access-agents-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h3 {  counter-reset: counter-agentdeploy-demo-scenarios-access-agents-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-access-agents-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h4:before { content: '8.8.1.' counter(counter-agentdeploy-demo-scenarios-access-agents-2) '.' counter(counter-agentdeploy-demo-scenarios-access-agents-3) '.' counter(counter-agentdeploy-demo-scenarios-access-agents-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-access-agents h4 {  counter-increment: counter-agentdeploy-demo-scenarios-access-agents-4 }
+            
+.print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent > h1:before { content: '8.8.2 ' }
+
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h2:before { content: '8.8.2.' counter(counter-agentdeploy-demo-scenarios-support-agent-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h2 {  counter-reset: counter-agentdeploy-demo-scenarios-support-agent-3  counter-agentdeploy-demo-scenarios-support-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-support-agent-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h3:before { content: '8.8.2.' counter(counter-agentdeploy-demo-scenarios-support-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-support-agent-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h3 {  counter-reset: counter-agentdeploy-demo-scenarios-support-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-support-agent-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h4:before { content: '8.8.2.' counter(counter-agentdeploy-demo-scenarios-support-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-support-agent-3) '.' counter(counter-agentdeploy-demo-scenarios-support-agent-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-support-agent h4 {  counter-increment: counter-agentdeploy-demo-scenarios-support-agent-4 }
+            
+.print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent > h1:before { content: '8.8.3 ' }
+
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h2:before { content: '8.8.3.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h2 {  counter-reset: counter-agentdeploy-demo-scenarios-omegamon-agent-3  counter-agentdeploy-demo-scenarios-omegamon-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-omegamon-agent-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h3:before { content: '8.8.3.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h3 {  counter-reset: counter-agentdeploy-demo-scenarios-omegamon-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-omegamon-agent-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h4:before { content: '8.8.3.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-3) '.' counter(counter-agentdeploy-demo-scenarios-omegamon-agent-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-omegamon-agent h4 {  counter-increment: counter-agentdeploy-demo-scenarios-omegamon-agent-4 }
+            
+.print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent > h1:before { content: '8.8.4 ' }
+
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h2:before { content: '8.8.4.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-2) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h2 {  counter-reset: counter-agentdeploy-demo-scenarios-upgrade-agent-3  counter-agentdeploy-demo-scenarios-upgrade-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-upgrade-agent-2 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h3:before { content: '8.8.4.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-3) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h3 {  counter-reset: counter-agentdeploy-demo-scenarios-upgrade-agent-4 ;  counter-increment: counter-agentdeploy-demo-scenarios-upgrade-agent-3 }
+            
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h4:before { content: '8.8.4.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-2) '.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-3) '.' counter(counter-agentdeploy-demo-scenarios-upgrade-agent-4) ' ' }
+                .print-site-enumerate-headings #agentdeploy-demo-scenarios-upgrade-agent h4 {  counter-increment: counter-agentdeploy-demo-scenarios-upgrade-agent-4 }
+            
 .print-site-enumerate-headings #agentdeploy-embed > h1:before { content: '8.9 ' }
 
                 .print-site-enumerate-headings #agentdeploy-embed h2:before { content: '8.9.' counter(counter-agentdeploy-embed-2) ' ' }
