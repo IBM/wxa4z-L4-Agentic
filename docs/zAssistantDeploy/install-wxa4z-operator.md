@@ -40,12 +40,12 @@ In this step you will install the watsonx Assistant for Z operator to deploy and
 
     ***Mac users:***
     ```
-    oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker- server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
+    oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
     ```
 
     ***Windows users:***
     ```
-    oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker- server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
+    oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
     ```
 
     ![](_attachments/op2.png)

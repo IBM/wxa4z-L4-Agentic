@@ -19,17 +19,17 @@ This corresponds to the Base URL of your IBM watsonx.ai Runtime API endpoint. Fo
 3. The URL value of your `<WATSONX_ML_URL>` variable will be one of the following URLs depending on the region of your services. Copy and paste the appropriate URL for your region and copy to a notepad, labeled as `<WATSONX_ML_URL>`. This will be used later on for the agents deployments.
    
     - **us-south**
-      - `https://us-south.ml.cloud.ibm.com`
+        - `https://us-south.ml.cloud.ibm.com`
     - **eu-gb**
-      - `https://eu-gb.ml.cloud.ibm.com`
+        - `https://eu-gb.ml.cloud.ibm.com`
     - **eu-de**
-      - `https://eu-de.ml.cloud.ibm.com`
+        - `https://eu-de.ml.cloud.ibm.com`
     - **jp-tok**
-      - `https://jp-tok.ml.cloud.ibm.com`
+        - `https://jp-tok.ml.cloud.ibm.com`
     - **au-syd**
-      - `https://au-syd.ml.cloud.ibm.com`
+        - `https://au-syd.ml.cloud.ibm.com`
     - **ca-tor**
-      - `https://ca-tor.ml.cloud.ibm.com`
+        - `https://ca-tor.ml.cloud.ibm.com`
   
 
     Reference the latest list of WML Endpoint URLs [here](https://cloud.ibm.com/apidocs/machine-learning#endpoint-url).

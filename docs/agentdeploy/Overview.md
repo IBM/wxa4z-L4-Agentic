@@ -52,5 +52,7 @@ These agents require separate product entitlements in order to deploy and run on
 - IBM Z Support Agent
 - IBM Z OMEGAMON Insights Agent.
 
-For details and guidance on deploying any of the other agents, make sure to reference the official IBM documentation.
 
+!!! Tip "Official Agent deployment documentation"
+    
+    This lab guide documents all the steps required to deploy your watsonx Assistant for Z **AI Agents** using the referenced TechZone environments. The **official IBM guidance and documentation** resides in the public **IBM Z AI Agents - Deployment Guide** Git Hub repository. Feel free to reference this <a href="https://github.com/IBM/z-ai-agents" target="_blank">here</a>.

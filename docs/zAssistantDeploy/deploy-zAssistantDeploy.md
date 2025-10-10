@@ -32,13 +32,13 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
     ***Mac users:***
 
     ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"dashboard": {"enabled": false}}}'
+    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"dashboard": {"enabled": false}}}'
     ```
 
     ***Windows users:***
 
     ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
+    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
     ```
 
 5. Then run the following command to **disable the assistantBootstrap feature**:
@@ -46,13 +46,13 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
     ***Mac users:***
 
     ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
+    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
     ```
 
     ***Windows users:***
 
     ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
+    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
     ```
 
 6. After following the above steps, the new pods will be created in your **wxa4z-zad** namespace. This process typically takes up to 15-20 minutes for the images to download and the deployment to complete.
