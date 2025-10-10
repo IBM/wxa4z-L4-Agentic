@@ -2345,19 +2345,19 @@
 <li>
 <p>After running the previous command while the new pods are initializing, run the following command to <strong>disable the dashboard deployment</strong> as this is not required nor supported in the TechZone environment:</p>
 <p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"dashboard": {"enabled": false}}}'
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"dashboard": {"enabled": false}}}'
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
 </span></code></pre></div>
 </li>
 <li>
 <p>Then run the following command to <strong>disable the assistantBootstrap feature</strong>:</p>
 <p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' - p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" - p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
 </span></code></pre></div>
 </li>
 <li>
