@@ -4,7 +4,7 @@ Within your `values.yaml` file, locate the section for the **IBM Z Upgrade Agent
 
 ```
 # ---------------------------------------------------------------------------- #
-# Default: upgrade-agent
+# Foundational: upgrade-agent
 # ---------------------------------------------------------------------------- #
 upgrade-agent:
   enabled: true

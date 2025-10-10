@@ -10,11 +10,19 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
    
     For example (on Mac):
 
-    **IMAGE**
+    ![](_attachments/code1.png)
 
-2. With the terminal window open, ensure your terminal’s current working directory is the `wxa4z-agent-suite` folder that you extracted from Box. See screenshot below as an example:
+    By default, the current working directory in the Terminal session will be the root `z-ai-agents` folder.
+
+2. In your Terminal session, change the current working directory to the `wxa4z-agent-suite` sub-folder. 
    
-    **IMAGE**
+    For example, on a Mac this can be done with the following command:
+    ```
+    cd wxa4z-agent-suite
+    ```
+
+    ![](_attachments/code2.png)
+
 
 3. Download and install the `helm` command-line utility by following the instructions in the link below:
 
@@ -27,11 +35,13 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
 
 5. Within the terminal session, run the following command to deploy the agents:
    
-    `helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml - -wait`
+    ```
+    helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml --wait
+    ```
 
 6. After executing the above command, you should see something like the following:
    
-    **IMAGE**
+    ![](_attachments/code3.png)
 
     !!! Tip "What is the command doing?"
     
@@ -41,7 +51,7 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
 
 7. Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:
    
-    **IMAGE**
+    ![](_attachments/code4.png)
 
 ### Verify successful deployment
 
@@ -49,7 +59,7 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
 
 2. Once logged in, navigate to **Workloads --> Pods** within the ***wxa4z-zad*** namespace and verify that you see the 3 new pods (one for each agent), and that they’re in the ***Running*** status:
    
-    **IMAGE**
+    ![](_attachments/code5.png)
 
     ***NOTE:** you may also see pods with the **bootstrap** label. These are ephemeral pods used to register each of the agents to your Orchestrate environment. Once the bootstrapping job is completed, these pods will terminate on their own*.
 

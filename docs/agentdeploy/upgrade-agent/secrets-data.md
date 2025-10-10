@@ -47,9 +47,9 @@ Now, you will set the `ZOSMF_ENDPOINT` variable to the unique z/OSMF endpoint UR
 
 3. And finally, append **`:10443/zosmf`** to the end of the string. The result should look similar to the following:
    
-   https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf
+    https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf
 
-This would be the final value to set for the `ZOSMF_ENDPOINT` variable (***note** - your URL will be different and is dependent on your Lab environment*)
+    This would be the final value to set for the `ZOSMF_ENDPOINT` variable (***note** - your URL will be different and is dependent on your Lab environment*)
 
 ### Set your `ZOSMF_PASSWORD` variable
 

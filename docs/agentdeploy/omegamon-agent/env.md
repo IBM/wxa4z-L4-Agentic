@@ -4,7 +4,7 @@ Within your `values.yaml` file, locate the section for the **IBM Z OMEGAMON Insi
 
 ```
 # ---------------------------------------------------------------------------- #
-# Default: omegamon-insights-agent
+# Foundational: omegamon-insights-agent
 # ---------------------------------------------------------------------------- #
 omegamon-insights-agent:
   enabled: true

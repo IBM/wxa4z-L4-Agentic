@@ -115,20 +115,20 @@ caTrustSync:
 
 Before proceeding with the agent setup and deployment, you will need to disable the agents that aren’t in scope for this lab. Each agent in the suite can be customized individually in the `wxa4z-agent-suite/values.yaml` file. Settings differ slightly for **Foundational** Agents versus **IBM z/OS Product** Agents.
 
-***Configuration for Foundational Agents:***
+***Configuration for IBM watsonx Assistant for Z Foundational Agents:***
 
 * enabled by default
 * only requires `enabled: true` within the agent's particular section of `values.yaml`
   
-For example:
+    For example:
 
-```
-support-agent:
-  enabled: true
-  # additional agent-specific config...
-```
+    ```
+    support-agent:
+      enabled: true
+      # additional agent-specific config...
+    ```
 
-***Configuration for Foundational Agents:***
+***Configuration for Pre-built IBM Z Product Agents:***
 
 * not enabled by default
 * to enable each agent, user must set `enabled: true` and `acceptLicense: true`, as well as provide a unique entitlement key for that particular Product Agent. 
@@ -145,12 +145,12 @@ As mentioned above, the **Prebuilt IBM Z Product Agents** are disabled by defaul
 * IBM Z Automation Insights Agent
 * IBM Z Workload Scheduler Insights Agent
 
-1. Within your `values.yaml` file within the `wxa4z-agent-suite` sub-folder, scroll through the file until you get to the first **Default agent**.
+1. Within your `values.yaml` file within the `wxa4z-agent-suite` sub-folder, scroll through the file until you get to the first **Foundational agent**.
    
     For example:
 
     ```
-    # Default: support-agent
+    # Foundational: support-agent
     support-agent:
       enabled: true
       image:
@@ -159,10 +159,10 @@ As mentioned above, the **Prebuilt IBM Z Product Agents** are disabled by defaul
 
     For the purpose of this Lab, you are deploying the **IBM Z Support Agent**, so you can leave `enabled` set to `true` by default. 
 
-2. Scroll down to the next **Default** agent section, which should be for the IBM Z OMEGAMON Insights Agent, as shown below:
+2. Scroll down to the next **Foundational** agent section, which should be for the IBM Z OMEGAMON Insights Agent, as shown below:
 
     ```
-    # Default: omegamon-insights-agent
+    # Foundational: omegamon-insights-agent
     omegamon-insights-agent:
       enabled: true
       image:
@@ -174,7 +174,7 @@ As mentioned above, the **Prebuilt IBM Z Product Agents** are disabled by defaul
 3. Scrolling down further, you will next see the section for the **IBM Z Automation Insights Agent**, as shown below:
    
     ```
-    # Default: automation-insights-agent
+    # Foundational: automation-insights-agent
     automation-insights-agent:
       enabled: true
       image:
@@ -184,7 +184,7 @@ As mentioned above, the **Prebuilt IBM Z Product Agents** are disabled by defaul
     As you will not be deploying this agent for the Lab, you will need to **disable** the agent by setting **`enabled`** to **`false`** as shown below:
 
     ```
-    # Default: automation-insights-agent
+    # Foundational: automation-insights-agent
     automation-insights-agent:
       enabled: false
       image:
@@ -194,17 +194,17 @@ As mentioned above, the **Prebuilt IBM Z Product Agents** are disabled by defaul
 4. The next agent is for the **IBM Z Upgrade Agent**. Leave the default with `enabled` set to `true`. 
 
     ```
-    # Default: upgrade-agent
+    # Foundational: upgrade-agent
     upgrade-agent:
       enabled: true
       image:
         # additional agent-specific config...
     ```
 
-5. Finally, scrolling to the last **Default** agent is the **IBM Z Workload Scheduler Insights Agent**. Make sure to set `enabled` to **`false`** as shown below:
+5. Finally, scrolling to the last **Foundational** agent is the **IBM Z Workload Scheduler Insights Agent**. Make sure to set `enabled` to **`false`** as shown below:
    
     ```
-    # Default: workload-scheduler-agent-z
+    # Foundational: workload-scheduler-agent-z
     workload-scheduler-agent-z:
       enabled: false
       image:

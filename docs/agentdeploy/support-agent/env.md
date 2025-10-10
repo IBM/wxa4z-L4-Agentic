@@ -4,7 +4,7 @@ Within your `values.yaml` file, locate the section for the **IBM Z Support Agent
 
 ```
 # ---------------------------------------------------------------------------- #
-# Default: support-agent
+# Foundational: support-agent
 # ---------------------------------------------------------------------------- #
 support-agent:
   enabled: true
