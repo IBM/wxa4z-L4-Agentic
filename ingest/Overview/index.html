@@ -131,6 +131,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview-ingesting-customer-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -900,6 +905,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -2297,6 +2304,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2312,9 +2321,20 @@
 
 
 
-  <h1>Overview</h1>
-
-<p>test</p>
+<div><h1 id="overview-ingesting-customer-documentation">Overview - Ingesting customer documentation<a class="headerlink" href="#overview-ingesting-customer-documentation" title="Permanent link">#</a></h1>
+<p>With the <strong><em>OpenSearch</em></strong> service installed and configured in your assistant for the zRAG, you can now prepare for document ingestion, often referred to as the <em>bring-your-own-documentation</em> (BYOD) use case. This will demonstrate how clients can augment their assistant’s conversational search by creating an internal knowledge base with their own proprietary documentation. Using the client’s documentation allows the assistant to provide accurate responses to a range of questions not possible with only the default documentation available.</p>
+<p>As an example, a client mentioned that their developers often need reference material on company-specific legacy code or company-specific syntax. The users must search through volumes of documentation to find it or look at old code. Also, there exists a need for their operational support group to quickly determine how to resolve technical issues using internal runbooks.</p>
+<p>In this section, you will be able to demonstrate how watsonx Assistant for Z can assist developers and operational support personnel in finding answers about internal processes for code development and deployment. You will go through the steps of ingesting a set of sample documentation provided to illustrate this process.</p>
+<p><strong>With previous versions of watsonx Assistant for Z</strong>, document ingestion was executed using the <strong><em>zassist</em></strong> command-line utility to <em>ingest and load local files</em> directly to the client ingestion server. <strong>Now with Version 3 of watsonx Assistant for Z</strong>, this process is enhanced with client-side data ingestion through a remote S3 source to provide more effective embedding and allow for better performance.</p>
+<p><strong><em>NOTE</em></strong>: the supported file formats for document ingestion with a remote S3 source include <em>PDF</em>, <em>HTML</em>, <em>DOCX</em>, <em>CSV</em>, <em>XLS</em>, <em>XLSX</em>, <em>PPTX</em>, and <em>Markdown</em>.</p>
+<p>In this section, you will be using a remote S3 source for the data ingestion process. Steps include:</p>
+<ul>
+<li><em>Download and configure the zassist utility</em></li>
+<li><em>Configuring service credentials for your IBM Cloud Object Storage (COS) instance</em></li>
+<li><em>Creating a storage bucket</em></li>
+<li><em>Uploading documents to your storage bucket</em></li>
+<li><em>Executing the ingestion pipeline</em></li>
+</ul></div>
 
 
 

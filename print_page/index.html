@@ -3835,7 +3835,24 @@ secure authentication key of your choosing (i.e. password). </p>
 </li>
 <li>Fine-tuning the assistant behavior with Prompt Instructions </li>
 <li>Verifying the assistant’s Q&amp;A</li>
-</ul></div></section><section class="print-page" id="zrag-assistant-access-wxo" heading-number="5.2"><p>test</p></section><section class="print-page" id="zrag-assistant-create-assistant" heading-number="5.3"><div><h1 id="create-a-zrag-assistant">Create a zRAG Assistant<a class="headerlink" href="#zrag-assistant-create-assistant-create-a-zrag-assistant" title="Permanent link">#</a></h1>
+</ul></div></section><section class="print-page" id="zrag-assistant-access-wxo" heading-number="5.2"><div><h1 id="access-your-watsonx-orchestrate-environment">Access your watsonx Orchestrate environment<a class="headerlink" href="#zrag-assistant-access-wxo-access-your-watsonx-orchestrate-environment" title="Permanent link">#</a></h1>
+<ol>
+<li>
+<p>To access your watsonx Orchestrate environment, navigate to your IBM Cloud SaaS <strong><em>Resource List</em></strong> by following the instructions in Section <strong><em><a href="#techzone-orchestrate-accessing-the-environment">Accessing the environment</a></em></strong>.</p>
+</li>
+<li>
+<p>Once you’re viewing the <strong>Resource List</strong> in the IBM Cloud web console, expand the <strong>AI / Machine Learning</strong> section and click on the resource name associated with the <strong><em>watsonx Orchestrate</em></strong> product, as shown below:</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/wxo1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/wxo1.png"></a></p>
+</li>
+<li>
+<p>This will take you to your <strong>watsonx Orchestrate</strong> resource. Click on <strong>Launch watsonx Orchestrate</strong> as shown below:</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/wxo2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/wxo2.png"></a></p>
+</li>
+<li>
+<p>You should now be logged into the watsonx Orchestrate UI as shown below:</p>
+<p><a class="glightbox" href="../zRAG-Assistant/_attachments/wxo3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zRAG-Assistant/_attachments/wxo3.png"></a></p>
+</li>
+</ol></div></section><section class="print-page" id="zrag-assistant-create-assistant" heading-number="5.3"><div><h1 id="create-a-zrag-assistant">Create a zRAG Assistant<a class="headerlink" href="#zrag-assistant-create-assistant-create-a-zrag-assistant" title="Permanent link">#</a></h1>
 <p>In this section, you will create an assistant for the purpose of answering questions to a range of IBM Z related questions.</p>
 <ol>
 <li>
@@ -4151,7 +4168,20 @@ secure authentication key of your choosing (i.e. password). </p>
                     <section class='print-page md-section' id='section-6' heading-number='6'>
                         <h1>Ingest customer documentation<a class='headerlink' href='#section-6' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="ingest-overview" heading-number="6.1"><p>test</p></section><section class="print-page" id="ingest-download-zassist" heading-number="6.2"><div><h1 id="download-and-configure-the-zassist-utility">Download and configure the <strong><em>zassist</em></strong> utility<a class="headerlink" href="#ingest-download-zassist-download-and-configure-the-zassist-utility" title="Permanent link">#</a></h1>
+                    <section class="print-page" id="ingest-overview" heading-number="6.1"><div><h1 id="overview-ingesting-customer-documentation">Overview - Ingesting customer documentation<a class="headerlink" href="#ingest-overview-overview-ingesting-customer-documentation" title="Permanent link">#</a></h1>
+<p>With the <strong><em>OpenSearch</em></strong> service installed and configured in your assistant for the zRAG, you can now prepare for document ingestion, often referred to as the <em>bring-your-own-documentation</em> (BYOD) use case. This will demonstrate how clients can augment their assistant’s conversational search by creating an internal knowledge base with their own proprietary documentation. Using the client’s documentation allows the assistant to provide accurate responses to a range of questions not possible with only the default documentation available.</p>
+<p>As an example, a client mentioned that their developers often need reference material on company-specific legacy code or company-specific syntax. The users must search through volumes of documentation to find it or look at old code. Also, there exists a need for their operational support group to quickly determine how to resolve technical issues using internal runbooks.</p>
+<p>In this section, you will be able to demonstrate how watsonx Assistant for Z can assist developers and operational support personnel in finding answers about internal processes for code development and deployment. You will go through the steps of ingesting a set of sample documentation provided to illustrate this process.</p>
+<p><strong>With previous versions of watsonx Assistant for Z</strong>, document ingestion was executed using the <strong><em>zassist</em></strong> command-line utility to <em>ingest and load local files</em> directly to the client ingestion server. <strong>Now with Version 3 of watsonx Assistant for Z</strong>, this process is enhanced with client-side data ingestion through a remote S3 source to provide more effective embedding and allow for better performance.</p>
+<p><strong><em>NOTE</em></strong>: the supported file formats for document ingestion with a remote S3 source include <em>PDF</em>, <em>HTML</em>, <em>DOCX</em>, <em>CSV</em>, <em>XLS</em>, <em>XLSX</em>, <em>PPTX</em>, and <em>Markdown</em>.</p>
+<p>In this section, you will be using a remote S3 source for the data ingestion process. Steps include:</p>
+<ul>
+<li><em>Download and configure the zassist utility</em></li>
+<li><em>Configuring service credentials for your IBM Cloud Object Storage (COS) instance</em></li>
+<li><em>Creating a storage bucket</em></li>
+<li><em>Uploading documents to your storage bucket</em></li>
+<li><em>Executing the ingestion pipeline</em></li>
+</ul></div></section><section class="print-page" id="ingest-download-zassist" heading-number="6.2"><div><h1 id="download-and-configure-the-zassist-utility">Download and configure the <strong><em>zassist</em></strong> utility<a class="headerlink" href="#ingest-download-zassist-download-and-configure-the-zassist-utility" title="Permanent link">#</a></h1>
 <p>The <strong><em>zassist</em></strong> utility is an executable program that automates the ingestion of client documentation into the RAG for
 watsonx Assistant for Z. A version of <em>zassist</em> is available for download for IBMers and Business Partners for
 conducting pilots. Follow the steps below to download and install <em>zassist</em>.</p>
