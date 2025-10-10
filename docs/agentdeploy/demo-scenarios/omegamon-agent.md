@@ -12,11 +12,11 @@ Next, you will test your **IBM Z OMEGAMON Insights Agent**.
 
 Now you will test a set of prompts spanning the capabilities for the IBM Z OMEGAMON Insights Agent.
 
-    !!! Tip "Note about demo scenarios"
+!!! Tip "Note about demo scenarios"
 
-        Only a couple scenarios are documented here for testing purposes. For the full list of agent capabilities to test, you can reference ***[Summary of IBM Z OMEGAMON Insights Agent capabilities](../agentdeploy/omegamon-agent/overview.md)***.
+    Only a couple scenarios are documented here for testing purposes. For the full list of agent capabilities to test, you can reference ***[Summary of IBM Z OMEGAMON Insights Agent capabilities](../agentdeploy/omegamon-agent/overview.md)***.
 
-***LPAR Insights***
+### LPAR Insights
 
 ```
 Show all LPARs
@@ -39,7 +39,7 @@ Get jobs running on LPAR KOSP4B
 
 **IMAGE**
 
-***Db2 Insights***
+### Db2 Insights
 
 ```
 Show all Db2 subsystems
@@ -62,7 +62,7 @@ Show buffer pools for DSNA
 
 **IMAGE**
 
-
+### Deploy the agent
 
 Once satisfied with the testing of your agent, you can then deploy/publish your IBM Z OMEGAMON Insights Agent just as you did in ***[this section](./support-agent.md#deploy-the-agent)***.
 
