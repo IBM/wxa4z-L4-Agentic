@@ -6,7 +6,7 @@ In this step you will deploy the required secrets needed for authentication to t
    
     ***Record this value for later use.***
     
-    **IMAGE**
+    ![](_attachments/secrets1.png)
 
 2. Create the secret by running the following command within the same directory:
    
@@ -17,7 +17,7 @@ secure authentication key of your choosing (i.e. password).
 
     ***Record this value for later use.***
 
-    **IMAGE**
+    ![](_attachments/secrets2.png)
 
 4. Create the secret by running the following command within the same directory:
    
@@ -25,7 +25,7 @@ secure authentication key of your choosing (i.e. password).
 
 5. Lastly, modify the `wrapper-creds.yaml` file, replacing `<WRAPPER_PASWORD>` with a secure password credential. **Record this value for later use as this is what you’ll later use to configure your assistant and agent OpenSearch connection.**
    
-    **IMAGE**
+    ![](_attachments/secrets3.png)
 
 6. Create the secret by running the following command within the same directory:
    
