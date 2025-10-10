@@ -5064,17 +5064,19 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span></code></pre></div>
 <h3 id="agentdeploy-configure-shared-variables-disable-foundational-agents-not-in-scope">Disable foundational agents not in scope<a class="headerlink" href="#agentdeploy-configure-shared-variables-disable-foundational-agents-not-in-scope" title="Permanent link">#</a></h3>
 <p>Before proceeding with the agent setup and deployment, you will need to disable the agents that aren’t in scope for this lab. Each agent in the suite can be customized individually in the <code>wxa4z-agent-suite/values.yaml</code> file. Settings differ slightly for <strong>Foundational</strong> Agents versus <strong>IBM z/OS Product</strong> Agents.</p>
-<p><strong><em>Configuration for Foundational Agents:</em></strong></p>
+<p><strong><em>Configuration for IBM watsonx Assistant for Z Foundational Agents:</em></strong></p>
 <ul>
 <li>enabled by default</li>
-<li>only requires <code>enabled: true</code> within the agent's particular section of <code>values.yaml</code></li>
-</ul>
+<li>
+<p>only requires <code>enabled: true</code> within the agent's particular section of <code>values.yaml</code></p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#agentdeploy-configure-shared-variables-__codelineno-5-1"></a>support-agent:
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#agentdeploy-configure-shared-variables-__codelineno-5-2"></a>  enabled: true
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#agentdeploy-configure-shared-variables-__codelineno-5-3"></a>  # additional agent-specific config...
 </span></code></pre></div>
-<p><strong><em>Configuration for Foundational Agents:</em></strong></p>
+</li>
+</ul>
+<p><strong><em>Configuration for Pre-built IBM Z Product Agents:</em></strong></p>
 <ul>
 <li>not enabled by default</li>
 <li>to enable each agent, user must set <code>enabled: true</code> and <code>acceptLicense: true</code>, as well as provide a unique entitlement key for that particular Product Agent. </li>
@@ -5092,9 +5094,9 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </ul>
 <ol>
 <li>
-<p>Within your <code>values.yaml</code> file within the <code>wxa4z-agent-suite</code> sub-folder, scroll through the file until you get to the first <strong>Default agent</strong>.</p>
+<p>Within your <code>values.yaml</code> file within the <code>wxa4z-agent-suite</code> sub-folder, scroll through the file until you get to the first <strong>Foundational agent</strong>.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#agentdeploy-configure-shared-variables-__codelineno-6-1"></a># Default: support-agent
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#agentdeploy-configure-shared-variables-__codelineno-6-1"></a># Foundational: support-agent
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#agentdeploy-configure-shared-variables-__codelineno-6-2"></a>support-agent:
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#agentdeploy-configure-shared-variables-__codelineno-6-3"></a>  enabled: true
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#agentdeploy-configure-shared-variables-__codelineno-6-4"></a>  image:
@@ -5103,8 +5105,8 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <p>For the purpose of this Lab, you are deploying the <strong>IBM Z Support Agent</strong>, so you can leave <code>enabled</code> set to <code>true</code> by default. </p>
 </li>
 <li>
-<p>Scroll down to the next <strong>Default</strong> agent section, which should be for the IBM Z OMEGAMON Insights Agent, as shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#agentdeploy-configure-shared-variables-__codelineno-7-1"></a># Default: omegamon-insights-agent
+<p>Scroll down to the next <strong>Foundational</strong> agent section, which should be for the IBM Z OMEGAMON Insights Agent, as shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#agentdeploy-configure-shared-variables-__codelineno-7-1"></a># Foundational: omegamon-insights-agent
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#agentdeploy-configure-shared-variables-__codelineno-7-2"></a>omegamon-insights-agent:
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#agentdeploy-configure-shared-variables-__codelineno-7-3"></a>  enabled: true
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#agentdeploy-configure-shared-variables-__codelineno-7-4"></a>  image:
@@ -5114,14 +5116,14 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Scrolling down further, you will next see the section for the <strong>IBM Z Automation Insights Agent</strong>, as shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#agentdeploy-configure-shared-variables-__codelineno-8-1"></a># Default: automation-insights-agent
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#agentdeploy-configure-shared-variables-__codelineno-8-1"></a># Foundational: automation-insights-agent
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#agentdeploy-configure-shared-variables-__codelineno-8-2"></a>automation-insights-agent:
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#agentdeploy-configure-shared-variables-__codelineno-8-3"></a>  enabled: true
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#agentdeploy-configure-shared-variables-__codelineno-8-4"></a>  image:
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#agentdeploy-configure-shared-variables-__codelineno-8-5"></a>    # additional agent-specific config...
 </span></code></pre></div>
 <p>As you will not be deploying this agent for the Lab, you will need to <strong>disable</strong> the agent by setting <strong><code>enabled</code></strong> to <strong><code>false</code></strong> as shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#agentdeploy-configure-shared-variables-__codelineno-9-1"></a># Default: automation-insights-agent
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#agentdeploy-configure-shared-variables-__codelineno-9-1"></a># Foundational: automation-insights-agent
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#agentdeploy-configure-shared-variables-__codelineno-9-2"></a>automation-insights-agent:
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#agentdeploy-configure-shared-variables-__codelineno-9-3"></a>  enabled: false
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#agentdeploy-configure-shared-variables-__codelineno-9-4"></a>  image:
@@ -5130,7 +5132,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>The next agent is for the <strong>IBM Z Upgrade Agent</strong>. Leave the default with <code>enabled</code> set to <code>true</code>. </p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#agentdeploy-configure-shared-variables-__codelineno-10-1"></a># Default: upgrade-agent
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#agentdeploy-configure-shared-variables-__codelineno-10-1"></a># Foundational: upgrade-agent
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#agentdeploy-configure-shared-variables-__codelineno-10-2"></a>upgrade-agent:
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#agentdeploy-configure-shared-variables-__codelineno-10-3"></a>  enabled: true
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#agentdeploy-configure-shared-variables-__codelineno-10-4"></a>  image:
@@ -5138,8 +5140,8 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span></code></pre></div>
 </li>
 <li>
-<p>Finally, scrolling to the last <strong>Default</strong> agent is the <strong>IBM Z Workload Scheduler Insights Agent</strong>. Make sure to set <code>enabled</code> to <strong><code>false</code></strong> as shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#agentdeploy-configure-shared-variables-__codelineno-11-1"></a># Default: workload-scheduler-agent-z
+<p>Finally, scrolling to the last <strong>Foundational</strong> agent is the <strong>IBM Z Workload Scheduler Insights Agent</strong>. Make sure to set <code>enabled</code> to <strong><code>false</code></strong> as shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#agentdeploy-configure-shared-variables-__codelineno-11-1"></a># Foundational: workload-scheduler-agent-z
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#agentdeploy-configure-shared-variables-__codelineno-11-2"></a>workload-scheduler-agent-z:
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#agentdeploy-configure-shared-variables-__codelineno-11-3"></a>  enabled: false
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#agentdeploy-configure-shared-variables-__codelineno-11-4"></a>  image:
@@ -5213,7 +5215,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </table></div></section><section class="print-page" id="agentdeploy-upgrade-agent-env" heading-number="8.4.2"><div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#agentdeploy-upgrade-agent-env-configuring-the-env-variables" title="Permanent link">#</a></h1>
 <p>Within your <code>values.yaml</code> file, locate the section for the <strong>IBM Z Upgrade Agent</strong> as shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-env-__codelineno-0-1"></a># ---------------------------------------------------------------------------- #
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-env-__codelineno-0-2"></a># Default: upgrade-agent
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-env-__codelineno-0-2"></a># Foundational: upgrade-agent
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-upgrade-agent-env-__codelineno-0-3"></a># ---------------------------------------------------------------------------- #
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-upgrade-agent-env-__codelineno-0-4"></a>upgrade-agent:
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-upgrade-agent-env-__codelineno-0-5"></a>  enabled: true
@@ -5448,10 +5450,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>And finally, append <strong><code>:10443/zosmf</code></strong> to the end of the string. The result should look similar to the following:</p>
-</li>
-</ol>
 <p>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf</p>
 <p>This would be the final value to set for the <code>ZOSMF_ENDPOINT</code> variable (<em><strong>note</strong> - your URL will be different and is dependent on your Lab environment</em>)</p>
+</li>
+</ol>
 <h3 id="agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable">Set your <code>ZOSMF_PASSWORD</code> variable<a class="headerlink" href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable" title="Permanent link">#</a></h3>
 <p>Set the <code>ZOSMF_PASSWORD</code> variable to a new RACF Password/Passphrase that the IBMUSER ID uses to log into TSO. </p>
 <p>Follow the below steps to reset your RACF passphrase for the IBMUSER user and set the value to the <code>ZOSMF_PASSWORD</code> variable.</p>
@@ -5549,7 +5551,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </table></div></section><section class="print-page" id="agentdeploy-support-agent-env" heading-number="8.5.2"><div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#agentdeploy-support-agent-env-configuring-the-env-variables" title="Permanent link">#</a></h1>
 <p>Within your <code>values.yaml</code> file, locate the section for the <strong>IBM Z Support Agent</strong> as shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-support-agent-env-__codelineno-0-1"></a># ---------------------------------------------------------------------------- #
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-support-agent-env-__codelineno-0-2"></a># Default: support-agent
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-support-agent-env-__codelineno-0-2"></a># Foundational: support-agent
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-support-agent-env-__codelineno-0-3"></a># ---------------------------------------------------------------------------- #
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-support-agent-env-__codelineno-0-4"></a>support-agent:
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-support-agent-env-__codelineno-0-5"></a>  enabled: true
@@ -5705,45 +5707,45 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <tbody>
 <tr>
 <td><strong>Retrieves Db2 subsystem details</strong></td>
-<td>Type of deployment (options include 'on-prem' and 'cloud')</td>
+<td>Provides metadata and status information about Db2 subsystems, including configuration, buffer pools, and health.</td>
 </tr>
 <tr>
 <td><strong>Retrieves IMS system details</strong></td>
-<td>Name of AAP Template used for gathering/collecting dumps</td>
+<td>Displays IMS system data, region details, and overall system status for monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves JVM system information</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Retrieves JVM system data and lock runtime metrics for workload monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves LPAR system details</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Displays LPAR system details and job statuses for performance monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves network details</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Displays network system information and TCP listener metrics for monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves storage information</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Displays storage system information, volume details, and dataset statuses for performance monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves CICSplex and CICS region details</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Displays CICSplex system information, region details, and transaction statuses for monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves MQ subsystem details</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Displays MQ system information and queue statuses for performance monitoring and analysis.</td>
 </tr>
 <tr>
 <td><strong>Retrieves OMEGAMON events</strong></td>
-<td>Name of AAP Template used for sending/transferring dumps to IBM Support</td>
+<td>Retrieves events from OMEGAMON for different systems.</td>
 </tr>
 </tbody>
 </table></div></section><section class="print-page" id="agentdeploy-omegamon-agent-env" heading-number="8.6.2"><div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#agentdeploy-omegamon-agent-env-configuring-the-env-variables" title="Permanent link">#</a></h1>
 <p>Within your <code>values.yaml</code> file, locate the section for the <strong>IBM Z OMEGAMON Insights Agent</strong> as shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-omegamon-agent-env-__codelineno-0-1"></a># ---------------------------------------------------------------------------- #
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-omegamon-agent-env-__codelineno-0-2"></a># Default: omegamon-insights-agent
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-omegamon-agent-env-__codelineno-0-2"></a># Foundational: omegamon-insights-agent
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#agentdeploy-omegamon-agent-env-__codelineno-0-3"></a># ---------------------------------------------------------------------------- #
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#agentdeploy-omegamon-agent-env-__codelineno-0-4"></a>omegamon-insights-agent:
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-omegamon-agent-env-__codelineno-0-5"></a>  enabled: true
@@ -5825,11 +5827,15 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <li>
 <p>Within VS Code, open up a new terminal window by clicking on <strong>Terminal --&gt; New Terminal</strong>. </p>
 <p>For example (on Mac):</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/code1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/code1.png"></a></p>
+<p>By default, the current working directory in the Terminal session will be the root <code>z-ai-agents</code> folder.</p>
 </li>
 <li>
-<p>With the terminal window open, ensure your terminal’s current working directory is the <code>wxa4z-agent-suite</code> folder that you extracted from Box. See screenshot below as an example:</p>
-<p><strong>IMAGE</strong></p>
+<p>In your Terminal session, change the current working directory to the <code>wxa4z-agent-suite</code> sub-folder. </p>
+<p>For example, on a Mac this can be done with the following command:
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-execute-deploy-__codelineno-0-1"></a>cd wxa4z-agent-suite
+</span></code></pre></div>
+<p><a class="glightbox" href="../agentdeploy/_attachments/code2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/code2.png"></a></p>
 </li>
 <li>
 <p>Download and install the <code>helm</code> command-line utility by following the instructions in the link below:</p>
@@ -5841,11 +5847,12 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Within the terminal session, run the following command to deploy the agents:</p>
-<p><code>helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml - -wait</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-execute-deploy-__codelineno-1-1"></a>helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml --wait
+</span></code></pre></div>
 </li>
 <li>
 <p>After executing the above command, you should see something like the following:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/code3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/code3.png"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">What is the command doing?</p>
 <p>The above command will deploy all of the <code>enabled</code> agents simultaneously. </p>
@@ -5854,7 +5861,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/code4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/code4.png"></a></p>
 </li>
 </ol>
 <h3 id="agentdeploy-execute-deploy-verify-successful-deployment">Verify successful deployment<a class="headerlink" href="#agentdeploy-execute-deploy-verify-successful-deployment" title="Permanent link">#</a></h3>
@@ -5864,7 +5871,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Once logged in, navigate to <strong>Workloads --&gt; Pods</strong> within the <strong><em>wxa4z-zad</em></strong> namespace and verify that you see the 3 new pods (one for each agent), and that they’re in the <strong><em>Running</em></strong> status:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../agentdeploy/_attachments/code5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/code5.png"></a></p>
 <p><strong><em>NOTE:</em>* you may also see pods with the </strong>bootstrap*<em> label. These are ephemeral pods used to register each of the agents to your Orchestrate environment. Once the bootstrapping job is completed, these pods will terminate on their own</em>.</p>
 </li>
 </ol>

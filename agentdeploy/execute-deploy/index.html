@@ -2332,11 +2332,15 @@
 <li>
 <p>Within VS Code, open up a new terminal window by clicking on <strong>Terminal --&gt; New Terminal</strong>. </p>
 <p>For example (on Mac):</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/code1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/code1.png"></a></p>
+<p>By default, the current working directory in the Terminal session will be the root <code>z-ai-agents</code> folder.</p>
 </li>
 <li>
-<p>With the terminal window open, ensure your terminal’s current working directory is the <code>wxa4z-agent-suite</code> folder that you extracted from Box. See screenshot below as an example:</p>
-<p><strong>IMAGE</strong></p>
+<p>In your Terminal session, change the current working directory to the <code>wxa4z-agent-suite</code> sub-folder. </p>
+<p>For example, on a Mac this can be done with the following command:
+</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd wxa4z-agent-suite
+</span></code></pre></div>
+<p><a class="glightbox" href="../_attachments/code2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/code2.png"></a></p>
 </li>
 <li>
 <p>Download and install the <code>helm</code> command-line utility by following the instructions in the link below:</p>
@@ -2348,11 +2352,12 @@
 </li>
 <li>
 <p>Within the terminal session, run the following command to deploy the agents:</p>
-<p><code>helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml - -wait</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml --wait
+</span></code></pre></div>
 </li>
 <li>
 <p>After executing the above command, you should see something like the following:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/code3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/code3.png"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">What is the command doing?</p>
 <p>The above command will deploy all of the <code>enabled</code> agents simultaneously. </p>
@@ -2361,7 +2366,7 @@
 </li>
 <li>
 <p>Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/code4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/code4.png"></a></p>
 </li>
 </ol>
 <h3 id="verify-successful-deployment">Verify successful deployment<a class="headerlink" href="#verify-successful-deployment" title="Permanent link">#</a></h3>
@@ -2371,7 +2376,7 @@
 </li>
 <li>
 <p>Once logged in, navigate to <strong>Workloads --&gt; Pods</strong> within the <strong><em>wxa4z-zad</em></strong> namespace and verify that you see the 3 new pods (one for each agent), and that they’re in the <strong><em>Running</em></strong> status:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/code5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/code5.png"></a></p>
 <p><strong><em>NOTE:</em>* you may also see pods with the </strong>bootstrap*<em> label. These are ephemeral pods used to register each of the agents to your Orchestrate environment. Once the bootstrapping job is completed, these pods will terminate on their own</em>.</p>
 </li>
 </ol>
