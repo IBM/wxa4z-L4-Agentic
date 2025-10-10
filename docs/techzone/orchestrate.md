@@ -23,12 +23,6 @@ The first Lab environment is a set of ***IBM Cloud SaaS resources*** we’ll ref
    
     The last IBM Cloud SaaS service in scope for the Lab is **IBM Cloud Object Storage (COS)** which is used for ingesting customer documentation into the zRAG component of watsonx Assistant for Z. It will be used to demonstrate how clients can augment their agent and assistants’ conversational search capabilities by creating an internal knowledge base with their own documentation. This allows users to get insightful responses to a rnage of questions not possible with the default documentation within the zRAG.
 
-
-### Making the TechZone reservation
-
-
-
-
 ### Accessing the environment
 
 

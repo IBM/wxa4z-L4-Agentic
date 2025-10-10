@@ -34,7 +34,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     The **Reserve now** option creates a reservation for immediate use. Optionally, schedule the reservation for a later date, for example, when you are at your client's office to start a pilot.
 
-    ![](_attachments/itzRSVPReserveNow.png)
+    ![](_attachments/TZ1.png)
 
 3. Complete the reservation request form and then click **Submit**.
 
@@ -57,7 +57,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     **g**. Click **Submit**.
 
-    ![](_attachments/itzRSVPReservationPage.png)
+    ![](_attachments/TZ2.png)
 
     In addition to the preceding fields, the reservation for the **Single Node OpenShift with NFS storage** has these additional fields:
 
@@ -65,7 +65,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     **i**. Enable FIPS security: leave the default setting of **No**. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.
 
-    **j**. Master single node flavor: select **16 vCPU x 64 GB - 300 GB ephemeral storage**.
+    **j**. Master single node flavor: select **32 vCPU x 128 GB - 300 GB ephemeral storage**.
 
     **k**. OpenShift version: select **4.14**.
 
@@ -75,7 +75,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     **n**. Click **Submit**.
 
-    ![](_attachments/itzRSVPReservationPage2.png)
+    ![](_attachments/TZ3.png)
 
 <div style="page-break-after: always;"></div>
 
@@ -88,16 +88,16 @@ When the reservations are in the **Ready** state, you can extend each reservatio
 
 1. In the IBM Technology Zone portal, expand **My TechZone** and select **My Reservations**.
 
-    ![](_attachments/itzMyReservations.png)
+    ![](_attachments/TZ4.png)
 
 2. Click the **overflow icon** (![](_attachments/overflowIcon.png)) on the reservation tile and select **Extend**.
 
-    ![](_attachments/itzExtendMenu.png)
+    ![](_attachments/TZ5.png)
 <div style="page-break-after: always;"></div>
 
-3. Click the **Select a date** option, (a) specify the date to extend to, and then (b) click **Extend**.
+1. Click the **Select a date** option, (a) specify the date to extend to, and then (b) click **Extend**.
 
-    ![](_attachments/itzExtendRsvp.png)
+    ![](_attachments/TZ6.png)
 
 If you anticipate needing more time, repeat Steps 5-6 to extend the reservation to the maximum allowed. Repeat these steps for the other two reservations.
 <div style="page-break-after: always;"></div>
@@ -109,35 +109,35 @@ You only need to accept the invitation to the **watsonx Assistant for Z lab – 
 
 1. Open the email from **IBM Cloud** and click the **Join now** links.
 
-    ![](_attachments/itzJoinCloudEmail.png)
+    ![](_attachments/TZ7.png)
 
 2. In the **Join IBM Cloud** browser window that opens, select the **I accept the product Terms and Conditions** of the registration form, and then click **Join Account**.
 
-    ![](_attachments/itzJoinCloud.png)
+    ![](_attachments/TZ8.png)
 
 After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.
 
-3. Click the following link to open a browser to the IBM Cloud portal.
+1. Click the following link to open a browser to the IBM Cloud portal.
 
     <a href="https://cloud.ibm.com/" target="_blank">**IBM Cloud portal**</a>
     
-4. Follow the directions to complete the authentication to IBM Cloud using the same email address you used to login to ITZ. The login steps vary depending on any two-factor authentication methods enabled. 
+2. Follow the directions to complete the authentication to IBM Cloud using the same email address you used to login to ITZ. The login steps vary depending on any two-factor authentication methods enabled. 
 
-    ![](_attachments/itzCloudLogin.png)
+    ![](_attachments/TZ9.png)
 
-5. Click the **account** menu and verify access to the IBM Cloud account listed in your ITZ reservation.
+3. Click the **account** menu and verify access to the IBM Cloud account listed in your ITZ reservation.
 
     !!! Important "The account may be different."
 
         The account name should align with the account named in the invitation email you received. 
 
-    ![](_attachments/itzCloudAccountsVerify.png)
+    ![](_attachments/TZ10.png)
 
     ??? Tip "Does your IBM Cloud portal view look different?"
 
         If your IBM Cloud portal looks different from the images above, it could be because the IBM Cloud portal has gone through a design change, or your browser window is set to smaller size. Instead of the current selected account appearing in the top menu, you may see this **change account** icon: ![](_attachments/itzCloudChangeAccountIcon.png). Click this icon to view the list of accounts you can access.
 
-        ![](_attachments/itzCloudChangeAccountIconBig.png)
+        ![](_attachments/TZ11.png)
 
 ## Accessing the environments
 Each reservation provides access to its respective environment. Details for accessing each environment are provided in the **Pilot setup** sections that follow in the lab guide.

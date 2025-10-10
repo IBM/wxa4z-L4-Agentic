@@ -9,13 +9,6 @@ The very first hands-on exercise in the Lab will be accessing your OpenShift clu
 ***Disclaimer:*** The various components of watsonx Assistant for Z (i.e. zRAG OpenSearch database) are deployed and collocated alongside the deployment of watsonx Orchestrate. For this Lab, you will use a dedicated OpenShift cluster for the sole purpose of deployed these components, with the exception of watsonx Orchestrate (SaaS version), as well as AI agents which will be made accessible within watsonx Orchestrate SaaS.
 
 
-
-### Making the TechZone reservation
-
--must use 32vcpu cluster when reserving the TZ reservation
-
-
-
 ### Accessing the environment
 
 

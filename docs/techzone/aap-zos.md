@@ -12,9 +12,6 @@ As an example, you will later deploy the **IBM Z Upgrade Agent** which leverages
 
 This environment will also be later used when building your own agent to automate the certificate renewal process on z/OS.
 
-### Making the TechZone reservation
-
-
 
 ### Accessing the environment
 
