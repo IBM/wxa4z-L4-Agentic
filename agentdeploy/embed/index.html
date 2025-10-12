@@ -130,7 +130,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#embed-agent-chat-in-web-page" class="md-skip">
           Skip to content
         </a>
       
@@ -2319,7 +2319,62 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="embed-agent-chat-in-web-page">Embed Agent Chat in Web Page<a class="headerlink" href="#embed-agent-chat-in-web-page" title="Permanent link">#</a></h1>
+<p>Once you’ve deployed your agents to the <strong><em>Live</em></strong> version within the <strong>watsonx Orchestrate</strong> UI, you’ll then be able to integrate your agent chat into a webpage for external use and surfacing within web UI applications.</p>
+<p>Follow the instructions below on how to do this. 
+<strong>Note:</strong> the steps must be done for each agent you wish to embed. The examples below use the <strong><em>IBM Z Support Agent</em></strong> as an example.</p>
+<ol>
+<li>
+<p>Firstly, download the <strong>Agent chat template file</strong> from Box here: </p>
+<p><a href="https://ibm.box.com/s/d79agcwownfbg7pi25x0ix0brr6jqawd" target="_blank">https://ibm.box.com/s/d79agcwownfbg7pi25x0ix0brr6jqawd</a></p>
+</li>
+<li>
+<p>Once downloaded locally, open the <strong>agent-chat-template.html</strong> file within VS code (or any text editor of your choice).</p>
+</li>
+<li>
+<p>Within the template html file, you will see placeholders for unique values that you must provide for each particular agent:</p>
+<ul>
+<li>Agent name</li>
+<li>orchestrationID</li>
+<li>hostURL</li>
+<li>crn</li>
+<li>agentId</li>
+<li>agentEnvironmentId</li>
+</ul>
+<p><a class="glightbox" href="../_attachments/embed1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/embed1.png"></a></p>
+</li>
+<li>
+<p>In the <code>&lt;title&gt;</code> brackets towards the top of the file, replace <code>Agent name</code> with the name of your agent (i.e. <code>IBM Z Support Agent</code>).</p>
+</li>
+<li>
+<p>For each of the other parameters in the <strong>html</strong> file, you can find your agent’s unique values by navigating to the <strong>Agent Builder</strong> view within the watsonx Orchestrate UI, and clicking on the <strong>Live</strong> version of your deployed agent.</p>
+<p><a class="glightbox" href="../_attachments/embed2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/embed2.png"></a></p>
+</li>
+<li>
+<p>Once you’re in your agent’s editor view, scroll to the bottom to the <strong>Channels</strong> section and expand the <strong>Embedded agent</strong> section.</p>
+<p><a class="glightbox" href="../_attachments/embed3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/embed3.png"></a></p>
+</li>
+<li>
+<p>Once expanded, click on the <strong>Live</strong> tab for your deployed agent. You should then see a sample code snippet unique for your environment, as shown below.</p>
+<p><a class="glightbox" href="../_attachments/embed4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/embed4.png"></a></p>
+</li>
+<li>
+<p>Copy and paste each of the following values from the provided code snippet to your <strong>agent-chat-template.html</strong> file:</p>
+<ul>
+<li>orchestrationID</li>
+<li>hostURL</li>
+<li>crn</li>
+<li>agentId</li>
+<li>agentEnvironmentId</li>
+</ul>
+</li>
+<li>
+<p>Finally, as a best practice, <strong>save your .html file with a new file name</strong>. For example, in the case of the IBM Z Support Agent, saving the file name as <strong><em>support-agent-chat.html</em></strong></p>
+</li>
+<li>
+<p>Once saved, open up the HTML file via web browser and test the agent scenarios.</p>
+</li>
+</ol></div>
 
 
 
