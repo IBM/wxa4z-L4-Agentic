@@ -20,7 +20,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
         The steps to authenticate to ITZ are not detailed here as they may vary between users.
 
-    <a href="{{itz.orchestrateEnv}}" target="_blank">Watsonx Assistant for Z lab – watsonx Orchestrate - reservation page</a>
+    <a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a>
     
     <a href="{{itz.aapEnv}}" target="_blank">Ansible Automation Platform (AAP) & z/OS - reservation page</a>
     
