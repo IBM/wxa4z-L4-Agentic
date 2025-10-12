@@ -3261,7 +3261,7 @@
 <p class="admonition-title">You may be asked to authenticate to IBM Technology Zone.</p>
 <p>The steps to authenticate to ITZ are not detailed here as they may vary between users.</p>
 </div>
-<p><a href="https://techzone.ibm.com/my/reservations/create/66f6f414c428e2fc24fa1088" target="_blank">Watsonx Assistant for Z lab – watsonx Orchestrate - reservation page</a></p>
+<p><a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c" target="_blank">Ansible Automation Platform (AAP) &amp; z/OS - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/66f6f42ec428e2fc24fa1089" target="_blank">Single Node OpenShift with NFS storage - reservation page</a></p>
 </li>
@@ -6088,7 +6088,53 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <strong><em>Example output:</em></strong>
 <p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/om8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/om8.png"></a></p>
 <h3 id="agentdeploy-demo-scenarios-omegamon-agent-deploy-the-agent">Deploy the agent<a class="headerlink" href="#agentdeploy-demo-scenarios-omegamon-agent-deploy-the-agent" title="Permanent link">#</a></h3>
-<p>Once satisfied with the testing of your agent, you can then deploy/publish your IBM Z OMEGAMON Insights Agent just as you did in <strong><em><a href="#agentdeploy-demo-scenarios-support-agent-deploy-the-agent">this section</a></em></strong>.</p></div></section><section class="print-page" id="agentdeploy-demo-scenarios-upgrade-agent" heading-number="8.8.4"><p>test</p></section></section><section class="print-page" id="agentdeploy-embed" heading-number="8.9"><h1 id="agentdeploy-embed-placeholder">placeholder<a class="headerlink" href="#agentdeploy-embed-placeholder" title="Permanent link">#</a></h1></section></section>
+<p>Once satisfied with the testing of your agent, you can then deploy/publish your IBM Z OMEGAMON Insights Agent just as you did in <strong><em><a href="#agentdeploy-demo-scenarios-support-agent-deploy-the-agent">this section</a></em></strong>.</p></div></section><section class="print-page" id="agentdeploy-demo-scenarios-upgrade-agent" heading-number="8.8.4"><div><h1 id="test-the-ibm-z-upgrade-agent">Test the IBM Z Upgrade Agent<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-test-the-ibm-z-upgrade-agent" title="Permanent link">#</a></h1>
+<p>Finally, you will test your <strong>IBM Z Upgrade Agent</strong>. </p>
+<p>Navigate back to the <strong>Agent builder</strong> page and click on the agent tile for your <strong>IBM Z Upgrade Agent</strong>, as shown below:</p>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade1.png"></a></p>
+<p><em>This section will walk through a few of the capabilities using example prompts you can use to test. Feel free to try your own prompts based on the agent capabilities referenced</em> <strong><em><a href="#agentdeploy-upgrade-agent-overview">here</a></em></strong>.</p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-list-software-instance-details">List software instance details<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-list-software-instance-details" title="Permanent link">#</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-0-1"></a>Show all my software instances
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade2.png"></a></p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-retrieve-missing-fixcats-by-software-instance">Retrieve missing FIXCATs by software instance<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-retrieve-missing-fixcats-by-software-instance" title="Permanent link">#</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-1-1"></a>Retrieve missing fixcats for software instance IMS on system VS01_004
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade3.png"></a></p>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-2-1"></a>What's the latest status?
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade4.png"></a></p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-acquire-missing-fixcat-updates">Acquire missing FIXCAT updates<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-acquire-missing-fixcat-updates" title="Permanent link">#</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-3-1"></a>Retrieve missing fixcats for software instance IMS on system VS01_004
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade5.png"></a></p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-check-hardware-compatibility-for-upgrade">Check hardware-compatibility for upgrade<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-check-hardware-compatibility-for-upgrade" title="Permanent link">#</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-4-1"></a>Is the system hardware compatible to upgrade to z17?
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade6.png"></a></p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-upgrade-workflow-related-queries-using-zrag-documentation">Upgrade workflow-related queries using zRAG documentation<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-upgrade-workflow-related-queries-using-zrag-documentation" title="Permanent link">#</a></h3>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-5-1"></a>What compatibility check must be performed before upgrading to z17?
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade7.png"></a></p>
+<p></p><div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-6-1"></a>Why must memory requirements be reviewed before migrating to z17?
+</span></code></pre></div>
+<strong><em>Example output:</em></strong>
+<p><a class="glightbox" href="../agentdeploy/demo-scenarios/_attachments/upgrade8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../agentdeploy/demo-scenarios/_attachments/upgrade8.png"></a></p>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-additional-questions-to-test">Additional questions to test<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-additional-questions-to-test" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-7-1"></a>What updates should be made to ensure system images are ready for z16?
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-8-1"></a>What are the compatibility checks we need to perform to upgrade from z15 to z16?
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#agentdeploy-demo-scenarios-upgrade-agent-__codelineno-9-1"></a>Does the z16 upgrade workflow include steps for checking missing service using FIXCATs?
+</span></code></pre></div>
+<h3 id="agentdeploy-demo-scenarios-upgrade-agent-deploy-the-agent">Deploy the agent<a class="headerlink" href="#agentdeploy-demo-scenarios-upgrade-agent-deploy-the-agent" title="Permanent link">#</a></h3>
+<p>Once satisfied with the testing of your agent, you can then deploy/publish your IBM Z Upgrade Agent just as you did in <strong><em><a href="#agentdeploy-demo-scenarios-support-agent-deploy-the-agent">this section</a></em></strong>.</p></div></section></section><section class="print-page" id="agentdeploy-embed" heading-number="8.9"><h1 id="agentdeploy-embed-placeholder">placeholder<a class="headerlink" href="#agentdeploy-embed-placeholder" title="Permanent link">#</a></h1></section></section>
                     <section class='print-page md-section' id='section-9' heading-number='9'>
                         <h1>Build your own agent using the Agent Development Kit (ADK)<a class='headerlink' href='#section-9' title='Permanent link'></a>
                         </h1>
