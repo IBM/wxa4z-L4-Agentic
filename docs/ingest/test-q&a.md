@@ -12,16 +12,16 @@ First, you will adjust the conversational search settings for your assistant in 
 
 2. Go to the **Assistant Builder** view by clicking on **Build --> Assistant Builder**.
    
-    **IMAGE**
+    ![](_attachments/test1.png)
 
 
 3. In the left-side navigation, click on **Generative AI**.
    
-    **IMAGE**
+    ![](_attachments/test2.png)
 
 4. At the bottom of the screen, click on **View search integration**.
    
-    **IMAGE**
+    ![](_attachments/test3.png)
 
 5. Then click **Custom Service**. 
    
@@ -56,7 +56,7 @@ First, you will adjust the conversational search settings for your assistant in 
 
     Recall the output of the `zassist list` command. For example:
 
-    **IMAGE**
+    ![](_attachments/test4.png)
 
     In the example above, when running the command to ingest documents, the `<source name>` provided was `my_source`. ***Note***: your source name may be different. To check, issue the `zassist list` command on your command-line.
 
@@ -79,7 +79,7 @@ First, you will adjust the conversational search settings for your assistant in 
 
 8. Lastly, for the purpose of testing Q&A for the ingested documents, set the **Contextual awareness** setting to **Single turn**. Then click **Save** and **Close**.
 
-    **IMAGE**
+    ![](_attachments/test5.png)
 
 
 ### Test client-specific Q&A with ingested documents
@@ -88,7 +88,7 @@ Now that you’ve successfully ingested the sample customer documents and modifi
 
 1. Navigate back to the **Preview** page by hovering your cursor over the left-side navigation and clicking **Preview**. 
 
-    **IMAGE**
+    ![](_attachments/test6.png)
 
 2. ***Enter the following prompts*** to your assistant that are specifically referencing the sampled documentation provided. For each of the provided prompts, an example output is provided which may be different from your assistant’s response. For each response, feel free to view the referenced citation to identify where the answer was taken from.
 
@@ -100,12 +100,12 @@ Now that you’ve successfully ingested the sample customer documents and modifi
 
     ***Example Output:***
 
-    **SCREENSHOT**
+    ![](_attachments/test7.png)
 
 
     ***Click the citations drop-down at the bottom of the response. Notice how your ingested documented is referenced. Feel free to click on the citation to check the reference.***
 
-    **IMAGE**
+    ![](_attachments/test8.png)
 
     **PROMPT:**
 
@@ -115,7 +115,7 @@ Now that you’ve successfully ingested the sample customer documents and modifi
 
     ***Example Output:***
 
-    **SCREENSHOT**
+    ![](_attachments/test9.png)
 
     **PROMPT:**
 
@@ -125,7 +125,7 @@ Now that you’ve successfully ingested the sample customer documents and modifi
 
     ***Example Output:***
 
-    **SCREENSHOT**
+    ![](_attachments/test10.png)
 
     
     **PROMPT:**
@@ -136,7 +136,7 @@ Now that you’ve successfully ingested the sample customer documents and modifi
 
     ***Example Output:***
 
-    **SCREENSHOT**
+    ![](_attachments/test11.png)
 
 
 
