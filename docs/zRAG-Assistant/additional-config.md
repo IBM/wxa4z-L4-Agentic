@@ -5,15 +5,15 @@ After you save and close the **Conversational search** configuration page, a few
 
 1. Hover your cursor over the left-side navigation and click **Actions**.
    
-    **IMAGE**
+    ![](_attachments/add1.png)
 
 2. Click **Set by assistant** under the **All items** menu.
    
-    **IMAGE**
+    ![](_attachments/add2.png)
 
 3. Select **No matches**. 
 
-    **IMAGE**
+    ![](_attachments/add3.png)
 
 4. Under **Conversation steps**, select the first step and do the following:
 
@@ -29,87 +29,87 @@ After you save and close the **Conversational search** configuration page, a few
 
     ***The configuration of Step 1 should look like the following:***
 
-    **IMAGE**
+    ![](_attachments/add4.png)
 
 5. Then click on the 2nd step of the **No matches** action and click on the **Delete** icon to delete the step.
    
-    **IMAGE**
+    ![](_attachments/add5.png)
 
 6. Save the settings and **close** the window. 
    
-    **IMAGE**
+    ![](_attachments/add6.png)
 
 7. Then click the **Fallback** action in the **Actions** table.
    
-    **IMAGE**
+    ![](_attachments/add7.png)
 
 8. Delete **all** of the **Conversation steps** except for the last one (Step 6).
    
     **Note:** You need to select each step individually. Click the **delete** icon and confirm the deletion for the first 5 steps.
 
-    **IMAGE**
+    ![](_attachments/add8.png)
 
 9. Verify that the first 5 **Conversation steps** are deleted and then click the **x** to close the **Editor** window.
     
-    **IMAGE**
+    ![](_attachments/add9.png)
 
 10. Click the **Global settings** icon.
     
-    **IMAGE**
+    ![](_attachments/add10.png)
 
 11. Click **No matches** under the **Conversation routing** tab.
     
-    **IMAGE**
+    ![](_attachments/add11.png)
 
 12. Move the slider to **More often**. 
     
-    **IMAGE**
+    ![](_attachments/add12.png)
 
 13. Then click the **Autocorrection** tab and toggle the feature to the **Off** position.
     
-    **IMAGE**
+    ![](_attachments/add13.png)
 
 14. Click **Save (a)** and then **Close (b)**. 
     
-    **IMAGE**
+    ![](_attachments/add14.png)
 
 15. Hover over the left-side navigation and click **Environments**.
     
-    **IMAGE**
+    ![](_attachments/add15.png)
 
 16. Click **Web chat**. 
     
-    **IMAGE**
+    ![](_attachments/add16.png)
 
 17. On the **Style** tab, click the **Streaming** toggle to enable streaming.
     
     The streaming setting allows responses to be streamed to the assistant and displayed as they are generated versus waiting until the full response is received and then displayed.
 
-    **IMAGE**
+    ![](_attachments/add17.png)
 
 18. Click on the **Home screen** tab. 
     
     Customize the Home screen by setting a custom **Greeting message** and deleting the default **Conversation starters**.
 
-    **IMAGE**
+    ![](_attachments/add18.png)
 
 19. Click the **Suggestions** tab and toggle the feature to the **Off** position.
     
-    **IMAGE**
+    ![](_attachments/add19.png)
 
 20. Finally, click **Save and exit (a)** and then **Close (b)**.
     
-    **IMAGE**
+    ![](_attachments/add20.png)
 
 21. Lastly, you will add **prompt instructions** to your assistant to configure how the LLM responds to queries. The prompt instructions help LLMs to guide the conversations with clarity and specificity to achieve the end goal of an action. You can provide instructions to customize the output to an expert or a novice, to answer with a more structured output, such as bullets or examples, as applicable.
 
     Hover over the left-side navigation and click on **Generative AI**.
 
-    **IMAGE**
+    ![](_attachments/add21.png)
 
 22. Click **Add instructions**. 
     
-    **IMAGE**
+    ![](_attachments/add22.png)
 
 23. In the **Add prompt instructions** text box, copy and paste the following example:
     
@@ -117,6 +117,6 @@ After you save and close the **Conversational search** configuration page, a few
     You are a subject matter expert on mainframe systems. Respond to all prompts with truth and accuracy. Provide answers in a bulleted list with headings. Provide examples and commands when requested. DO NOT guess the answer.
     ```
 
-    **IMAGE**
+    ![](_attachments/add23.png)
 
     ***NOTE:** Prompt instructions are highly customizable and should be tested prior to delivering a demo or pilot. The provided prompt instructions above are just one example.*
