@@ -33,11 +33,11 @@ The below table describes each of the variables in the `secrets.data` variables 
 
 2. Set the `AAP_ENDPOINT` variable to your **AAP UI URL** used for logging into the AAP web console. This can be retrieved from your environment details as shown below:
    
-    **IMAGE**
+    ![](_attachments/aap1.png)
 
 3. Set the `AAP_PASSWORD` variable to your **AAP User Password** used for logging into the AAP web console. This can be retrieved from your environment details as shown below:
    
-   **IMAGE**
+    ![](_attachments/aap2.png)
 
 4. To generate the values for the `SEND_DUMP_TRANSFER_ID` and `SEND_DUMP_TRANSFER_PASSWORD`, you must first create a new **IBM Support File Transfer ID** on ***EcuRep***. 
    
@@ -48,7 +48,7 @@ The below table describes each of the variables in the `secrets.data` variables 
 
     - Once authenticated, click on **+ Generate a new transfer ID**
   
-        **IMAGE**
+        ![](_attachments/aap3.png)
     
     - You will then be provided a **Transfer ID** and **Password**. The password will only be shown once, so make sure to **record both details in a local notepad**.
 
