@@ -4575,15 +4575,15 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Go to the <strong>Assistant Builder</strong> view by clicking on <strong>Build --&gt; Assistant Builder</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test1.png"></a></p>
 </li>
 <li>
 <p>In the left-side navigation, click on <strong>Generative AI</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test2.png"></a></p>
 </li>
 <li>
 <p>At the bottom of the screen, click on <strong>View search integration</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test3.png"></a></p>
 </li>
 <li>
 <p>Then click <strong>Custom Service</strong>. </p>
@@ -4610,7 +4610,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p>Secondly, you have the ability to set the scope of customer documentation that gets searched when generating a response. By default, <code>customer_indices</code> is set to <code>customer_*</code>.</p>
 <p>What this means is that all ingested documents from all of your ingested sources will be searched. In the case where you want to narrow the scope of the ingested documents to a single source, this can be modified to point to that source.</p>
 <p>Recall the output of the <code>zassist list</code> command. For example:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test4.png"></a></p>
 <p>In the example above, when running the command to ingest documents, the <code>&lt;source name&gt;</code> provided was <code>my_source</code>. <strong><em>Note</em></strong>: your source name may be different. To check, issue the <code>zassist list</code> command on your command-line.</p>
 <p>In this case, we’ve only created one source. But in the case you have multiple sources, each with their own set of ingested documents, it would be possible to narrow the scope of documents available to the assistant by configuring the <code>customer_indices</code> parameter in the <strong>Metadata</strong> field.</p>
 <p>To do this, <strong>modify</strong> the <code>customer_indices</code> value by replacing <code>customer_*</code> with <code>customer_&lt;your_source_name&gt;</code>.</p>
@@ -4625,7 +4625,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Lastly, for the purpose of testing Q&amp;A for the ingested documents, set the <strong>Contextual awareness</strong> setting to <strong>Single turn</strong>. Then click <strong>Save</strong> and <strong>Close</strong>.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test5.png"></a></p>
 </li>
 </ol>
 <h3 id="ingest-test-q%26a-test-client-specific-qa-with-ingested-documents">Test client-specific Q&amp;A with ingested documents<a class="headerlink" href="#ingest-test-q%26a-test-client-specific-qa-with-ingested-documents" title="Permanent link">#</a></h3>
@@ -4633,7 +4633,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <ol>
 <li>
 <p>Navigate back to the <strong>Preview</strong> page by hovering your cursor over the left-side navigation and clicking <strong>Preview</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test6.png"></a></p>
 </li>
 <li>
 <p><strong><em>Enter the following prompts</em></strong> to your assistant that are specifically referencing the sampled documentation provided. For each of the provided prompts, an example output is provided which may be different from your assistant’s response. For each response, feel free to view the referenced citation to identify where the answer was taken from.</p>
@@ -4641,24 +4641,24 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#ingest-test-q%26a-__codelineno-3-1"></a>The customer application is failing with ERR-CBL-001, what does this internal error mean?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><strong>SCREENSHOT</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test7.png"></a></p>
 <p><strong><em>Click the citations drop-down at the bottom of the response. Notice how your ingested documented is referenced. Feel free to click on the citation to check the reference.</em></strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test8.png"></a></p>
 <p><strong>PROMPT:</strong></p>
 <div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#ingest-test-q%26a-__codelineno-4-1"></a>What specific syntax changes do I need to make in COBOL to call Java using the internal framework?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><strong>SCREENSHOT</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test9.png"></a></p>
 <p><strong>PROMPT:</strong></p>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#ingest-test-q%26a-__codelineno-5-1"></a>What is the internal git lab link to execute the Java on z/OS pipeline?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><strong>SCREENSHOT</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test10.png"></a></p>
 <p><strong>PROMPT:</strong></p>
 <div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#ingest-test-q%26a-__codelineno-6-1"></a>Are there any production incidents that were resolved in relation to Data corruption in the production database? If yes who can I collaborate with to resolve a similar issue today and what are their names?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><strong>SCREENSHOT</strong></p>
+<p><a class="glightbox" href="../ingest/_attachments/test11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test11.png"></a></p>
 </li>
 </ol></div></section></section>
                     <section class='print-page md-section' id='section-7' heading-number='7'>
