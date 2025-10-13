@@ -3,9 +3,9 @@
 In this scenario, you will leverage 2 templates that have been pre-defined in your **Ansible Automation Platform (AAP)** environment. These 2 templates are:
 
 - **z/OS Certs - List Cert**
-  - Takes a certificate label as input and triggers an automation on z/OS to retrieve the certificate details, including the expiration date of the certificate
+    - Takes a certificate label as input and triggers an automation on z/OS to retrieve the certificate details, including the expiration date of the certificate
 - **z/OS Certs - Search and Renew**
-  - Automates the renewal process for a particular certificate on z/OS
+    - Automates the renewal process for a particular certificate on z/OS
 
 In order to setup the scenario to demonstrate the capabilities of the agent you will later create, you will now leverage AAP to create a z/OS SITE certificate that is soon to be expiring.
 
