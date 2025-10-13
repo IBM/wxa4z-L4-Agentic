@@ -4,15 +4,15 @@ Before testing the agent's execution flow within the watsonx Orchestrate Chat, y
 
 1. Navigate back to your **watsonx Orchestrate** environment UI so that you see the following:
    
-    **IMAGE**
+    ![](_attachments/pub1.png)
 
 2. Within the watsonx Orchestrate UI, navigate to the **Agent Builder** view by clicking on **Build -> Agent Builder**.
    
-    **IMAGE**
+    ![](_attachments/pub2.png)
 
 3. Once in the **Agent Builder**, click on your newly deployed agent, labeled **zOS_Certificate_Agent** as shown below:
    
-    **IMAGE**
+    ![](_attachments/pub3.png)
 
 4. Then you will be in the ***Preview*** mode of your agent as the agent was created in **draft** mode only (prior to deploying). 
    
@@ -20,21 +20,21 @@ Before testing the agent's execution flow within the watsonx Orchestrate Chat, y
 
     In the **Tools** section, verify that all 3 tools you deployed are present and available to the agent:
 
-    **IMAGE**
+    ![](_attachments/pub4.png)
 
     Also notice the **welcome message** you configured in the `zOS_Cert_Agent.yaml` file:
 
-    **IMAGE**
+    ![](_attachments/pub5.png)
 
 5. After verifying the agent definitions, you can deploy the agent in the “Live” environment. 
    
     To do this, click **Deploy** at the top-right of the page.
 
-    **IMAGE**
+    ![](_attachments/pub6.png)
 
 6. In the new window, click on the ‘pencil’ icon next to your ***ansible*** connection to modify the connection for your “Live” environment.
    
-    **IMAGE**
+    ![](_attachments/pub7.png)
 
 7. In the **Configure live connection** window, set the following:
    
@@ -50,33 +50,33 @@ Before testing the agent's execution flow within the watsonx Orchestrate Chat, y
 
     Then click **Connect**. 
 
-    **IMAGE**
+    ![](_attachments/pub8.png)
 
 8. After clicking **Connect**, wait until you see a “Connected” message appear at the bottom, then click **Save**.
    
-    **IMAGE**
+    ![](_attachments/pub9.png)
 
 9. Finally, click **Save and close**.
     
-    **IMAGE**
+    ![](_attachments/pub10.png)
 
 10. Lastly, back at the **Deploy Agent** page, you should now see a green check-mark next to the “Live” connection. 
     
     Click **Deploy**.
 
-    **IMAGE**
+    ![](_attachments/pub11.png)
 
 11. After a few seconds, the agent will finish deploying and you will see a `Success!` message as shown below. Wait until the deployment completes. ***Note:** this may take up to 30 seconds or so.*
     
-    **IMAGE**
+    ![](_attachments/pub12.png)
 
 12. Once the deployment completes, navigate back to the agent chat view by clicking on **Chat** in the menu.
     
-    **IMAGE**
+    ![](_attachments/pub13.png)
 
 13. Click on the **‘Agents’** drop-down and select your deployed agent, labeled **zOS_Certificate_Agent**.
     
-    **IMAGE**
+    ![](_attachments/pub14.png)
 
 ***You are now ready to begin the demo scenario - follow the steps in the next section.***
 

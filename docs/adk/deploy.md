@@ -6,15 +6,15 @@ In this section, you will define an agent named **zOS_Certificate_Agent** that l
 
 1. Within VS Code, click on the `zOS_Cert_Agent.yaml` file under the ‘Agents’ sub-folder to view the contents.
    
-    **IMAGE**
+    ![](_attachments/deploy1.png)
 
 2. You should then be able to see the agent definition as shown below:
    
-    **IMAGE**
+    ![](_attachments/deploy2.png)
 
     *Lets go over each of the sections...*
 
-    **IMAGE**
+    ![](_attachments/deploy3.png)
 
     For further details on building agents with the ADK, you can reference the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/overview" target="_blank">here</a>.
 
@@ -26,7 +26,7 @@ In this section, you will define an agent named **zOS_Certificate_Agent** that l
 
 4. If executed correctly, you should see a message similar to below:
    
-    **IMAGE**
+    ![](_attachments/deploy4.png)
 
 **Congratulations! You’ve deployed your first agent using the ADK and are now ready to test the execution flow leveraging the previous certificates you’ve setup on z/OS using Ansible Automation Platform.**
 

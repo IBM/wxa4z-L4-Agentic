@@ -25,13 +25,13 @@ For this Lab, there is a `connections.yaml` file pre-created for you within the 
 
 1. Within VS Code, click on the `connections.yaml` file in the *Connections* sub-folder to view the contents within VS Code.
    
-    **IMAGE**
+    ![](_attachments/conn1.png)
 
 2. Once the file is opened, edit the file to **replace** `<AAP UI URL>` with the URL of your AAP environment that you recorded earlier.
    
     *For example:*
 
-    **IMAGE**
+    ![](_attachments/conn2.png)
 
     ***Note:*** *the URL you paste will be unique and not the same as what's shown above. 
 
@@ -47,7 +47,7 @@ For this Lab, there is a `connections.yaml` file pre-created for you within the 
 
 5. You should then receive a success message as shown below:
    
-    **IMAGE**
+    ![](_attachments/conn3.png)
 
 6. Now verify the connection was successfully created by running the following command in your VS Code Terminal session:
    
@@ -59,7 +59,7 @@ For this Lab, there is a `connections.yaml` file pre-created for you within the 
    
     *Note: you may need to scroll to the top of the connections list*
 
-    **IMAGE**
+    ![](_attachments/conn4.png)
 
     You will next set your connection credentials in the following section.
 
@@ -99,7 +99,7 @@ Credentials hold the values used to authorize against external services. In the 
 
 3. You should see a `Credentials successfully set...` message as shown below:
    
-    **IMAGE**
+    ![](_attachments/conn5.png)
 
 4. Now re-verify the connection with your newly set credentials by entering the following command in your command-line and clicking **enter**:
    
@@ -109,4 +109,4 @@ Credentials hold the values used to authorize against external services. In the 
 
 5. You should now see that your previous connection now has credentials set, as shown below:
    
-    **IMAGE**
+    ![](_attachments/conn6.png)

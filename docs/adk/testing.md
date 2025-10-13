@@ -11,7 +11,7 @@ In this final section, you will access your deployed agent within your watsonx O
    
     `Get my certificate details`
 
-    **IMAGE**
+    ![](_attachments/test1.png)
 
 2. After prompting the agent with the above, the agent will respond asking `“What is the certificate label?”`
    
@@ -19,13 +19,13 @@ In this final section, you will access your deployed agent within your watsonx O
 
     `DEMOCERT`
 
-    **IMAGE**
+    ![](_attachments/test2.png)
 
 3. Next, the Agent should ask `“What type of certificate is it? (Options include SITE, CERTAUTH, USER)”`
    
     Respond with `SITE`
 
-    **IMAGE**
+    ![](_attachments/test3.png)
 
 4. After providing the type of certificate, the Agent does 2 things:
    
@@ -33,25 +33,25 @@ In this final section, you will access your deployed agent within your watsonx O
 
     **b.** Responds with a message similar to what's shown below:
 
-    **IMAGE**
+    ![](_attachments/test4.png)
 
     In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a **job_id** for the ansible job that you can use to check the status of the job.
 
 5. Click on **Show reasoning** and then the **Step 1** drop-down to view the logic the agent took.
    
-    **IMAGE**
+    ![](_attachments/test5.png)
 
-    **IMAGE**
+    ![](_attachments/test6.png)
 
 6. You should then see something similar to the screenshot below, indicating that the *get_cert* tool was invoked and the values that were passed to the Ansible playbook’s inputs:
    
-    **IMAGE**
+    ![](_attachments/test7.png)
 
 7. Next, scroll back down to the chat field and prompt the agent with:
    
     `Get status of job <your job_id that the agent outputted above>`
 
-    **IMAGE**
+    ![](_attachments/test8.png)
 
     **NOTE:** your job_id will be different than what's shown above. 
 
@@ -65,7 +65,7 @@ In this final section, you will access your deployed agent within your watsonx O
 
     If the `job status` was `successful`, then the logs should contain your certificate label, start date, and expiration date as shown below:
 
-    **IMAGE**
+    ![](_attachments/test9.png)
 
     The key point is that the expiration date indicates that your certificate is going to expire in the next 30 days. And the next step would be to invoke the renew_cert tool to automate the certificate renewal process.
 
@@ -73,7 +73,7 @@ In this final section, you will access your deployed agent within your watsonx O
     
     `Renew my certificate`
 
-    **IMAGE**
+    ![](_attachments/test10.png)
 
 10. After prompting the agent with the above, the agent will respond asking `“What type of signing certificate will be used? (Options include CERTAUTH, SITE, Self)”`
     
@@ -81,19 +81,19 @@ In this final section, you will access your deployed agent within your watsonx O
 
     This is because the DEMOCERT certificate you created earlier is signed by your TESTCA certificate authority.
 
-    **IMAGE**
+    ![](_attachments/test11.png)
 
 11. Next, the Agent asks `“What is the label of the signing certificate?”`
     
     Respond with `TESTCA`
 
-    **IMAGE**
+    ![](_attachments/test12.png)
 
 12. And finally, the Agent asks `“What is the certificate’s new expiration date? (Enter in the form of YYYY-MM- DD)”`
     
     Respond with `2030-01-01`
 
-    **IMAGE**
+    ![](_attachments/test13.png)
 
 13. After providing the details above, the Agent again does 2 things:
     
@@ -101,19 +101,19 @@ In this final section, you will access your deployed agent within your watsonx O
 
     **b.** responds with a message similar to what's shown below:
 
-    **IMAGE**
+    ![](_attachments/test14.png)
 
     In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a **job_id** for the ansible job that you can use to check the status of the job.
 
 14. Click on **Show reasoning** and then the **Step 1** drop-down to view the logic the agent took.
 
-    **IMAGE**
+    ![](_attachments/test15.png)
 
-    **IMAGE**
+    ![](_attachments/test16.png)
 
 15. You should then see something similar to the screenshot below, indicating that the *renew_cert* tool was invoked and the values that were passed to the Ansible playbook’s inputs:
     
-    **IMAGE**
+    ![](_attachments/test17.png)
 
     ***Notice** how the agent provided the inputs for the ‘sign_with_survey’, ‘sign_label_survey’, and ‘new_expiry_date_survey’ variables. These were the variables you manually entered into the chat.*
 
@@ -125,7 +125,7 @@ In this final section, you will access your deployed agent within your watsonx O
     
     `Get status of job <your job_id that the agent outputted above>`
 
-    **IMAGE**
+    ![](_attachments/test18.png)
 
 17. After prompting the agent, it should invoke the *get_status_output* tool just like previously, passing your job_id as input and provide the following information:
 
@@ -137,10 +137,10 @@ In this final section, you will access your deployed agent within your watsonx O
 
     If the **job status** was `successful`, then the logs should contain a confirmation message that the certificate has been renewed as shown below:
 
-    **IMAGE**
+    ![](_attachments/test19.png)
 
     However, if the **job status** shows as still `running`, then the logs would instead contain a summary of what the ansible playbook has done so far. If any errors occur in the processing, then the agent would also provide an analysis of what went wrong.
 
-    **IMAGE**
+    ![](_attachments/test20.png)
 
     ***Congratulations! You’ve deployed and tested your own agent for renewing z/OS certificates. If there’s any time remaining feel free to continue testing or contact one of the lab instructors for any questions.***

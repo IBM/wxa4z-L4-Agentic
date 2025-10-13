@@ -19,17 +19,17 @@ In this section, you will import the tool files within your `Tools` sub-folder t
 
 1. Within VS Code, click on the `list_cert_tool.json` file under the ‘Tools’ sub-folder to view the contents.
    
-    **IMAGE**
+    ![](_attachments/tools1.png)
 
 2. Scroll to the bottom of the file and replace `<AAP UI URL>` with the **AAP UI URL** of your own environment (*paste it within the double-quotes*). It should look similar to the following:
    
-    **IMAGE**
+    ![](_attachments/tools2.png)
 
     *Make sure to save the file before moving on*
 
 3. Next, open up the `renew_cert_tool.json` file under the ‘Tools’ sub-folder to view the contents.
    
-    **IMAGE**
+   
 
 4. Just as before, scroll to the bottom of the file and replace `<AAP UI URL>` with the **AAP UI URL** of your own environment (within double-quotes).
    
@@ -43,7 +43,7 @@ In this section, you will import the tool files within your `Tools` sub-folder t
 
 6. After issuing the command, you should see a message similar to what’s shown below:
    
-    **IMAGE**
+    ![](_attachments/tools4.png)
 
     This indicates that your `get_cert` tool was imported successfully.
 
@@ -54,11 +54,11 @@ command:
     orchestrate tools import -k openapi -f Tools/renew_cert_tool.json --app-id ansible
     ```
 
-8. After issuing the command, you should get a message indicating that your `renew_cert` tool was imported successfully:
+1. After issuing the command, you should get a message indicating that your `renew_cert` tool was imported successfully:
    
-    **IMAGE**
+    ![](_attachments/tools5.png)
 
-9. Finally, you will import the Python tool from the `job_output_status_tool.py` file. 
+2. Finally, you will import the Python tool from the `job_output_status_tool.py` file. 
     
     To do this, copy and paste the following command into your VS Code Terminal command-prompt and click enter.
 
@@ -66,7 +66,7 @@ command:
     orchestrate tools import -k python -f Tools/job_output_status_tool.py --app-id ansible
     ```
 
-10. Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:
+3.  Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:
     
     ```
     orchestrate tools list
@@ -74,4 +74,4 @@ command:
 
     This should output a table similar to below showing all your imported tools.
 
-    **IMAGE**
+    ![](_attachments/tools6.png)
