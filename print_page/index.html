@@ -2061,7 +2061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/intro.md" class="md-nav__link">
+      <a href="../adk/intro/" class="md-nav__link">
         
   
   
@@ -2084,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/setup.md" class="md-nav__link">
+      <a href="../adk/setup/" class="md-nav__link">
         
   
   
@@ -2107,7 +2107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/config-aap.md" class="md-nav__link">
+      <a href="../adk/config-aap.md" class="md-nav__link">
         
   
   
@@ -2130,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/prepare-vscode.md" class="md-nav__link">
+      <a href="../adk/prepare-vscode.md" class="md-nav__link">
         
   
   
@@ -2153,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/connections.md" class="md-nav__link">
+      <a href="../adk/connections.md" class="md-nav__link">
         
   
   
@@ -2176,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/tools.md" class="md-nav__link">
+      <a href="../adk/tools.md" class="md-nav__link">
         
   
   
@@ -2199,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/deploy.md" class="md-nav__link">
+      <a href="../adk/deploy.md" class="md-nav__link">
         
   
   
@@ -2222,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/publish.md" class="md-nav__link">
+      <a href="../adk/publish.md" class="md-nav__link">
         
   
   
@@ -2245,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agentdeploy/adk/testing.md" class="md-nav__link">
+      <a href="../adk/testing.md" class="md-nav__link">
         
   
   
@@ -2949,6 +2949,30 @@
       Build your own agent using the Agent Development Kit (ADK)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Build your own agent using the Agent Development Kit (ADK)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adk-intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the Agent Development Kit (ADK)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing and setting up ADK environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6191,7 +6215,59 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                     <section class='print-page md-section' id='section-9' heading-number='9'>
                         <h1>Build your own agent using the Agent Development Kit (ADK)<a class='headerlink' href='#section-9' title='Permanent link'></a>
                         </h1>
-                    </section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
+                    <section class="print-page" id="adk-intro" heading-number="9.1"><div><h1 id="introduction-to-the-agent-development-kit-adk">Introduction to the Agent Development Kit (ADK)<a class="headerlink" href="#adk-intro-introduction-to-the-agent-development-kit-adk" title="Permanent link">#</a></h1>
+<h3 id="adk-intro-lab-flow">Lab Flow<a class="headerlink" href="#adk-intro-lab-flow" title="Permanent link">#</a></h3></div></section><section class="print-page" id="adk-setup" heading-number="9.2"><div><h1 id="installing-and-setting-up-your-adk-environment">Installing and setting up your ADK environment<a class="headerlink" href="#adk-setup-installing-and-setting-up-your-adk-environment" title="Permanent link">#</a></h1>
+<p>In this section you will install the <strong>ADK</strong> to your local workstation and configure your environment with your watsonx Orchestrate instance.</p>
+<ol>
+<li>
+<p>To set up your local ADK environment, you will need the <strong><code>orchestrate</code></strong> command-line utility. If you already have this installed you can skip to the next step. </p>
+<p>To verify whether you have it installed, run the following command from your local command-line or Terminal window:</p>
+<p><code>orchestrate --version</code></p>
+<p><strong><em>If you do not have it installed, follow the instructions below:</em></strong></p>
+<p><strong>a.</strong> First, make sure you have <strong>Python 3.11</strong> or later installed on your local workstation. To check your current Python version, open up a terminal or command-prompt and run the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-setup-__codelineno-0-1"></a>python --version
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><strong>If you have an older version...</strong></p>
+<p>If you have an older version of Python installed, follow these steps to install a newer version:</p>
+<ul>
+<li><strong>MacOS users</strong>: <a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing#macos" target="_blank">https://developer.watson-orchestrate.ibm.com/getting_started/installing#macos</a></li>
+<li><strong>Windows users</strong>: <a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing#windows" target="_blank">https://developer.watson-orchestrate.ibm.com/getting_started/installing#windows</a></li>
+</ul>
+</div>
+<p><strong>b.</strong> Once <strong>Python 3.11</strong> is installed, you can install the ADK by running the following command in your local command-line or Terminal:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-setup-__codelineno-1-1"></a>pip install --upgrade ibm-watsonx-orchestrate
+</span></code></pre></div>
+<p><strong>c.</strong> Verify it's installed by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-setup-__codelineno-2-1"></a>orchestrate --version
+</span></code></pre></div>
+</li>
+<li>
+<p>Next, configure your <strong>watsonx Orchestrate</strong> environment in the ADK by firstly locating the values of your <strong>Service Instance URL</strong> and <strong>IBM Cloud API key</strong>. This is the environment where you will deploy your custom agent.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Where to find these values?</strong></p>
+<p>If you don't already have these values recorded, you can find your watsonx Orchestrate <strong>Service Instance URL</strong> by following the instructions in Section <strong><em><a href="#watsonx-ai-service-instance-url">Retrieve watsonx Orchestrate Service Instance URL</a></em></strong>.</p>
+<p>Your <strong>IBM Cloud API key</strong> can be found by following the instructions in Section <strong><em><a href="#watsonx-ai-api-key">Generate IBM Cloud API key</a></em></strong>.</p>
+</div>
+</li>
+<li>
+<p>Once you have your values for your <strong>watsonx Orchestrate Service Instance URL</strong> and <strong>IBM Cloud API key</strong>, <strong><em>activate your environment</em></strong> within the ADK. This can be done by running the following command in your local command-prompt or terminal window, replacing <code>&lt;env name&gt;</code> with any name you want to reference as your WxO environment, and replacing <code>&lt;your Service Instance URL&gt;</code> with your unique Service Instance URL from the preceding step:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-setup-__codelineno-3-1"></a>orchestrate env add -n &lt;env name&gt; -u &lt;your Service Instance URL&gt; --type ibm_iam --activate
+</span></code></pre></div>
+</li>
+<li>
+<p>After issuing the above command, you will be prompted for your <strong><em>WXO API key</em></strong> as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p><strong>Copy and paste</strong> the value of your <strong>IBM Cloud API key</strong> from the preceding steps and hit <strong>enter</strong>. You should then see that your environment is now active, as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once activated, verify you’re successfully connected by running the following command to view existing agents in your environment:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-setup-__codelineno-4-1"></a>orchestrate agents list
+</span></code></pre></div>
+</li>
+</ol>
+<p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></section></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
 
                 .print-site-enumerate-headings #index h2:before { content: '1.' counter(counter-index-2) ' ' }
                 .print-site-enumerate-headings #index h2 {  counter-reset: counter-index-3  counter-index-4  counter-index-5  counter-index-6 ;  counter-increment: counter-index-2 }
@@ -6910,7 +6986,35 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
                 .print-site-enumerate-headings #agentdeploy-embed h5:before { content: '8.9.' counter(counter-agentdeploy-embed-2) '.' counter(counter-agentdeploy-embed-3) '.' counter(counter-agentdeploy-embed-4) '.' counter(counter-agentdeploy-embed-5) ' ' }
                 .print-site-enumerate-headings #agentdeploy-embed h5 {  counter-increment: counter-agentdeploy-embed-5 }
             
-.print-site-enumerate-headings #section-9 > h1:before { content: '9 ' }</style>
+.print-site-enumerate-headings #section-9 > h1:before { content: '9 ' }
+.print-site-enumerate-headings #adk-intro > h1:before { content: '9.1 ' }
+
+                .print-site-enumerate-headings #adk-intro h2:before { content: '9.1.' counter(counter-adk-intro-2) ' ' }
+                .print-site-enumerate-headings #adk-intro h2 {  counter-reset: counter-adk-intro-3  counter-adk-intro-4  counter-adk-intro-5 ;  counter-increment: counter-adk-intro-2 }
+            
+                .print-site-enumerate-headings #adk-intro h3:before { content: '9.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) ' ' }
+                .print-site-enumerate-headings #adk-intro h3 {  counter-reset: counter-adk-intro-4  counter-adk-intro-5 ;  counter-increment: counter-adk-intro-3 }
+            
+                .print-site-enumerate-headings #adk-intro h4:before { content: '9.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) '.' counter(counter-adk-intro-4) ' ' }
+                .print-site-enumerate-headings #adk-intro h4 {  counter-reset: counter-adk-intro-5 ;  counter-increment: counter-adk-intro-4 }
+            
+                .print-site-enumerate-headings #adk-intro h5:before { content: '9.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) '.' counter(counter-adk-intro-4) '.' counter(counter-adk-intro-5) ' ' }
+                .print-site-enumerate-headings #adk-intro h5 {  counter-increment: counter-adk-intro-5 }
+            
+.print-site-enumerate-headings #adk-setup > h1:before { content: '9.2 ' }
+
+                .print-site-enumerate-headings #adk-setup h2:before { content: '9.2.' counter(counter-adk-setup-2) ' ' }
+                .print-site-enumerate-headings #adk-setup h2 {  counter-reset: counter-adk-setup-3  counter-adk-setup-4  counter-adk-setup-5 ;  counter-increment: counter-adk-setup-2 }
+            
+                .print-site-enumerate-headings #adk-setup h3:before { content: '9.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) ' ' }
+                .print-site-enumerate-headings #adk-setup h3 {  counter-reset: counter-adk-setup-4  counter-adk-setup-5 ;  counter-increment: counter-adk-setup-3 }
+            
+                .print-site-enumerate-headings #adk-setup h4:before { content: '9.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) '.' counter(counter-adk-setup-4) ' ' }
+                .print-site-enumerate-headings #adk-setup h4 {  counter-reset: counter-adk-setup-5 ;  counter-increment: counter-adk-setup-4 }
+            
+                .print-site-enumerate-headings #adk-setup h5:before { content: '9.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) '.' counter(counter-adk-setup-4) '.' counter(counter-adk-setup-5) ' ' }
+                .print-site-enumerate-headings #adk-setup h5 {  counter-increment: counter-adk-setup-5 }
+            </style>
 
 
 
