@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="../access-agents/">
+        <link rel="prev" href="../prepare-vscode/">
       
       
-        <link rel="next" href="../omegamon-agent/">
+        <link rel="next" href="../tools/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Test the IBM Z Support Agent - IBM wxa4z L4 Lab Guide</title>
+        <title>Creating a connection and configuring credentials - IBM wxa4z L4 Lab Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,20 +91,20 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/print-site.css">
+      <link rel="stylesheet" href="../../css/print-site.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-material.css">
+      <link rel="stylesheet" href="../../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../../style.css">
+      <link rel="stylesheet" href="../../style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -113,7 +113,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -132,7 +132,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-the-ibm-z-support-agent" class="md-skip">
+        <a href="#creating-a-connection-and-configuring-credentials" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -168,7 +168,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test the IBM Z Support Agent
+              Creating a connection and configuring credentials
             
           </span>
         </div>
@@ -272,7 +272,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TechZoneEnvironment/" class="md-nav__link">
+      <a href="../../TechZoneEnvironment/" class="md-nav__link">
         
   
   
@@ -372,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/orchestrate/" class="md-nav__link">
+      <a href="../../techzone/orchestrate/" class="md-nav__link">
         
   
   
@@ -395,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/sno/" class="md-nav__link">
+      <a href="../../techzone/sno/" class="md-nav__link">
         
   
   
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/aap-zos/" class="md-nav__link">
+      <a href="../../techzone/aap-zos/" class="md-nav__link">
         
   
   
@@ -486,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/Overview/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/Overview/" class="md-nav__link">
         
   
   
@@ -509,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/install-oc-utility/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/install-oc-utility/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/install-cert-manager/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/install-cert-manager/" class="md-nav__link">
         
   
   
@@ -555,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/install-wxa4z-operator/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/install-wxa4z-operator/" class="md-nav__link">
         
   
   
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/deploy-secrets/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/deploy-secrets/" class="md-nav__link">
         
   
   
@@ -601,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/deploy-zAssistantDeploy/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/deploy-zAssistantDeploy/" class="md-nav__link">
         
   
   
@@ -624,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy/verify-deployment/" class="md-nav__link">
+      <a href="../../zAssistantDeploy/verify-deployment/" class="md-nav__link">
         
   
   
@@ -692,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/Overview/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/Overview/" class="md-nav__link">
         
   
   
@@ -715,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/access-wxo/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/access-wxo/" class="md-nav__link">
         
   
   
@@ -738,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/create-assistant/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/create-assistant/" class="md-nav__link">
         
   
   
@@ -761,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/setup-conv-search/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/setup-conv-search/" class="md-nav__link">
         
   
   
@@ -784,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/configure-settings/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/configure-settings/" class="md-nav__link">
         
   
   
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/additional-config/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/additional-config/" class="md-nav__link">
         
   
   
@@ -830,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zRAG-Assistant/testing-conv-search/" class="md-nav__link">
+      <a href="../../zRAG-Assistant/testing-conv-search/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/Overview/" class="md-nav__link">
+      <a href="../../ingest/Overview/" class="md-nav__link">
         
   
   
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/download-zassist/" class="md-nav__link">
+      <a href="../../ingest/download-zassist/" class="md-nav__link">
         
   
   
@@ -944,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/cos-service-credentials/" class="md-nav__link">
+      <a href="../../ingest/cos-service-credentials/" class="md-nav__link">
         
   
   
@@ -967,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/ibmcloud-utility/" class="md-nav__link">
+      <a href="../../ingest/ibmcloud-utility/" class="md-nav__link">
         
   
   
@@ -990,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/create-storage-bucket/" class="md-nav__link">
+      <a href="../../ingest/create-storage-bucket/" class="md-nav__link">
         
   
   
@@ -1013,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/upload-docs/" class="md-nav__link">
+      <a href="../../ingest/upload-docs/" class="md-nav__link">
         
   
   
@@ -1036,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/execute-ingestion/" class="md-nav__link">
+      <a href="../../ingest/execute-ingestion/" class="md-nav__link">
         
   
   
@@ -1059,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/test-q%26a/" class="md-nav__link">
+      <a href="../../ingest/test-q%26a/" class="md-nav__link">
         
   
   
@@ -1127,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/project/" class="md-nav__link">
+      <a href="../../watsonx-ai/project/" class="md-nav__link">
         
   
   
@@ -1150,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/deployment-space/" class="md-nav__link">
+      <a href="../../watsonx-ai/deployment-space/" class="md-nav__link">
         
   
   
@@ -1173,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/api-key/" class="md-nav__link">
+      <a href="../../watsonx-ai/api-key/" class="md-nav__link">
         
   
   
@@ -1196,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/service-instance-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/service-instance-url/" class="md-nav__link">
         
   
   
@@ -1219,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/wml-base-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/wml-base-url/" class="md-nav__link">
         
   
   
@@ -1246,20 +1246,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1275,7 +1273,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Execute agent deployment 
@@ -1289,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Overview/" class="md-nav__link">
+      <a href="../../agentdeploy/Overview/" class="md-nav__link">
         
   
   
@@ -1350,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/" class="md-nav__link">
+      <a href="../../agentdeploy/setup/" class="md-nav__link">
         
   
   
@@ -1373,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wxa4z-agent-suite/" class="md-nav__link">
+      <a href="../../agentdeploy/wxa4z-agent-suite/" class="md-nav__link">
         
   
   
@@ -1404,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configure-shared-variables/" class="md-nav__link">
+      <a href="../../agentdeploy/configure-shared-variables/" class="md-nav__link">
         
   
   
@@ -1465,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-agent/overview/" class="md-nav__link">
+      <a href="../../agentdeploy/upgrade-agent/overview/" class="md-nav__link">
         
   
   
@@ -1488,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-agent/env/" class="md-nav__link">
+      <a href="../../agentdeploy/upgrade-agent/env/" class="md-nav__link">
         
   
   
@@ -1511,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-agent/ptfJob/" class="md-nav__link">
+      <a href="../../agentdeploy/upgrade-agent/ptfJob/" class="md-nav__link">
         
   
   
@@ -1534,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-agent/secrets-data/" class="md-nav__link">
+      <a href="../../agentdeploy/upgrade-agent/secrets-data/" class="md-nav__link">
         
   
   
@@ -1557,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../upgrade-agent/pvc/" class="md-nav__link">
+      <a href="../../agentdeploy/upgrade-agent/pvc/" class="md-nav__link">
         
   
   
@@ -1626,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support-agent/overview/" class="md-nav__link">
+      <a href="../../agentdeploy/support-agent/overview/" class="md-nav__link">
         
   
   
@@ -1649,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support-agent/env/" class="md-nav__link">
+      <a href="../../agentdeploy/support-agent/env/" class="md-nav__link">
         
   
   
@@ -1672,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support-agent/secrets-data/" class="md-nav__link">
+      <a href="../../agentdeploy/support-agent/secrets-data/" class="md-nav__link">
         
   
   
@@ -1741,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/overview/" class="md-nav__link">
+      <a href="../../agentdeploy/omegamon-agent/overview/" class="md-nav__link">
         
   
   
@@ -1764,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/env/" class="md-nav__link">
+      <a href="../../agentdeploy/omegamon-agent/env/" class="md-nav__link">
         
   
   
@@ -1787,7 +1785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/secrets-data/" class="md-nav__link">
+      <a href="../../agentdeploy/omegamon-agent/secrets-data/" class="md-nav__link">
         
   
   
@@ -1810,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/pvc/" class="md-nav__link">
+      <a href="../../agentdeploy/omegamon-agent/pvc/" class="md-nav__link">
         
   
   
@@ -1841,7 +1839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../execute-deploy/" class="md-nav__link">
+      <a href="../../agentdeploy/execute-deploy/" class="md-nav__link">
         
   
   
@@ -1861,20 +1859,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_8" >
         
           
           <label class="md-nav__link" for="__nav_8_8" id="__nav_8_8_label" tabindex="0">
@@ -1890,7 +1886,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_8">
             <span class="md-nav__icon md-icon"></span>
             Access Agents and Test Demo Scenarios
@@ -1904,12 +1900,251 @@
   
   
     <li class="md-nav__item">
-      <a href="../access-agents/" class="md-nav__link">
+      <a href="../../agentdeploy/demo-scenarios/access-agents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Access your deployed agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentdeploy/demo-scenarios/support-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test the IBM Z Support Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentdeploy/demo-scenarios/omegamon-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test the IBM Z OMEGAMON Insights Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentdeploy/demo-scenarios/upgrade-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test the IBM Z Upgrade Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentdeploy/embed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embed Agent Chat in Web Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build your own agent using the Agent Development Kit (ADK)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Build your own agent using the Agent Development Kit (ADK)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to the Agent Development Kit (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing and setting up ADK environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config-aap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuring AAP and z/OS certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prepare-vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preparing VS Code workspace
     
   </span>
   
@@ -1941,250 +2176,13 @@
   
   
   <span class="md-ellipsis">
-    Test the IBM Z Support Agent
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../omegamon-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Test the IBM Z OMEGAMON Insights Agent
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Test the IBM Z Upgrade Agent
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../embed/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Embed Agent Chat in Web Page
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Build your own agent using the Agent Development Kit (ADK)
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            Build your own agent using the Agent Development Kit (ADK)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../adk/intro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Introduction to the Agent Development Kit (ADK)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../adk/setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Installing and setting up ADK environment
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../adk/config-aap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configuring AAP and z/OS certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../adk/prepare-vscode/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Preparing VS Code workspace
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../adk/connections/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
     Creating a connection and configuring credentials
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -2197,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         
   
   
@@ -2220,7 +2218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/deploy.md" class="md-nav__link">
+      <a href="../deploy.md" class="md-nav__link">
         
   
   
@@ -2243,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/publish.md" class="md-nav__link">
+      <a href="../publish.md" class="md-nav__link">
         
   
   
@@ -2266,7 +2264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/testing.md" class="md-nav__link">
+      <a href="../testing.md" class="md-nav__link">
         
   
   
@@ -2323,103 +2321,110 @@
 
 
 
-<div><h1 id="test-the-ibm-z-support-agent">Test the IBM Z Support Agent<a class="headerlink" href="#test-the-ibm-z-support-agent" title="Permanent link">#</a></h1>
-<p>In this section you will test the capabilities of the <strong>IBM Z Support Agent</strong>.</p>
+<div><h1 id="creating-a-connection-and-configuring-credentials">Creating a connection and configuring credentials<a class="headerlink" href="#creating-a-connection-and-configuring-credentials" title="Permanent link">#</a></h1>
+<h3 id="creating-a-connection">Creating a connection<a class="headerlink" href="#creating-a-connection" title="Permanent link">#</a></h3>
+<p>Within watsonx Orchestrate and the ADK, a <strong>connection</strong> represents a dependency on an external service. It is a common feature needed in many parts of the ADK, such as tools and knowledge bases. Connections provide a way to associate various tools together and assigning credentials needed for the tools to access external services on behalf of the agent.</p>
+<p>In this Lab, the tools you will use are focused on calling APIs exposed by Ansible Automation Platform in order to retrieve certificate information and renew certificates. So before you create any tools, you must create a connection for the tools to use with the assigned credentials for AAP.</p>
+<p>When using the ADK, connections are created using YAML specification files. More details on those specifications can be found <strong><em><a href="https://developer.watson-orchestrate.ibm.com/connections/build_connections" target="_blank">here</a></em></strong>.</p>
+<p>For this Lab, there is a <code>connections.yaml</code> file pre-created for you within the <code>Connections</code> sub-folder of your VS Code workspace. This file specifies the following:</p>
+<ul>
+<li><code>app-id: ansible</code><ul>
+<li>Unique identifier for the connection</li>
+</ul>
+</li>
+<li><code>environments: draft</code><ul>
+<li>Defines settings for the draft environment before you later deploy the agent</li>
+</ul>
+</li>
+<li><code>kind: basic</code><ul>
+<li>Connection type used to access the AAP service (username &amp; password)</li>
+</ul>
+</li>
+<li><code>type: team</code><ul>
+<li>the credentials will apply to all users</li>
+</ul>
+</li>
+<li><code>sso: false</code><ul>
+<li>not required for 'basic' connections</li>
+</ul>
+</li>
+<li><code>server_url: &lt;AAP UI URL&gt;</code><ul>
+<li>The URL of your AAP instance which <strong><em>you will replace in the following steps</em></strong></li>
+</ul>
+</li>
+</ul>
 <ol>
 <li>
-<p>Within the <strong>Agent Builder</strong> view, click on the tile for your <strong>IBM Z Support Agent</strong>.</p>
-<p><a class="glightbox" href="../_attachments/support1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support1.png"></a></p>
+<p>Within VS Code, click on the <code>connections.yaml</code> file in the <em>Connections</em> sub-folder to view the contents within VS Code.</p>
+<p><strong>IMAGE</strong></p>
 </li>
 <li>
-<p>On the right-hand side of the screen, you should see the <strong>Preview chat</strong> window for your agent. Click in the text-box of the <strong>Preview</strong> chat window and prompt the agent with the following, replacing <code>&lt;dump title&gt;</code> with a unique name for your dump:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Take z/OS dump with dump title &lt;dump title&gt;
+<p>Once the file is opened, edit the file to <strong>replace</strong> <code>&lt;AAP UI URL&gt;</code> with the URL of your AAP environment that you recorded earlier.</p>
+<p><em>For example:</em></p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>Note:</em></strong> *the URL you paste will be unique and not the same as what's shown above. </p>
+</li>
+<li>
+<p>Make sure to <strong>save</strong> the file after modifying it.</p>
+</li>
+<li>
+<p>Now you can import the connection to your ADK environment by. </p>
+<p>In the VS Code <strong>Terminal</strong> window, run the following command and then click <strong>enter</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>orchestrate connections import --file Connections/connections.yaml
 </span></code></pre></div>
-<p><a class="glightbox" href="../_attachments/support2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support2.png"></a></p>
 </li>
 <li>
-<p>You’ll then get a response from the agent prompting you for more details. Respond with the following information:</p>
-<p><strong>a.</strong> <strong>storage areas</strong> (optional): provide a list of storage areas to include in the dump, or exclude to use the default</p>
-<p><strong>b.</strong> <strong>jobname</strong>: provide a unique job name for running the job on z/OS</p>
-<p><strong>c.</strong> <strong>dataset name</strong>: provide a unique dataset name used to capture the dump</p>
-<ul>
-<li>ensure your dataset name follows standard dataset naming conventions and rules on z/OS</li>
-</ul>
-<p><strong>d.</strong> <strong>verbosity</strong> (optional): provide a verbosity level to use, or exclude to use the default</p>
-<p><strong>For example:</strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>use jobname *MASTER* and dataset name IBMUSER.TEST.DUMP9
+<p>You should then receive a success message as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Now verify the connection was successfully created by running the following command in your VS Code Terminal session:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>orchestrate connections list
 </span></code></pre></div>
-<p><a class="glightbox" href="../_attachments/support3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support3.png"></a></p>
 </li>
 <li>
-<p>Based on the inputs provided, the agent may request for more details in order to run the job. If provided enough details, the agent will then provide a summary of the parameters supplied and ask to approve or reject.</p>
-<p>Respond with <code>approve</code>. </p>
-<p><a class="glightbox" href="../_attachments/support4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support4.png"></a></p>
-</li>
-<li>
-<p>After approving the job, the agent will return a response, including the <strong>job_id</strong> and <strong>job_status</strong>. This initiates a run of the corresponding Ansible playbook in AAP to capture a z/OS system dump.</p>
-</li>
-<li>
-<p>You can next check the status of the job by prompting the agent with the following, replacing <code>&lt;job_id&gt;</code> with the <strong>job id</strong> returned by your agent.</p>
-<p><strong>For example:</strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Check status of job &lt;job_id&gt;
-</span></code></pre></div>
-<p><a class="glightbox" href="../_attachments/support5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support5.png"></a></p>
-</li>
-<li>
-<p>In the above example, the job status is <strong>successful</strong>. As a next step, you could initiate the transmitting of the z/OS dump to IBM support via a case number. For example, this can be done with the following prompt:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Send z/OS dump from dataset &lt;dataset-name&gt; to case
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>number TS019840250
-</span></code></pre></div>
-<p><strong>NOTE:</strong> For this tool execution, you can use case # TS019840250.</p>
-</li>
-<li>
-<p>After prompting the agent, it will then provide a summary asking you to approve or reject, as shown below:</p>
-<p><a class="glightbox" href="../_attachments/support6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support6.png"></a></p>
-</li>
-<li>
-<p>Once approved, the agent will return a summary, including the <strong>job_id</strong> and <strong>job_status</strong> as shown below:</p>
-<p><a class="glightbox" href="../_attachments/support7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support7.png"></a></p>
-</li>
-<li>
-<p>Like before, you can check the status by prompting the agent with the following, replacing <code>&lt;job_id&gt;</code> with the <strong>job id</strong> returned by your agent:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Check status of job &lt;job_id&gt;
-</span></code></pre></div>
-<p><a class="glightbox" href="../_attachments/support8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support8.png"></a></p>
-<p><strong>NOTE:</strong> you can continue monitoring the status of the job with the above command until the agent returns that the job was successful.</p>
+<p>In the output of the command, notice that your new connection is listed with <em>app-id</em> <code>ansible</code> and that the Credentials have not yet been set (as shown below).</p>
+<p><em>Note: you may need to scroll to the top of the connections list</em></p>
+<p><strong>IMAGE</strong></p>
+<p>You will next set your connection credentials in the following section.</p>
 </li>
 </ol>
-<h3 id="deploy-the-agent">Deploy the agent<a class="headerlink" href="#deploy-the-agent" title="Permanent link">#</a></h3>
-<p>Once satisfied with the testing of your agent, you can then deploy/publish your agent - this activates the agent and makes it available to the <em>Live</em> environment. </p>
-<p>By doing so, you can later embed your agent’s chat interface within a webpage, which will be covered in the following section.</p>
+<h3 id="setting-your-connection-credentials">Setting your connection credentials<a class="headerlink" href="#setting-your-connection-credentials" title="Permanent link">#</a></h3>
+<p>You will now set connection credentials to later authenticate tools to access your external AAP environment and automate tasks.</p>
+<p>Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used to login to AAP).</p>
+<p><strong>ACTION:</strong> Take note of and record the values of your <code>AAP User Name (for UI access)</code> and <code>AAP User Password</code> used to log into your AAP environment's web console. For a reminder on how to retrieve these values, you can reference <strong><em>Section <a href="../../techzone/aap-zos/#accessing-the-environment">Accessing the environment</a></em></strong>. </p>
+<p><em>You will need these credentials for the following step.</em></p>
 <ol>
 <li>
-<p>Optionally modify the welcome message and possible starter prompts, as shown below:</p>
-<p><a class="glightbox" href="../_attachments/support9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support9.png"></a></p>
+<p>Set an environment variable for your <code>AAP User Password</code> value by running the below command (depending on your operating system):</p>
+<p><strong><em>MacOS Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export aap_password="&lt;your AAP User Password&gt;"
+</span></code></pre></div>
+<p><strong><em>Windows Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>set aap_password="&lt;your AAP User Password&gt;"
+</span></code></pre></div>
 </li>
 <li>
-<p>To deploy your agent to the <em>Live</em> version, click the <strong>Deploy</strong> icon in the top-right corner of the screen.</p>
-<p><a class="glightbox" href="../_attachments/support10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support10.png"></a></p>
+<p>To set your connection credentials, copy and paste the following command into your VS Code Terminal session and click <strong>enter</strong>:</p>
+<p><strong><em>MacOS Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password $aap_password
+</span></code></pre></div>
+<p><strong><em>Windows Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password %aap_password%
+</span></code></pre></div>
 </li>
 <li>
-<p>In the <strong>Pre-deployment summary</strong> page, click <strong>Deploy</strong> again.</p>
-<p><a class="glightbox" href="../_attachments/support11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support11.png"></a></p>
+<p>You should see a <code>Credentials successfully set...</code> message as shown below:</p>
+<p><strong>IMAGE</strong></p>
 </li>
 <li>
-<p>The deployment process may take a few seconds. Once done, you should see a confirmation message as shown below. Click on <strong>Manage agents</strong>.</p>
-<p><a class="glightbox" href="../_attachments/support12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support12.png"></a></p>
+<p>Now re-verify the connection with your newly set credentials by entering the following command in your command-line and clicking <strong>enter</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>orchestrate connections list
+</span></code></pre></div>
 </li>
 <li>
-<p>This will take you back to the <strong>Agent builder</strong> home page where you should now see a <strong>Live</strong> label in the tile for your IBM Z Support agent as shown below:</p>
-<p><a class="glightbox" href="../_attachments/support13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support13.png"></a></p>
-</li>
-<li>
-<p>Finally, to test the Live version of your agent, access the <strong>Agent chat</strong> by clicking on the hamburger menu icon in the top-left of the screen and select <strong>Chat</strong>.</p>
-<p><a class="glightbox" href="../_attachments/support14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support14.png"></a></p>
-</li>
-<li>
-<p>In the <strong>Agent chat</strong> home screen, click on the Agents drop-down and select your deployed IBM Z Support Agent.</p>
-<p><a class="glightbox" href="../_attachments/support15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/support15.png"></a></p>
-<p>You will then be viewing the Live version of your IBM Z Support Agent with all your saved changes. Feel free to test the scenarios from this section or continue to the next section.</p>
+<p>You should now see that your previous connection now has credentials set, as shown below:</p>
+<p><strong>IMAGE</strong></p>
 </li>
 </ol></div>
 
@@ -2451,7 +2456,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../access-agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Access your deployed agents">
+          <a href="../prepare-vscode/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Preparing VS Code workspace">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2461,20 +2466,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Access your deployed agents
+                Preparing VS Code workspace
               </div>
             </div>
           </a>
         
         
           
-          <a href="../omegamon-agent/" class="md-footer__link md-footer__link--next" aria-label="Next: Test the IBM Z OMEGAMON Insights Agent">
+          <a href="../tools/" class="md-footer__link md-footer__link--next" aria-label="Next: Importing tools">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Test the IBM Z OMEGAMON Insights Agent
+                Importing tools
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2509,12 +2514,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../js/print-site.js"></script>
+        <script src="../../js/print-site.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

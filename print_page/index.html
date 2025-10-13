@@ -2153,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/connections.md" class="md-nav__link">
+      <a href="../adk/connections/" class="md-nav__link">
         
   
   
@@ -2176,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/tools.md" class="md-nav__link">
+      <a href="../adk/tools/" class="md-nav__link">
         
   
   
@@ -2984,6 +2984,24 @@
   <a href="#adk-prepare-vscode" class="md-nav__link">
     <span class="md-ellipsis">
       Preparing VS Code workspace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a connection and configuring credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing tools
     </span>
   </a>
   
@@ -6288,10 +6306,14 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></section><section class="print-page" id="adk-config-aap" heading-number="9.3"><div><h1 id="configuring-aap-and-zos-certificates">Configuring AAP and z/OS certificates<a class="headerlink" href="#adk-config-aap-configuring-aap-and-zos-certificates" title="Permanent link">#</a></h1>
 <p>In this scenario, you will leverage 2 templates that have been pre-defined in your <strong>Ansible Automation Platform (AAP)</strong> environment. These 2 templates are:</p>
 <ul>
-<li><strong>z/OS Certs - List Cert</strong></li>
+<li><strong>z/OS Certs - List Cert</strong><ul>
 <li>Takes a certificate label as input and triggers an automation on z/OS to retrieve the certificate details, including the expiration date of the certificate</li>
-<li><strong>z/OS Certs - Search and Renew</strong></li>
+</ul>
+</li>
+<li><strong>z/OS Certs - Search and Renew</strong><ul>
 <li>Automates the renewal process for a particular certificate on z/OS</li>
+</ul>
+</li>
 </ul>
 <p>In order to setup the scenario to demonstrate the capabilities of the agent you will later create, you will now leverage AAP to create a z/OS SITE certificate that is soon to be expiring.</p>
 <ol>
@@ -6388,17 +6410,196 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <div class="admonition warning">
 <p class="admonition-title"><strong>What are these files?</strong></p>
 <p><strong>Connections:</strong>
-    - <strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</p>
+- <strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</p>
 <p><strong>Tools:</strong>
-    - <strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).
-    - <strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.
-    - <strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
+- <strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).
+- <strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.
+- <strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
 <p><strong>Agents:</strong>
-    - <strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</p>
+- <strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</p>
 </div>
 </li>
 <li>
 <p>Finally, open a <strong>Terminal window</strong> within VS Code by clicking <strong>Terminal -&gt; New Terminal</strong>:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section><section class="print-page" id="adk-connections" heading-number="9.5"><div><h1 id="creating-a-connection-and-configuring-credentials">Creating a connection and configuring credentials<a class="headerlink" href="#adk-connections-creating-a-connection-and-configuring-credentials" title="Permanent link">#</a></h1>
+<h3 id="adk-connections-creating-a-connection">Creating a connection<a class="headerlink" href="#adk-connections-creating-a-connection" title="Permanent link">#</a></h3>
+<p>Within watsonx Orchestrate and the ADK, a <strong>connection</strong> represents a dependency on an external service. It is a common feature needed in many parts of the ADK, such as tools and knowledge bases. Connections provide a way to associate various tools together and assigning credentials needed for the tools to access external services on behalf of the agent.</p>
+<p>In this Lab, the tools you will use are focused on calling APIs exposed by Ansible Automation Platform in order to retrieve certificate information and renew certificates. So before you create any tools, you must create a connection for the tools to use with the assigned credentials for AAP.</p>
+<p>When using the ADK, connections are created using YAML specification files. More details on those specifications can be found <strong><em><a href="https://developer.watson-orchestrate.ibm.com/connections/build_connections" target="_blank">here</a></em></strong>.</p>
+<p>For this Lab, there is a <code>connections.yaml</code> file pre-created for you within the <code>Connections</code> sub-folder of your VS Code workspace. This file specifies the following:</p>
+<ul>
+<li><code>app-id: ansible</code><ul>
+<li>Unique identifier for the connection</li>
+</ul>
+</li>
+<li><code>environments: draft</code><ul>
+<li>Defines settings for the draft environment before you later deploy the agent</li>
+</ul>
+</li>
+<li><code>kind: basic</code><ul>
+<li>Connection type used to access the AAP service (username &amp; password)</li>
+</ul>
+</li>
+<li><code>type: team</code><ul>
+<li>the credentials will apply to all users</li>
+</ul>
+</li>
+<li><code>sso: false</code><ul>
+<li>not required for 'basic' connections</li>
+</ul>
+</li>
+<li><code>server_url: &lt;AAP UI URL&gt;</code><ul>
+<li>The URL of your AAP instance which <strong><em>you will replace in the following steps</em></strong></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>
+<p>Within VS Code, click on the <code>connections.yaml</code> file in the <em>Connections</em> sub-folder to view the contents within VS Code.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once the file is opened, edit the file to <strong>replace</strong> <code>&lt;AAP UI URL&gt;</code> with the URL of your AAP environment that you recorded earlier.</p>
+<p><em>For example:</em></p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>Note:</em></strong> *the URL you paste will be unique and not the same as what's shown above. </p>
+</li>
+<li>
+<p>Make sure to <strong>save</strong> the file after modifying it.</p>
+</li>
+<li>
+<p>Now you can import the connection to your ADK environment by. </p>
+<p>In the VS Code <strong>Terminal</strong> window, run the following command and then click <strong>enter</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-connections-__codelineno-0-1"></a>orchestrate connections import --file Connections/connections.yaml
+</span></code></pre></div>
+</li>
+<li>
+<p>You should then receive a success message as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Now verify the connection was successfully created by running the following command in your VS Code Terminal session:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-connections-__codelineno-1-1"></a>orchestrate connections list
+</span></code></pre></div>
+</li>
+<li>
+<p>In the output of the command, notice that your new connection is listed with <em>app-id</em> <code>ansible</code> and that the Credentials have not yet been set (as shown below).</p>
+<p><em>Note: you may need to scroll to the top of the connections list</em></p>
+<p><strong>IMAGE</strong></p>
+<p>You will next set your connection credentials in the following section.</p>
+</li>
+</ol>
+<h3 id="adk-connections-setting-your-connection-credentials">Setting your connection credentials<a class="headerlink" href="#adk-connections-setting-your-connection-credentials" title="Permanent link">#</a></h3>
+<p>You will now set connection credentials to later authenticate tools to access your external AAP environment and automate tasks.</p>
+<p>Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used to login to AAP).</p>
+<p><strong>ACTION:</strong> Take note of and record the values of your <code>AAP User Name (for UI access)</code> and <code>AAP User Password</code> used to log into your AAP environment's web console. For a reminder on how to retrieve these values, you can reference <strong><em>Section <a href="#techzone-aap-zos-accessing-the-environment">Accessing the environment</a></em></strong>. </p>
+<p><em>You will need these credentials for the following step.</em></p>
+<ol>
+<li>
+<p>Set an environment variable for your <code>AAP User Password</code> value by running the below command (depending on your operating system):</p>
+<p><strong><em>MacOS Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-connections-__codelineno-2-1"></a>export aap_password="&lt;your AAP User Password&gt;"
+</span></code></pre></div>
+<p><strong><em>Windows Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-connections-__codelineno-3-1"></a>set aap_password="&lt;your AAP User Password&gt;"
+</span></code></pre></div>
+</li>
+<li>
+<p>To set your connection credentials, copy and paste the following command into your VS Code Terminal session and click <strong>enter</strong>:</p>
+<p><strong><em>MacOS Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-connections-__codelineno-4-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password $aap_password
+</span></code></pre></div>
+<p><strong><em>Windows Users:</em></strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#adk-connections-__codelineno-5-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password %aap_password%
+</span></code></pre></div>
+</li>
+<li>
+<p>You should see a <code>Credentials successfully set...</code> message as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Now re-verify the connection with your newly set credentials by entering the following command in your command-line and clicking <strong>enter</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#adk-connections-__codelineno-6-1"></a>orchestrate connections list
+</span></code></pre></div>
+</li>
+<li>
+<p>You should now see that your previous connection now has credentials set, as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section><section class="print-page" id="adk-tools" heading-number="9.6"><div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#adk-tools-importing-tools" title="Permanent link">#</a></h1>
+<p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of Ansible where the tools must authenticate to AAP before calling an API.</p>
+<p>With the ADK, tools can be created either using OpenAPI specifications, or by using a Python program.</p>
+<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:
+- <strong><em>get_cert</em></strong>
+    - This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</p>
+<ul>
+<li>
+<p><strong><em>renew_cert</em></strong></p>
+<ul>
+<li>This is also an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job. When executed it runs the <strong>z/OS Certs – Search and Renew</strong> Ansible template in order to renew a certificate that may be expiring soon.</li>
+</ul>
+</li>
+<li>
+<p><strong><em>status_output_tool</em></strong></p>
+<ul>
+<li>Unlike the first two tools, this tool is defined as a Python script that <strong>retrieves the ansible job status and output</strong> to display back to the user. It takes the job ID from one of the earlier job executions as input, and then passes information and logs of the job back to the agent to provide a response to the end-user.</li>
+</ul>
+</li>
+</ul>
+<p>In this section, you will import the tool files within your <code>Tools</code> sub-folder to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.</p>
+<ol>
+<li>
+<p>Within VS Code, click on the <code>list_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (<em>paste it within the double-quotes</em>). It should look similar to the following:</p>
+<p><strong>IMAGE</strong></p>
+<p><em>Make sure to save the file before moving on</em></p>
+</li>
+<li>
+<p>Next, open up the <code>renew_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
+</li>
+</ol>
+<p><strong>IMAGE</strong></p>
+<ol start="4">
+<li>
+<p>Just as before, scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (within double-quotes).</p>
+<p><em>Again, make sure to save the file before moving on.</em></p>
+</li>
+<li>
+<p>Import the first OpenAPI tool from the <code>list_cert_tool.json</code> file by running the following command from your VS Code Terminal command-prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-tools-__codelineno-0-1"></a>orchestrate tools import -k openapi -f Tools/list_cert_tool.json --app-id ansible
+</span></code></pre></div>
+</li>
+<li>
+<p>After issuing the command, you should see a message similar to what’s shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>This indicates that your <code>get_cert</code> tool was imported successfully.</p>
+</li>
+<li>
+<p>Next, import the second OpenAPI tool from the <code>renew_cert_tool.json</code> file by running the following
+command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-tools-__codelineno-1-1"></a>orchestrate tools import -k openapi -f Tools/renew_cert_tool.json --app-id ansible
+</span></code></pre></div>
+</li>
+<li>
+<p>After issuing the command, you should get a message indicating that your <code>renew_cert</code> tool was imported successfully:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Finally, you will import the Python tool from the <code>job_output_status_tool.py</code> file. </p>
+<p>To do this, copy and paste the following command into your VS Code Terminal command-prompt and click enter.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-tools-__codelineno-2-1"></a>orchestrate tools import -k python -f Tools/job_output_status_tool.py --app-id ansible
+</span></code></pre></div>
+</li>
+<li>
+<p>Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-tools-__codelineno-3-1"></a>orchestrate tools list
+</span></code></pre></div>
+<p>This should output a table similar to below showing all your imported tools.</p>
 <p><strong>IMAGE</strong></p>
 </li>
 </ol></div></section></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
@@ -7176,6 +7377,34 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
             
                 .print-site-enumerate-headings #adk-prepare-vscode h5:before { content: '9.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) '.' counter(counter-adk-prepare-vscode-4) '.' counter(counter-adk-prepare-vscode-5) ' ' }
                 .print-site-enumerate-headings #adk-prepare-vscode h5 {  counter-increment: counter-adk-prepare-vscode-5 }
+            
+.print-site-enumerate-headings #adk-connections > h1:before { content: '9.5 ' }
+
+                .print-site-enumerate-headings #adk-connections h2:before { content: '9.5.' counter(counter-adk-connections-2) ' ' }
+                .print-site-enumerate-headings #adk-connections h2 {  counter-reset: counter-adk-connections-3  counter-adk-connections-4  counter-adk-connections-5 ;  counter-increment: counter-adk-connections-2 }
+            
+                .print-site-enumerate-headings #adk-connections h3:before { content: '9.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) ' ' }
+                .print-site-enumerate-headings #adk-connections h3 {  counter-reset: counter-adk-connections-4  counter-adk-connections-5 ;  counter-increment: counter-adk-connections-3 }
+            
+                .print-site-enumerate-headings #adk-connections h4:before { content: '9.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) '.' counter(counter-adk-connections-4) ' ' }
+                .print-site-enumerate-headings #adk-connections h4 {  counter-reset: counter-adk-connections-5 ;  counter-increment: counter-adk-connections-4 }
+            
+                .print-site-enumerate-headings #adk-connections h5:before { content: '9.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) '.' counter(counter-adk-connections-4) '.' counter(counter-adk-connections-5) ' ' }
+                .print-site-enumerate-headings #adk-connections h5 {  counter-increment: counter-adk-connections-5 }
+            
+.print-site-enumerate-headings #adk-tools > h1:before { content: '9.6 ' }
+
+                .print-site-enumerate-headings #adk-tools h2:before { content: '9.6.' counter(counter-adk-tools-2) ' ' }
+                .print-site-enumerate-headings #adk-tools h2 {  counter-reset: counter-adk-tools-3  counter-adk-tools-4  counter-adk-tools-5 ;  counter-increment: counter-adk-tools-2 }
+            
+                .print-site-enumerate-headings #adk-tools h3:before { content: '9.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) ' ' }
+                .print-site-enumerate-headings #adk-tools h3 {  counter-reset: counter-adk-tools-4  counter-adk-tools-5 ;  counter-increment: counter-adk-tools-3 }
+            
+                .print-site-enumerate-headings #adk-tools h4:before { content: '9.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) '.' counter(counter-adk-tools-4) ' ' }
+                .print-site-enumerate-headings #adk-tools h4 {  counter-reset: counter-adk-tools-5 ;  counter-increment: counter-adk-tools-4 }
+            
+                .print-site-enumerate-headings #adk-tools h5:before { content: '9.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) '.' counter(counter-adk-tools-4) '.' counter(counter-adk-tools-5) ' ' }
+                .print-site-enumerate-headings #adk-tools h5 {  counter-increment: counter-adk-tools-5 }
             </style>
 
 
