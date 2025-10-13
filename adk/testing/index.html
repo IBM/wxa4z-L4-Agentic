@@ -2331,39 +2331,39 @@
 <li>
 <p>You will start the demo flow by prompting the agent with the following:</p>
 <p><code>Get my certificate details</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test1.png"></a></p>
 </li>
 <li>
 <p>After prompting the agent with the above, the agent will respond asking <code>“What is the certificate label?”</code></p>
 <p>In response, prompt the assistant with the name of the SITE certificate you created earlier in AAP:</p>
 <p><code>DEMOCERT</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test2.png"></a></p>
 </li>
 <li>
 <p>Next, the Agent should ask <code>“What type of certificate is it? (Options include SITE, CERTAUTH, USER)”</code></p>
 <p>Respond with <code>SITE</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test3.png"></a></p>
 </li>
 <li>
 <p>After providing the type of certificate, the Agent does 2 things:</p>
 <p><strong>a.</strong> Invokes the <em>get_cert</em> tool to execute the <strong>z/OS Certs – List Cert</strong> ansible playbook, passing the certificate label and cert type as inputs to the playbook.</p>
 <p><strong>b.</strong> Responds with a message similar to what's shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test4.png"></a></p>
 <p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
 </li>
 <li>
 <p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
-<p><strong>IMAGE</strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test5.png"></a></p>
+<p><a class="glightbox" href="_attachments/test6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test6.png"></a></p>
 </li>
 <li>
 <p>You should then see something similar to the screenshot below, indicating that the <em>get_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test7.png"></a></p>
 </li>
 <li>
 <p>Next, scroll back down to the chat field and prompt the agent with:</p>
 <p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test8.png"></a></p>
 <p><strong>NOTE:</strong> your job_id will be different than what's shown above. </p>
 </li>
 <li>
@@ -2372,45 +2372,45 @@
 <p><strong>b.</strong> <strong>job status</strong></p>
 <p><strong>c.</strong> <strong>logs</strong></p>
 <p>If the <code>job status</code> was <code>successful</code>, then the logs should contain your certificate label, start date, and expiration date as shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test9.png"></a></p>
 <p>The key point is that the expiration date indicates that your certificate is going to expire in the next 30 days. And the next step would be to invoke the renew_cert tool to automate the certificate renewal process.</p>
 </li>
 <li>
 <p>Next, prompt the agent with the following:</p>
 <p><code>Renew my certificate</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test10.png"></a></p>
 </li>
 <li>
 <p>After prompting the agent with the above, the agent will respond asking <code>“What type of signing certificate will be used? (Options include CERTAUTH, SITE, Self)”</code></p>
 <p>In response, prompt the assistant with <code>CERTAUTH</code></p>
 <p>This is because the DEMOCERT certificate you created earlier is signed by your TESTCA certificate authority.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test11.png"></a></p>
 </li>
 <li>
 <p>Next, the Agent asks <code>“What is the label of the signing certificate?”</code></p>
 <p>Respond with <code>TESTCA</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test12.png"></a></p>
 </li>
 <li>
 <p>And finally, the Agent asks <code>“What is the certificate’s new expiration date? (Enter in the form of YYYY-MM- DD)”</code></p>
 <p>Respond with <code>2030-01-01</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test13.png"></a></p>
 </li>
 <li>
 <p>After providing the details above, the Agent again does 2 things:</p>
 <p><strong>a.</strong> Invokes the <em>renew_cert</em> tool to execute the <strong>z/OS Certs – Search and Renew</strong> ansible playbook, passing the needed inputs to the playbook.</p>
 <p><strong>b.</strong> responds with a message similar to what's shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test14.png"></a></p>
 <p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
 </li>
 <li>
 <p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
-<p><strong>IMAGE</strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test15.png"></a></p>
+<p><a class="glightbox" href="_attachments/test16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test16.png"></a></p>
 </li>
 <li>
 <p>You should then see something similar to the screenshot below, indicating that the <em>renew_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test17.png"></a></p>
 <p><em><strong>Notice</strong> how the agent provided the inputs for the ‘sign_with_survey’, ‘sign_label_survey’, and ‘new_expiry_date_survey’ variables. These were the variables you manually entered into the chat.</em></p>
 <p><em>Additionally, the inputs for the ‘cert_label_survey’ and ‘cert_type_survey’ were not directly provided to the tool, but carried over from the original get_cert tool as the agent has context awareness.</em></p>
 <p><em>And finally, for the ‘owner_id_survey’ and ‘keyring_survey’ inputs, these were never provided directly to the agent. Instead, the agent read the output log of the first ansible playbook and automatically picked up these values to pass as inputs to the renew_cert tool.</em></p>
@@ -2418,7 +2418,7 @@
 <li>
 <p>Next, scroll back down to the chat field and prompt the agent with:</p>
 <p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test18.png"></a></p>
 </li>
 <li>
 <p>After prompting the agent, it should invoke the <em>get_status_output</em> tool just like previously, passing your job_id as input and provide the following information:</p>
@@ -2426,9 +2426,9 @@
 <p><strong>b.</strong> <strong>job status</strong></p>
 <p><strong>c.</strong> <strong>logs</strong></p>
 <p>If the <strong>job status</strong> was <code>successful</code>, then the logs should contain a confirmation message that the certificate has been renewed as shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test19.png"></a></p>
 <p>However, if the <strong>job status</strong> shows as still <code>running</code>, then the logs would instead contain a summary of what the ansible playbook has done so far. If any errors occur in the processing, then the agent would also provide an analysis of what went wrong.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="_attachments/test20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/test20.png"></a></p>
 <p><strong><em>Congratulations! You’ve deployed and tested your own agent for renewing z/OS certificates. If there’s any time remaining feel free to continue testing or contact one of the lab instructors for any questions.</em></strong></p>
 </li>
 </ol></div>
