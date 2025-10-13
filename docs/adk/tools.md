@@ -5,6 +5,7 @@ Tools are essential components of agents, enabling them to perform actions such 
 With the ADK, tools can be created either using OpenAPI specifications, or by using a Python program.
 
 In this scenario, your ***zOS Certificate Agent*** will be leveraging 3 different tools:
+
 - ***get_cert***
     - This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the **z/OS Certs – List Cert** Ansible template that you saw earlier
 
@@ -28,7 +29,7 @@ In this section, you will import the tool files within your `Tools` sub-folder t
 
 3. Next, open up the `renew_cert_tool.json` file under the ‘Tools’ sub-folder to view the contents.
    
-   **IMAGE**
+    **IMAGE**
 
 4. Just as before, scroll to the bottom of the file and replace `<AAP UI URL>` with the **AAP UI URL** of your own environment (within double-quotes).
    
