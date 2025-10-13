@@ -2199,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/deploy.md" class="md-nav__link">
+      <a href="../adk/deploy/" class="md-nav__link">
         
   
   
@@ -2222,7 +2222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/publish.md" class="md-nav__link">
+      <a href="../adk/publish/" class="md-nav__link">
         
   
   
@@ -2245,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/testing.md" class="md-nav__link">
+      <a href="../adk/testing/" class="md-nav__link">
         
   
   
@@ -3002,6 +3002,33 @@
   <a href="#adk-tools" class="md-nav__link">
     <span class="md-ellipsis">
       Importing tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy the agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish agent to 'Live' version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test agent execution flow
     </span>
   </a>
   
@@ -6531,10 +6558,14 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </ol></div></section><section class="print-page" id="adk-tools" heading-number="9.6"><div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#adk-tools-importing-tools" title="Permanent link">#</a></h1>
 <p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of Ansible where the tools must authenticate to AAP before calling an API.</p>
 <p>With the ADK, tools can be created either using OpenAPI specifications, or by using a Python program.</p>
-<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:
-- <strong><em>get_cert</em></strong>
-    - This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</p>
+<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:</p>
 <ul>
+<li>
+<p><strong><em>get_cert</em></strong></p>
+<ul>
+<li>This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</li>
+</ul>
+</li>
 <li>
 <p><strong><em>renew_cert</em></strong></p>
 <ul>
@@ -6561,10 +6592,8 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Next, open up the <code>renew_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
-</li>
-</ol>
 <p><strong>IMAGE</strong></p>
-<ol start="4">
+</li>
 <li>
 <p>Just as before, scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (within double-quotes).</p>
 <p><em>Again, make sure to save the file before moving on.</em></p>
@@ -6601,6 +6630,211 @@ command:</p>
 </span></code></pre></div>
 <p>This should output a table similar to below showing all your imported tools.</p>
 <p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section><section class="print-page" id="adk-deploy" heading-number="9.7"><div><h1 id="deploy-the-agent">Deploy the agent<a class="headerlink" href="#adk-deploy-deploy-the-agent" title="Permanent link">#</a></h1>
+<p>In the ADK, agents can use tools to perform complex tasks defined by users. Each agent has a name and description that is configured, helping users identify each agent they can use to perform certain actions.</p>
+<p>In this section, you will define an agent named <strong>zOS_Certificate_Agent</strong> that leverages the tools you have imported into the ADK environment to help users quickly identify certificate information and assist with the renewal process of expiring certificates, all from a single chat and using natural language.</p>
+<ol>
+<li>
+<p>Within VS Code, click on the <code>zOS_Cert_Agent.yaml</code> file under the ‘Agents’ sub-folder to view the contents.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>You should then be able to see the agent definition as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p><em>Lets go over each of the sections...</em></p>
+<p><strong>IMAGE</strong></p>
+<p>For further details on building agents with the ADK, you can reference the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/overview" target="_blank">here</a>.</p>
+</li>
+<li>
+<p>Finally, deploy the agent by issuing the following command within your VS Code Terminal command-line:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-deploy-__codelineno-0-1"></a>orchestrate agents import -f Agents/zOS_Cert_Agent.yaml
+</span></code></pre></div>
+</li>
+<li>
+<p>If executed correctly, you should see a message similar to below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<p><strong>Congratulations! You’ve deployed your first agent using the ADK and are now ready to test the execution flow leveraging the previous certificates you’ve setup on z/OS using Ansible Automation Platform.</strong></p></div></section><section class="print-page" id="adk-publish" heading-number="9.8"><div><h1 id="publish-agent-to-live-version">Publish agent to 'Live' version<a class="headerlink" href="#adk-publish-publish-agent-to-live-version" title="Permanent link">#</a></h1>
+<p>Before testing the agent's execution flow within the watsonx Orchestrate Chat, you will first access your agent (which should currently be the <code>Draft</code> version) and publish it to the <code>Live</code> version. </p>
+<ol>
+<li>
+<p>Navigate back to your <strong>watsonx Orchestrate</strong> environment UI so that you see the following:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Within the watsonx Orchestrate UI, navigate to the <strong>Agent Builder</strong> view by clicking on <strong>Build -&gt; Agent Builder</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once in the <strong>Agent Builder</strong>, click on your newly deployed agent, labeled <strong>zOS_Certificate_Agent</strong> as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Then you will be in the <strong><em>Preview</em></strong> mode of your agent as the agent was created in <strong>draft</strong> mode only (prior to deploying). </p>
+<p>In the Agent definition, scroll down and view the different settings that were automatically configured based on the definitions of the Agent yaml file you used.</p>
+<p>In the <strong>Tools</strong> section, verify that all 3 tools you deployed are present and available to the agent:</p>
+<p><strong>IMAGE</strong></p>
+<p>Also notice the <strong>welcome message</strong> you configured in the <code>zOS_Cert_Agent.yaml</code> file:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After verifying the agent definitions, you can deploy the agent in the “Live” environment. </p>
+<p>To do this, click <strong>Deploy</strong> at the top-right of the page.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the new window, click on the ‘pencil’ icon next to your <strong><em>ansible</em></strong> connection to modify the connection for your “Live” environment.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the <strong>Configure live connection</strong> window, set the following:</p>
+<p><strong>a.</strong> <code>Authentication type:</code> set to “Basic Auth”</p>
+<p><strong>b.</strong> <code>Server URL:</code> copy and paste your <code>&lt;AAP UI URL&gt;</code></p>
+<p><strong>c.</strong> <code>Credential type:</code> set to <code>Team credentials</code></p>
+<p><strong>d.</strong> <code>Username:</code> set to <code>admin</code></p>
+<p><strong>e.</strong> <code>Password:</code> copy and paste your <code>&lt;AAP User Password&gt;</code></p>
+<p>Then click <strong>Connect</strong>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After clicking <strong>Connect</strong>, wait until you see a “Connected” message appear at the bottom, then click <strong>Save</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Finally, click <strong>Save and close</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Lastly, back at the <strong>Deploy Agent</strong> page, you should now see a green check-mark next to the “Live” connection. </p>
+<p>Click <strong>Deploy</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After a few seconds, the agent will finish deploying and you will see a <code>Success!</code> message as shown below. Wait until the deployment completes. <em><strong>Note:</strong> this may take up to 30 seconds or so.</em></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once the deployment completes, navigate back to the agent chat view by clicking on <strong>Chat</strong> in the menu.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click on the <strong>‘Agents’</strong> drop-down and select your deployed agent, labeled <strong>zOS_Certificate_Agent</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<p><strong><em>You are now ready to begin the demo scenario - follow the steps in the next section.</em></strong></p></div></section><section class="print-page" id="adk-testing" heading-number="9.9"><div><h1 id="test-the-agent-execution-flow">Test the agent execution flow<a class="headerlink" href="#adk-testing-test-the-agent-execution-flow" title="Permanent link">#</a></h1>
+<p>In this final section, you will access your deployed agent within your watsonx Orchestrate environment and test the agent’s execution flow. The scenario follows the following flow:</p>
+<ul>
+<li>You will firstly execute the <strong><em>get_cert</em></strong> tool to trigger an Ansible playbook that retrieves your certificate details</li>
+<li>You will then trigger the <strong><em>status_output_tool</em></strong> to get the status and output of the job logs to verify the expiration date of your certificate - indicating that the certificate is expiring</li>
+<li>You will then execute the <strong><em>renew_cert</em></strong> tool to trigger an Ansible playbook that automates the renewal process of your expiring certificate</li>
+<li>Lastly, you will again trigger the <strong><em>status_output_tool</em></strong> tool to get the status and output of the previous job logs to monitor the renewal process, and finally getting a confirmation message</li>
+</ul>
+<ol>
+<li>
+<p>You will start the demo flow by prompting the agent with the following:</p>
+<p><code>Get my certificate details</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After prompting the agent with the above, the agent will respond asking <code>“What is the certificate label?”</code></p>
+<p>In response, prompt the assistant with the name of the SITE certificate you created earlier in AAP:</p>
+<p><code>DEMOCERT</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Next, the Agent should ask <code>“What type of certificate is it? (Options include SITE, CERTAUTH, USER)”</code></p>
+<p>Respond with <code>SITE</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After providing the type of certificate, the Agent does 2 things:</p>
+<p><strong>a.</strong> Invokes the <em>get_cert</em> tool to execute the <strong>z/OS Certs – List Cert</strong> ansible playbook, passing the certificate label and cert type as inputs to the playbook.</p>
+<p><strong>b.</strong> Responds with a message similar to what's shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
+</li>
+<li>
+<p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>You should then see something similar to the screenshot below, indicating that the <em>get_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Next, scroll back down to the chat field and prompt the agent with:</p>
+<p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
+<p><strong>IMAGE</strong></p>
+<p><strong>NOTE:</strong> your job_id will be different than what's shown above. </p>
+</li>
+<li>
+<p>After prompting the agent, it should invoke the <em>get_status_output</em> tool, passing your job_id as input and provide the following information:</p>
+<p><strong>a.</strong> <strong>job id</strong></p>
+<p><strong>b.</strong> <strong>job status</strong></p>
+<p><strong>c.</strong> <strong>logs</strong></p>
+<p>If the <code>job status</code> was <code>successful</code>, then the logs should contain your certificate label, start date, and expiration date as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>The key point is that the expiration date indicates that your certificate is going to expire in the next 30 days. And the next step would be to invoke the renew_cert tool to automate the certificate renewal process.</p>
+</li>
+<li>
+<p>Next, prompt the agent with the following:</p>
+<p><code>Renew my certificate</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After prompting the agent with the above, the agent will respond asking <code>“What type of signing certificate will be used? (Options include CERTAUTH, SITE, Self)”</code></p>
+<p>In response, prompt the assistant with <code>CERTAUTH</code></p>
+<p>This is because the DEMOCERT certificate you created earlier is signed by your TESTCA certificate authority.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Next, the Agent asks <code>“What is the label of the signing certificate?”</code></p>
+<p>Respond with <code>TESTCA</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>And finally, the Agent asks <code>“What is the certificate’s new expiration date? (Enter in the form of YYYY-MM- DD)”</code></p>
+<p>Respond with <code>2030-01-01</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After providing the details above, the Agent again does 2 things:</p>
+<p><strong>a.</strong> Invokes the <em>renew_cert</em> tool to execute the <strong>z/OS Certs – Search and Renew</strong> ansible playbook, passing the needed inputs to the playbook.</p>
+<p><strong>b.</strong> responds with a message similar to what's shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
+</li>
+<li>
+<p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>You should then see something similar to the screenshot below, indicating that the <em>renew_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
+<p><strong>IMAGE</strong></p>
+<p><em><strong>Notice</strong> how the agent provided the inputs for the ‘sign_with_survey’, ‘sign_label_survey’, and ‘new_expiry_date_survey’ variables. These were the variables you manually entered into the chat.</em></p>
+<p><em>Additionally, the inputs for the ‘cert_label_survey’ and ‘cert_type_survey’ were not directly provided to the tool, but carried over from the original get_cert tool as the agent has context awareness.</em></p>
+<p><em>And finally, for the ‘owner_id_survey’ and ‘keyring_survey’ inputs, these were never provided directly to the agent. Instead, the agent read the output log of the first ansible playbook and automatically picked up these values to pass as inputs to the renew_cert tool.</em></p>
+</li>
+<li>
+<p>Next, scroll back down to the chat field and prompt the agent with:</p>
+<p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>After prompting the agent, it should invoke the <em>get_status_output</em> tool just like previously, passing your job_id as input and provide the following information:</p>
+<p><strong>a.</strong> <strong>job id</strong></p>
+<p><strong>b.</strong> <strong>job status</strong></p>
+<p><strong>c.</strong> <strong>logs</strong></p>
+<p>If the <strong>job status</strong> was <code>successful</code>, then the logs should contain a confirmation message that the certificate has been renewed as shown below:</p>
+<p><strong>IMAGE</strong></p>
+<p>However, if the <strong>job status</strong> shows as still <code>running</code>, then the logs would instead contain a summary of what the ansible playbook has done so far. If any errors occur in the processing, then the agent would also provide an analysis of what went wrong.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>Congratulations! You’ve deployed and tested your own agent for renewing z/OS certificates. If there’s any time remaining feel free to continue testing or contact one of the lab instructors for any questions.</em></strong></p>
 </li>
 </ol></div></section></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
 
@@ -7405,6 +7639,48 @@ command:</p>
             
                 .print-site-enumerate-headings #adk-tools h5:before { content: '9.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) '.' counter(counter-adk-tools-4) '.' counter(counter-adk-tools-5) ' ' }
                 .print-site-enumerate-headings #adk-tools h5 {  counter-increment: counter-adk-tools-5 }
+            
+.print-site-enumerate-headings #adk-deploy > h1:before { content: '9.7 ' }
+
+                .print-site-enumerate-headings #adk-deploy h2:before { content: '9.7.' counter(counter-adk-deploy-2) ' ' }
+                .print-site-enumerate-headings #adk-deploy h2 {  counter-reset: counter-adk-deploy-3  counter-adk-deploy-4  counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-2 }
+            
+                .print-site-enumerate-headings #adk-deploy h3:before { content: '9.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) ' ' }
+                .print-site-enumerate-headings #adk-deploy h3 {  counter-reset: counter-adk-deploy-4  counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-3 }
+            
+                .print-site-enumerate-headings #adk-deploy h4:before { content: '9.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) '.' counter(counter-adk-deploy-4) ' ' }
+                .print-site-enumerate-headings #adk-deploy h4 {  counter-reset: counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-4 }
+            
+                .print-site-enumerate-headings #adk-deploy h5:before { content: '9.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) '.' counter(counter-adk-deploy-4) '.' counter(counter-adk-deploy-5) ' ' }
+                .print-site-enumerate-headings #adk-deploy h5 {  counter-increment: counter-adk-deploy-5 }
+            
+.print-site-enumerate-headings #adk-publish > h1:before { content: '9.8 ' }
+
+                .print-site-enumerate-headings #adk-publish h2:before { content: '9.8.' counter(counter-adk-publish-2) ' ' }
+                .print-site-enumerate-headings #adk-publish h2 {  counter-reset: counter-adk-publish-3  counter-adk-publish-4  counter-adk-publish-5 ;  counter-increment: counter-adk-publish-2 }
+            
+                .print-site-enumerate-headings #adk-publish h3:before { content: '9.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) ' ' }
+                .print-site-enumerate-headings #adk-publish h3 {  counter-reset: counter-adk-publish-4  counter-adk-publish-5 ;  counter-increment: counter-adk-publish-3 }
+            
+                .print-site-enumerate-headings #adk-publish h4:before { content: '9.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) '.' counter(counter-adk-publish-4) ' ' }
+                .print-site-enumerate-headings #adk-publish h4 {  counter-reset: counter-adk-publish-5 ;  counter-increment: counter-adk-publish-4 }
+            
+                .print-site-enumerate-headings #adk-publish h5:before { content: '9.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) '.' counter(counter-adk-publish-4) '.' counter(counter-adk-publish-5) ' ' }
+                .print-site-enumerate-headings #adk-publish h5 {  counter-increment: counter-adk-publish-5 }
+            
+.print-site-enumerate-headings #adk-testing > h1:before { content: '9.9 ' }
+
+                .print-site-enumerate-headings #adk-testing h2:before { content: '9.9.' counter(counter-adk-testing-2) ' ' }
+                .print-site-enumerate-headings #adk-testing h2 {  counter-reset: counter-adk-testing-3  counter-adk-testing-4  counter-adk-testing-5 ;  counter-increment: counter-adk-testing-2 }
+            
+                .print-site-enumerate-headings #adk-testing h3:before { content: '9.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) ' ' }
+                .print-site-enumerate-headings #adk-testing h3 {  counter-reset: counter-adk-testing-4  counter-adk-testing-5 ;  counter-increment: counter-adk-testing-3 }
+            
+                .print-site-enumerate-headings #adk-testing h4:before { content: '9.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) '.' counter(counter-adk-testing-4) ' ' }
+                .print-site-enumerate-headings #adk-testing h4 {  counter-reset: counter-adk-testing-5 ;  counter-increment: counter-adk-testing-4 }
+            
+                .print-site-enumerate-headings #adk-testing h5:before { content: '9.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) '.' counter(counter-adk-testing-4) '.' counter(counter-adk-testing-5) ' ' }
+                .print-site-enumerate-headings #adk-testing h5 {  counter-increment: counter-adk-testing-5 }
             </style>
 
 

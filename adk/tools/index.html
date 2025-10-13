@@ -16,6 +16,8 @@
         <link rel="prev" href="../connections/">
       
       
+        <link rel="next" href="../deploy/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -2216,7 +2218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy.md" class="md-nav__link">
+      <a href="../deploy/" class="md-nav__link">
         
   
   
@@ -2239,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../publish.md" class="md-nav__link">
+      <a href="../publish/" class="md-nav__link">
         
   
   
@@ -2262,7 +2264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing.md" class="md-nav__link">
+      <a href="../testing/" class="md-nav__link">
         
   
   
@@ -2322,10 +2324,14 @@
 <div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#importing-tools" title="Permanent link">#</a></h1>
 <p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of Ansible where the tools must authenticate to AAP before calling an API.</p>
 <p>With the ADK, tools can be created either using OpenAPI specifications, or by using a Python program.</p>
-<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:
-- <strong><em>get_cert</em></strong>
-    - This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</p>
+<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:</p>
 <ul>
+<li>
+<p><strong><em>get_cert</em></strong></p>
+<ul>
+<li>This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</li>
+</ul>
+</li>
 <li>
 <p><strong><em>renew_cert</em></strong></p>
 <ul>
@@ -2352,10 +2358,8 @@
 </li>
 <li>
 <p>Next, open up the <code>renew_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
-</li>
-</ol>
 <p><strong>IMAGE</strong></p>
-<ol start="4">
+</li>
 <li>
 <p>Just as before, scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (within double-quotes).</p>
 <p><em>Again, make sure to save the file before moving on.</em></p>
@@ -2438,6 +2442,22 @@ command:</p>
             </div>
           </a>
         
+        
+          
+          <a href="../deploy/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploy the agent">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Deploy the agent
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
