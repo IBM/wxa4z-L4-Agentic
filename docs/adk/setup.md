@@ -52,11 +52,11 @@ In this section you will install the **ADK** to your local workstation and confi
 
 4. After issuing the above command, you will be prompted for your ***WXO API key*** as shown below:
    
-    **IMAGE**
+    ![](_attachments/adk2.png)
 
     **Copy and paste** the value of your **IBM Cloud API key** from the preceding steps and hit **enter**. You should then see that your environment is now active, as shown below:
 
-    **IMAGE**
+    ![](_attachments/adk3.png)
 
 5. Once activated, verify you’re successfully connected by running the following command to view existing agents in your environment:
    

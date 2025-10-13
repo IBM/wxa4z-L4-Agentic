@@ -17,11 +17,11 @@ In order to setup the scenario to demonstrate the capabilities of the agent you 
    
     Click **Templates** under the **Resources** section.
 
-    **IMAGE**
+    ![](_attachments/aap1.png)
 
 3. Click the **launch** icon for the **z/OS Certs - Create Cert** template.
    
-    **IMAGE**
+    ![](_attachments/aap2.png)
 
 4. On the **Survey** screen, modify the **Certificate Label** and **Type** fields with the values that follow and then click Next.
    
@@ -31,15 +31,15 @@ In order to setup the scenario to demonstrate the capabilities of the agent you 
 
     ***Leave the defaults for all other fields.***
 
-    **IMAGE**
+    ![](_attachments/aap3.png)
 
 5. Click **Launch**. 
    
-    **IMAGE**
+    ![](_attachments/aap4.png)
 
 6. Review the output of the job. In the output of the playbook, notice that a new keyring is created, a certificate is created, and the certificate is connected to the keyring.
    
-    **IMAGE**
+    ![](_attachments/aap5.png)
 
     ***You have now successfully created your CA certificate, labeled ‘TESTCA’, that will be used to sign your new SITE certificate.***
 
@@ -47,7 +47,7 @@ In order to setup the scenario to demonstrate the capabilities of the agent you 
    
     Return to the **Templates** tab and click the **launch** icon for the **z/OS Certs - Create Cert** template.
 
-    **IMAGE**
+    ![](_attachments/aap6.png)
 
 8. On the **Survey** screen, modify the fields that follow with the values specified and then click **Next**.
    
@@ -65,17 +65,17 @@ In order to setup the scenario to demonstrate the capabilities of the agent you 
 
     ***Leave the defaults for all other fields.***
 
-    **IMAGE**
+    ![](_attachments/aap7.png)
 
     Unlike the first certificate you created which was *self-signed*, this certificate will be signed by the local certificate authority that uses the CA you created.
 
 9. Click **Launch**. 
     
-    **IMAGE**
+    ![](_attachments/aap8.png)
 
 10. Verify that the job was successful and inspect the output of the job.
     
-    **IMAGE**
+    ![](_attachments/aap9.png)
 
 ***You have now successfully created your ‘expiring’ SITE certificate, labeled ‘DEMOCERT’ which you will later use to demonstrate your agent’s capability of automating the certificate renewal process.***
 

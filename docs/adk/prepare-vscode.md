@@ -18,7 +18,7 @@ For the following sections of the Lab, you will be using VS Code to build your a
 
 5. Then open the extracted ***ADK – Agent files*** folder within your VS Code workspace by clicking **File -> Open Folder**. 
    
-    **IMAGE**
+    ![](_attachments/prep1.png)
 
 6. Then select the extracted ***ADK – Agent files*** folder you previously downloaded and **open it**.
    
@@ -28,21 +28,26 @@ For the following sections of the Lab, you will be using VS Code to build your a
     - *Connections*
     - *Tools*
   
-    **IMAGE**
+    ![](_attachments/prep2.png)
 
     !!! Warning "**What are these files?**"
 
         **Connections:**
+
         - ***connections.yaml:*** configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs
 
         **Tools:**
+
         - ***job_output_status_tool.py:*** a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).
+  
         - ***list_cert_tool.json:*** an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.
+  
         - ***renew_cert_tool.json:*** an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.
   
         **Agents:**
+
         - ***zOS_Cert_Agent.yaml:*** an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates
 
 8. Finally, open a **Terminal window** within VS Code by clicking **Terminal -> New Terminal**:
    
-    **IMAGE**
+    ![](_attachments/prep3.png)
