@@ -2107,7 +2107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/config-aap.md" class="md-nav__link">
+      <a href="../adk/config-aap/" class="md-nav__link">
         
   
   
@@ -2130,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/prepare-vscode.md" class="md-nav__link">
+      <a href="../adk/prepare-vscode/" class="md-nav__link">
         
   
   
@@ -2966,6 +2966,24 @@
   <a href="#adk-setup" class="md-nav__link">
     <span class="md-ellipsis">
       Installing and setting up ADK environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-config-aap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring AAP and z/OS certificates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adk-prepare-vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing VS Code workspace
     </span>
   </a>
   
@@ -6267,7 +6285,123 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span></code></pre></div>
 </li>
 </ol>
-<p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></section></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
+<p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></section><section class="print-page" id="adk-config-aap" heading-number="9.3"><div><h1 id="configuring-aap-and-zos-certificates">Configuring AAP and z/OS certificates<a class="headerlink" href="#adk-config-aap-configuring-aap-and-zos-certificates" title="Permanent link">#</a></h1>
+<p>In this scenario, you will leverage 2 templates that have been pre-defined in your <strong>Ansible Automation Platform (AAP)</strong> environment. These 2 templates are:</p>
+<ul>
+<li><strong>z/OS Certs - List Cert</strong></li>
+<li>Takes a certificate label as input and triggers an automation on z/OS to retrieve the certificate details, including the expiration date of the certificate</li>
+<li><strong>z/OS Certs - Search and Renew</strong></li>
+<li>Automates the renewal process for a particular certificate on z/OS</li>
+</ul>
+<p>In order to setup the scenario to demonstrate the capabilities of the agent you will later create, you will now leverage AAP to create a z/OS SITE certificate that is soon to be expiring.</p>
+<ol>
+<li>
+<p>Log into AAP by accessing your <strong>Ansible Automation Platform UI</strong> URL, and logging in with your <strong>AAP User Name (For UI access)</strong> and <strong>AAP User Password</strong> combination.</p>
+<p><em>For help logging in, see </em><em>Section <a href="#techzone-aap-zos-accessing-the-environment">Accessing the environment</a></em><em>.</em></p>
+</li>
+<li>
+<p>Now you will create a <strong>certificate authority (CA)</strong> certificate to sign future SITE certificates. </p>
+<p>Click <strong>Templates</strong> under the <strong>Resources</strong> section.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>On the <strong>Survey</strong> screen, modify the <strong>Certificate Label</strong> and <strong>Type</strong> fields with the values that follow and then click Next.</p>
+<p><strong>a.</strong> <code>Certificate Label: TESTCA</code></p>
+<p><strong>b.</strong> <code>Type: CERTAUTH</code></p>
+<p><strong><em>Leave the defaults for all other fields.</em></strong></p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Click <strong>Launch</strong>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Review the output of the job. In the output of the playbook, notice that a new keyring is created, a certificate is created, and the certificate is connected to the keyring.</p>
+<p><strong>IMAGE</strong></p>
+<p><strong><em>You have now successfully created your CA certificate, labeled ‘TESTCA’, that will be used to sign your new SITE certificate.</em></strong></p>
+</li>
+<li>
+<p>Next, you will create an expiring certificate that uses the CA certificate that you just created.</p>
+<p>Return to the <strong>Templates</strong> tab and click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>On the <strong>Survey</strong> screen, modify the fields that follow with the values specified and then click <strong>Next</strong>.</p>
+<p><strong>a.</strong> <code>Certificate Label: DEMOCERT</code></p>
+<p><strong>b.</strong> <code>Type: SITE</code></p>
+<p><strong>c.</strong> <code>Sign with: CERTAUTH</code></p>
+<p><strong>d.</strong> <code>Sign Label: TESTCA</code></p>
+<p><strong>e.</strong> <code>Common Name: company.com</code></p>
+<p><strong>f.</strong> <code>Expiration date: &lt;enter a date that occurs within the next 30days. The date must be in the format YYYY-MM-DD&gt;</code></p>
+<p><strong><em>Leave the defaults for all other fields.</em></strong></p>
+<p><strong>IMAGE</strong></p>
+<p>Unlike the first certificate you created which was <em>self-signed</em>, this certificate will be signed by the local certificate authority that uses the CA you created.</p>
+</li>
+<li>
+<p>Click <strong>Launch</strong>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Verify that the job was successful and inspect the output of the job.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol>
+<p><strong><em>You have now successfully created your ‘expiring’ SITE certificate, labeled ‘DEMOCERT’ which you will later use to demonstrate your agent’s capability of automating the certificate renewal process.</em></strong></p></div></section><section class="print-page" id="adk-prepare-vscode" heading-number="9.4"><div><h1 id="setting-up-vs-code-workspace-with-agent-configuration-files">Setting up VS Code workspace with Agent configuration files<a class="headerlink" href="#adk-prepare-vscode-setting-up-vs-code-workspace-with-agent-configuration-files" title="Permanent link">#</a></h1>
+<p>For the following sections of the Lab, you will be using VS Code to build your agents using the ADK.</p>
+<p><strong><em>Before proceeding, ensure you have the VS Code application installed and accessible on your local workstation.</em></strong></p>
+<ol>
+<li>
+<p>Download the <strong>Agent configuration .zip file</strong> by accessing one of the box folders depending on your machine’s operating system:</p>
+<ul>
+<li><strong>Mac users:</strong> <a href="https://ibm.box.com/s/8gr5i1v0evadep36tlf3ez9yeg4xrkz2" target="_blank">https://ibm.box.com/s/8gr5i1v0evadep36tlf3ez9yeg4xrkz2</a></li>
+<li><strong>Windows users:</strong> <a href="https://ibm.box.com/s/6yja7kolhqhxfp0wz68evpzhd014cfhd" target="_blank">https://ibm.box.com/s/6yja7kolhqhxfp0wz68evpzhd014cfhd</a></li>
+</ul>
+</li>
+<li>
+<p>Click the <strong>download</strong> icon in the top-right corner of the browser to download the agent folder to your local workstation.</p>
+</li>
+<li>
+<p>Once downloaded as a <strong><em>.zip</em></strong> file, extract the <strong>ADK – Agent files</strong> folder in your Downloads directory.</p>
+</li>
+<li>
+<p>Open <strong>VS Code</strong> on your local workstation.</p>
+</li>
+<li>
+<p>Then open the extracted <strong><em>ADK – Agent files</em></strong> folder within your VS Code workspace by clicking <strong>File -&gt; Open Folder</strong>. </p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Then select the extracted <strong><em>ADK – Agent files</em></strong> folder you previously downloaded and <strong>open it</strong>.</p>
+</li>
+<li>
+<p>Once VS Code restarts, you should see the <strong><em>ADK – Agent files</em></strong> folder opened in the <strong>Explorer</strong> view, with various sub-folders:</p>
+<ul>
+<li><em>Agents</em></li>
+<li><em>Connections</em></li>
+<li><em>Tools</em></li>
+</ul>
+<p><strong>IMAGE</strong></p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>What are these files?</strong></p>
+<p><strong>Connections:</strong>
+    - <strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</p>
+<p><strong>Tools:</strong>
+    - <strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).
+    - <strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.
+    - <strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
+<p><strong>Agents:</strong>
+    - <strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</p>
+</div>
+</li>
+<li>
+<p>Finally, open a <strong>Terminal window</strong> within VS Code by clicking <strong>Terminal -&gt; New Terminal</strong>:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ol></div></section></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
 
                 .print-site-enumerate-headings #index h2:before { content: '1.' counter(counter-index-2) ' ' }
                 .print-site-enumerate-headings #index h2 {  counter-reset: counter-index-3  counter-index-4  counter-index-5  counter-index-6 ;  counter-increment: counter-index-2 }
@@ -7014,6 +7148,34 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
             
                 .print-site-enumerate-headings #adk-setup h5:before { content: '9.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) '.' counter(counter-adk-setup-4) '.' counter(counter-adk-setup-5) ' ' }
                 .print-site-enumerate-headings #adk-setup h5 {  counter-increment: counter-adk-setup-5 }
+            
+.print-site-enumerate-headings #adk-config-aap > h1:before { content: '9.3 ' }
+
+                .print-site-enumerate-headings #adk-config-aap h2:before { content: '9.3.' counter(counter-adk-config-aap-2) ' ' }
+                .print-site-enumerate-headings #adk-config-aap h2 {  counter-reset: counter-adk-config-aap-3  counter-adk-config-aap-4  counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-2 }
+            
+                .print-site-enumerate-headings #adk-config-aap h3:before { content: '9.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) ' ' }
+                .print-site-enumerate-headings #adk-config-aap h3 {  counter-reset: counter-adk-config-aap-4  counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-3 }
+            
+                .print-site-enumerate-headings #adk-config-aap h4:before { content: '9.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) '.' counter(counter-adk-config-aap-4) ' ' }
+                .print-site-enumerate-headings #adk-config-aap h4 {  counter-reset: counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-4 }
+            
+                .print-site-enumerate-headings #adk-config-aap h5:before { content: '9.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) '.' counter(counter-adk-config-aap-4) '.' counter(counter-adk-config-aap-5) ' ' }
+                .print-site-enumerate-headings #adk-config-aap h5 {  counter-increment: counter-adk-config-aap-5 }
+            
+.print-site-enumerate-headings #adk-prepare-vscode > h1:before { content: '9.4 ' }
+
+                .print-site-enumerate-headings #adk-prepare-vscode h2:before { content: '9.4.' counter(counter-adk-prepare-vscode-2) ' ' }
+                .print-site-enumerate-headings #adk-prepare-vscode h2 {  counter-reset: counter-adk-prepare-vscode-3  counter-adk-prepare-vscode-4  counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-2 }
+            
+                .print-site-enumerate-headings #adk-prepare-vscode h3:before { content: '9.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) ' ' }
+                .print-site-enumerate-headings #adk-prepare-vscode h3 {  counter-reset: counter-adk-prepare-vscode-4  counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-3 }
+            
+                .print-site-enumerate-headings #adk-prepare-vscode h4:before { content: '9.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) '.' counter(counter-adk-prepare-vscode-4) ' ' }
+                .print-site-enumerate-headings #adk-prepare-vscode h4 {  counter-reset: counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-4 }
+            
+                .print-site-enumerate-headings #adk-prepare-vscode h5:before { content: '9.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) '.' counter(counter-adk-prepare-vscode-4) '.' counter(counter-adk-prepare-vscode-5) ' ' }
+                .print-site-enumerate-headings #adk-prepare-vscode h5 {  counter-increment: counter-adk-prepare-vscode-5 }
             </style>
 
 
