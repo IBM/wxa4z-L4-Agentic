@@ -2343,7 +2343,7 @@
 </li>
 <li>
 <p>Then open the extracted <strong><em>ADK – Agent files</em></strong> folder within your VS Code workspace by clicking <strong>File -&gt; Open Folder</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/prep1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/prep1.png"></a></p>
 </li>
 <li>
 <p>Then select the extracted <strong><em>ADK – Agent files</em></strong> folder you previously downloaded and <strong>open it</strong>.</p>
@@ -2355,22 +2355,34 @@
 <li><em>Connections</em></li>
 <li><em>Tools</em></li>
 </ul>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/prep2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/prep2.png"></a></p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>What are these files?</strong></p>
-<p><strong>Connections:</strong>
-- <strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</p>
-<p><strong>Tools:</strong>
-- <strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).
-- <strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.
-- <strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
-<p><strong>Agents:</strong>
-- <strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</p>
+<p><strong>Connections:</strong></p>
+<ul>
+<li><strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</li>
+</ul>
+<p><strong>Tools:</strong></p>
+<ul>
+<li>
+<p><strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).</p>
+</li>
+<li>
+<p><strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.</p>
+</li>
+<li>
+<p><strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
+</li>
+</ul>
+<p><strong>Agents:</strong></p>
+<ul>
+<li><strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</li>
+</ul>
 </div>
 </li>
 <li>
 <p>Finally, open a <strong>Terminal window</strong> within VS Code by clicking <strong>Terminal -&gt; New Terminal</strong>:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/prep3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/prep3.png"></a></p>
 </li>
 </ol></div>
 

@@ -2322,7 +2322,45 @@
 
 
 <div><h1 id="introduction-to-the-agent-development-kit-adk">Introduction to the Agent Development Kit (ADK)<a class="headerlink" href="#introduction-to-the-agent-development-kit-adk" title="Permanent link">#</a></h1>
-<h3 id="lab-flow">Lab Flow<a class="headerlink" href="#lab-flow" title="Permanent link">#</a></h3></div>
+<p>Built on top of IBM watsonx Orchestrate, the watsonx Assistant for Z offering also enables flexible agent development for all users, empowering both business users and developers with a unified studio supporting low-code and pro-code development for key Z-specific use cases.</p>
+<p>The <strong>watsonx Orchestrate Agent Development Kit (ADK)</strong> is a set of tools designed to make it easy to build and deploy agents. It is packaged as a Python library and command-line tool that allows builders to configure agents that run on the platform. The ADK also supports integrating agents and tools built on other frameworks.</p>
+<p>The Agent Development Kit (ADK) is set of CLI utilities and python modules that helps you create agents and tools for watsonx Orchestrate. You can use these agents and tools across different watsonx Orchestrate offerings, including:</p>
+<ul>
+<li>watsonx Orchestrate on-premises</li>
+<li>watsonx Orchestrate IBM Cloud</li>
+<li>watsonx Orchestrate AWS</li>
+<li>watsonx Orchestrate Developer Edition</li>
+</ul>
+<h3 id="adk-components">ADK Components<a class="headerlink" href="#adk-components" title="Permanent link">#</a></h3>
+<p>The ADK has a CLI. The CLI can streamline the process of building, testing, and importing agents and tools</p>
+<p><a class="glightbox" href="../_attachments/adk1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/adk1.png"></a></p>
+<p>The ADK also provides a framework for developers to easily define new tools and agents programmatically.</p>
+<ol>
+<li>
+<p>Tools are defined using one of the available binding types (Python, OpenAPI, MCP, etc.) and then imported into the Orchestrate platform using the Orchestrate CLI.</p>
+</li>
+<li>
+<p>Agents are defined using the ADK and then imported into the Orchestrate platform using the Orchestrate CLI. Agents use the tools defined in step 1.</p>
+</li>
+<li>
+<p>Once an agent is imported, it can be used to start conversations with users either through the Orchestrate Agent Chat UI or through the Orchestrate API.</p>
+</li>
+</ol>
+<p>For more information on the ADK, reference the ADK documentation <strong><a href="https://developer.watson-orchestrate.ibm.com/" target="_blank">here</a></strong>.</p>
+<h3 id="lab-flow">Lab Flow<a class="headerlink" href="#lab-flow" title="Permanent link">#</a></h3>
+<p>For this Lab scenario, you are building an agent augmented with tools for calling Ansible playbooks that will help someone like a mainframe Security Administrator (SA) verify that their critical security certificates are up to date and reduce the risk of expired certificates disrupting their organization’s services.</p>
+<p>Secure Sockets Layer (SSL) certificates, often referred to as digital certificates, are used to establish an encrypted connection between communicating parties over a network. Certificate management is crucial for maintaining the security of a company’s z/OS environment. The SA has not performed the tasks to manage and renew a certificate in some time. The SA recalls that there are many steps that are required on z/OS and various RACF commands that need to be run to renew a certificate. Rather than going to their senior SA for assistance, demonstrate how using watsonx Assistant for Z can help the SA automate the certificate renewal process via a dedicated AI Agent.</p>
+<p>This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product. In this section, you will build a z/OS Certificate Agent for managing z/OS certificates and automating certificate renewal for expiring certificates.</p>
+<p>The tasks involved include:</p>
+<ul>
+<li>Installing and setting up your local ADK environment</li>
+<li>Configuring your AAP environment</li>
+<li>Setting up VS Code workspace</li>
+<li>Configuring agent connection with credentials</li>
+<li>Importing the provided tools</li>
+<li>Deploying the agent</li>
+<li>Accessing agents and testing execution</li>
+</ul></div>
 
 
 

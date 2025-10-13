@@ -2342,32 +2342,32 @@
 <li>
 <p>Now you will create a <strong>certificate authority (CA)</strong> certificate to sign future SITE certificates. </p>
 <p>Click <strong>Templates</strong> under the <strong>Resources</strong> section.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap1.png"></a></p>
 </li>
 <li>
 <p>Click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap2.png"></a></p>
 </li>
 <li>
 <p>On the <strong>Survey</strong> screen, modify the <strong>Certificate Label</strong> and <strong>Type</strong> fields with the values that follow and then click Next.</p>
 <p><strong>a.</strong> <code>Certificate Label: TESTCA</code></p>
 <p><strong>b.</strong> <code>Type: CERTAUTH</code></p>
 <p><strong><em>Leave the defaults for all other fields.</em></strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap3.png"></a></p>
 </li>
 <li>
 <p>Click <strong>Launch</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap4.png"></a></p>
 </li>
 <li>
 <p>Review the output of the job. In the output of the playbook, notice that a new keyring is created, a certificate is created, and the certificate is connected to the keyring.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap5.png"></a></p>
 <p><strong><em>You have now successfully created your CA certificate, labeled ‘TESTCA’, that will be used to sign your new SITE certificate.</em></strong></p>
 </li>
 <li>
 <p>Next, you will create an expiring certificate that uses the CA certificate that you just created.</p>
 <p>Return to the <strong>Templates</strong> tab and click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap6.png"></a></p>
 </li>
 <li>
 <p>On the <strong>Survey</strong> screen, modify the fields that follow with the values specified and then click <strong>Next</strong>.</p>
@@ -2378,16 +2378,16 @@
 <p><strong>e.</strong> <code>Common Name: company.com</code></p>
 <p><strong>f.</strong> <code>Expiration date: &lt;enter a date that occurs within the next 30days. The date must be in the format YYYY-MM-DD&gt;</code></p>
 <p><strong><em>Leave the defaults for all other fields.</em></strong></p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap7.png"></a></p>
 <p>Unlike the first certificate you created which was <em>self-signed</em>, this certificate will be signed by the local certificate authority that uses the CA you created.</p>
 </li>
 <li>
 <p>Click <strong>Launch</strong>. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap8.png"></a></p>
 </li>
 <li>
 <p>Verify that the job was successful and inspect the output of the job.</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" href="../_attachments/aap9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/aap9.png"></a></p>
 </li>
 </ol>
 <p><strong><em>You have now successfully created your ‘expiring’ SITE certificate, labeled ‘DEMOCERT’ which you will later use to demonstrate your agent’s capability of automating the certificate renewal process.</em></strong></p></div>
