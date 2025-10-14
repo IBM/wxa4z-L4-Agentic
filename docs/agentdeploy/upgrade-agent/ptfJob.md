@@ -17,7 +17,7 @@ Below is a summary of each of the referenced variables within the `ptfJob` varia
 **KEYRING** | Name of RACF keyring where the SMP/E certificate is stored | "IBMUSER/SMPERING"
 **CERT_NAME** | Certificate label in keyring which is used in SMP/E operations to establish SSL/TLS secure connections | "SMPE Client Certificate"
 **DOWNLOAD_METHOD** | Download method for your environment configuration. Options include https, ftp, or sftp | "https"
-**DOWNLOADKEYRING** | RACF keyring used for securing outbound TLS connections, as required by z/OS | "*AUTH*/*"
+**DOWNLOADKEYRING** | RACF keyring used for securing outbound TLS connections, as required by z/OS | "\*AUTH*/*"
 
 
 **ACTION:** *for each of the variables in the ptfJob section referenced above, copy and paste the corresponding `Default` value into your `values.yaml` file within the **IBM Z Upgrade Agent** section.*

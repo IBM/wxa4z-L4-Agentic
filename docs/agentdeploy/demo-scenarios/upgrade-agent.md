@@ -37,7 +37,7 @@ What's the latest status?
 ### Acquire missing FIXCAT updates
 
 ```
-Receive missing fixcats for software instance IMS on system VS01_004
+Receive missing PTFs for Resolver UI93541
 ```
 ***Example output:***
 
