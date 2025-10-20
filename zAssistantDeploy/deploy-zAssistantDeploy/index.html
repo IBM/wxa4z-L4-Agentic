@@ -2326,7 +2326,8 @@
 <ol>
 <li>
 <p>On your local command-line or Terminal window, obtain and record your cluster domain that is used for routes by running the following command:</p>
-<p><code>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"
+</span></code></pre></div>
 <p><em>The output should return something similar to the following:</em></p>
 <p><code>apps.672b79320c7a71b728e523b4.ocp.techzone.ibm.com</code></p>
 <p><strong><em>NOTE:</em></strong> <em>the value outputted </em><em>should not contain the ‘%’ character at the end</em><em>. DO NOT copy this character when pasting the output in the following step.</em></p>
@@ -2338,34 +2339,28 @@
 <p><strong><em>Make sure to save the file before proceeding to the next step.</em></strong></p>
 </li>
 <li>
+<p>Next, under the <code>zosTopology</code> section of your <strong>deploy-zad.yaml</strong> file, under <code>env</code>, there is a <code>&lt;ZOSMF_BASE_URL&gt;</code> placeholder string, as shown below:</p>
+<p><a class="glightbox" href="../_attachments/deploy4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/deploy4.png"></a></p>
+<p>Replace the value with the <strong>ZOSMF_ENDPOINT</strong> URL for your Wazi z/OS environment by following the instructions <strong><em><a href="../../agentdeploy/upgrade-agent/secrets-data/#set-your-zosmf_endpoint-variable">here</a></em></strong>.</p>
+<p><strong><em>Make sure to save the file before proceeding to the next step.</em></strong></p>
+</li>
+<li>
 <p>Then deploy the <strong>zAssistantDeploy</strong> service by running the following command:</p>
-<p><code>oc apply -f deploy-zad.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc apply -f deploy-zad.yaml
+</span></code></pre></div>
 <p>After running the above command, the new pods will start initializing in your <strong>wxa4z-zad</strong> namespace. </p>
 </li>
 <li>
-<p>After running the previous command while the new pods are initializing, run the following command to <strong>disable the dashboard deployment</strong> as this is not required nor supported in the TechZone environment:</p>
-<p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"dashboard": {"enabled": false}}}'
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
-</span></code></pre></div>
-</li>
-<li>
-<p>Then run the following command to <strong>disable the assistantBootstrap feature</strong>:</p>
-<p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
-</span></code></pre></div>
-</li>
-<li>
-<p>After following the above steps, the new pods will be created in your <strong>wxa4z-zad</strong> namespace. This process typically takes up to 15-20 minutes for the images to download and the deployment to complete.</p>
+<p>After following the above steps, the new pods will be created in your <strong>wxa4z-zad</strong> namespace. This process typically takes up to 20-25 minutes for the images to download and the deployment to complete.</p>
 <p>To view the progress of your pods creation, navigate back to your <strong>OpenShift web console</strong>. </p>
 <p>Then click on the <strong>Pods</strong> tab and select the <strong>wxa4z-zad</strong> project from the <strong>Projects</strong> drop-down within the OCP web console. </p>
 <p><a class="glightbox" href="../_attachments/deploy2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/deploy2.png"></a></p>
 <p><em><strong>REMINDER:</strong> the deployment process may take 15-20 min or so to complete. Use this time to take a coffee break and proceed with the following section</em></p>
+<div class="admonition warning">
+<p class="admonition-title">If you see an error message as shown below....</p>
+<p>It is typically normal to see an error message as shown below for the <strong>wxa4z-opensearch-wrapper</strong> pod. Please wait until all the pods successfully come up and then it should change to <strong>Ready</strong> status.</p>
+<p><a class="glightbox" href="../_attachments/deploy5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/deploy5.png"></a></p>
+</div>
 </li>
 </ol></div>
 

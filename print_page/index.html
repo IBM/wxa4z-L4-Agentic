@@ -3677,7 +3677,7 @@
 <ol>
 <li>
 <p>On your local workstation, click on this Box link to view the provided <strong>zAssistDeploy.zip</strong> file:</p>
-<p><a href="https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s" target="_blank">https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s</a></p>
+<p><a href="https://ibm.box.com/s/jcipamx3bnayc0lj2h9n09yqw6glxuoj" target="_blank">https://ibm.box.com/s/jcipamx3bnayc0lj2h9n09yqw6glxuoj</a></p>
 </li>
 <li>
 <p>Once you can view the file in Box, click <strong>Download</strong> to download the file to your local workstation.</p>
@@ -3703,7 +3703,8 @@
 <ol>
 <li>
 <p>On your local command-line, apply the <strong>IBM Certificate Manager</strong> <strong><em>Operator</em></strong> in your OpenShift cluster by running the following command:</p>
-<p><code>oc apply -f catalogCertManager.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-install-cert-manager-__codelineno-0-1"></a>oc apply -f catalogCertManager.yaml
+</span></code></pre></div>
 <p>The preceding command should return a message that states the <em><strong>ibm-cert-manager-catalog</strong> was created</em>.</p>
 </li>
 <li>
@@ -3738,8 +3739,10 @@
 <ol>
 <li>
 <p>In your local command prompt or terminal window, create 2 new namespaces called <code>wxa4z-operator</code> and <code>wxa4z-zad</code> in the cluster by issuing the following 2 commands in sequence:</p>
-<p><code>oc create namespace wxa4z-operator</code></p>
-<p><code>oc create namespace wxa4z-zad</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-0-1"></a>oc create namespace wxa4z-operator
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-1-1"></a>oc create namespace wxa4z-zad
+</span></code></pre></div>
 </li>
 <li>
 <p>Next, you will need to create or obtain your IBM Container Software production entitlement key. This is required to pull the container images that get deployed by the operator.</p>
@@ -3756,25 +3759,25 @@
 <p>In your command prompt or terminal window, set an environment variable with your production entitlement key.</p>
 <p>Substitute your production entitlement key copied in the last step for <code>&lt;entitlement key&gt;</code>.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-0-1"></a>export IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-2-1"></a>export IBM_CS_ENT_KEY=&lt;entitlement key&gt;
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-1-1"></a>set IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-3-1"></a>set IBM_CS_ENT_KEY=&lt;entitlement key&gt;
 </span></code></pre></div>
 </li>
 <li>
 <p>Enter the following command (depending on operating system) to create a pull secret for the Container Registry.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-2-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-4-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-3-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-5-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
 </span></code></pre></div>
 <p><a class="glightbox" href="../zAssistantDeploy/_attachments/op2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op2.png"></a></p>
 </li>
 <li>
 <p>Create your <strong>catalog source</strong> resource in your OpenShift cluster by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-4-1"></a>oc apply -f catalogSource.yaml
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-6-1"></a>oc apply -f catalogSource.yaml
 </span></code></pre></div>
 <p><a class="glightbox" href="../zAssistantDeploy/_attachments/op3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op3.png"></a></p>
 </li>
@@ -3812,7 +3815,7 @@
 <ol>
 <li>
 <p>First, run the following command to retrieve the <strong>unique name</strong> of your operator group:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-5-1"></a>oc -n wxa4z-operator get operatorgroup
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-7-1"></a>oc -n wxa4z-operator get operatorgroup
 </span></code></pre></div>
 <p>The output should contain a single operator group as shown in the following example:</p>
 <p><a class="glightbox" href="../zAssistantDeploy/_attachments/op11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/op11.png"></a></p>
@@ -3821,10 +3824,10 @@
 <li>
 <p>Finally, run the following command (depending on operating system) to update the list of targeted namespaces, where <code>&lt;operatorgroup-name&gt;</code> is substituted with <strong>your</strong> unique operatorgroup name recorded in the previous step.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-6-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p '{"spec": {"targetNamespaces": ["wxa4z-zad"]}}'
+</p><div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-8-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p '{"spec": {"targetNamespaces": ["wxa4z-zad"]}}'
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-7-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p "{\"spec\": {\"targetNamespaces\": [\"wxa4z-zad\"]}}"
+</p><div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#zassistantdeploy-install-wxa4z-operator-__codelineno-9-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p "{\"spec\": {\"targetNamespaces\": [\"wxa4z-zad\"]}}"
 </span></code></pre></div>
 </li>
 <li>
@@ -3841,7 +3844,8 @@
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f os-secret.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-deploy-secrets-__codelineno-0-1"></a>oc apply -f os-secret.yaml
+</span></code></pre></div>
 </li>
 <li>
 <p>Next, modify the <code>client-ingestion-secret.yaml</code> file, replacing <code>&lt;CLIENT_INGESTION_AUTHKEY&gt;</code> with a 
@@ -3851,22 +3855,36 @@ secure authentication key of your choosing (i.e. password). </p>
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f client-ingestion-secret.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-deploy-secrets-__codelineno-1-1"></a>oc apply -f client-ingestion-secret.yaml
+</span></code></pre></div>
 </li>
 <li>
-<p>Lastly, modify the <code>wrapper-creds.yaml</code> file, replacing <code>&lt;WRAPPER_PASWORD&gt;</code> with a secure password credential. <strong>Record this value for later use as this is what you’ll later use to configure your assistant and agent OpenSearch connection.</strong></p>
+<p>Next, modify the <code>wrapper-creds.yaml</code> file, replacing <code>&lt;WRAPPER_PASWORD&gt;</code> with a secure password credential. <strong>Record this value for later use as this is what you’ll later use to configure your assistant and agent OpenSearch connection.</strong></p>
 <p><a class="glightbox" href="../zAssistantDeploy/_attachments/secrets3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/secrets3.png"></a></p>
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f wrapper-creds.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#zassistantdeploy-deploy-secrets-__codelineno-2-1"></a>oc apply -f wrapper-creds.yaml
+</span></code></pre></div>
+</li>
+<li>
+<p>Finally, there is a <code>wxa4z-zos-topology-secrets.yaml</code> file which is used to configure the credentials for the <strong>z/OS Topology service</strong>. This service serves as a central repository for storing and managing the topology of z/OS systems, utilizing z/OSMF and OMEGAMON credentials for secure access and integration. </p>
+<p>Within the <strong><em>wxa4z-zos-topology-secrets.yaml</em></strong> file, replace <code>&lt;ZOSMF_PASSWORD&gt;</code> with a unique password/passphrase value that the <strong>IBMUSER</strong> ID uses to log into TSO. </p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/secrets4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/secrets4.png"></a></p>
+<p>To set your new Password value, follow the steps outlined <strong><em><a href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable">here</a></em></strong>. </p>
+</li>
+<li>
+<p>And lastly, create the secret by running the following command within the same directory:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-deploy-secrets-__codelineno-3-1"></a>oc apply -f wxa4z-zos-topology-secrets.yaml
+</span></code></pre></div>
 </li>
 </ol></div></section><section class="print-page" id="zassistantdeploy-deploy-zassistantdeploy" heading-number="4.6"><div><h1 id="deploy-zassistantdeploy-service-on-your-cluster">Deploy <em>zAssistantDeploy</em> service on your cluster<a class="headerlink" href="#zassistantdeploy-deploy-zassistantdeploy-deploy-zassistantdeploy-service-on-your-cluster" title="Permanent link">#</a></h1>
 <p>In this step you will deploy <strong><em>zAssistantDeploy</em></strong> to your OpenShift cluster. <strong>zAssistantDeploy</strong> provides an OpenSearch deployment that is pre-installed with IBM Z documentation along with a data ingestion service that a customer can use to load their own documents to establish an internal knowledge base with their own internal processes and assets for quickly getting answers to. After deploying, you will later ingest some sample documents provided in this lab guide to show how the conversational search capability works with customer ingested documentation.</p>
 <ol>
 <li>
 <p>On your local command-line or Terminal window, obtain and record your cluster domain that is used for routes by running the following command:</p>
-<p><code>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-0-1"></a>oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"
+</span></code></pre></div>
 <p><em>The output should return something similar to the following:</em></p>
 <p><code>apps.672b79320c7a71b728e523b4.ocp.techzone.ibm.com</code></p>
 <p><strong><em>NOTE:</em></strong> <em>the value outputted </em><em>should not contain the ‘%’ character at the end</em><em>. DO NOT copy this character when pasting the output in the following step.</em></p>
@@ -3878,34 +3896,28 @@ secure authentication key of your choosing (i.e. password). </p>
 <p><strong><em>Make sure to save the file before proceeding to the next step.</em></strong></p>
 </li>
 <li>
+<p>Next, under the <code>zosTopology</code> section of your <strong>deploy-zad.yaml</strong> file, under <code>env</code>, there is a <code>&lt;ZOSMF_BASE_URL&gt;</code> placeholder string, as shown below:</p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/deploy4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/deploy4.png"></a></p>
+<p>Replace the value with the <strong>ZOSMF_ENDPOINT</strong> URL for your Wazi z/OS environment by following the instructions <strong><em><a href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_endpoint-variable">here</a></em></strong>.</p>
+<p><strong><em>Make sure to save the file before proceeding to the next step.</em></strong></p>
+</li>
+<li>
 <p>Then deploy the <strong>zAssistantDeploy</strong> service by running the following command:</p>
-<p><code>oc apply -f deploy-zad.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-1-1"></a>oc apply -f deploy-zad.yaml
+</span></code></pre></div>
 <p>After running the above command, the new pods will start initializing in your <strong>wxa4z-zad</strong> namespace. </p>
 </li>
 <li>
-<p>After running the previous command while the new pods are initializing, run the following command to <strong>disable the dashboard deployment</strong> as this is not required nor supported in the TechZone environment:</p>
-<p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-0-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"dashboard": {"enabled": false}}}'
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
-</span></code></pre></div>
-</li>
-<li>
-<p>Then run the following command to <strong>disable the assistantBootstrap feature</strong>:</p>
-<p><strong><em>Mac users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#zassistantdeploy-deploy-zassistantdeploy-__codelineno-3-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
-</span></code></pre></div>
-</li>
-<li>
-<p>After following the above steps, the new pods will be created in your <strong>wxa4z-zad</strong> namespace. This process typically takes up to 15-20 minutes for the images to download and the deployment to complete.</p>
+<p>After following the above steps, the new pods will be created in your <strong>wxa4z-zad</strong> namespace. This process typically takes up to 20-25 minutes for the images to download and the deployment to complete.</p>
 <p>To view the progress of your pods creation, navigate back to your <strong>OpenShift web console</strong>. </p>
 <p>Then click on the <strong>Pods</strong> tab and select the <strong>wxa4z-zad</strong> project from the <strong>Projects</strong> drop-down within the OCP web console. </p>
 <p><a class="glightbox" href="../zAssistantDeploy/_attachments/deploy2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/deploy2.png"></a></p>
 <p><em><strong>REMINDER:</strong> the deployment process may take 15-20 min or so to complete. Use this time to take a coffee break and proceed with the following section</em></p>
+<div class="admonition warning">
+<p class="admonition-title">If you see an error message as shown below....</p>
+<p>It is typically normal to see an error message as shown below for the <strong>wxa4z-opensearch-wrapper</strong> pod. Please wait until all the pods successfully come up and then it should change to <strong>Ready</strong> status.</p>
+<p><a class="glightbox" href="../zAssistantDeploy/_attachments/deploy5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/deploy5.png"></a></p>
+</div>
 </li>
 </ol></div></section><section class="print-page" id="zassistantdeploy-verify-deployment" heading-number="4.7"><div><h1 id="verify-deployment-and-acquire-opensearch-connection-details">Verify deployment and acquire OpenSearch connection details<a class="headerlink" href="#zassistantdeploy-verify-deployment-verify-deployment-and-acquire-opensearch-connection-details" title="Permanent link">#</a></h1>
 <p>In this section you will verify the successful deployment of your zAssistDeploy service and gather the OpenSearch credentials needed to configure an assistant with conversational search for Q&amp;A.</p>
@@ -4336,15 +4348,6 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#ingest-download-zassist-__codelineno-0-1"></a>zassist
 </span></code></pre></div>
 <p><a class="glightbox" href="../ingest/_attachments/zassist1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist1.png"></a></p>
-</li>
-<li>
-<p>And finally, <strong>enable the client-side ingestion feature</strong> through a remote S3 source by running the following command on your local terminal / command-line:</p>
-<p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#ingest-download-zassist-__codelineno-1-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"clientIngestion": {"beta": {"enabled": true}}}}'
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#ingest-download-zassist-__codelineno-2-1"></a>oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"clientIngestion\": {\"beta\": {\"enabled\": true}}}}"
-</span></code></pre></div>
 </li>
 </ol></div></section><section class="print-page" id="ingest-cos-service-credentials" heading-number="6.3"><div><h1 id="create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM Cloud Object Storage (COS)<a class="headerlink" href="#ingest-cos-service-credentials-create-service-credentials-for-ibm-cloud-object-storage-cos" title="Permanent link">#</a></h1>
 <p>Before uploading the provided sample documents to IBM Cloud Object Storage (COS), you must first create service credentials that you will use to connect to your instance.</p>

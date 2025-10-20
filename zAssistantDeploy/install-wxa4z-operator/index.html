@@ -2326,8 +2326,10 @@
 <ol>
 <li>
 <p>In your local command prompt or terminal window, create 2 new namespaces called <code>wxa4z-operator</code> and <code>wxa4z-zad</code> in the cluster by issuing the following 2 commands in sequence:</p>
-<p><code>oc create namespace wxa4z-operator</code></p>
-<p><code>oc create namespace wxa4z-zad</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc create namespace wxa4z-operator
+</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc create namespace wxa4z-zad
+</span></code></pre></div>
 </li>
 <li>
 <p>Next, you will need to create or obtain your IBM Container Software production entitlement key. This is required to pull the container images that get deployed by the operator.</p>
@@ -2344,25 +2346,25 @@
 <p>In your command prompt or terminal window, set an environment variable with your production entitlement key.</p>
 <p>Substitute your production entitlement key copied in the last step for <code>&lt;entitlement key&gt;</code>.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export IBM_CS_ENT_KEY=&lt;entitlement key&gt;
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>set IBM_CS_ENT_KEY=&lt;entitlement key&gt;
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>set IBM_CS_ENT_KEY=&lt;entitlement key&gt;
 </span></code></pre></div>
 </li>
 <li>
 <p>Enter the following command (depending on operating system) to create a pull secret for the Container Registry.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=$IBM_CS_ENT_KEY
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>oc -n wxa4z-zad create secret docker-registry icr-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=%IBM_CS_ENT_KEY%
 </span></code></pre></div>
 <p><a class="glightbox" href="../_attachments/op2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/op2.png"></a></p>
 </li>
 <li>
 <p>Create your <strong>catalog source</strong> resource in your OpenShift cluster by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc apply -f catalogSource.yaml
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>oc apply -f catalogSource.yaml
 </span></code></pre></div>
 <p><a class="glightbox" href="../_attachments/op3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/op3.png"></a></p>
 </li>
@@ -2400,7 +2402,7 @@
 <ol>
 <li>
 <p>First, run the following command to retrieve the <strong>unique name</strong> of your operator group:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>oc -n wxa4z-operator get operatorgroup
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>oc -n wxa4z-operator get operatorgroup
 </span></code></pre></div>
 <p>The output should contain a single operator group as shown in the following example:</p>
 <p><a class="glightbox" href="../_attachments/op11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/op11.png"></a></p>
@@ -2409,10 +2411,10 @@
 <li>
 <p>Finally, run the following command (depending on operating system) to update the list of targeted namespaces, where <code>&lt;operatorgroup-name&gt;</code> is substituted with <strong>your</strong> unique operatorgroup name recorded in the previous step.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p '{"spec": {"targetNamespaces": ["wxa4z-zad"]}}'
+</p><div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p '{"spec": {"targetNamespaces": ["wxa4z-zad"]}}'
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p "{\"spec\": {\"targetNamespaces\": [\"wxa4z-zad\"]}}"
+</p><div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>oc -n wxa4z-operator patch operatorgroup &lt;operatorgroup-name&gt; --type=merge -p "{\"spec\": {\"targetNamespaces\": [\"wxa4z-zad\"]}}"
 </span></code></pre></div>
 </li>
 <li>

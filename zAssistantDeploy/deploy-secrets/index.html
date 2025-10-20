@@ -2331,7 +2331,8 @@
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f os-secret.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc apply -f os-secret.yaml
+</span></code></pre></div>
 </li>
 <li>
 <p>Next, modify the <code>client-ingestion-secret.yaml</code> file, replacing <code>&lt;CLIENT_INGESTION_AUTHKEY&gt;</code> with a 
@@ -2341,15 +2342,28 @@ secure authentication key of your choosing (i.e. password). </p>
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f client-ingestion-secret.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc apply -f client-ingestion-secret.yaml
+</span></code></pre></div>
 </li>
 <li>
-<p>Lastly, modify the <code>wrapper-creds.yaml</code> file, replacing <code>&lt;WRAPPER_PASWORD&gt;</code> with a secure password credential. <strong>Record this value for later use as this is what you’ll later use to configure your assistant and agent OpenSearch connection.</strong></p>
+<p>Next, modify the <code>wrapper-creds.yaml</code> file, replacing <code>&lt;WRAPPER_PASWORD&gt;</code> with a secure password credential. <strong>Record this value for later use as this is what you’ll later use to configure your assistant and agent OpenSearch connection.</strong></p>
 <p><a class="glightbox" href="../_attachments/secrets3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/secrets3.png"></a></p>
 </li>
 <li>
 <p>Create the secret by running the following command within the same directory:</p>
-<p><code>oc apply -f wrapper-creds.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc apply -f wrapper-creds.yaml
+</span></code></pre></div>
+</li>
+<li>
+<p>Finally, there is a <code>wxa4z-zos-topology-secrets.yaml</code> file which is used to configure the credentials for the <strong>z/OS Topology service</strong>. This service serves as a central repository for storing and managing the topology of z/OS systems, utilizing z/OSMF and OMEGAMON credentials for secure access and integration. </p>
+<p>Within the <strong><em>wxa4z-zos-topology-secrets.yaml</em></strong> file, replace <code>&lt;ZOSMF_PASSWORD&gt;</code> with a unique password/passphrase value that the <strong>IBMUSER</strong> ID uses to log into TSO. </p>
+<p><a class="glightbox" href="../_attachments/secrets4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/secrets4.png"></a></p>
+<p>To set your new Password value, follow the steps outlined <strong><em><a href="../../agentdeploy/upgrade-agent/secrets-data/#set-your-zosmf_password-variable">here</a></em></strong>. </p>
+</li>
+<li>
+<p>And lastly, create the secret by running the following command within the same directory:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc apply -f wxa4z-zos-topology-secrets.yaml
+</span></code></pre></div>
 </li>
 </ol></div>
 
