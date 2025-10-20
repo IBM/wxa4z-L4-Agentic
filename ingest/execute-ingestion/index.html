@@ -2422,6 +2422,28 @@
 <li>
 <p>Once the ingestion process completes (<strong><em>typically less than 5 min.</em></strong>) you will see something like what’s shown below, indicating that the new 3 files have been successfully ingested.</p>
 <p><a class="glightbox" href="../_attachments/zassist24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/zassist24.png"></a></p>
+<details class="failure">
+<summary>If the ingestion process doesn't progress within 3 minutes....</summary>
+<p>In the case that the ingestion process doesn't progress within 3 minutes and you don't see the output shown above, you likely need to <strong>restart the client-ingestion pod</strong> within OpenShift (as a one-time fix). After restarting the pod, repeat the steps in this section to ingest the provided documentation. </p>
+<p>Follow the below steps to restart the pod:</p>
+<ol>
+<li>
+<p>Within your <strong>OCP Web Console</strong>, navigate to <strong>Deployments</strong> and then click on <strong>wxa4z-client-ingestion</strong> as shown below:</p>
+<p><a class="glightbox" href="../_attachments/TS1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/TS1.png"></a></p>
+</li>
+<li>
+<p>Under <strong>Deployment details</strong>, click on the 'down' arrow to scale the pod to 0, and then immediately after click on the 'up' arrow to scale the pod back to 1. </p>
+<p><a class="glightbox" href="../_attachments/TS2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/TS2.png"></a></p>
+</li>
+<li>
+<p>Navigate back to the <strong>Pods</strong> section and wait until the pod comes back up as shown below:</p>
+<p><a class="glightbox" href="../_attachments/TS3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/TS3.png"></a></p>
+</li>
+<li>
+<p>Repeat the above steps in this section to successfully ingest your documents. </p>
+</li>
+</ol>
+</details>
 </li>
 <li>
 <p>Finally, verify that the documents are now ingested in your remote S3 source by running the following command:</p>
