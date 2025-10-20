@@ -2,9 +2,11 @@
 
 
 1. On your local command-line, apply the **IBM Certificate Manager** ***Operator*** in your OpenShift cluster by running the following command:
-   
-    `oc apply -f catalogCertManager.yaml`
 
+    ```
+    oc apply -f catalogCertManager.yaml
+    ```
+    
     The preceding command should return a message that states the ***ibm-cert-manager-catalog** was created*.
 
 2. In the OpenShift web console, click **Operators** and then select **OperatorHub**.

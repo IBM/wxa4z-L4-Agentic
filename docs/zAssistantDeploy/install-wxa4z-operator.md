@@ -4,9 +4,13 @@ In this step you will install the watsonx Assistant for Z operator to deploy and
 
 1. In your local command prompt or terminal window, create 2 new namespaces called `wxa4z-operator` and `wxa4z-zad` in the cluster by issuing the following 2 commands in sequence:
    
-    `oc create namespace wxa4z-operator`
+    ```
+    oc create namespace wxa4z-operator
+    ```
 
-    `oc create namespace wxa4z-zad`
+    ```
+    oc create namespace wxa4z-zad
+    ```
 
 2. Next, you will need to create or obtain your IBM Container Software production entitlement key. This is required to pull the container images that get deployed by the operator.
 
@@ -68,7 +72,7 @@ In this step you will install the watsonx Assistant for Z operator to deploy and
 
     ![](_attachments/op5.png)
 
-9. Click **Install**.
+9.  Click **Install**.
     
     ***Note:** the current version of the operator may differ than what’s shown in the image below.*
 

@@ -32,15 +32,3 @@ conducting pilots. Follow the steps below to download and install *zassist*.
     ```
 
     ![](_attachments/zassist1.png)
-
-6. And finally, **enable the client-side ingestion feature** through a remote S3 source by running the following command on your local terminal / command-line:
-   
-    ***Mac users:***
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"clientIngestion": {"beta": {"enabled": true}}}}'
-    ```
-
-    ***Windows users:***
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"clientIngestion\": {\"beta\": {\"enabled\": true}}}}"
-    ```

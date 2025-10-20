@@ -56,7 +56,8 @@ In this step you will download a **.zip** file from Box containing the YAML file
 
 1. On your local workstation, click on this Box link to view the provided **zAssistDeploy.zip** file:
    
-    <a href="https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s" target="_blank">https://ibm.box.com/s/idllzje6oqiy02fv4zodubn1m78szp5s</a>
+    <a href="https://ibm.box.com/s/jcipamx3bnayc0lj2h9n09yqw6glxuoj" target="_blank">https://ibm.box.com/s/jcipamx3bnayc0lj2h9n09yqw6glxuoj</a>
+
 
 2. Once you can view the file in Box, click **Download** to download the file to your local workstation.
    

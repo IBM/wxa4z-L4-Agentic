@@ -4,7 +4,9 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
 
 1. On your local command-line or Terminal window, obtain and record your cluster domain that is used for routes by running the following command:
    
-    `oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"`
+    ```
+    oc -n openshift-ingress-operator get ingresscontroller default -o jsonpath="{.status.domain}"
+    ```
 
     *The output should return something similar to the following:*
 
@@ -21,41 +23,24 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
 
     ***Make sure to save the file before proceeding to the next step.***
 
-3. Then deploy the **zAssistantDeploy** service by running the following command:
+3. Next, under the `zosTopology` section of your **deploy-zad.yaml** file, under `env`, there is a `<ZOSMF_BASE_URL>` placeholder string, as shown below:
    
-    `oc apply -f deploy-zad.yaml`
+    ![](_attachments/deploy4.png)
+
+    Replace the value with the **ZOSMF_ENDPOINT** URL for your Wazi z/OS environment by following the instructions ***[here](../agentdeploy/upgrade-agent/secrets-data.md#set-your-zosmf_endpoint-variable)***.
+
+    ***Make sure to save the file before proceeding to the next step.***
+
+
+4. Then deploy the **zAssistantDeploy** service by running the following command:
+   
+    ```
+    oc apply -f deploy-zad.yaml
+    ```
 
     After running the above command, the new pods will start initializing in your **wxa4z-zad** namespace. 
 
-4. After running the previous command while the new pods are initializing, run the following command to **disable the dashboard deployment** as this is not required nor supported in the TechZone environment:
-   
-    ***Mac users:***
-
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"dashboard": {"enabled": false}}}'
-    ```
-
-    ***Windows users:***
-
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"dashboard\": {\"enabled\": false}}}"
-    ```
-
-5. Then run the following command to **disable the assistantBootstrap feature**:
-   
-    ***Mac users:***
-
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type='merge' -p='{"spec": {"assistantBootstrap": {"enabled": false}}}'
-    ```
-
-    ***Windows users:***
-
-    ```
-    oc -n wxa4z-zad patch zassistantdeploy zassistantdeploy --type="merge" -p="{\"spec\": {\"assistantBootstrap\": {\"enabled\": false}}}"
-    ```
-
-6. After following the above steps, the new pods will be created in your **wxa4z-zad** namespace. This process typically takes up to 15-20 minutes for the images to download and the deployment to complete.
+5. After following the above steps, the new pods will be created in your **wxa4z-zad** namespace. This process typically takes up to 20-25 minutes for the images to download and the deployment to complete.
    
     To view the progress of your pods creation, navigate back to your **OpenShift web console**. 
 
@@ -64,6 +49,13 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
     ![](_attachments/deploy2.png)
 
     ***REMINDER:** the deployment process may take 15-20 min or so to complete. Use this time to take a coffee break and proceed with the following section*
+
+    !!! Warning "If you see an error message as shown below...."
+
+        It is typically normal to see an error message as shown below for the **wxa4z-opensearch-wrapper** pod. Please wait until all the pods successfully come up and then it should change to **Ready** status.
+
+        ![](_attachments/deploy5.png)
+
 
     
 
