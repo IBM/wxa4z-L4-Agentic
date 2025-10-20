@@ -130,6 +130,27 @@ In this step you will log into your **client ingestion server** and kickoff the 
 
     ![](_attachments/zassist24.png)
 
+
+    ??? Failure "If the ingestion process doesn't progress within 3 minutes...."
+
+        In the case that the ingestion process doesn't progress within 3 minutes and you don't see the output shown above, you likely need to **restart the client-ingestion pod** within OpenShift (as a one-time fix). After restarting the pod, repeat the steps in this section to ingest the provided documentation. 
+
+        Follow the below steps to restart the pod:
+
+        1. Within your **OCP Web Console**, navigate to **Deployments** and then click on **wxa4z-client-ingestion** as shown below:
+    
+            ![](_attachments/TS1.png)
+        
+        2. Under **Deployment details**, click on the 'down' arrow to scale the pod to 0, and then immediately after click on the 'up' arrow to scale the pod back to 1. 
+
+            ![](_attachments/TS2.png)
+        
+        3. Navigate back to the **Pods** section and wait until the pod comes back up as shown below:
+    
+            ![](_attachments/TS3.png)
+
+        4. Repeat the above steps in this section to successfully ingest your documents. 
+
 10. Finally, verify that the documents are now ingested in your remote S3 source by running the following command:
 
     ```
