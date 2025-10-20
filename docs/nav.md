@@ -73,3 +73,4 @@
     * [Deploy the agent](adk/deploy.md)
     * [Publish agent to 'Live' version](adk/publish.md)
     * [Test agent execution flow](adk/testing.md)
+* [Enabling hands-on client access for supported agents](./hands-on/handson.md)
