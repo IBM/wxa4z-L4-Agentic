@@ -41,19 +41,59 @@ This section documents the process of importing the following pre-deployed agent
 
 2. One activated, you can download the appropriate Agent folder containing the agent YAML files for each:
    
-    IBM Db2 for z/OS Agent 
-    <a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing#ibm-cloud" target="_blank">ADK documentation here</a>.
+    
+    <a href="https://ibm.box.com/s/2i295wv0obbtjctdi6p30wlojwlcnee0" target="_blank">IBM Db2 for z/OS Agent</a>
 
-    IBM Operations Agent for Z 
+    <a href="https://ibm.box.com/s/1fyccoymkz2ghshdu4okreh491lijoqw" target="_blank">IBM Operations Agent for Z</a>
 
-    IBM IMS Agents
+    <a href="https://ibm.box.com/s/ryufp5bkbtmjcjl25p8k45ly62xnv641" target="_blank">IBM IMS Agents</a>
 
+    !!! Tip "The example instructions below..."
 
-IBM Db2 for z/OS Agent files: https://ibm.box.com/s/2i295wv0obbtjctdi6p30wlojwlcnee0
+        The example steps below will illustrate how to import the **Db2 for z/OS Agent** into the watsonx Orchestrate ADK environment. 
 
-IBM IMS Agent files: https://ibm.box.com/s/ryufp5bkbtmjcjl25p8k45ly62xnv641
+3. Once downloaded to your local PC, extract the **.zip** file which contains an **Orchestrator agent** YAML file as well as 1 or more **External agent** YAML files. 
+   
+    Then open up the folder within VS Code which should look similar to the following:
 
-IBM Operations Agent for Z files: https://ibm.box.com/s/1fyccoymkz2ghshdu4okreh491lijoqw
+    **IMAGE**
+
+4. The first step in importing the agent is to firstly import the **External agent(s)**. 
+   
+    In the case of the **Db2 for z/OS Agent**, there is one external agent defined in the `Db2_external_agent.yaml` file. 
+
+    The **External agent(s)** can be imported using the following ADK command.
+
+    ```
+    orchestrate agents import -f <file.yaml>
+    ```
+
+    In the case of the **Db2 for z/OS Agent**, this can be imported by running the following command in a Terminal window: 
+
+    ```
+    orchestrate agents import -f Db2_external_agent.yaml
+    ```
+
+    You should then see a **Success** message similar to what's shown below:
+
+    **IMAGE**
+
+5. After importing the **External agent(s)**, you can finally import the **Orchestrator agent** using the same command. 
+   
+    In the case of the **Db2 for z/OS Agent**, this can be done with the following command:
+
+    ```
+    orchestrate agents import -f Db2_orchestrator_agent.yaml
+    ```
+
+    **IMAGE**
+
+6. Once done, you can navigate to your **watsonx Orchestrate** UI, go into the **Agent Builder** view as shown below, and then you should see your imported agent:
+   
+    **IMAGE**
+
+7. Finally, 
+
 
 
 
