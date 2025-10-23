@@ -56,11 +56,9 @@ This section documents the process of importing the following pre-deployed agent
    
     Then open up the folder within VS Code which should look similar to the following:
 
-    **IMAGE**
+    ![](_attachments/handson1.png)
 
 4. The first step in importing the agent is to firstly import the **External agent(s)**. 
-   
-    In the case of the **Db2 for z/OS Agent**, there is one external agent defined in the `Db2_external_agent.yaml` file. 
 
     The **External agent(s)** can be imported using the following ADK command.
 
@@ -68,7 +66,7 @@ This section documents the process of importing the following pre-deployed agent
     orchestrate agents import -f <file.yaml>
     ```
 
-    In the case of the **Db2 for z/OS Agent**, this can be imported by running the following command in a Terminal window: 
+    In the case of the **Db2 for z/OS Agent**, this can be imported by running the following command in a **Terminal** window: 
 
     ```
     orchestrate agents import -f Db2_external_agent.yaml
@@ -76,7 +74,7 @@ This section documents the process of importing the following pre-deployed agent
 
     You should then see a **Success** message similar to what's shown below:
 
-    **IMAGE**
+    ![](_attachments/handson2.png)
 
 5. After importing the **External agent(s)**, you can finally import the **Orchestrator agent** using the same command. 
    
@@ -86,21 +84,51 @@ This section documents the process of importing the following pre-deployed agent
     orchestrate agents import -f Db2_orchestrator_agent.yaml
     ```
 
-    **IMAGE**
+    ![](_attachments/handson3.png)
 
 6. Once done, you can navigate to your **watsonx Orchestrate** UI, go into the **Agent Builder** view as shown below, and then you should see your imported agent:
    
-    **IMAGE**
+    ![](_attachments/handson4.png)
 
-7. Finally, 
+7. Click on the imported agent and test the capabilities. 
+   
+    !!! Tip "Testing the agent..."
 
+        As you are using the Demo agents available on TechZone, you can use the <a href="https://ibm.ent.box.com/s/mulk8hrxz37kitgd53zvnxrox0mi8c0r" target="_blank">Demo Script</a> in order to test.
 
 
 
 
 ### Embedding the agent chat for external access
-- first, publish to the Live environment
-- Test the agent using the demo script on TechZone (provide link)
 
+Once you've successfully tested your agent, you are ready to embed the agent chat to share for external access. To do this, you will first need to **publish** the agent to the **Live** version. 
+
+1. You will first need to **publish** the agent to the **Live** version. 
+   
+    Follow the steps in Section ***[Deploy the agent](../agentdeploy/demo-scenarios/support-agent.md#deploy-the-agent)*** for an example on how to do this. 
+
+2. Once you've published the agent, you can follow the steps in ***[Embed Agent Chat in Web Page](../agentdeploy/embed.md)*** to embed your agent within an HTML file. 
+
+After following the steps above, you can share the configured HTML file with a customer to test the agent scenarios.
+
+Following the alloted time to test, it's crucial you cleanup your environment by deleting the agent chat. This will prevent those you've shared the HTML file with to continue accessing the agent chat.
 
 ### Cleanup the agent deployment
+
+Follow the steps below to delete the agent environment.
+
+1. Go to the **Agent Builder** page and click on the tile for your deployed agent. 
+   
+    ![](_attachments/handson5.png)
+
+2. In the **Agent Editor** view, click on the ellipses in the top-right corner and select **Delete**. 
+   
+    ![](_attachments/handson6.png)
+
+
+3. In the pop-window, select **Delete** once more. 
+   
+    ![](_attachments/handson7.png)
+
+You have now disabled access to the deployed agent. 
+   
