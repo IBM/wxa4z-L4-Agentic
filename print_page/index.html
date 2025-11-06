@@ -5977,20 +5977,22 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <tr>
 <td><strong>AIOPS_BASE_URL</strong></td>
 <td>Base URL of the zChatOps server instance</td>
-<td>ask instructor</td>
+<td><a href="https://ibm.box.com/s/8o7x1zi9rxs5nrejla9ld6rhf1ek0sab" target="_blank">Internal only</a></td>
 </tr>
 <tr>
 <td><strong>AIOPS_TOKEN</strong></td>
 <td>Bearer token for the ZChatOps server</td>
-<td>ask instructor</td>
+<td><a href="https://ibm.box.com/s/8o7x1zi9rxs5nrejla9ld6rhf1ek0sab" target="_blank">Internal only</a></td>
 </tr>
 <tr>
 <td><strong>AGENT_AUTH_TOKEN</strong></td>
 <td>Password for logging into your AAP Web console</td>
-<td>agent_auth_token</td>
+<td>"agent_auth_token"</td>
 </tr>
 </tbody>
-</table></div></section><section class="print-page" id="agentdeploy-omegamon-agent-pvc" heading-number="8.6.4"><div><h1 id="configuring-the-pvcstorageclass-variable">Configuring the <code>pvc.storageClass</code> variable<a class="headerlink" href="#agentdeploy-omegamon-agent-pvc-configuring-the-pvcstorageclass-variable" title="Permanent link">#</a></h1>
+</table>
+<p><em>For the <code>AIOPS_BASE_URL</code> and <code>AIOPS_TOKEN</code> values, navigate to the link above which will direct you to a file containing the values for both variables.</em></p>
+<p><em>Paste the provided values for the respective variable in your <code>values.yaml</code> file.</em></p></div></section><section class="print-page" id="agentdeploy-omegamon-agent-pvc" heading-number="8.6.4"><div><h1 id="configuring-the-pvcstorageclass-variable">Configuring the <code>pvc.storageClass</code> variable<a class="headerlink" href="#agentdeploy-omegamon-agent-pvc-configuring-the-pvcstorageclass-variable" title="Permanent link">#</a></h1>
 <p>Scrolling to the end of the <strong>omegamon-insights-agent</strong> section of <code>values.yaml</code>, you should see the <code>pvc</code> section as shown below:
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
