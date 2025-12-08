@@ -5,6 +5,17 @@ Once you’ve deployed your agents to the ***Live*** version within the **watson
 Follow the instructions below on how to do this. 
 **Note:** the steps must be done for each agent you wish to embed. The examples below use the ***IBM Z Support Agent*** as an example.
 
+!!! Warning "One-time security setup for Orchestrate environment"
+
+    The below steps will only work for *anonymous* access to the agent chat. When security is disabled to allow anonymous access, requests to the embedded chat API do not require authentication. If you go this route, ensure your watsonx Orchestrate instance does not provide access to sensitive data. 
+
+    ***Options:***
+
+    **1.** Disable security for embedded chat by following the <a href="https://blog.oofdev.com/2025/11/enable-anonymous-access-ibm-watsonx-orchestrate-embedded-chat-security-disable.html" target="_blank">configuration steps here</a>, then completing the remaining steps in this section. 
+
+    **2.** Enabling security by following the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/integrate_agents#security-configuration" target="_blank">here</a>. 
+
+
 1. Firstly, download the **Agent chat template file** from Box here: 
 
     <a href="https://ibm.box.com/s/d79agcwownfbg7pi25x0ix0brr6jqawd" target="_blank">https://ibm.box.com/s/d79agcwownfbg7pi25x0ix0brr6jqawd</a>
