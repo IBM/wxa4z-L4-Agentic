@@ -6,6 +6,9 @@ The **IBM Db2 for z/OS Agent** is an AI-powered assistant that enables you to ea
 
 Below is a summary of the agent capabilities.
 
+**PLACEHOLDER**
+
+
 **Agent capbility** | **Description**
 --- | ---
 **List software products** | Provides a comprehensive list of software products for a given system
@@ -20,5 +23,7 @@ Below is a summary of the agent capabilities.
 **Cancel the installation or update process** | Cancels the installation or update process only upon user request.
 **Check hardware-compatibility for upgrade** | Performs a check if the given system's hardware is compatible for an upgrade to a specified version
 **Retrieve content from agent documentation stored in zRAG** | Answers the upgrade workflow-related queries using the ingested docs for the agent.
+
+### DISCLAIMER
 
 

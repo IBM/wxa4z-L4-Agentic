@@ -50,4 +50,9 @@ Follow the below steps to generate the **Encrypt Key** to set for the `ENCRYPT_K
 
 5. Copy the string in single-quotes to your `ENCRYPT_KEY` variable. For example:
    
-    **IMAGE**
+    ```
+    secrets:
+      data:
+        ENCRYPT_KEY: "2g4zWlGa13aqwecPU4DceTDSsE58lJ1cKAQ-2A3_to="
+    ```
+
