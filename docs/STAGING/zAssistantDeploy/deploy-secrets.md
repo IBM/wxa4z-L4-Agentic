@@ -40,15 +40,30 @@ secure authentication key of your choosing (i.e. a password).
 
 The Authorization service ensures secure access by validating the current login user in watsonx Orchestrate® against the z/OS User Management system.
 
-- A user logs into and interacts with the Z AI agent.
 
-- watsonx Orchestrate sends the user’s email ID to the Z AI agent , which forwards it to the Authorization Service.
+You can use your own Certificate Authority (CA) signed certificates for mutual TLS (mTLS) by following a simple process, which involves:
 
-- The Authorization Service queries the z/OS User Management system to verify the user’s permissions.
+- Creating a Certificate Signing Request (CSR)
 
-- The z/OS system responds, either granting or denying access based on the user's credentials.
+- Getting it signed by your internal CA
 
-    **PLACEHOLDER**
+- Importing the signed certificate and your CA’s public key into the system
+
+Alternatively, you can use the default IBM Internal CA-signed certificates, which are available for immediate use.
+
+1. For the purpose of the cloud environments, there is a `wxa4z-authorization-secrets.yaml` file in your downloaded directory that contains a set of **agent auth-token secrets** for each of your agents. 
+   
+    Either use the pre-defined agent tokens specified in the file, or feel free to modify them, then create the secret by running the following command:
+
+    ```
+    oc apply -f wxa4z-authorization-secrets.yaml
+    ```    
+
+2. Then run the following command to apply the next required secret:
+   
+    ```
+    oc apply -f wxa4z-authorization-ca.yaml
+    ```
 
 
 ### z/OS Topology Service
@@ -66,10 +81,10 @@ The **z/OS Topology Service** serves as a central repository for managing the to
     REDIS_PASSWORD: "<value>"
     ```
 
-2. Replace the **value** for `ZOSMF_USERNAME` with **IBMUSER**
+2. Set the `<value>` for `ZOSMF_USERNAME` to `IBMUSER`.
 
 
-3. Replace the **value** for `ZOSMF_PASSWORD` with a unique password/passphrase value that the **IBMUSER** ID uses to log into TSO. 
+3. Set the `<value>` for `ZOSMF_PASSWORD` to a unique password/passphrase value that the **IBMUSER** ID uses to log into TSO. 
 
     To set your new Password value, follow the steps outlined ***[here](../agentdeploy/upgrade-agent/secrets-data.md#set-your-zosmf_password-variable)***. 
 
@@ -93,7 +108,34 @@ The **z/OS Topology Service** serves as a central repository for managing the to
 
 ### Create IFM Secret
 
-#### PLACEHOLDER
+Next you will create the IFM secret using the watsonx.ai secret values you recorded in ***Section [Prepare watsonx.ai services](../watsonx-ai/overview.md)***.
+
+In the provided `wxa4z-ifm-credentials.yaml` file, you should see the following section:
+
+```
+  CPD_USERNAME:
+  WATSONX_URL: <value>
+  WATSONX_API_KEY: <value>
+  WATSONX_MODEL_ID: <value>
+  WATSONX_SPACE_ID: <value>
+  WATSONX_PROJECT_ID: <value> 
+```
+
+1. Set the `WATSONX_URL` variable to the value you recorded for the Base URL of your watsonx.ai Runtime instance ***[in this section](../watsonx-ai/wml-base-url.md)***.
+
+2. Set the `WATSONX_API_KEY` variable to the Cloud API Key you generated and recorded in ***Section [Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
+
+3. Set the `WATSONX_MODEL_ID` variable to `meta-llama/llama-3-3-70b-instruct` as this is an x86 based deployment. 
+
+4. Set the `WATSONX_SPACE_ID` variable to the Deployment Space ID you recorded in ***Section [Create Deployment Space](../watsonx-ai/deployment-space.md)***.
+
+5. Set the `WATSONX_PROJECT_ID` variable to the Project ID you recorded in ***Section [Create watsonx.ai Project](../watsonx-ai/project.md)***.
+
+6. Once done and you saved the modified file, create the secret by running the following command:
+   
+    ```
+    oc apply -f wxa4z-ifm-credentials.yaml
+    ```
 
 
 
