@@ -19,6 +19,7 @@ These agents are enabled by default and are available upon installing watsonx As
 
 **Agent** | **Description**
 --- | --- 
+**zRAG Agent** | The zRAG Agent delivers technical assistance for mainframe and enterprise systems through the Watson Assistant for Z chat interface. It utilizes the zRAG (z/OS Retrieval-Augmented Generation) knowledge base to provide precise, citation-backed answers by integrating IBMs official documentation repositories with custom enterprise content.
 **IBM Z Support Agent** | The Support Agent enables users to run Ansible playbooks through Ansible Automation Platform, triggered by user input. Supported playbooks include: collecting z/OS dumps from a specified z/OS address space, and transfering a dump to IBM Support. Additionally, the agent provides functionality to retrieve the status of initiated Ansible jobs and access job logs for monitoring and troubleshooting.    
 **IBM Z OMEGAMON Insights Agent** | The IBM Z OMEGAMON Insights Agent allows system programmers to access and analyze system data directly through the watsonx Assistant for Z chat interface. By leveraging OMEGAMON data, it delivers accurate insights that help streamline system monitoring and decision-making.
 **IBM Z Upgrade Agent** | The IBM Z Upgrade Agent enables system programmers to perform z/OS upgrades through the watsonx Assistant for Z chat interface. It provies precise responses by leveraging z/OSMF APIs and client-specific documentation stored in the zRAG.
@@ -46,12 +47,12 @@ These agents require separate product entitlements in order to deploy and run on
 
 **IMPORTANT**
 
-***For the purpose of this lab, the set of agents used for deployment will be scoped to the three following Foundational Agents:***
+***For the purpose of this lab, the set of agents used for deployment will be scoped to the three following Agents:***
 
+- zRAG Agent
 - IBM Z Upgrade Agent
 - IBM Z Support Agent
-- IBM Z OMEGAMON Insights Agent.
-
+- IBM Z OMEGAMON Insights Agent
 
 !!! Tip "Official Agent deployment documentation"
     

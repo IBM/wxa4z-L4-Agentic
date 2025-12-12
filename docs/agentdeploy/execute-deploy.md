@@ -2,6 +2,7 @@
 
 Now that you’ve set the required **`global` (shared) agent variables** and set the relevant agent-specific variables, you are ready to execute the deployment of the scoped agent set onto your OpenShift cluster. As part of the deployment process, the agents will be *automatically bootstrapped* to your **watsonx Orchestrate** environment so the agents will appear by default when you log in. As a recap, the agents you will deploy for this lab include:
 
+- zRAG Agent
 - IBM Z Upgrade Agent
 - IBM Z Support Agent
 - IBM Z OMEGAMON Insights Agent
@@ -33,13 +34,20 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
     `helm --help`
 
 
-5. Within the terminal session, run the following command to deploy the agents:
+5. Within the terminal session, run the following command to update the chart dependencies for the umbrella chart:
+
+    ```
+    helm dependency update
+    ``` 
+
+
+6. Next, run the following command to deploy the agents:
    
     ```
     helm upgrade --install wxa4z-agent-suite . -n wxa4z-zad -f ./values.yaml --wait
     ```
 
-6. After executing the above command, you should see something like the following:
+7. After executing the above command, you should see something like the following:
    
     ![](_attachments/code3.png)
 
@@ -49,7 +57,7 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
 
         Because the `--wait` flag was used, the command won't return until all the required agent images are pulled successfully.
 
-7. Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:
+8. Ensure there are no immediate errors in the command output. Once complete, you may see a message returned like the following:
    
     ![](_attachments/code4.png)
 

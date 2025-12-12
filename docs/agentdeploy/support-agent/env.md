@@ -19,6 +19,7 @@ env:
   DEPLOYMENT_TYPE:
   TAKE_DUMP_JOB_TEMPLATE: ""
   SEND_DUMP_JOB_TEMPLATE: ""
+  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
 ```
 
 The below table describes each of the variables in the `env` variables section.
@@ -28,6 +29,9 @@ The below table describes each of the variables in the `env` variables section.
 **DEPLOYMENT_TYPE** | Type of deployment (options include 'on-prem' and 'cloud') | "cloud"
 **TAKE_DUMP_JOB_TEMPLATE** | Name of AAP Template used for gathering/collecting dumps | "Collect dump"
 **SEND_DUMP_JOB_TEMPLATE** | Name of AAP Template used for sending/transferring dumps to IBM Support | "Send dump"
+**WATSONX_MODEL_ID** | LLM Model used by the agent. For example, "meta-llama/llama-3-3-70b-instruct" | "meta-llama/llama-3-3-70b-instruct"
+----
+
 
 ***NOTE:*** because you are using a pre-configured instance of AAP/Wazi aaS, the required template names are hard-coded. 
 
@@ -38,4 +42,5 @@ env:
   DEPLOYMENT_TYPE: "cloud"
   TAKE_DUMP_JOB_TEMPLATE: "Collect dump"
   SEND_DUMP_JOB_TEMPLATE: "Send dump"
+  WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"
 ```

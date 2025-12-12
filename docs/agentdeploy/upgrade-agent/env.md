@@ -21,6 +21,7 @@ env:
   HOST_NAME: ""
   PDS_NAME: ""
   INGESTION_URL: ""
+  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
 ```
 
 You will now configure these `env` variables, using some defaults, as well as your environment-specific values.
@@ -34,11 +35,15 @@ The below table describes each of the variables in the `env` variables section. 
 **HOST_NAME** | Endpoint of the cluster in which the agent is deployed | -------
 **PDS_NAME** | Name of PDS dataset to be used for storing REXX scripts | "IBMUSER.REXX"
 **INGESTION_URL** | URL endpoint of the client ingestion service used for ingesting required agent documents | -------
+**WATSONX_MODEL_ID** | LLM Model used by the agent. For example, "meta-llama/llama-3-3-70b-instruct" | "meta-llama/llama-3-3-70b-instruct"
+----
 
 1. Set the default variable values for the rows above in your `values.yaml` file:
 
     * `DEPLOYMENT_TYPE: "cloud"`
     * `PDS_NAME: "IBMUSER.REXX"`
+    * `WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"`
+
 
 2. Set the `WRAPPER_URL` variable to the URL endpoint of the your OpenSearch wrapper deployment you recorded in Section ***[Verify deployment and acquire OpenSearch connection details](../../zAssistantDeploy/verify-deployment.md)***.
   

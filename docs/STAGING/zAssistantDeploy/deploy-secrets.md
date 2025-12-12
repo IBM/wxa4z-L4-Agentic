@@ -6,7 +6,7 @@ In this step you will create the required secrets and other pre-configuration fo
 
 OpenSearch enables you to search, analyze, and visualize large volumes of data in real time. 
 
-1. In your downloaded/extracted ***zAssistDeploy*** directory, there is an `os-secret.yaml` file. In a text editor of your choice (i.e.command-line,VSCode,etc.),modify this file to replace `<OPENSEARCH_PASSWORD>` with a secure password of your choice (and save it). 
+1. In your downloaded/extracted ***zAssistDeploy*** directory, there is an `os-secret.yaml` file. In a text editor of your choice (i.e.command-line,VSCode,etc.), modify this file to replace `<OPENSEARCH_PASSWORD>` with a secure password of your choice (and save it). 
    
     ***Record this value for later use.***
     
@@ -88,7 +88,11 @@ The **z/OS Topology Service** serves as a central repository for managing the to
 
     To set your new Password value, follow the steps outlined ***[here](../agentdeploy/upgrade-agent/secrets-data.md#set-your-zosmf_password-variable)***. 
 
-4. Once modified and saved, create the secret by running the following command:
+
+4. Set the `<value>` for `REDIS_PASSWORD` to a unique password of your choice.
+   
+
+5. Once modified and saved, create the secret by running the following command:
    
     ```
     oc apply -f wxa4z-zos-topology-secrets.yaml
@@ -118,7 +122,7 @@ In the provided `wxa4z-ifm-credentials.yaml` file, you should see the following 
   WATSONX_API_KEY: <value>
   WATSONX_MODEL_ID: <value>
   WATSONX_SPACE_ID: <value>
-  WATSONX_PROJECT_ID: <value> 
+  WATSONX_PROJECT_ID: ""
 ```
 
 1. Set the `WATSONX_URL` variable to the value you recorded for the Base URL of your watsonx.ai Runtime instance ***[in this section](../watsonx-ai/wml-base-url.md)***.
@@ -129,7 +133,7 @@ In the provided `wxa4z-ifm-credentials.yaml` file, you should see the following 
 
 4. Set the `WATSONX_SPACE_ID` variable to the Deployment Space ID you recorded in ***Section [Create Deployment Space](../watsonx-ai/deployment-space.md)***.
 
-5. Set the `WATSONX_PROJECT_ID` variable to the Project ID you recorded in ***Section [Create watsonx.ai Project](../watsonx-ai/project.md)***.
+5. Leave the value of `WATSONX_PROJECT_ID` variable to an empty string as it's not required when `WATSONX_SPACE_ID` is set. 
 
 6. Once done and you saved the modified file, create the secret by running the following command:
    

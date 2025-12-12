@@ -74,6 +74,8 @@ In this step you will install the watsonx Assistant for Z operator to deploy and
     oc -n wxa4z-operator wait deployments/ibm-wxa4z-operator-controller-manager --for=condition=Available --timeout=1800s
     ```
 
+    **NOTE:** if you get a message returned indicating `"ibm-wxa4z-operator-controller-manager" not found`, wait up to a minute before retrying the previous command.
+
     Once done, proceed to the next section.
 
 

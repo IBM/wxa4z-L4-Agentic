@@ -17,6 +17,7 @@ Within this agent’s section of `values.yaml` scroll down to the **`env`** vari
 ```
 env:
   DEPLOYMENT_TYPE:
+  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
 ```
 
 Below is a brief summary of this variable. Keep the default value of **"cloud"** set for this variable as you will be accessing this external agent from WxO SaaS.
@@ -24,5 +25,6 @@ Below is a brief summary of this variable. Keep the default value of **"cloud"**
 **Variable name** | **Description** | **Default value to set**
 --- | --- | ---
 **DEPLOYMENT_TYPE** | Type of deployment (options include 'on-prem' and 'cloud') | "cloud"
+**WATSONX_MODEL_ID** | LLM Model used by the agent. For example, "meta-llama/llama-3-3-70b-instruct" | "meta-llama/llama-3-3-70b-instruct"
 
 ***ACTION:** set the above variable to the default value in your values.yaml file under the ‘omegamon-insighst- agent’ section (in the env variables section)*

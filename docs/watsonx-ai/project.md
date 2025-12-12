@@ -1,12 +1,8 @@
 # Create watsonx.ai Project
 
-Now that you’ve tested the conversational search features of your zRAG assistant and tested document ingestion
-using the sample documents provided, you will prepare for agent deployment of a subset of foundational agents
-entitled with watsonx Assistant for Z. As part of the deployment, you will first need to configure your ***watsonx.ai
-services*** and captured the needed secrets to provide in your agents’ deployment. This section covers this process
-in detail.
+Prior to deploying the watsonx Assistant for Z services & AI Agents, you'll need to **create a Project** in watsonx.ai.
 
-***NOTE:*** as you complete each following sub-section, ensure you’re recording all of the values being
+***NOTE:*** as you complete each following sub-sections, ensure you’re recording all of the values being
 referenced in a local notepad. This will make life much easier later on during the agent deploy
 
 
