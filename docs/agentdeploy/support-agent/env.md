@@ -42,5 +42,5 @@ env:
   DEPLOYMENT_TYPE: "cloud"
   TAKE_DUMP_JOB_TEMPLATE: "Collect dump"
   SEND_DUMP_JOB_TEMPLATE: "Send dump"
-  WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"
+  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 ```

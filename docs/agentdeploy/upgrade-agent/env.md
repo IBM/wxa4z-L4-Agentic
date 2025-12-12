@@ -42,7 +42,7 @@ The below table describes each of the variables in the `env` variables section. 
 
     * `DEPLOYMENT_TYPE: "cloud"`
     * `PDS_NAME: "IBMUSER.REXX"`
-    * `WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"`
+    * `WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"`
 
 
 2. Set the `WRAPPER_URL` variable to the URL endpoint of the your OpenSearch wrapper deployment you recorded in Section ***[Verify deployment and acquire OpenSearch connection details](../../zAssistantDeploy/verify-deployment.md)***.

@@ -60,7 +60,7 @@
     * [Create a storage bucket](ingest/create-storage-bucket.md)
     * [Upload docs to storage bucket](ingest/upload-docs.md)
     * [Execute doc ingestion](ingest/execute-ingestion.md)
-    * [Test assistant Q&A with ingested documents](ingest/test-q&a.md)
+    * [Test zRAG Agent with ingested documents](ingest/test-q&a.md)
 * [Embed Agent Chat in Web Page](agentdeploy/embed.md)
 * Build your own agent using the Agent Development Kit (ADK)
     * [Introduction to the Agent Development Kit (ADK)](adk/intro.md)

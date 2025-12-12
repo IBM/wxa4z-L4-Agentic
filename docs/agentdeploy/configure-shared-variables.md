@@ -135,6 +135,7 @@ Before proceeding with the agent setup and deployment, you will need to disable 
 
 ***NOTE:*** *For this lab, you will only be deploying three of the Foundational Agents:*
 
+* *zRAG Agent*
 * *IBM Z Upgrade Agent*
 * *IBM Z Support Agent*
 * *IBM Z OMEGAMON Insights Agent*

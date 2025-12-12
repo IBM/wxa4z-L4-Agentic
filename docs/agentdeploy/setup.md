@@ -30,7 +30,7 @@ In this section you will setup your VS Code workspace with the *IBM watsonx Assi
 
 4. Then select your extracted **z-ai-agents** folder to access the folder in your VS Code window.
 
-    ![](_attachments/setup3.png)
+    ![](_attachments/newsetup.png)
 
 
     

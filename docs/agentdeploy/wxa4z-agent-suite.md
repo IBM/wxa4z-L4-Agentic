@@ -2,7 +2,7 @@
 
 Now, within the **Explorer** view of VS Code, expand the **wxa4z-agent-suite** sub-folder. You should see the agent suite structure as shown below:
 
-**IMAGE**
+![](_attachments/newsetup1.png)
 
 
 The **wxa4z-agent-suite** chart deploys a **suite of z/OS agents** with one command. Each agent remains an independent chart (own values, templates, and versioning) while the umbrella coordinates:
@@ -25,6 +25,7 @@ The `wxa4z-agent-suite/values.yaml` file is the file you will be modifying to co
 - Setting your registry entitlement key for foundational agents
 - Disabling foundational agents not in scope of lab
 - Configuring agent-specific values for each respective agent in scope for the lab deployment:
+    - zRAG Agent
     - IBM Z Upgrade Agent
     - IBM Z Support Agent
     - IBM Z OMEGAMON Insights Agent

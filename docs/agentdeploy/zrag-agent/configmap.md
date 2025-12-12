@@ -20,6 +20,8 @@ configmap:
   ZRAG_RETRIEVER_URL: "https://wxa4z-opensearch-wrapper.wxa4z-zad.svc.cluster.local:8080"
 ```
 
-The `MODEL_ID` variable maps to the LLM model used by the zRAG MCP server for answer generation. Modify this to `meta-llama/llama-3-3-70b-instruct` as this is a cloud-based x86 deployment. 
+The `MODEL_ID` variable maps to the LLM model used by the zRAG MCP server for answer generation. 
+
+**Modify this to `meta-llama/llama-3-3-70b-instruct`** as this is a cloud-based x86 deployment. 
 
 Keep the default value for the `ZRAG_RETRIEVER_URL` as this is the URL endpoint for the OpenSearch wrapper service. 

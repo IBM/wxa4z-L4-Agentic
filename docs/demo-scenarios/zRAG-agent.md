@@ -69,10 +69,10 @@ The zRAG Agent consists of two primary components:
    
     ![](_attachments/zrag5.png)
 
-    This can be configured yourself to alter the default prompt instructions. For example, replace ***Be concise in your answer** with the following example:
+    This can be configured yourself to alter the default prompt instructions. For example, replace ***Be concise in your answer*** with the following example:
 
     ```
-    Provide detailed and guided answers with examples and commands when requested.
+    Provide detailed, step-by-step guidance with examples and commands when requested.
     ```
 
     ![](_attachments/zrag6.png)
