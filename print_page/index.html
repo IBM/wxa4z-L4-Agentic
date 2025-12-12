@@ -2334,7 +2334,7 @@
   <span class="md-ellipsis">
     
   
-    Test assistant Q&A with ingested documents
+    Test zRAG Agent with ingested documents
   
 
     
@@ -3486,7 +3486,7 @@
   <a href="#ingest-test-q%26a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test assistant Q&A with ingested documents
+        Test zRAG Agent with ingested documents
       
     </span>
   </a>
@@ -5102,7 +5102,7 @@ secure authentication key of your choosing (i.e. a password). </p>
 </li>
 <li>
 <p>Then select your extracted <strong>z-ai-agents</strong> folder to access the folder in your VS Code window.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../agentdeploy/_attachments/setup3.png" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/setup3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../agentdeploy/_attachments/newsetup.png" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/newsetup.png"></a></p>
 </li>
 </ol></div></body></html></section><section class="print-page" id="agentdeploy-wxa4z-agent-suite" heading-number="6.2.2"><html><head>
         <script type="text/javascript">
@@ -5112,7 +5112,7 @@ secure authentication key of your choosing (i.e. a password). </p>
         </script>
         </head><body><div><h1 id="overview-of-the-wxa4z-agent-suite-helm-charts">Overview of the wxa4z-agent-suite Helm Charts<a class="headerlink" href="#agentdeploy-wxa4z-agent-suite-overview-of-the-wxa4z-agent-suite-helm-charts" title="Permanent link">#</a></h1>
 <p>Now, within the <strong>Explorer</strong> view of VS Code, expand the <strong>wxa4z-agent-suite</strong> sub-folder. You should see the agent suite structure as shown below:</p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../agentdeploy/_attachments/newsetup1.png" data-desc-position="bottom"><img alt="" src="../agentdeploy/_attachments/newsetup1.png"></a></p>
 <p>The <strong>wxa4z-agent-suite</strong> chart deploys a <strong>suite of z/OS agents</strong> with one command. Each agent remains an independent chart (own values, templates, and versioning) while the umbrella coordinates:</p>
 <ul>
 <li><strong>Single-command install/upgrade</strong> for all enabled agents</li>
@@ -5130,6 +5130,7 @@ secure authentication key of your choosing (i.e. a password). </p>
 <li>Setting your registry entitlement key for foundational agents</li>
 <li>Disabling foundational agents not in scope of lab</li>
 <li>Configuring agent-specific values for each respective agent in scope for the lab deployment:<ul>
+<li>zRAG Agent</li>
 <li>IBM Z Upgrade Agent</li>
 <li>IBM Z Support Agent</li>
 <li>IBM Z OMEGAMON Insights Agent</li>
@@ -5239,6 +5240,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </ul>
 <p><strong><em>NOTE:</em></strong> <em>For this lab, you will only be deploying three of the Foundational Agents:</em></p>
 <ul>
+<li><em>zRAG Agent</em></li>
 <li><em>IBM Z Upgrade Agent</em></li>
 <li><em>IBM Z Support Agent</em></li>
 <li><em>IBM Z OMEGAMON Insights Agent</em></li>
@@ -5371,7 +5373,8 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-zrag-agent-configmap-__codelineno-1-2"></a>  MODEL_ID: ""
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#agentdeploy-zrag-agent-configmap-__codelineno-1-3"></a>  ZRAG_RETRIEVER_URL: "https://wxa4z-opensearch-wrapper.wxa4z-zad.svc.cluster.local:8080"
 </span></code></pre></div>
-<p>The <code>MODEL_ID</code> variable maps to the LLM model used by the zRAG MCP server for answer generation. Modify this to <code>meta-llama/llama-3-3-70b-instruct</code> as this is a cloud-based x86 deployment. </p>
+<p>The <code>MODEL_ID</code> variable maps to the LLM model used by the zRAG MCP server for answer generation. </p>
+<p><strong>Modify this to <code>meta-llama/llama-3-3-70b-instruct</code></strong> as this is a cloud-based x86 deployment. </p>
 <p>Keep the default value for the <code>ZRAG_RETRIEVER_URL</code> as this is the URL endpoint for the OpenSearch wrapper service. </p></div></body></html></section><section class="print-page" id="agentdeploy-zrag-agent-secrets-data" heading-number="6.4.3"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
@@ -5387,6 +5390,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#agentdeploy-zrag-agent-secrets-data-__codelineno-0-5"></a>    WATSONX_PASSWORD: ""
 </span></code></pre></div>
 <p>As this is using a watsonx SaaS deployment, all that's needed is to populate the value of <code>WATSONX_API_KEY</code> to the Cloud API key you generated in <strong><em>Section <a href="#watsonx-ai-api-key">Generate IBM Cloud API key</a></em></strong>.</p>
+<p><strong>Populate the value of <code>WATSONX_API_KEY</code> with your IBM Cloud API Key.</strong></p>
 <p>Leave all other values empty. </p></div></body></html></section></section>
                     <section class='print-page md-section' id='section-6-5' heading-number='6.5'>
                         <h1>Prepare for IBM Z Upgrade Agent<a class='headerlink' href='#section-6-5' title='Permanent link'></a>
@@ -5536,7 +5540,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <ul>
 <li><code>DEPLOYMENT_TYPE: "cloud"</code></li>
 <li><code>PDS_NAME: "IBMUSER.REXX"</code></li>
-<li><code>WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"</code></li>
+<li><code>WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"</code></li>
 </ul>
 </li>
 <li>
@@ -5912,7 +5916,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#agentdeploy-support-agent-env-__codelineno-2-2"></a>  DEPLOYMENT_TYPE: "cloud"
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#agentdeploy-support-agent-env-__codelineno-2-3"></a>  TAKE_DUMP_JOB_TEMPLATE: "Collect dump"
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#agentdeploy-support-agent-env-__codelineno-2-4"></a>  SEND_DUMP_JOB_TEMPLATE: "Send dump"
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#agentdeploy-support-agent-env-__codelineno-2-5"></a>  WATSONX_MODEL_ID: "meta-llama/llama-3-70b-instruct"
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#agentdeploy-support-agent-env-__codelineno-2-5"></a>  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 </span></code></pre></div></div></body></html></section><section class="print-page" id="agentdeploy-support-agent-secrets-data" heading-number="6.6.3"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
@@ -6369,8 +6373,8 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <li>
 <p>The default bootstrapped zRAG agent is configured to <strong>be concise in it's answer</strong>. Expand the agent's <strong>Instructions</strong> text box, and notice where it says <strong><em>Be concise in your answer</em></strong> as shown below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../demo-scenarios/_attachments/zrag5.png" data-desc-position="bottom"><img alt="" src="../demo-scenarios/_attachments/zrag5.png"></a></p>
-<p>This can be configured yourself to alter the default prompt instructions. For example, replace <strong>*Be concise in your answer</strong> with the following example:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#demo-scenarios-zrag-agent-__codelineno-0-1"></a>Provide detailed and guided answers with examples and commands when requested.
+<p>This can be configured yourself to alter the default prompt instructions. For example, replace <strong><em>Be concise in your answer</em></strong> with the following example:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#demo-scenarios-zrag-agent-__codelineno-0-1"></a>Provide detailed, step-by-step guidance with examples and commands when requested.
 </span></code></pre></div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../demo-scenarios/_attachments/zrag6.png" data-desc-position="bottom"><img alt="" src="../demo-scenarios/_attachments/zrag6.png"></a></p>
 <p>Once modified, test the accuracy and performance of the agent by prompting it with the following set of questions:</p>
@@ -7022,101 +7026,34 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="test-assistant-qa-with-newly-ingested-documents">Test Assistant Q&amp;A with newly ingested documents<a class="headerlink" href="#ingest-test-q%26a-test-assistant-qa-with-newly-ingested-documents" title="Permanent link">#</a></h1>
-<p>Now that you’ve successfully ingested the sample customer documents, you’ll be able to test the assistant’s ability to answer company-specific questions related to the internal documents. First you will adjust your assistant’s conversational search settings to prioritize the ingested documents. </p>
-<p>Secondly, you will prompt the assistant with questions related to those documents to gauge performance.</p>
-<h3 id="ingest-test-q%26a-adjust-conversational-search-settings-for-ingested-documentation">Adjust conversational search settings for ingested documentation<a class="headerlink" href="#ingest-test-q%26a-adjust-conversational-search-settings-for-ingested-documentation" title="Permanent link">#</a></h3>
-<p>First, you will adjust the conversational search settings for your assistant in order to prioritize the ingested documents for Q&amp;A.</p>
+        </head><body><div><h1 id="test-zrag-agent-with-newly-ingested-documents">Test zRAG Agent with newly ingested documents<a class="headerlink" href="#ingest-test-q%26a-test-zrag-agent-with-newly-ingested-documents" title="Permanent link">#</a></h1>
+<p>Now that you’ve successfully ingested the sample customer documents, you’ll be able to test the agent's ability to answer company-specific questions related to the internal documents. </p>
 <ol>
 <li>
-<p>Navigate back to the <strong>watsonx Orchestrate UI</strong>.</p>
+<p>Navigate back to the <strong>zRAG Agent Editor</strong> page by following the steps <strong><em><a href="#demo-scenarios-access-agents">here</a></em></strong> and clicking on the <strong>zRAG Agent</strong> tile. </p>
 </li>
 <li>
-<p>Go to the <strong>Assistant Builder</strong> view by clicking on <strong>Build --&gt; Assistant Builder</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test1.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test1.png"></a></p>
-</li>
-<li>
-<p>In the left-side navigation, click on <strong>Generative AI</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test2.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test2.png"></a></p>
-</li>
-<li>
-<p>At the bottom of the screen, click on <strong>View search integration</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test3.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test3.png"></a></p>
-</li>
-<li>
-<p>Then click <strong>Custom Service</strong>. </p>
-</li>
-<li>
-<p>Scroll down to the <strong>Metadata</strong> field and modify it to prioritize your newly ingested documents.</p>
-<p>Currently, your <strong>Metadata</strong> field should look like what’s shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#ingest-test-q%26a-__codelineno-0-1"></a>{"doc_weight":
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#ingest-test-q%26a-__codelineno-0-2"></a>{"product_docs":0.5,
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#ingest-test-q%26a-__codelineno-0-3"></a>"customer_docs":0.5},
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#ingest-test-q%26a-__codelineno-0-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#ingest-test-q%26a-__codelineno-0-5"></a>"customer_indices":"customer_*"}
-</span></code></pre></div>
-<p>Notice that <code>product_docs</code> and <code>customer_docs</code> are set equally (<code>0.5</code>). This is the default and causes the Assistant to prioritize the data search equally between the IBM documentation and the customer documents. </p>
-<p>In this case, we want the Assistant to prioritize the newly ingested customer docs. To do this, <strong>set</strong> <code>product_docs</code> to <code>0.2</code> and set <code>customer_docs</code> to <code>0.8</code>. When done, your <strong>Metadata</strong> field should look like the following:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#ingest-test-q%26a-__codelineno-1-1"></a>{"doc_weight":
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#ingest-test-q%26a-__codelineno-1-2"></a>{"product_docs":0.2,
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#ingest-test-q%26a-__codelineno-1-3"></a>"customer_docs":0.8},
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#ingest-test-q%26a-__codelineno-1-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#ingest-test-q%26a-__codelineno-1-5"></a>"customer_indices":"customer_*"}
-</span></code></pre></div>
-</li>
-<li>
-<p>Secondly, you have the ability to set the scope of customer documentation that gets searched when generating a response. By default, <code>customer_indices</code> is set to <code>customer_*</code>.</p>
-<p>What this means is that all ingested documents from all of your ingested sources will be searched. In the case where you want to narrow the scope of the ingested documents to a single source, this can be modified to point to that source.</p>
-<p>Recall the output of the <code>zassist list</code> command. For example:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test4.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test4.png"></a></p>
-<p>In the example above, when running the command to ingest documents, the <code>&lt;source name&gt;</code> provided was <code>my_source</code>. <strong><em>Note</em></strong>: your source name may be different. To check, issue the <code>zassist list</code> command on your command-line.</p>
-<p>In this case, we’ve only created one source. But in the case you have multiple sources, each with their own set of ingested documents, it would be possible to narrow the scope of documents available to the assistant by configuring the <code>customer_indices</code> parameter in the <strong>Metadata</strong> field.</p>
-<p>To do this, <strong>modify</strong> the <code>customer_indices</code> value by replacing <code>customer_*</code> with <code>customer_&lt;your_source_name&gt;</code>.</p>
-<p>Using the screenshot above as an example, the new <strong>Metadata</strong> field would look like the following:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#ingest-test-q%26a-__codelineno-2-1"></a>{"doc_weight":
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#ingest-test-q%26a-__codelineno-2-2"></a>{"product_docs":0.2,
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#ingest-test-q%26a-__codelineno-2-3"></a>"customer_docs":0.8},
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#ingest-test-q%26a-__codelineno-2-4"></a>"ibm_indices":"*_ibm_docs_slate,*_ibm_redbooks_slate","standardize":true,
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#ingest-test-q%26a-__codelineno-2-5"></a>"customer_indices":"customer_my_source"}
-</span></code></pre></div>
-<p><strong>NOTE</strong>: do not copy and paste exactly what's shown above. Make sure to use your unique source name. </p>
-</li>
-<li>
-<p>Lastly, for the purpose of testing Q&amp;A for the ingested documents, set the <strong>Contextual awareness</strong> setting to <strong>Single turn</strong>. Then click <strong>Save</strong> and <strong>Close</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test5.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test5.png"></a></p>
-</li>
-</ol>
-<h3 id="ingest-test-q%26a-test-client-specific-qa-with-ingested-documents">Test client-specific Q&amp;A with ingested documents<a class="headerlink" href="#ingest-test-q%26a-test-client-specific-qa-with-ingested-documents" title="Permanent link">#</a></h3>
-<p>Now that you’ve successfully ingested the sample customer documents and modified your conversational search settings, you’re ready to verify the assistant’s usage of the ingested documents.</p>
-<ol>
-<li>
-<p>Navigate back to the <strong>Preview</strong> page by hovering your cursor over the left-side navigation and clicking <strong>Preview</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test6.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test6.png"></a></p>
-</li>
-<li>
-<p><strong><em>Enter the following prompts</em></strong> to your assistant that are specifically referencing the sampled documentation provided. For each of the provided prompts, an example output is provided which may be different from your assistant’s response. For each response, feel free to view the referenced citation to identify where the answer was taken from.</p>
+<p><strong><em>Enter the following prompts</em></strong> to your agent that are specifically referencing the sampled documentation provided. For each of the provided prompts, an example output is provided which may be different from your agent's response. For each response, feel free to view the referenced citation to identify where the answer was taken from.</p>
 <p><strong>PROMPT:</strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#ingest-test-q%26a-__codelineno-3-1"></a>The customer application is failing with ERR-CBL-001, what does this internal error mean?
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#ingest-test-q%26a-__codelineno-0-1"></a>The customer application is failing with ERR-CBL-001, what does this internal error mean?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test7.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test7.png"></a></p>
-<p><strong><em>Click the citations drop-down at the bottom of the response. Notice how your ingested documented is referenced. Feel free to click on the citation to check the reference.</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test8.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test8.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/agent-ingest1.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/agent-ingest1.png"></a></p>
 <p><strong>PROMPT:</strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#ingest-test-q%26a-__codelineno-4-1"></a>What specific syntax changes do I need to make in COBOL to call Java using the internal framework?
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#ingest-test-q%26a-__codelineno-1-1"></a>What specific syntax changes do I need to make in COBOL to call Java using the internal framework?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test9.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test9.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/agent-ingest2.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/agent-ingest2.png"></a></p>
 <p><strong>PROMPT:</strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#ingest-test-q%26a-__codelineno-5-1"></a>What is the internal git lab link to execute the Java on z/OS pipeline?
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#ingest-test-q%26a-__codelineno-2-1"></a>What is the internal git lab link to execute the Java on z/OS pipeline?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test10.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test10.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/agent-ingest3.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/agent-ingest3.png"></a></p>
 <p><strong>PROMPT:</strong></p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#ingest-test-q%26a-__codelineno-6-1"></a>Are there any production incidents that were resolved in relation to Data corruption in the production database? If yes who can I collaborate with to resolve a similar issue today and what are their names?
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#ingest-test-q%26a-__codelineno-3-1"></a>Are there any production incidents that were resolved in relation to Data corruption in the production database? If yes who can I collaborate with to resolve a similar issue today and what are their names?
 </span></code></pre></div>
 <p><strong><em>Example Output:</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/test11.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/test11.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/agent-ingest4.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/agent-ingest4.png"></a></p>
 </li>
 </ol></div></body></html></section></section><section class="print-page" id="agentdeploy-embed" heading-number="9"><html><head>
         <script type="text/javascript">
