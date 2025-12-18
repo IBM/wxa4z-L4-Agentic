@@ -833,7 +833,7 @@
   <span class="md-ellipsis">
     
   
-    Install IBM Certificate Manager
+    Install RH cert-manager operator
   
 
     
@@ -2932,7 +2932,7 @@
   <a href="#zassistantdeploy-install-cert-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install IBM Certificate Manager
+        Install RH cert-manager operator
       
     </span>
   </a>
@@ -4623,14 +4623,8 @@ that secret for later use. </p>
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="install-ibm-cert-manager-on-cluster">Install IBM Cert Manager on cluster<a class="headerlink" href="#zassistantdeploy-install-cert-manager-install-ibm-cert-manager-on-cluster" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="install-cert-manager-operator-for-red-hat-openshift">Install cert-manager Operator for Red Hat OpenShift<a class="headerlink" href="#zassistantdeploy-install-cert-manager-install-cert-manager-operator-for-red-hat-openshift" title="Permanent link">#</a></h1>
 <ol>
-<li>
-<p>On your local command-line, apply the <strong>IBM Certificate Manager</strong> <strong><em>Operator</em></strong> in your OpenShift cluster by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#zassistantdeploy-install-cert-manager-__codelineno-0-1"></a>oc apply -f catalogCertManager.yaml
-</span></code></pre></div>
-<p>The preceding command should return a message that states the <em><strong>ibm-cert-manager-catalog</strong> was created</em>.</p>
-</li>
 <li>
 <p>In the OpenShift web console, click <strong>Operators</strong> and then select <strong>OperatorHub</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert1.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert1.png"></a></p>
@@ -4644,19 +4638,19 @@ that secret for later use. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert3.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert3.png"></a></p>
 </li>
 <li>
-<p>Enter <strong>IBM Cert Manager</strong> in the search field and then click the <strong>IBM Cert Manager</strong> tile.</p>
-<p><strong><em>Note:</em>* it may take a minute or 2 for the </strong>IBM Cert Manager*<em> tile to appear. Click on a different tab and go back to it to refresh</em>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert4.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert4.png"></a></p>
+<p>Enter <code>cert-manager</code> in the search field and then click the <strong>cert-manager Operator for Red Hat OpenShift</strong> tile.</p>
+<p><em><strong>Note:</strong> it may take a minute or 2 for the tile to appear. Click on a different tab and go back to it to refresh</em>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/rh1.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/rh1.png"></a></p>
 </li>
 <li>
 <p>Click <strong>Install</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert5.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert5.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/rh2.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/rh2.png"></a></p>
 </li>
 <li>
 <p>Keep the default settings and click <strong>Install</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert6.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert6.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/rh3.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/rh3.png"></a></p>
 <p><strong><em>NOTE:</em></strong> <em>the installation process takes a few minutes. DO NOT continue until you see the following message: <code>Installed operator: ready for use</code>.</em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/cert7.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/cert7.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy/_attachments/rh4.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy/_attachments/rh4.png"></a></p>
 </li>
 </ol></div></body></html></section><section class="print-page" id="zassistantdeploy-install-wxa4z-operator" heading-number="5.4"><html><head>
         <script type="text/javascript">
@@ -5761,7 +5755,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </li>
 <li>
 <p>Replace the default command with the command that follows, and substituting a <em>passphrase</em> of your choice for the string <strong><code>YOUR_PASSWORD_PHRASE</code></strong>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE(‘YOUR_PASSWORD_PHRASE’) NOEXPIRE RESUME
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-secrets-data-__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE('YOUR_PASSWORD_PHRASE') NOEXPIRE RESUME
 </span></code></pre></div>
 <details class="tip">
 <summary>Syntax rules for RACF Password Phrases (below)</summary>
