@@ -70,7 +70,7 @@ Follow the below steps to reset your RACF passphrase for the IBMUSER user and se
 4. Replace the default command with the command that follows, and substituting a *passphrase* of your choice for the string **`YOUR_PASSWORD_PHRASE`**:
    
     ```
-    ALTUSER IBMUSER PHRASE(‘YOUR_PASSWORD_PHRASE’) NOEXPIRE RESUME
+    ALTUSER IBMUSER PHRASE('YOUR_PASSWORD_PHRASE') NOEXPIRE RESUME
     ```
    
     ??? Tip "Syntax rules for RACF Password Phrases (below)"

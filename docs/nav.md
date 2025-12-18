@@ -14,7 +14,7 @@
 * Deploy and configure zAssistantDeploy
     * [Overview](./zAssistantDeploy/Overview.md)
     * [Install the **oc** CLI and log into OpenShift](./zAssistantDeploy/install-oc-utility.md)
-    * [Install **IBM Certificate Manager**](./zAssistantDeploy/install-cert-manager.md)
+    * [Install **RH cert-manager operator**](./zAssistantDeploy/install-cert-manager.md)
     * [Install the watsonx Assistant for Z **Operator**](./zAssistantDeploy/install-wxa4z-operator.md)
     * [Deploy **secrets** for OpenSearch and Client Ingestion](./zAssistantDeploy/deploy-secrets.md)
     * [Deploy **zAssistantDeploy** service](./zAssistantDeploy/deploy-zAssistantDeploy.md)
