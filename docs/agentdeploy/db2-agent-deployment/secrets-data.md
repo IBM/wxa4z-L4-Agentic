@@ -1,6 +1,6 @@
 # Configuring the `secrets.data` variables
 
-Scrolling down further in the **IBM Z Upgrade Agent** section of your `values.yaml` file, you will see a **`secrets.data`** section with additional variables you must configure. It will look like what’s shown below:
+Scrolling down further in the **Db2 for z/OS** section of your `values.yaml` file, you will see a **`secrets.data`** section with additional variables you must configure. It will look like what’s shown below:
 
 ```
 secrets:
@@ -9,50 +9,20 @@ secrets:
     AGENT_AUTH_TOKEN: ""
 ```
 
-The below table describes each of the variables in the `secrets.data` variables section. The rows with default values can be set to what's shown in the `Default value to set` column. The rows without default values are unique to your environment and will require you to set that value using the instructions below in this section. 
+### Setting the `ENCRYPT_KEY` variable
 
+The `ENCRYPT_KEY` variable is used to store confidential information in the provided mongodb metadata store. Follow the <a href="https://github.com/IBM/z-ai-agents/tree/main/agent-helm-charts/db2z-agent#generating-an-encrypt-key-with-python" target="_blank">steps documented here</a> to generate your encrypt key.
 
-**Variable name** | **Description** | **Default value to set**
---- | --- | ---
-**ENCRYPT_KEY** | Encrypt key for storing confidential information in mongodb metadata store | -------
-**AGENT_AUTH_TOKEN** | Token used by the agent-controller to register this agent with WxO | "db2_auth_token"
+The output of running the referenced command lines may look similar to what's shown below:
+```
+>>> from cryptography.fernet import Fernet
+Fernet.generate_key()>>> Fernet.generate_key()
+b'H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E='
+```
 
+Copy and paste the string within the single-quotes and set it to the `ENCRYPT_KEY` variable. In the above example, the string would be `H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E=`.
 
-**ACTION:** Set the **default** variable values for the rows above in your `values.yaml` file:
+### Setting the `AGENT_AUTH_TOKEN` variable
 
-
-### Generate an *ENCRYPT_KEY* secret 
-
-Follow the below steps to generate the **Encrypt Key** to set for the `ENCRYPT_KEY` variable.
-
-1. In your VS Code Terminal session, ensure you have the **python** or **python3** tool installed. 
-
-2. Install the **cryptography** command-line tool by running one of the following commands:
-   
-    `pip install cryptography`
-
-    `pip3 install cryptography`
-
-3. Once installed, start a python terminal by running `python` or `python3` in your VS Code terminal.
-   
-    **IMAGE**
-
-4. Generate your encrypt key by copying the following lines and pasting in your Python terminal.
-   
-    ```
-    from cryptography.fernet import Fernet
-    Fernet.generate_key()
-    ```
-    
-    The result should look similar to the following:
-
-    **IMAGE**
-
-5. Copy the string in single-quotes to your `ENCRYPT_KEY` variable. For example:
-   
-    ```
-    secrets:
-      data:
-        ENCRYPT_KEY: "2g4zWlGa13aqwecPU4DceTDSsE58lJ1cKAQ-2A3_to="
-    ```
+Lastly, set the `AGENT_AUTH_TOKEN` variable to `DB2_AGENT_TOKEN` or something similar. This is the token used by the agent-controller to register this agent with WxO. 
 

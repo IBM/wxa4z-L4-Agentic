@@ -6,6 +6,7 @@ Now that you’ve set the required **`global` (shared) agent variables** and set
 - IBM Z Upgrade Agent
 - IBM Z Support Agent
 - IBM Z OMEGAMON Insights Agent
+- Db2 for z/OS Agent
 
 1. Within VS Code, open up a new terminal window by clicking on **Terminal --> New Terminal**. 
    

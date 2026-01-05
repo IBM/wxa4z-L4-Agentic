@@ -1,10 +1,26 @@
 # Configuring your Db2 Agent with Db2 connections
 
-Now that you've successfully deployed your Db2 for z/OS Agent, you must configure it which involves a few manual steps covered in this section.
+Now that you've successfully deployed your Db2 for z/OS Agent, you must configure it which involves a few manual steps covered in this section. 
+
+***NOTE:*** at the time of deployment, the Db2 for z/OS Agent does not initially have connectivity to the back-end subsystems. The connections must be made via REST API using the MCP server which will be covered later in this section. 
 
 ### Enabling your Db2 subsystems on Wazi aaS to use the non-default ports
 
--import the AAP template and Launch it 
+In the TechZone z/OS environment, there are two Db2 subsystems provisioned (DBD1 and DBC1). For convenience, there is a playbook you can run on the provisioned AAP environment in order to configure these Db2 subsystems to use the non-default ports which allows the Agent to connect via ODBC. 
+
+1. Log into your **AAP** instance and navigate to the **Templates** tab under **Resources**. 
+   
+    **IMAGE**
+
+2. In the **Templates** list, you should see a pre-loaded template called **Config-Db2-Ports** as shown below. 
+   
+    **IMAGE**
+
+    Click the **Launch** icon. 
+
+3. Once launched, wait until the job completes. Afterwards, the DBD1 and DBC1 subsystems will be successfully configured for the later steps. 
+
+
 
 ### Mount the Db2 license file
 
@@ -23,7 +39,7 @@ Follow the below instructions to mount the license in the deployed agent pod.
 
     ![](_attachments/db-2-1.png)
 
-4. In a local notepad, copy and paste the following command script to a local notepad, and replace the `<YOUR DB2 POD NAME>` placeholder with the name of your deployed Db2 agent pod:
+4. In a local notepad, copy and paste the following command block to a local notepad, and replace the `<YOUR DB2 POD NAME>` placeholder with the name of your deployed Db2 agent pod:
    
     ```
     NS="wxa4z-zad"
@@ -54,14 +70,29 @@ Follow the below instructions to mount the license in the deployed agent pod.
 
     ![](_attachments/db-2-3.png)
 
+6. Optionally, confirm that it's been added by navigating to your **Db2z-agent** pod in the OCP web console, clicking on the **Terminal** tab.
+   
+    **IMAGE**
+
+    Then copy and paste the following command:
+
+    `cd /usr/local/lib64/python3.12/site-packages/clidriver/license`
+
+    Entering the `ls` command from the above directory should output the files you copied over. 
+
+    **IMAGE**
+
 
 ### Bind the ODBC DBRMs to Db2 subsystems
 
 Prior to setting an agent connection to your Db2 subsystems, you must also bind some required packages on your Db2 subsystems. Follow the below steps:
 
-1. Access Db2 Agent pod
+1. Assuming you're already in the **Terminal** view of your agent pod, click on the drop-down to select the **db2z-mcp-server** pod
 
-2. Navigate/cd to `$IBM_DB_HOME/bin`
+    **IMAGE**
+
+2. Navigate to the following directory by running the following command: `cd $IBM_DB_HOME/bin`
+
 
 3. Run the command below to bind the packages on the **DBD1** Db2 subsystem, replacing the following values with your own unique values:
 

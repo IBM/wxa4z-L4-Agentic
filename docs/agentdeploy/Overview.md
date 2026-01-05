@@ -53,6 +53,7 @@ These agents require separate product entitlements in order to deploy and run on
 - IBM Z Upgrade Agent
 - IBM Z Support Agent
 - IBM Z OMEGAMON Insights Agent
+- Db2 for z/OS Agent
 
 !!! Tip "Official Agent deployment documentation"
     
