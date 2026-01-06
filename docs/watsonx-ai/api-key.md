@@ -2,7 +2,7 @@
 
 In addition to the **Project ID** and **Deployment Space ID** secrets, you will also need an IBM Cloud **API key** configured as a secret in your agents’ deployment. This section walks through the creation of a new API key for later use.
 
-1. Go back to your previous tab where you launched the **watsonx.ai Runtime** service in IBM Cloud. The screen should look similar to the following:
+1. Go back to your previous tab where you launched the **watsonx.ai Studio** service in IBM Cloud. The screen should look similar to the following:
 
     ![](_attachments/api1.png)
 

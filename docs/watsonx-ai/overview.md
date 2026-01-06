@@ -25,7 +25,7 @@ Additionally, the architecture includes the following components:
 
 ## Section overview
 
-For the purpose of demos and pilots, you will be using the watsonx.ai Runtime SaaS version on IBM Cloud to provide the IFM layer to connect your agents and services to the chosen LLMs and underlying  resources. A cloud-based deployment is used to configure and execute various use cases supported by watsonx Assistant for Z to enable the Agentic AI features of the solution without having to install the full solution on-prem, as a customer normally would in production. 
+For the purpose of demos and pilots, you will be using the watsonx.ai Studio SaaS version on IBM Cloud to provide the IFM layer to connect your agents and services to the chosen LLMs and underlying  resources. A cloud-based deployment is used to configure and execute various use cases supported by watsonx Assistant for Z to enable the Agentic AI features of the solution without having to install the full solution on-prem, as a customer normally would in production. 
 
 The steps in this section will walk you through the creation of the following required secrets which will be used later on:
 

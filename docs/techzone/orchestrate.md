@@ -15,9 +15,9 @@ The first Lab environment is a set of ***IBM Cloud SaaS resources*** we’ll ref
     Later in the lab you will also use your watsonx Orchestrate environment to build your own agents for a set of Z specific use cases.
 
 
-2. **watsonx.ai Runtime (WML)**
+2. **watsonx.ai Studio (WML)**
    
-    As mentioned above, you will be leveraging a cloud-based deployment to configure and execute various use cases supported by watsonx Assistant for Z. As such, you will leverage the **watsonx.ai Runtime** SaaS component on IBM Cloud to provide the underlying compute resources and services to power the AI agents you deploy. This provides a way to enable the Agentic AI features of the solution for the purposes of demos and pilots without having to install the full solution on-prem.
+    As mentioned above, you will be leveraging a cloud-based deployment to configure and execute various use cases supported by watsonx Assistant for Z. As such, you will leverage the **watsonx.ai Studio** SaaS component on IBM Cloud to provide the underlying compute resources and services to power the AI agents you deploy. This provides a way to enable the Agentic AI features of the solution for the purposes of demos and pilots without having to install the full solution on-prem.
 
 3. **IBM Cloud Object Storage (COS)**
    

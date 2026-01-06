@@ -12,14 +12,14 @@ that secret for later use.
 
 1. Navigate to your ***Resources List*** in the IBM Cloud web console using the first Lab environment. Reference the instructions in Section ***[Accessing the environment](../techzone/orchestrate.md#accessing-the-environment)*** for a reminder on how to get to your **Resource List**. 
 
-2. In the **Resource List** page, click on the **AI/Machine Learning** drop-down and click on the name of your **watsonx.ai Runtime** resource:
+2. In the **Resource List** page, click on the **AI/Machine Learning** drop-down and click on the name of your **watsonx.ai Studio** resource:
    
-    ![](_attachments/watson1.png)
+    ![](_attachments/studio1.png)
 
-3. On the ***watsonx.ai Runtime in Cloud Pak for Data*** resource page, click on the drop-down arrow next to
+3. On the ***watsonx.ai Studio in Cloud Pak for Data*** resource page, click on the drop-down arrow next to
 **‘Launch in’** and click on **IBM Cloud Pak for Data**
 
-    ![](_attachments/watson2.png)
+    ![](_attachments/studio2.png)
 
 1. This should open up a new tab with a **Getting started** window. Exit out of the **Getting started** window and click on the ‘hamburger’ menu icon in the top-left corner of the screen:
    
