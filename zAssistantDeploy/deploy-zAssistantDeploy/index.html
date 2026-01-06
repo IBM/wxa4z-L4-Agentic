@@ -2796,10 +2796,21 @@
 <p>After running the above command, the new pods will start initializing in your <strong>wxa4z-zad</strong> namespace. </p>
 </li>
 <li>
-<p>After running the previous command, you will need to path the <strong>opensearch-wrapper</strong> deployment for successful initialization. To do this, run the following two commands in sequence:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-operator patch deployment ibm-wxa4z-operator-controller-manager -p='{"spec":{"replicas": 0}}'
+<p>After running the previous command, you will need to patch the <strong>opensearch-wrapper</strong> deployment for successful initialization. To do this, run the following command depending on operating system:</p>
+<p><strong>Mac users:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc -n wxa4z-operator patch deployment ibm-wxa4z-operator-controller-manager -p='{"spec":{"replicas": 0}}'
 </span></code></pre></div>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-zad patch deployment wxa4z-opensearch-wrapper -p='{"spec":{"template":{"spec":{"containers":[{"name":"opensearch-wrapper","env":[{"name":"DISABLE_TRANSLATION","value":"true"}]}]}}}}'
+<p><strong>Windows users:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc -n wxa4z-operator patch deployment ibm-wxa4z-operator-controller-manager -p="{\"spec\":{\"replicas\": 0}}"
+</span></code></pre></div>
+</li>
+<li>
+<p>Immediately after running the previous command, run the following command:</p>
+<p><strong>Mac users:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc -n wxa4z-zad patch deployment wxa4z-opensearch-wrapper -p='{"spec":{"template":{"spec":{"containers":[{"name":"opensearch-wrapper","env":[{"name":"DISABLE_TRANSLATION","value":"true"}]}]}}}}'
+</span></code></pre></div>
+<p><strong>Windows users:</strong>
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>oc -n wxa4z-zad patch deployment wxa4z-opensearch-wrapper -p="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"opensearch-wrapper\",\"env\":[{\"name\":\"DISABLE_TRANSLATION\",\"value\":\"true\"}]}]}}}}"
 </span></code></pre></div>
 </li>
 <li>
