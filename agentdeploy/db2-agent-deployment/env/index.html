@@ -2752,69 +2752,35 @@
 
 
 <div><h1 id="configuring-the-env-variables">Configuring the <code>env</code> variables<a class="headerlink" href="#configuring-the-env-variables" title="Permanent link">#</a></h1>
-<p>Within your <code>values.yaml</code> file, locate the section for the <strong>db2z-agent</strong> as shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># ---------------------------------------------------------------------------- #
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># Product: db2z-agent
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># ---------------------------------------------------------------------------- #
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>db2z-agent:
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  enabled: true
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  acceptLicense: true
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  image:
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    # additional agent-specific config....
+<p>Within your <code>values.yaml</code> file, locate the <code>env</code> section for the <strong>Db2 for z/OS</strong> Agent as shown below:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>env:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  DEPLOYMENT_TYPE: "cloud"
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  SERVICE_ENDPOINT: ""
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
 </span></code></pre></div>
-<p>Within this agent’s section of <code>values.yaml</code> scroll down to the <strong><code>env</code></strong> variable section which by default should look like what’s shown below:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>env:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  DEPLOYMENT_TYPE: ""
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  SERVICE_ENDPOINT: ""
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  WATSONX_MODEL_ID: ""
-</span></code></pre></div>
-<p>You will now configure these <code>env</code> variables, using some defaults, as well as your environment-specific values.</p>
-<p>The below table describes each of the variables in the <code>env</code> variables section. The rows with default values can be set to what's shown in the <code>Default value to set</code> column. The rows without default values are unqiue to your environment and will require you to set that value using the instructions below in this section. </p>
-<table>
-<thead>
-<tr>
-<th><strong>Variable name</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Default value to set</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>DEPLOYMENT_TYPE</strong></td>
-<td>Type of deployment (options include 'on-prem' and 'cloud')</td>
-<td>"cloud"</td>
-</tr>
-<tr>
-<td><strong>SERVICE_ENDPOINT</strong></td>
-<td>URL of the service endpoint to generate passticket and user to establish connection to Db2.</td>
-<td>-------</td>
-</tr>
-<tr>
-<td><strong>WATSONX_MODEL_ID</strong></td>
-<td>LLM Model used by the agent. For example, "meta-llama/llama-3-3-70b-instruct" or "ibm/granite-3-3-8b-instruct"</td>
-<td>meta-llama/llama-3-3-70b-instruct</td>
-</tr>
-</tbody>
-</table>
 <ol>
 <li>
-<p>Firstly, ensure the <code>enabled</code> and <code>acceptLicense</code> parameters are both set to <code>true</code> in the beginning of the agent section. </p>
+<p>Keep the <code>DEPLOYMENT_TYPE</code> variable set to <code>cloud</code></p>
 </li>
 <li>
-<p>Set the default variable values for the rows above in your <code>values.yaml</code> file:</p>
-<ul>
-<li><code>DEPLOYMENT_TYPE: "cloud"</code></li>
-<li><code>WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"</code></li>
-</ul>
+<p>While the <code>SERVICE_ENDPOINT</code> variable would point to the URL endpoint on z/OS to generate user passtickets, that setup isn't detailed here and will be bypassed for the purpose of demos. </p>
+<p>Set <code>SERVICE_ENDPOINT</code> by following the below steps:</p>
+<p>a. Retrieve the <code>ZOSMF_ENDPOINT</code> variable you set when configuring the <strong>Z Upgrade Agent</strong> <a href="https://ibm.github.io/wxa4z-L4-Agentic/agentdeploy/upgrade-agent/secrets-data/#set-your-zosmf_endpoint-variable" target="_blank">here</a>.</p>
+<p>The result should look something like: <code>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf</code></p>
+<p>b. Within that string, replace all the characters following the <code>:</code> with <code>5443</code>.</p>
+<p>In the above example, the result would be: <code>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443</code></p>
+<p>c. Set the final result to the <code>SERVICE_ENDPOINT</code> variable referenced above in your <code>values.yaml</code> file. </p>
 </li>
 <li>
-<p>Set the <code>SERVICE_ENDPOINT</code> variable to.....</p>
-<div class="admonition warning">
-<p class="admonition-title">Bypassing authorization service</p>
-<p>Typically, the <code>SERVICE_ENDPOINT</code> variable is set to the endpoint where you have passtickets configured.....</p>
-</div>
+<p>Set the <code>WATSONX_MODEL_ID</code> variable to <code>meta-llama/llama-3-3-70b-instruct</code> as this is a cloud-based deployment. </p>
 </li>
-</ol></div>
+</ol>
+<p>The final result should look similar to the following: </p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>env:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  DEPLOYMENT_TYPE: "cloud"           
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  SERVICE_ENDPOINT: "https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443"
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
+</span></code></pre></div></div>
 
 
 

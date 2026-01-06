@@ -4092,8 +4092,8 @@
 <p>Later in the lab you will also use your watsonx Orchestrate environment to build your own agents for a set of Z specific use cases.</p>
 </li>
 <li>
-<p><strong>watsonx.ai Runtime (WML)</strong></p>
-<p>As mentioned above, you will be leveraging a cloud-based deployment to configure and execute various use cases supported by watsonx Assistant for Z. As such, you will leverage the <strong>watsonx.ai Runtime</strong> SaaS component on IBM Cloud to provide the underlying compute resources and services to power the AI agents you deploy. This provides a way to enable the Agentic AI features of the solution for the purposes of demos and pilots without having to install the full solution on-prem.</p>
+<p><strong>watsonx.ai Studio (WML)</strong></p>
+<p>As mentioned above, you will be leveraging a cloud-based deployment to configure and execute various use cases supported by watsonx Assistant for Z. As such, you will leverage the <strong>watsonx.ai Studio</strong> SaaS component on IBM Cloud to provide the underlying compute resources and services to power the AI agents you deploy. This provides a way to enable the Agentic AI features of the solution for the purposes of demos and pilots without having to install the full solution on-prem.</p>
 </li>
 <li>
 <p><strong>IBM Cloud Object Storage (COS)</strong></p>
@@ -4253,7 +4253,7 @@
 </li>
 </ul>
 <h2 id="watsonx-ai-overview-section-overview">Section overview<a class="headerlink" href="#watsonx-ai-overview-section-overview" title="Permanent link">#</a></h2>
-<p>For the purpose of demos and pilots, you will be using the watsonx.ai Runtime SaaS version on IBM Cloud to provide the IFM layer to connect your agents and services to the chosen LLMs and underlying  resources. A cloud-based deployment is used to configure and execute various use cases supported by watsonx Assistant for Z to enable the Agentic AI features of the solution without having to install the full solution on-prem, as a customer normally would in production. </p>
+<p>For the purpose of demos and pilots, you will be using the watsonx.ai Studio SaaS version on IBM Cloud to provide the IFM layer to connect your agents and services to the chosen LLMs and underlying  resources. A cloud-based deployment is used to configure and execute various use cases supported by watsonx Assistant for Z to enable the Agentic AI features of the solution without having to install the full solution on-prem, as a customer normally would in production. </p>
 <p>The steps in this section will walk you through the creation of the following required secrets which will be used later on:</p>
 <ul>
 <li>
@@ -4289,13 +4289,13 @@ that secret for later use. </p>
 <p>Navigate to your <strong><em>Resources List</em></strong> in the IBM Cloud web console using the first Lab environment. Reference the instructions in Section <strong><em><a href="#techzone-orchestrate-accessing-the-environment">Accessing the environment</a></em></strong> for a reminder on how to get to your <strong>Resource List</strong>. </p>
 </li>
 <li>
-<p>In the <strong>Resource List</strong> page, click on the <strong>AI/Machine Learning</strong> drop-down and click on the name of your <strong>watsonx.ai Runtime</strong> resource:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../watsonx-ai/_attachments/watson1.png" data-desc-position="bottom"><img alt="" src="../watsonx-ai/_attachments/watson1.png"></a></p>
+<p>In the <strong>Resource List</strong> page, click on the <strong>AI/Machine Learning</strong> drop-down and click on the name of your <strong>watsonx.ai Studio</strong> resource:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../watsonx-ai/_attachments/studio1.png" data-desc-position="bottom"><img alt="" src="../watsonx-ai/_attachments/studio1.png"></a></p>
 </li>
 <li>
-<p>On the <strong><em>watsonx.ai Runtime in Cloud Pak for Data</em></strong> resource page, click on the drop-down arrow next to
+<p>On the <strong><em>watsonx.ai Studio in Cloud Pak for Data</em></strong> resource page, click on the drop-down arrow next to
 <strong>‘Launch in’</strong> and click on <strong>IBM Cloud Pak for Data</strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../watsonx-ai/_attachments/watson2.png" data-desc-position="bottom"><img alt="" src="../watsonx-ai/_attachments/watson2.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../watsonx-ai/_attachments/studio2.png" data-desc-position="bottom"><img alt="" src="../watsonx-ai/_attachments/studio2.png"></a></p>
 </li>
 <li>
 <p>This should open up a new tab with a <strong>Getting started</strong> window. Exit out of the <strong>Getting started</strong> window and click on the ‘hamburger’ menu icon in the top-left corner of the screen:</p>
@@ -4394,7 +4394,7 @@ that secret for later use. </p>
 <p>In addition to the <strong>Project ID</strong> and <strong>Deployment Space ID</strong> secrets, you will also need an IBM Cloud <strong>API key</strong> configured as a secret in your agents’ deployment. This section walks through the creation of a new API key for later use.</p>
 <ol>
 <li>
-<p>Go back to your previous tab where you launched the <strong>watsonx.ai Runtime</strong> service in IBM Cloud. The screen should look similar to the following:</p>
+<p>Go back to your previous tab where you launched the <strong>watsonx.ai Studio</strong> service in IBM Cloud. The screen should look similar to the following:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../watsonx-ai/_attachments/api1.png" data-desc-position="bottom"><img alt="" src="../watsonx-ai/_attachments/api1.png"></a></p>
 </li>
 <li>
@@ -5050,6 +5050,7 @@ secure authentication key of your choosing (i.e. a password). </p>
 <li>IBM Z Upgrade Agent</li>
 <li>IBM Z Support Agent</li>
 <li>IBM Z OMEGAMON Insights Agent</li>
+<li>Db2 for z/OS Agent</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Official Agent deployment documentation</p>
@@ -6194,6 +6195,7 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 <li>IBM Z Upgrade Agent</li>
 <li>IBM Z Support Agent</li>
 <li>IBM Z OMEGAMON Insights Agent</li>
+<li>Db2 for z/OS Agent</li>
 </ul>
 <ol>
 <li>

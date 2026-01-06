@@ -2752,66 +2752,22 @@
 
 
 <div><h1 id="configuring-the-secretsdata-variables">Configuring the <code>secrets.data</code> variables<a class="headerlink" href="#configuring-the-secretsdata-variables" title="Permanent link">#</a></h1>
-<p>Scrolling down further in the <strong>IBM Z Upgrade Agent</strong> section of your <code>values.yaml</code> file, you will see a <strong><code>secrets.data</code></strong> section with additional variables you must configure. It will look like what’s shown below:</p>
+<p>Scrolling down further in the <strong>Db2 for z/OS</strong> section of your <code>values.yaml</code> file, you will see a <strong><code>secrets.data</code></strong> section with additional variables you must configure. It will look like what’s shown below:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>secrets:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  data:
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ENCRYPT_KEY: ""
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    AGENT_AUTH_TOKEN: ""
 </span></code></pre></div>
-<p>The below table describes each of the variables in the <code>secrets.data</code> variables section. The rows with default values can be set to what's shown in the <code>Default value to set</code> column. The rows without default values are unique to your environment and will require you to set that value using the instructions below in this section. </p>
-<table>
-<thead>
-<tr>
-<th><strong>Variable name</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Default value to set</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>ENCRYPT_KEY</strong></td>
-<td>Encrypt key for storing confidential information in mongodb metadata store</td>
-<td>-------</td>
-</tr>
-<tr>
-<td><strong>AGENT_AUTH_TOKEN</strong></td>
-<td>Token used by the agent-controller to register this agent with WxO</td>
-<td>"db2_auth_token"</td>
-</tr>
-</tbody>
-</table>
-<p><strong>ACTION:</strong> Set the <strong>default</strong> variable values for the rows above in your <code>values.yaml</code> file:</p>
-<h3 id="generate-an-encrypt_key-secret">Generate an <em>ENCRYPT_KEY</em> secret<a class="headerlink" href="#generate-an-encrypt_key-secret" title="Permanent link">#</a></h3>
-<p>Follow the below steps to generate the <strong>Encrypt Key</strong> to set for the <code>ENCRYPT_KEY</code> variable.</p>
-<ol>
-<li>
-<p>In your VS Code Terminal session, ensure you have the <strong>python</strong> or <strong>python3</strong> tool installed. </p>
-</li>
-<li>
-<p>Install the <strong>cryptography</strong> command-line tool by running one of the following commands:</p>
-<p><code>pip install cryptography</code></p>
-<p><code>pip3 install cryptography</code></p>
-</li>
-<li>
-<p>Once installed, start a python terminal by running <code>python</code> or <code>python3</code> in your VS Code terminal.</p>
-<p><strong>IMAGE</strong></p>
-</li>
-<li>
-<p>Generate your encrypt key by copying the following lines and pasting in your Python terminal.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>from cryptography.fernet import Fernet
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Fernet.generate_key()
+<h3 id="setting-the-encrypt_key-variable">Setting the <code>ENCRYPT_KEY</code> variable<a class="headerlink" href="#setting-the-encrypt_key-variable" title="Permanent link">#</a></h3>
+<p>The <code>ENCRYPT_KEY</code> variable is used to store confidential information in the provided mongodb metadata store. Follow the <a href="https://github.com/IBM/z-ai-agents/tree/main/agent-helm-charts/db2z-agent#generating-an-encrypt-key-with-python" target="_blank">steps documented here</a> to generate your encrypt key.</p>
+<p>The output of running the referenced command lines may look similar to what's shown below:
+</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;&gt;&gt; from cryptography.fernet import Fernet
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Fernet.generate_key()&gt;&gt;&gt; Fernet.generate_key()
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>b'H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E='
 </span></code></pre></div>
-<p>The result should look similar to the following:</p>
-<p><strong>IMAGE</strong></p>
-</li>
-<li>
-<p>Copy the string in single-quotes to your <code>ENCRYPT_KEY</code> variable. For example:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>secrets:
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  data:
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ENCRYPT_KEY: "2g4zWlGa13aqwecPU4DceTDSsE58lJ1cKAQ-2A3_to="
-</span></code></pre></div>
-</li>
-</ol></div>
+<p>Copy and paste the string within the single-quotes and set it to the <code>ENCRYPT_KEY</code> variable. In the above example, the string would be <code>H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E=</code>.</p>
+<h3 id="setting-the-agent_auth_token-variable">Setting the <code>AGENT_AUTH_TOKEN</code> variable<a class="headerlink" href="#setting-the-agent_auth_token-variable" title="Permanent link">#</a></h3>
+<p>Lastly, set the <code>AGENT_AUTH_TOKEN</code> variable to <code>DB2_AGENT_TOKEN</code> or something similar. This is the token used by the agent-controller to register this agent with WxO. </p></div>
 
 
 
