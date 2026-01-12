@@ -3942,7 +3942,7 @@
 <p><strong>Ansible Automation Platform (AAP) &amp; z/OS</strong>: provides a pre-configured instance of AAP and Wazi z/OS. This environment includes Ansible playbooks, which you can import as skills within watsonx Orchestrate and connect to your assistant. Preinstalled templates for various use cases are also available (covered in later sections). Learn more about AAP <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">here</a>. Learn more about Wazi, <a href="https://www.ibm.com/cloud/wazi-as-a-service" target="_blank">here</a>.</p>
 </li>
 <li>
-<p><strong>Single Node OpenShift with NFS storage</strong>: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of <a href="https://opensearch.org/">OpenSearch</a> for Watson Assistant for Z, enabling ingestion of client-supplied documents.- </p>
+<p><strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong>: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of <a href="https://opensearch.org/">OpenSearch</a> for Watson Assistant for Z, enabling ingestion of client-supplied documents.- </p>
 </li>
 </ul>
 <div class="admonition warning">
@@ -3960,14 +3960,14 @@
 </div>
 <p><a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c" target="_blank">Ansible Automation Platform (AAP) &amp; z/OS - reservation page</a></p>
-<p><a href="https://techzone.ibm.com/my/reservations/create/66f6f42ec428e2fc24fa1089" target="_blank">Single Node OpenShift with NFS storage - reservation page</a></p>
+<p><a href="https://techzone.ibm.com/my/reservations/create/6965075fc23104120139308b" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a></p>
 </li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">The next two steps are for one of the three environments. Repeat for all three environments.</p>
 <p><strong>Follow the steps to create a reservation in ITZ for all three environments.</strong></p>
 </div>
-<ol start="2">
+<ol>
 <li>
 <p>Select <strong>Reserve now</strong>.</p>
 <p>The <strong>Reserve now</strong> option creates a reservation for immediate use. Optionally, schedule the reservation for a later date, for example, when you are at your client's office to start a pilot.</p>
@@ -5812,10 +5812,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's storage class: <code>managed-nfs-storage</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-2"></a>  storageClass: "managed-nfs-storage"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section>
                     <section class='print-page md-section' id='section-6-6' heading-number='6.6'>
                         <h1>Prepare for IBM Z Support Agent<a class='headerlink' href='#section-6-6' title='Permanent link'></a>
@@ -6031,10 +6031,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-support-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-support-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's storage class: <code>managed-nfs-storage</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-support-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-support-agent-pvc-__codelineno-1-2"></a>  storageClass: "managed-nfs-storage"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-support-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section>
                     <section class='print-page md-section' id='section-6-7' heading-number='6.7'>
                         <h1>Prepare for IBM Z OMEGAMON Insights Agent<a class='headerlink' href='#section-6-7' title='Permanent link'></a>
@@ -6189,10 +6189,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's storage class: <code>managed-nfs-storage</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-2"></a>  storageClass: "managed-nfs-storage"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section><section class="print-page" id="agentdeploy-execute-deploy" heading-number="6.8"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
