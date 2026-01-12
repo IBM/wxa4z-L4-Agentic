@@ -6,11 +6,11 @@ pvc:
   storageClass: "ocs-storagecluster-cephfs"
 ```
 
-**Set the value of the `storageClass` variable** to your cluster's storage class: `managed-nfs-storage`.
+**Set the value of the `storageClass` variable** to your cluster's default storage class: `ocs-storagecluster-ceph-rbd`.
 
 After doing so, the result should look like the following:
 
 ```
 pvc:
-  storageClass: "managed-nfs-storage"
+  storageClass: "ocs-storagecluster-ceph-rbd"
 ```

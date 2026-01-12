@@ -5,7 +5,7 @@ To enable sellers to learn how to deliver client pilots of {{offering.name}}, th
 
 - **Ansible Automation Platform (AAP) & z/OS**: provides a pre-configured instance of AAP and Wazi z/OS. This environment includes Ansible playbooks, which you can import as skills within watsonx Orchestrate and connect to your assistant. Preinstalled templates for various use cases are also available (covered in later sections). Learn more about AAP <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">here</a>. Learn more about Wazi, <a href="https://www.ibm.com/cloud/wazi-as-a-service" target="_blank">here</a>.
 
-- **Single Node OpenShift with NFS storage**: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of [OpenSearch](https://opensearch.org/) for Watson Assistant for Z, enabling ingestion of client-supplied documents.- 
+- **Single Node OpenShift (OCP-V on IBM Cloud)**: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of [OpenSearch](https://opensearch.org/) for Watson Assistant for Z, enabling ingestion of client-supplied documents.- 
 
 !!! Warning "All activities in this lab guide are required."
 
@@ -24,19 +24,19 @@ Follow the instructions to create new reservation requests, extend the reservati
     
     <a href="{{itz.aapEnv}}" target="_blank">Ansible Automation Platform (AAP) & z/OS - reservation page</a>
     
-    <a href="{{itz.snoEnv}}" target="_blank">Single Node OpenShift with NFS storage - reservation page</a>
+    <a href="{{itz.snoEnv}}" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a>
 
 !!! Important "The next two steps are for one of the three environments. Repeat for all three environments."
 
     **Follow the steps to create a reservation in ITZ for all three environments.**
 
-2. Select **Reserve now**.
+1. Select **Reserve now**.
 
     The **Reserve now** option creates a reservation for immediate use. Optionally, schedule the reservation for a later date, for example, when you are at your client's office to start a pilot.
 
     ![](_attachments/TZ1.png)
 
-3. Complete the reservation request form and then click **Submit**.
+2. Complete the reservation request form and then click **Submit**.
 
     The first two reservations are similar to the first image and have fields **a**-**e** that need to be completed.
 
