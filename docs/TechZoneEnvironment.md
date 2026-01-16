@@ -59,7 +59,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     ![](_attachments/TZ2.png)
 
-    In addition to the preceding fields, the reservation for the **Single Node OpenShift with NFS storage** has these additional fields:
+    In addition to the preceding fields, the reservation for the **Single Node OpenShift (OCP-V on IBM Cloud)** has these additional fields:
 
     **h**. OCP/Kubernetes cluster network: leave the default setting of **10.128.0.0/14**.
 
@@ -67,7 +67,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     **j**. Master single node flavor: select **32 vCPU x 128 GB - 300 GB ephemeral storage**.
 
-    **k**. OpenShift version: select **4.14**.
+    **k**. OpenShift version: select **4.18**.
 
     **l**. OCP/Kubernetes service network: leave the default setting of **172.30.0.0/16**.
     
