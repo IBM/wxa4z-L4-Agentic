@@ -3988,11 +3988,11 @@
 <p><strong>f</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>g</strong>. Click <strong>Submit</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ2.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ2.png"></a></p>
-<p>In addition to the preceding fields, the reservation for the <strong>Single Node OpenShift with NFS storage</strong> has these additional fields:</p>
+<p>In addition to the preceding fields, the reservation for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong> has these additional fields:</p>
 <p><strong>h</strong>. OCP/Kubernetes cluster network: leave the default setting of <strong>10.128.0.0/14</strong>.</p>
 <p><strong>i</strong>. Enable FIPS security: leave the default setting of <strong>No</strong>. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.</p>
 <p><strong>j</strong>. Master single node flavor: select <strong>32 vCPU x 128 GB - 300 GB ephemeral storage</strong>.</p>
-<p><strong>k</strong>. OpenShift version: select <strong>4.14</strong>.</p>
+<p><strong>k</strong>. OpenShift version: select <strong>4.18</strong>.</p>
 <p><strong>l</strong>. OCP/Kubernetes service network: leave the default setting of <strong>172.30.0.0/16</strong>.</p>
 <p><strong>m</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>n</strong>. Click <strong>Submit</strong>.</p>
@@ -5812,10 +5812,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-upgrade-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-external-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-upgrade-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-external-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section>
                     <section class='print-page md-section' id='section-6-6' heading-number='6.6'>
                         <h1>Prepare for IBM Z Support Agent<a class='headerlink' href='#section-6-6' title='Permanent link'></a>
@@ -6031,10 +6031,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-support-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-support-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-external-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-support-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-support-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-support-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-external-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section>
                     <section class='print-page md-section' id='section-6-7' heading-number='6.7'>
                         <h1>Prepare for IBM Z OMEGAMON Insights Agent<a class='headerlink' href='#section-6-7' title='Permanent link'></a>
@@ -6189,10 +6189,10 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-1"></a>pvc:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-0-2"></a>  storageClass: "ocs-storagecluster-cephfs"
 </span></code></pre></div>
-<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-storagecluster-ceph-rbd</code>.</p>
+<p><strong>Set the value of the <code>storageClass</code> variable</strong> to your cluster's default storage class: <code>ocs-external-storagecluster-ceph-rbd</code>.</p>
 <p>After doing so, the result should look like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-1"></a>pvc:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-storagecluster-ceph-rbd"
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#agentdeploy-omegamon-agent-pvc-__codelineno-1-2"></a>  storageClass: "ocs-external-storagecluster-ceph-rbd"
 </span></code></pre></div></div></body></html></section></section><section class="print-page" id="agentdeploy-execute-deploy" heading-number="6.8"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
