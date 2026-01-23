@@ -40,31 +40,8 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
 
     After running the above command, the new pods will start initializing in your **wxa4z-zad** namespace. 
 
-5. After running the previous command, you will need to patch the **opensearch-wrapper** deployment for successful initialization. To do this, run the following command depending on operating system:
-   
-    **Mac users:**
-    ```
-    oc -n wxa4z-operator patch deployment ibm-wxa4z-operator-controller-manager -p='{"spec":{"replicas": 0}}'
-    ```
 
-    **Windows users:**
-    ```
-    oc -n wxa4z-operator patch deployment ibm-wxa4z-operator-controller-manager -p="{\"spec\":{\"replicas\": 0}}"
-    ```
-
-6. Immediately after running the previous command, run the following command:
-
-    **Mac users:**
-    ```
-    oc -n wxa4z-zad patch deployment wxa4z-opensearch-wrapper -p='{"spec":{"template":{"spec":{"containers":[{"name":"opensearch-wrapper","env":[{"name":"DISABLE_TRANSLATION","value":"true"}]}]}}}}'
-    ```
-   
-    **Windows users:**
-    ```
-    oc -n wxa4z-zad patch deployment wxa4z-opensearch-wrapper -p="{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"opensearch-wrapper\",\"env\":[{\"name\":\"DISABLE_TRANSLATION\",\"value\":\"true\"}]}]}}}}"
-    ```
-
-7. After following the above steps, the new pods will be created in your **wxa4z-zad** namespace. This process typically takes up to 20-25 minutes for the images to download and the deployment to complete.
+5. After following the above steps, the new pods will be created in your **wxa4z-zad** namespace. This process typically takes up to 20-25 minutes for the images to download and the deployment to complete.
    
     To view the progress of your pods creation, navigate back to your **OpenShift web console**. 
 
@@ -79,8 +56,6 @@ In this step you will deploy ***zAssistantDeploy*** to your OpenShift cluster. *
         It is typically normal to see an error message as shown below for the **wxa4z-opensearch-wrapper** pod. Please wait until all the pods successfully come up and then it should change to **Ready** status.
 
         ![](_attachments/deploy5.png)
-
-
     
 
 
