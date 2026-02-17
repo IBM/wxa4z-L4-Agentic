@@ -11,6 +11,7 @@
     * [Generate IBM Cloud API key](./watsonx-ai/api-key.md)
     * [Retrieve watsonx Orchestrate Service Instance URL](./watsonx-ai/service-instance-url.md)
     * [Locate your WML Base URL](./watsonx-ai/wml-base-url.md)
+    * [OPTIONAL: Configure model gateway for Granite LLM](./watsonx-ai/config-granite.md)
 * Deploy and configure zAssistantDeploy
     * [Overview](./zAssistantDeploy/Overview.md)
     * [Install the **oc** CLI and log into OpenShift](./zAssistantDeploy/install-oc-utility.md)

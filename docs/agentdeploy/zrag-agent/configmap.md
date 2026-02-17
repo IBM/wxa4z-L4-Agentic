@@ -24,4 +24,6 @@ The `MODEL_ID` variable maps to the LLM model used by the zRAG MCP server for an
 
 **Modify this to `meta-llama/llama-3-3-70b-instruct`** as this is a cloud-based x86 deployment. 
 
+***NOTE:*** if you want to enable the **granite-3-3-8b-instruct** LLM, ensure you completed the steps documented in Section ***[OPTIONAL: Configuring Model Gateway service for Granite LLM](../../watsonx-ai/config-granite.md)***.
+
 Keep the default value for the `ZRAG_RETRIEVER_URL` as this is the URL endpoint for the OpenSearch wrapper service. 
