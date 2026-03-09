@@ -61,7 +61,7 @@
     * [Create a storage bucket](ingest/create-storage-bucket.md)
     * [Upload docs to storage bucket](ingest/upload-docs.md)
     * Execute Doc Ingestion
-        * Using Ingestion UI
+        * [Using Ingestion UI](ingest/execute-ingestion-ui-placeholder.md)
         * [Using command-line](ingest/execute-ingestion-cli.md)
     * [Test zRAG Agent with ingested documents](ingest/test-q&a.md)
 * [Embed Agent Chat in Web Page](agentdeploy/embed.md)
