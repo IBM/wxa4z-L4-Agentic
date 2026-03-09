@@ -10,10 +10,6 @@
       
       
       
-        <link rel="prev" href="../upload-docs/">
-      
-      
-        <link rel="next" href="../test-q%26a/">
       
       
         
@@ -24,7 +20,7 @@
     
     
       
-        <title>Execute doc ingestion - IBM wxa4z L4 Lab Guide</title>
+        <title>Execute Document Ingestion (using UI) - IBM wxa4z L4 Lab Guide</title>
       
     
     
@@ -156,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#execute-document-ingestion" class="md-skip">
+        <a href="#execute-document-ingestion-using-ui" class="md-skip">
           Skip to content
         </a>
       
@@ -192,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Execute doc ingestion
+              Execute Document Ingestion (using UI)
             
           </span>
         </div>
@@ -2114,20 +2110,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2148,7 +2142,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2331,26 +2325,64 @@
                 
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7">
+        
+          
+          <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Execute Doc Ingestion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Execute Doc Ingestion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../execute-ingestion-ui-placeholder/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Execute doc ingestion
+    Using Ingestion UI
   
 
     
@@ -2359,6 +2391,41 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../execute-ingestion-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using command-line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2795,148 +2862,107 @@
 
 
 
-<div><h1 id="execute-document-ingestion">Execute Document Ingestion<a class="headerlink" href="#execute-document-ingestion" title="Permanent link">#</a></h1>
-<p>In this step you will log into your <strong>client ingestion server</strong> and kickoff the ingestion pipeline for your uploaded files.</p>
+<div><h1 id="execute-document-ingestion-using-ui">Execute Document Ingestion (using UI)<a class="headerlink" href="#execute-document-ingestion-using-ui" title="Permanent link">#</a></h1>
+<p>Using the watsonx Assistant for Z <strong>Management Console</strong>, you can upload content stored in a remote S3-compatible location and ingest it into a dedicated collection source. </p>
+<h3 id="access-your-management-console-web-ui">Access your Management Console Web UI<a class="headerlink" href="#access-your-management-console-web-ui" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p>Navigate to your local command-prompt or Terminal window and set the <strong>WXA4Z_TLS_VERIFY</strong> environment variable to <strong>false</strong> to skip server certificate verification by running the following command (depending on your operating system):</p>
-<p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export WXA4Z_TLS_VERIFY=false
-</span></code></pre></div>
-<p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>set WXA4Z_TLS_VERIFY=false
-</span></code></pre></div>
-<p><strong><em>Windows PowerShell Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Set-Item Env:\WXA4Z_TLS_VERIFY “false”
-</span></code></pre></div>
+<p>First, access your Web UI for Client Ingestion by logging into your OpenShift web console and navigating to <strong>Networking</strong> --&gt; <strong>Routes</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui1.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui1.png"></a></p>
 </li>
 <li>
-<p>Retrieve the <strong>Server URL</strong> for your Client Ingestion Server.</p>
-<p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
-</span></code></pre></div>
-<p><strong><em>Windows users (this method can also be used by Mac users):</em></strong></p>
-<p>You can retrieve the URL in your OCP Web console by navigating to <strong>Networking -&gt; Routes</strong>, and then copy the URL for the <strong>wxa4z-client-ingestion</strong> route as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist16.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist16.png"></a></p>
+<p>Click the URL for <strong>wxa4z-content-ingestion-ui-route</strong> as shown below.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui2.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui2.png"></a></p>
+<p>You will then be redirected to the <strong>watsonx Assistant for Z Management Console</strong> login page. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui3.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui3.png"></a></p>
 </li>
 <li>
-<p>Retrieve the <strong>client-ingestion-authkey</strong> for your Client Ingestion server by running the following command: </p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc -n wxa4z-zad get secret client-ingestion-authkey -o jsonpath="{.data.authkey}" | base64 -d
-</span></code></pre></div>
-<p>The output of this command is your unique <strong>auth-key</strong> that you had previously set. You will need the output of both previous commands in the next step.</p>
-<div class="admonition warning">
-<p class="admonition-title">If the command doesn't work for you</p>
-<p>If the command doesn't work for you, you can find the <strong>authkey</strong> value by viewing the <strong><em>client-ingestion-secret.yaml</em></strong> file you modified, and copying the value set for the <strong><em>authkey</em></strong> parameter. </p>
+<p>Enter the API key created when setting up the client ingestion authentication secret and click <strong>Login</strong>. </p>
+<div class="admonition tip">
+<p class="admonition-title">Retrieving your client ingestion authkey....</p>
+<p>To locate your <strong>client ingestion authkey</strong>, navigate to <strong>Workloads</strong> --&gt; <strong>Secrets</strong> in the OpenShift web console. </p>
+<p>Then click on the <strong>client-ingestion-authkey</strong> secret as shown below. At the bottom of the page you can copy the value of your secret. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui4.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui4.png"></a></p>
 </div>
+<p>Once logged in, you should see the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui5.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui5.png"></a></p>
+</li>
+</ol>
+<h3 id="connect-to-remote-s3-source">Connect to remote S3 source<a class="headerlink" href="#connect-to-remote-s3-source" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>To begin ingesting content, click <strong>Ingest Data</strong> in the top-right corner of the screen. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui6.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui6.png"></a></p>
 </li>
 <li>
-<p>Log into your client ingestion server using the <strong>zassist</strong> utility by running the following command, replacing <code>&lt;server_url&gt;</code> with the value from <strong>step 2</strong> above:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>zassist login &lt;server_url&gt;
-</span></code></pre></div>
+<p>In the pop-up screen, select <strong>S3 Bucket</strong> as the <em>source type</em>, then click <strong>Next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui7.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui7.png"></a></p>
 </li>
 <li>
-<p>When prompted, enter the <strong>authkey</strong> value from <strong>step 3</strong> above. Then verify that a <strong>Success</strong> message is returned. </p>
-</li>
-<li>
-<p>Verify that you're connected by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist list
-</span></code></pre></div>
-<p>This command will return all connected remote sources to your client ingestion server. By default, you should see in the output that there are no connected sources under <code>ID</code>.</p>
-</li>
-<li>
-<p>Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (<strong><em>see below the command on how to retrieve each of the parameters listed</em></strong>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
-</span></code></pre></div>
-<p><strong>a</strong>. <strong>&lt;SOURCE_NAME&gt;</strong> : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. </p>
-<p><strong>b</strong>. <strong>&lt;S3_URL&gt;</strong>: </p>
+<p>In the screen that follows, enter the following connection details for your S3 bucket:</p>
+<p><strong>a</strong>. <strong>URL</strong>: URL of the remote source from which the content must be ingested. </p>
 <ul>
-<li>To retrieve your <code>&lt;S3_URL&gt;</code>, navigate to your <strong>COS instance</strong> in IBM Cloud </li>
 <li>
-<p>Click on the <strong>Endpoints</strong> tab on the left-hand menu:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist17.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist17.png"></a></p>
+<p>Navigate to your <strong>COS instance</strong> in IBM Cloud</p>
 </li>
 <li>
-<p>In the <strong>'Select resiliency'</strong> drop-down, select <strong>Regional</strong>: </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist18.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist18.png"></a></p>
+<p>Click on the <strong>Endpoints</strong> tab on the left-hand menu
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist17.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist17.png"></a></p>
 </li>
 <li>
-<p>In the ‘<strong>Select location</strong>’ drop-down click on the region where you created your bucket. In the example shown earlier, the bucket was created in the <strong>eu-de</strong> region, so you would select the <strong>Europe – Frankfurt (eu-de)</strong> region as shown below.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist19.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist19.png"></a></p>
-<p><strong><em>Make sure to select the region that corresponds to your own bucket</em></strong></p>
+<p>In the <strong>'Select resiliency'</strong> drop-down, select <strong>Regional</strong>:
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist18.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist18.png"></a></p>
 </li>
 <li>
-<p>Based on the region you selected, copy and record the region's <strong>Public</strong> endpoint as shown below (<em>in this example, it's for the </em><em>eu-de</em><em> region</em>)</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist20.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist20.png"></a></p>
+<p>In the ‘<strong>Select location</strong>’ drop-down click on the region where you created your bucket. 
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist19.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist19.png"></a>
+    <strong><em>Make sure to select the region that corresponds to your own bucket.</em></strong></p>
+</li>
+<li>
+<p>Based on the region you selected, copy and record the region's <strong>Public</strong> endpoint as shown below (<em>in this example, it's for the </em><em>eu-de</em><em> region</em>)
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist20.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist20.png"></a></p>
 </li>
 <li>
 <p>After recording your <strong>Public endpoint</strong> in a local notepad, append <code>https://</code> to the front of it. In the example shown above, the new endpoint URL would become:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://s3.eu-de.cloud-object-storage.appdomain.cloud
-</span></code></pre></div>
-<p><strong><em>This is the final value of your <s3_url> variable that you will use for the above zassist command.</s3_url></em></strong></p>
 </li>
 </ul>
-<p><strong>c</strong>. <strong>&lt;S3_KEY_ID&gt;</strong>: replace this with the ‘<strong>access_key_id</strong>’ value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="../cos-service-credentials/#create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
+<p><code>https://s3.eu-de.cloud-object-storage.appdomain.cloud</code></p>
+<ul>
+<li>Copy and paste the full value into the <code>URL</code> field within the UI, as shown below:
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui8.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui8.png"></a></li>
+</ul>
+<p><strong>b</strong>. <strong>Access Key ID</strong>: replace this with the ‘<strong>access_key_id</strong>’ value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="../cos-service-credentials/#create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist21.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist21.png"></a></p>
-<p><strong>d</strong>. <strong>&lt;S3_SECRET_KEY&gt;</strong>: replace this with the '<strong>secret_access_key</strong>' value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="../cos-service-credentials/#create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
+<p><strong>c</strong>. <strong>Secret Access Key</strong>: replace this with the '<strong>secret_access_key</strong>' value in the <strong>Service Credentials</strong> you created for your COS instance in <strong>Step 6</strong> of Section <a href="../cos-service-credentials/#create-service-credentials-for-ibm-cloud-object-storage-cos">Create service credentials for IBM COS</a></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist22.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist22.png"></a></p>
-<p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
-<p>The final result of the command (once you've plugged in your unique values) should look something like the example command below (<em>these values will not work for you</em>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
-</span></code></pre></div>
-</li>
-<li>
-<p>Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist23.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist23.png"></a></p>
-<div class="admonition tip">
-<p class="admonition-title">Command options used....</p>
-<p>Because you used the <strong>--watch</strong> flag in the command, it will begin monitoring the status of the ingested source. In our case there are 3 files to be ingested, as shown in the screenshot above.</p>
-<p>Additionally, notice that you also used the <strong>--skip-pii</strong> flag at the end of your command. This will bypass any automatic PII checks that are done. This is suitable for the Lab as we’re using test data. For typical customer pilots, you should not be ingesting any PII data, otherwise cleaning the data to ensure no sensitive data is included.</p>
-</div>
-</li>
-<li>
-<p>Once the ingestion process completes (<strong><em>typically less than 5 min.</em></strong>) you will see something like what’s shown below, indicating that the new 3 files have been successfully ingested.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist24.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist24.png"></a></p>
-<details class="failure">
-<summary>If the ingestion process doesn't progress within 3 minutes....</summary>
-<p>In the case that the ingestion process doesn't progress within 3 minutes and you don't see the output shown above, you likely need to <strong>restart the client-ingestion pod</strong> within OpenShift (as a one-time fix). After restarting the pod, repeat the steps in this section to ingest the provided documentation. </p>
-<p>Follow the below steps to restart the pod:</p>
-<ol>
-<li>
-<p>Within your <strong>OCP Web Console</strong>, navigate to <strong>Deployments</strong> and then click on <strong>wxa4z-client-ingestion</strong> as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TS1.png" data-desc-position="bottom"><img alt="" src="../_attachments/TS1.png"></a></p>
-</li>
-<li>
-<p>Under <strong>Deployment details</strong>, click on the 'down' arrow to scale the pod to 0, and then immediately after click on the 'up' arrow to scale the pod back to 1. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TS2.png" data-desc-position="bottom"><img alt="" src="../_attachments/TS2.png"></a></p>
-</li>
-<li>
-<p>Navigate back to the <strong>Pods</strong> section and wait until the pod comes back up as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TS3.png" data-desc-position="bottom"><img alt="" src="../_attachments/TS3.png"></a></p>
-</li>
-<li>
-<p>Repeat the above steps in this section to successfully ingest your documents. </p>
+<p><strong>d</strong>. <strong>Bucket Name</strong>: replace this with the name of your bucket you originally created in your COS instance. </p>
+<p><em>Once completed, click </em>Next<em>, as shown below:</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui9.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui9.png"></a></p>
 </li>
 </ol>
-</details>
+<h3 id="select-collection-source">Select collection source<a class="headerlink" href="#select-collection-source" title="Permanent link">#</a></h3>
+<p>On the last page, choose a <strong>collection source</strong> where you want to ingest your content. You can either select from the available list or create a new collection source. </p>
+<ol>
+<li>
+<p>From the <strong>Collection Source</strong> drop-down, select <strong>New collection source</strong> then provide a name. </p>
 </li>
 <li>
-<p>Finally, verify that the documents are now ingested in your remote S3 source by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>zassist list
-</span></code></pre></div>
-<p>This will list all connected remote sources, as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist25.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist25.png"></a></p>
-<p>In the above command, you can see the original <strong>Source Name</strong> that you inputted into the zassist ingest command parameter, as well as it’s <strong>ID</strong> and <strong>Status</strong>.</p>
+<p>Ensure the <strong>Tabular support</strong> toggle is left on, and disable the toggle for <strong>PII Check</strong>. </p>
 </li>
-<li>
-<p>To view detailed information about the source, run the following command, replacing <code>&lt;id&gt;</code> with the <strong>ID</strong> value returned in the previous command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>zassist details &lt;id&gt;
-</span></code></pre></div>
-<p>This should return something similar to below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist26.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist26.png"></a></p>
-<p>In the returned output, you should see that the <strong>Completed</strong> state is set to ‘true’, and you should see all 3 files that you uploaded to your S3 bucket in your COS instance.</p>
-<p><strong><em>For more information on the zassist command syntax, reference the IBM docs page <a href="https://www.ibm.com/docs/en/watsonx/waz/2.0.0?topic=ingestion-ingesting-data-through-remote-s3-source">here</a>.</em></strong></p>
-</li>
-</ol></div>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/ui10.png" data-desc-position="bottom"><img alt="" src="../_attachments/ui10.png"></a></p>
+<p>Then click <strong>Ingest</strong>. </p>
+<p>!!! Tip "Ingestion settings..."</p>
+<div class="highlight"><pre><span></span><code>    - **Tabular support** stores data in a structured format, enabling the LLM to retrieve information efficiently (enabled by default). This is useful for the structured spreadsheet that was uploaded. 
+    - **PII Check** filters sensitive information form the content source. In this example, we disabled it for better performance as the documents don't contain any PII. 
+    - **OCR** is used in scenarios where images stored in documents must be processed and extracted from the content source. In this scenario we left this disabled.
+</code></pre></div>
+<h3 id="following-the-ingestion">Following the ingestion<a class="headerlink" href="#following-the-ingestion" title="Permanent link">#</a></h3>
+<p>After the ingestion begins processing, sources in the <strong>processing</strong> stage appears under your defined collection source name from the specified bucket. </p>
+<p>Once the ingestion completes, the collection source appears on the Content Ingestion pages. From there, you can: 
+- Search for a collection source by name using the search icon.
+- Filter collection sources by type or ingestion status by using the filter icon.
+- Delete collection sources by selecting them and clicking Delete.</p></div>
 
 
 
@@ -2961,44 +2987,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer">
-        
-          
-          <a href="../upload-docs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Upload docs to storage bucket">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Upload docs to storage bucket
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../test-q%26a/" class="md-footer__link md-footer__link--next" aria-label="Next: Test zRAG Agent with ingested documents">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Test zRAG Agent with ingested documents
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
