@@ -60,7 +60,9 @@
     * [Log into COS via ibmcloud utility](ingest/ibmcloud-utility.md)
     * [Create a storage bucket](ingest/create-storage-bucket.md)
     * [Upload docs to storage bucket](ingest/upload-docs.md)
-    * [Execute doc ingestion](ingest/execute-ingestion.md)
+    * Execute Doc Ingestion
+        * Using Ingestion UI
+        * [Using command-line](ingest/execute-ingestion-cli.md)
     * [Test zRAG Agent with ingested documents](ingest/test-q&a.md)
 * [Embed Agent Chat in Web Page](agentdeploy/embed.md)
 * Build your own agent using the Agent Development Kit (ADK)

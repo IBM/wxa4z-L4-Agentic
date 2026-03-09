@@ -1,4 +1,4 @@
-# Execute Document Ingestion
+# Execute Document Ingestion (using *zassist* CLI)
 
 In this step you will log into your **client ingestion server** and kickoff the ingestion pipeline for your uploaded files.
 
