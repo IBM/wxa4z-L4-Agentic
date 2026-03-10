@@ -5644,13 +5644,15 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="configuring-the-configmap-variables">Configuring the <code>configmap</code> variables<a class="headerlink" href="#agentdeploy-zrag-agent-additional-setup-configuring-the-configmap-variables" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="additional-setup-for-zrag-agent">Additional setup for zRAG Agent<a class="headerlink" href="#agentdeploy-zrag-agent-additional-setup-additional-setup-for-zrag-agent" title="Permanent link">#</a></h1>
 <p>The final setup that's needed to successfully bootstrap the zRAG Agent with the provided MCP tools is to make some modifications to your toolkit name. This is a workaround for a known bug within watsonx Orchestrate on IBM Cloud, in which MCP toolkit names must be unique across tenants. <strong>If you don't follow the steps below and leave the default toolkit name, then the bootstrap process will fail for your zRAG Agent.</strong></p>
 <p>All modifications thus far have been in the <code>wxa4z-agent-suite/values.yaml</code> file of your <code>Z-AI-AGENTS</code> folder structure. </p>
-<p>For the below steps, you will need to navigate to the <code>agent-helm-charts/zrag-agent/config/</code> folder which contains 3 files:
-- zrag_agent_bootstrap_config.yaml
-- zrag_agent_granite.yaml
-- zrag_agent.yaml</p>
+<p>For the below steps, you will need to navigate to the <code>agent-helm-charts/zrag-agent/config/</code> folder which contains 3 files:</p>
+<ul>
+<li>zrag_agent_bootstrap_config.yaml</li>
+<li>zrag_agent_granite.yaml</li>
+<li>zrag_agent.yaml</li>
+</ul>
 <p>The folder structure looks like the following:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#agentdeploy-zrag-agent-additional-setup-__codelineno-0-1"></a>wxa4z-agent-suite/
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#agentdeploy-zrag-agent-additional-setup-__codelineno-0-2"></a>agent-helm-charts/
