@@ -30,6 +30,7 @@
         * [Summary of agent capabilities](./agentdeploy/zrag-agent/overview.md)
         * [Configure the 'configmap` variables](./agentdeploy/zrag-agent/configmap.md)
         * [Configure the secrets.data variables](./agentdeploy/zrag-agent/secrets-data.md)
+        * [Additional Setup](./agentdeploy/zrag-agent/additional-setup.md)
     * Prepare for IBM Z Upgrade Agent
         * [Summary of agent capabilities](./agentdeploy/upgrade-agent/overview.md)
         * [Configure the 'env' variables](./agentdeploy/upgrade-agent/env.md)
