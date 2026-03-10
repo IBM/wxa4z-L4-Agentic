@@ -1,13 +1,14 @@
-# Configuring the `configmap` variables
+# Additional setup for zRAG Agent
 
 The final setup that's needed to successfully bootstrap the zRAG Agent with the provided MCP tools is to make some modifications to your toolkit name. This is a workaround for a known bug within watsonx Orchestrate on IBM Cloud, in which MCP toolkit names must be unique across tenants. **If you don't follow the steps below and leave the default toolkit name, then the bootstrap process will fail for your zRAG Agent.**
 
 All modifications thus far have been in the `wxa4z-agent-suite/values.yaml` file of your `Z-AI-AGENTS` folder structure. 
 
 For the below steps, you will need to navigate to the `agent-helm-charts/zrag-agent/config/` folder which contains 3 files:
-- zrag_agent_bootstrap_config.yaml
-- zrag_agent_granite.yaml
-- zrag_agent.yaml
+
+  - zrag_agent_bootstrap_config.yaml
+  - zrag_agent_granite.yaml
+  - zrag_agent.yaml
 
 The folder structure looks like the following:
 
