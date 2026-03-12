@@ -56,7 +56,6 @@
     * [Test the IBM Z Upgrade Agent](./demo-scenarios/upgrade-agent.md)
 * Ingest customer documentation
     * [Overview](ingest/Overview.md)
-    * [Download and configure zAssist utility](ingest/download-zassist.md)
     * [Create Service Credentials for IBM COS](ingest/cos-service-credentials.md)
     * [Log into COS via ibmcloud utility](ingest/ibmcloud-utility.md)
     * [Create a storage bucket](ingest/create-storage-bucket.md)
