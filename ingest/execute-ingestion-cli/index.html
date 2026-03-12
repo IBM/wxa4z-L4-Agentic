@@ -2222,34 +2222,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../download-zassist/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Download and configure zAssist utility
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../cos-service-credentials/" class="md-nav__link">
         
   
@@ -2372,10 +2344,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_6" id="__nav_8_6_label" tabindex="0">
             
   
   
@@ -2393,8 +2365,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2909,24 +2881,53 @@
 
 
 <div><h1 id="execute-document-ingestion-using-zassist-cli">Execute Document Ingestion (using <em>zassist</em> CLI)<a class="headerlink" href="#execute-document-ingestion-using-zassist-cli" title="Permanent link">#</a></h1>
+<h3 id="download-and-configure-the-zassist-utility">Download and configure the <strong><em>zassist</em></strong> utility<a class="headerlink" href="#download-and-configure-the-zassist-utility" title="Permanent link">#</a></h3>
+<p>The <strong><em>zassist</em></strong> utility is an executable program that automates the ingestion of client documentation into the RAG for
+watsonx Assistant for Z. A version of <em>zassist</em> is available for download for IBMers and Business Partners for
+conducting pilots. Follow the steps below to download and install <em>zassist</em>.</p>
+<ol>
+<li>
+<p>Click the following link and download the <strong>zassist.zip</strong> file from Box:</p>
+<p><a href="https://ibm.box.com/s/bm1df1gakz4302vrfd9to3rf221420ze" target="_blank">https://ibm.box.com/s/bm1df1gakz4302vrfd9to3rf221420ze</a></p>
+</li>
+<li>
+<p>Extract the <strong>.zip</strong> file.</p>
+</li>
+<li>
+<p>Locate the appropriate file for your local workstation's operating system. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist-zip.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist-zip.png"></a></p>
+</li>
+<li>
+<p>Either copy the appropriate <em>zassist</em> file to a directory in your <strong>PATH</strong>, or add the appropriate directory to your <strong>PATH</strong> environment variable. </p>
+<p>Additional information for doing this can be found here. </p>
+<p><strong><em>NOTE</em></strong>: <em>Windows users may need to rename the file to </em><em>zassist.exe</em><em> for proper execution</em></p>
+</li>
+<li>
+<p>Run the following command to verify it's working:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>zassist
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist1.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist1.png"></a></p>
+</li>
+</ol>
+<h3 id="execute-doc-ingestion">Execute Doc Ingestion<a class="headerlink" href="#execute-doc-ingestion" title="Permanent link">#</a></h3>
 <p>In this step you will log into your <strong>client ingestion server</strong> and kickoff the ingestion pipeline for your uploaded files.</p>
 <ol>
 <li>
 <p>Navigate to your local command-prompt or Terminal window and set the <strong>WXA4Z_TLS_VERIFY</strong> environment variable to <strong>false</strong> to skip server certificate verification by running the following command (depending on your operating system):</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export WXA4Z_TLS_VERIFY=false
+</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>export WXA4Z_TLS_VERIFY=false
 </span></code></pre></div>
 <p><strong><em>Windows users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>set WXA4Z_TLS_VERIFY=false
+</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>set WXA4Z_TLS_VERIFY=false
 </span></code></pre></div>
 <p><strong><em>Windows PowerShell Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Set-Item Env:\WXA4Z_TLS_VERIFY “false”
+</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Set-Item Env:\WXA4Z_TLS_VERIFY “false”
 </span></code></pre></div>
 </li>
 <li>
 <p>Retrieve the <strong>Server URL</strong> for your Client Ingestion Server.</p>
 <p><strong><em>Mac users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
+</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
 </span></code></pre></div>
 <p><strong><em>Windows users (this method can also be used by Mac users):</em></strong></p>
 <p>You can retrieve the URL in your OCP Web console by navigating to <strong>Networking -&gt; Routes</strong>, and then copy the URL for the <strong>wxa4z-client-ingestion</strong> route as shown below:</p>
@@ -2934,7 +2935,7 @@
 </li>
 <li>
 <p>Retrieve the <strong>client-ingestion-authkey</strong> for your Client Ingestion server by running the following command: </p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>oc -n wxa4z-zad get secret client-ingestion-authkey -o jsonpath="{.data.authkey}" | base64 -d
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>oc -n wxa4z-zad get secret client-ingestion-authkey -o jsonpath="{.data.authkey}" | base64 -d
 </span></code></pre></div>
 <p>The output of this command is your unique <strong>auth-key</strong> that you had previously set. You will need the output of both previous commands in the next step.</p>
 <div class="admonition warning">
@@ -2944,7 +2945,7 @@
 </li>
 <li>
 <p>Log into your client ingestion server using the <strong>zassist</strong> utility by running the following command, replacing <code>&lt;server_url&gt;</code> with the value from <strong>step 2</strong> above:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>zassist login &lt;server_url&gt;
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist login &lt;server_url&gt;
 </span></code></pre></div>
 </li>
 <li>
@@ -2952,13 +2953,13 @@
 </li>
 <li>
 <p>Verify that you're connected by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist list
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zassist list
 </span></code></pre></div>
 <p>This command will return all connected remote sources to your client ingestion server. By default, you should see in the output that there are no connected sources under <code>ID</code>.</p>
 </li>
 <li>
 <p>Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (<strong><em>see below the command on how to retrieve each of the parameters listed</em></strong>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
 </span></code></pre></div>
 <p><strong>a</strong>. <strong>&lt;SOURCE_NAME&gt;</strong> : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. </p>
 <p><strong>b</strong>. <strong>&lt;S3_URL&gt;</strong>: </p>
@@ -2983,7 +2984,7 @@
 </li>
 <li>
 <p>After recording your <strong>Public endpoint</strong> in a local notepad, append <code>https://</code> to the front of it. In the example shown above, the new endpoint URL would become:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://s3.eu-de.cloud-object-storage.appdomain.cloud
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>https://s3.eu-de.cloud-object-storage.appdomain.cloud
 </span></code></pre></div>
 <p><strong><em>This is the final value of your <s3_url> variable that you will use for the above zassist command.</s3_url></em></strong></p>
 </li>
@@ -2994,7 +2995,7 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist22.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist22.png"></a></p>
 <p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
 <p>The final result of the command (once you've plugged in your unique values) should look something like the example command below (<em>these values will not work for you</em>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
 </span></code></pre></div>
 </li>
 <li>
@@ -3034,7 +3035,7 @@
 </li>
 <li>
 <p>Finally, verify that the documents are now ingested in your remote S3 source by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>zassist list
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>zassist list
 </span></code></pre></div>
 <p>This will list all connected remote sources, as shown below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist25.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist25.png"></a></p>
@@ -3042,7 +3043,7 @@
 </li>
 <li>
 <p>To view detailed information about the source, run the following command, replacing <code>&lt;id&gt;</code> with the <strong>ID</strong> value returned in the previous command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>zassist details &lt;id&gt;
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>zassist details &lt;id&gt;
 </span></code></pre></div>
 <p>This should return something similar to below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist26.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist26.png"></a></p>
