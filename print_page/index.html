@@ -7312,15 +7312,18 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Ensure the <strong>Tabular support</strong> toggle is left on, and disable the toggle for <strong>PII Check</strong>. </p>
-</li>
-</ol>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/ui10.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/ui10.png"></a></p>
 <p>Then click <strong>Ingest</strong>. </p>
-<p>!!! Tip "Ingestion settings..."</p>
-<div class="highlight"><pre><span></span><code>    - **Tabular support** stores data in a structured format, enabling the LLM to retrieve information efficiently (enabled by default). This is useful for the structured spreadsheet that was uploaded. 
-    - **PII Check** filters sensitive information form the content source. In this example, we disabled it for better performance as the documents don't contain any PII. 
-    - **OCR** is used in scenarios where images stored in documents must be processed and extracted from the content source. In this scenario we left this disabled.
-</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Ingestion settings...</p>
+<ul>
+<li><strong>Tabular support</strong> stores data in a structured format, enabling the LLM to retrieve information efficiently (enabled by default). This is useful for the structured spreadsheet that was uploaded. </li>
+<li><strong>PII Check</strong> filters sensitive information form the content source. In this example, we disabled it for better performance as the documents don't contain any PII. </li>
+<li><strong>OCR</strong> is used in scenarios where images stored in documents must be processed and extracted from the content source. In this scenario we left this disabled. </li>
+</ul>
+</div>
+</li>
+</ol>
 <h3 id="ingest-execute-ingestion-ui-following-the-ingestion">Following the ingestion<a class="headerlink" href="#ingest-execute-ingestion-ui-following-the-ingestion" title="Permanent link">#</a></h3>
 <p>After the ingestion begins processing, sources in the <strong>processing</strong> stage appears under your defined collection source name from the specified bucket. </p>
 <p>Once the ingestion completes, the collection source appears on the Content Ingestion pages. From there, you can: 
