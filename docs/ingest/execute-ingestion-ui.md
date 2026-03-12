@@ -97,11 +97,11 @@ On the last page, choose a **collection source** where you want to ingest your c
 
 2. Ensure the **Tabular support** toggle is left on, and disable the toggle for **PII Check**. 
    
-   ![](_attachments/ui10.png)
+    ![](_attachments/ui10.png)
 
-   Then click **Ingest**. 
+    Then click **Ingest**. 
 
-   !!! Tip "Ingestion settings..."
+    !!! Tip "Ingestion settings..."
     
         - **Tabular support** stores data in a structured format, enabling the LLM to retrieve information efficiently (enabled by default). This is useful for the structured spreadsheet that was uploaded. 
         - **PII Check** filters sensitive information form the content source. In this example, we disabled it for better performance as the documents don't contain any PII. 
