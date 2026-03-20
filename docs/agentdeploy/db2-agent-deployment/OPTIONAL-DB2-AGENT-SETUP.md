@@ -4,24 +4,6 @@ Now that you've successfully deployed your Db2 for z/OS Agent, you must configur
 
 ***NOTE:*** at the time of deployment, the Db2 for z/OS Agent does not initially have connectivity to the back-end subsystems. The connections must be made via REST API using the MCP server which will be covered later in this section. 
 
-### Enabling your Db2 subsystems on Wazi aaS to use the non-default ports
-
-In the TechZone z/OS environment, there are two Db2 subsystems provisioned (DBD1 and DBC1). For convenience, there is a playbook you can run on the provisioned AAP environment in order to configure these Db2 subsystems to use the non-default ports which allows the Agent to connect via ODBC. 
-
-1. Log into your **AAP** instance and navigate to the **Templates** tab under **Resources**. 
-   
-    **IMAGE**
-
-2. In the **Templates** list, you should see a pre-loaded template called **Config-Db2-Ports** as shown below. 
-   
-    **IMAGE**
-
-    Click the **Launch** icon. 
-
-3. Once launched, wait until the job completes. Afterwards, the DBD1 and DBC1 subsystems will be successfully configured for the later steps. 
-
-
-
 ### Mount the Db2 license file
 
 As a pre-req for using the Db2 for z/OS Agent, it must have ODBC connectivity enabled. Server-side verification is recommended, however, client-side verification is supported by mounting the license into the deployed container at `/usr/local/lib64/python3.12/site-packages/clidriver/license`. 
@@ -162,3 +144,19 @@ Now that you've mounted the license file and binding the required packages, you 
     Example:
 
     ![](_attachments/db-2-5.png)
+
+### Enabling catalog table discovery
+
+To enable the agent's ability to access information in Db2® catalog tables, you need to scan the catalog tables by running the Scan Database REST API.
+
+    Run the below command, replacing the following values:
+    
+        - replace `<db2-mcp-route>` with your own unique route
+        - replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
+        - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
+
+    ```
+    curl --request POST --url '<db2-mcp-route>/api/v1/tables/descriptions/scan?db_connection_id=<db_conn_id>' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "<zOS passphrase>"}'
+    ```
+
+    The output should look like the following:
