@@ -29,7 +29,7 @@
    
     ```
     enabled: true
-    acceptLicense: true # Must be true to install. Confirm Db2 Z agent license. https://www.ibm.com/support/customer/csol/terms/?id=L-RKLK-NBNFJL
+    acceptLicense: true
     image:
       repository: icr.io/ibm-db2z-ai/db2z-agent
       tag: latest@sha256:f2f080c4a3ab899ad6bb124d20197b663a2504347eabec7ab74efb20cad0dfa6
@@ -44,18 +44,18 @@
    
     ```
     image:
-      repository: us.icr.io/agents-txc/db2z-agent
-      tag: v3.1.0-ga
+      repository: us.icr.io/agents-txc/db2-agent
+      tag: v3.2.0
     mcpImage:
-      repository: us.icr.io/agents-txc/db2z-mcp-server
-      tag: v3.1.0-ga
+      repository: us.icr.io/agents-txc/db2-mcp-server
+      tag: v3.2.0
     ```
 
 5. Underneath that section, you will see a `registry` variable block which looks like the following:
    
     ```
     registry:
-      name: db2-image-pull-secret # Dedicated pull secret for this agent.
+      name: db2-image-pull-secret
       server: icr.io
       username: iamapikey
       entitlementKey: ""

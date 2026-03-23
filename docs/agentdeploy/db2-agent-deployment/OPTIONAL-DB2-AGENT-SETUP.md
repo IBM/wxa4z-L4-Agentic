@@ -52,9 +52,9 @@ Follow the below instructions to mount the license in the deployed agent pod.
 
     ![](_attachments/db-2-3.png)
 
-6. Optionally, confirm that it's been added by navigating to your **Db2z-agent** pod in the OCP web console, clicking on the **Terminal** tab.
+6. Optionally, confirm that it's been added by navigating to your **Db2z-agent** pod in the OCP web console and clicking on the **Terminal** tab.
    
-    **IMAGE**
+    ![](_attachments/db2new1.png)
 
     Then copy and paste the following command:
 
@@ -62,40 +62,30 @@ Follow the below instructions to mount the license in the deployed agent pod.
 
     Entering the `ls` command from the above directory should output the files you copied over. 
 
-    **IMAGE**
+    ![](_attachments/db2new2.png)
 
 
 ### Bind the ODBC DBRMs to Db2 subsystems
 
 Prior to setting an agent connection to your Db2 subsystems, you must also bind some required packages on your Db2 subsystems. Follow the below steps:
 
-1. Assuming you're already in the **Terminal** view of your agent pod, click on the drop-down to select the **db2z-mcp-server** pod
+1. Assuming you're already in the **Terminal** view of your agent pod, click on the drop-down to select the **db2z-mcp-server** container.
 
-    **IMAGE**
+    ![](_attachments/db2new3.png)
 
 2. Navigate to the following directory by running the following command: `cd $IBM_DB_HOME/bin`
 
 
-3. Run the command below to bind the packages on the **DBD1** Db2 subsystem, replacing the following values with your own unique values:
+3. Run the command below to bind the needed packages on the **DBD1** Db2 subsystem, replacing the following values with your own unique values:
 
-    - `<host>`: public IP of your Wazi aaS
+    - `<host>`: public IP of your Z Dev & Test image
     - `<password>`: the RACF passphrase you set for your IBMUSER ID
-
 
     ```
     ./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBD1LOC:<host>:8100 -user IBMUSER -passwd "<password>"
     ```
 
-4. Run the command below to bind the packages on the **DBC1** Db2 subsystem, replacing the following values with your own unique values:
-
-    - `<host>`: public IP of your Wazi aaS
-    - `<password>`: the RACF passphrase you set for your IBMUSER ID
-
-
-    ```
-    ./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBC1LOC:<host>:8000 -user IBMUSER -passwd "<password>"
-    ```
-
+    **IMAGE**
 
 ### Creating Db2 connections
 
@@ -114,30 +104,18 @@ Now that you've mounted the license file and binding the required packages, you 
     curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBD1", "host": "<your z/OS public IP>", "port": "8100", "connection_uri": "db2+ibm_db://IBMUSER:<zOS passphrase>@<your z/OS public IP>:8100/DBD1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "<zOS passphrase>", "location": "DBD1LOC"}' <db2-mcp-route>/api/v1/databases/connections
     ```
 
-    - replace `<your z/OS public IP>` with the public IP address found in your environment details for Wazi aaS
+    - replace `<your z/OS public IP>` with the public IP address found in your environment details for the Z Dev & Test image
     
     - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
 
     - replace `<db2-mcp-route>` with the route URL you recorded in the previous step
 
-
-    And finally, issue the command in your local terminal to create the connection. 
-
-3. And finally, define a new connection to your DBC1 subsystem by modifying the following command:
-
-    ```
-    curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBC1", "host": "<your z/OS public IP>", "port": "8000", "connection_uri": "db2+ibm_db://IBMUSER:<zOS passphrase>@<your z/OS public IP>:8000/DBC1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "<zOS passphrase>", "location": "DBC1LOC"}' <db2-mcp-route>/api/v1/databases/connections
-    ```
-
-    - replace `<your z/OS public IP>` with the public IP address found in your environment details for Wazi aaS
-    
-    - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
-
-    - replace `<db2-mcp-route>` with the route URL you recorded in the previous step
 
     And finally, issue the command in your local terminal to create the connection. The result should look similar to what's shown below:
 
-4. To verify your database connections, you can run the following command, replacing `<db2-mcp-route>` with your own unique route.
+    **IMAGE**
+
+3. To verify your database connections, you can run the following command, replacing `<db2-mcp-route>` with your own unique route.
    
     `curl <db2-mcp-route>/api/v1/databases/connections`
 
@@ -149,14 +127,18 @@ Now that you've mounted the license file and binding the required packages, you 
 
 To enable the agent's ability to access information in Db2® catalog tables, you need to scan the catalog tables by running the Scan Database REST API.
 
-    Run the below command, replacing the following values:
+Run the below command, replacing the following values:
     
-        - replace `<db2-mcp-route>` with your own unique route
-        - replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
-        - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
+    - replace `<db2-mcp-route>` with your own unique route
+    
+    - replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
+    
+    - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
 
     ```
     curl --request POST --url '<db2-mcp-route>/api/v1/tables/descriptions/scan?db_connection_id=<db_conn_id>' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "<zOS passphrase>"}'
     ```
 
     The output should look like the following:
+
+    **IMAGE**

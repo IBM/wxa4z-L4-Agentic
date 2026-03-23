@@ -65,13 +65,12 @@ In order to set a new **Passphrase** for your **IBMUSER** zOS user, you will fir
 
 Next, set a new zOS Passphrase for your **IBMUSER** zOS user by running the following command. This is the RACF Passphrase that you will use to log into TSO as the IBMUSER ID. 
 
-Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string `YOUR PASSWORD PHRASE`:
+Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string `YOUR PASSWORD PHRASE` :
 
     ```
     tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
     ```
-
-
+    
     ??? Tip "Syntax rules for RACF Password Phrases (below):
     
         - minimum length: 9 characters
@@ -94,7 +93,7 @@ To do this, you should follow the instructions for <a href="https://www.ibm.com/
 Optionally, if using **Host-On-Demand**, you can import the CA certificate by following the below steps:
 
 1. Download the certificate file from the z/OS system by running the following command, replacing `<ssh-key.pem>` with the name of your downloaded SSH key, and replacing `<public ip>` with the public IP of your environment:
-   
+
     ```
     scp -O -P 2022 -i <ssh-key.pem> ibmuser@<public ip>:/u/ibmuser/common_cacert ./common_cacert.crt
     ```
@@ -115,9 +114,59 @@ Optionally, if using **Host-On-Demand**, you can import the CA certificate by fo
     ![](_attachments/zdt9.png)
 
 
+3. Once done, you can start a TSO session in the **Host-On-Demand** application.
 
-3. Once done, you can start a TSO session in the **Host-On-Demand** application by clicking **Create new session**. 
+### Creating TSO session in IBM Host On-Demand
 
-4. 
+The below steps illustrate how to define and connect to a TSO session for your Z Dev & Test image using **IBM Host On-Demand**. If using a different application as a TN3270 emulator, the connection settings should be similar. 
+
+1. After opening the application, click the **Add Sessions** option and select the **3270 Display**
+
+    ![](_attachments/zdt10.png)
+
+2. Enter the following Connection Settings then click **OK**. 
+
+    **a**. **Session Name:** *enter any unique name for your instance*
+
+    **b**. **Destination Address:** *Copy and paste the unique value for the **public IP** address of your zD&T image*
+
+    **c**. **Destination Port:** 992
+
+    **d**. **Protocol:** From the drop-down, select the **Telnet - TLS** option. 
+
+    *Leave all other fields the default options.*
+
+    For example:
+
+    ![](_attachments/zdt11.png)
+
+3. Then start the TSO session by clicking on your new connection definition. You should see the Login screen as shown below:
+   
+    ![](_attachments/zdt12.png)
+
+   Proceed to login by entering `TSO IBMUSER`, then when prompted, enter the **Passphrase** you set for the IBMUSER ID earlier in this section. 
+
+
+
+### Accessing z/OSMF Web-UI
+
+Accessing the z/OSMF Web-UI can be done by navigating to the following URL within your local web-browser, replacing `<public ip>` with the public IP address found in your environment's TechZone reservation:
+
+`https://<public ip>:10443/zosmf`
+
+***Note:*** it may take a few seconds for the login page to finish loading. Eventually you should see a login screen similar to what's shown below:
+
+![](_attachments/zdt13.png)
+
+Enter `IBMUSER` for the **z/OS USER ID** field.
+
+For **z/OS PASSWORD**, enter the Passphrase you set for the IBMUSER ID earlier in this section.  
+
+Then click **LOG IN**. 
+
+![](_attachments/zdt14.png)
+
+
+
 
 
