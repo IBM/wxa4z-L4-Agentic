@@ -23,33 +23,33 @@ Follow the below instructions to access your ***Z Dev & Test (zD&T) environment 
 
     ![](_attachments/aap_1.png)
 
-2. Click the **watsonx Assistant for Z Pilot - AAP & z/OS** tile.
+2. Click the **watsonx Assistant for Z Pilot - z/OS Dev & Test Image** tile.
    
-    ![](_attachments/aap_2.png)
+    ![](_attachments/zdt1.png)
 
 3. Locate and record the **Public IP** field for your environment.
 
-    ![](_attachments/aap_3.png)
+    ![](_attachments/zdt2.png)
 
 4. At the bottom of the reservation page, click on **Download SSH key** to download the SSH key locally.
    
-    ![](_attachments/aap_4.png)
+    ![](_attachments/zdt3.png)
 
 ### SSH into z/OS Unix System Services
 
-In order to set a new **Passphrase** for your **IBMUSER** zOS user, you will first need to SSH into zOS USS, using port **2022**. 
+In order to set a new **Passphrase** for your **IBMUSER** zOS user, you will first need to SSH into z/OS USS, using port **2022**. 
 
 1. On your local command line, navigate to the directory of your downloaded SSH key from the previous step (i.e. **Downloads**).
    
-   `cd Downloads`
+    `cd Downloads`
 
 2. Set the permissions of your downloaded key to allow SSH access:
    
-   `chmod 600 <ssh-key.pem>`
+    `chmod 600 <ssh-key.pem>`
 
-   For example:
+    For example:
 
-   IMAGE
+    ![](_attachments/zdt4.png)
 
 3. Then SSH into z/OS UNIX, by running the below command, replacing `<ssh-key.pem>` with the name of your downloaded key, and replacing `<public ip>` with the IP you recorded in the above section:
    
@@ -58,6 +58,8 @@ In order to set a new **Passphrase** for your **IBMUSER** zOS user, you will fir
     ```
 
     Once SSH'ed in successfully, you should see something similar to below:
+
+    ![](_attachments/zdt5.png)
 
 ### Set new Passphrase for IBMUSER
 
@@ -69,7 +71,8 @@ Once you're SSH'ed into zOS USS, enter the following command, substituting a pas
     tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
     ```
 
-    ??? Tip "Syntax rules for RACF Password Phrases (below)"
+
+    ??? Tip "Syntax rules for RACF Password Phrases (below):
     
         - minimum length: 9 characters
         - Must contain at least 2 alphabetic characters (A - Z, a - z)
@@ -79,6 +82,8 @@ Once you're SSH'ed into zOS USS, enter the following command, substituting a pas
     **Note:** *if you typed the command yourself, be sure to include the single-quotes before and after the password.* ***Record the passphrase as it will be needed later.***
 
 Afterwards, you should see something similar to the following:
+
+![](_attachments/zdt6.png)
 
 ### Accessing TSO Session
 
@@ -92,8 +97,9 @@ Optionally, if using **Host-On-Demand**, you can import the CA certificate by fo
    
     ```
     scp -O -P 2022 -i <ssh-key.pem> ibmuser@<public ip>:/u/ibmuser/common_cacert ./common_cacert.crt
-
     ```
+
+    ![](_attachments/zdt7.png)
 
 2. Import the downloaded certificate into your Host-On-Demand keystore using the following command, replacing `<alias>` with any recognizable alias:
    
@@ -101,7 +107,17 @@ Optionally, if using **Host-On-Demand**, you can import the CA certificate by fo
     keytool -importcert -alias <alias> -file ./common_cacert.crt -keystore /Applications/HostOnDemand/lib/CustomizedCAs.jks -storepass hodpwd
     ```
 
+    ![](_attachments/zdt8.png)
+
+
+    When asked `Trust this certificate? [no]`, enter `yes` and you should see output similar to the following:
+
+    ![](_attachments/zdt9.png)
+
+
 
 3. Once done, you can start a TSO session in the **Host-On-Demand** application by clicking **Create new session**. 
+
+4. 
 
 
