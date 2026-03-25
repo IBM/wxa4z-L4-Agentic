@@ -1596,7 +1596,7 @@
   <span class="md-ellipsis">
     
   
-    Prepare for IBM Z Support Agent
+    Prepare for Compilers Fix Finder Agent
   
 
     
@@ -1609,6 +1609,201 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prepare for Compilers Fix Finder Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiler-agent/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Summary of agent capabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiler-agent/enabling-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entitlement setup for images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiler-agent/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure the 'env' variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiler-agent/secrets-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure the 'secrets.data' variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiler-agent/pvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure the 'pvc' variable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7">
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepare for IBM Z Support Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1753,10 +1948,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8">
         
           
-          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
             
   
   
@@ -1774,8 +1969,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2865,22 +3060,6 @@
 <div><h1 id="configuring-your-db2-agent-with-db2-connections">Configuring your Db2 Agent with Db2 connections<a class="headerlink" href="#configuring-your-db2-agent-with-db2-connections" title="Permanent link">#</a></h1>
 <p>Now that you've successfully deployed your Db2 for z/OS Agent, you must configure it which involves a few manual steps covered in this section. </p>
 <p><strong><em>NOTE:</em></strong> at the time of deployment, the Db2 for z/OS Agent does not initially have connectivity to the back-end subsystems. The connections must be made via REST API using the MCP server which will be covered later in this section. </p>
-<h3 id="enabling-your-db2-subsystems-on-wazi-aas-to-use-the-non-default-ports">Enabling your Db2 subsystems on Wazi aaS to use the non-default ports<a class="headerlink" href="#enabling-your-db2-subsystems-on-wazi-aas-to-use-the-non-default-ports" title="Permanent link">#</a></h3>
-<p>In the TechZone z/OS environment, there are two Db2 subsystems provisioned (DBD1 and DBC1). For convenience, there is a playbook you can run on the provisioned AAP environment in order to configure these Db2 subsystems to use the non-default ports which allows the Agent to connect via ODBC. </p>
-<ol>
-<li>
-<p>Log into your <strong>AAP</strong> instance and navigate to the <strong>Templates</strong> tab under <strong>Resources</strong>. </p>
-<p><strong>IMAGE</strong></p>
-</li>
-<li>
-<p>In the <strong>Templates</strong> list, you should see a pre-loaded template called <strong>Config-Db2-Ports</strong> as shown below. </p>
-<p><strong>IMAGE</strong></p>
-<p>Click the <strong>Launch</strong> icon. </p>
-</li>
-<li>
-<p>Once launched, wait until the job completes. Afterwards, the DBD1 and DBC1 subsystems will be successfully configured for the later steps. </p>
-</li>
-</ol>
 <h3 id="mount-the-db2-license-file">Mount the Db2 license file<a class="headerlink" href="#mount-the-db2-license-file" title="Permanent link">#</a></h3>
 <p>As a pre-req for using the Db2 for z/OS Agent, it must have ODBC connectivity enabled. Server-side verification is recommended, however, client-side verification is supported by mounting the license into the deployed container at <code>/usr/local/lib64/python3.12/site-packages/clidriver/license</code>. </p>
 <p><em>NOTE:</em> missing license files at the above location will lead to a licensing error when later creating a connection to Db2 via MCP server REST API endpoint. </p>
@@ -2923,41 +3102,33 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/db-2-3.png" data-desc-position="bottom"><img alt="" src="../_attachments/db-2-3.png"></a></p>
 </li>
 <li>
-<p>Optionally, confirm that it's been added by navigating to your <strong>Db2z-agent</strong> pod in the OCP web console, clicking on the <strong>Terminal</strong> tab.</p>
-<p><strong>IMAGE</strong></p>
+<p>Optionally, confirm that it's been added by navigating to your <strong>Db2z-agent</strong> pod in the OCP web console and clicking on the <strong>Terminal</strong> tab.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/db2new1.png" data-desc-position="bottom"><img alt="" src="../_attachments/db2new1.png"></a></p>
 <p>Then copy and paste the following command:</p>
 <p><code>cd /usr/local/lib64/python3.12/site-packages/clidriver/license</code></p>
 <p>Entering the <code>ls</code> command from the above directory should output the files you copied over. </p>
-<p><strong>IMAGE</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/db2new2.png" data-desc-position="bottom"><img alt="" src="../_attachments/db2new2.png"></a></p>
 </li>
 </ol>
 <h3 id="bind-the-odbc-dbrms-to-db2-subsystems">Bind the ODBC DBRMs to Db2 subsystems<a class="headerlink" href="#bind-the-odbc-dbrms-to-db2-subsystems" title="Permanent link">#</a></h3>
 <p>Prior to setting an agent connection to your Db2 subsystems, you must also bind some required packages on your Db2 subsystems. Follow the below steps:</p>
 <ol>
 <li>
-<p>Assuming you're already in the <strong>Terminal</strong> view of your agent pod, click on the drop-down to select the <strong>db2z-mcp-server</strong> pod</p>
-<p><strong>IMAGE</strong></p>
+<p>Assuming you're already in the <strong>Terminal</strong> view of your agent pod, click on the drop-down to select the <strong>db2z-mcp-server</strong> container.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/db2new3.png" data-desc-position="bottom"><img alt="" src="../_attachments/db2new3.png"></a></p>
 </li>
 <li>
 <p>Navigate to the following directory by running the following command: <code>cd $IBM_DB_HOME/bin</code></p>
 </li>
 <li>
-<p>Run the command below to bind the packages on the <strong>DBD1</strong> Db2 subsystem, replacing the following values with your own unique values:</p>
+<p>Run the command below to bind the needed packages on the <strong>DBD1</strong> Db2 subsystem, replacing the following values with your own unique values:</p>
 <ul>
-<li><code>&lt;host&gt;</code>: public IP of your Wazi aaS</li>
+<li><code>&lt;host&gt;</code>: public IP of your Z Dev &amp; Test image</li>
 <li><code>&lt;password&gt;</code>: the RACF passphrase you set for your IBMUSER ID</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBD1LOC:&lt;host&gt;:8100 -user IBMUSER -passwd "&lt;password&gt;"
 </span></code></pre></div>
-</li>
-<li>
-<p>Run the command below to bind the packages on the <strong>DBC1</strong> Db2 subsystem, replacing the following values with your own unique values:</p>
-<ul>
-<li><code>&lt;host&gt;</code>: public IP of your Wazi aaS</li>
-<li><code>&lt;password&gt;</code>: the RACF passphrase you set for your IBMUSER ID</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBC1LOC:&lt;host&gt;:8000 -user IBMUSER -passwd "&lt;password&gt;"
-</span></code></pre></div>
+<p><strong>IMAGE</strong></p>
 </li>
 </ol>
 <h3 id="creating-db2-connections">Creating Db2 connections<a class="headerlink" href="#creating-db2-connections" title="Permanent link">#</a></h3>
@@ -2970,28 +3141,11 @@
 </li>
 <li>
 <p>Define a new connection to your DBD1 subsystem by modifying the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBD1", "host": "&lt;your z/OS public IP&gt;", "port": "8100", "connection_uri": "db2+ibm_db://IBMUSER:&lt;zOS passphrase&gt;@&lt;your z/OS public IP&gt;:8100/DBD1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "&lt;zOS passphrase&gt;", "location": "DBD1LOC"}' &lt;db2-mcp-route&gt;/api/v1/databases/connections
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBD1", "host": "&lt;your z/OS public IP&gt;", "port": "8100", "connection_uri": "db2+ibm_db://IBMUSER:&lt;zOS passphrase&gt;@&lt;your z/OS public IP&gt;:8100/DBD1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "&lt;zOS passphrase&gt;", "location": "DBD1LOC"}' &lt;db2-mcp-route&gt;/api/v1/databases/connections
 </span></code></pre></div>
 <ul>
 <li>
-<p>replace <code>&lt;your z/OS public IP&gt;</code> with the public IP address found in your environment details for Wazi aaS</p>
-</li>
-<li>
-<p>replace <code>&lt;zOS passphrase&gt;</code> with the same passphrase value you set when configuring the <code>ZOSMF_PASSWORD</code> secret for the Z Upgrade Agent</p>
-</li>
-<li>
-<p>replace <code>&lt;db2-mcp-route&gt;</code> with the route URL you recorded in the previous step</p>
-</li>
-</ul>
-<p>And finally, issue the command in your local terminal to create the connection. </p>
-</li>
-<li>
-<p>And finally, define a new connection to your DBC1 subsystem by modifying the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBC1", "host": "&lt;your z/OS public IP&gt;", "port": "8000", "connection_uri": "db2+ibm_db://IBMUSER:&lt;zOS passphrase&gt;@&lt;your z/OS public IP&gt;:8000/DBC1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "&lt;zOS passphrase&gt;", "location": "DBC1LOC"}' &lt;db2-mcp-route&gt;/api/v1/databases/connections
-</span></code></pre></div>
-<ul>
-<li>
-<p>replace <code>&lt;your z/OS public IP&gt;</code> with the public IP address found in your environment details for Wazi aaS</p>
+<p>replace <code>&lt;your z/OS public IP&gt;</code> with the public IP address found in your environment details for the Z Dev &amp; Test image</p>
 </li>
 <li>
 <p>replace <code>&lt;zOS passphrase&gt;</code> with the same passphrase value you set when configuring the <code>ZOSMF_PASSWORD</code> secret for the Z Upgrade Agent</p>
@@ -3001,6 +3155,7 @@
 </li>
 </ul>
 <p>And finally, issue the command in your local terminal to create the connection. The result should look similar to what's shown below:</p>
+<p><strong>IMAGE</strong></p>
 </li>
 <li>
 <p>To verify your database connections, you can run the following command, replacing <code>&lt;db2-mcp-route&gt;</code> with your own unique route.</p>
@@ -3008,7 +3163,24 @@
 <p>Example:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/db-2-5.png" data-desc-position="bottom"><img alt="" src="../_attachments/db-2-5.png"></a></p>
 </li>
-</ol></div>
+</ol>
+<h3 id="enabling-catalog-table-discovery">Enabling catalog table discovery<a class="headerlink" href="#enabling-catalog-table-discovery" title="Permanent link">#</a></h3>
+<p>To enable the agent's ability to access information in Db2® catalog tables, you need to scan the catalog tables by running the Scan Database REST API.</p>
+<p>Run the below command, replacing the following values:</p>
+<div class="highlight"><pre><span></span><code>- replace `&lt;db2-mcp-route&gt;` with your own unique route
+
+- replace `&lt;db_conn_id&gt;` with the string associated with the `id` parameter in the output of the previous command
+
+- replace `&lt;zOS passphrase&gt;` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
+
+```
+curl --request POST --url '&lt;db2-mcp-route&gt;/api/v1/tables/descriptions/scan?db_connection_id=&lt;db_conn_id&gt;' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "&lt;zOS passphrase&gt;"}'
+```
+
+The output should look like the following:
+
+**IMAGE**
+</code></pre></div></div>
 
 
 
