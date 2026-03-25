@@ -37,6 +37,12 @@
         * [Configure the 'ptfJob' variables](./agentdeploy/upgrade-agent/ptfJob.md)
         * [Configure the 'secrets.data' variables](./agentdeploy/upgrade-agent/secrets-data.md)
         * [Configure the 'pvc' variable with storageClass](./agentdeploy/upgrade-agent/pvc.md)
+    * Prepare for Compilers Fix Finder Agent
+        * [Summary of agent capabilities](./agentdeploy/compiler-agent/overview.md)
+        * [Entitlement setup for images](./agentdeploy/compiler-agent/enabling-images.md)
+        * [Configure the 'env' variables](./agentdeploy/compiler-agent/env.md)
+        * [Configure the 'secrets.data' variables](./agentdeploy/compiler-agent/secrets-data.md)
+        * [Configure the 'pvc' variable](./agentdeploy/compiler-agent/pvc.md)
     * Prepare for IBM Z Support Agent
         * [Summary of agent capabilities](./agentdeploy/support-agent/overview.md)
         * [Configure the 'env' variables](./agentdeploy/support-agent/env.md)

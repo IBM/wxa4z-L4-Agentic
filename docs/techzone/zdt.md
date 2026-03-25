@@ -2,15 +2,22 @@
 
 ## Summary of the environment
 
-The third lab environment you will use is the ***Ansible Automation Platform (AAP) & z/OS*** environment. This provides a pre-configured instance of both **Ansible Automation Platform (AAP)** and **Wazi aaS z/OS** deployed on IBM Cloud.
+The third lab environment you will use is the ***Z Dev & Test (zD&T)*** environment for z/OS. This is an emulated z/OS image running on IBM Cloud which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. 
 
-The two resources are provisioned together in the TechZone environment and enables users to manage and automate z/OS tasks and subsystems with various pre-installed Ansible playbooks. It includes a z/OS back-end (Wazi as a Service) with all needed pre-requisites to quickly get started.
+The image comes pre-configured with a subset of middleware and products available, including: 
 
-This environment will come into play later on in the Lab when deploying your AI Agents. Each Agent has its own mechanism for accessing the back-end environment and performing tasks, gathering insights, etc.
+- Db2 v13
+- IMS v15
+- JES
+- z/OS USS 
+- z/OSMF
+- Additional program products - i.e. COBOL, REXX, Java, PLI, System Automation, NetView, z/OS Connect, ZOAU
 
-As an example, you will later deploy the **IBM Z Upgrade Agent** which leverages z/OSMF APIs to your back-end Wazi z/OS system. As another example, the **IBM Z Support Agent** you will later deploy will connect to your Ansible Automation Platform (AAP) instance to automate the collection and transfer of z/OS dumps.
+??? Tip "Middleware limitations"
 
-This environment will also be later used when building your own agent to automate the certificate renewal process on z/OS.
+    Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes CICS and MQ. Additional images will be made available in the future with these components available.
+
+The below section describes how to access your environment, change your RACF password and log into TSO and z/OSMF.
 
 
 ## Accessing the environment

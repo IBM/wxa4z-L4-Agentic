@@ -6,5 +6,6 @@ Within your `values.yaml` file, locate the `env` section for the **compiler-fix-
 env:
   WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
 ```
+Enter the **MODEL ID** corresponding to the LLM for your use case. The suggestion for TechZone cloud-based environments is to use the `meta-llama/llama-3-3-70b-instruct` model. However, if you've completed the [optional setup](../../watsonx-ai/config-granite.md) for configuring the Model Gateway for Granite, you can leave the default `ibm/granite-3-3-8b-instruct` MODEL_ID. 
 
-Enter the **MODEL ID** corresponding to the LLM of your use case. If you've completed the Granite setup in Section...then you can use the `ibm/granite-3-3-8b-instruct` MODEL_ID. If not, then use the `meta-llama/llama-3-3-70b-instruct` MODEL_ID.
+Then ensure you save the file.

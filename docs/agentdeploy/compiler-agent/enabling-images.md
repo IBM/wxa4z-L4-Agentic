@@ -1,10 +1,10 @@
 # Enabling the Compiler Fix Finder Agent images
 
-The **IBM Z Compilers Fix Finder Agent** is a **Product-specific agent** which requires an entitlement key to download the agent images. 
+The **IBM Z Compilers Fix Finder Agent** is a **Prebuilt IBM Z product agent** which requires an entitlement key to download the agent images. 
 
 For the purpose of setting up demos and the pilot environment, these images are being made available internally in a private ICR that you can configure to pull the agent images from. 
 
-**NOTE:** the entitlemnt key shown below is for **INTERNAL USE ONLY**. 
+**NOTE:** the entitlement key shown below is for **INTERNAL USE ONLY**. 
 For Business Partners, please contact your IBM rep. 
 
 1. Within your `values.yaml` file, locate the section for the **compiler-fix-finder-agent** as shown below:
