@@ -1,0 +1,164 @@
+# IBM Technology Zone environment
+To enable sellers to learn how to deliver client pilots of {{offering.name}}, three environments are available in IBM Technology Zone (ITZ). The environments are part of the watsonx Assistant for Z Velocity lab collection and can be found in the <a href="{{itz.collectionURL}}" target="_blank">{{itz.collectionName}}</a> collection.
+
+- **Watsonx Assistant for Z lab – watsonx Orchestrate**: provides a dedicated environment on IBM Cloud where you can create and configure the assistant, set up conversational search, import skills, and configure actions.
+
+- **z/OS Dev & Test Image**: provides a templated z/OS image emulated on IBM Cloud (x86) which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. 
+
+- **Single Node OpenShift (OCP-V on IBM Cloud)**: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of [OpenSearch](https://opensearch.org/) for Watson Assistant for Z, enabling ingestion of client-supplied documents.- 
+
+!!! Warning "All activities in this lab guide are required."
+
+    To earn the IBM watsonx Assistant for Z Technical Sales Advanced badge and complete the Level 4 learning plan, you must provision all three ITZ environments and finish every section in the lab guide. Disregard any statements in the ITZ collection that suggest optional environments or tasks.
+
+Follow the instructions to create new reservation requests, extend the reservations, and access the ITZ demonstration environments. Provisioning the SNO environment in ITZ can take several hours, while the other two environments typically provisioning in under 30 minutes.
+
+## Create a reservation request
+1. Click each of the links that follow to open a browser to the reservation pages of the **{{itz.collectionName}}** ITZ environments.
+
+    !!! Warning "You may be asked to authenticate to IBM Technology Zone."
+
+        The steps to authenticate to ITZ are not detailed here as they may vary between users.
+
+    <a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a>
+    
+    <a href="{{itz.aapEnv}}" target="_blank">z/OS Dev & Test Image - reservation page</a>
+    
+    <a href="{{itz.snoEnv}}" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a>
+
+!!! Important "The next two steps are for one of the three environments. Repeat for all three environments."
+
+    **Follow the steps to create a reservation in ITZ for all three environments.**
+
+1. Select **Reserve now**.
+
+    The **Reserve now** option creates a reservation for immediate use. Optionally, schedule the reservation for a later date, for example, when you are at your client's office to start a pilot.
+
+    ![](_attachments/TZ1.png)
+
+2. Complete the reservation request form and then click **Submit**.
+
+    The first two reservations are similar to the first image and have fields **a**-**e** that need to be completed.
+
+    **a**. Name: specify a name for the reservation (optional).
+
+    **b**. Purpose: select the **Education** purpose tile.
+
+    !!! Tip "For client pilots..."
+        For client pilots, set the **Purpose** field in the reservation to **Pilot** and provide an opportunity number to receive a longer reservation.
+
+    **c**. Purpose description: enter a description, for example: Level 4 education.
+
+    **d**. Preferred geography: select the region nearest to your physical location for improved performance and reduced network latency.
+
+    **e**. End date and time: the initial maximum will be set to a specific number of days (typically two, but in somce cases longer) after the current date and time. Instructions follow to extend the reservation end date.
+
+    **f**. Accept the IBM Technology Zone's terms and conditions and security policies.
+
+    **g**. Click **Submit**.
+
+    ![](_attachments/TZ2.png)
+
+    
+    !!! Tip "Additional fields for the **Single Node OpenShift (OCP-V on IBM Cloud)**"
+
+        In addition to the preceding fields, the reservation for the **Single Node OpenShift (OCP-V on IBM Cloud)** has these additional fields:
+
+        **h**. OCP/Kubernetes cluster network: leave the default setting of **10.128.0.0/14**.
+
+        **i**. Enable FIPS security: leave the default setting of **No**. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.
+
+        **j**. Master single node flavor: select **32 vCPU x 128 GB - 300 GB ephemeral storage**.
+
+        **k**. OpenShift version: select **4.18**.
+
+        **l**. OCP/Kubernetes service network: leave the default setting of **172.30.0.0/16**.
+    
+        **m**. Accept the IBM Technology Zone's terms and conditions and security policies.
+
+        **n**. Click **Submit**.
+
+        ![](_attachments/TZ3.png)
+
+<div style="page-break-after: always;"></div>
+
+
+    !!! Tip "Additional fields for the **z/OS Dev & Test Image**"
+
+        The reservation for the **z/OS Dev & Test Image** also has these additional fields:
+
+        - **DIY unformatted secondary disk size**: keep the default or a different size for the secondary disk volume
+        - **VM Profile**: *you must select the **8 vCPU | 32 GiB** option* (the default will not work)
+
+
+<div style="page-break-after: always;"></div>
+
+During the provisioning process, multiple emails are sent to you from ITZ as the provisioning process runs. One email states the reservation is provisioning and the other email states that the environment is **Ready**.
+
+In rare cases, the provisioning process can fail. If you receive an email stating the reservation failed, try again by repeating Steps 1-3 for the environment that failed to provision. In addition, review the [Troubleshooting](#troubleshooting) section that follows. If issues continue, open an ITZ support ticket by using the methods that are mentioned in the [Support](index.md#support) section.
+
+## Extend the reservation
+When the reservations are in the **Ready** state, you can extend each reservation beyond its original end date. The duration of the extension will vary by reservation. 
+
+1. In the IBM Technology Zone portal, expand **My TechZone** and select **My Reservations**.
+
+    ![](_attachments/TZ4.png)
+
+2. Click the **overflow icon** (![](_attachments/overflowIcon.png)) on the reservation tile and select **Extend**.
+
+    ![](_attachments/TZ5.png)
+<div style="page-break-after: always;"></div>
+
+1. Click the **Select a date** option, (a) specify the date to extend to, and then (b) click **Extend**.
+
+    ![](_attachments/TZ6.png)
+
+If you anticipate needing more time, repeat Steps 5-6 to extend the reservation to the maximum allowed. Repeat these steps for the other two reservations.
+<div style="page-break-after: always;"></div>
+
+## Join the ITZ IBM Cloud account
+Both the **watsonx Assistant for Z lab – watsonx Orchestrate** and the **Ansible Automation Platform (AAP) & z/OS** environments add you to an IBM Cloud account while your reservation is active. During the provisioning process of these ITZ environments, you receive two emails from IBM Cloud. 
+
+You only need to accept the invitation to the **watsonx Assistant for Z lab – watsonx Orchestrate** environment.
+
+1. Open the email from **IBM Cloud** and click the **Join now** links.
+
+    ![](_attachments/TZ7.png)
+
+2. In the **Join IBM Cloud** browser window that opens, select the **I accept the product Terms and Conditions** of the registration form, and then click **Join Account**.
+
+    ![](_attachments/TZ8.png)
+
+After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.
+
+1. Click the following link to open a browser to the IBM Cloud portal.
+
+    <a href="https://cloud.ibm.com/" target="_blank">**IBM Cloud portal**</a>
+    
+2. Follow the directions to complete the authentication to IBM Cloud using the same email address you used to login to ITZ. The login steps vary depending on any two-factor authentication methods enabled. 
+
+    ![](_attachments/TZ9.png)
+
+3. Click the **account** menu and verify access to the IBM Cloud account listed in your ITZ reservation.
+
+    !!! Important "The account may be different."
+
+        The account name should align with the account named in the invitation email you received. 
+
+    ![](_attachments/TZ10.png)
+
+    ??? Tip "Does your IBM Cloud portal view look different?"
+
+        If your IBM Cloud portal looks different from the images above, it could be because the IBM Cloud portal has gone through a design change, or your browser window is set to smaller size. Instead of the current selected account appearing in the top menu, you may see this **change account** icon: ![](_attachments/itzCloudChangeAccountIcon.png). Click this icon to view the list of accounts you can access.
+
+        ![](_attachments/TZ11.png)
+
+## Accessing the environments
+Each reservation provides access to its respective environment. Details for accessing each environment are provided in the **Pilot setup** sections that follow in the lab guide.
+
+After all three reservations are in the **Ready** state and you accept the invitations to the IBM Cloud accounts, proceed to the next section to complete the pilot setup.
+
+## Troubleshooting
+??? Failure "If your reservation for the Single Node OpenShift environment fails..."
+
+    If your reservation for the Single Node OpenShift environment fails, try selecting one of the **eu-gb region** options as the **Preferred Geography**. 

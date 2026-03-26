@@ -15,23 +15,13 @@ env:
    
     Set `SERVICE_ENDPOINT` by following the below steps:
 
-    a. Retrieve the `ZOSMF_ENDPOINT` variable you set when configuring the **Z Upgrade Agent** <a href="https://ibm.github.io/wxa4z-L4-Agentic/agentdeploy/upgrade-agent/secrets-data/#set-your-zosmf_endpoint-variable" target="_blank">here</a>.
+    a. Retrieve the **public ip** address of your zD&T environment (follow [this section](../../techzone/zdt.md#accessing-the-environment) for steps to retrieve it).
 
-    The result should look something like: `https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf`
+    b. Then, replace `<public-ip>` in the following string with the value of your environment's value:
 
-    b. Within that string, replace all the characters following the `:` with `5443`.
-
-    In the above example, the result would be: `https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443`
+    `https://<public-ip>:5443`
 
     c. Set the final result to the `SERVICE_ENDPOINT` variable referenced above in your `values.yaml` file. 
 
-3. Set the `WATSONX_MODEL_ID` variable to `meta-llama/llama-3-3-70b-instruct` as this is a cloud-based deployment. 
+3. Set the `WATSONX_MODEL_ID` variable to the LLM for your use case. The suggestion for TechZone cloud-based environments is to use the `meta-llama/llama-3-3-70b-instruct` model. However, if you've completed the [optional setup](../../watsonx-ai/config-granite.md) for configuring the Model Gateway for Granite, you can leave the default `ibm/granite-3-3-8b-instruct` MODEL_ID. 
 
-The final result should look similar to the following: 
-
-```
-env:
-  DEPLOYMENT_TYPE: "cloud"           
-  SERVICE_ENDPOINT: "https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443"
-  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
-```

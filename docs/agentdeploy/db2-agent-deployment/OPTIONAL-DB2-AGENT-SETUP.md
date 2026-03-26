@@ -89,7 +89,7 @@ Prior to setting an agent connection to your Db2 subsystems, you must also bind 
 
 ### Creating Db2 connections
 
-Now that you've mounted the license file and binding the required packages, you can define the Db2 connections for your agent. 
+Now that you've mounted the license file and binded the required packages, you can define the Db2 connections for your agent. 
 
 1. Record the route URL for your **db2-mcp-route** in your OpenShift cluster.
    
@@ -106,7 +106,7 @@ Now that you've mounted the license file and binding the required packages, you 
 
     - replace `<your z/OS public IP>` with the public IP address found in your environment details for the Z Dev & Test image
     
-    - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
+    - replace `<zOS passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
 
     - replace `<db2-mcp-route>` with the route URL you recorded in the previous step
 
@@ -129,11 +129,11 @@ To enable the agent's ability to access information in Db2® catalog tables, you
 
 Run the below command, replacing the following values:
     
-    - replace `<db2-mcp-route>` with your own unique route
+- replace `<db2-mcp-route>` with your own unique route
     
-    - replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
+- replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
     
-    - replace `<zOS passphrase>` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
+- replace `<zOS passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
 
     ```
     curl --request POST --url '<db2-mcp-route>/api/v1/tables/descriptions/scan?db_connection_id=<db_conn_id>' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "<zOS passphrase>"}'

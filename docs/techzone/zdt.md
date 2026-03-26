@@ -30,7 +30,7 @@ Follow the below instructions to access your ***Z Dev & Test (zD&T) environment 
 
     ![](_attachments/aap_1.png)
 
-2. Click the **watsonx Assistant for Z Pilot - z/OS Dev & Test Image** tile.
+2. Click the **z/OS Dev & Test Image** tile.
    
     ![](_attachments/zdt1.png)
 
