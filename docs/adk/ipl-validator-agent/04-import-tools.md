@@ -34,56 +34,48 @@ In this scenario, your ***IPL Validator Agent*** will be leveraging 2 different 
 
 In this section, you will import the tool files within your workspace to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.
 
-1. Within VS Code, click on the `list_cert_tool.json` file under the ‘Tools’ sub-folder to view the contents.
-   
-    ![](_attachments/tools1.png)
+1. Within VS Code, click on the `sendOperatorCommand.py` file. Take some time to review the contents. 
 
-2. Scroll to the bottom of the file and replace `<AAP UI URL>` with the **AAP UI URL** of your own environment (*paste it within the double-quotes*). It should look similar to the following:
-   
-    ![](_attachments/tools2.png)
-
-    *Make sure to save the file before moving on*
-
-3. Next, open up the `renew_cert_tool.json` file under the ‘Tools’ sub-folder to view the contents.
-   
-   
-
-4. Just as before, scroll to the bottom of the file and replace `<AAP UI URL>` with the **AAP UI URL** of your own environment (within double-quotes).
-   
-    *Again, make sure to save the file before moving on.*
-
-5. Import the first OpenAPI tool from the `list_cert_tool.json` file by running the following command from your VS Code Terminal command-prompt:
-   
-    ```
-    orchestrate tools import -k openapi -f Tools/list_cert_tool.json --app-id ansible
-    ```
-
-6. After issuing the command, you should see a message similar to what’s shown below:
-   
-    ![](_attachments/tools4.png)
-
-    This indicates that your `get_cert` tool was imported successfully.
-
-7. Next, import the second OpenAPI tool from the `renew_cert_tool.json` file by running the following
-command:
+    Specifically, note the following section:
 
     ```
-    orchestrate tools import -k openapi -f Tools/renew_cert_tool.json --app-id ansible
-    ```
-
-1. After issuing the command, you should get a message indicating that your `renew_cert` tool was imported successfully:
-   
-    ![](_attachments/tools5.png)
-
-2. Finally, you will import the Python tool from the `job_output_status_tool.py` file. 
+    get_status_url = urljoin(base_url, f'restconsoles/consoles/defcn')
     
-    To do this, copy and paste the following command into your VS Code Terminal command-prompt and click enter.
-
+    request_body = {
+        "cmd": cmd,
+        "sol-key": "JES"
+    }
     ```
-    orchestrate tools import -k python -f Tools/job_output_status_tool.py --app-id ansible
+
+    The resulting z/OSMF API endpoint that will get called in this tool is:
+    
+    `https://<public-ip>:10443/zosmf/restconsoles/consoles/defcn`
+
+    Within the body of the API call, `cmd` gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass `D A,L` as the command to execute, as an example. 
+   
+    Then click on the `executeTsoCommand` file and take time to review its content as well. 
+
+2. Import the `sendOperatorCommand` tool by running the following command from your VS Code Terminal command-prompt:
+   
+    ```
+    orchestrate tools import -k python -f tsoPython.py --app-id zosmf 
     ```
 
-3.  Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:
+    After issuing the command, you should see a message similar to what's shown below:
+
+    That indicates that the `sendOperatorCommand` tool was imported successfully. 
+
+3. Similarly, import the `executeTsoCommand` tool by running the following command:
+   
+    ```
+    orchestrate tools import -k python -f operatorPython.py --app-id zosmf
+    ```
+
+    Confirm that this tool was also imported successfully. 
+
+
+
+4.  Once you’ve successfully imported both tools, verify they’re now active by running the following command:
     
     ```
     orchestrate tools list
