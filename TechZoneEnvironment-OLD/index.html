@@ -3064,7 +3064,7 @@
 <p><strong>Watsonx Assistant for Z lab – watsonx Orchestrate</strong>: provides a dedicated environment on IBM Cloud where you can create and configure the assistant, set up conversational search, import skills, and configure actions.</p>
 </li>
 <li>
-<p><strong>z/OS Dev &amp; Test Image</strong>: provides a templated z/OS image emulated on IBM Cloud (x86) which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. </p>
+<p><strong>Ansible Automation Platform (AAP) &amp; z/OS</strong>: provides a pre-configured instance of AAP and Wazi z/OS. This environment includes Ansible playbooks, which you can import as skills within watsonx Orchestrate and connect to your assistant. Preinstalled templates for various use cases are also available (covered in later sections). Learn more about AAP <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">here</a>. Learn more about Wazi, <a href="https://www.ibm.com/cloud/wazi-as-a-service" target="_blank">here</a>.</p>
 </li>
 <li>
 <p><strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong>: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of <a href="https://opensearch.org/">OpenSearch</a> for Watson Assistant for Z, enabling ingestion of client-supplied documents.- </p>
@@ -3084,7 +3084,7 @@
 <p>The steps to authenticate to ITZ are not detailed here as they may vary between users.</p>
 </div>
 <p><a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a></p>
-<p><a href="https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c" target="_blank">z/OS Dev &amp; Test Image - reservation page</a></p>
+<p><a href="https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c" target="_blank">Ansible Automation Platform (AAP) &amp; z/OS - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/6965075fc23104120139308b" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a></p>
 </li>
 </ol>
@@ -3113,8 +3113,6 @@
 <p><strong>f</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>g</strong>. Click <strong>Submit</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ2.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ2.png"></a></p>
-<div class="admonition tip">
-<p class="admonition-title">Additional fields for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong></p>
 <p>In addition to the preceding fields, the reservation for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong> has these additional fields:</p>
 <p><strong>h</strong>. OCP/Kubernetes cluster network: leave the default setting of <strong>10.128.0.0/14</strong>.</p>
 <p><strong>i</strong>. Enable FIPS security: leave the default setting of <strong>No</strong>. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.</p>
@@ -3124,18 +3122,8 @@
 <p><strong>m</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>n</strong>. Click <strong>Submit</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ3.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ3.png"></a></p>
-</div>
 </li>
 </ol>
-<div style="page-break-after: always;"></div>
-
-<div class="highlight"><pre><span></span><code>!!! Tip "Additional fields for the **z/OS Dev &amp; Test Image**"
-
-    The reservation for the **z/OS Dev &amp; Test Image** also has these additional fields:
-
-    - **DIY unformatted secondary disk size**: keep the default or a different size for the secondary disk volume
-    - **VM Profile**: *you must select the **8 vCPU | 32 GiB** option* (the default will not work)
-</code></pre></div>
 <div style="page-break-after: always;"></div>
 
 <p>During the provisioning process, multiple emails are sent to you from ITZ as the provisioning process runs. One email states the reservation is provisioning and the other email states that the environment is <strong>Ready</strong>.</p>

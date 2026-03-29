@@ -4356,14 +4356,14 @@
 <p><strong>Watsonx Assistant for Z lab – watsonx Orchestrate</strong>: provides a dedicated environment on IBM Cloud where you can create and configure the assistant, set up conversational search, import skills, and configure actions.</p>
 </li>
 <li>
-<p><strong>Ansible Automation Platform (AAP) &amp; z/OS</strong>: provides a pre-configured instance of AAP and Wazi z/OS. This environment includes Ansible playbooks, which you can import as skills within watsonx Orchestrate and connect to your assistant. Preinstalled templates for various use cases are also available (covered in later sections). Learn more about AAP <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">here</a>. Learn more about Wazi, <a href="https://www.ibm.com/cloud/wazi-as-a-service" target="_blank">here</a>.</p>
+<p><strong>z/OS Dev &amp; Test Image</strong>: provides a templated z/OS image emulated on IBM Cloud (x86) which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. </p>
 </li>
 <li>
 <p><strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong>: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of <a href="https://opensearch.org/">OpenSearch</a> for Watson Assistant for Z, enabling ingestion of client-supplied documents.- </p>
 </li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">All activities in this lab guide are required.</p>
+<p class="admonition-title">All activities in this lab guide are required</p>
 <p>To earn the IBM watsonx Assistant for Z Technical Sales Advanced badge and complete the Level 4 learning plan, you must provision all three ITZ environments and finish every section in the lab guide. Disregard any statements in the ITZ collection that suggest optional environments or tasks.</p>
 </div>
 <p>Follow the instructions to create new reservation requests, extend the reservations, and access the ITZ demonstration environments. Provisioning the SNO environment in ITZ can take several hours, while the other two environments typically provisioning in under 30 minutes.</p>
@@ -4376,7 +4376,7 @@
 <p>The steps to authenticate to ITZ are not detailed here as they may vary between users.</p>
 </div>
 <p><a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a></p>
-<p><a href="https://techzone.ibm.com/my/reservations/create/66f806f842f6741b9e19f99c" target="_blank">Ansible Automation Platform (AAP) &amp; z/OS - reservation page</a></p>
+<p><a href="https://techzone.ibm.com/my/reservations/create/69c99ef33dc0863bd858581c" target="_blank">z/OS Dev &amp; Test Image - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/6965075fc23104120139308b" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a></p>
 </li>
 </ol>
@@ -4405,6 +4405,8 @@
 <p><strong>f</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>g</strong>. Click <strong>Submit</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ2.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ2.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Additional fields for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong></p>
 <p>In addition to the preceding fields, the reservation for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong> has these additional fields:</p>
 <p><strong>h</strong>. OCP/Kubernetes cluster network: leave the default setting of <strong>10.128.0.0/14</strong>.</p>
 <p><strong>i</strong>. Enable FIPS security: leave the default setting of <strong>No</strong>. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.</p>
@@ -4414,6 +4416,16 @@
 <p><strong>m</strong>. Accept the IBM Technology Zone's terms and conditions and security policies.</p>
 <p><strong>n</strong>. Click <strong>Submit</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ3.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ3.png"></a></p>
+</div>
+<p></p><div style="page-break-after: always;"></div>
+<div class="admonition tip">
+<p class="admonition-title">Additional fields for the <strong>z/OS Dev &amp; Test Image</strong></p>
+<p>The reservation for the <strong>z/OS Dev &amp; Test Image</strong> also has these additional fields:</p>
+<ul>
+<li><strong>DIY unformatted secondary disk size</strong>: keep the default or a different size for the secondary disk volume</li>
+<li><strong>VM Profile</strong>: <em>you must select the </em><em>8 vCPU | 32 GiB</em><em> option</em> (the default will not work)</li>
+</ul>
+</div>
 </li>
 </ol>
 <div style="page-break-after: always;"></div>
