@@ -78,7 +78,7 @@ Once you're SSH'ed into zOS USS, enter the following command, substituting a pas
 tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
 ```
     
-??? Tip "Syntax rules for RACF Password Phrases (below):
+??? Tip "Syntax rules for RACF Password Phrases (below)"
     
     - minimum length: 9 characters
     - Must contain at least 2 alphabetic characters (A - Z, a - z)
