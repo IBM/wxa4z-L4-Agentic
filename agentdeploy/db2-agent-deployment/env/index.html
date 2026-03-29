@@ -467,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/aap-zos/" class="md-nav__link">
+      <a href="../../../techzone/zdt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ansible Automation Platform(AAP) &amp; z/OS
+    Z Dev &amp; Test (zD&amp;T) environment for z/OS
   
 
     
@@ -3071,22 +3071,15 @@
 <li>
 <p>While the <code>SERVICE_ENDPOINT</code> variable would point to the URL endpoint on z/OS to generate user passtickets, that setup isn't detailed here and will be bypassed for the purpose of demos. </p>
 <p>Set <code>SERVICE_ENDPOINT</code> by following the below steps:</p>
-<p>a. Retrieve the <code>ZOSMF_ENDPOINT</code> variable you set when configuring the <strong>Z Upgrade Agent</strong> <a href="https://ibm.github.io/wxa4z-L4-Agentic/agentdeploy/upgrade-agent/secrets-data/#set-your-zosmf_endpoint-variable" target="_blank">here</a>.</p>
-<p>The result should look something like: <code>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf</code></p>
-<p>b. Within that string, replace all the characters following the <code>:</code> with <code>5443</code>.</p>
-<p>In the above example, the result would be: <code>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443</code></p>
+<p>a. Retrieve the <strong>public ip</strong> address of your zD&amp;T environment (follow <a href="../../../techzone/zdt/#accessing-the-environment">this section</a> for steps to retrieve it).</p>
+<p>b. Then, replace <code>&lt;public-ip&gt;</code> in the following string with the value of your environment's value:</p>
+<p><code>https://&lt;public-ip&gt;:5443</code></p>
 <p>c. Set the final result to the <code>SERVICE_ENDPOINT</code> variable referenced above in your <code>values.yaml</code> file. </p>
 </li>
 <li>
-<p>Set the <code>WATSONX_MODEL_ID</code> variable to <code>meta-llama/llama-3-3-70b-instruct</code> as this is a cloud-based deployment. </p>
+<p>Set the <code>WATSONX_MODEL_ID</code> variable to the LLM for your use case. The suggestion for TechZone cloud-based environments is to use the <code>meta-llama/llama-3-3-70b-instruct</code> model. However, if you've completed the <a href="../../../watsonx-ai/config-granite/">optional setup</a> for configuring the Model Gateway for Granite, you can leave the default <code>ibm/granite-3-3-8b-instruct</code> MODEL_ID. </p>
 </li>
-</ol>
-<p>The final result should look similar to the following: </p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>env:
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  DEPLOYMENT_TYPE: "cloud"           
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  SERVICE_ENDPOINT: "https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:5443"
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
-</span></code></pre></div></div>
+</ol></div>
 
 
 

@@ -467,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/aap-zos/" class="md-nav__link">
+      <a href="../../../techzone/zdt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ansible Automation Platform(AAP) &amp; z/OS
+    Z Dev &amp; Test (zD&amp;T) environment for z/OS
   
 
     
@@ -3132,7 +3132,7 @@
 </li>
 </ol>
 <h3 id="creating-db2-connections">Creating Db2 connections<a class="headerlink" href="#creating-db2-connections" title="Permanent link">#</a></h3>
-<p>Now that you've mounted the license file and binding the required packages, you can define the Db2 connections for your agent. </p>
+<p>Now that you've mounted the license file and binded the required packages, you can define the Db2 connections for your agent. </p>
 <ol>
 <li>
 <p>Record the route URL for your <strong>db2-mcp-route</strong> in your OpenShift cluster.</p>
@@ -3148,7 +3148,7 @@
 <p>replace <code>&lt;your z/OS public IP&gt;</code> with the public IP address found in your environment details for the Z Dev &amp; Test image</p>
 </li>
 <li>
-<p>replace <code>&lt;zOS passphrase&gt;</code> with the same passphrase value you set when configuring the <code>ZOSMF_PASSWORD</code> secret for the Z Upgrade Agent</p>
+<p>replace <code>&lt;zOS passphrase&gt;</code> with the same passphrase value you set for <code>IBMUSER</code> on your zD&amp;T image (<a href="../../../techzone/zdt/#set-new-passphrase-for-ibmuser">reference</a>).</p>
 </li>
 <li>
 <p>replace <code>&lt;db2-mcp-route&gt;</code> with the route URL you recorded in the previous step</p>
@@ -3167,20 +3167,21 @@
 <h3 id="enabling-catalog-table-discovery">Enabling catalog table discovery<a class="headerlink" href="#enabling-catalog-table-discovery" title="Permanent link">#</a></h3>
 <p>To enable the agent's ability to access information in Db2® catalog tables, you need to scan the catalog tables by running the Scan Database REST API.</p>
 <p>Run the below command, replacing the following values:</p>
-<div class="highlight"><pre><span></span><code>- replace `&lt;db2-mcp-route&gt;` with your own unique route
-
-- replace `&lt;db_conn_id&gt;` with the string associated with the `id` parameter in the output of the previous command
-
-- replace `&lt;zOS passphrase&gt;` with the same passphrase value you set when configuring the `ZOSMF_PASSWORD` secret for the Z Upgrade Agent
-
-```
-curl --request POST --url '&lt;db2-mcp-route&gt;/api/v1/tables/descriptions/scan?db_connection_id=&lt;db_conn_id&gt;' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "&lt;zOS passphrase&gt;"}'
-```
-
-The output should look like the following:
-
-**IMAGE**
-</code></pre></div></div>
+<ul>
+<li>
+<p>replace <code>&lt;db2-mcp-route&gt;</code> with your own unique route</p>
+</li>
+<li>
+<p>replace <code>&lt;db_conn_id&gt;</code> with the string associated with the <code>id</code> parameter in the output of the previous command</p>
+</li>
+<li>
+<p>replace <code>&lt;zOS passphrase&gt;</code> with the same passphrase value you set for <code>IBMUSER</code> on your zD&amp;T image (<a href="../../../techzone/zdt/#set-new-passphrase-for-ibmuser">reference</a>).</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl --request POST --url '&lt;db2-mcp-route&gt;/api/v1/tables/descriptions/scan?db_connection_id=&lt;db_conn_id&gt;' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "&lt;zOS passphrase&gt;"}'
+</span></code></pre></div>
+<p>The output should look like the following:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+</ul></div>
 
 
 

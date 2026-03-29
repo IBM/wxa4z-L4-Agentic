@@ -466,14 +466,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../techzone/aap-zos/" class="md-nav__link">
+      <a href="../techzone/zdt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ansible Automation Platform(AAP) & z/OS
+    Z Dev & Test (zD&T) environment for z/OS
   
 
     
@@ -3102,10 +3102,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#techzone-aap-zos" class="md-nav__link">
+  <a href="#techzone-zdt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ansible Automation Platform(AAP) & z/OS
+        Z Dev & Test (zD&T) environment for z/OS
       
     </span>
   </a>
@@ -4598,21 +4598,31 @@
 <p>Enter the <strong>Cluster Admin Username</strong> and <strong>Cluster Admin Password</strong> values from step 3 and click <strong>Log in</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/sno4.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/sno4.png"></a></p>
 </li>
-</ol></div></body></html></section><section class="print-page" id="techzone-aap-zos" heading-number="3.3"><html><head>
+</ol></div></body></html></section><section class="print-page" id="techzone-zdt" heading-number="3.3"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="ansible-automation-platform-aap-zos">Ansible Automation Platform (AAP) &amp; z/OS<a class="headerlink" href="#techzone-aap-zos-ansible-automation-platform-aap-zos" title="Permanent link">#</a></h1>
-<h3 id="techzone-aap-zos-summary-of-the-environment">Summary of the environment<a class="headerlink" href="#techzone-aap-zos-summary-of-the-environment" title="Permanent link">#</a></h3>
-<p>The third lab environment you will use is the <strong><em>Ansible Automation Platform (AAP) &amp; z/OS</em></strong> environment. This provides a pre-configured instance of both <strong>Ansible Automation Platform (AAP)</strong> and <strong>Wazi aaS z/OS</strong> deployed on IBM Cloud.</p>
-<p>The two resources are provisioned together in the TechZone environment and enables users to manage and automate z/OS tasks and subsystems with various pre-installed Ansible playbooks. It includes a z/OS back-end (Wazi as a Service) with all needed pre-requisites to quickly get started.</p>
-<p>This environment will come into play later on in the Lab when deploying your AI Agents. Each Agent has its own mechanism for accessing the back-end environment and performing tasks, gathering insights, etc.</p>
-<p>As an example, you will later deploy the <strong>IBM Z Upgrade Agent</strong> which leverages z/OSMF APIs to your back-end Wazi z/OS system. As another example, the <strong>IBM Z Support Agent</strong> you will later deploy will connect to your Ansible Automation Platform (AAP) instance to automate the collection and transfer of z/OS dumps.</p>
-<p>This environment will also be later used when building your own agent to automate the certificate renewal process on z/OS.</p>
-<h3 id="techzone-aap-zos-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-aap-zos-accessing-the-environment" title="Permanent link">#</a></h3>
-<p>Follow the below instructions to access your <strong><em>Ansible Automation Platform (AAP)</em></strong> environment. Instructions later on in the Lab will instruct you on accessing the <strong>Wazi aaS z/OS</strong> environment.</p>
+        </head><body><div><h1 id="z-dev-test-zdt-image-for-zos">Z Dev &amp; Test (zD&amp;T) image for zOS<a class="headerlink" href="#techzone-zdt-z-dev-test-zdt-image-for-zos" title="Permanent link">#</a></h1>
+<h2 id="techzone-zdt-summary-of-the-environment">Summary of the environment<a class="headerlink" href="#techzone-zdt-summary-of-the-environment" title="Permanent link">#</a></h2>
+<p>The third lab environment you will use is the <strong><em>Z Dev &amp; Test (zD&amp;T)</em></strong> environment for z/OS. This is an emulated z/OS image running on IBM Cloud which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. </p>
+<p>The image comes pre-configured with a subset of middleware and products available, including: </p>
+<ul>
+<li>Db2 v13 </li>
+<li>IMS v15</li>
+<li>JES</li>
+<li>z/OS USS </li>
+<li>z/OSMF</li>
+<li>Additional program products - i.e. COBOL, REXX, Java, PLI, System Automation, NetView, z/OS Connect, ZOAU</li>
+</ul>
+<details class="tip">
+<summary>Middleware limitations</summary>
+<p>Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes CICS and MQ. Additional images will be made available in the future with these components available.</p>
+</details>
+<p>The below section describes how to access your environment, change your RACF password and log into TSO and z/OSMF.</p>
+<h2 id="techzone-zdt-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-zdt-accessing-the-environment" title="Permanent link">#</a></h2>
+<p>Follow the below instructions to access your <strong><em>Z Dev &amp; Test (zD&amp;T) environment for zOS</em></strong>.</p>
 <ol>
 <li>
 <p>In the IBM Technology Zone portal, expand <strong>My TechZone</strong> and select <strong>My Reservations</strong>, or click the following link:</p>
@@ -4620,26 +4630,112 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_1.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_1.png"></a></p>
 </li>
 <li>
-<p>Click the <strong>watsonx Assistant for Z Pilot - AAP &amp; z/OS</strong> tile.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_2.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_2.png"></a></p>
+<p>Click the <strong>z/OS Dev &amp; Test Image</strong> tile.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt1.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt1.png"></a></p>
 </li>
 <li>
-<p>Locate and record the <strong>AAP User Name (For UI access)</strong> and <strong>AAP User Password</strong> fields.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_3.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_3.png"></a></p>
+<p>Locate and record the <strong>Public IP</strong> field for your environment.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt2.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt2.png"></a></p>
 </li>
 <li>
-<p>Record and then click the <strong>Ansible Automation Platform UI</strong> link.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_4.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_4.png"></a></p>
+<p>At the bottom of the reservation page, click on <strong>Download SSH key</strong> to download the SSH key locally.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt3.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt3.png"></a></p>
+</li>
+</ol>
+<h3 id="techzone-zdt-ssh-into-zos-unix-system-services">SSH into z/OS Unix System Services<a class="headerlink" href="#techzone-zdt-ssh-into-zos-unix-system-services" title="Permanent link">#</a></h3>
+<p>In order to set a new <strong>Passphrase</strong> for your <strong>IBMUSER</strong> zOS user, you will first need to SSH into z/OS USS, using port <strong>2022</strong>. </p>
+<ol>
+<li>
+<p>On your local command line, navigate to the directory of your downloaded SSH key from the previous step (i.e. <strong>Downloads</strong>).</p>
+<p><code>cd Downloads</code></p>
 </li>
 <li>
-<p>Enter the <strong>Username</strong> and <strong>Password</strong> that is recorded in step 3 and click <strong>Log In</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_5.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_5.png"></a></p>
+<p>Set the permissions of your downloaded key to allow SSH access:</p>
+<p><code>chmod 600 &lt;ssh-key.pem&gt;</code></p>
+<p>For example:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt4.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt4.png"></a></p>
 </li>
 <li>
-<p>Once logged in, you should be directed to the <strong>Dashboard</strong> view within the AAP Web console, as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/aap_6.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/aap_6.png"></a></p>
+<p>Then SSH into z/OS UNIX, by running the below command, replacing <code>&lt;ssh-key.pem&gt;</code> with the name of your downloaded key, and replacing <code>&lt;public ip&gt;</code> with the IP you recorded in the above section:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#techzone-zdt-__codelineno-0-1"></a>ssh -i &lt;ssh-key.pem&gt; ibmuser@&lt;public ip&gt; -p 2022
+</span></code></pre></div>
+<p>Once SSH'ed in successfully, you should see something similar to below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt5.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt5.png"></a></p>
 </li>
-</ol></div></body></html></section></section>
+</ol>
+<h3 id="techzone-zdt-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER<a class="headerlink" href="#techzone-zdt-set-new-passphrase-for-ibmuser" title="Permanent link">#</a></h3>
+<p>Next, set a new zOS Passphrase for your <strong>IBMUSER</strong> zOS user by running the following command. This is the RACF Passphrase that you will use to log into TSO as the IBMUSER ID. </p>
+<p>Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string <code>YOUR PASSWORD PHRASE</code> :</p>
+<div class="highlight"><pre><span></span><code>```
+tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
+```
+
+??? Tip "Syntax rules for RACF Password Phrases (below):
+
+    - minimum length: 9 characters
+    - Must contain at least 2 alphabetic characters (A - Z, a - z)
+    - Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)
+    - Must not contain more than 2 consecutive characters that are identical
+
+**Note:** *if you typed the command yourself, be sure to include the single-quotes before and after the password.* ***Record the passphrase as it will be needed later.***
+</code></pre></div>
+<p>Afterwards, you should see something similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt6.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt6.png"></a></p>
+<h3 id="techzone-zdt-accessing-tso-session">Accessing TSO Session<a class="headerlink" href="#techzone-zdt-accessing-tso-session" title="Permanent link">#</a></h3>
+<p>The zD&amp;T image uses port <strong>992</strong> for accessing TSO sessions. In order to access TSO, you must first retrieve your environment's self-signed <strong>CA certificate</strong>. </p>
+<p>To do this, you should follow the instructions for <a href="https://www.ibm.com/docs/en/wazi-aas/1.1.0?topic=vpc-connecting-zos-virtual-server-instances#using-terminal-emulator__title__1" target="_blank">Using TN3270 terminal emulator</a>. </p>
+<p>Optionally, if using <strong>Host-On-Demand</strong>, you can import the CA certificate by following the below steps:</p>
+<ol>
+<li>
+<p>Download the certificate file from the z/OS system by running the following command, replacing <code>&lt;ssh-key.pem&gt;</code> with the name of your downloaded SSH key, and replacing <code>&lt;public ip&gt;</code> with the public IP of your environment:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#techzone-zdt-__codelineno-2-1"></a>scp -O -P 2022 -i &lt;ssh-key.pem&gt; ibmuser@&lt;public ip&gt;:/u/ibmuser/common_cacert ./common_cacert.crt
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt7.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt7.png"></a></p>
+</li>
+<li>
+<p>Import the downloaded certificate into your Host-On-Demand keystore using the following command, replacing <code>&lt;alias&gt;</code> with any recognizable alias:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#techzone-zdt-__codelineno-3-1"></a>keytool -importcert -alias &lt;alias&gt; -file ./common_cacert.crt -keystore /Applications/HostOnDemand/lib/CustomizedCAs.jks -storepass hodpwd
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt8.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt8.png"></a></p>
+<p>When asked <code>Trust this certificate? [no]</code>, enter <code>yes</code> and you should see output similar to the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt9.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt9.png"></a></p>
+</li>
+<li>
+<p>Once done, you can start a TSO session in the <strong>Host-On-Demand</strong> application.</p>
+</li>
+</ol>
+<h3 id="techzone-zdt-creating-tso-session-in-ibm-host-on-demand">Creating TSO session in IBM Host On-Demand<a class="headerlink" href="#techzone-zdt-creating-tso-session-in-ibm-host-on-demand" title="Permanent link">#</a></h3>
+<p>The below steps illustrate how to define and connect to a TSO session for your Z Dev &amp; Test image using <strong>IBM Host On-Demand</strong>. If using a different application as a TN3270 emulator, the connection settings should be similar. </p>
+<ol>
+<li>
+<p>After opening the application, click the <strong>Add Sessions</strong> option and select the <strong>3270 Display</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt10.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt10.png"></a></p>
+</li>
+<li>
+<p>Enter the following Connection Settings then click <strong>OK</strong>. </p>
+<p><strong>a</strong>. <strong>Session Name:</strong> <em>enter any unique name for your instance</em></p>
+<p><strong>b</strong>. <strong>Destination Address:</strong> <em>Copy and paste the unique value for the </em><em>public IP</em><em> address of your zD&amp;T image</em></p>
+<p><strong>c</strong>. <strong>Destination Port:</strong> 992</p>
+<p><strong>d</strong>. <strong>Protocol:</strong> From the drop-down, select the <strong>Telnet - TLS</strong> option. </p>
+<p><em>Leave all other fields the default options.</em></p>
+<p>For example:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt11.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt11.png"></a></p>
+</li>
+<li>
+<p>Then start the TSO session by clicking on your new connection definition. You should see the Login screen as shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt12.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt12.png"></a></p>
+</li>
+</ol>
+<p>Proceed to login by entering <code>TSO IBMUSER</code>, then when prompted, enter the <strong>Passphrase</strong> you set for the IBMUSER ID earlier in this section. </p>
+<h3 id="techzone-zdt-accessing-zosmf-web-ui">Accessing z/OSMF Web-UI<a class="headerlink" href="#techzone-zdt-accessing-zosmf-web-ui" title="Permanent link">#</a></h3>
+<p>Accessing the z/OSMF Web-UI can be done by navigating to the following URL within your local web-browser, replacing <code>&lt;public ip&gt;</code> with the public IP address found in your environment's TechZone reservation:</p>
+<p><code>https://&lt;public ip&gt;:10443/zosmf</code></p>
+<p><strong><em>Note:</em></strong> it may take a few seconds for the login page to finish loading. Eventually you should see a login screen similar to what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt13.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt13.png"></a></p>
+<p>Enter <code>IBMUSER</code> for the <strong>z/OS USER ID</strong> field.</p>
+<p>For <strong>z/OS PASSWORD</strong>, enter the Passphrase you set for the IBMUSER ID earlier in this section.  </p>
+<p>Then click <strong>LOG IN</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt14.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt14.png"></a></p></div></body></html></section></section>
                     <section class='print-page md-section' id='section-4' heading-number='4'>
                         <h1>Prepare watsonx.ai services<a class='headerlink' href='#section-4' title='Permanent link'></a>
                         </h1>
@@ -8791,19 +8887,19 @@ command:</p>
                 .print-site-enumerate-headings #techzone-sno h5:before { content: '3.2.' counter(counter-techzone-sno-2) '.' counter(counter-techzone-sno-3) '.' counter(counter-techzone-sno-4) '.' counter(counter-techzone-sno-5) ' ' }
                 .print-site-enumerate-headings #techzone-sno h5 {  counter-increment: counter-techzone-sno-5 }
             
-.print-site-enumerate-headings #techzone-aap-zos > h1:before { content: '3.3 ' }
+.print-site-enumerate-headings #techzone-zdt > h1:before { content: '3.3 ' }
 
-                .print-site-enumerate-headings #techzone-aap-zos h2:before { content: '3.3.' counter(counter-techzone-aap-zos-2) ' ' }
-                .print-site-enumerate-headings #techzone-aap-zos h2 {  counter-reset: counter-techzone-aap-zos-3  counter-techzone-aap-zos-4  counter-techzone-aap-zos-5 ;  counter-increment: counter-techzone-aap-zos-2 }
+                .print-site-enumerate-headings #techzone-zdt h2:before { content: '3.3.' counter(counter-techzone-zdt-2) ' ' }
+                .print-site-enumerate-headings #techzone-zdt h2 {  counter-reset: counter-techzone-zdt-3  counter-techzone-zdt-4  counter-techzone-zdt-5 ;  counter-increment: counter-techzone-zdt-2 }
             
-                .print-site-enumerate-headings #techzone-aap-zos h3:before { content: '3.3.' counter(counter-techzone-aap-zos-2) '.' counter(counter-techzone-aap-zos-3) ' ' }
-                .print-site-enumerate-headings #techzone-aap-zos h3 {  counter-reset: counter-techzone-aap-zos-4  counter-techzone-aap-zos-5 ;  counter-increment: counter-techzone-aap-zos-3 }
+                .print-site-enumerate-headings #techzone-zdt h3:before { content: '3.3.' counter(counter-techzone-zdt-2) '.' counter(counter-techzone-zdt-3) ' ' }
+                .print-site-enumerate-headings #techzone-zdt h3 {  counter-reset: counter-techzone-zdt-4  counter-techzone-zdt-5 ;  counter-increment: counter-techzone-zdt-3 }
             
-                .print-site-enumerate-headings #techzone-aap-zos h4:before { content: '3.3.' counter(counter-techzone-aap-zos-2) '.' counter(counter-techzone-aap-zos-3) '.' counter(counter-techzone-aap-zos-4) ' ' }
-                .print-site-enumerate-headings #techzone-aap-zos h4 {  counter-reset: counter-techzone-aap-zos-5 ;  counter-increment: counter-techzone-aap-zos-4 }
+                .print-site-enumerate-headings #techzone-zdt h4:before { content: '3.3.' counter(counter-techzone-zdt-2) '.' counter(counter-techzone-zdt-3) '.' counter(counter-techzone-zdt-4) ' ' }
+                .print-site-enumerate-headings #techzone-zdt h4 {  counter-reset: counter-techzone-zdt-5 ;  counter-increment: counter-techzone-zdt-4 }
             
-                .print-site-enumerate-headings #techzone-aap-zos h5:before { content: '3.3.' counter(counter-techzone-aap-zos-2) '.' counter(counter-techzone-aap-zos-3) '.' counter(counter-techzone-aap-zos-4) '.' counter(counter-techzone-aap-zos-5) ' ' }
-                .print-site-enumerate-headings #techzone-aap-zos h5 {  counter-increment: counter-techzone-aap-zos-5 }
+                .print-site-enumerate-headings #techzone-zdt h5:before { content: '3.3.' counter(counter-techzone-zdt-2) '.' counter(counter-techzone-zdt-3) '.' counter(counter-techzone-zdt-4) '.' counter(counter-techzone-zdt-5) ' ' }
+                .print-site-enumerate-headings #techzone-zdt h5 {  counter-increment: counter-techzone-zdt-5 }
             
 .print-site-enumerate-headings #section-4 > h1:before { content: '4 ' }
 .print-site-enumerate-headings #watsonx-ai-overview > h1:before { content: '4.1 ' }

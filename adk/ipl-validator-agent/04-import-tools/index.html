@@ -20,7 +20,7 @@
     
     
       
-        <title>placeholder - IBM wxa4z L4 Lab Guide</title>
+        <title>Importing tools - IBM wxa4z L4 Lab Guide</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#placeholder" class="md-skip">
+        <a href="#importing-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -188,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              placeholder
+              Importing tools
             
           </span>
         </div>
@@ -467,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/aap-zos/" class="md-nav__link">
+      <a href="../../../techzone/zdt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ansible Automation Platform(AAP) &amp; z/OS
+    Z Dev &amp; Test (zD&amp;T) environment for z/OS
   
 
     
@@ -3057,7 +3057,75 @@
 
 
 
-<h1 id="placeholder">placeholder<a class="headerlink" href="#placeholder" title="Permanent link">#</a></h1>
+<div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#importing-tools" title="Permanent link">#</a></h1>
+<p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of z/OSMF where the tools must authenticate before calling an API.</p>
+<p>With the ADK, tools can be created either using OpenAPI specifications, or by using Python scripts. This section will be focused on using Python tools.</p>
+<p>In this scenario, your <strong><em>IPL Validator Agent</em></strong> will be leveraging 2 different tools:</p>
+<ul>
+<li>
+<p><strong><em>sendOperatorCommand</em></strong></p>
+<p>This is a Python defined tool that allows the agent to issue MVS operator commands via z/OSMF Console API. The agent will be able to execute any operator command and receive synchronous command responses. Some examples of how it can be used include:</p>
+<ul>
+<li>D A,L - Display active address spaces</li>
+<li>D U,DASD - Display DASD usage</li>
+<li>D IPLINFO - Display IPL information</li>
+<li>D M=CPU - Display CPU configuration</li>
+<li>F jobname,command - Modify job command</li>
+</ul>
+</li>
+<li>
+<p><strong><em>executeTsoCommand</em></strong></p>
+<p>Another python defined tools that allows the agent to execute TSO commands via z/OSMF TSO/E Address Space Services API. The agent will be able to execute TSO commands on z/OS and retrieve the corresponding output from z/OS. Some examples of how it can be used include:        </p>
+<ul>
+<li>TIME - Display current time and date</li>
+<li>LISTDS - List dataset information</li>
+<li>LISTCAT - List catalog entries</li>
+<li>ALLOCATE - Allocate datasets</li>
+<li>DELETE - Delete datasets</li>
+<li>RENAME - Rename datasets</li>
+<li>SEND - Send messages to users</li>
+<li>PROFILE - Display or modify TSO profile</li>
+</ul>
+</li>
+</ul>
+<p>In this section, you will import the tool files within your workspace to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.</p>
+<ol>
+<li>
+<p>Within VS Code, click on the <code>sendOperatorCommand.py</code> file. Take some time to review the contents. </p>
+<p>Specifically, note the following section:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>get_status_url = urljoin(base_url, f'restconsoles/consoles/defcn')
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>request_body = {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    "cmd": cmd,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    "sol-key": "JES"
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
+</span></code></pre></div>
+<p>The resulting z/OSMF API endpoint that will get called in this tool is:</p>
+<p><code>https://&lt;public-ip&gt;:10443/zosmf/restconsoles/consoles/defcn</code></p>
+<p>Within the body of the API call, <code>cmd</code> gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass <code>D A,L</code> as the command to execute, as an example. </p>
+<p>Then click on the <code>executeTsoCommand</code> file and take time to review its content as well. </p>
+</li>
+<li>
+<p>Import the <code>sendOperatorCommand</code> tool by running the following command from your VS Code Terminal command-prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>orchestrate tools import -k python -f tsoPython.py --app-id zosmf 
+</span></code></pre></div>
+<p>After issuing the command, you should see a message similar to what's shown below:</p>
+<p>That indicates that the <code>sendOperatorCommand</code> tool was imported successfully. </p>
+</li>
+<li>
+<p>Similarly, import the <code>executeTsoCommand</code> tool by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>orchestrate tools import -k python -f operatorPython.py --app-id zosmf
+</span></code></pre></div>
+<p>Confirm that this tool was also imported successfully. </p>
+</li>
+<li>
+<p>Once you’ve successfully imported both tools, verify they’re now active by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>orchestrate tools list
+</span></code></pre></div>
+<p>This should output a table similar to below showing all your imported tools.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="_attachments/tools6.png" data-desc-position="bottom"><img alt="" src="_attachments/tools6.png"></a></p>
+</li>
+</ol></div>
 
 
 
