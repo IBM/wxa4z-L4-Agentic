@@ -4666,19 +4666,15 @@
 <h3 id="techzone-zdt-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER<a class="headerlink" href="#techzone-zdt-set-new-passphrase-for-ibmuser" title="Permanent link">#</a></h3>
 <p>Next, set a new zOS Passphrase for your <strong>IBMUSER</strong> zOS user by running the following command. This is the RACF Passphrase that you will use to log into TSO as the IBMUSER ID. </p>
 <p>Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string <code>YOUR PASSWORD PHRASE</code> :</p>
-<div class="highlight"><pre><span></span><code>```
-tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
-```
-
-??? Tip "Syntax rules for RACF Password Phrases (below):
-
-    - minimum length: 9 characters
-    - Must contain at least 2 alphabetic characters (A - Z, a - z)
-    - Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)
-    - Must not contain more than 2 consecutive characters that are identical
-
-**Note:** *if you typed the command yourself, be sure to include the single-quotes before and after the password.* ***Record the passphrase as it will be needed later.***
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#techzone-zdt-__codelineno-1-1"></a>tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
+</span></code></pre></div>
+<p>??? Tip "Syntax rules for RACF Password Phrases (below):</p>
+<div class="highlight"><pre><span></span><code>- minimum length: 9 characters
+- Must contain at least 2 alphabetic characters (A - Z, a - z)
+- Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)
+- Must not contain more than 2 consecutive characters that are identical
 </code></pre></div>
+<p><strong>Note:</strong> <em>if you typed the command yourself, be sure to include the single-quotes before and after the password.</em> <strong><em>Record the passphrase as it will be needed later.</em></strong></p>
 <p>Afterwards, you should see something similar to the following:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt6.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt6.png"></a></p>
 <h3 id="techzone-zdt-accessing-tso-session">Accessing TSO Session<a class="headerlink" href="#techzone-zdt-accessing-tso-session" title="Permanent link">#</a></h3>
