@@ -6,7 +6,7 @@ The third lab environment you will use is the ***Z Dev & Test (zD&T)*** environm
 
 The image comes pre-configured with a subset of middleware and products available, including: 
 
-- Db2 v13
+- Db2 v13 
 - IMS v15
 - JES
 - z/OS USS 

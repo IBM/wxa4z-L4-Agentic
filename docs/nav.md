@@ -3,7 +3,7 @@
 * TechZone Environment Reservations and Steps to Access
     * [watsonx Orchestrate](techzone/orchestrate.md)
     * [Single Node OpenShift cluster](techzone/sno.md)
-    * [Ansible Automation Platform(AAP) & z/OS](techzone/aap-zos.md)
+    * [Z Dev & Test (zD&T) environment for z/OS](techzone/zdt.md)
 * Prepare watsonx.ai services
     * [Overview](./watsonx-ai/overview.md)
     * [Create watsonx.ai Project](./watsonx-ai/project.md)
