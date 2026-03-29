@@ -4673,6 +4673,10 @@
 </span></code></pre></div>
 <p>Once SSH'ed in successfully, you should see something similar to below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/zdt5.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/zdt5.png"></a></p>
+<div class="admonition warning">
+<p class="admonition-title">If you cannot SSH in...</p>
+<p>If you have issues SSH'ing into z/OS UNIX or face a authentication key issue, please wait 5-10 additional minutes before trying, as there are automation scripts being run in the background to enable access. </p>
+</div>
 </li>
 </ol>
 <h3 id="techzone-zdt-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER<a class="headerlink" href="#techzone-zdt-set-new-passphrase-for-ibmuser" title="Permanent link">#</a></h3>
@@ -5390,8 +5394,8 @@ secure authentication key of your choosing (i.e. a password). </p>
 <p>Set the <code>&lt;value&gt;</code> for <code>ZOSMF_USERNAME</code> to <code>IBMUSER</code>.</p>
 </li>
 <li>
-<p>Set the <code>&lt;value&gt;</code> for <code>ZOSMF_PASSWORD</code> to a unique password/passphrase value that the <strong>IBMUSER</strong> ID uses to log into TSO. </p>
-<p>To set your new Password value, follow the steps outlined <strong><em><a href="#agentdeploy-upgrade-agent-secrets-data-set-your-zosmf_password-variable">here</a></em></strong>. </p>
+<p>Set the <code>&lt;value&gt;</code> for <code>ZOSMF_PASSWORD</code> to a unique password/passphrase value that the <strong>IBMUSER</strong> ID uses to log into TSO and z/OSMF.</p>
+<p>To set your new Password value, follow the steps outlined <strong><em><a href="#techzone-zdt-set-new-passphrase-for-ibmuser">here</a></em></strong>. </p>
 </li>
 <li>
 <p>Set the <code>&lt;value&gt;</code> for <code>REDIS_PASSWORD</code> to a unique password of your choice.</p>
