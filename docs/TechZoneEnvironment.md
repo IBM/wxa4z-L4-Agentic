@@ -3,11 +3,11 @@ To enable sellers to learn how to deliver client pilots of {{offering.name}}, th
 
 - **Watsonx Assistant for Z lab – watsonx Orchestrate**: provides a dedicated environment on IBM Cloud where you can create and configure the assistant, set up conversational search, import skills, and configure actions.
 
-- **Ansible Automation Platform (AAP) & z/OS**: provides a pre-configured instance of AAP and Wazi z/OS. This environment includes Ansible playbooks, which you can import as skills within watsonx Orchestrate and connect to your assistant. Preinstalled templates for various use cases are also available (covered in later sections). Learn more about AAP <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">here</a>. Learn more about Wazi, <a href="https://www.ibm.com/cloud/wazi-as-a-service" target="_blank">here</a>.
+- **z/OS Dev & Test Image**: provides a templated z/OS image emulated on IBM Cloud (x86) which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. 
 
 - **Single Node OpenShift (OCP-V on IBM Cloud)**: provisions a single-node Red Hat OpenShift cluster (SNO) on IBM Cloud. This cluster installs a dedicated instance of [OpenSearch](https://opensearch.org/) for Watson Assistant for Z, enabling ingestion of client-supplied documents.- 
 
-!!! Warning "All activities in this lab guide are required."
+!!! Warning "All activities in this lab guide are required"
 
     To earn the IBM watsonx Assistant for Z Technical Sales Advanced badge and complete the Level 4 learning plan, you must provision all three ITZ environments and finish every section in the lab guide. Disregard any statements in the ITZ collection that suggest optional environments or tasks.
 
@@ -22,7 +22,7 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     <a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a>
     
-    <a href="{{itz.aapEnv}}" target="_blank">Ansible Automation Platform (AAP) & z/OS - reservation page</a>
+    <a href="https://techzone.ibm.com/my/reservations/create/69c99ef33dc0863bd858581c" target="_blank">z/OS Dev & Test Image - reservation page</a>
     
     <a href="{{itz.snoEnv}}" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a>
 
@@ -59,23 +59,37 @@ Follow the instructions to create new reservation requests, extend the reservati
 
     ![](_attachments/TZ2.png)
 
-    In addition to the preceding fields, the reservation for the **Single Node OpenShift (OCP-V on IBM Cloud)** has these additional fields:
-
-    **h**. OCP/Kubernetes cluster network: leave the default setting of **10.128.0.0/14**.
-
-    **i**. Enable FIPS security: leave the default setting of **No**. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.
-
-    **j**. Master single node flavor: select **32 vCPU x 128 GB - 300 GB ephemeral storage**.
-
-    **k**. OpenShift version: select **4.18**.
-
-    **l**. OCP/Kubernetes service network: leave the default setting of **172.30.0.0/16**.
     
-    **m**. Accept the IBM Technology Zone's terms and conditions and security policies.
+    !!! Tip "Additional fields for the **Single Node OpenShift (OCP-V on IBM Cloud)**"
 
-    **n**. Click **Submit**.
+        In addition to the preceding fields, the reservation for the **Single Node OpenShift (OCP-V on IBM Cloud)** has these additional fields:
 
-    ![](_attachments/TZ3.png)
+        **h**. OCP/Kubernetes cluster network: leave the default setting of **10.128.0.0/14**.
+
+        **i**. Enable FIPS security: leave the default setting of **No**. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.
+
+        **j**. Master single node flavor: select **32 vCPU x 128 GB - 300 GB ephemeral storage**.
+
+        **k**. OpenShift version: select **4.18**.
+
+        **l**. OCP/Kubernetes service network: leave the default setting of **172.30.0.0/16**.
+    
+        **m**. Accept the IBM Technology Zone's terms and conditions and security policies.
+
+        **n**. Click **Submit**.
+
+        ![](_attachments/TZ3.png)
+
+    <div style="page-break-after: always;"></div>
+
+
+    !!! Tip "Additional fields for the **z/OS Dev & Test Image**"
+
+        The reservation for the **z/OS Dev & Test Image** also has these additional fields:
+
+        - **DIY unformatted secondary disk size**: keep the default or a different size for the secondary disk volume
+        - **VM Profile**: *you must select the **8 vCPU | 32 GiB** option* (the default will not work)
+
 
 <div style="page-break-after: always;"></div>
 
