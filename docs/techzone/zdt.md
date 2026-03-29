@@ -68,6 +68,10 @@ In order to set a new **Passphrase** for your **IBMUSER** zOS user, you will fir
 
     ![](_attachments/zdt5.png)
 
+    !!! Warning "If you cannot SSH in..."
+
+        If you have issues SSH'ing into z/OS UNIX or face a authentication key issue, please wait 5-10 additional minutes before trying, as there are automation scripts being run in the background to enable access. 
+
 ### Set new Passphrase for IBMUSER
 
 Next, set a new zOS Passphrase for your **IBMUSER** zOS user by running the following command. This is the RACF Passphrase that you will use to log into TSO as the IBMUSER ID. 

@@ -84,9 +84,9 @@ The **z/OS Topology Service** serves as a central repository for managing the to
 2. Set the `<value>` for `ZOSMF_USERNAME` to `IBMUSER`.
 
 
-3. Set the `<value>` for `ZOSMF_PASSWORD` to a unique password/passphrase value that the **IBMUSER** ID uses to log into TSO. 
+3. Set the `<value>` for `ZOSMF_PASSWORD` to a unique password/passphrase value that the **IBMUSER** ID uses to log into TSO and z/OSMF.
 
-    To set your new Password value, follow the steps outlined ***[here](../agentdeploy/upgrade-agent/secrets-data.md#set-your-zosmf_password-variable)***. 
+    To set your new Password value, follow the steps outlined ***[here](../techzone/zdt.md#set-new-passphrase-for-ibmuser)***. 
 
 
 4. Set the `<value>` for `REDIS_PASSWORD` to a unique password of your choice.
