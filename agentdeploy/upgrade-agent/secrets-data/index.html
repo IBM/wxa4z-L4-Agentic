@@ -3141,70 +3141,10 @@
 <li><code>WRAPPER_USERNAME: "admin"</code></li>
 </ul>
 <h3 id="set-your-zosmf_endpoint-variable">Set your <code>ZOSMF_ENDPOINT</code> variable<a class="headerlink" href="#set-your-zosmf_endpoint-variable" title="Permanent link">#</a></h3>
-<p>Now, you will set the <code>ZOSMF_ENDPOINT</code> variable to the unique z/OSMF endpoint URL of your Wazi z/OS environment. This can be gathered with the following steps. </p>
-<ol>
-<li>
-<p>Locate and record the value of your <strong><em>Ansible Automation Platform UI</em></strong> URL found in your environment details, i.e. https://itzvsi-aap-ebds04j.vsi.techzone.ibm.com</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade1.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade1.png"></a></p>
-</li>
-<li>
-<p>Within your copied URL, change the <strong><code>aap</code></strong> string to <strong><code>zos</code></strong>. In the above example, it would then look like the following:</p>
-<p>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com</p>
-</li>
-<li>
-<p>And finally, append <strong><code>:10443/zosmf</code></strong> to the end of the string. The result should look similar to the following:</p>
-<p>https://itzvsi-zos-ebds04j.vsi.techzone.ibm.com:10443/zosmf</p>
-<p>This would be the final value to set for the <code>ZOSMF_ENDPOINT</code> variable (<em><strong>note</strong> - your URL will be different and is dependent on your Lab environment</em>)</p>
-</li>
-</ol>
+<p>Now you will set the <code>ZOSMF_ENDPOINT</code> variable to the unique z/OSMF endpoint URL of your <strong>zD&amp;T</strong> image environment. This can be gathered by following the steps in <strong><em>Section <a href="../../../techzone/zdt/#accessing-zosmf-web-ui">Accessing z/OSMF Web-UI</a></em></strong>.</p>
 <h3 id="set-your-zosmf_password-variable">Set your <code>ZOSMF_PASSWORD</code> variable<a class="headerlink" href="#set-your-zosmf_password-variable" title="Permanent link">#</a></h3>
 <p>Set the <code>ZOSMF_PASSWORD</code> variable to a new RACF Password/Passphrase that the IBMUSER ID uses to log into TSO. </p>
-<p>Follow the below steps to reset your RACF passphrase for the IBMUSER user and set the value to the <code>ZOSMF_PASSWORD</code> variable.</p>
-<ol>
-<li>
-<p>Open and log into the <strong>Ansible Automation Platform (AAP) web console</strong> using the same <strong>AAP UI URL</strong> referenced above in your Lab env details.</p>
-</li>
-<li>
-<p>Click <strong>templates</strong> under the <strong>Resources</strong> section. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade2.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade2.png"></a></p>
-</li>
-<li>
-<p>Click the <strong>launch</strong> icon for the <code>z/OS TSO Command(s)</code> template.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade3.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade3.png"></a></p>
-</li>
-<li>
-<p>Replace the default command with the command that follows, and substituting a <em>passphrase</em> of your choice for the string <strong><code>YOUR_PASSWORD_PHRASE</code></strong>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ALTUSER IBMUSER PHRASE('YOUR_PASSWORD_PHRASE') NOEXPIRE RESUME
-</span></code></pre></div>
-<details class="tip">
-<summary>Syntax rules for RACF Password Phrases (below)</summary>
-<ul>
-<li>minimum length: 9 characters</li>
-<li>Must contain at least 2 alphabetic characters (A - Z, a - z)</li>
-<li>Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)</li>
-<li>Must not contain more than 2 consecutive characters that are identical</li>
-</ul>
-</details>
-<p><strong>Note:</strong> <em>if you typed the command yourself, be sure to include the single-quotes before and after the password.</em> <strong><em>Record the password as it will be needed later.</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade4.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade4.png"></a></p>
-</li>
-<li>
-<p>Click <strong>Launch</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade5.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade5.png"></a></p>
-</li>
-<li>
-<p>Verify that the job is <strong>Successful</strong> by locating the message <code>"failed": false</code> in the job output. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade6.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade6.png"></a></p>
-</li>
-<li>
-<p>Verify that you can log into z/OSMF in a new browser tab. Navigate to z/OSMF using the <code>ZOSMF_ENDPOINT</code> URL you previously recoreded and set in VS Code. </p>
-</li>
-<li>
-<p>Enter (<strong>a</strong>) <code>IBMUSER</code> for the z/OS USER ID, (<strong>b</strong>) the passphrase you just set for the z/OS PASSWORD, and then (<strong>c</strong>) click <strong>LOG IN</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/upgrade7.png" data-desc-position="bottom"><img alt="" src="../_attachments/upgrade7.png"></a></p>
-<p>Once successfully logged in, make sure to set the <code>ZOSMF_PASSWORD</code> variable in <code>values.yaml</code> to the passphrase you entered.</p>
-</li>
-</ol>
+<p>If you haven't already, create a new <strong>RACF Passphrase</strong> for your <code>IBMUSER</code> ID and set it to the value for your <code>ZOSMF_PASSWORD</code> variable. This can be done by following the steps in <strong><em>Section <a href="../../../techzone/zdt/#set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER</a></em></strong>.</p>
 <h3 id="set-your-wrapper_password-variable">Set your <code>WRAPPER_PASSWORD</code> variable<a class="headerlink" href="#set-your-wrapper_password-variable" title="Permanent link">#</a></h3>
 <p>Set the <strong><code>WRAPPER_PASSWORD</code></strong> variable to the <code>&lt;WRAPPER_PASSWORD&gt;</code> value you set in your <strong>wrapper-creds.yaml</strong> file in Section <strong><em><a href="../../../zAssistantDeploy/deploy-secrets/">Deploy secrets for OpenSearch and Client Ingestion</a></em></strong>.</p>
 <h3 id="set-your-ingestion_password-variable">Set your <code>INGESTION_PASSWORD</code> variable<a class="headerlink" href="#set-your-ingestion_password-variable" title="Permanent link">#</a></h3>
