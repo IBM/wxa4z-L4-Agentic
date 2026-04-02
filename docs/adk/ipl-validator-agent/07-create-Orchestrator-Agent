@@ -1,0 +1,10 @@
+# Create Orchestrator Agent
+
+Now that you have your `IPL Validator Agent` created using the ADK, you will now create an **Orchestrator Agent** via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. 
+
+In this scenario, you will create a zOS Helper Agent that collaborates with:
+- the **zRAG Agent** which you previously deployed with watsonx Assistant for Z
+  - Purpsose: 
+
+
+you can start building your agent! Agent files are the core of your agent and are responsible for defining the behavior of your agent. Let’s create your first agent framework:

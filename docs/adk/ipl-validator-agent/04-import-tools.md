@@ -31,6 +31,8 @@ In this scenario, your ***IPL Validator Agent*** will be leveraging 2 different 
     - SEND - Send messages to users
     - PROFILE - Display or modify TSO profile
 
+***NOTE:*** *in your workspace you will also see a `db2Command.py` file. This will be used later by a new agent that you create, versus the IPL-Validator-Agent. You will also import that tool in this section, although won't be used by the current agent.*
+
 
 In this section, you will import the tool files within your workspace to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.
 
@@ -49,7 +51,7 @@ In this section, you will import the tool files within your workspace to create 
 
     The resulting z/OSMF API endpoint that will get called in this tool is:
     
-    `https://<public-ip>:10443/zosmf/restconsoles/consoles/defcn`
+    `https://<public-ip>:10443/zosmf/restconsoles/consoles/iserVS01`
 
     Within the body of the API call, `cmd` gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass `D A,L` as the command to execute, as an example. 
    
@@ -58,7 +60,7 @@ In this section, you will import the tool files within your workspace to create 
 2. Import the `sendOperatorCommand` tool by running the following command from your VS Code Terminal command-prompt:
    
     ```
-    orchestrate tools import -k python -f tsoPython.py --app-id zosmf 
+    orchestrate tools import -k python -f sendOperatorCommand.py --app-id zosmf 
     ```
 
     After issuing the command, you should see a message similar to what's shown below:
@@ -68,14 +70,19 @@ In this section, you will import the tool files within your workspace to create 
 3. Similarly, import the `executeTsoCommand` tool by running the following command:
    
     ```
-    orchestrate tools import -k python -f operatorPython.py --app-id zosmf
+    orchestrate tools import -k python -f executeTsoCommand.py --app-id zosmf
     ```
 
     Confirm that this tool was also imported successfully. 
 
 
+4. Finally, import the `db2Command` tool, which is a tool used for later, by running the following command:
+   
+    ```
+    orchestrate tools import -k python -f db2Command.py --app-id zosmf
+    ```
 
-4.  Once you’ve successfully imported both tools, verify they’re now active by running the following command:
+5.  Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:
     
     ```
     orchestrate tools list

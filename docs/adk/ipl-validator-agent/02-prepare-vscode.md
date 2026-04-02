@@ -25,8 +25,9 @@ For the following sections of the Lab, you will be using VS Code to build your a
 7. Once VS Code restarts, you should see the folder opened in the **Explorer** view, with the following files:
    
     - *zosmf_connection.yaml*
-    - *tsoPython.py*
-    - *operatorPython.py*
+    - *executeTsoCommand.py*
+    - *sendOperatorCommand.py*
+    - *db2Command.py*
     - *IPL-check-agent.yaml*
   
     ![](_attachments/prep2.png)

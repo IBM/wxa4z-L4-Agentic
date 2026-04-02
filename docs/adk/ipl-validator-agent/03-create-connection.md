@@ -75,7 +75,7 @@ Credentials hold the values used to authorize against external services. In the 
 
 *You will need these credentials for the following step.*
 
-1. To set your connection credentials, enter the following command into your VS Code Terminal and click **enter**, replacing `<your-passphrase>` with the value of the RACF Passphrase you set earlier for **IBMUSER**:
+1. To set your connection credentials for the **draft**, enter the following command into your VS Code Terminal and click **enter**, replacing `<your-passphrase>` with the value of the RACF Passphrase you set earlier for **IBMUSER**:
    
     ```
     orchestrate connections set-credentials --app-id zosmf --env draft --username IBMUSER --password '<your-passphrase>'
@@ -86,6 +86,8 @@ Credentials hold the values used to authorize against external services. In the 
     ```
     orchestrate connections set-credentials --app-id zosmf --env draft --username IBMUSER --password 'YOUR PASSWORD PHRASE'
     ```
+
+    Next, set your connection credentials for the **live** environment by issuing the same command as above, but replace `--env draft` with `--env live`. 
 
 
 2. You should see a `Credentials successfully set...` message as shown below:
