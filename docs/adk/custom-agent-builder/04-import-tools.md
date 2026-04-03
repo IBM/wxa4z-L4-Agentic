@@ -6,10 +6,9 @@ With the ADK, tools can be created either using OpenAPI specifications, or by us
 
 In this scenario, your ***IPL Validator Agent*** will be leveraging 2 different tools:
 
-
-- ***sendOperatorCommand***
+- ***operatorCommand***
     
-    This is a Python defined tool that allows the agent to issue MVS operator commands via z/OSMF Console API. The agent will be able to execute any operator command and receive synchronous command responses. Some examples of how it can be used include:
+    This is a Python defined tool that allows the agent to issue MVS operator commands via the z/OSMF Console API. The agent will be able to execute any operator command and receive synchronous command responses. Some examples of how it can be used include:
 
     - D A,L - Display active address spaces
     - D U,DASD - Display DASD usage
@@ -18,7 +17,7 @@ In this scenario, your ***IPL Validator Agent*** will be leveraging 2 different 
     - F jobname,command - Modify job command
 
 
-- ***executeTsoCommand***
+- ***tsoCommand***
 
     Another python defined tools that allows the agent to execute TSO commands via z/OSMF TSO/E Address Space Services API. The agent will be able to execute TSO commands on z/OS and retrieve the corresponding output from z/OS. Some examples of how it can be used include:        
     
@@ -31,17 +30,18 @@ In this scenario, your ***IPL Validator Agent*** will be leveraging 2 different 
     - SEND - Send messages to users
     - PROFILE - Display or modify TSO profile
 
-***NOTE:*** *in your workspace you will also see a `db2Command.py` file. This will be used later by a new agent that you create, versus the IPL-Validator-Agent. You will also import that tool in this section, although won't be used by the current agent.*
+!!! Tip "**What about db2Command.py?**"
 
+    In your workspace you will also see a `db2Command.py` file. This won't be used by the **IPL-validator** agent directly. But rather by a new agent that you will later create. While you will import the tool in this section, it won't be used immediately by the agent. 
 
 In this section, you will import the tool files within your workspace to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.
 
-1. Within VS Code, click on the `sendOperatorCommand.py` file. Take some time to review the contents. 
+1. Within VS Code, click on the `operatorCommand.py` file. Take some time to review the contents. 
 
     Specifically, note the following section:
 
     ```
-    get_status_url = urljoin(base_url, f'restconsoles/consoles/defcn')
+    get_status_url = urljoin(base_url, f'restconsoles/consoles/iserVS01')
     
     request_body = {
         "cmd": cmd,
@@ -55,22 +55,22 @@ In this section, you will import the tool files within your workspace to create 
 
     Within the body of the API call, `cmd` gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass `D A,L` as the command to execute, as an example. 
    
-    Then click on the `executeTsoCommand` file and take time to review its content as well. 
+    Then click on the `tsoCommand` file and take time to review its content as well. 
 
-2. Import the `sendOperatorCommand` tool by running the following command from your VS Code Terminal command-prompt:
+2. Import the `operatorCommand` tool by running the following command from your VS Code Terminal command-prompt:
    
     ```
-    orchestrate tools import -k python -f sendOperatorCommand.py --app-id zosmf 
+    orchestrate tools import -k python -f operatorCommand.py --app-id zosmf 
     ```
 
     After issuing the command, you should see a message similar to what's shown below:
 
-    That indicates that the `sendOperatorCommand` tool was imported successfully. 
+    That indicates that the `operatorCommand` tool was imported successfully. 
 
-3. Similarly, import the `executeTsoCommand` tool by running the following command:
+3. Similarly, import the `tsoCommand` tool by running the following command:
    
     ```
-    orchestrate tools import -k python -f executeTsoCommand.py --app-id zosmf
+    orchestrate tools import -k python -f tsoCommand.py --app-id zosmf
     ```
 
     Confirm that this tool was also imported successfully. 

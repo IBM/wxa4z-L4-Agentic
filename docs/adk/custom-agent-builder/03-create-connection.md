@@ -12,28 +12,27 @@ For this Lab, there is a `zosmf_connection.yaml` file pre-created for you. This 
 
 - `app-id: zosmf`
     - Unique identifier for the connection
-- `environments: draft`
+- `environments: draft | live`
     - Defines settings for the draft environment before you later deploy the agent
 - `kind: basic`
     - Connection type used to access the z/OSMF REST APIs (username & password)
 - `type: team`
     - the credentials will apply to all users
-- `sso: false`
-    - not required for 'basic' connections
 - `server_url: https://<public-ip>:10443/zosmf/`
     - The URL endpoint for your z/OSMF instance which ***you will modify in the following steps***
 
 1. Within VS Code, click on the `zosmf_connection.yaml` file to view the contents within VS Code.
    
-    ![](_attachments/conn1.png)
+    ![](_attachments/newconn1.png)
 
 2. Once the file is opened, edit the file to **replace** `<public-ip>` in the `server_url` variable with the **public IP of your zD&T environment reservation**. 
    
     **NOTE:** this can be found by following the steps in ***Section [Accessing the environment](../../techzone/zdt.md#accessing-the-environment)***.
    
+    This must be done for the `server_url` variable in both the `draft` AND `live` sections of the file. 
     *For example:*
 
-    ![](_attachments/conn2.png)
+    ![](_attachments/newconn2.png)
 
     ***Note:*** *the URL you paste will be unique and not the same as what's shown above. 
 
@@ -49,7 +48,7 @@ For this Lab, there is a `zosmf_connection.yaml` file pre-created for you. This 
 
 5. You should then receive a success message as shown below:
    
-    ![](_attachments/conn3.png)
+    ![](_attachments/newconn3.png)
 
 6. Now verify the connection was successfully created by running the following command in your VS Code Terminal session:
    
@@ -61,7 +60,7 @@ For this Lab, there is a `zosmf_connection.yaml` file pre-created for you. This 
    
     *Note: you may need to scroll to the top of the connections list*
 
-    ![](_attachments/conn4.png)
+    ![](_attachments/newconn4.png)
 
     You will next set your connection credentials in the following section.
 
@@ -78,21 +77,19 @@ Credentials hold the values used to authorize against external services. In the 
 1. To set your connection credentials for the **draft**, enter the following command into your VS Code Terminal and click **enter**, replacing `<your-passphrase>` with the value of the RACF Passphrase you set earlier for **IBMUSER**:
    
     ```
-    orchestrate connections set-credentials --app-id zosmf --env draft --username IBMUSER --password '<your-passphrase>'
+    orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password '<your-passphrase>'
     ```
 
     For example:
 
     ```
-    orchestrate connections set-credentials --app-id zosmf --env draft --username IBMUSER --password 'YOUR PASSWORD PHRASE'
+    orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password 'YOUR PASSWORD PHRASE'
     ```
 
     Next, set your connection credentials for the **live** environment by issuing the same command as above, but replace `--env draft` with `--env live`. 
 
 
-2. You should see a `Credentials successfully set...` message as shown below:
-   
-    ![](_attachments/conn5.png)
+2. You should see a `Credentials successfully set...` message.
 
 3. Now re-verify the connection with your newly set credentials by entering the following command in your command-line and clicking **enter**:
    
@@ -102,4 +99,4 @@ Credentials hold the values used to authorize against external services. In the 
 
 4. You should now see that your previous connection now has credentials set, as shown below:
    
-    ![](_attachments/conn6.png)
+    ![](_attachments/newconn5.png)
