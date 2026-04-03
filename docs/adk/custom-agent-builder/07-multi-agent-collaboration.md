@@ -248,7 +248,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
 
 The last step in the scenario is to enable collaboration with the previous **IPL Validator Agent** you imported using the ADK. 
 
-1. To accomplis this, navigate to the **Agents** section of the Agent builder UI and click on **Add agent**.
+1. To accomplish this, navigate to the **Agents** section of the Agent builder UI and click on **Add agent**.
 
     ![](_attachments/build26.png)
 
@@ -268,7 +268,7 @@ The last step in the scenario is to enable collaboration with the previous **IPL
     Navigate back to the **Instructions** field and append the following section to the existing set of Instructions:
 
     ```
-    When the user asks something about running an "IPL check" or a "health check", route the request to the "IPL_Validator" agent. Wait until the agent finishes all steps in the process, then display the EXACT and COMPLETE output from the agent back to the user. 
+    When the user asks something about running an "IPL check" or a "health check", route the request to the "IPL_Validator_Agent". Wait until the agent finishes all steps in the process, then display the EXACT and COMPLETE output from the agent back to the user.
     ```
 
 5. Once modified, test your agent by entering the following query:
@@ -279,20 +279,37 @@ The last step in the scenario is to enable collaboration with the previous **IPL
     
 6. When the agent completes the response, it should look something like what's shown below:
   
-    ![](_attachments/build28.png)
+    ![](_attachments/build29.png)
     
 
     It should look very similar to what was returned from the **IPL Validator Agent** in the previous section. 
 
 7. Click on **Show reasoning** to view the steps in the reasoning process. 
 
-8. Finally, you can optionally **Deploy** your agent to publish the **Live** version of the agent. This makes it available across your various channels. 
+## Publish your `z/OS Helper Agent`
+
+If you're satisfied with the behavior of your agent, you can now publish it to the **Live** version. This makes it available across all your deployed channels in order to make it accessible to end-users. 
+
+Follow the steps below to deploy your agent. 
+
+1. Within the Agent Builder UI of your **Draft** agent, click on **Deploy** in the top-right corner.
    
-    To do so, Click on **Deploy** in the top-right corner. 
+    ![](_attachments/build30.png)
 
-    ![](_attachments/build29.png)
-    
-    Then click....
+2. On the **Pre-deployment summary** page, click **Deploy** once more. 
+   
 
+    ![](_attachments/build31.png)
 
+3. After waiting a few seconds, you should then get a success message as shown below. Click on **Maybe later**:
+   
+    ![](_attachments/build32.png)
+
+4. Then navigate to your deployed agent by clicking on the hamburger menu and selecting **Chat**. 
+
+    ![](_attachments/build33.png)
+
+5. Finally, click on the **Agents** drop-down menu and select your deployed agent. 
+   
+    ![](_attachments/build34.png)
 

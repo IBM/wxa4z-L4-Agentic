@@ -1,4 +1,4 @@
-# Deploy the agent
+# Deploy the agent and test
 
 In the ADK, agents can use tools to perform complex tasks defined by users. Each agent has a name and description that is configured, helping users identify each agent they can use to perform certain actions.
 
