@@ -2759,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/intro/" class="md-nav__link">
+      <a href="../../adk/00-intro/" class="md-nav__link">
         
   
   
@@ -2787,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/setup/" class="md-nav__link">
+      <a href="../../adk/01-install-configure-adk/" class="md-nav__link">
         
   
   
@@ -2815,35 +2815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/config-aap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuring AAP and z/OS certificates
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../adk/prepare-vscode/" class="md-nav__link">
+      <a href="../../adk/02-prepare-vscode/" class="md-nav__link">
         
   
   
@@ -2871,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/connections/" class="md-nav__link">
+      <a href="../../adk/03-create-connection/" class="md-nav__link">
         
   
   
@@ -2899,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/tools/" class="md-nav__link">
+      <a href="../../adk/04-import-tools/" class="md-nav__link">
         
   
   
@@ -2927,14 +2899,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/deploy/" class="md-nav__link">
+      <a href="../../adk/05-import-agent/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Deploy the agent
+    Import and test the agent
   
 
     
@@ -2955,42 +2927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adk/publish/" class="md-nav__link">
+      <a href="../../adk/06-multi-agent-collaboration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Publish agent to 'Live' version
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../adk/testing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Test agent execution flow
+    Build 'multi-agent collaboration' agent
   
 
     
@@ -3078,6 +3022,7 @@
 <p>The third lab environment you will use is the <strong><em>Z Dev &amp; Test (zD&amp;T)</em></strong> environment for z/OS. This is an emulated z/OS image running on IBM Cloud which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. </p>
 <p>The image comes pre-configured with a subset of middleware and products available, including: </p>
 <ul>
+<li>CICS v6.2</li>
 <li>Db2 v13 </li>
 <li>IMS v15</li>
 <li>JES</li>
@@ -3087,7 +3032,7 @@
 </ul>
 <details class="tip">
 <summary>Middleware limitations</summary>
-<p>Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes CICS and MQ. Additional images will be made available in the future with these components available.</p>
+<p>Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes MQ. Additional images will be made available in the future with these components available.</p>
 </details>
 <p>The below section describes how to access your environment, change your RACF password and log into TSO and z/OSMF.</p>
 <h2 id="accessing-the-environment">Accessing the environment<a class="headerlink" href="#accessing-the-environment" title="Permanent link">#</a></h2>

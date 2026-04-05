@@ -2742,7 +2742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/intro/" class="md-nav__link">
+      <a href="../adk/00-intro/" class="md-nav__link">
         
   
   
@@ -2770,7 +2770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/setup/" class="md-nav__link">
+      <a href="../adk/01-install-configure-adk/" class="md-nav__link">
         
   
   
@@ -2798,35 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/config-aap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuring AAP and z/OS certificates
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../adk/prepare-vscode/" class="md-nav__link">
+      <a href="../adk/02-prepare-vscode/" class="md-nav__link">
         
   
   
@@ -2854,7 +2826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/connections/" class="md-nav__link">
+      <a href="../adk/03-create-connection/" class="md-nav__link">
         
   
   
@@ -2882,7 +2854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/tools/" class="md-nav__link">
+      <a href="../adk/04-import-tools/" class="md-nav__link">
         
   
   
@@ -2910,14 +2882,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/deploy/" class="md-nav__link">
+      <a href="../adk/05-import-agent/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Deploy the agent
+    Import and test the agent
   
 
     
@@ -2938,42 +2910,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../adk/publish/" class="md-nav__link">
+      <a href="../adk/06-multi-agent-collaboration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Publish agent to 'Live' version
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../adk/testing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Test agent execution flow
+    Build 'multi-agent collaboration' agent
   
 
     
@@ -3939,7 +3883,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adk-intro" class="md-nav__link">
+  <a href="#adk-00-intro" class="md-nav__link">
     <span class="md-ellipsis">
       
         Introduction to the Agent Development Kit (ADK)
@@ -3950,7 +3894,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-setup" class="md-nav__link">
+  <a href="#adk-01-install-configure-adk" class="md-nav__link">
     <span class="md-ellipsis">
       
         Installing and setting up ADK environment
@@ -3961,18 +3905,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-config-aap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring AAP and z/OS certificates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adk-prepare-vscode" class="md-nav__link">
+  <a href="#adk-02-prepare-vscode" class="md-nav__link">
     <span class="md-ellipsis">
       
         Preparing VS Code workspace
@@ -3983,7 +3916,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-connections" class="md-nav__link">
+  <a href="#adk-03-create-connection" class="md-nav__link">
     <span class="md-ellipsis">
       
         Creating a connection and configuring credentials
@@ -3994,7 +3927,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-tools" class="md-nav__link">
+  <a href="#adk-04-import-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
         Importing tools
@@ -4005,10 +3938,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-deploy" class="md-nav__link">
+  <a href="#adk-05-import-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deploy the agent
+        Import and test the agent
       
     </span>
   </a>
@@ -4016,21 +3949,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adk-publish" class="md-nav__link">
+  <a href="#adk-06-multi-agent-collaboration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Publish agent to 'Live' version
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adk-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Test agent execution flow
+        Build 'multi-agent collaboration' agent
       
     </span>
   </a>
@@ -4621,6 +4543,7 @@
 <p>The third lab environment you will use is the <strong><em>Z Dev &amp; Test (zD&amp;T)</em></strong> environment for z/OS. This is an emulated z/OS image running on IBM Cloud which is pre-configured to simulate a running z/oS environment for the purpose of demos and pilots. This environment will come into play when deploying various agents requiring back-end access to a z/OS environment - i.e. IBM Z Upgrade Agent and building your own custom agents. </p>
 <p>The image comes pre-configured with a subset of middleware and products available, including: </p>
 <ul>
+<li>CICS v6.2</li>
 <li>Db2 v13 </li>
 <li>IMS v15</li>
 <li>JES</li>
@@ -4630,7 +4553,7 @@
 </ul>
 <details class="tip">
 <summary>Middleware limitations</summary>
-<p>Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes CICS and MQ. Additional images will be made available in the future with these components available.</p>
+<p>Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes MQ. Additional images will be made available in the future with these components available.</p>
 </details>
 <p>The below section describes how to access your environment, change your RACF password and log into TSO and z/OSMF.</p>
 <h2 id="techzone-zdt-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-zdt-accessing-the-environment" title="Permanent link">#</a></h2>
@@ -5042,7 +4965,7 @@ that secret for later use. </p>
 <li>
 <p>Configuring the model gateway service requires the setup of the Agent Development Kit (ADK) to connect to your watsonx Orchestrate tenant. </p>
 <p>Follow the steps here to <strong>add</strong> and <strong>activate</strong> your environment: https://developer.watson-orchestrate.ibm.com/getting_started/installing#ibm-cloud</p>
-<p>Alternatively, follow the steps in Section <strong><em><a href="#adk-setup">Installing and setting up your ADK environment</a></em></strong>.</p>
+<p>Alternatively, follow the steps in Section <strong><em><a href="#watsonx-ai-adk-setup.md">Installing and setting up your ADK environment</a></em></strong>.</p>
 </li>
 <li>
 <p>Once your environment is activated, configure the credentials to the target IFM Instance in the ADK by running the following commands to create a new connection with the app-id <em>granite</em>:</p>
@@ -7990,13 +7913,13 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
                     <section class='print-page md-section' id='section-10' heading-number='10'>
                         <h1>Build your own agent using the Agent Development Kit (ADK)<a class='headerlink' href='#section-10' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="adk-intro" heading-number="10.1"><html><head>
+                    <section class="print-page" id="adk-00-intro" heading-number="10.1"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="introduction-to-the-agent-development-kit-adk">Introduction to the Agent Development Kit (ADK)<a class="headerlink" href="#adk-intro-introduction-to-the-agent-development-kit-adk" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="introduction-to-the-agent-development-kit-adk">Introduction to the Agent Development Kit (ADK)<a class="headerlink" href="#adk-00-intro-introduction-to-the-agent-development-kit-adk" title="Permanent link">#</a></h1>
 <p>Built on top of IBM watsonx Orchestrate, the watsonx Assistant for Z offering also enables flexible agent development for all users, empowering both business users and developers with a unified studio supporting low-code and pro-code development for key Z-specific use cases.</p>
 <p>The <strong>watsonx Orchestrate Agent Development Kit (ADK)</strong> is a set of tools designed to make it easy to build and deploy agents. It is packaged as a Python library and command-line tool that allows builders to configure agents that run on the platform. The ADK also supports integrating agents and tools built on other frameworks.</p>
 <p>The Agent Development Kit (ADK) is set of CLI utilities and python modules that helps you create agents and tools for watsonx Orchestrate. You can use these agents and tools across different watsonx Orchestrate offerings, including:</p>
@@ -8006,9 +7929,8 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <li>watsonx Orchestrate AWS</li>
 <li>watsonx Orchestrate Developer Edition</li>
 </ul>
-<h3 id="adk-intro-adk-components">ADK Components<a class="headerlink" href="#adk-intro-adk-components" title="Permanent link">#</a></h3>
+<h3 id="adk-00-intro-adk-components">ADK Components<a class="headerlink" href="#adk-00-intro-adk-components" title="Permanent link">#</a></h3>
 <p>The ADK has a CLI. The CLI can streamline the process of building, testing, and importing agents and tools</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/adk1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/adk1.png"></a></p>
 <p>The ADK also provides a framework for developers to easily define new tools and agents programmatically.</p>
 <ol>
 <li>
@@ -8022,26 +7944,26 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 </ol>
 <p>For more information on the ADK, reference the ADK documentation <strong><a href="https://developer.watson-orchestrate.ibm.com/" target="_blank">here</a></strong>.</p>
-<h3 id="adk-intro-lab-flow">Lab Flow<a class="headerlink" href="#adk-intro-lab-flow" title="Permanent link">#</a></h3>
-<p>For this Lab scenario, you are building an agent augmented with tools for calling Ansible playbooks that will help someone like a mainframe Security Administrator (SA) verify that their critical security certificates are up to date and reduce the risk of expired certificates disrupting their organization’s services.</p>
-<p>Secure Sockets Layer (SSL) certificates, often referred to as digital certificates, are used to establish an encrypted connection between communicating parties over a network. Certificate management is crucial for maintaining the security of a company’s z/OS environment. The SA has not performed the tasks to manage and renew a certificate in some time. The SA recalls that there are many steps that are required on z/OS and various RACF commands that need to be run to renew a certificate. Rather than going to their senior SA for assistance, demonstrate how using watsonx Assistant for Z can help the SA automate the certificate renewal process via a dedicated AI Agent.</p>
-<p>This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product. In this section, you will build a z/OS Certificate Agent for managing z/OS certificates and automating certificate renewal for expiring certificates.</p>
-<p>The tasks involved include:</p>
+<h3 id="adk-00-intro-lab-flow">Lab Flow<a class="headerlink" href="#adk-00-intro-lab-flow" title="Permanent link">#</a></h3>
+<p>For this Hands-on Agent Builder scenario, you will build multiple agents augmented with tools for calling various z/OSMF REST API endpoints to assist in verifying the status and health of different z/OS components. </p>
+<p>You will first build an <strong><em>IPL Validator Agent</em></strong> using the <strong>pro-code</strong> ADK approach which has two different pre-defined tools available to it. </p>
+<p>Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the <strong>low-code</strong> approach which will enable multi-agent collaboration. This agent, named the <strong>z/OS Helper Agent</strong>, will collaborate with the previously created <strong>IPL Validator Agent</strong> as well as the <strong>zRAG Agent</strong> which is a pre-built agent included in watsonx Assistant for Z and should've already been deployed in section <a href="#agentdeploy-execute-deploy.md">Execute agent deployment</a>. </p>
+<p>This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product.</p>
+<p>The steps you will execute include:</p>
 <ul>
 <li>Installing and setting up your local ADK environment</li>
-<li>Configuring your AAP environment</li>
 <li>Setting up VS Code workspace</li>
-<li>Configuring agent connection with credentials</li>
+<li>Configuring a connection and setting credentials</li>
 <li>Importing the provided tools</li>
-<li>Deploying the agent</li>
-<li>Accessing agents and testing execution</li>
-</ul></div></body></html></section><section class="print-page" id="adk-setup" heading-number="10.2"><html><head>
+<li>Importing and testing the <code>IPL_Validator_Agent</code></li>
+<li>Creating a custom <code>z/OS Helper Agent</code> which is an orchestrator agent with collaborator agents and additional tools</li>
+</ul></div></body></html></section><section class="print-page" id="adk-01-install-configure-adk" heading-number="10.2"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="installing-and-setting-up-your-adk-environment">Installing and setting up your ADK environment<a class="headerlink" href="#adk-setup-installing-and-setting-up-your-adk-environment" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="installing-and-setting-up-your-adk-environment">Installing and setting up your ADK environment<a class="headerlink" href="#adk-01-install-configure-adk-installing-and-setting-up-your-adk-environment" title="Permanent link">#</a></h1>
 <p>In this section you will install the <strong>ADK</strong> to your local workstation and configure your environment with your watsonx Orchestrate instance.</p>
 <ol>
 <li>
@@ -8050,7 +7972,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><code>orchestrate --version</code></p>
 <p><strong><em>If you do not have it installed, follow the instructions below:</em></strong></p>
 <p><strong>a.</strong> First, make sure you have <strong>Python 3.11</strong> or later installed on your local workstation. To check your current Python version, open up a terminal or command-prompt and run the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-setup-__codelineno-0-1"></a>python --version
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-01-install-configure-adk-__codelineno-0-1"></a>python --version
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title"><strong>If you have an older version...</strong></p>
@@ -8061,10 +7983,10 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </ul>
 </div>
 <p><strong>b.</strong> Once <strong>Python 3.11</strong> is installed, you can install the ADK by running the following command in your local command-line or Terminal:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-setup-__codelineno-1-1"></a>pip install --upgrade ibm-watsonx-orchestrate
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-01-install-configure-adk-__codelineno-1-1"></a>pip install --upgrade ibm-watsonx-orchestrate
 </span></code></pre></div>
 <p><strong>c.</strong> Verify it's installed by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-setup-__codelineno-2-1"></a>orchestrate --version
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-01-install-configure-adk-__codelineno-2-1"></a>orchestrate --version
 </span></code></pre></div>
 </li>
 <li>
@@ -8077,7 +7999,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Once you have your values for your <strong>watsonx Orchestrate Service Instance URL</strong> and <strong>IBM Cloud API key</strong>, <strong><em>activate your environment</em></strong> within the ADK. This can be done by running the following command in your local command-prompt or terminal window, replacing <code>&lt;env name&gt;</code> with any name you want to reference as your WxO environment, and replacing <code>&lt;your Service Instance URL&gt;</code> with your unique Service Instance URL from the preceding step:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-setup-__codelineno-3-1"></a>orchestrate env add -n &lt;env name&gt; -u &lt;your Service Instance URL&gt; --type ibm_iam --activate
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-01-install-configure-adk-__codelineno-3-1"></a>orchestrate env add -n &lt;env name&gt; -u &lt;your Service Instance URL&gt; --type ibm_iam --activate
 </span></code></pre></div>
 </li>
 <li>
@@ -8088,147 +8010,71 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Once activated, verify you’re successfully connected by running the following command to view existing agents in your environment:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-setup-__codelineno-4-1"></a>orchestrate agents list
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-01-install-configure-adk-__codelineno-4-1"></a>orchestrate agents list
 </span></code></pre></div>
 </li>
 </ol>
-<p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></body></html></section><section class="print-page" id="adk-config-aap" heading-number="10.3"><html><head>
+<p>For more details on the above process, see the <strong><a href="https://developer.watson-orchestrate.ibm.com/getting_started/installing" target="_blank">official ADK Developer Guide</a></strong>.</p></div></body></html></section><section class="print-page" id="adk-02-prepare-vscode" heading-number="10.3"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="configuring-aap-and-zos-certificates">Configuring AAP and z/OS certificates<a class="headerlink" href="#adk-config-aap-configuring-aap-and-zos-certificates" title="Permanent link">#</a></h1>
-<p>In this scenario, you will leverage 2 templates that have been pre-defined in your <strong>Ansible Automation Platform (AAP)</strong> environment. These 2 templates are:</p>
-<ul>
-<li><strong>z/OS Certs - List Cert</strong><ul>
-<li>Takes a certificate label as input and triggers an automation on z/OS to retrieve the certificate details, including the expiration date of the certificate</li>
-</ul>
-</li>
-<li><strong>z/OS Certs - Search and Renew</strong><ul>
-<li>Automates the renewal process for a particular certificate on z/OS</li>
-</ul>
-</li>
-</ul>
-<p>In order to setup the scenario to demonstrate the capabilities of the agent you will later create, you will now leverage AAP to create a z/OS SITE certificate that is soon to be expiring.</p>
-<ol>
-<li>
-<p>Log into AAP by accessing your <strong>Ansible Automation Platform UI</strong> URL, and logging in with your <strong>AAP User Name (For UI access)</strong> and <strong>AAP User Password</strong> combination.</p>
-<p><em>For help logging in, see </em><em>Section <a href="#techzone-aap-zos-accessing-the-environment">Accessing the environment</a></em><em>.</em></p>
-</li>
-<li>
-<p>Now you will create a <strong>certificate authority (CA)</strong> certificate to sign future SITE certificates. </p>
-<p>Click <strong>Templates</strong> under the <strong>Resources</strong> section.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap1.png"></a></p>
-</li>
-<li>
-<p>Click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap2.png"></a></p>
-</li>
-<li>
-<p>On the <strong>Survey</strong> screen, modify the <strong>Certificate Label</strong> and <strong>Type</strong> fields with the values that follow and then click Next.</p>
-<p><strong>a.</strong> <code>Certificate Label: TESTCA</code></p>
-<p><strong>b.</strong> <code>Type: CERTAUTH</code></p>
-<p><strong><em>Leave the defaults for all other fields.</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap3.png"></a></p>
-</li>
-<li>
-<p>Click <strong>Launch</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap4.png"></a></p>
-</li>
-<li>
-<p>Review the output of the job. In the output of the playbook, notice that a new keyring is created, a certificate is created, and the certificate is connected to the keyring.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap5.png"></a></p>
-<p><strong><em>You have now successfully created your CA certificate, labeled ‘TESTCA’, that will be used to sign your new SITE certificate.</em></strong></p>
-</li>
-<li>
-<p>Next, you will create an expiring certificate that uses the CA certificate that you just created.</p>
-<p>Return to the <strong>Templates</strong> tab and click the <strong>launch</strong> icon for the <strong>z/OS Certs - Create Cert</strong> template.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap6.png"></a></p>
-</li>
-<li>
-<p>On the <strong>Survey</strong> screen, modify the fields that follow with the values specified and then click <strong>Next</strong>.</p>
-<p><strong>a.</strong> <code>Certificate Label: DEMOCERT</code></p>
-<p><strong>b.</strong> <code>Type: SITE</code></p>
-<p><strong>c.</strong> <code>Sign with: CERTAUTH</code></p>
-<p><strong>d.</strong> <code>Sign Label: TESTCA</code></p>
-<p><strong>e.</strong> <code>Common Name: company.com</code></p>
-<p><strong>f.</strong> <code>Expiration date: &lt;enter a date that occurs within the next 30days. The date must be in the format YYYY-MM-DD&gt;</code></p>
-<p><strong><em>Leave the defaults for all other fields.</em></strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap7.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap7.png"></a></p>
-<p>Unlike the first certificate you created which was <em>self-signed</em>, this certificate will be signed by the local certificate authority that uses the CA you created.</p>
-</li>
-<li>
-<p>Click <strong>Launch</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap8.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap8.png"></a></p>
-</li>
-<li>
-<p>Verify that the job was successful and inspect the output of the job.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/aap9.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/aap9.png"></a></p>
-</li>
-</ol>
-<p><strong><em>You have now successfully created your ‘expiring’ SITE certificate, labeled ‘DEMOCERT’ which you will later use to demonstrate your agent’s capability of automating the certificate renewal process.</em></strong></p></div></body></html></section><section class="print-page" id="adk-prepare-vscode" heading-number="10.4"><html><head>
-        <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
-        })
-        </script>
-        </head><body><div><h1 id="setting-up-vs-code-workspace-with-agent-configuration-files">Setting up VS Code workspace with Agent configuration files<a class="headerlink" href="#adk-prepare-vscode-setting-up-vs-code-workspace-with-agent-configuration-files" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="setting-up-vs-code-workspace-with-agent-configuration-files">Setting up VS Code workspace with Agent configuration files<a class="headerlink" href="#adk-02-prepare-vscode-setting-up-vs-code-workspace-with-agent-configuration-files" title="Permanent link">#</a></h1>
 <p>For the following sections of the Lab, you will be using VS Code to build your agents using the ADK.</p>
 <p><strong><em>Before proceeding, ensure you have the VS Code application installed and accessible on your local workstation.</em></strong></p>
 <ol>
 <li>
-<p>Download the <strong>Agent configuration .zip file</strong> by accessing one of the box folders depending on your machine’s operating system:</p>
-<ul>
-<li><strong>Mac users:</strong> <a href="https://ibm.box.com/s/8gr5i1v0evadep36tlf3ez9yeg4xrkz2" target="_blank">https://ibm.box.com/s/8gr5i1v0evadep36tlf3ez9yeg4xrkz2</a></li>
-<li><strong>Windows users:</strong> <a href="https://ibm.box.com/s/6yja7kolhqhxfp0wz68evpzhd014cfhd" target="_blank">https://ibm.box.com/s/6yja7kolhqhxfp0wz68evpzhd014cfhd</a></li>
-</ul>
+<p>Download the <strong>Custom-Agent-Builder.zip file</strong> to your local machine: </p>
+<p><a href="https://ibm.box.com/s/bdve4upiaj9riu58xl78igbp30imwabb" target="_blank">https://ibm.box.com/s/bdve4upiaj9riu58xl78igbp30imwabb</a></p>
 </li>
 <li>
 <p>Click the <strong>download</strong> icon in the top-right corner of the browser to download the agent folder to your local workstation.</p>
 </li>
 <li>
-<p>Once downloaded as a <strong><em>.zip</em></strong> file, extract the <strong>ADK – Agent files</strong> folder in your Downloads directory.</p>
+<p>Once downloaded as a <strong><em>.zip</em></strong> file, extract the <strong>Custom-Agent-Builder</strong> .zip file in your Downloads directory.</p>
 </li>
 <li>
 <p>Open <strong>VS Code</strong> on your local workstation.</p>
 </li>
 <li>
-<p>Then open the extracted <strong><em>ADK – Agent files</em></strong> folder within your VS Code workspace by clicking <strong>File -&gt; Open Folder</strong>. </p>
+<p>Then open the extracted <strong><em>Custom-Agent-Builder</em></strong> folder within your VS Code workspace by clicking <strong>File -&gt; Open Folder</strong>. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/prep1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/prep1.png"></a></p>
 </li>
 <li>
-<p>Then select the extracted <strong><em>ADK – Agent files</em></strong> folder you previously downloaded and <strong>open it</strong>.</p>
+<p>Then select the extracted <strong><em>Custom-Agent-Builder</em></strong> folder you previously downloaded and <strong>open it</strong>.</p>
 </li>
 <li>
-<p>Once VS Code restarts, you should see the <strong><em>ADK – Agent files</em></strong> folder opened in the <strong>Explorer</strong> view, with various sub-folders:</p>
+<p>Once VS Code restarts, you should see the folder opened in the <strong>Explorer</strong> view, with the following files:</p>
 <ul>
-<li><em>Agents</em></li>
-<li><em>Connections</em></li>
-<li><em>Tools</em></li>
+<li><em><code>zosmf_connection.yaml</code></em></li>
+<li><em><code>tsoCommand.py</code></em></li>
+<li><em><code>operatorCommand.py</code></em></li>
+<li><em><code>db2Command.py</code></em></li>
+<li><em><code>IPL-validator-agent.yaml</code></em></li>
 </ul>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/prep2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/prep2.png"></a></p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>What are these files?</strong></p>
 <p><strong>Connections:</strong></p>
 <ul>
-<li><strong><em>connections.yaml:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to your external AAP environment for running Ansible jobs</li>
+<li><strong><em><code>zosmf_connection.yaml</code>:</em></strong> configuration file used to group your tools together as a common service and authenticate your tools to the back-end system. In this case, the connection is for your z/OSMF services hosted by the <strong>zD&amp;T environment</strong>.</li>
 </ul>
 <p><strong>Tools:</strong></p>
 <ul>
 <li>
-<p><strong><em>job_output_status_tool.py:</em></strong> a Python-defined tool that retrieves the ansible job status and output to display insights back to the user (i.e. certificate details and job completion).</p>
+<p><strong><em><code>tsoCommand.py</code>:</em></strong> a Python-defined tool that executes a TSO/E command via z/OSMF and returns the response back to the user. </p>
 </li>
 <li>
-<p><strong><em>list_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for retrieving certificate details. This tools calls the z/OS Certs – List Cert Ansible template in AAP.</p>
+<p><strong><em><code>operatorCommand.py</code>:</em></strong> a Python-defined tools that issues an MVS operator command through the z/OSMF REST console services, then returns the command response. </p>
 </li>
 <li>
-<p><strong><em>renew_cert_tool.json:</em></strong> an OpenAPI-defined tool that calls an Ansible API to run an Ansible job for renewing a certificate. This tools calls the z/OS Certs – Search and Renew Ansible template in AAP.</p>
+<p><strong><em><code>db2Command.py</code>:</em></strong> a Python-defined tool that calls a series of TSO/E REST APIs via z/OSMF to start a DSN TSO session and issue Db2 for z/OS commands via TSO. Then formats the buffered output before displaying the command output back to the user. </p>
 </li>
 </ul>
 <p><strong>Agents:</strong></p>
 <ul>
-<li><strong><em>zOS_Cert_Agent.yaml:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</li>
+<li><strong><em><code>IPL-validator-agent.yaml</code>:</em></strong> an Agent configuration file to define an agent, titled z/OS_Certificate_Agent which leverages the tools above to help users quickly identify certificate information and assist with the certificate renewal process for expiring certificates</li>
 </ul>
 </div>
 </li>
@@ -8236,420 +8082,580 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p>Finally, open a <strong>Terminal window</strong> within VS Code by clicking <strong>Terminal -&gt; New Terminal</strong>:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/prep3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/prep3.png"></a></p>
 </li>
-</ol></div></body></html></section><section class="print-page" id="adk-connections" heading-number="10.5"><html><head>
+</ol></div></body></html></section><section class="print-page" id="adk-03-create-connection" heading-number="10.4"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="creating-a-connection-and-configuring-credentials">Creating a connection and configuring credentials<a class="headerlink" href="#adk-connections-creating-a-connection-and-configuring-credentials" title="Permanent link">#</a></h1>
-<h3 id="adk-connections-creating-a-connection">Creating a connection<a class="headerlink" href="#adk-connections-creating-a-connection" title="Permanent link">#</a></h3>
+        </head><body><div><h1 id="creating-a-connection-and-configuring-credentials">Creating a connection and configuring credentials<a class="headerlink" href="#adk-03-create-connection-creating-a-connection-and-configuring-credentials" title="Permanent link">#</a></h1>
+<h3 id="adk-03-create-connection-creating-a-connection">Creating a connection<a class="headerlink" href="#adk-03-create-connection-creating-a-connection" title="Permanent link">#</a></h3>
 <p>Within watsonx Orchestrate and the ADK, a <strong>connection</strong> represents a dependency on an external service. It is a common feature needed in many parts of the ADK, such as tools and knowledge bases. Connections provide a way to associate various tools together and assigning credentials needed for the tools to access external services on behalf of the agent.</p>
-<p>In this Lab, the tools you will use are focused on calling APIs exposed by Ansible Automation Platform in order to retrieve certificate information and renew certificates. So before you create any tools, you must create a connection for the tools to use with the assigned credentials for AAP.</p>
+<p>In this Lab, the tools you will use are focused on calling <strong>z/OSMF APIs</strong> to your zD&amp;T zOS image in order to issue various diagnostic commands and retrieve system details. So before you import any tools, you must create a connection for the tools to use with the credentials for your zD&amp;T image.</p>
 <p>When using the ADK, connections are created using YAML specification files. More details on those specifications can be found <strong><em><a href="https://developer.watson-orchestrate.ibm.com/connections/build_connections" target="_blank">here</a></em></strong>.</p>
-<p>For this Lab, there is a <code>connections.yaml</code> file pre-created for you within the <code>Connections</code> sub-folder of your VS Code workspace. This file specifies the following:</p>
+<p>For this Lab, there is a <code>zosmf_connection.yaml</code> file pre-created for you. This file specifies the following:</p>
 <ul>
-<li><code>app-id: ansible</code><ul>
+<li><code>app-id: zosmf</code><ul>
 <li>Unique identifier for the connection</li>
 </ul>
 </li>
-<li><code>environments: draft</code><ul>
+<li><code>environments: draft | live</code><ul>
 <li>Defines settings for the draft environment before you later deploy the agent</li>
 </ul>
 </li>
 <li><code>kind: basic</code><ul>
-<li>Connection type used to access the AAP service (username &amp; password)</li>
+<li>Connection type used to access the z/OSMF REST APIs (username &amp; password)</li>
 </ul>
 </li>
 <li><code>type: team</code><ul>
 <li>the credentials will apply to all users</li>
 </ul>
 </li>
-<li><code>sso: false</code><ul>
-<li>not required for 'basic' connections</li>
-</ul>
-</li>
-<li><code>server_url: &lt;AAP UI URL&gt;</code><ul>
-<li>The URL of your AAP instance which <strong><em>you will replace in the following steps</em></strong></li>
+<li><code>server_url: https://&lt;public-ip&gt;:10443/zosmf/</code><ul>
+<li>The URL endpoint for your z/OSMF instance which <strong><em>you will modify in the following steps</em></strong></li>
 </ul>
 </li>
 </ul>
 <ol>
 <li>
-<p>Within VS Code, click on the <code>connections.yaml</code> file in the <em>Connections</em> sub-folder to view the contents within VS Code.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn1.png"></a></p>
+<p>Within VS Code, click on the <code>zosmf_connection.yaml</code> file to view the contents within VS Code.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn1.png"></a></p>
 </li>
 <li>
-<p>Once the file is opened, edit the file to <strong>replace</strong> <code>&lt;AAP UI URL&gt;</code> with the URL of your AAP environment that you recorded earlier.</p>
-<p><em>For example:</em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn2.png"></a></p>
+<p>Once the file is opened, edit the file to <strong>replace</strong> <code>&lt;public-ip&gt;</code> in the <code>server_url</code> variable with the <strong>public IP of your zD&amp;T environment reservation</strong>. </p>
+<p><strong>NOTE:</strong> this can be found by following the steps in <strong><em>Section <a href="#techzone-zdt.md-accessing-the-environment">Accessing the environment</a></em></strong>.</p>
+<p>This must be done for the <code>server_url</code> variable in both the <code>draft</code> AND <code>live</code> sections of the file. 
+<em>For example:</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn2.png"></a></p>
 <p><strong><em>Note:</em></strong> *the URL you paste will be unique and not the same as what's shown above. </p>
 </li>
 <li>
 <p>Make sure to <strong>save</strong> the file after modifying it.</p>
 </li>
 <li>
-<p>Now you can import the connection to your ADK environment by. </p>
+<p>Now you can import the connection to your ADK environment.</p>
 <p>In the VS Code <strong>Terminal</strong> window, run the following command and then click <strong>enter</strong>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-connections-__codelineno-0-1"></a>orchestrate connections import --file Connections/connections.yaml
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-03-create-connection-__codelineno-0-1"></a>orchestrate connections import --file zosmf_connection.yaml
 </span></code></pre></div>
 </li>
 <li>
 <p>You should then receive a success message as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn3.png"></a></p>
 </li>
 <li>
 <p>Now verify the connection was successfully created by running the following command in your VS Code Terminal session:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-connections-__codelineno-1-1"></a>orchestrate connections list
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-03-create-connection-__codelineno-1-1"></a>orchestrate connections list
 </span></code></pre></div>
 </li>
 <li>
-<p>In the output of the command, notice that your new connection is listed with <em>app-id</em> <code>ansible</code> and that the Credentials have not yet been set (as shown below).</p>
+<p>In the output of the command, notice that your new connection is listed with <em>app-id</em> <code>zosmf</code> and that the Credentials have not yet been set (as shown below).</p>
 <p><em>Note: you may need to scroll to the top of the connections list</em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn4.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn4.png"></a></p>
 <p>You will next set your connection credentials in the following section.</p>
 </li>
 </ol>
-<h3 id="adk-connections-setting-your-connection-credentials">Setting your connection credentials<a class="headerlink" href="#adk-connections-setting-your-connection-credentials" title="Permanent link">#</a></h3>
-<p>You will now set connection credentials to later authenticate tools to access your external AAP environment and automate tasks.</p>
-<p>Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used to login to AAP).</p>
-<p><strong>ACTION:</strong> Take note of and record the values of your <code>AAP User Name (for UI access)</code> and <code>AAP User Password</code> used to log into your AAP environment's web console. For a reminder on how to retrieve these values, you can reference <strong><em>Section <a href="#techzone-aap-zos-accessing-the-environment">Accessing the environment</a></em></strong>. </p>
+<h3 id="adk-03-create-connection-setting-your-connection-credentials">Setting your connection credentials<a class="headerlink" href="#adk-03-create-connection-setting-your-connection-credentials" title="Permanent link">#</a></h3>
+<p>You will now set connection credentials to later authenticate tools to access your environment's z/OSMF APIs.</p>
+<p>Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used by the z/OS <code>IBMUSER</code> ID).</p>
+<p><strong>ACTION:</strong> Record/relocate the RACF Passphrase you set for <strong>IBMUSER</strong> in <strong><em>Section <a href="#techzone-zdt.md-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER</a></em></strong>.</p>
 <p><em>You will need these credentials for the following step.</em></p>
 <ol>
 <li>
-<p>Set an environment variable for your <code>AAP User Password</code> value by running the below command (depending on your operating system):</p>
-<p><strong><em>MacOS Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-connections-__codelineno-2-1"></a>export aap_password="&lt;your AAP User Password&gt;"
+<p>To set your connection credentials for the <strong>draft</strong>, enter the following command into your VS Code Terminal and click <strong>enter</strong>, replacing <code>&lt;your-passphrase&gt;</code> with the value of the RACF Passphrase you set earlier for <strong>IBMUSER</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-03-create-connection-__codelineno-2-1"></a>orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password '&lt;your-passphrase&gt;'
 </span></code></pre></div>
-<p><strong><em>Windows Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-connections-__codelineno-3-1"></a>set aap_password="&lt;your AAP User Password&gt;"
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-03-create-connection-__codelineno-3-1"></a>orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password 'YOUR PASSWORD PHRASE'
 </span></code></pre></div>
+<p>Next, set your connection credentials for the <strong>live</strong> environment by issuing the same command as above, but replace <code>--env draft</code> with <code>--env live</code>. </p>
 </li>
 <li>
-<p>To set your connection credentials, copy and paste the following command into your VS Code Terminal session and click <strong>enter</strong>:</p>
-<p><strong><em>MacOS Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-connections-__codelineno-4-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password $aap_password
-</span></code></pre></div>
-<p><strong><em>Windows Users:</em></strong>
-</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#adk-connections-__codelineno-5-1"></a>orchestrate connections set-credentials --app-id ansible --env draft --username admin --password %aap_password%
-</span></code></pre></div>
-</li>
-<li>
-<p>You should see a <code>Credentials successfully set...</code> message as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn5.png"></a></p>
+<p>You should see a <code>Credentials successfully set...</code> message.</p>
 </li>
 <li>
 <p>Now re-verify the connection with your newly set credentials by entering the following command in your command-line and clicking <strong>enter</strong>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#adk-connections-__codelineno-6-1"></a>orchestrate connections list
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-03-create-connection-__codelineno-4-1"></a>orchestrate connections list
 </span></code></pre></div>
 </li>
 <li>
 <p>You should now see that your previous connection now has credentials set, as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/conn6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/conn6.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn5.png"></a></p>
 </li>
-</ol></div></body></html></section><section class="print-page" id="adk-tools" heading-number="10.6"><html><head>
+</ol></div></body></html></section><section class="print-page" id="adk-04-import-tools" heading-number="10.5"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#adk-tools-importing-tools" title="Permanent link">#</a></h1>
-<p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of Ansible where the tools must authenticate to AAP before calling an API.</p>
-<p>With the ADK, tools can be created either using OpenAPI specifications, or by using a Python program.</p>
-<p>In this scenario, your <strong><em>zOS Certificate Agent</em></strong> will be leveraging 3 different tools:</p>
+        </head><body><div><h1 id="importing-tools">Importing tools<a class="headerlink" href="#adk-04-import-tools-importing-tools" title="Permanent link">#</a></h1>
+<p>Tools are essential components of agents, enabling them to perform actions such as querying data, creating documents, or executing jobs on behalf of user. Tools often require a connection to work properly, i.e. in the case of z/OSMF where the tools must authenticate before calling an API.</p>
+<p>With the ADK, tools can be created either using OpenAPI specifications, or by using Python scripts. This section will be focused on using Python tools.</p>
+<p>In this scenario, your <strong><em>IPL Validator Agent</em></strong> will be leveraging 2 different tools:</p>
 <ul>
 <li>
-<p><strong><em>get_cert</em></strong></p>
+<p><strong><em>operatorCommand</em></strong></p>
+<p>This is a Python defined tool that allows the agent to issue MVS operator commands via the z/OSMF Console API. The agent will be able to execute any operator command and receive synchronous command responses. Some examples of how it can be used include:</p>
 <ul>
-<li>This is an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job for retrieving certificate details (depending on the inputs provided). This tool calls the <strong>z/OS Certs – List Cert</strong> Ansible template that you saw earlier</li>
+<li>D A,L - Display active address spaces</li>
+<li>D U,DASD - Display DASD usage</li>
+<li>D IPLINFO - Display IPL information</li>
+<li>D M=CPU - Display CPU configuration</li>
+<li>F jobname,command - Modify job command</li>
 </ul>
 </li>
 <li>
-<p><strong><em>renew_cert</em></strong></p>
+<p><strong><em>tsoCommand</em></strong></p>
+<p>Another python defined tools that allows the agent to execute TSO commands via z/OSMF TSO/E Address Space Services API. The agent will be able to execute TSO commands on z/OS and retrieve the corresponding output from z/OS. Some examples of how it can be used include:        </p>
 <ul>
-<li>This is also an OpenAPI defined tool that calls an Ansible API in order to run an Ansible job. When executed it runs the <strong>z/OS Certs – Search and Renew</strong> Ansible template in order to renew a certificate that may be expiring soon.</li>
+<li>TIME - Display current time and date</li>
+<li>LISTDS - List dataset information</li>
+<li>LISTCAT - List catalog entries</li>
+<li>ALLOCATE - Allocate datasets</li>
+<li>DELETE - Delete datasets</li>
+<li>RENAME - Rename datasets</li>
+<li>SEND - Send messages to users</li>
+<li>PROFILE - Display or modify TSO profile</li>
 </ul>
 </li>
-<li>
-<p><strong><em>status_output_tool</em></strong></p>
-<ul>
-<li>Unlike the first two tools, this tool is defined as a Python script that <strong>retrieves the ansible job status and output</strong> to display back to the user. It takes the job ID from one of the earlier job executions as input, and then passes information and logs of the job back to the agent to provide a response to the end-user.</li>
 </ul>
-</li>
-</ul>
-<p>In this section, you will import the tool files within your <code>Tools</code> sub-folder to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title"><strong>What about db2Command.py?</strong></p>
+<p>In your workspace you will also see a <code>db2Command.py</code> file. This won't be used by the <strong>IPL-validator</strong> agent directly. But rather by a new agent that you will later create. While you will import the tool in this section, it won't be used immediately by the agent. </p>
+</div>
+<p>In this section, you will import the tool files within your workspace to create your agent tools for later use. For more details on creating tools, see <a href="https://developer.watson-orchestrate.ibm.com/tools/overview" target="_blank">here</a>.</p>
 <ol>
 <li>
-<p>Within VS Code, click on the <code>list_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tools1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tools1.png"></a></p>
-</li>
-<li>
-<p>Scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (<em>paste it within the double-quotes</em>). It should look similar to the following:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tools2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tools2.png"></a></p>
-<p><em>Make sure to save the file before moving on</em></p>
-</li>
-<li>
-<p>Next, open up the <code>renew_cert_tool.json</code> file under the ‘Tools’ sub-folder to view the contents.</p>
-</li>
-<li>
-<p>Just as before, scroll to the bottom of the file and replace <code>&lt;AAP UI URL&gt;</code> with the <strong>AAP UI URL</strong> of your own environment (within double-quotes).</p>
-<p><em>Again, make sure to save the file before moving on.</em></p>
-</li>
-<li>
-<p>Import the first OpenAPI tool from the <code>list_cert_tool.json</code> file by running the following command from your VS Code Terminal command-prompt:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-tools-__codelineno-0-1"></a>orchestrate tools import -k openapi -f Tools/list_cert_tool.json --app-id ansible
+<p>Within VS Code, click on the <code>operatorCommand.py</code> file. Take some time to review the contents. </p>
+<p>Specifically, note the following section:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-04-import-tools-__codelineno-0-1"></a>get_status_url = urljoin(base_url, f'restconsoles/consoles/iserVS01')
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#adk-04-import-tools-__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#adk-04-import-tools-__codelineno-0-3"></a>request_body = {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#adk-04-import-tools-__codelineno-0-4"></a>    "cmd": cmd,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#adk-04-import-tools-__codelineno-0-5"></a>    "sol-key": "JES"
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#adk-04-import-tools-__codelineno-0-6"></a>}
 </span></code></pre></div>
+<p>The resulting z/OSMF API endpoint that will get called in this tool is:</p>
+<p><code>https://&lt;public-ip&gt;:10443/zosmf/restconsoles/consoles/iserVS01</code></p>
+<p>Within the body of the API call, <code>cmd</code> gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass <code>D A,L</code> as the command to execute, as an example. </p>
+<p>Then click on the <code>tsoCommand.py</code> file and take time to review its content as well. </p>
 </li>
 <li>
-<p>After issuing the command, you should see a message similar to what’s shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tools4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tools4.png"></a></p>
-<p>This indicates that your <code>get_cert</code> tool was imported successfully.</p>
-</li>
-<li>
-<p>Next, import the second OpenAPI tool from the <code>renew_cert_tool.json</code> file by running the following
-command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-tools-__codelineno-1-1"></a>orchestrate tools import -k openapi -f Tools/renew_cert_tool.json --app-id ansible
+<p>Import the <code>operatorCommand</code> tool by running the following command from your VS Code Terminal command-prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-04-import-tools-__codelineno-1-1"></a>orchestrate tools import -k python -f operatorCommand.py --app-id zosmf 
 </span></code></pre></div>
+<p>After issuing the command, you should see a message similar to what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tool1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tool1.png"></a></p>
+<p>That indicates that the <code>operatorCommand</code> tool was imported successfully. </p>
 </li>
 <li>
-<p>After issuing the command, you should get a message indicating that your <code>renew_cert</code> tool was imported successfully:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tools5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tools5.png"></a></p>
+<p>Similarly, import the <code>tsoCommand</code> tool by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-04-import-tools-__codelineno-2-1"></a>orchestrate tools import -k python -f tsoCommand.py --app-id zosmf
+</span></code></pre></div>
+<p>Confirm that this tool was also imported successfully. </p>
 </li>
 <li>
-<p>Finally, you will import the Python tool from the <code>job_output_status_tool.py</code> file. </p>
-<p>To do this, copy and paste the following command into your VS Code Terminal command-prompt and click enter.</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-tools-__codelineno-2-1"></a>orchestrate tools import -k python -f Tools/job_output_status_tool.py --app-id ansible
+<p>Finally, import the <code>db2Command</code> tool, which is a tool used for later, by running the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-04-import-tools-__codelineno-3-1"></a>orchestrate tools import -k python -f db2Command.py --app-id zosmf
 </span></code></pre></div>
 </li>
 <li>
 <p>Once you’ve successfully imported all 3 tools, verify they’re now active by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-tools-__codelineno-3-1"></a>orchestrate tools list
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-04-import-tools-__codelineno-4-1"></a>orchestrate tools list
 </span></code></pre></div>
 <p>This should output a table similar to below showing all your imported tools.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tools6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tools6.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/tool2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/tool2.png"></a></p>
 </li>
-</ol></div></body></html></section><section class="print-page" id="adk-deploy" heading-number="10.7"><html><head>
+</ol></div></body></html></section><section class="print-page" id="adk-05-import-agent" heading-number="10.6"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="deploy-the-agent">Deploy the agent<a class="headerlink" href="#adk-deploy-deploy-the-agent" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="deploy-the-agent-and-test">Deploy the agent and test<a class="headerlink" href="#adk-05-import-agent-deploy-the-agent-and-test" title="Permanent link">#</a></h1>
 <p>In the ADK, agents can use tools to perform complex tasks defined by users. Each agent has a name and description that is configured, helping users identify each agent they can use to perform certain actions.</p>
-<p>In this section, you will define an agent named <strong>zOS_Certificate_Agent</strong> that leverages the tools you have imported into the ADK environment to help users quickly identify certificate information and assist with the renewal process of expiring certificates, all from a single chat and using natural language.</p>
+<p>In this section, you will define an agent named <strong>IPL Validator Agent</strong> that leverages the tools you have imported into the ADK environment to help users verify the health of their z/OS system following an IPL. It will leverage two tools you've imported (<code>tsoCommand</code> and <code>operatorCommand</code>) to retrieve information about the system and provide a step-by-step summary back to the user.</p>
 <ol>
 <li>
-<p>Within VS Code, click on the <code>zOS_Cert_Agent.yaml</code> file under the ‘Agents’ sub-folder to view the contents.</p>
+<p>Within VS Code, click on the <code>IPL-validator-agent.yaml</code> file to view the contents.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/deploy1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/deploy1.png"></a></p>
 </li>
 <li>
 <p>You should then be able to see the agent definition as shown below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/deploy2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/deploy2.png"></a></p>
 <p><em>Lets go over each of the sections...</em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/deploy3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/deploy3.png"></a></p>
+<table>
+<thead>
+<tr>
+<th><strong>Section</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td>The kind of agent you wish to create. Options include <strong>native</strong> or <strong>external</strong> agents. In our case, we are using a <strong>native</strong> agent as we are building an agent from scratch and importing it directly into watsonx Orchestrate</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the agent. In our case it is <strong>IPL-Validator-Agent</strong></td>
+</tr>
+<tr>
+<td>llm</td>
+<td>The Large Language Model the agent will use for reasoning and decision making. In our case we're using the <code>groq/openai/gpt-oss-120b</code> model for efficiency and performance for demos. It's important to note that only <code>llama-3-3-70b instruct</code> and <code>granite-3-3-8b-instruct</code> are officially supported by watsonx Assistant for Z at this time.</td>
+</tr>
+<tr>
+<td>style</td>
+<td>The style of agent you wish to create, which dictates it's reasoning pattern. Options include <strong>default</strong>, <strong>react</strong>, or <strong>planner</strong>. In our case we are using the <strong>react</strong> style which is perfect for multi-step tasks and complex workflows. You can learn more about agent styles here.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Agent descriptions complement agent names by providing detailed information about their purpose, capabilities, and usage. A well-written description helps users understand the agent's role and potential applications.</td>
+</tr>
+<tr>
+<td>instructions</td>
+<td>Instructions are crucial for training agents to perform their tasks efficiently. When setting instructions, it's important to consider configuring the agent's persona, context, and reasoning for using tools.</td>
+</tr>
+<tr>
+<td>tools</td>
+<td>A list of tools that the agent should be able to use. In our case, we have specified 2 of the 3 tools you've imported - <strong>operatorCommand</strong> and <strong>tsoCommand</strong></td>
+</tr>
+<tr>
+<td>---</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>For further details on building agents with the ADK, you can reference the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/overview" target="_blank">here</a>.</p>
 </li>
 <li>
 <p>Finally, deploy the agent by issuing the following command within your VS Code Terminal command-line:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-deploy-__codelineno-0-1"></a>orchestrate agents import -f Agents/zOS_Cert_Agent.yaml
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-05-import-agent-__codelineno-0-1"></a>orchestrate agents import -f IPL-validator-agent.yaml
 </span></code></pre></div>
 </li>
 <li>
 <p>If executed correctly, you should see a message similar to below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/deploy4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/deploy4.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/deploy3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/deploy3.png"></a></p>
 </li>
 </ol>
-<p><strong>Congratulations! You’ve deployed your first agent using the ADK and are now ready to test the execution flow leveraging the previous certificates you’ve setup on z/OS using Ansible Automation Platform.</strong></p></div></body></html></section><section class="print-page" id="adk-publish" heading-number="10.8"><html><head>
-        <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
-        })
-        </script>
-        </head><body><div><h1 id="publish-agent-to-live-version">Publish agent to 'Live' version<a class="headerlink" href="#adk-publish-publish-agent-to-live-version" title="Permanent link">#</a></h1>
-<p>Before testing the agent's execution flow within the watsonx Orchestrate Chat, you will first access your agent (which should currently be the <code>Draft</code> version) and publish it to the <code>Live</code> version. </p>
+<p><strong>Congratulations! You’ve deployed your first agent using the ADK and are now ready to test the execution flow</strong>.</p>
+<h2 id="adk-05-import-agent-access-the-ipl_validator_agent">Access the <code>IPL_Validator_Agent</code><a class="headerlink" href="#adk-05-import-agent-access-the-ipl_validator_agent" title="Permanent link">#</a></h2>
+<p>In this section, you will access your imported agent within your watsonx Orchestrate environment and test the agent’s execution flow. The scenario follows the following flow below, and the agent uses its two available tools to validate that your zOS system's configuration and subsystems are what you'd expect after an IPL.</p>
 <ol>
 <li>
-<p>Navigate back to your <strong>watsonx Orchestrate</strong> environment UI so that you see the following:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub1.png"></a></p>
+<p>Firstly, access your watsonx Orchestrate environment by viewing the your IBM Cloud <strong>Resources</strong> under the <strong>AI / Machine Learning</strong> drop-down. Follow the instructions <a href="#techzone-orchestrate.md-accessing-the-environment">here</a> as reference. You should then see the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/wxo10.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/wxo10.png"></a></p>
 </li>
 <li>
-<p>Within the watsonx Orchestrate UI, navigate to the <strong>Agent Builder</strong> view by clicking on <strong>Build -&gt; Agent Builder</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub2.png"></a></p>
+<p>Once in the <strong>Resource</strong> list, click on the <strong>AI/Machine Learning</strong> drop-down and click on the name of your <strong>watsonx Orchestrate</strong> resource:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/serviceurl2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/serviceurl2.png"></a></p>
 </li>
 <li>
-<p>Once in the <strong>Agent Builder</strong>, click on your newly deployed agent, labeled <strong>zOS_Certificate_Agent</strong> as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub3.png"></a></p>
+<p>Click <strong>Launch watsonx Orchestrate</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/serviceurl3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/serviceurl3.png"></a></p>
 </li>
 <li>
-<p>Then you will be in the <strong><em>Preview</em></strong> mode of your agent as the agent was created in <strong>draft</strong> mode only (prior to deploying). </p>
-<p>In the Agent definition, scroll down and view the different settings that were automatically configured based on the definitions of the Agent yaml file you used.</p>
-<p>In the <strong>Tools</strong> section, verify that all 3 tools you deployed are present and available to the agent:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub4.png"></a></p>
-<p>Also notice the <strong>welcome message</strong> you configured in the <code>zOS_Cert_Agent.yaml</code> file:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub5.png"></a></p>
-</li>
-<li>
-<p>After verifying the agent definitions, you can deploy the agent in the “Live” environment. </p>
-<p>To do this, click <strong>Deploy</strong> at the top-right of the page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub6.png"></a></p>
-</li>
-<li>
-<p>In the new window, click on the ‘pencil’ icon next to your <strong><em>ansible</em></strong> connection to modify the connection for your “Live” environment.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub7.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub7.png"></a></p>
-</li>
-<li>
-<p>In the <strong>Configure live connection</strong> window, set the following:</p>
-<p><strong>a.</strong> <code>Authentication type:</code> set to “Basic Auth”</p>
-<p><strong>b.</strong> <code>Server URL:</code> copy and paste your <code>&lt;AAP UI URL&gt;</code></p>
-<p><strong>c.</strong> <code>Credential type:</code> set to <code>Team credentials</code></p>
-<p><strong>d.</strong> <code>Username:</code> set to <code>admin</code></p>
-<p><strong>e.</strong> <code>Password:</code> copy and paste your <code>&lt;AAP User Password&gt;</code></p>
-<p>Then click <strong>Connect</strong>. </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub8.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub8.png"></a></p>
-</li>
-<li>
-<p>After clicking <strong>Connect</strong>, wait until you see a “Connected” message appear at the bottom, then click <strong>Save</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub9.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub9.png"></a></p>
-</li>
-<li>
-<p>Finally, click <strong>Save and close</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub10.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub10.png"></a></p>
-</li>
-<li>
-<p>Lastly, back at the <strong>Deploy Agent</strong> page, you should now see a green check-mark next to the “Live” connection. </p>
-<p>Click <strong>Deploy</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub11.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub11.png"></a></p>
-</li>
-<li>
-<p>After a few seconds, the agent will finish deploying and you will see a <code>Success!</code> message as shown below. Wait until the deployment completes. <em><strong>Note:</strong> this may take up to 30 seconds or so.</em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub12.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub12.png"></a></p>
-</li>
-<li>
-<p>Once the deployment completes, navigate back to the agent chat view by clicking on <strong>Chat</strong> in the menu.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub13.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub13.png"></a></p>
-</li>
-<li>
-<p>Click on the <strong>‘Agents’</strong> drop-down and select your deployed agent, labeled <strong>zOS_Certificate_Agent</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/pub14.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/pub14.png"></a></p>
-</li>
-</ol>
-<p><strong><em>You are now ready to begin the demo scenario - follow the steps in the next section.</em></strong></p></div></body></html></section><section class="print-page" id="adk-testing" heading-number="10.9"><html><head>
-        <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
-        })
-        </script>
-        </head><body><div><h1 id="test-the-agent-execution-flow">Test the agent execution flow<a class="headerlink" href="#adk-testing-test-the-agent-execution-flow" title="Permanent link">#</a></h1>
-<p>In this final section, you will access your deployed agent within your watsonx Orchestrate environment and test the agent’s execution flow. The scenario follows the following flow:</p>
-<ul>
-<li>You will firstly execute the <strong><em>get_cert</em></strong> tool to trigger an Ansible playbook that retrieves your certificate details</li>
-<li>You will then trigger the <strong><em>status_output_tool</em></strong> to get the status and output of the job logs to verify the expiration date of your certificate - indicating that the certificate is expiring</li>
-<li>You will then execute the <strong><em>renew_cert</em></strong> tool to trigger an Ansible playbook that automates the renewal process of your expiring certificate</li>
-<li>Lastly, you will again trigger the <strong><em>status_output_tool</em></strong> tool to get the status and output of the previous job logs to monitor the renewal process, and finally getting a confirmation message</li>
-</ul>
-<ol>
-<li>
-<p>You will start the demo flow by prompting the agent with the following:</p>
-<p><code>Get my certificate details</code></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test1.png"></a></p>
-</li>
-<li>
-<p>After prompting the agent with the above, the agent will respond asking <code>“What is the certificate label?”</code></p>
-<p>In response, prompt the assistant with the name of the SITE certificate you created earlier in AAP:</p>
-<p><code>DEMOCERT</code></p>
+<p>You'll then be taken to the <strong>Chat</strong> window of the Orchestrate UI. Click on the hamburger menu icon in the top-left corner of the page, and select <strong>Build</strong>. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test2.png"></a></p>
 </li>
 <li>
-<p>Next, the Agent should ask <code>“What type of certificate is it? (Options include SITE, CERTAUTH, USER)”</code></p>
-<p>Respond with <code>SITE</code></p>
+<p>From there, you should see the list of all your existing agents. You should be able to see your <strong>IPL_Validator_Agent</strong> as shown below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test3.png"></a></p>
 </li>
 <li>
-<p>After providing the type of certificate, the Agent does 2 things:</p>
-<p><strong>a.</strong> Invokes the <em>get_cert</em> tool to execute the <strong>z/OS Certs – List Cert</strong> ansible playbook, passing the certificate label and cert type as inputs to the playbook.</p>
-<p><strong>b.</strong> Responds with a message similar to what's shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test4.png"></a></p>
-<p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
+<p>Click on your <strong>IPL_Validator_Agent</strong>. You'll then be taken to the Builder view for your agent, where you can see all the agent characteristics that were defined in your agent definition file, including the following:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong><em>Description</em></strong></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/test4.png)
+</code></pre></div>
 </li>
 <li>
-<p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test5.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test6.png"></a></p>
+<p><strong><em>Agent style</em></strong></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/test5.png)
+</code></pre></div>
 </li>
 <li>
-<p>You should then see something similar to the screenshot below, indicating that the <em>get_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test7.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test7.png"></a></p>
+<p><strong><em>Tools</em></strong></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/test6.png)
+</code></pre></div>
 </li>
 <li>
-<p>Next, scroll back down to the chat field and prompt the agent with:</p>
-<p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
+<p><strong><em>Instructions</em></strong></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/test7.png)
+</code></pre></div>
+<p>Verify that your two tools exist and are available to your agent. </p>
+</li>
+</ul>
+<h2 id="adk-05-import-agent-test-the-ipl_validator_agent">Test the <code>IPL_Validator_Agent</code><a class="headerlink" href="#adk-05-import-agent-test-the-ipl_validator_agent" title="Permanent link">#</a></h2>
+<p>Now you can test the execution flow of your agent. When the user prompts the agent to <code>run IPL check</code> or <code>validate my IPL</code> or something similar, the agent will kick off a series of steps as defined in the <strong>Instructions</strong> section of your agent definition. </p>
+<p><strong><em>In the agent chat window on the right-side of the screen, prompt the agent with <code>run IPL check</code></em></strong>. The agent will then call the appropriate tool according to the current step in the process. Wait until the agent processing is completed and the full output is returned. </p>
+<p><strong>Step 1:</strong> The agent calls the <code>operatorCommand</code> tool, passing <code>D IPLINFO</code> as input to the tool. The results should be displayed similarly to below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test8.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test8.png"></a></p>
-<p><strong>NOTE:</strong> your job_id will be different than what's shown above. </p>
-</li>
-<li>
-<p>After prompting the agent, it should invoke the <em>get_status_output</em> tool, passing your job_id as input and provide the following information:</p>
-<p><strong>a.</strong> <strong>job id</strong></p>
-<p><strong>b.</strong> <strong>job status</strong></p>
-<p><strong>c.</strong> <strong>logs</strong></p>
-<p>If the <code>job status</code> was <code>successful</code>, then the logs should contain your certificate label, start date, and expiration date as shown below:</p>
+<p><strong>Step 2:</strong> The agent calls the <code>tsoCommand</code> tool, passing <code>TIME</code> as the command input. This verifies that TSO is running. The output of that step should look like:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test9.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test9.png"></a></p>
-<p>The key point is that the expiration date indicates that your certificate is going to expire in the next 30 days. And the next step would be to invoke the renew_cert tool to automate the certificate renewal process.</p>
-</li>
-<li>
-<p>Next, prompt the agent with the following:</p>
-<p><code>Renew my certificate</code></p>
+<p><strong>Step 3:</strong> The agent calls the <code>operatorCommand</code> tool, passing <code>D OMVS</code> as input:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test10.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test10.png"></a></p>
-</li>
-<li>
-<p>After prompting the agent with the above, the agent will respond asking <code>“What type of signing certificate will be used? (Options include CERTAUTH, SITE, Self)”</code></p>
-<p>In response, prompt the assistant with <code>CERTAUTH</code></p>
-<p>This is because the DEMOCERT certificate you created earlier is signed by your TESTCA certificate authority.</p>
+<p><strong>Step 4:</strong> The agent calls the <code>operatorCommand</code> tool, passing <code>D OMVS,MF</code> as input:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test11.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test11.png"></a></p>
-</li>
-<li>
-<p>Next, the Agent asks <code>“What is the label of the signing certificate?”</code></p>
-<p>Respond with <code>TESTCA</code></p>
+<p><strong>Step 5:</strong> The agent verifies if z/OSMF is running:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test12.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test12.png"></a></p>
-</li>
-<li>
-<p>And finally, the Agent asks <code>“What is the certificate’s new expiration date? (Enter in the form of YYYY-MM- DD)”</code></p>
-<p>Respond with <code>2030-01-01</code></p>
+<p><strong>Step 6:</strong> The agent checks to see if JES is running by calling the <code>operatorCommand</code> tool, passing <code>$D JES2</code> as input. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test13.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test13.png"></a></p>
-</li>
-<li>
-<p>After providing the details above, the Agent again does 2 things:</p>
-<p><strong>a.</strong> Invokes the <em>renew_cert</em> tool to execute the <strong>z/OS Certs – Search and Renew</strong> ansible playbook, passing the needed inputs to the playbook.</p>
-<p><strong>b.</strong> responds with a message similar to what's shown below:</p>
+<p><strong>Step 7:</strong> The agent checks the status of JES2 by running the <code>operatorCommand</code> tool, passing <code>D A,JES2</code> as input:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test14.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test14.png"></a></p>
-<p>In the response, the Agent provides a confirmation that the playbook started executing successfully, as well as a <strong>job_id</strong> for the ansible job that you can use to check the status of the job.</p>
-</li>
-<li>
-<p>Click on <strong>Show reasoning</strong> and then the <strong>Step 1</strong> drop-down to view the logic the agent took.</p>
+<p><strong>Step 8:</strong> The agent then provides a summarized list of the previous checks, with an explanation:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test15.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test15.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test16.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test16.png"></a></p>
+<p><strong><em>Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the </em>*low-code approach</strong> which provides multi-agent orchestration, using other agents (including this one) as collaborators***</p></div></body></html></section><section class="print-page" id="adk-06-multi-agent-collaboration" heading-number="10.7"><html><head>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
+        })
+        </script>
+        </head><body><div><h1 id="multi-agent-collaboration">Multi-Agent Collaboration<a class="headerlink" href="#adk-06-multi-agent-collaboration-multi-agent-collaboration" title="Permanent link">#</a></h1>
+<p>Now that you have your <code>IPL_Validator_Agent</code> created using the ADK, you will now create an <strong>Orchestrator Agent</strong> via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. </p>
+<p>In this scenario, you will create an agent named <strong>z/OS Helper Agent</strong> that collaborates with:
+- <code>IPL_Validator_Agent</code> 
+  - <strong>Purpose</strong>: to provide post-IPL health checks
+- <code>zRAG Agent</code> which you previously deployed with watsonx Assistant for Z
+  - <strong>Purpose</strong>: to retrieve commands used to display certain information about the Db2 for z/OS subsystem
+- <code>db2Command</code> tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface</p>
+<h2 id="adk-06-multi-agent-collaboration-creating-your-new-agent-within-watsonx-orchestrate">Creating your new Agent within watsonx Orchestrate<a class="headerlink" href="#adk-06-multi-agent-collaboration-creating-your-new-agent-within-watsonx-orchestrate" title="Permanent link">#</a></h2>
+<p>The steps in this section assume you're already logged into the watsonx Orchestrate UI. </p>
+<ol>
+<li>
+<p>From the <strong>Agent chat</strong> window, click on the hamburger menu icon and select <strong>Build</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build1.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build1.png"></a></p>
 </li>
 <li>
-<p>You should then see something similar to the screenshot below, indicating that the <em>renew_cert</em> tool was invoked and the values that were passed to the Ansible playbook’s inputs:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test17.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test17.png"></a></p>
-<p><em><strong>Notice</strong> how the agent provided the inputs for the ‘sign_with_survey’, ‘sign_label_survey’, and ‘new_expiry_date_survey’ variables. These were the variables you manually entered into the chat.</em></p>
-<p><em>Additionally, the inputs for the ‘cert_label_survey’ and ‘cert_type_survey’ were not directly provided to the tool, but carried over from the original get_cert tool as the agent has context awareness.</em></p>
-<p><em>And finally, for the ‘owner_id_survey’ and ‘keyring_survey’ inputs, these were never provided directly to the agent. Instead, the agent read the output log of the first ansible playbook and automatically picked up these values to pass as inputs to the renew_cert tool.</em></p>
+<p>Click on <strong>Create agent</strong> in the top-right corner.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build2.png"></a></p>
 </li>
 <li>
-<p>Next, scroll back down to the chat field and prompt the agent with:</p>
-<p><code>Get status of job &lt;your job_id that the agent outputted above&gt;</code></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test18.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test18.png"></a></p>
+<p>Select <strong>Create from scratch</strong></p>
+<ul>
+<li>In the <strong>Name</strong> field, give your agent a descriptive name that describe it's functionality. For this scenario, name your agent: <code>z/OS Helper Agent</code></li>
+<li>In the <strong>Description</strong>, copy and paste:
+  <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#adk-06-multi-agent-collaboration-__codelineno-0-1"></a>Agent that runs various z/OS and Db2 commands to retrieve information, and leverages the zRAG to retrieve command syntax. 
+</span></code></pre></div></li>
+<li>
+<p>Then click <strong>Create</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build3.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build3.png"></a></p>
+</li>
+</ul>
 </li>
 <li>
-<p>After prompting the agent, it should invoke the <em>get_status_output</em> tool just like previously, passing your job_id as input and provide the following information:</p>
-<p><strong>a.</strong> <strong>job id</strong></p>
-<p><strong>b.</strong> <strong>job status</strong></p>
-<p><strong>c.</strong> <strong>logs</strong></p>
-<p>If the <strong>job status</strong> was <code>successful</code>, then the logs should contain a confirmation message that the certificate has been renewed as shown below:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test19.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test19.png"></a></p>
-<p>However, if the <strong>job status</strong> shows as still <code>running</code>, then the logs would instead contain a summary of what the ansible playbook has done so far. If any errors occur in the processing, then the agent would also provide an analysis of what went wrong.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test20.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test20.png"></a></p>
-<p><strong><em>Congratulations! You’ve deployed and tested your own agent for renewing z/OS certificates. If there’s any time remaining feel free to continue testing or contact one of the lab instructors for any questions.</em></strong></p>
+<p>Scroll down to the <strong>Agent style</strong> section. Select the <strong>React</strong> style. This style of agent allows the LLM to learn and refine its behavior. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build4.png"></a></p>
+</li>
+<li>
+<p>The first tool you'll test to build the scenario is the <code>db2Command</code> tool. </p>
+<p>Scroll down to the <strong>Tools</strong> section and click <strong>Add tool</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build5.png"></a></p>
+<p>Select <strong>Local Instance</strong>, as you have already imported the <code>db2Command</code> tool into your instance previously. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build6.png"></a></p>
+<p>Then select the <strong>db2Command</strong> tool from the list and then click <strong>Add to agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build7.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build7.png"></a></p>
+<p>You should then see the <code>db2Command</code> tool added to your new agent's tool list. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build8.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build8.png"></a></p>
+</li>
+</ol>
+<h2 id="adk-06-multi-agent-collaboration-testing-the-db2command-tool">Testing the <code>db2Command</code> tool<a class="headerlink" href="#adk-06-multi-agent-collaboration-testing-the-db2command-tool" title="Permanent link">#</a></h2>
+<p>In this step of the scenario, you will firstly test the usage of the <code>db2Command</code> tool by adding <strong>Instructions</strong> that define the behavior of your agent. In order to test the agent's execution of the tool, you will add very simple instructions to ensure the tool works as expected and returns the relevant output. </p>
+<ol>
+<li>
+<p>Scroll down to the <strong>Behavior</strong> section. In the <strong>Instructions field</strong>, copy and paste the following text:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#adk-06-multi-agent-collaboration-__codelineno-1-1"></a>You are going to run various Db2 for z/OS commands using the tools you have available to issue DISPLAY commands via TSO/E REST API’s and return the command output back to the user. You will print out to the user what command you’re issuing and the full output of the command in a pretty format. ALWAYS INCLUDE THE FULL OUTPUT OF EACH COMMAND. 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#adk-06-multi-agent-collaboration-__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#adk-06-multi-agent-collaboration-__codelineno-1-3"></a>DO NOT GUESS. DO NOT SPECULATE. ONLY USE THE INFORMATION RETURNED FROM RUNNING YOUR TOOLS
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#adk-06-multi-agent-collaboration-__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#adk-06-multi-agent-collaboration-__codelineno-1-5"></a>When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build9.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build9.png"></a></p>
+<p>The purpose is to test that the <code>db2Command</code> tool works as expected.</p>
+</li>
+<li>
+<p>Once done, click on the agent chat window on the right-side of the screen, and issue the prompt: <code>get db2 details</code></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build10.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build10.png"></a></p>
+</li>
+<li>
+<p>Wait until the full output is returned. It should look something like this:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build11.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build11.png"></a></p>
+<p>In the output, it should show details about the Db2 for z/OS subsystem, including:</p>
+<ul>
+<li>Current Function Level</li>
+<li>Highest Activated Function Level</li>
+<li>Subsystem ID</li>
+<li>Status</li>
+<li>Db2 Level</li>
+<li>IRLM Proc</li>
+</ul>
+</li>
+<li>
+<p>At the top of the response, click on <strong>Show reasoning</strong>, then <strong>Step 1</strong>. </p>
+<p>Notice the tool that's listed (<code>db2Command</code>) and the <strong>command</strong> that was used as input (<code>-DISPLAY GROUP</code>).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build12.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build12.png"></a></p>
+<p>This command was of course hard-coded in the <strong>Instructions</strong> you used previously. But in the next section you will enable dynamic command inputs according to what the user would like to retrieve. </p>
+</li>
+</ol>
+<h2 id="adk-06-multi-agent-collaboration-enabling-zrag-agent-collaboration">Enabling zRAG Agent collaboration<a class="headerlink" href="#adk-06-multi-agent-collaboration-enabling-zrag-agent-collaboration" title="Permanent link">#</a></h2>
+<p>In the previous sub-section, you successfully tested the execution and behavior of your tool using a hard-coded Db2 for z/OS command. </p>
+<p>Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported <strong>zRAG Agent</strong> which you would've deployed in section <a href="#..-agentdeploy-execute-deploy.md">Execute agent deployment</a>. </p>
+<ol>
+<li>
+<p>In the <strong>Agents</strong> section of the Agent builder screen, click <strong>Add agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build13.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build13.png"></a></p>
+</li>
+<li>
+<p>Then select <strong>Local instance</strong> as you already deployed your <strong>zRAG Agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build14.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build14.png"></a></p>
+</li>
+<li>
+<p>From the list, select the <strong>zRAG Agent</strong> and click <strong>Add to agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build15.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build15.png"></a></p>
+</li>
+<li>
+<p>Once done, you should now see your <strong>zRAG Agent</strong> added as a collaborator to your <strong>z/OS Helper Agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build16.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build16.png"></a></p>
+</li>
+<li>
+<p>Next, scroll back down to the <strong>Instructions</strong> text field, and modify the instructions. </p>
+<p>In your existing instructions, the last section you had previously added was:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-06-multi-agent-collaboration-__codelineno-2-1"></a>When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
+</span></code></pre></div>
+<p>This was used to hard-code the input command to the tool. Instead, replace that section with the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-06-multi-agent-collaboration-__codelineno-3-1"></a>If the user asks to get or display information about Db2, call the "zRAG Agent" collaborator agent, passing the user's exact query to the agent. Wait until the zRAG Agent finishes generating a response, then return the exact response back to the user. Then extract the relevant command from the output and display it back to the user. Ensure that every Db2 command begins with "-", i.e. "-DISPLAY GROUP". THEN, pass that command as input to the "db2Command" tool. Wait until the full output is returned, then return the full output back to the user in a pretty, structured, line-by-line format. DISPLAY THE OUTPUT EXACTLY AS THE TOOL RETURNS IT WITH LINE BREAKS.    
+</span></code></pre></div>
+<p>Now, the full set of agent <strong>Instructions</strong> should look like the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#adk-06-multi-agent-collaboration-__codelineno-4-1"></a>You are going to run various Db2 for z/OS commands using the tools you have available to issue DISPLAY commands via TSO/E REST API’s and return the command output back to the user. You will print out to the user what command you’re issuing and the full output of the command in a pretty format. ALWAYS INCLUDE THE FULL OUTPUT OF EACH COMMAND. 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#adk-06-multi-agent-collaboration-__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#adk-06-multi-agent-collaboration-__codelineno-4-3"></a>DO NOT GUESS. DO NOT SPECULATE. ONLY USE THE INFORMATION RETURNED FROM RUNNING YOUR TOOLS
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#adk-06-multi-agent-collaboration-__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#adk-06-multi-agent-collaboration-__codelineno-4-5"></a>If the user asks to get or display information about Db2, call the "zRAG Agent" collaborator agent, passing the user's exact query to the agent. Wait until the zRAG Agent finishes generating a response, then return the exact response back to the user. Then extract the relevant command from the output and display it back to the user. Ensure that every Db2 command begins with "-", i.e. "-DISPLAY GROUP". THEN, pass that command as input to the "db2Command" tool. Wait until the full output is returned, then return the full output back to the user in a pretty, structured, line-by-line format. DISPLAY THE OUTPUT EXACTLY AS THE TOOL RETURNS IT WITH LINE BREAKS.    
+</span></code></pre></div>
+<p>These new set of <strong>Instructions</strong> will enable dynamic command input mapping. The tool execution would follow the below flow:</p>
+<ul>
+<li>The user asks the <strong>z/OS Helper Agent</strong> to display certain information from the Db2 for z/OS subsystem.</li>
+<li>The Agent then retrieves the relevant command by routing the query to the <strong>zRAG Agent</strong>.</li>
+<li>The <strong>zRAG Agent</strong> then uses it's available tools to search the back-end watsonx Assistant for Z RAG documentation and return a response including the relevant command the user inquired about. </li>
+<li>Once the command is determined, the <strong>z/OS Helper Agent</strong> will pass that command as input to the <strong>db2Command</strong> tool to execute the command via the <strong>DSN TSO/E</strong> interface. </li>
+<li>Full output is returned back to the end-user. </li>
+</ul>
+</li>
+<li>
+<p>Now, test the new flow by click on the Agent Chat in the right-side of the screen and prompt the agent. </p>
+<p>Previously, you had hard-coded the <code>-DISPLAY GROUP</code> command as input to the tool. Now let's see what happens if we instead tell the agent what we want to retrieve and allow it to determine the command on its own. </p>
+<p>Prompt the agent with the following query:
+</p><div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#adk-06-multi-agent-collaboration-__codelineno-5-1"></a>display information about my Db2 subsystem catalog and function levels 
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build17.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build17.png"></a></p>
+<p><strong>NOTE:</strong> You may need to restart the conversation....</p>
+</li>
+<li>
+<p>View the full output of the response. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build18.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build18.png"></a></p>
+<p>Notice the command that was issued and the full response - it should be similar to the previous query when "-DISPLAY GROUP" was hard-coded. </p>
+</li>
+<li>
+<p>At the top of the response, click on <strong>Show reasoning</strong>. </p>
+<p>You should see that there were three steps executed:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build19.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build19.png"></a></p>
+<p><strong>Step 1:</strong> Expanding Step 1, you should see the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build20.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build20.png"></a></p>
+<p>The <strong>z/OS Helper Agent</strong> first sent the user's query to it's collaborator agent (<strong>zRAG Agent</strong>).</p>
+<p><strong>Step 2:</strong> The <strong>zRAG Agent</strong> then invoked its <strong>zrag_retriever</strong> tool with the same query in order to search the zRAG database for the relevant information and return the corresponding Db2 for z/OS command. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build21.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build21.png"></a></p>
+<p><strong>Step 3:</strong> The retrieved command is then passed as input to the <strong>db2Command</strong> tool to execute the same exact command as you previously hard-coded. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build22.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build22.png"></a></p>
+<p>Then the output of the command is returned back to the user. </p>
+</li>
+<li>
+<p>Lets test some more example queries. </p>
+<p>Now, prompt the agent with the following:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#adk-06-multi-agent-collaboration-__codelineno-6-1"></a>display all my Db2 for z/OS bufferpools
+</span></code></pre></div>
+<p>Once the full query is completed, you should see something like the following:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build23.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build23.png"></a></p>
+<p>We can see that the retrieved command was <code>-DISPLAY BUFFERPOOL</code> and the output is returned. </p>
+<p>Similarly to before, expand the <strong>Show reasoning</strong> steps to review the flow.</p>
+</li>
+<li>
+<p>Test another agent prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#adk-06-multi-agent-collaboration-__codelineno-7-1"></a>Display all defined databases
+</span></code></pre></div>
+<p>The output should look similar to what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build24.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build24.png"></a></p>
+<p>For that query, the agent determined that the <code>-DISPLAY DATABASE(*)</code> command was the appropriate command to use. </p>
+</li>
+<li>
+<p>Lastly, test the following prompt:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#adk-06-multi-agent-collaboration-__codelineno-8-1"></a>display information regarding the status and configuration of DDF
+</span></code></pre></div>
+<p>The output should look similar to what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build25.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build25.png"></a></p>
+<p>For that query, the agent determined that the <code>-DISPLAY DDF</code> command was the appropriate command to use. </p>
+</li>
+</ol>
+<p><strong><em>Congratulations! You've successfully set up an agent collaboration use case and tested it. If time allows, continue testing other types of queries or altering the instructions</em></strong>. </p>
+<h2 id="adk-06-multi-agent-collaboration-enabling-ipl-validator-agent-collaboration">Enabling IPL Validator Agent collaboration<a class="headerlink" href="#adk-06-multi-agent-collaboration-enabling-ipl-validator-agent-collaboration" title="Permanent link">#</a></h2>
+<p>The last step in the scenario is to enable collaboration with the previous <strong>IPL Validator Agent</strong> you imported using the ADK. </p>
+<ol>
+<li>
+<p>To accomplish this, navigate to the <strong>Agents</strong> section of the Agent builder UI and click on <strong>Add agent</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build26.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build26.png"></a></p>
+</li>
+<li>
+<p>Then select <strong>Local instance</strong>. From the list, select your <strong>IPL Validator Agent</strong> and click <strong>Add to agent</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build27.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build27.png"></a></p>
+</li>
+<li>
+<p>Once done,you should now see your <strong>IPL Validator</strong> agent added as a collaborator (in addition to the previously added <strong>zRAG Agent</strong>).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build28.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build28.png"></a></p>
+</li>
+<li>
+<p>You will lastly need to modify the <strong>Instructions</strong> to prioritize collaboration. </p>
+<p>Navigate back to the <strong>Instructions</strong> field and append the following section to the existing set of Instructions:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#adk-06-multi-agent-collaboration-__codelineno-9-1"></a>When the user asks something about running an "IPL check" or a "health check", route the request to the "IPL_Validator_Agent". Wait until the agent finishes all steps in the process, then display the EXACT and COMPLETE output from the agent back to the user.
+</span></code></pre></div>
+</li>
+<li>
+<p>Once modified, test your agent by entering the following query:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#adk-06-multi-agent-collaboration-__codelineno-10-1"></a>run IPL health check
+</span></code></pre></div>
+</li>
+<li>
+<p>When the agent completes the response, it should look something like what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build29.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build29.png"></a></p>
+<p>It should look very similar to what was returned from the <strong>IPL Validator Agent</strong> in the previous section. </p>
+</li>
+<li>
+<p>Click on <strong>Show reasoning</strong> to view the steps in the reasoning process. </p>
+</li>
+</ol>
+<h2 id="adk-06-multi-agent-collaboration-publish-your-zos-helper-agent">Publish your <code>z/OS Helper Agent</code><a class="headerlink" href="#adk-06-multi-agent-collaboration-publish-your-zos-helper-agent" title="Permanent link">#</a></h2>
+<p>If you're satisfied with the behavior of your agent, you can now publish it to the <strong>Live</strong> version. This makes it available across all your deployed channels in order to make it accessible to end-users. </p>
+<p>Follow the steps below to deploy your agent. </p>
+<ol>
+<li>
+<p>Within the Agent Builder UI of your <strong>Draft</strong> agent, click on <strong>Deploy</strong> in the top-right corner.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build30.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build30.png"></a></p>
+</li>
+<li>
+<p>On the <strong>Pre-deployment summary</strong> page, click <strong>Deploy</strong> once more. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build31.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build31.png"></a></p>
+</li>
+<li>
+<p>After waiting a few seconds, you should then get a success message as shown below. Click on <strong>Maybe later</strong>:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build32.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build32.png"></a></p>
+</li>
+<li>
+<p>Then navigate to your deployed agent by clicking on the hamburger menu and selecting <strong>Chat</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build33.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build33.png"></a></p>
+</li>
+<li>
+<p>Finally, click on the <strong>Agents</strong> drop-down menu and select your deployed agent. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/build34.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/build34.png"></a></p>
 </li>
 </ol></div></body></html></section></section><section class="print-page" id="hands-on-handson" heading-number="11"><html><head>
         <script type="text/javascript">
@@ -8699,7 +8705,7 @@ command:</p>
 </ul>
 <ol>
 <li>
-<p>The first step before importing agents are to activate the ADK using your watsonx Orchestrate environment. You may have already done this in Section <strong><em><a href="#adk-setup">Installing and setting up your ADK environment</a></em></strong>. </p>
+<p>The first step before importing agents are to activate the ADK using your watsonx Orchestrate environment. You may have already done this in Section <strong><em><a href="#hands-on-adk-setup.md">Installing and setting up your ADK environment</a></em></strong>. </p>
 <p>As a reminder this can be done using the following command: </p>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#hands-on-handson-__codelineno-0-1"></a>orchestrate env add -n &lt;env name&gt; -u &lt;your Service Instance URL&gt; --type ibm_iam --activate
 </span></code></pre></div>
@@ -9564,131 +9570,103 @@ command:</p>
                 .print-site-enumerate-headings #agentdeploy-embed h6 {  counter-increment: counter-agentdeploy-embed-6 }
             
 .print-site-enumerate-headings #section-10 > h1:before { content: '10 ' }
-.print-site-enumerate-headings #adk-intro > h1:before { content: '10.1 ' }
+.print-site-enumerate-headings #adk-00-intro > h1:before { content: '10.1 ' }
 
-                .print-site-enumerate-headings #adk-intro h2:before { content: '10.1.' counter(counter-adk-intro-2) ' ' }
-                .print-site-enumerate-headings #adk-intro h2 {  counter-reset: counter-adk-intro-3  counter-adk-intro-4  counter-adk-intro-5 ;  counter-increment: counter-adk-intro-2 }
+                .print-site-enumerate-headings #adk-00-intro h2:before { content: '10.1.' counter(counter-adk-00-intro-2) ' ' }
+                .print-site-enumerate-headings #adk-00-intro h2 {  counter-reset: counter-adk-00-intro-3  counter-adk-00-intro-4  counter-adk-00-intro-5 ;  counter-increment: counter-adk-00-intro-2 }
             
-                .print-site-enumerate-headings #adk-intro h3:before { content: '10.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) ' ' }
-                .print-site-enumerate-headings #adk-intro h3 {  counter-reset: counter-adk-intro-4  counter-adk-intro-5 ;  counter-increment: counter-adk-intro-3 }
+                .print-site-enumerate-headings #adk-00-intro h3:before { content: '10.1.' counter(counter-adk-00-intro-2) '.' counter(counter-adk-00-intro-3) ' ' }
+                .print-site-enumerate-headings #adk-00-intro h3 {  counter-reset: counter-adk-00-intro-4  counter-adk-00-intro-5 ;  counter-increment: counter-adk-00-intro-3 }
             
-                .print-site-enumerate-headings #adk-intro h4:before { content: '10.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) '.' counter(counter-adk-intro-4) ' ' }
-                .print-site-enumerate-headings #adk-intro h4 {  counter-reset: counter-adk-intro-5 ;  counter-increment: counter-adk-intro-4 }
+                .print-site-enumerate-headings #adk-00-intro h4:before { content: '10.1.' counter(counter-adk-00-intro-2) '.' counter(counter-adk-00-intro-3) '.' counter(counter-adk-00-intro-4) ' ' }
+                .print-site-enumerate-headings #adk-00-intro h4 {  counter-reset: counter-adk-00-intro-5 ;  counter-increment: counter-adk-00-intro-4 }
             
-                .print-site-enumerate-headings #adk-intro h5:before { content: '10.1.' counter(counter-adk-intro-2) '.' counter(counter-adk-intro-3) '.' counter(counter-adk-intro-4) '.' counter(counter-adk-intro-5) ' ' }
-                .print-site-enumerate-headings #adk-intro h5 {  counter-increment: counter-adk-intro-5 }
+                .print-site-enumerate-headings #adk-00-intro h5:before { content: '10.1.' counter(counter-adk-00-intro-2) '.' counter(counter-adk-00-intro-3) '.' counter(counter-adk-00-intro-4) '.' counter(counter-adk-00-intro-5) ' ' }
+                .print-site-enumerate-headings #adk-00-intro h5 {  counter-increment: counter-adk-00-intro-5 }
             
-.print-site-enumerate-headings #adk-setup > h1:before { content: '10.2 ' }
+.print-site-enumerate-headings #adk-01-install-configure-adk > h1:before { content: '10.2 ' }
 
-                .print-site-enumerate-headings #adk-setup h2:before { content: '10.2.' counter(counter-adk-setup-2) ' ' }
-                .print-site-enumerate-headings #adk-setup h2 {  counter-reset: counter-adk-setup-3  counter-adk-setup-4  counter-adk-setup-5 ;  counter-increment: counter-adk-setup-2 }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h2:before { content: '10.2.' counter(counter-adk-01-install-configure-adk-2) ' ' }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h2 {  counter-reset: counter-adk-01-install-configure-adk-3  counter-adk-01-install-configure-adk-4  counter-adk-01-install-configure-adk-5 ;  counter-increment: counter-adk-01-install-configure-adk-2 }
             
-                .print-site-enumerate-headings #adk-setup h3:before { content: '10.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) ' ' }
-                .print-site-enumerate-headings #adk-setup h3 {  counter-reset: counter-adk-setup-4  counter-adk-setup-5 ;  counter-increment: counter-adk-setup-3 }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h3:before { content: '10.2.' counter(counter-adk-01-install-configure-adk-2) '.' counter(counter-adk-01-install-configure-adk-3) ' ' }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h3 {  counter-reset: counter-adk-01-install-configure-adk-4  counter-adk-01-install-configure-adk-5 ;  counter-increment: counter-adk-01-install-configure-adk-3 }
             
-                .print-site-enumerate-headings #adk-setup h4:before { content: '10.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) '.' counter(counter-adk-setup-4) ' ' }
-                .print-site-enumerate-headings #adk-setup h4 {  counter-reset: counter-adk-setup-5 ;  counter-increment: counter-adk-setup-4 }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h4:before { content: '10.2.' counter(counter-adk-01-install-configure-adk-2) '.' counter(counter-adk-01-install-configure-adk-3) '.' counter(counter-adk-01-install-configure-adk-4) ' ' }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h4 {  counter-reset: counter-adk-01-install-configure-adk-5 ;  counter-increment: counter-adk-01-install-configure-adk-4 }
             
-                .print-site-enumerate-headings #adk-setup h5:before { content: '10.2.' counter(counter-adk-setup-2) '.' counter(counter-adk-setup-3) '.' counter(counter-adk-setup-4) '.' counter(counter-adk-setup-5) ' ' }
-                .print-site-enumerate-headings #adk-setup h5 {  counter-increment: counter-adk-setup-5 }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h5:before { content: '10.2.' counter(counter-adk-01-install-configure-adk-2) '.' counter(counter-adk-01-install-configure-adk-3) '.' counter(counter-adk-01-install-configure-adk-4) '.' counter(counter-adk-01-install-configure-adk-5) ' ' }
+                .print-site-enumerate-headings #adk-01-install-configure-adk h5 {  counter-increment: counter-adk-01-install-configure-adk-5 }
             
-.print-site-enumerate-headings #adk-config-aap > h1:before { content: '10.3 ' }
+.print-site-enumerate-headings #adk-02-prepare-vscode > h1:before { content: '10.3 ' }
 
-                .print-site-enumerate-headings #adk-config-aap h2:before { content: '10.3.' counter(counter-adk-config-aap-2) ' ' }
-                .print-site-enumerate-headings #adk-config-aap h2 {  counter-reset: counter-adk-config-aap-3  counter-adk-config-aap-4  counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-2 }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h2:before { content: '10.3.' counter(counter-adk-02-prepare-vscode-2) ' ' }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h2 {  counter-reset: counter-adk-02-prepare-vscode-3  counter-adk-02-prepare-vscode-4  counter-adk-02-prepare-vscode-5 ;  counter-increment: counter-adk-02-prepare-vscode-2 }
             
-                .print-site-enumerate-headings #adk-config-aap h3:before { content: '10.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) ' ' }
-                .print-site-enumerate-headings #adk-config-aap h3 {  counter-reset: counter-adk-config-aap-4  counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-3 }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h3:before { content: '10.3.' counter(counter-adk-02-prepare-vscode-2) '.' counter(counter-adk-02-prepare-vscode-3) ' ' }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h3 {  counter-reset: counter-adk-02-prepare-vscode-4  counter-adk-02-prepare-vscode-5 ;  counter-increment: counter-adk-02-prepare-vscode-3 }
             
-                .print-site-enumerate-headings #adk-config-aap h4:before { content: '10.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) '.' counter(counter-adk-config-aap-4) ' ' }
-                .print-site-enumerate-headings #adk-config-aap h4 {  counter-reset: counter-adk-config-aap-5 ;  counter-increment: counter-adk-config-aap-4 }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h4:before { content: '10.3.' counter(counter-adk-02-prepare-vscode-2) '.' counter(counter-adk-02-prepare-vscode-3) '.' counter(counter-adk-02-prepare-vscode-4) ' ' }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h4 {  counter-reset: counter-adk-02-prepare-vscode-5 ;  counter-increment: counter-adk-02-prepare-vscode-4 }
             
-                .print-site-enumerate-headings #adk-config-aap h5:before { content: '10.3.' counter(counter-adk-config-aap-2) '.' counter(counter-adk-config-aap-3) '.' counter(counter-adk-config-aap-4) '.' counter(counter-adk-config-aap-5) ' ' }
-                .print-site-enumerate-headings #adk-config-aap h5 {  counter-increment: counter-adk-config-aap-5 }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h5:before { content: '10.3.' counter(counter-adk-02-prepare-vscode-2) '.' counter(counter-adk-02-prepare-vscode-3) '.' counter(counter-adk-02-prepare-vscode-4) '.' counter(counter-adk-02-prepare-vscode-5) ' ' }
+                .print-site-enumerate-headings #adk-02-prepare-vscode h5 {  counter-increment: counter-adk-02-prepare-vscode-5 }
             
-.print-site-enumerate-headings #adk-prepare-vscode > h1:before { content: '10.4 ' }
+.print-site-enumerate-headings #adk-03-create-connection > h1:before { content: '10.4 ' }
 
-                .print-site-enumerate-headings #adk-prepare-vscode h2:before { content: '10.4.' counter(counter-adk-prepare-vscode-2) ' ' }
-                .print-site-enumerate-headings #adk-prepare-vscode h2 {  counter-reset: counter-adk-prepare-vscode-3  counter-adk-prepare-vscode-4  counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-2 }
+                .print-site-enumerate-headings #adk-03-create-connection h2:before { content: '10.4.' counter(counter-adk-03-create-connection-2) ' ' }
+                .print-site-enumerate-headings #adk-03-create-connection h2 {  counter-reset: counter-adk-03-create-connection-3  counter-adk-03-create-connection-4  counter-adk-03-create-connection-5 ;  counter-increment: counter-adk-03-create-connection-2 }
             
-                .print-site-enumerate-headings #adk-prepare-vscode h3:before { content: '10.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) ' ' }
-                .print-site-enumerate-headings #adk-prepare-vscode h3 {  counter-reset: counter-adk-prepare-vscode-4  counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-3 }
+                .print-site-enumerate-headings #adk-03-create-connection h3:before { content: '10.4.' counter(counter-adk-03-create-connection-2) '.' counter(counter-adk-03-create-connection-3) ' ' }
+                .print-site-enumerate-headings #adk-03-create-connection h3 {  counter-reset: counter-adk-03-create-connection-4  counter-adk-03-create-connection-5 ;  counter-increment: counter-adk-03-create-connection-3 }
             
-                .print-site-enumerate-headings #adk-prepare-vscode h4:before { content: '10.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) '.' counter(counter-adk-prepare-vscode-4) ' ' }
-                .print-site-enumerate-headings #adk-prepare-vscode h4 {  counter-reset: counter-adk-prepare-vscode-5 ;  counter-increment: counter-adk-prepare-vscode-4 }
+                .print-site-enumerate-headings #adk-03-create-connection h4:before { content: '10.4.' counter(counter-adk-03-create-connection-2) '.' counter(counter-adk-03-create-connection-3) '.' counter(counter-adk-03-create-connection-4) ' ' }
+                .print-site-enumerate-headings #adk-03-create-connection h4 {  counter-reset: counter-adk-03-create-connection-5 ;  counter-increment: counter-adk-03-create-connection-4 }
             
-                .print-site-enumerate-headings #adk-prepare-vscode h5:before { content: '10.4.' counter(counter-adk-prepare-vscode-2) '.' counter(counter-adk-prepare-vscode-3) '.' counter(counter-adk-prepare-vscode-4) '.' counter(counter-adk-prepare-vscode-5) ' ' }
-                .print-site-enumerate-headings #adk-prepare-vscode h5 {  counter-increment: counter-adk-prepare-vscode-5 }
+                .print-site-enumerate-headings #adk-03-create-connection h5:before { content: '10.4.' counter(counter-adk-03-create-connection-2) '.' counter(counter-adk-03-create-connection-3) '.' counter(counter-adk-03-create-connection-4) '.' counter(counter-adk-03-create-connection-5) ' ' }
+                .print-site-enumerate-headings #adk-03-create-connection h5 {  counter-increment: counter-adk-03-create-connection-5 }
             
-.print-site-enumerate-headings #adk-connections > h1:before { content: '10.5 ' }
+.print-site-enumerate-headings #adk-04-import-tools > h1:before { content: '10.5 ' }
 
-                .print-site-enumerate-headings #adk-connections h2:before { content: '10.5.' counter(counter-adk-connections-2) ' ' }
-                .print-site-enumerate-headings #adk-connections h2 {  counter-reset: counter-adk-connections-3  counter-adk-connections-4  counter-adk-connections-5 ;  counter-increment: counter-adk-connections-2 }
+                .print-site-enumerate-headings #adk-04-import-tools h2:before { content: '10.5.' counter(counter-adk-04-import-tools-2) ' ' }
+                .print-site-enumerate-headings #adk-04-import-tools h2 {  counter-reset: counter-adk-04-import-tools-3  counter-adk-04-import-tools-4  counter-adk-04-import-tools-5 ;  counter-increment: counter-adk-04-import-tools-2 }
             
-                .print-site-enumerate-headings #adk-connections h3:before { content: '10.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) ' ' }
-                .print-site-enumerate-headings #adk-connections h3 {  counter-reset: counter-adk-connections-4  counter-adk-connections-5 ;  counter-increment: counter-adk-connections-3 }
+                .print-site-enumerate-headings #adk-04-import-tools h3:before { content: '10.5.' counter(counter-adk-04-import-tools-2) '.' counter(counter-adk-04-import-tools-3) ' ' }
+                .print-site-enumerate-headings #adk-04-import-tools h3 {  counter-reset: counter-adk-04-import-tools-4  counter-adk-04-import-tools-5 ;  counter-increment: counter-adk-04-import-tools-3 }
             
-                .print-site-enumerate-headings #adk-connections h4:before { content: '10.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) '.' counter(counter-adk-connections-4) ' ' }
-                .print-site-enumerate-headings #adk-connections h4 {  counter-reset: counter-adk-connections-5 ;  counter-increment: counter-adk-connections-4 }
+                .print-site-enumerate-headings #adk-04-import-tools h4:before { content: '10.5.' counter(counter-adk-04-import-tools-2) '.' counter(counter-adk-04-import-tools-3) '.' counter(counter-adk-04-import-tools-4) ' ' }
+                .print-site-enumerate-headings #adk-04-import-tools h4 {  counter-reset: counter-adk-04-import-tools-5 ;  counter-increment: counter-adk-04-import-tools-4 }
             
-                .print-site-enumerate-headings #adk-connections h5:before { content: '10.5.' counter(counter-adk-connections-2) '.' counter(counter-adk-connections-3) '.' counter(counter-adk-connections-4) '.' counter(counter-adk-connections-5) ' ' }
-                .print-site-enumerate-headings #adk-connections h5 {  counter-increment: counter-adk-connections-5 }
+                .print-site-enumerate-headings #adk-04-import-tools h5:before { content: '10.5.' counter(counter-adk-04-import-tools-2) '.' counter(counter-adk-04-import-tools-3) '.' counter(counter-adk-04-import-tools-4) '.' counter(counter-adk-04-import-tools-5) ' ' }
+                .print-site-enumerate-headings #adk-04-import-tools h5 {  counter-increment: counter-adk-04-import-tools-5 }
             
-.print-site-enumerate-headings #adk-tools > h1:before { content: '10.6 ' }
+.print-site-enumerate-headings #adk-05-import-agent > h1:before { content: '10.6 ' }
 
-                .print-site-enumerate-headings #adk-tools h2:before { content: '10.6.' counter(counter-adk-tools-2) ' ' }
-                .print-site-enumerate-headings #adk-tools h2 {  counter-reset: counter-adk-tools-3  counter-adk-tools-4  counter-adk-tools-5 ;  counter-increment: counter-adk-tools-2 }
+                .print-site-enumerate-headings #adk-05-import-agent h2:before { content: '10.6.' counter(counter-adk-05-import-agent-2) ' ' }
+                .print-site-enumerate-headings #adk-05-import-agent h2 {  counter-reset: counter-adk-05-import-agent-3  counter-adk-05-import-agent-4  counter-adk-05-import-agent-5 ;  counter-increment: counter-adk-05-import-agent-2 }
             
-                .print-site-enumerate-headings #adk-tools h3:before { content: '10.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) ' ' }
-                .print-site-enumerate-headings #adk-tools h3 {  counter-reset: counter-adk-tools-4  counter-adk-tools-5 ;  counter-increment: counter-adk-tools-3 }
+                .print-site-enumerate-headings #adk-05-import-agent h3:before { content: '10.6.' counter(counter-adk-05-import-agent-2) '.' counter(counter-adk-05-import-agent-3) ' ' }
+                .print-site-enumerate-headings #adk-05-import-agent h3 {  counter-reset: counter-adk-05-import-agent-4  counter-adk-05-import-agent-5 ;  counter-increment: counter-adk-05-import-agent-3 }
             
-                .print-site-enumerate-headings #adk-tools h4:before { content: '10.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) '.' counter(counter-adk-tools-4) ' ' }
-                .print-site-enumerate-headings #adk-tools h4 {  counter-reset: counter-adk-tools-5 ;  counter-increment: counter-adk-tools-4 }
+                .print-site-enumerate-headings #adk-05-import-agent h4:before { content: '10.6.' counter(counter-adk-05-import-agent-2) '.' counter(counter-adk-05-import-agent-3) '.' counter(counter-adk-05-import-agent-4) ' ' }
+                .print-site-enumerate-headings #adk-05-import-agent h4 {  counter-reset: counter-adk-05-import-agent-5 ;  counter-increment: counter-adk-05-import-agent-4 }
             
-                .print-site-enumerate-headings #adk-tools h5:before { content: '10.6.' counter(counter-adk-tools-2) '.' counter(counter-adk-tools-3) '.' counter(counter-adk-tools-4) '.' counter(counter-adk-tools-5) ' ' }
-                .print-site-enumerate-headings #adk-tools h5 {  counter-increment: counter-adk-tools-5 }
+                .print-site-enumerate-headings #adk-05-import-agent h5:before { content: '10.6.' counter(counter-adk-05-import-agent-2) '.' counter(counter-adk-05-import-agent-3) '.' counter(counter-adk-05-import-agent-4) '.' counter(counter-adk-05-import-agent-5) ' ' }
+                .print-site-enumerate-headings #adk-05-import-agent h5 {  counter-increment: counter-adk-05-import-agent-5 }
             
-.print-site-enumerate-headings #adk-deploy > h1:before { content: '10.7 ' }
+.print-site-enumerate-headings #adk-06-multi-agent-collaboration > h1:before { content: '10.7 ' }
 
-                .print-site-enumerate-headings #adk-deploy h2:before { content: '10.7.' counter(counter-adk-deploy-2) ' ' }
-                .print-site-enumerate-headings #adk-deploy h2 {  counter-reset: counter-adk-deploy-3  counter-adk-deploy-4  counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-2 }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h2:before { content: '10.7.' counter(counter-adk-06-multi-agent-collaboration-2) ' ' }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h2 {  counter-reset: counter-adk-06-multi-agent-collaboration-3  counter-adk-06-multi-agent-collaboration-4  counter-adk-06-multi-agent-collaboration-5 ;  counter-increment: counter-adk-06-multi-agent-collaboration-2 }
             
-                .print-site-enumerate-headings #adk-deploy h3:before { content: '10.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) ' ' }
-                .print-site-enumerate-headings #adk-deploy h3 {  counter-reset: counter-adk-deploy-4  counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-3 }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h3:before { content: '10.7.' counter(counter-adk-06-multi-agent-collaboration-2) '.' counter(counter-adk-06-multi-agent-collaboration-3) ' ' }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h3 {  counter-reset: counter-adk-06-multi-agent-collaboration-4  counter-adk-06-multi-agent-collaboration-5 ;  counter-increment: counter-adk-06-multi-agent-collaboration-3 }
             
-                .print-site-enumerate-headings #adk-deploy h4:before { content: '10.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) '.' counter(counter-adk-deploy-4) ' ' }
-                .print-site-enumerate-headings #adk-deploy h4 {  counter-reset: counter-adk-deploy-5 ;  counter-increment: counter-adk-deploy-4 }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h4:before { content: '10.7.' counter(counter-adk-06-multi-agent-collaboration-2) '.' counter(counter-adk-06-multi-agent-collaboration-3) '.' counter(counter-adk-06-multi-agent-collaboration-4) ' ' }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h4 {  counter-reset: counter-adk-06-multi-agent-collaboration-5 ;  counter-increment: counter-adk-06-multi-agent-collaboration-4 }
             
-                .print-site-enumerate-headings #adk-deploy h5:before { content: '10.7.' counter(counter-adk-deploy-2) '.' counter(counter-adk-deploy-3) '.' counter(counter-adk-deploy-4) '.' counter(counter-adk-deploy-5) ' ' }
-                .print-site-enumerate-headings #adk-deploy h5 {  counter-increment: counter-adk-deploy-5 }
-            
-.print-site-enumerate-headings #adk-publish > h1:before { content: '10.8 ' }
-
-                .print-site-enumerate-headings #adk-publish h2:before { content: '10.8.' counter(counter-adk-publish-2) ' ' }
-                .print-site-enumerate-headings #adk-publish h2 {  counter-reset: counter-adk-publish-3  counter-adk-publish-4  counter-adk-publish-5 ;  counter-increment: counter-adk-publish-2 }
-            
-                .print-site-enumerate-headings #adk-publish h3:before { content: '10.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) ' ' }
-                .print-site-enumerate-headings #adk-publish h3 {  counter-reset: counter-adk-publish-4  counter-adk-publish-5 ;  counter-increment: counter-adk-publish-3 }
-            
-                .print-site-enumerate-headings #adk-publish h4:before { content: '10.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) '.' counter(counter-adk-publish-4) ' ' }
-                .print-site-enumerate-headings #adk-publish h4 {  counter-reset: counter-adk-publish-5 ;  counter-increment: counter-adk-publish-4 }
-            
-                .print-site-enumerate-headings #adk-publish h5:before { content: '10.8.' counter(counter-adk-publish-2) '.' counter(counter-adk-publish-3) '.' counter(counter-adk-publish-4) '.' counter(counter-adk-publish-5) ' ' }
-                .print-site-enumerate-headings #adk-publish h5 {  counter-increment: counter-adk-publish-5 }
-            
-.print-site-enumerate-headings #adk-testing > h1:before { content: '10.9 ' }
-
-                .print-site-enumerate-headings #adk-testing h2:before { content: '10.9.' counter(counter-adk-testing-2) ' ' }
-                .print-site-enumerate-headings #adk-testing h2 {  counter-reset: counter-adk-testing-3  counter-adk-testing-4  counter-adk-testing-5 ;  counter-increment: counter-adk-testing-2 }
-            
-                .print-site-enumerate-headings #adk-testing h3:before { content: '10.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) ' ' }
-                .print-site-enumerate-headings #adk-testing h3 {  counter-reset: counter-adk-testing-4  counter-adk-testing-5 ;  counter-increment: counter-adk-testing-3 }
-            
-                .print-site-enumerate-headings #adk-testing h4:before { content: '10.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) '.' counter(counter-adk-testing-4) ' ' }
-                .print-site-enumerate-headings #adk-testing h4 {  counter-reset: counter-adk-testing-5 ;  counter-increment: counter-adk-testing-4 }
-            
-                .print-site-enumerate-headings #adk-testing h5:before { content: '10.9.' counter(counter-adk-testing-2) '.' counter(counter-adk-testing-3) '.' counter(counter-adk-testing-4) '.' counter(counter-adk-testing-5) ' ' }
-                .print-site-enumerate-headings #adk-testing h5 {  counter-increment: counter-adk-testing-5 }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h5:before { content: '10.7.' counter(counter-adk-06-multi-agent-collaboration-2) '.' counter(counter-adk-06-multi-agent-collaboration-3) '.' counter(counter-adk-06-multi-agent-collaboration-4) '.' counter(counter-adk-06-multi-agent-collaboration-5) ' ' }
+                .print-site-enumerate-headings #adk-06-multi-agent-collaboration h5 {  counter-increment: counter-adk-06-multi-agent-collaboration-5 }
             
 .print-site-enumerate-headings #hands-on-handson > h1:before { content: '11 ' }
 
