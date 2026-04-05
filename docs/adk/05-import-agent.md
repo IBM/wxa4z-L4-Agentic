@@ -68,19 +68,19 @@ In this section, you will access your imported agent within your watsonx Orchest
    
    - ***Description***
   
-    ![](_attachments/test4.png)
+        ![](_attachments/test4.png)
   
    - ***Agent style***
   
-    ![](_attachments/test5.png)
+        ![](_attachments/test5.png)
 
    - ***Tools***
       
-    ![](_attachments/test6.png)
+        ![](_attachments/test6.png)
 
    - ***Instructions***
 
-    ![](_attachments/test7.png)
+        ![](_attachments/test7.png)
 
     
     Verify that your two tools exist and are available to your agent. 
