@@ -7947,7 +7947,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <h3 id="adk-00-intro-lab-flow">Lab Flow<a class="headerlink" href="#adk-00-intro-lab-flow" title="Permanent link">#</a></h3>
 <p>For this Hands-on Agent Builder scenario, you will build multiple agents augmented with tools for calling various z/OSMF REST API endpoints to assist in verifying the status and health of different z/OS components. </p>
 <p>You will first build an <strong><em>IPL Validator Agent</em></strong> using the <strong>pro-code</strong> ADK approach which has two different pre-defined tools available to it. </p>
-<p>Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the <strong>low-code</strong> approach which will enable multi-agent collaboration. This agent, named the <strong>z/OS Helper Agent</strong>, will collaborate with the previously created <strong>IPL Validator Agent</strong> as well as the <strong>zRAG Agent</strong> which is a pre-built agent included in watsonx Assistant for Z and should've already been deployed in section <a href="#agentdeploy-execute-deploy.md">Execute agent deployment</a>. </p>
+<p>Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the <strong>low-code</strong> approach which will enable multi-agent collaboration. This agent, named the <strong>z/OS Helper Agent</strong>, will collaborate with the previously created <strong>IPL Validator Agent</strong> as well as the <strong>zRAG Agent</strong> which is a pre-built agent included in watsonx Assistant for Z and should've already been deployed in section <a href="#agentdeploy-execute-deploy">Execute agent deployment</a>. </p>
 <p>This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product.</p>
 <p>The steps you will execute include:</p>
 <ul>
@@ -8123,7 +8123,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Once the file is opened, edit the file to <strong>replace</strong> <code>&lt;public-ip&gt;</code> in the <code>server_url</code> variable with the <strong>public IP of your zD&amp;T environment reservation</strong>. </p>
-<p><strong>NOTE:</strong> this can be found by following the steps in <strong><em>Section <a href="#techzone-zdt.md-accessing-the-environment">Accessing the environment</a></em></strong>.</p>
+<p><strong>NOTE:</strong> this can be found by following the steps in <strong><em>Section <a href="#techzone-zdt-accessing-the-environment">Accessing the environment</a></em></strong>.</p>
 <p>This must be done for the <code>server_url</code> variable in both the <code>draft</code> AND <code>live</code> sections of the file. 
 <em>For example:</em></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/newconn2.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/newconn2.png"></a></p>
@@ -8157,7 +8157,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <h3 id="adk-03-create-connection-setting-your-connection-credentials">Setting your connection credentials<a class="headerlink" href="#adk-03-create-connection-setting-your-connection-credentials" title="Permanent link">#</a></h3>
 <p>You will now set connection credentials to later authenticate tools to access your environment's z/OSMF APIs.</p>
 <p>Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used by the z/OS <code>IBMUSER</code> ID).</p>
-<p><strong>ACTION:</strong> Record/relocate the RACF Passphrase you set for <strong>IBMUSER</strong> in <strong><em>Section <a href="#techzone-zdt.md-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER</a></em></strong>.</p>
+<p><strong>ACTION:</strong> Record/relocate the RACF Passphrase you set for <strong>IBMUSER</strong> in <strong><em>Section <a href="#techzone-zdt-set-new-passphrase-for-ibmuser">Set new Passphrase for IBMUSER</a></em></strong>.</p>
 <p><em>You will need these credentials for the following step.</em></p>
 <ol>
 <li>
@@ -8368,23 +8368,19 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <ul>
 <li>
 <p><strong><em>Description</em></strong></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/test4.png)
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test4.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test4.png"></a></p>
 </li>
 <li>
 <p><strong><em>Agent style</em></strong></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/test5.png)
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test5.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test5.png"></a></p>
 </li>
 <li>
 <p><strong><em>Tools</em></strong></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/test6.png)
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test6.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test6.png"></a></p>
 </li>
 <li>
 <p><strong><em>Instructions</em></strong></p>
-<div class="highlight"><pre><span></span><code>![](_attachments/test7.png)
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test7.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test7.png"></a></p>
 <p>Verify that your two tools exist and are available to your agent. </p>
 </li>
 </ul>
@@ -8407,7 +8403,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test14.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test14.png"></a></p>
 <p><strong>Step 8:</strong> The agent then provides a summarized list of the previous checks, with an explanation:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../adk/_attachments/test15.png" data-desc-position="bottom"><img alt="" src="../adk/_attachments/test15.png"></a></p>
-<p><strong><em>Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the </em>*low-code approach</strong> which provides multi-agent orchestration, using other agents (including this one) as collaborators***</p></div></body></html></section><section class="print-page" id="adk-06-multi-agent-collaboration" heading-number="10.7"><html><head>
+<p><strong><em>Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the 'low-code approach' which provides multi-agent orchestration, using other agents (including this one) as collaborators</em></strong></p></div></body></html></section><section class="print-page" id="adk-06-multi-agent-collaboration" heading-number="10.7"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
@@ -8415,12 +8411,14 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
         </script>
         </head><body><div><h1 id="multi-agent-collaboration">Multi-Agent Collaboration<a class="headerlink" href="#adk-06-multi-agent-collaboration-multi-agent-collaboration" title="Permanent link">#</a></h1>
 <p>Now that you have your <code>IPL_Validator_Agent</code> created using the ADK, you will now create an <strong>Orchestrator Agent</strong> via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. </p>
-<p>In this scenario, you will create an agent named <strong>z/OS Helper Agent</strong> that collaborates with:
-- <code>IPL_Validator_Agent</code> 
-  - <strong>Purpose</strong>: to provide post-IPL health checks
-- <code>zRAG Agent</code> which you previously deployed with watsonx Assistant for Z
-  - <strong>Purpose</strong>: to retrieve commands used to display certain information about the Db2 for z/OS subsystem
-- <code>db2Command</code> tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface</p>
+<p>In this scenario, you will create an agent named <strong>z/OS Helper Agent</strong> that collaborates with:</p>
+<ul>
+<li><code>IPL_Validator_Agent</code> </li>
+<li><strong>Purpose</strong>: to provide post-IPL health checks</li>
+<li><code>zRAG Agent</code> which you previously deployed with watsonx Assistant for Z</li>
+<li><strong>Purpose</strong>: to retrieve commands used to display certain information about the Db2 for z/OS subsystem</li>
+<li><code>db2Command</code> tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface</li>
+</ul>
 <h2 id="adk-06-multi-agent-collaboration-creating-your-new-agent-within-watsonx-orchestrate">Creating your new Agent within watsonx Orchestrate<a class="headerlink" href="#adk-06-multi-agent-collaboration-creating-your-new-agent-within-watsonx-orchestrate" title="Permanent link">#</a></h2>
 <p>The steps in this section assume you're already logged into the watsonx Orchestrate UI. </p>
 <ol>
@@ -8501,7 +8499,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </ol>
 <h2 id="adk-06-multi-agent-collaboration-enabling-zrag-agent-collaboration">Enabling zRAG Agent collaboration<a class="headerlink" href="#adk-06-multi-agent-collaboration-enabling-zrag-agent-collaboration" title="Permanent link">#</a></h2>
 <p>In the previous sub-section, you successfully tested the execution and behavior of your tool using a hard-coded Db2 for z/OS command. </p>
-<p>Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported <strong>zRAG Agent</strong> which you would've deployed in section <a href="#..-agentdeploy-execute-deploy.md">Execute agent deployment</a>. </p>
+<p>Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported <strong>zRAG Agent</strong> which you would've deployed in section <a href="#agentdeploy-execute-deploy">Execute agent deployment</a>. </p>
 <ol>
 <li>
 <p>In the <strong>Agents</strong> section of the Agent builder screen, click <strong>Add agent</strong>. </p>
@@ -8524,7 +8522,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p>In your existing instructions, the last section you had previously added was:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#adk-06-multi-agent-collaboration-__codelineno-2-1"></a>When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
 </span></code></pre></div>
-<p>This was used to hard-code the input command to the tool. Instead, replace that section with the following:</p>
+<p>This was used to hard-code the input command to the tool. Instead, <strong>replace that section with the following</strong>:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#adk-06-multi-agent-collaboration-__codelineno-3-1"></a>If the user asks to get or display information about Db2, call the "zRAG Agent" collaborator agent, passing the user's exact query to the agent. Wait until the zRAG Agent finishes generating a response, then return the exact response back to the user. Then extract the relevant command from the output and display it back to the user. Ensure that every Db2 command begins with "-", i.e. "-DISPLAY GROUP". THEN, pass that command as input to the "db2Command" tool. Wait until the full output is returned, then return the full output back to the user in a pretty, structured, line-by-line format. DISPLAY THE OUTPUT EXACTLY AS THE TOOL RETURNS IT WITH LINE BREAKS.    
 </span></code></pre></div>
 <p>Now, the full set of agent <strong>Instructions</strong> should look like the following:</p>

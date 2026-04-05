@@ -3019,12 +3019,14 @@
 
 <div><h1 id="multi-agent-collaboration">Multi-Agent Collaboration<a class="headerlink" href="#multi-agent-collaboration" title="Permanent link">#</a></h1>
 <p>Now that you have your <code>IPL_Validator_Agent</code> created using the ADK, you will now create an <strong>Orchestrator Agent</strong> via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. </p>
-<p>In this scenario, you will create an agent named <strong>z/OS Helper Agent</strong> that collaborates with:
-- <code>IPL_Validator_Agent</code> 
-  - <strong>Purpose</strong>: to provide post-IPL health checks
-- <code>zRAG Agent</code> which you previously deployed with watsonx Assistant for Z
-  - <strong>Purpose</strong>: to retrieve commands used to display certain information about the Db2 for z/OS subsystem
-- <code>db2Command</code> tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface</p>
+<p>In this scenario, you will create an agent named <strong>z/OS Helper Agent</strong> that collaborates with:</p>
+<ul>
+<li><code>IPL_Validator_Agent</code> </li>
+<li><strong>Purpose</strong>: to provide post-IPL health checks</li>
+<li><code>zRAG Agent</code> which you previously deployed with watsonx Assistant for Z</li>
+<li><strong>Purpose</strong>: to retrieve commands used to display certain information about the Db2 for z/OS subsystem</li>
+<li><code>db2Command</code> tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface</li>
+</ul>
 <h2 id="creating-your-new-agent-within-watsonx-orchestrate">Creating your new Agent within watsonx Orchestrate<a class="headerlink" href="#creating-your-new-agent-within-watsonx-orchestrate" title="Permanent link">#</a></h2>
 <p>The steps in this section assume you're already logged into the watsonx Orchestrate UI. </p>
 <ol>
@@ -3105,7 +3107,7 @@
 </ol>
 <h2 id="enabling-zrag-agent-collaboration">Enabling zRAG Agent collaboration<a class="headerlink" href="#enabling-zrag-agent-collaboration" title="Permanent link">#</a></h2>
 <p>In the previous sub-section, you successfully tested the execution and behavior of your tool using a hard-coded Db2 for z/OS command. </p>
-<p>Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported <strong>zRAG Agent</strong> which you would've deployed in section <a href="../../../agentdeploy/execute-deploy.md">Execute agent deployment</a>. </p>
+<p>Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported <strong>zRAG Agent</strong> which you would've deployed in section <a href="../../agentdeploy/execute-deploy/">Execute agent deployment</a>. </p>
 <ol>
 <li>
 <p>In the <strong>Agents</strong> section of the Agent builder screen, click <strong>Add agent</strong>. </p>
@@ -3128,7 +3130,7 @@
 <p>In your existing instructions, the last section you had previously added was:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
 </span></code></pre></div>
-<p>This was used to hard-code the input command to the tool. Instead, replace that section with the following:</p>
+<p>This was used to hard-code the input command to the tool. Instead, <strong>replace that section with the following</strong>:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>If the user asks to get or display information about Db2, call the "zRAG Agent" collaborator agent, passing the user's exact query to the agent. Wait until the zRAG Agent finishes generating a response, then return the exact response back to the user. Then extract the relevant command from the output and display it back to the user. Ensure that every Db2 command begins with "-", i.e. "-DISPLAY GROUP". THEN, pass that command as input to the "db2Command" tool. Wait until the full output is returned, then return the full output back to the user in a pretty, structured, line-by-line format. DISPLAY THE OUTPUT EXACTLY AS THE TOOL RETURNS IT WITH LINE BREAKS.    
 </span></code></pre></div>
 <p>Now, the full set of agent <strong>Instructions</strong> should look like the following:</p>
