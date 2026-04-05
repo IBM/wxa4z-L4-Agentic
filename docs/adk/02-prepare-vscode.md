@@ -6,7 +6,7 @@ For the following sections of the Lab, you will be using VS Code to build your a
 
 1. Download the **Custom-Agent-Builder.zip file** to your local machine: 
    
-    <a href="https://ibm.box.com/s/bdve4upiaj9riu58xl78igbp30imwabb" target="_blank">https://ibm.box.com/s/bdve4upiaj9riu58xl78igbp30imwabb</a>
+    <a href="https://ibm.box.com/s/v5ubacibc8m27u8tbzyh8harkk10o1qg" target="_blank">https://ibm.box.com/s/v5ubacibc8m27u8tbzyh8harkk10o1qg</a>
    
 
 2. Click the **download** icon in the top-right corner of the browser to download the agent folder to your local workstation.
