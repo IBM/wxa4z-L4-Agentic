@@ -6,11 +6,11 @@ In this section, you will define an agent named **IPL Validator Agent** that lev
 
 1. Within VS Code, click on the `IPL-validator-agent.yaml` file to view the contents.
    
-    ![](_attachments/deploy1.png)
+    ![](_attachments/deploy1.png){width=50%}
 
 2. You should then be able to see the agent definition as shown below:
    
-    ![](_attachments/deploy2.png)
+    ![](_attachments/deploy2.png){width=50%}
 
     *Lets go over each of the sections...*
     
@@ -45,42 +45,42 @@ In this section, you will access your imported agent within your watsonx Orchest
 
 1. Firstly, access your watsonx Orchestrate environment by viewing the your IBM Cloud **Resources** under the **AI / Machine Learning** drop-down. Follow the instructions [here](../../techzone/orchestrate.md#accessing-the-environment) as reference. You should then see the following:
 
-    ![](_attachments/wxo10.png)
+    ![](_attachments/wxo10.png){width=50%}
 
 2. Once in the **Resource** list, click on the **AI/Machine Learning** drop-down and click on the name of your **watsonx Orchestrate** resource:
 
-    ![](_attachments/serviceurl2.png)
+    ![](_attachments/serviceurl2.png){width=50%}
 
 
 3. Click **Launch watsonx Orchestrate**
 
-    ![](_attachments/serviceurl3.png)
+    ![](_attachments/serviceurl3.png){width=50%}
 
 4. You'll then be taken to the **Chat** window of the Orchestrate UI. Click on the hamburger menu icon in the top-left corner of the page, and select **Build**. 
    
-    ![](_attachments/test2.png)
+    ![](_attachments/test2.png){width=50%}
 
 5. From there, you should see the list of all your existing agents. You should be able to see your **IPL_Validator_Agent** as shown below:
    
-    ![](_attachments/test3.png)
+    ![](_attachments/test3.png){width=50%}
 
 6. Click on your **IPL_Validator_Agent**. You'll then be taken to the Builder view for your agent, where you can see all the agent characteristics that were defined in your agent definition file, including the following:
    
    - ***Description***
   
-      ![](_attachments/test4.png)
+      ![](_attachments/test4.png){width=50%}
   
    - ***Agent style***
   
-      ![](_attachments/test5.png)
+      ![](_attachments/test5.png){width=50%}
 
    - ***Tools***
       
-      ![](_attachments/test6.png)
+      ![](_attachments/test6.png){width=50%}
 
    - ***Instructions***
 
-      ![](_attachments/test7.png)
+      ![](_attachments/test7.png){width=50%}
 
     
     Verify that your two tools exist and are available to your agent. 
@@ -95,35 +95,35 @@ Now you can test the execution flow of your agent. When the user prompts the age
 
 **Step 1:** The agent calls the `operatorCommand` tool, passing `D IPLINFO` as input to the tool. The results should be displayed similarly to below:
 
-![](_attachments/test8.png)
+![](_attachments/test8.png){width=50%}
 
 **Step 2:** The agent calls the `tsoCommand` tool, passing `TIME` as the command input. This verifies that TSO is running. The output of that step should look like:
 
-![](_attachments/test9.png)
+![](_attachments/test9.png){width=50%}
 
 **Step 3:** The agent calls the `operatorCommand` tool, passing `D OMVS` as input:
 
-![](_attachments/test10.png)
+![](_attachments/test10.png){width=50%}
 
 **Step 4:** The agent calls the `operatorCommand` tool, passing `D OMVS,MF` as input:
 
-![](_attachments/test11.png)
+![](_attachments/test11.png){width=50%}
 
 
 **Step 5:** The agent verifies if z/OSMF is running:
 
-![](_attachments/test12.png)
+![](_attachments/test12.png){width=50%}
 
 **Step 6:** The agent checks to see if JES is running by calling the `operatorCommand` tool, passing `$D JES2` as input. 
 
-![](_attachments/test13.png)
+![](_attachments/test13.png){width=50%}
 
 **Step 7:** The agent checks the status of JES2 by running the `operatorCommand` tool, passing `D A,JES2` as input:
 
-![](_attachments/test14.png)
+![](_attachments/test14.png){width=50%}
 
 **Step 8:** The agent then provides a summarized list of the previous checks, with an explanation:
 
-![](_attachments/test15.png)
+![](_attachments/test15.png){width=50%}
 
 ***Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the 'low-code approach' which provides multi-agent orchestration, using other agents (including this one) as collaborators***
