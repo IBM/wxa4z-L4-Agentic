@@ -3,11 +3,11 @@
 Now that you have your `IPL_Validator_Agent` created using the ADK, you will now create an **Orchestrator Agent** via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. 
 
 In this scenario, you will create an agent named **z/OS Helper Agent** that collaborates with:
-- **IPL Validator Agent** 
-  - Purpose: to provide post-IPL health checks
-- **zRAG Agent** which you previously deployed with watsonx Assistant for Z to 
-  - Purpsose: to retrieve commands used to display certain information about the Db2 for z/OS subsystem
-- the **db2Command** tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface
+- `IPL_Validator_Agent` 
+  - **Purpose**: to provide post-IPL health checks
+- `zRAG Agent` which you previously deployed with watsonx Assistant for Z to 
+  - **Purpose**: to retrieve commands used to display certain information about the Db2 for z/OS subsystem
+- `db2Command` tool you previously imported in order to run Db2 for z/OS commands using the DSN TSO/E interface
 
 ## Creating your new Agent within watsonx Orchestrate
 

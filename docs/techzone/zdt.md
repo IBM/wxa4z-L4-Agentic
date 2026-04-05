@@ -6,6 +6,7 @@ The third lab environment you will use is the ***Z Dev & Test (zD&T)*** environm
 
 The image comes pre-configured with a subset of middleware and products available, including: 
 
+- CICS v6.2
 - Db2 v13 
 - IMS v15
 - JES
@@ -15,7 +16,7 @@ The image comes pre-configured with a subset of middleware and products availabl
 
 ??? Tip "Middleware limitations"
 
-    Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes CICS and MQ. Additional images will be made available in the future with these components available.
+    Due to TechZone/storage limitations for environment templates, there are certain middleware missing from the image. This includes MQ. Additional images will be made available in the future with these components available.
 
 The below section describes how to access your environment, change your RACF password and log into TSO and z/OSMF.
 

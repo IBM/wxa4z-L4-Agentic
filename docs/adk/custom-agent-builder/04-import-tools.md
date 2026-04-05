@@ -55,7 +55,7 @@ In this section, you will import the tool files within your workspace to create 
 
     Within the body of the API call, `cmd` gets passed as input from the agent. Depending on the step in the IPL validation, the agent may pass `D A,L` as the command to execute, as an example. 
    
-    Then click on the `tsoCommand` file and take time to review its content as well. 
+    Then click on the `tsoCommand.py` file and take time to review its content as well. 
 
 2. Import the `operatorCommand` tool by running the following command from your VS Code Terminal command-prompt:
    
@@ -64,6 +64,9 @@ In this section, you will import the tool files within your workspace to create 
     ```
 
     After issuing the command, you should see a message similar to what's shown below:
+
+    ![](_attachments/tool1.png)
+
 
     That indicates that the `operatorCommand` tool was imported successfully. 
 
@@ -90,4 +93,4 @@ In this section, you will import the tool files within your workspace to create 
 
     This should output a table similar to below showing all your imported tools.
 
-    ![](_attachments/tools6.png)
+    ![](_attachments/tool2.png)
