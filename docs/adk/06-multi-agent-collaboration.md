@@ -16,12 +16,12 @@ The steps in this section assume you're already logged into the watsonx Orchestr
 
 1. From the **Agent chat** window, click on the hamburger menu icon and select **Build**
 
-    ![](_attachments/build1.png)
+    ![](_attachments/build1.png){width=50%}
 
 
 2. Click on **Create agent** in the top-right corner.
 
-    ![](_attachments/build2.png)
+    ![](_attachments/build2.png){width=50%}
 
 3. Select **Create from scratch**
    
@@ -32,29 +32,29 @@ The steps in this section assume you're already logged into the watsonx Orchestr
       ```
     - Then click **Create**
 
-        ![](_attachments/build3.png)
+        ![](_attachments/build3.png){width=50%}
 
 4. Scroll down to the **Agent style** section. Select the **React** style. This style of agent allows the LLM to learn and refine its behavior. 
 
-    ![](_attachments/build4.png)
+    ![](_attachments/build4.png){width=50%}
 
 5. The first tool you'll test to build the scenario is the `db2Command` tool. 
 
     Scroll down to the **Tools** section and click **Add tool**. 
 
-    ![](_attachments/build5.png)
+    ![](_attachments/build5.png){width=50%}
 
     Select **Local Instance**, as you have already imported the `db2Command` tool into your instance previously. 
 
-    ![](_attachments/build6.png)
+    ![](_attachments/build6.png){width=50%}
 
     Then select the **db2Command** tool from the list and then click **Add to agent**. 
 
-    ![](_attachments/build7.png)
+    ![](_attachments/build7.png){width=50%}
 
     You should then see the `db2Command` tool added to your new agent's tool list. 
 
-    ![](_attachments/build8.png)
+    ![](_attachments/build8.png){width=50%}
 
 ## Testing the `db2Command` tool
 
@@ -70,17 +70,17 @@ In this step of the scenario, you will firstly test the usage of the `db2Command
     When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
     ```
 
-    ![](_attachments/build9.png)
+    ![](_attachments/build9.png){width=50%}
 
     The purpose is to test that the `db2Command` tool works as expected.
 
 2. Once done, click on the agent chat window on the right-side of the screen, and issue the prompt: `get db2 details`
 
-    ![](_attachments/build10.png)
+    ![](_attachments/build10.png){width=50%}
 
 3. Wait until the full output is returned. It should look something like this:
   
-    ![](_attachments/build11.png)
+    ![](_attachments/build11.png){width=50%}
 
     In the output, it should show details about the Db2 for z/OS subsystem, including:
 
@@ -95,7 +95,7 @@ In this step of the scenario, you will firstly test the usage of the `db2Command
    
     Notice the tool that's listed (`db2Command`) and the **command** that was used as input (`-DISPLAY GROUP`).
     
-    ![](_attachments/build12.png)
+    ![](_attachments/build12.png){width=50%}
 
     This command was of course hard-coded in the **Instructions** you used previously. But in the next section you will enable dynamic command inputs according to what the user would like to retrieve. 
 
@@ -108,22 +108,22 @@ Now you will enable a workflow where the user can tell the agent what informatio
 
 1. In the **Agents** section of the Agent builder screen, click **Add agent**. 
 
-    ![](_attachments/build13.png)
+    ![](_attachments/build13.png){width=50%}
 
 2. Then select **Local instance** as you already deployed your **zRAG Agent**. 
 
-    ![](_attachments/build14.png)
+    ![](_attachments/build14.png){width=50%}
 
 
 3. From the list, select the **zRAG Agent** and click **Add to agent**. 
 
-    ![](_attachments/build15.png)
+    ![](_attachments/build15.png){width=50%}
 
 
 4. Once done, you should now see your **zRAG Agent** added as a collaborator to your **z/OS Helper Agent**. 
 
 
-    ![](_attachments/build16.png)
+    ![](_attachments/build16.png){width=50%}
 
 
 5. Next, scroll back down to the **Instructions** text field, and modify the instructions. 
@@ -167,13 +167,13 @@ Now you will enable a workflow where the user can tell the agent what informatio
     display information about my Db2 subsystem catalog and function levels 
     ```
 
-    ![](_attachments/build17.png)
+    ![](_attachments/build17.png){width=50%}
     
     **NOTE:** You may need to restart the conversation....
 
 7. View the full output of the response. 
    
-    ![](_attachments/build18.png)
+    ![](_attachments/build18.png){width=50%}
     
 
     Notice the command that was issued and the full response - it should be similar to the previous query when "-DISPLAY GROUP" was hard-coded. 
@@ -182,24 +182,24 @@ Now you will enable a workflow where the user can tell the agent what informatio
    
     You should see that there were three steps executed:
 
-    ![](_attachments/build19.png)
+    ![](_attachments/build19.png){width=50%}
 
     
     **Step 1:** Expanding Step 1, you should see the following:
 
-    ![](_attachments/build20.png)
+    ![](_attachments/build20.png){width=50%}
 
 
     The **z/OS Helper Agent** first sent the user's query to it's collaborator agent (**zRAG Agent**).
 
     **Step 2:** The **zRAG Agent** then invoked its **zrag_retriever** tool with the same query in order to search the zRAG database for the relevant information and return the corresponding Db2 for z/OS command. 
 
-    ![](_attachments/build21.png)
+    ![](_attachments/build21.png){width=50%}
 
 
     **Step 3:** The retrieved command is then passed as input to the **db2Command** tool to execute the same exact command as you previously hard-coded. 
 
-    ![](_attachments/build22.png)
+    ![](_attachments/build22.png){width=50%}
 
 
     Then the output of the command is returned back to the user. 
@@ -214,7 +214,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
    
     Once the full query is completed, you should see something like the following:
 
-    ![](_attachments/build23.png)
+    ![](_attachments/build23.png){width=50%}
 
     We can see that the retrieved command was `-DISPLAY BUFFERPOOL` and the output is returned. 
 
@@ -228,7 +228,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
 
     The output should look similar to what's shown below:
 
-    ![](_attachments/build24.png)
+    ![](_attachments/build24.png){width=50%}
 
     For that query, the agent determined that the `-DISPLAY DATABASE(*)` command was the appropriate command to use. 
 
@@ -240,7 +240,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
 
     The output should look similar to what's shown below:
 
-    ![](_attachments/build25.png)
+    ![](_attachments/build25.png){width=50%}
 
     For that query, the agent determined that the `-DISPLAY DDF` command was the appropriate command to use. 
 
@@ -252,17 +252,17 @@ The last step in the scenario is to enable collaboration with the previous **IPL
 
 1. To accomplish this, navigate to the **Agents** section of the Agent builder UI and click on **Add agent**.
 
-    ![](_attachments/build26.png)
+    ![](_attachments/build26.png){width=50%}
 
 
 2. Then select **Local instance**. From the list, select your **IPL Validator Agent** and click **Add to agent**. 
 
-    ![](_attachments/build27.png)
+    ![](_attachments/build27.png){width=50%}
 
 
 3. Once done,you should now see your **IPL Validator** agent added as a collaborator (in addition to the previously added **zRAG Agent**).
    
-    ![](_attachments/build28.png)
+    ![](_attachments/build28.png){width=50%}
 
 
 4. You will lastly need to modify the **Instructions** to prioritize collaboration. 
@@ -281,7 +281,7 @@ The last step in the scenario is to enable collaboration with the previous **IPL
     
 6. When the agent completes the response, it should look something like what's shown below:
   
-    ![](_attachments/build29.png)
+    ![](_attachments/build29.png){width=50%}
     
 
     It should look very similar to what was returned from the **IPL Validator Agent** in the previous section. 
@@ -296,22 +296,22 @@ Follow the steps below to deploy your agent.
 
 1. Within the Agent Builder UI of your **Draft** agent, click on **Deploy** in the top-right corner.
    
-    ![](_attachments/build30.png)
+    ![](_attachments/build30.png){width=50%}
 
 2. On the **Pre-deployment summary** page, click **Deploy** once more. 
    
 
-    ![](_attachments/build31.png)
+    ![](_attachments/build31.png){width=50%}
 
 3. After waiting a few seconds, you should then get a success message as shown below. Click on **Maybe later**:
    
-    ![](_attachments/build32.png)
+    ![](_attachments/build32.png){width=50%}
 
 4. Then navigate to your deployed agent by clicking on the hamburger menu and selecting **Chat**. 
 
-    ![](_attachments/build33.png)
+    ![](_attachments/build33.png){width=50%}
 
 5. Finally, click on the **Agents** drop-down menu and select your deployed agent. 
    
-    ![](_attachments/build34.png)
+    ![](_attachments/build34.png){width=50%}
 
