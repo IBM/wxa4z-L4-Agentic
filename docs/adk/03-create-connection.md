@@ -27,7 +27,7 @@ For this Lab, there is a `zosmf_connection.yaml` file pre-created for you. This 
 
 2. Once the file is opened, edit the file to **replace** `<public-ip>` in the `server_url` variable with the **public IP of your zD&T environment reservation**. 
    
-    **NOTE:** this can be found by following the steps in ***Section [Accessing the environment](../../techzone/zdt.md#accessing-the-environment)***.
+    **NOTE:** this can be found by following the steps in ***Section [Accessing the environment](../techzone/zdt.md#accessing-the-environment)***.
    
     This must be done for the `server_url` variable in both the `draft` AND `live` sections of the file. 
     *For example:*
@@ -70,7 +70,7 @@ You will now set connection credentials to later authenticate tools to access yo
 
 Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used by the z/OS `IBMUSER` ID).
 
-**ACTION:** Record/relocate the RACF Passphrase you set for **IBMUSER** in ***Section [Set new Passphrase for IBMUSER](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)***.
+**ACTION:** Record/relocate the RACF Passphrase you set for **IBMUSER** in ***Section [Set new Passphrase for IBMUSER](../techzone/zdt.md#set-new-passphrase-for-ibmuser)***.
 
 *You will need these credentials for the following step.*
 

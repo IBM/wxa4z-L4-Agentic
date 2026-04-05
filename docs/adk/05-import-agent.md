@@ -68,19 +68,19 @@ In this section, you will access your imported agent within your watsonx Orchest
    
    - ***Description***
   
-        ![](_attachments/test4.png)
+      ![](_attachments/test4.png)
   
    - ***Agent style***
   
-        ![](_attachments/test5.png)
+      ![](_attachments/test5.png)
 
    - ***Tools***
       
-        ![](_attachments/test6.png)
+      ![](_attachments/test6.png)
 
    - ***Instructions***
 
-        ![](_attachments/test7.png)
+      ![](_attachments/test7.png)
 
     
     Verify that your two tools exist and are available to your agent. 
@@ -126,4 +126,4 @@ Now you can test the execution flow of your agent. When the user prompts the age
 
 ![](_attachments/test15.png)
 
-***Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the **low-code approach** which provides multi-agent orchestration, using other agents (including this one) as collaborators***
+***Congratulations! You've successfully imported and tested your first agent using the ADK with custom tools. In the following section, you will create a new custom agent using the 'low-code approach' which provides multi-agent orchestration, using other agents (including this one) as collaborators***

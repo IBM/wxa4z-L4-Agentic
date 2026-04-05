@@ -3,6 +3,7 @@
 Now that you have your `IPL_Validator_Agent` created using the ADK, you will now create an **Orchestrator Agent** via the Agent Builder Experience (WxO UI) that provides multi-agent orchestration in order to accomplish various tasks. 
 
 In this scenario, you will create an agent named **z/OS Helper Agent** that collaborates with:
+
 - `IPL_Validator_Agent` 
   - **Purpose**: to provide post-IPL health checks
 - `zRAG Agent` which you previously deployed with watsonx Assistant for Z
@@ -103,7 +104,7 @@ In this step of the scenario, you will firstly test the usage of the `db2Command
 
 In the previous sub-section, you successfully tested the execution and behavior of your tool using a hard-coded Db2 for z/OS command. 
 
-Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported **zRAG Agent** which you would've deployed in section [Execute agent deployment](../../../agentdeploy/execute-deploy.md). 
+Now you will enable a workflow where the user can tell the agent what information they'd like to view, and then the agent will retrieve the relevant command to then pass to the tool as input. To accomplish this, you will enable agent collaboration with your previously imported **zRAG Agent** which you would've deployed in section [Execute agent deployment](../agentdeploy/execute-deploy.md). 
 
 1. In the **Agents** section of the Agent builder screen, click **Add agent**. 
 
@@ -133,7 +134,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
     When the user asks to "get db2 details", use the "db2Command" tool, passing the "-DISPLAY GROUP" command as input. Then return the full output back to the user. 
     ``` 
 
-    This was used to hard-code the input command to the tool. Instead, replace that section with the following:
+    This was used to hard-code the input command to the tool. Instead, **replace that section with the following**:
 
     ```
     If the user asks to get or display information about Db2, call the "zRAG Agent" collaborator agent, passing the user's exact query to the agent. Wait until the zRAG Agent finishes generating a response, then return the exact response back to the user. Then extract the relevant command from the output and display it back to the user. Ensure that every Db2 command begins with "-", i.e. "-DISPLAY GROUP". THEN, pass that command as input to the "db2Command" tool. Wait until the full output is returned, then return the full output back to the user in a pretty, structured, line-by-line format. DISPLAY THE OUTPUT EXACTLY AS THE TOOL RETURNS IT WITH LINE BREAKS.    
@@ -183,6 +184,7 @@ Now you will enable a workflow where the user can tell the agent what informatio
 
     ![](_attachments/build19.png)
 
+    
     **Step 1:** Expanding Step 1, you should see the following:
 
     ![](_attachments/build20.png)

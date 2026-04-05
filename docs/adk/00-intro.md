@@ -32,7 +32,7 @@ For this Hands-on Agent Builder scenario, you will build multiple agents augment
 
 You will first build an ***IPL Validator Agent*** using the **pro-code** ADK approach which has two different pre-defined tools available to it. 
 
-Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the **low-code** approach which will enable multi-agent collaboration. This agent, named the **z/OS Helper Agent**, will collaborate with the previously created **IPL Validator Agent** as well as the **zRAG Agent** which is a pre-built agent included in watsonx Assistant for Z and should've already been deployed in section [Execute agent deployment](../../agentdeploy/execute-deploy.md). 
+Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the **low-code** approach which will enable multi-agent collaboration. This agent, named the **z/OS Helper Agent**, will collaborate with the previously created **IPL Validator Agent** as well as the **zRAG Agent** which is a pre-built agent included in watsonx Assistant for Z and should've already been deployed in section [Execute agent deployment](../agentdeploy/execute-deploy.md). 
 
 
 This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product.
