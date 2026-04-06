@@ -133,7 +133,7 @@ In order to log into the ADK environment, you will need two environment details 
 
 5. In order to set a new Passphrase for your IBMUSER zOS user, you will first need to SSH into z/OS USS, using port 2022.
    
-    On your local machine's command line, navigate to the directory of your downloaded SSH key from the previous step (i.e. Downloads).
+    On your local machine's command line, navigate to the directory of your downloaded SSH key from the previous step, for example:
 
     `cd Downloads`
 
@@ -141,9 +141,6 @@ In order to log into the ADK environment, you will need two environment details 
 
     `chmod 600 <ssh-key.pem>`
 
-    For example:
-
-    **IMAGE**
 
 7. Then SSH into z/OS UNIX, by running the below command, replacing `<ssh-key.pem>` with the name of your downloaded key, and replacing `<public ip>` with the IP you recorded in the above section:
 
@@ -153,27 +150,31 @@ In order to log into the ADK environment, you will need two environment details 
 
     Once SSH'ed in successfully, you should see something similar to below:
 
-    **IMAGE**
+    ![](_attachments/zdt5.png)
 
 8. Next, set a new zOS Passphrase for your **IBMUSER** zOS user by running the following command. This is the RACF Passphrase that you will use to log into TSO as the IBMUSER ID.
    
-   Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string `YOUR PASSWORD PHRASE`:
+    Once you're SSH'ed into zOS USS, enter the following command, substituting a passphrase of your choice for the string `YOUR PASSWORD PHRASE`:
 
     ```
     tsocmd "ALTUSER IBMUSER PHRASE('YOUR PASSWORD PHRASE') NOEXPIRE RESUME"
     ```
 
-    **Syntax rules..**
 
-    Note: if you typed the command yourself, be sure to include the single-quotes before and after the password. Record the passphrase as it will be needed later.
+    ??? Tip "Syntax rules for RACF Password Phrases (below)"
+    
+        - minimum length: 9 characters
+        - Must contain at least 2 alphabetic characters (A - Z, a - z)
+        - Must contain at least 2 non-alphabetic characters (numerics, punctuation, or special characters, including spaces)
+        - Must not contain more than 2 consecutive characters that are identical
+  
+    **Note:** *if you typed the command yourself, be sure to include the single-quotes before and after the password.* ***Record the passphrase as it will be needed later.***
 
     Afterwards, you should see something similar to the following:
 
-    **IMAGE**
+    ![](_attachments/zdt6.png)
 
-9. Exit out of z/OS USS by entering `exit` of the command-line. 
-
-
+9. Exit out of z/OS USS by entering `exit` on the command-line. 
 
 
 ## Log into ADK environment
@@ -186,7 +187,7 @@ Access the ADK by SSH'ing into the Linux environment hosting the watsonx Orchest
 
 1. Previously you SSH'ed into z/OS UNIX using the SSH key you downloaded locally. You will use that same key to SSH into the Linux server. 
    
-   On your local machine's command-line, SSH into Linux on port `2223` by running the below command, replacing `<ssh-key.pem>` with the name of your downloaded key, and replacing `<public ip>` with the IP you recorded earlier:
+    On your local machine's command-line, **SSH into Linux** on port `2223` by running the below command, replacing `<ssh-key.pem>` with the name of your downloaded key, and replacing `<public ip>` with the IP you recorded earlier:
 
     ```
     ssh -i <ssh-key.pem> itzuser@<public ip> -p 2223
@@ -194,17 +195,17 @@ Access the ADK by SSH'ing into the Linux environment hosting the watsonx Orchest
 
     You should see the following:
 
-    **IMAGE**
+    ![](_attachments/linux1.png)
 
 2. Navigate to the **Custom-Agent-Builder** directory on the Linux system:
    
     `cd Custom-Agent-Builder`
 
-    **IMAGE**
+    ![](_attachments/linux2.png)
 
     Then type `ls` to view the configuration files.
 
-    **IMAGE**
+    ![](_attachments/linux3.png)
 
 3. Login and activate your ADK environment by running the following command in the Linux command-line, replacing `<your Service Instance URL>` with your unique **Service Instance URL** you recorded earlier:
    
@@ -214,11 +215,11 @@ Access the ADK by SSH'ing into the Linux environment hosting the watsonx Orchest
 
 4. After issuing the above command, you will be prompted for your **WXO API key** as shown below:
 
-    **IMAGE**
+    ![](_attachments/linux4.png)
 
     **Copy and paste** the value of your **IBM Cloud API key** from the preceding steps and hit **enter**. You should then see that your environment is now active, as shown below:
 
-    **IMAGE**
+    ![](_attachments/linux5.png)
 
 5. Once activated, verify you’re successfully connected by running the following command to view existing agents in your environment:
 
@@ -226,7 +227,7 @@ Access the ADK by SSH'ing into the Linux environment hosting the watsonx Orchest
 
     You should see the **zRAG Agent** listed which was pre-deployed for you. 
 
-    **IMAGE**
+    ![](_attachments/linux6.png)
 
 
 
@@ -240,13 +241,17 @@ Within the **Custom-Agent-Builder** directory on Linux, you should see a `zosmf_
     nano zosmf_connection.yaml
     ```
 
-2. Once you're viewing teh file, **replace** `<public-ip>` in the `server_url` variable with the **public IP of your zD&T environment** that you recorded earlier. 
+2. Once you're viewing the file, **replace** `<public-ip>` in the `server_url` variable with the **public IP of your zD&T environment** that you recorded earlier. 
    
-   **IMAGE**
+    ![](_attachments/linux7.png)
 
    *This must be done for the `server_url` variable in both the draft AND live sections of the file.*
 
 3. Make sure to save the file after modifying it.
+   
+    To save the file, press **Ctrl+S** to save the file.
+
+    Then exit from the editor view by clicking **Ctrl+X**.
 
 4. Now you can import the connection to your ADK environment.
 
@@ -255,6 +260,76 @@ Within the **Custom-Agent-Builder** directory on Linux, you should see a `zosmf_
     ```
     orchestrate connections import --file zosmf_connection.yaml
     ```
+
+    ![](_attachments/linux8.png)
+
+
+5. Verify the connection was successfully imported by running the following command at the Linux command-line:
+   
+    ```
+    orchestrate connections list
+    ```
+
+    In the output of the command, notice that your new connection is listed with *app-id* **zosmf** and that the Credentials have not yet been set (as shown below).
+
+    ![](_attachments/linux9.png)
+
+    **Note**: *you may need to scroll to the top of the connections list.*
+
+    You will next set your connection credentials.
+
+6. The connection credentials you provide will later be used to authenticate tools to access your environment's z/OSMF APIs. 
+   
+    Credentials hold the values used to authorize against external services. In the case of your previously created connection, you configured it with kind: basic which enforces username and password credentials (i.e. the username and password used by the z/OS IBMUSER ID).
+
+    To set your connection credentials for the **draft** environment, enter the following command in the Linux command-line, replacing `<your-passphrase>` with the value of the RACF Passphrase you set earlier for **IBMUSER**.
+
+    ```
+    orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password '<your-passphrase>'
+    ```
+
+    For example:
+
+    ```
+    orchestrate connections set-credentials --app-id zosmf --env draft --username 'IBMUSER' --password 'YOUR PASSWORD PHRASE'
+    ```
+
+7. Next, set your connection credentials for the **live** environment by issuing the same command as above, but replace `--env draft` with `--env live`. 
+   
+   You should see a `Credentials successfully set...` message.
+
+8. Now re-verify the connection with your newly set credentails by entering the following command:
+
+
+    ```
+    orchestrate connections list
+    ```
+
+    You should now see that your previous `zosmf` connection now has credentials set, as shown below:
+
+    ![](_attachments/linux10.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
