@@ -3,29 +3,46 @@
 - watsonx Assistant for Z built on top of watsonx Orchestrate
 - Build your own agent use cases
 - Ability to build your own agent using Low-code and pro-code approach (will be using both for the purpose of this Lab)
+- Introduction to the ADK (pro-code and low-code approach)
 
 ## Lab Overview
 
-- What agents you will be configuring
-- Introduction to the ADK 
+For this Hands-on Agent Builder Lab, you will build multiple agents augmented with tools for calling various z/OSMF REST API endpoints to assist in verifying the status and health of different z/OS components. 
+
+You will first build an ***IPL Validator Agent*** using the **pro-code** ADK approach which has two different pre-defined tools available to it. 
+
+Following the successful deployment and testing of this agent, you will then create a new Orchestrator Agent using the **low-code** approach which will enable multi-agent collaboration. This agent, named the **z/OS Helper Agent**, will collaborate with the previously created **IPL Validator Agent** as well as the **zRAG Agent** which is a pre-built agent included in watsonx Assistant for Z and is being made available to you as part of the Lab. 
+
+This hands-on lab shows how easy it is to create your own agents for key IBM Z use cases, in addition to the set of pre-built Z agents that ship with the product.
+
+The steps you will execute include:
+
+- Installing and setting up your local ADK environment
+- Configuring a connection and setting credentials
+- Importing the provided tools
+- Importing and testing the `IPL_Validator_Agent`
+- Creating a custom `z/OS Helper Agent` which is an orchestrator agent with collaborator agents and additional tools
+
 
 
 ## Accessing the environments
 
 For this Lab you will be using two different TechZone environments:
 
-1. watsonx Orchestrate
-     - pre-configured with the ADK and Agent configuration files pre-installed
-     - The first Lab environment is a set of IBM Cloud SaaS resources we’ll refer to in this Lab as the IBM watsonx Orchestrate environment. The resources are dedicated to you and are all available within the same IBM Cloud account you’ve been granted access to. The SaaS resources used in this Lab guide consist of the three components below:
+#### 1. **watsonx Orchestrate**:
+A dedicated SaaS tenant of watsonx Orchestrate on IBM Cloud that you will be using to deploy and build custom agents for various Z specific use cases. 
+**IBM watsonx Assistant for Z** is powered by watsonx Orchestrate, a generative AI platform for building, accessing and testing AI agents and assistants. With watsonx Assistant for Z, customers have the ability to connect their agents to a broad range of components, including IBM Z infrastructure, middleware, tools, third-party software and custom applications, forming the foundation for scalable and secure enterprise operations. 
 
-2. Z Dev & Test - emulated z/OS image on Linux x86
+#### 2. **Z Dev & Test for z/OS (zD&T)**:
+An emulated z/OS image running on IBM Cloud which is pre-configured to simulate a running z/OS environment. The image runs locally on a Linux hypervisor, and provides a set of middleware and products, including: CICS, Db2, IMS, JES, z/OSMF, and more.  
+
 
 ### Logging into watsonx Orchestrate and retrieving connection details
 
 In order to log into the ADK environment, you will need two environment details that you will locate and record in this section:
 
-  - WxO **Service Instance URL**
-  - IBM Cloud API Key
+  - **WxO Service Instance URL**
+  - **IBM Cloud API Key**
 
 
 1. Click on the **Student URL** provided by the instructor for the **watsonx Orchestrate** environment and when prompted, enter the password. 
@@ -46,21 +63,23 @@ In order to log into the ADK environment, you will need two environment details 
 
     **NOTE:** **if the cloud account is not listed in the possible options in the drop-down**, you will first need to **join the IBM Cloud account**. Follow the optional steps below to illustrate the process, and then repeat the above steps to access your cloud resources.
 
-    a. When you were invited to join the cloud account, you should have received an email invitation to join. The email should look like the following:
+
+    **a.** When you were invited to join the cloud account, you should have received an email invitation to join. The email should look like the following:
 
     ![](_attachments/lab3.png)
 
     Click **Join now** in the email invitation. 
 
-    b. In the **Join IBM Cloud** browser window that opens, select the **I accept the product Terms and Conditions** of the registration form, and then click **Join Account**.
+    **b.** In the **Join IBM Cloud** browser window that opens, select the **I accept the product Terms and Conditions** of the registration form, and then click **Join Account**.
 
     ![](_attachments/lab4.png)
 
-    c. After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.
+    **c.** After joining the account, verify that the account appears in your available account list in the IBM Cloud portal.
 
     ![](_attachments/lab5.png)
 
     Note: your cloud account will be different. Refer to your environment details to identify the correct cloud account.
+
 
 6. Once the appropriate Cloud account is selected from the drop-down, generate a new IBM Cloud **API Key** by clicking on **Manage** --> **Access(IAM)** in the upper right hand corner. 
    
