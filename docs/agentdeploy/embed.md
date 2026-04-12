@@ -7,13 +7,20 @@ Follow the instructions below on how to do this.
 
 !!! Warning "One-time security setup for Orchestrate environment"
 
-    The below steps will only work for *anonymous* access to the agent chat. When security is disabled to allow anonymous access, requests to the embedded chat API do not require authentication. If you go this route, ensure your watsonx Orchestrate instance does not provide access to sensitive data. 
+    The below steps will only work for **anonymous** access to the agent chat. When security is disabled to allow anonymous access, requests to the embedded chat API do not require authentication. If you go this route, ensure your watsonx Orchestrate instance does not provide access to sensitive data. 
 
-    ***Options:***
+    **1.** Log into the **watsonx Orchestrate UI**. For reference to access, follow the steps [here](../watsonx-ai/service-instance-url.md).
 
-    **1.** Disable security for embedded chat by following the <a href="https://blog.oofdev.com/2025/11/enable-anonymous-access-ibm-watsonx-orchestrate-embedded-chat-security-disable.html" target="_blank">configuration steps here</a>, then completing the remaining steps in this section. 
+    **2.** Once in the WxO UI, navigate to the **Embed Security** settings by clicking on your profile icon in the top-right corner and then **Settings**. Then click on the **Embed Security** tab as shown below:
 
-    **2.** Enabling security by following the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/integrate_agents#security-configuration" target="_blank">here</a>. 
+    ![](_attachments/newembed1.png)
+
+
+    **3.** Finally, toggle off the **Security** option to bypass security and allow anonymous access to your embedded agents. 
+
+    ![](_attachments/newembed2.png)
+
+    Note: This should only be done in cases of demonstrations where sensitive data or information won't be exposed. For more information on the security settings, please reference the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/integrate_agents#security-configuration" target="_blank">here</a>. 
 
 
 1. Firstly, download the **Agent chat template file** from Box here: 

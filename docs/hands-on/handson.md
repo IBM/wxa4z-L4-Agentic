@@ -30,6 +30,8 @@ The process of using the **ADK** to import the agents into your watsonx Orchestr
 This section documents the process of importing the following pre-deployed agents into your watsonx Orchestrate environment: 
 
 - IBM Db2 for z/OS Agent
+
+- IBM Support Agent
   
 - IBM Operations Agent for Z
   
@@ -50,6 +52,8 @@ This section documents the process of importing the following pre-deployed agent
    
     
     <a href="https://ibm.box.com/s/2i295wv0obbtjctdi6p30wlojwlcnee0" target="_blank">IBM Db2 for z/OS Agent</a>
+
+    <a href="https://ibm.box.com/s/pn7iux96n707srjegz5qwew2asms1a5v" target="_blank">IBM Support Agent</a>
 
     <a href="https://ibm.box.com/s/1fyccoymkz2ghshdu4okreh491lijoqw" target="_blank">IBM Operations Agent for Z</a>
 
