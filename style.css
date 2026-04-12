@@ -8,3 +8,7 @@ pre code,  /* stackoverflow - wordwrap in code blocks*/
 .md-grid {
     max-width: initial; 
   }
+
+.md-content img {
+  border: 2px solid #555;
+}
