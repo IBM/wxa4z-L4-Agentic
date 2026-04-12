@@ -3021,10 +3021,13 @@
 <strong>Note:</strong> the steps must be done for each agent you wish to embed. The examples below use the <strong><em>IBM Z Support Agent</em></strong> as an example.</p>
 <div class="admonition warning">
 <p class="admonition-title">One-time security setup for Orchestrate environment</p>
-<p>The below steps will only work for <em>anonymous</em> access to the agent chat. When security is disabled to allow anonymous access, requests to the embedded chat API do not require authentication. If you go this route, ensure your watsonx Orchestrate instance does not provide access to sensitive data. </p>
-<p><strong><em>Options:</em></strong></p>
-<p><strong>1.</strong> Disable security for embedded chat by following the <a href="https://blog.oofdev.com/2025/11/enable-anonymous-access-ibm-watsonx-orchestrate-embedded-chat-security-disable.html" target="_blank">configuration steps here</a>, then completing the remaining steps in this section. </p>
-<p><strong>2.</strong> Enabling security by following the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/integrate_agents#security-configuration" target="_blank">here</a>. </p>
+<p>The below steps will only work for <strong>anonymous</strong> access to the agent chat. When security is disabled to allow anonymous access, requests to the embedded chat API do not require authentication. If you go this route, ensure your watsonx Orchestrate instance does not provide access to sensitive data. </p>
+<p><strong>1.</strong> Log into the <strong>watsonx Orchestrate UI</strong>. For reference to access, follow the steps <a href="../../watsonx-ai/service-instance-url/">here</a>.</p>
+<p><strong>2.</strong> Once in the WxO UI, navigate to the <strong>Embed Security</strong> settings by clicking on your profile icon in the top-right corner and then <strong>Settings</strong>. Then click on the <strong>Embed Security</strong> tab as shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/newembed1.png" data-desc-position="bottom"><img alt="" src="../_attachments/newembed1.png"></a></p>
+<p><strong>3.</strong> Finally, toggle off the <strong>Security</strong> option to bypass security and allow anonymous access to your embedded agents. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/newembed2.png" data-desc-position="bottom"><img alt="" src="../_attachments/newembed2.png"></a></p>
+<p>Note: This should only be done in cases of demonstrations where sensitive data or information won't be exposed. For more information on the security settings, please reference the ADK guide <a href="https://developer.watson-orchestrate.ibm.com/agents/integrate_agents#security-configuration" target="_blank">here</a>. </p>
 </div>
 <ol>
 <li>
