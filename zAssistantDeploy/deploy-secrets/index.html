@@ -714,34 +714,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../watsonx-ai/config-granite/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OPTIONAL: Configure model gateway for Granite LLM
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3134,8 +3106,15 @@ secure authentication key of your choosing (i.e. a password). </p>
 <p>Set the <code>WATSONX_API_KEY</code> variable to the Cloud API Key you generated and recorded in <strong><em>Section <a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</p>
 </li>
 <li>
-<p>Set the <code>WATSONX_MODEL_ID</code> variable to <code>meta-llama/llama-3-3-70b-instruct</code> as this is an x86 based deployment. </p>
-<p><strong><em>NOTE:</em></strong> if you want to enable the <strong>granite-3-3-8b-instruct</strong> LLM, ensure you completed the steps documented in Section <strong><em><a href="../../watsonx-ai/config-granite/">OPTIONAL: Configuring Model Gateway service for Granite LLM</a></em></strong>.</p>
+<p>Set the <code>WATSONX_MODEL_ID</code> variable to either of the following:</p>
+<ul>
+<li><code>meta-llama/llama-3-3-70b-instruct</code></li>
+<li><code>ibm/granite-4-h-small</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Withdrawal of <code>granite-3-3-8b-instruct</code>...</p>
+<p>The watsonx Assistant for Z product officially supports <code>llama-3-3-70b-instruct</code> for x86 and the <code>granite-3-3-8b-instruct</code> model when deployed on s390x. Due the withdrawal of the <code>granite-3-3-8b-instruct</code> model from watsonx.ai on IBM Cloud, the recommended substitute is the <code>granite-4-h-small</code> model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is <code>llama-3-3-70b-instruct</code>. Use at your own discretion. </p>
+</div>
 </li>
 <li>
 <p>Set the <code>WATSONX_SPACE_ID</code> variable to the Deployment Space ID you recorded in <strong><em>Section <a href="../../watsonx-ai/deployment-space/">Create Deployment Space</a></em></strong>.</p>
