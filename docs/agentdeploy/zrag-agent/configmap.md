@@ -22,12 +22,12 @@ configmap:
 
 The `MODEL_ID` variable maps to the LLM model used by the zRAG MCP server for answer generation. For the TechZone environment, the `MODEL_ID` variable can be set to one of the following:
 
-    - `meta-llama/llama-3-3-70b-instruct`
-    - `ibm/granite-4-h-small`
+- `meta-llama/llama-3-3-70b-instruct`
+- `ibm/granite-4-h-small`
   
-    !!! Warning "Withdrawal of `granite-3-3-8b-instruct`..."
+!!! Warning "Withdrawal of `granite-3-3-8b-instruct`..."
 
-        The watsonx Assistant for Z product officially supports `llama-3-3-70b-instruct` for x86 and the `granite-3-3-8b-instruct` model when deployed on s390x. Due the withdrawal of the `granite-3-3-8b-instruct` model from watsonx.ai on IBM Cloud, the recommended substitute is the `granite-4-h-small` model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is `llama-3-3-70b-instruct`. Use at your own discretion. 
+    The watsonx Assistant for Z product officially supports `llama-3-3-70b-instruct` for x86 and the `granite-3-3-8b-instruct` model when deployed on s390x. Due the withdrawal of the `granite-3-3-8b-instruct` model from watsonx.ai on IBM Cloud, the recommended substitute is the `granite-4-h-small` model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is `llama-3-3-70b-instruct`. Use at your own discretion. 
 
 
 Keep the default value for the `ZRAG_RETRIEVER_URL` as this is the URL endpoint for the OpenSearch wrapper service. 
