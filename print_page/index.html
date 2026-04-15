@@ -5782,13 +5782,14 @@ By default, <code>enabled</code> is set to <code>true</code>. As you are not usi
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#agentdeploy-zrag-agent-configmap-__codelineno-1-3"></a>  ZRAG_RETRIEVER_URL: "https://wxa4z-opensearch-wrapper.wxa4z-zad.svc.cluster.local:8080"
 </span></code></pre></div>
 <p>The <code>MODEL_ID</code> variable maps to the LLM model used by the zRAG MCP server for answer generation. For the TechZone environment, the <code>MODEL_ID</code> variable can be set to one of the following:</p>
-<div class="highlight"><pre><span></span><code>- `meta-llama/llama-3-3-70b-instruct`
-- `ibm/granite-4-h-small`
-
-!!! Warning "Withdrawal of `granite-3-3-8b-instruct`..."
-
-    The watsonx Assistant for Z product officially supports `llama-3-3-70b-instruct` for x86 and the `granite-3-3-8b-instruct` model when deployed on s390x. Due the withdrawal of the `granite-3-3-8b-instruct` model from watsonx.ai on IBM Cloud, the recommended substitute is the `granite-4-h-small` model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is `llama-3-3-70b-instruct`. Use at your own discretion.
-</code></pre></div>
+<ul>
+<li><code>meta-llama/llama-3-3-70b-instruct</code></li>
+<li><code>ibm/granite-4-h-small</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Withdrawal of <code>granite-3-3-8b-instruct</code>...</p>
+<p>The watsonx Assistant for Z product officially supports <code>llama-3-3-70b-instruct</code> for x86 and the <code>granite-3-3-8b-instruct</code> model when deployed on s390x. Due the withdrawal of the <code>granite-3-3-8b-instruct</code> model from watsonx.ai on IBM Cloud, the recommended substitute is the <code>granite-4-h-small</code> model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is <code>llama-3-3-70b-instruct</code>. Use at your own discretion. </p>
+</div>
 <p>Keep the default value for the <code>ZRAG_RETRIEVER_URL</code> as this is the URL endpoint for the OpenSearch wrapper service. </p></div></body></html></section><section class="print-page" id="agentdeploy-zrag-agent-secrets-data" heading-number="6.4.3"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {
