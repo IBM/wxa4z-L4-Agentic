@@ -21,7 +21,7 @@ env:
   HOST_NAME: ""
   PDS_NAME: ""
   INGESTION_URL: ""
-  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
+  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 ```
 
 You will now configure these `env` variables, using some defaults, as well as your environment-specific values.

@@ -19,7 +19,7 @@ env:
   DEPLOYMENT_TYPE:
   TAKE_DUMP_JOB_TEMPLATE: ""
   SEND_DUMP_JOB_TEMPLATE: ""
-  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
+  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 ```
 
 The below table describes each of the variables in the `env` variables section.

@@ -129,9 +129,14 @@ In the provided `wxa4z-ifm-credentials.yaml` file, you should see the following 
 
 2. Set the `WATSONX_API_KEY` variable to the Cloud API Key you generated and recorded in ***Section [Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
 
-3. Set the `WATSONX_MODEL_ID` variable to `meta-llama/llama-3-3-70b-instruct` as this is an x86 based deployment. 
-   
-    ***NOTE:*** if you want to enable the **granite-3-3-8b-instruct** LLM, ensure you completed the steps documented in Section ***[OPTIONAL: Configuring Model Gateway service for Granite LLM](../watsonx-ai/config-granite.md)***.
+3. Set the `WATSONX_MODEL_ID` variable to either of the following:
+
+    - `meta-llama/llama-3-3-70b-instruct`
+    - `ibm/granite-4-h-small`
+  
+    !!! Warning "Withdrawal of `granite-3-3-8b-instruct`..."
+
+        The watsonx Assistant for Z product officially supports `llama-3-3-70b-instruct` for x86 and the `granite-3-3-8b-instruct` model when deployed on s390x. Due the withdrawal of the `granite-3-3-8b-instruct` model from watsonx.ai on IBM Cloud, the recommended substitute is the `granite-4-h-small` model. You should only use this model for use cases requiring multi-lingual support for languages not supported by the llama model (i.e. Japanese and Chinese). Otherwise, the recommended model is `llama-3-3-70b-instruct`. Use at your own discretion. 
 
 4. Set the `WATSONX_SPACE_ID` variable to the Deployment Space ID you recorded in ***Section [Create Deployment Space](../watsonx-ai/deployment-space.md)***.
 

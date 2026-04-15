@@ -17,7 +17,7 @@ Within this agent’s section of `values.yaml` scroll down to the **`env`** vari
 ```
 env:
   DEPLOYMENT_TYPE:
-  WATSONX_MODEL_ID: "ibm/granite-3-3-8b-instruct"
+  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 ```
 
 Below is a brief summary of this variable. Keep the default value of **"cloud"** set for this variable as you will be accessing this external agent from WxO SaaS.
