@@ -24,7 +24,7 @@
     * Setup for Agent Deployment
         * [Setup VS Code workspace](./agentdeploy/setup.md)
         * [Overview of the wxa4z-agent-suite Helm charts](./agentdeploy/wxa4z-agent-suite.md)
-    * [Configure shared (global) agent variables](./agentdeploy/configure-shared-variables.md)
+        * [Configure shared (global) agent variables](./agentdeploy/configure-shared-variables.md)
     * Prepare for zRAG Agent
         * [Summary of agent capabilities](./agentdeploy/zrag-agent/overview.md)
         * [Configure the 'configmap` variables](./agentdeploy/zrag-agent/configmap.md)
@@ -42,6 +42,12 @@
         * [Configure the 'env' variables](./agentdeploy/compiler-agent/env.md)
         * [Configure the 'secrets.data' variables](./agentdeploy/compiler-agent/secrets-data.md)
         * [Configure the 'pvc' variable](./agentdeploy/compiler-agent/pvc.md)
+    * Prepare for Db2 for z/OS Agent
+        * [Summary of agent capabilities](./agentdeploy/db2-agent-deployment/overview.md)
+        * [Entitlement setup for images](./agentdeploy/db2-agent-deployment/enabling-images.md)
+        * [Configure the 'env' variables](./agentdeploy/db2-agent-deployment/env.md)
+        * [Configure the 'secrets.data' variables](./agentdeploy/db2-agent-deployment/secrets-data.md)
+        * [Configure the 'pvc' variable](./agentdeploy/db2-agent-deployment/pvc.md)
     * Prepare for IBM Z Support Agent
         * [Summary of agent capabilities](./agentdeploy/support-agent/overview.md)
         * [Configure the 'env' variables](./agentdeploy/support-agent/env.md)
@@ -53,6 +59,7 @@
         * [Configure the secrets.data variables](agentdeploy/omegamon-agent/secrets-data.md)
         * [Configure the 'pvc' variable with storageClass](agentdeploy/omegamon-agent/pvc.md)
     * [Execute Agent Deployment](./agentdeploy/execute-deploy.md)
+    * [OPTIONAL - Config Db2 Agent Post-install](./agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP.md)
 * Access Agents and Test Demo Scenarios
     * [Access your deployed agents](./demo-scenarios/access-agents.md)
     * [Test the zRAG Agent](./demo-scenarios/zRAG-agent.md)

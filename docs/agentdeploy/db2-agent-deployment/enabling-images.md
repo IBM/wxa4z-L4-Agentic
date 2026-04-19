@@ -1,13 +1,15 @@
 # Enabling Db2 for z/OS Agent images
 
-- As the **Db2 for z/OS Agent** is a **Prebuilt product agent**, versus the Foundational Agents previously configured, this agent requires additional setup which is detailed here: https://github.com/IBM/z-ai-agents/tree/main?tab=readme-ov-file#configuration-for-prebuilt-ibm-z-product-agents
-  
+The **Db2 for z/OS Agent** is a **Prebuilt product agent**, versus the Foundational Agents previously configured, and requires additional setup which is detailed **<a href="https://github.com/IBM/z-ai-agents/tree/main?tab=readme-ov-file#configuration-for-prebuilt-ibm-z-product-agents" target="_blank">here</a>**.
 
-- Typically, an entitlement key is requried to download the Db2 for z/OS Agent container images from the IBM Container Registry, and is available at no charge to licensed users of Db2 13. 
+*For the purposes of setting up demos and the pilot environment, these images are made available internally in a private ICR that you can configure to pull the agent images from. This setup is detailed below.*
 
-- For the purposes of setting up demos and the pilot environment, these images are made available internally in a private ICR that you can configure to pull the agent images from. This setup is detailed below. 
+!!! Warning "Entitlement for clients..."
 
-- **NOTE**: the entitlement key shown below is for ***INTERNAL USE ONLY**. For Business Partners, please contact your IBM rep. 
+    An entitlement key is required to download the Db2 for z/OS Agent container images from the IBM Container Registry, and is available at no charge to licensed users of Db2 13. **The steps below are for internal use only.**
+
+    For **Business Partners**, please contact your IBM rep. 
+
 
 1. Within your `values.yaml` file, locate the section for the **Db2 for z/OS Agent** as shown below:
 
@@ -38,7 +40,7 @@
       tag: latest@sha256:04171657896a839504ccbae8197f1934fd81926d5467295b7318f133c15465ee
     ```
 
-    As you will be pulling the agent images from an internal repo, you will next modify the `image` and `mcpImage` variables.
+    As you will be pulling the agent images from an internal container registry, you will next modify the `image` and `mcpImage` variables.
 
 4. Set these variables to the following values as shown below:
    
@@ -65,14 +67,10 @@
 
     ```
     registry:
-      name: db2-image-pull-secret # Dedicated pull secret for this agent.
+      name: db2-image-pull-secret
       server: us.icr.io
       username: iamapikey
       entitlementKey: ""
     ```
 
     Then for the `entitlementKey` variable, set the value (in double-quotes) to the secret entitlement key that can be retrieved from <a href="https://ibm.box.com/s/oervr24pkj58xi1wgboumi1gbbm0vuai" target="_blank">here</a> (internal only).
-
-
-
-

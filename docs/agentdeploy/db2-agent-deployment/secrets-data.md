@@ -18,12 +18,12 @@ secrets:
     ```
     >>> from cryptography.fernet import Fernet
     Fernet.generate_key()>>> Fernet.generate_key()
-    b'H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E='
+    b'H4PKYAmreUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E='
     ```
 
     Copy and paste the string within the single-quotes and set it to the `ENCRYPT_KEY` variable. In the above example, the string would be `H4PKYAmr1OeUGi2hdrZddxb78QvjcgKi4yOYHjaIA0E=`.
 
 2. Set the `AGENT_AUTH_TOKEN` variable:
 
-    Lastly, set the `AGENT_AUTH_TOKEN` variable to `DB2_AGENT_TOKEN` or any unique value. This is the token used by the agent-controller to register this agent with WxO. 
+    Lastly, set the `AGENT_AUTH_TOKEN` variable to any unique value of your choice, for example: `DB2_AGENT_TOKEN`. This is the token used by the agent-controller to register this agent with WxO. 
 

@@ -1,14 +1,12 @@
-# Configuring your Db2 Agent with Db2 connections
+# Configuring agent connections for Db2 for z/OS Agent
 
 Now that you've successfully deployed your Db2 for z/OS Agent, you must configure it which involves a few manual steps covered in this section. 
-
-***NOTE:*** at the time of deployment, the Db2 for z/OS Agent does not initially have connectivity to the back-end subsystems. The connections must be made via REST API using the MCP server which will be covered later in this section. 
 
 ### Mount the Db2 license file
 
 As a pre-req for using the Db2 for z/OS Agent, it must have ODBC connectivity enabled. Server-side verification is recommended, however, client-side verification is supported by mounting the license into the deployed container at `/usr/local/lib64/python3.12/site-packages/clidriver/license`. 
 
-*NOTE:* missing license files at the above location will lead to a licensing error when later creating a connection to Db2 via MCP server REST API endpoint. 
+***NOTE:*** *missing license files at the above location will lead to a licensing error when later creating a connection to Db2 via MCP server REST API endpoint.* 
 
 Follow the below instructions to mount the license in the deployed agent pod.
 
@@ -18,8 +16,6 @@ Follow the below instructions to mount the license in the deployed agent pod.
 
 
 3. In a new terminal session, change directory to the **db2-license-files** folder.
-
-    ![](_attachments/db-2-1.png)
 
 4. In a local notepad, copy and paste the following command block to a local notepad, and replace the `<YOUR DB2 POD NAME>` placeholder with the name of your deployed Db2 agent pod:
    
@@ -46,7 +42,7 @@ Follow the below instructions to mount the license in the deployed agent pod.
     ![](_attachments/db-2-2.png)
 
 
-5. In your terminal/command-line session, and assuming you're in the **db2-license-files** folder, copy and paste the modified command script into the session and hit **`<enter>`**.
+5. In your terminal/command-line session, make sure your current directory is the **db2-license-files** folder, the paste the full modified command script into the session and hit **`<enter>`**.
    
     The result may look similar to what's shown below:
 
@@ -65,9 +61,9 @@ Follow the below instructions to mount the license in the deployed agent pod.
     ![](_attachments/db2new2.png)
 
 
-### Bind the ODBC DBRMs to Db2 subsystems
+### Bind the ODBC DBRMs to Db2 subsystem
 
-Prior to setting an agent connection to your Db2 subsystems, you must also bind some required packages on your Db2 subsystems. Follow the below steps:
+Prior to setting an agent connection to your Db2 subsystems, you must also bind some required packages. Follow the below steps:
 
 1. Assuming you're already in the **Terminal** view of your agent pod, click on the drop-down to select the **db2z-mcp-server** container.
 
@@ -84,9 +80,6 @@ Prior to setting an agent connection to your Db2 subsystems, you must also bind 
     ```
     ./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBD1LOC:<host>:8100 -user IBMUSER -passwd "<password>"
     ```
-
-    **IMAGE**
-
 ### Creating Db2 connections
 
 Now that you've mounted the license file and binded the required packages, you can define the Db2 connections for your agent. 
@@ -101,19 +94,21 @@ Now that you've mounted the license file and binded the required packages, you c
 2. Define a new connection to your DBD1 subsystem by modifying the following command:
    
     ```
-    curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBD1", "host": "<your z/OS public IP>", "port": "8100", "connection_uri": "db2+ibm_db://IBMUSER:<zOS passphrase>@<your z/OS public IP>:8100/DBD1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "<zOS passphrase>", "location": "DBD1LOC"}' <db2-mcp-route>/api/v1/databases/connections
+    curl -X POST -H "Content-Type: application/json" -d '{"alias": "DBD1", "host": "<public-ip>", "port": "8100", "connection_uri": "db2+ibm_db://IBMUSER:<passphrase>@<public-ip>:8100/DBD1LOC", "appl_id": "IZUDFLT", "username": "IBMUSER", "password": "<passphrase>", "location": "DBD1LOC"}' <db2-mcp-route>/api/v1/databases/connections
     ```
 
-    - replace `<your z/OS public IP>` with the public IP address found in your environment details for the Z Dev & Test image
+    - replace `<public-ip>` with the public IP address found in your environment details for the Z Dev & Test image
     
-    - replace `<zOS passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
+    - replace `<passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
 
     - replace `<db2-mcp-route>` with the route URL you recorded in the previous step
 
 
     And finally, issue the command in your local terminal to create the connection. The result should look similar to what's shown below:
 
-    **IMAGE**
+    ```
+    {"id":"69e43245cbfbcd29ca7f7276","alias":"DBD1","dialect":"db2","use_ssh":false,"location":"DBD1LOC","host":"150.240.65.119","port":"8100","username":"gAAAAABp5DJEBqzRD438PnJBChK8XgVwWqh8vrhCGaCr4ItzhZb0AZStz1cTkQWgdh6NtwWq9Oq6Amuo0KVl_1COeLelUPG98A==","password":"gAAAAABp5DJEgGFm1phowqfofcR8cCqR7mg27AxMgImiWfClcyJxiqdT3Vq0FBprMhHPt46UPPrdjtA9pLc7-jaCCTBlreysWzJlPhTeYTSoy3wIBCtnidQ=","appl_id":"IZUDFLT","connection_uri":"gAAAAABp5DJELQSrz9b0naWItBIUVyFtC1logF0ksw56FScmegIUXWn8pHTaJFNH3v6lPyNr-_wSDoOS9AJyadiO51aZeyHa3mJofaoQMRY7hgRJ3SaCz2zt2jCQcP6NtEHmkvYq9Rr7OTPL-PhoDPVl00qAVeIwshBgfUjdh_G3AJgFZbivQqE=","schemas":["SYSIBM"],"path_to_credentials_file":null,"llm_api_key":"","ssh_settings":null,"file_storage":null,"metadata":null,"created_at":"2026-04-19T01:39:16.610804+00:00"}
+    ```
 
 3. To verify your database connections, you can run the following command, replacing `<db2-mcp-route>` with your own unique route.
    
@@ -133,12 +128,10 @@ Run the below command, replacing the following values:
     
 - replace `<db_conn_id>` with the string associated with the `id` parameter in the output of the previous command
     
-- replace `<zOS passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
+- replace `<passphrase>` with the same passphrase value you set for `IBMUSER` on your zD&T image ([reference](../../techzone/zdt.md#set-new-passphrase-for-ibmuser)).
 
     ```
-    curl --request POST --url '<db2-mcp-route>/api/v1/tables/descriptions/scan?db_connection_id=<db_conn_id>' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "<zOS passphrase>"}'
+    curl --request POST --url '<db2-mcp-route>/api/v1/tables/descriptions/scan?db_connection_id=<db_conn_id>' --header 'accept: application/json' --header 'content-type: application/json' --data '{"username": "IBMUSER","password": "<passphrase>"}'
     ```
 
-    The output should look like the following:
-
-    **IMAGE**
+*Your agent is now configured with a subsystem connection and you can now test the agent scenarios.*
