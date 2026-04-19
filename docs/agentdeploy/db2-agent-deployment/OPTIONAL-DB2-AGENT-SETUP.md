@@ -80,6 +80,8 @@ Prior to setting an agent connection to your Db2 subsystems, you must also bind 
     ```
     ./db2cli bind $IBM_DB_HOME/bnd/@db2cli.lst -database DBD1LOC:<host>:8100 -user IBMUSER -passwd "<password>"
     ```
+
+
 ### Creating Db2 connections
 
 Now that you've mounted the license file and binded the required packages, you can define the Db2 connections for your agent. 
