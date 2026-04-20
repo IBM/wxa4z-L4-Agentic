@@ -1,10 +1,15 @@
 # Configuring the `secrets.data` variables
 
+Scrolling down further in the **IBM IMS Agents** section of your `values.yaml` file, you will see a `secrets.data` section with additional variables you must configure. It will look like what’s shown below:
 
+```
+secrets:
+  data:
+    WRAPPER_USERNAME: ""
+    WRAPPER_PASSWORD: ""
+    WRAPPER_URL: ""
+    AGENT_AUTH_TOKEN: ""
+```
 
-  secrets:
-    data:
-      WRAPPER_USERNAME: "admin"
-      WRAPPER_PASSWORD: "105" #password for the WRAPPER_URL
-      WRAPPER_URL: "https://wxa4z-opensearch-wrapr-wxa4z-zad.apps.itz-wg2c8v.infra01-lb.wdc04.techzone.ibm.com/v1/query" # endpoint for opensearch
-      AGENT_AUTH_TOKEN: "ims_auth"
+1. Set the `WRAPPER_USERNAME` variable:
+   

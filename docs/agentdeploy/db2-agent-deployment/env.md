@@ -1,11 +1,14 @@
 # Configuring the `env` variables
 
-Within your `values.yaml` file, locate the `env` section for the **Db2 for z/OS** Agent as shown below:
+Within your `values.yaml` file, locate the `env` section for the **IBM IMS** Agent as shown below:
 
 ```
 env:
   DEPLOYMENT_TYPE: "cloud"
-  SERVICE_ENDPOINT: ""
+  ZOSMF_CONSOLE_NAME: ""
+  IMS_SUBSYSTEM_ID: ""
+  IMS_CONNECT_JOBNAME: ""
+  APPL_ID: ""
   WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
 ```
 
