@@ -35,7 +35,6 @@ agent-helm-charts/
       kind: mcp
       import_method: cli
       description: "zRAG document retrieval and RAG toolkit with watsonx.ai integration for mainframe and enterprise systems"
-      #command: "uvx mcp-proxy {route_url}/sse"
       url: "{route_url}"
       route_name: ${ZRAG_ROUTE_NAME}
       route_namespace: ${ZRAG_ROUTE_NAMESPACE}

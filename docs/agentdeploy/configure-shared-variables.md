@@ -58,6 +58,11 @@ For the `WATSONX_ML_URL` global variable, copy and paste the value for your envi
 
 Finally, for the `WATSONX_PROJECT_ID` global variable,copy and paste your unique Project ID that you recorded in Section ***[Create watsonx.ai Project](../watsonx-ai/project.md)***.
 
+### Configuring the `MODEL_RUNTIME` global variable
+
+For the purpose of the TechZone environment, set the `MODEL_RUNTIME` global variable to `"cloud"` to indicate watsonx.ai on IBM Cloud.
+
+
 
 ### Setting your registry entitlement key for wxa4z (for foundational agents)
 

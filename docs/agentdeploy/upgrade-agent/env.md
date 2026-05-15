@@ -16,7 +16,7 @@ Within this agent’s section of `values.yaml` scroll down to the **`env`** vari
 
 ```
 env:
-  DEPLOYMENT_TYPE:
+  DEPLOYMENT_TYPE: ""
   WRAPPER_URL: ""
   HOST_NAME: ""
   PDS_NAME: ""

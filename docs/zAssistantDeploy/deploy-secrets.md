@@ -117,13 +117,21 @@ Next you will create the IFM secret using the watsonx.ai secret values you recor
 In the provided `wxa4z-ifm-credentials.yaml` file, you should see the following section:
 
 ```
-  CPD_USERNAME:
-  WATSONX_URL: <value>
-  WATSONX_API_KEY: <value>
-  WATSONX_MODEL_ID: <value>
-  WATSONX_SPACE_ID: <value>
-  WATSONX_PROJECT_ID: ""
+MODEL_RUNTIME: cloud
+# Set these variables when MODEL_RUNTIME is "openai_protocol"
+LLM_BASE_URL: <llm base url>
+LLM_API_KEY: <llm api key>
+#Set these variables when MODEL_RUNTIME is "on-prem"
+CPD_USERNAME: ""
+WATSONX_URL: "<value>"
+WATSONX_API_KEY: "<value>"
+WATSONX_MODEL_ID: "<value>"
+WATSONX_SPACE_ID: "<value>"
+WATSONX_PROJECT_ID: ""
 ```
+
+Leave the `MODEL_RUNTIME` variable set to `cloud` as you are using a watsonx.ai cloud based deployment. Additionally, do not set the `LLM_BASE_URL` and `LLM_API_KEY` variables.
+
 
 1. Set the `WATSONX_URL` variable to the value you recorded for the Base URL of your watsonx.ai Runtime instance ***[in this section](../watsonx-ai/wml-base-url.md)***.
 
