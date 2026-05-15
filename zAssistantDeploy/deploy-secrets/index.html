@@ -3314,13 +3314,19 @@ secure authentication key of your choosing (i.e. a password). </p>
 <h3 id="create-ifm-secret">Create IFM Secret<a class="headerlink" href="#create-ifm-secret" title="Permanent link">#</a></h3>
 <p>Next you will create the IFM secret using the watsonx.ai secret values you recorded in <strong><em>Section <a href="../../watsonx-ai/overview/">Prepare watsonx.ai services</a></em></strong>.</p>
 <p>In the provided <code>wxa4z-ifm-credentials.yaml</code> file, you should see the following section:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>  CPD_USERNAME:
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  WATSONX_URL: &lt;value&gt;
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  WATSONX_API_KEY: &lt;value&gt;
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  WATSONX_MODEL_ID: &lt;value&gt;
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  WATSONX_SPACE_ID: &lt;value&gt;
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  WATSONX_PROJECT_ID: ""
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>MODEL_RUNTIME: cloud
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># Set these variables when MODEL_RUNTIME is "openai_protocol"
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>LLM_BASE_URL: &lt;llm base url&gt;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>LLM_API_KEY: &lt;llm api key&gt;
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>#Set these variables when MODEL_RUNTIME is "on-prem"
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>CPD_USERNAME: ""
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>WATSONX_URL: "&lt;value&gt;"
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>WATSONX_API_KEY: "&lt;value&gt;"
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>WATSONX_MODEL_ID: "&lt;value&gt;"
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>WATSONX_SPACE_ID: "&lt;value&gt;"
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>WATSONX_PROJECT_ID: ""
 </span></code></pre></div>
+<p>Leave the <code>MODEL_RUNTIME</code> variable set to <code>cloud</code> as you are using a watsonx.ai cloud based deployment. Additionally, do not set the <code>LLM_BASE_URL</code> and <code>LLM_API_KEY</code> variables.</p>
 <ol>
 <li>
 <p>Set the <code>WATSONX_URL</code> variable to the value you recorded for the Base URL of your watsonx.ai Runtime instance <strong><em><a href="../../watsonx-ai/wml-base-url/">in this section</a></em></strong>.</p>
