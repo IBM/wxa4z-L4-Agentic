@@ -163,33 +163,61 @@ Once the Token Exchange Service is up and running, you can verify the authentica
     --data '{ "service_endpoint":"https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444" }'
     ```
 
-    You should get:
+    The expected output should be something similar to:
 
-    **IMAGE**
+    ```
+    {"message":"Agent registered successfully","register_at":"2026-05-16T06:47:28Z"}
+    ```
 
 ### Step 2: Retrieve Token
 
 Next, retrieve the token value that will be used as input for generating a passticket for your user. 
 
-1. Run the following CURL command from your local mcahine's command terminal/prompt, replacing `<auth route>` with your authorization service route recorded earlier:
+Run the following CURL command from your local mcahine's command terminal/prompt, replacing `<auth route>` with your authorization service route recorded earlier:
 
-    ```
-    curl --request GET \
-    --url <auth route>/api/v1/agents/wxa4z:cics:agent/token \
-    --header 'Authorization: !cicsagent@' \
-    --header 'accept: application/json' 
-    ```
+```
+curl --request GET \
+--url <auth route>/api/v1/agents/wxa4z:cics:agent/token \
+--header 'Authorization: !cicsagent@' \
+--header 'accept: application/json' 
+```
 
+The expected output should be the value of an `access-token` as shown in the example below. Copy and record the value of your token as you'll need it later. 
+
+```
+{"access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9pZCI6Ind4YTR6OmNpY3M6YWdlbnQiLCJpc3MiOiJhdXRob3JpemF0aW9uIiwic3ViIjoid3hhNHo6Y2ljczphZ2VudCIsImV4cCI6MTc3ODkxNzc1NSwiaWF0IjoxNzc4OTE0MTU1fQ.DF_7sg_pbJu3vRen3caqN5izSIBm_grFlgOSDdoU4Hs"}%
+```
 
 ### Step 3: Generate Passticket
 
+Run the below command to generate a passticket for a user, replacing the following values:
 
+- `<auth route>`: replace with the route of your authorization service recorded earlier
+- `<token>`: replace with the token value outputted in previous command
+- `<EMAIL_ID>`: replace with one of the email addresses used for mapping the two previous fictitious users to RACF (i.e. `johndoe@ibm.com` or `janesmith@ibm.com`).
 
 ```
 curl --request POST \
-  --url <mcp-server-url>/api/v1/agents/wxa4z:cics:agent/passticket \
-  --header 'Authorization: Bearer <replace token>' \
+  --url <auth route>/api/v1/agents/wxa4z:cics:agent/passticket \
+  --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --header 'accept: application/json' \
-  --data '{   "applid": "<APPLID>",   "emailid": "<EMAIL_ID>" }'
+  --data '{   "applid": "IZUDFLT",   "emailid": "<EMAIL_ID>" }'
+```
+
+For example:
+
+```
+curl --request POST \
+  --url https://wxa4z-authorization-route-wxa4z-zad.apps.itz-9m4n0h.hub01-lb.techzone.ibm.com/api/v1/agents/wxa4z:cics:agent/passticket \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9pZCI6Ind4YTR6OmNpY3M6YWdlbnQiLCJpc3MiOiJhdXRob3JpemF0aW9uIiwic3ViIjoid3hhNHo6Y2ljczphZ2VudCIsImV4cCI6MTc3ODkxNzc1NSwiaWF0IjoxNzc4OTE0MTU1fQ.DF_7sg_pbJu3vRen3caqN5izSIBm_grFlgOSDdoU4Hs' \
+  --header 'Content-Type: application/json' \
+  --header 'accept: application/json' \
+  --data '{   "applid": "IZUDFLT",   "emailid": "johndoe@ibm.com" }'
+```
+
+The expected output should be something similar to:
+
+```
+{"token":"CKBW9X1S","token_type":"passticket","zos_userid":"IBMUSER","email":"johndoe@ibm.com"}
 ```
