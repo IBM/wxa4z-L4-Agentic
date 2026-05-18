@@ -70,7 +70,7 @@ One of the most common scenarios is disabling certain topics that are not releva
 
 This can be done using the `ZRAG_TOPICS_DISABLE` search parameter. By default, this parameter is not included in the connection credentials and will need to be added if you intend on using it. 
 
-To use this parameter to disable the z/VM or z/TPF topics, you can first modify the connection credentials for the draft environment:
+To use this parameter to disable the z/TPF topic for example, you can first modify the connection credentials for the draft environment:
 
 1. Follow the steps in **[Method 1: Using watsonx Orchestrate UI](./zrag-config.md#method-1-using-watsonx-orchestrate-ui)** to edit the **Draft** connection credentials.
    
@@ -79,18 +79,45 @@ To use this parameter to disable the z/VM or z/TPF topics, you can first modify 
    
     ![](_attachments/search6.png)
 
-3. In the **Key** field, enter `ZRAG_TOPICS_DISABLE`. In the **Value** field, enter `z/vm,z/tpf` for this example. 
-   
+3. In the **Key** field, enter `ZRAG_TOPICS_DISABLE`. In the **Value** field, enter `ztpf` for this example. 
+      
     ![](_attachments/search7.png)
 
 4. Then click **Save**. 
+   
 
-NOTE: because you only modified the connection credentials for the **Draft** environment, the search configuration will only be passed to the retriever when prompting the agent in the **Draft/Editor** view. It won't take affect for end-users until you also modify the **Live** environment. 
+    !!! Warning "Modifying the **Draft** credentials..."
+
+        Because you only modified the connection credentials for the **Draft** environment, the search configuration will only be passed to the retriever when prompting the agent in the **Draft/Editor** view of the watsonx Orchestrate UI. It won't take affect for end-users until you also modify the **Live** environment credentials. 
 
 ### Testing the configuration
 
+Once modified, you can verify that the connection credentials were successfully set by prompting the **zRAG Agent** with a query and viewing the logged metadata in the **opensearch-wrapper** pod on OpenShift. 
+
+1. Go back to viewing the **Draft** version of your **zRAG Agent** in the watsonx Orchestrate UI and prompt the agent with a query, i.e.:
+    
+    `What operating systems can run on an IBM Z LPAR?`
+   
+    ![](_attachments/search8.png)
+
+    Again, if you've only modified the **Draft** version of the connection credentials, the changes can only be verified when prompting the **Draft** version of your agent. 
 
 
+2. After prompting the agent, navigate to the Pod view of your opensearch-wrapper pod by navigating to **Pods** under the **Workloads** section of the OpenShift Web UI.
+   
+    Then click on the `wxa4z-opensearch-wrapper` pod.
+
+    ![](_attachments/search10.png)
+
+3. Then click on the **Logs** tab and scroll to the bottom. 
+    
+    From there, you should be able to view log records including the query you prompted, as well as the disabled topics as shown in the image below:
+   
+    ![](_attachments/search11.png)
+
+    This verifies that the connection credentials were successfully set. 
+
+    Before making the changes for the **Live environment**, ensure you fully test a range of questions using the new filter. 
 
 
 
@@ -99,16 +126,69 @@ NOTE: because you only modified the connection credentials for the **Draft** env
 
 Alternatively, if the use case is very tightly scoped on base z/OS functionality and ignoring other IBM tooling/middleware/products, you can scope the search to only the base z/OS documentation, forcing the retrieval to ignore all other topics. This can be done using the `ZRAG_TOPICS_ENABLE` search parameter.
 
-***NOTE: only the ENABLE/DISABLE parameters can be used at once***....
+!!! Warning "Use of ENABLE/DISABLE search parameters..."
 
+    Only the `ZRAG_TOPICS_ENABLE` or the `ZRAG_TOPICS_DISABLE` parameters can be set at the same time. They cannot be set simultaneously or you'll get an error. 
 
-To do this:
+To configure the search parameters for this scenario:
 
-1. First delete the ZRAG_TOPICS_DISABLE FILTER. 
+1. First delete the `ZRAG_TOPICS_DISABLE` key-value pair from the **Draft** version of your connection credentials within the Orchestrate UI.
+
+    ![](_attachments/search12.png)
+
+2. At the bottom of the **Edit credential** view, click **Add key value pair +** and enter `ZRAG_TOPICS_ENABLE` for the **Key** field, and `z/os` for the **Value** field. 
+   
+    ![](_attachments/search13.png)
+
+3. Then click **Save**. 
+   
+    ![](_attachments/search14.png)
+
+### Testing the configuration
+
+Just as before, prompt the agent with a query in the **Draft** view, then view the logs of the **opensearch-wrapper** pod on OpenShift. 
+
+You should be able to see the following message in the latest pod logs:
+
+`"topics_enable":["z/os"],` 
+
+![](_attachments/search15.png)
 
 
 
 ## 3.) Modifying doc weights
+
+Another common scenario may be modifying the weights assigned to the zRAG's default **product docs** versus any additionally ingested **customer docs**. For example, if you want to prioritize documents that a customer ingested versus the default IBM docs. This can be done by setting the `ZRAG_METADATA_PRODUCT_WEIGHT` and `ZRAG_METADATA_CUSTOMER_WEIGHT` parameters in the connection credentials. 
+
+!!! Warning "Important note on product versus customer weight..."
+
+    The weights assigned for product and customer docs must sum to 1.0, i.e. 0.3/0.7 or 0.9/0.1. 
+
+    By default, these parameters are left out of the connection settings and falls back to 0.5/0.5. 
+
+    When modifying the weights to prioritize product docs over customer docs (or vice versa), it's recommended to first test with smaller increments (i.e. 0.45/0.55).
+
+For this scenario, you will configure customer docs to be slightly more prioritized over the default product docs by setting the following key-value pairs:
+
+- `ZRAG_METADATA_PRODUCT_WEIGHT` : `0.45`
+- `ZRAG_METADATA_CUSTOMER_WEIGHT` : `0.55`
+
+
+1. At the bottom of the **Edit credential** view of your **Draft** connection, click **Add key value pair +** and enter `ZRAG_METADATA_PRODUCT_WEIGHT` for the **Key** field, and `0.45` for the **Value** field. 
+   
+    ![](_attachments/search16.png)
+
+2. Then click **Add key value pair +** once more to enter `ZRAG_METADATA_CUSTOMER_WEIGHT` for the **Key** field, and `0.55` for the **Value** field. 
+   
+    ![](_attachments/search17.png)
+
+3. Then click **Save**. 
+   
+    ![](_attachments/search18.png)
+
+
+
+### Testing the configuration
 
 
 
