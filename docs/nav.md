@@ -86,3 +86,4 @@
     * [Import and test the agent](adk/05-import-agent.md)
     * [Build 'multi-agent collaboration' agent](adk/06-multi-agent-collaboration.md)
 * [Enabling hands-on client access for supported agents](./hands-on/handson.md)
+* [Deploying the Token Exchange Service](token-exchange-service.md)

@@ -25,7 +25,6 @@ This scenario illustrates how to associate two users' email addresses with a pre
    
     For example, using **Option 6** in an ISPF session:
 
-    ![](_attachments/auth1.png)
 
 2. For each user who will be accessing agents via watsonx Orchestrate, you will associate their email address to the `IBMUSER` RACF ID for demo purposes and ease of setup. 
 
@@ -47,7 +46,10 @@ This scenario illustrates how to associate two users' email addresses with a pre
     RACMAP ID(IBMUSER) MAP USERDIDFILTER(NAME('janesmith@ibm.com')) REGISTRY(NAME('LDAPS://BLUEPAGES.IBM.COM')) WITHLABEL('JANE SMITH')
     ```
 
-    IMPORTANT: It's crucial that the `WITHLABEL` value be unique for each user. 
+    !!! Warning "Setting multiple `RACMAP` entries..."
+
+        When mapping multiple users (i.e. email addresses) to the same RACF ID, it's crucial that each the `WITHLABEL` entry for each user be unique. 
+
 
 4. Finally, for RACF to recognize the mapping profile, the `IDIDMAP` general resource profile must be refreshed. 
     
@@ -88,7 +90,7 @@ The easiest way to do this is to SSH directly into z/OS Unix System Services...
 
     ![](_attachments/auth4.png)
 
-    **NOTE:** it will take some time...
+    **NOTE:** *after running the above command, the command-line may 'stall' with the referenced response above. Keep the command session open and wait a few minutes before proceeding.*
 
 4. After waiting a few minutes, verify that **port 5444** on the zD&T image is open and reachable - this is the port configured for the token exchange service. 
    
@@ -119,17 +121,17 @@ Once the Token Exchange Service is up and running, you can verify the authentica
 
 1. First, **retrieve the route** of your environment's **authorization service** by logging into your OpenShift Web Console UI, and navigating to **Routes** under the **Networking** panel, then copy and pasting the Route **Location** for the `wxa4z-authorization-route` as shown below:
   
-    **IMAGE**
+    ![](_attachments/auth6.png)
 
 2. Secondly record the endpoint URL of your zD&T's running Token Exchange Service. To do this:
    
-   **a.)** Navigate to the environment details for your **zD&T** environment on TechZone:
+   **a.)** Navigate to the environment details for your **zD&T** environment on TechZone.
 
-   **IMAGE**
 
    **b.)** At the bottom of your reservation details, you should see your `Hostname` as shown in the screenshot below. Copy and paste that value to a local notepad.
 
-   **IMAGE**
+    ![](_attachments/auth8.png)
+
 
    **c.)** Record the following value using the `Hostname` you previously recorded:
 
@@ -137,7 +139,7 @@ Once the Token Exchange Service is up and running, you can verify the authentica
    https://<Hostname>.techzone.ibm.com:5444
    ```
 
-   In the above example, my final endpoing URL would be:
+   In the above example, the final endpoint URL would be:
 
    `https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444`
 
@@ -221,3 +223,5 @@ The expected output should be something similar to:
 ```
 {"token":"CKBW9X1S","token_type":"passticket","zos_userid":"IBMUSER","email":"johndoe@ibm.com"}
 ```
+
+If successful, that wraps up the configuration of the Token Exchange Service and you can move on. 
