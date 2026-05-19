@@ -10,6 +10,8 @@
       
       
       
+        <link rel="prev" href="../hands-on/handson/">
+      
       
       
         
@@ -20,7 +22,7 @@
     
     
       
-        <title>Deploying the Token Exchange service for PassTicket generation - IBM wxa4z L4 Lab Guide</title>
+        <title>Deploying the Token Exchange Service - IBM wxa4z L4 Lab Guide</title>
       
     
     
@@ -188,7 +190,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploying the Token Exchange service for PassTicket generation
+              Deploying the Token Exchange Service
             
           </span>
         </div>
@@ -3161,6 +3163,43 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying the Token Exchange Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3197,62 +3236,172 @@
 
 
 <div><h1 id="deploying-the-token-exchange-service-for-passticket-generation">Deploying the Token Exchange service for PassTicket generation<a class="headerlink" href="#deploying-the-token-exchange-service-for-passticket-generation" title="Permanent link">#</a></h1>
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
-<h1 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">#</a></h1>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">#</a></h2>
-<h3 id="transfering-mtls-package-to-zos-unix">Transfering mtls package to z/OS Unix<a class="headerlink" href="#transfering-mtls-package-to-zos-unix" title="Permanent link">#</a></h3>
-<h3 id="configure-passticket-support">Configure passticket support<a class="headerlink" href="#configure-passticket-support" title="Permanent link">#</a></h3>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>The Token Exchange service runs directly on the z/OS system and is responsible for generating one-time-use PassTickets. Each PassTicket is uniquely created by securely combining a user's email ID with an application ID, ensuring that every request is tied to a specific user and application context.
+To ensure secure access, the service is not exposed to other services and agents directly. Instead, it is accessible only through an intermediary authorization service. Communication between the token exchange service and the authorization service is secured using mutual Transport Layer Security (mTLS), which establishes a bidirectional, cryptographically verified trust. This ensures that only authenticated and trusted services can interact with the token exchange service to request PassTickets.</p>
+<p><strong>The below steps provide a quick procedure for:</strong></p>
+<ol>
+<li>Associating user email addresses with a RACF ID on zD&amp;T</li>
+<li>Starting the Token Exchange Service on zD&amp;T</li>
+</ol>
+<p><strong>NOTE:</strong> For the full step-by-step instructions, reference the IBM Docs page: https://www.ibm.com/docs/en/watsonx/waz/3.2.0?topic=deploying-token-exchange-service-passticket-generation</p>
+<p>The provisioned zD&amp;T image on TechZone has completed most of the setup work for you. The below steps will illustrate how to configure. </p>
+<h3 id="adding-passticket-users-to-racf">Adding "Passticket users" to RACF<a class="headerlink" href="#adding-passticket-users-to-racf" title="Permanent link">#</a></h3>
+<p>Once the Token Exchange Service is started (in the next step), users who have been added to a mapped RACF identity are authenticated against their registered email address (recorded by watsonx Orchestrate).</p>
+<p>This scenario illustrates how to associate two users' email addresses with a pre-created RACF ID on zD&amp;T (<code>IBMUSER</code>). For security purposes, it's strongly recommended to create individual RACF ID's per user, and associated their email address with each's ID. </p>
+<ol>
+<li>
+<p>First, access the <code>TSO commmand utility</code> or any interface for issuing TSO commands to the zD&amp;T image. </p>
+<p>For example, using <strong>Option 6</strong> in an ISPF session:</p>
+</li>
+<li>
+<p>For each user who will be accessing agents via watsonx Orchestrate, you will associate their email address to the <code>IBMUSER</code> RACF ID for demo purposes and ease of setup. </p>
+<p>As an example, say we have two users with email addresses:</p>
 <ul>
-<li>
-<p>AG UGROUP OMVS(GID(0) SHARED)</p>
-</li>
-<li>
-<p>SETROPTS CLASSACT(PTKTDATA) RACLIST(PTKTDATA) GENERIC(PTKTDATA)</p>
-</li>
-<li>SETROPTS CLASSACT(IDIDMAP) RACLIST(IDIDMAP) GENERIC(IDIDMAP)</li>
-<li>SETROPTS CLASSACT(IDIDMAP) RACLIST(IDIDMAP) GENERIC(IDIDMAP)</li>
-<li>RDEFINE PTKTDATA IRRPTAUTH.IZUDFLT.* UACC(NONE) OWNER(UGROUP)</li>
-<li>RDEFINE PTKTDATA IZUDFLT SSIGNON(KEYMASKED(4D494B4547495A55)) APPLDATA('NO REPLAY PROTECTION')</li>
-<li>PERMIT IRRPTAUTH.IZUDFLT.* CL(PTKTDATA) ID(UGROUP) ACCESS(UPDATE)</li>
-<li>PERMIT IRRPTAUTH.IZUDFLT.* CL(PTKTDATA) ID(IBMUSER) ACCESS(UPDATE)</li>
-<li>SETROPTS RACLIST(PTKTDATA) REFRESH                                   </li>
-<li>SETROPTS RACLIST(IDIDMAP) REFRESH                                    </li>
-<li>SET IKJTSO=00</li>
+<li><code>johndoe@ibm.com</code></li>
+<li><code>janesmith@ibm.com</code></li>
 </ul>
-<h3 id="add-passticket-user">Add Passticket user<a class="headerlink" href="#add-passticket-user" title="Permanent link">#</a></h3>
-<p><code>AU &lt;ID DFLTGRP(SYS1) TSO(ACCTNUM(*) PROC(IZUFPROC) SIZE(2096128))</code></p>
-<p><code>PW USER(ID) NOINTERVAL</code></p>
-<p><code>ALU ID PASSWORD(pass....) OMVS(UID(0) SHARED)</code></p>
-<p><code>CO (ID) GROUP(IZUADMIN)</code></p>
-<p><code>CO (ID) GROUP(CFZADMGP)</code></p>
-<p><code>PERMIT IRRPTAUTH.IZUDFLT.* CL(PTKTDATA) ID(ID) ACCESS(UPDATE)</code></p>
-<p><code>SETROPTS RACLIST(PTKTDATA) REFRESH</code></p>
-<p><code>SETROPTS RACLIST(IDIDMAP) REFRESH</code></p>
-<p><code>RACMAP ID(ID) MAP USERDIDFILTER(NAME('&lt;email&gt;')) REGISTRY(NAME('LDAPS://BLUEPAGES.IBM.COM')) WITHLABEL('ID ON BLUEPAGES')</code></p>
-<p><code>SETROPTS RACLIST(IDIDMAP) REFRESH</code></p>
+<p>First, create the identity filter that maps the <code>johndoe@ibm.com</code> user to the <code>IBMUSER</code> RACF ID using the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RACMAP ID(IBMUSER) MAP USERDIDFILTER(NAME('johndoe@ibm.com')) REGISTRY(NAME('LDAPS://BLUEPAGES.IBM.COM')) WITHLABEL('JOHN DOE')
+</span></code></pre></div>
+</li>
+<li>
+<p>Next, create the identity filter for the <code>janesmith@ibm.com</code> user to the same <code>IBMUSER</code> RACF ID:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RACMAP ID(IBMUSER) MAP USERDIDFILTER(NAME('janesmith@ibm.com')) REGISTRY(NAME('LDAPS://BLUEPAGES.IBM.COM')) WITHLABEL('JANE SMITH')
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Setting multiple <code>RACMAP</code> entries...</p>
+<p>When mapping multiple users (i.e. email addresses) to the same RACF ID, it's crucial that each the <code>WITHLABEL</code> entry for each user be unique. </p>
+</div>
+</li>
+<li>
+<p>Finally, for RACF to recognize the mapping profile, the <code>IDIDMAP</code> general resource profile must be refreshed. </p>
+<p>Run the following RACF command via TSO:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SETROPTS RACLIST(IDIDMAP) REFRESH
+</span></code></pre></div>
+</li>
+<li>
+<p>To verify the successful mapping, you can then run the command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>RACMAP ID(IBMUSER) LISTMAP
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth2.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth2.png"></a></p>
+</li>
+</ol>
 <h3 id="start-the-token-exchange-service">Start the Token Exchange Service<a class="headerlink" href="#start-the-token-exchange-service" title="Permanent link">#</a></h3>
-<p><code>nohup java -jar token-exchange-mtls.jar &amp;</code> 
-- from Linux</p>
-<h2 id="optional-testing">Optional Testing:<a class="headerlink" href="#optional-testing" title="Permanent link">#</a></h2>
-<h3 id="step-1-register-the-agent">Step 1: Register the agent:<a class="headerlink" href="#step-1-register-the-agent" title="Permanent link">#</a></h3>
-<p>curl --request PUT \
-  --url https://wxa4z-authorization-route-wxa4z-zad.apps.wxa4z-cpd522-x86-medium-dev.cp.fyre.ibm.com/api/v1/agents/wxa4z:cics:agent \
-  --header 'Authorization: !cicsagent@' \
-  --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnia/11.4.0' \
-  --data '{     "service_endpoint":"https://tolec78.vmec.svl.ibm.com:5443" }'</p>
-<h3 id="step-2-get-token">Step 2: Get Token<a class="headerlink" href="#step-2-get-token" title="Permanent link">#</a></h3>
-<p>curl --request GET \
-  --url https://wxa4z-authorization-route-wxa4z-zad.apps.wxa4z-cpd522-x86-medium-dev.cp.fyre.ibm.com/api/v1/agents/wxa4z:cics:agent/token \
-  --header 'Authorization: !cicsagent@' \
-  --header 'accept: application/json' </p>
-<h3 id="step-3-get-passticket">Step 3: Get Passticket<a class="headerlink" href="#step-3-get-passticket" title="Permanent link">#</a></h3>
-<p>curl --request POST \
-  --url https://wxa4z-authorization-route-wxa4z-zad.apps.wxa4z-cpd522-x86-medium-dev.cp.fyre.ibm.com/api/v1/agents/wxa4z:cics:agent/passticket \
-  --header 'Authorization: Bearer <replace token>' \
-  --header 'Content-Type: application/json' \
-  --header 'accept: application/json' \
-  --data '{   "applid": "<applid>",   "emailid": "<email_id>" }'</email_id></applid></replace></p></div>
+<p>Now that you have user identities mapped to RACF, you can start the <strong>Token Exchange Service</strong>. As previously mentioned, most of the setup has been done on the templated zD&amp;T image. All that's needed is to run a UNIX shell command on z/OS USS. </p>
+<p>The easiest way to do this is to SSH directly into z/OS Unix System Services...</p>
+<ol>
+<li>
+<p>SSH into your zD&amp;T's USS by following the steps in <strong><em><a href="../techzone/zdt/#ssh-into-zos-unix-system-services">this previous section</a></em></strong>.</p>
+</li>
+<li>
+<p>From the UNIX Shell, navigate to the <code>/u/ibmuser/token</code> directory by issuing:</p>
+<p><code>cd token</code></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth3.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth3.png"></a></p>
+</li>
+<li>
+<p>Finally, <strong>start</strong> the token exchange service by issuing the following command:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nohup java -jar token-exchange-mtls.jar &amp;
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth4.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth4.png"></a></p>
+<p><strong>NOTE:</strong> <em>after running the above command, the command-line may 'stall' with the referenced response above. Keep the command session open and wait a few minutes before proceeding.</em></p>
+</li>
+<li>
+<p>After waiting a few minutes, verify that <strong>port 5444</strong> on the zD&amp;T image is open and reachable - this is the port configured for the token exchange service. </p>
+<p>This can be done using the following options:</p>
+<p><strong>a.)</strong> SSH into z/OS USS from a new session and issue the <code>netstat</code> command</p>
+<p>Verify that port <code>5444</code> is listening as shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth5.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth5.png"></a></p>
+<p><strong>b.)</strong> From your machine's local command-prompt, issue the following command (substituting <code>&lt;public ip&gt;</code> with the public IP address of your own zD&amp;T image):</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nc -zv &lt;public ip&gt; 5444
+</span></code></pre></div>
+<p>If working, you should get output similar to:</p>
+<p><code>Connection to 52.118.145.999 port 5444 [tcp/*] succeeded!</code></p>
+</li>
+</ol>
+<h3 id="optional-testing">Optional Testing<a class="headerlink" href="#optional-testing" title="Permanent link">#</a></h3>
+<p>Once the Token Exchange Service is up and running, you can verify the authentication by following the below steps. </p>
+<h4 id="step-1-register-a-mock-agent">Step 1: Register a mock agent<a class="headerlink" href="#step-1-register-a-mock-agent" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>First, <strong>retrieve the route</strong> of your environment's <strong>authorization service</strong> by logging into your OpenShift Web Console UI, and navigating to <strong>Routes</strong> under the <strong>Networking</strong> panel, then copy and pasting the Route <strong>Location</strong> for the <code>wxa4z-authorization-route</code> as shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth6.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth6.png"></a></p>
+</li>
+<li>
+<p>Secondly record the endpoint URL of your zD&amp;T's running Token Exchange Service. To do this:</p>
+</li>
+</ol>
+<p><strong>a.)</strong> Navigate to the environment details for your <strong>zD&amp;T</strong> environment on TechZone.</p>
+<p><strong>b.)</strong> At the bottom of your reservation details, you should see your <code>Hostname</code> as shown in the screenshot below. Copy and paste that value to a local notepad.</p>
+<div class="highlight"><pre><span></span><code>![](_attachments/auth8.png)
+</code></pre></div>
+<p><strong>c.)</strong> Record the following value using the <code>Hostname</code> you previously recorded:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://&lt;Hostname&gt;.techzone.ibm.com:5444
+</span></code></pre></div>
+<p>In the above example, the final endpoint URL would be:</p>
+<p><code>https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444</code></p>
+<ol start="3">
+<li>
+<p>Register a mock agent using the following CURL command from your local machine's command terminal/prompt, replacing <code>&lt;auth route&gt;</code> with your authorization route recorded in step 1, and replacing <code>&lt;token endpoint&gt;</code> with the endpoint URL of your zD&amp;T's Token exchange service recorded in step 2 above:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl --request PUT \
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--url &lt;auth route&gt;/api/v1/agents/wxa4z:cics:agent \
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--header 'Authorization: !cicsagent@' \
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--header 'Content-Type: application/json' \
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>--header 'User-Agent: insomnia/11.4.0' \
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>--data '{ "service_endpoint":"&lt;token endpoint&gt;" }'
+</span></code></pre></div>
+</li>
+<li>
+<p>Using the above example, the command and associated output would be:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl --request PUT \
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>--url https://wxa4z-authorization-route-wxa4z-zad.apps.itz-9m4n0h.hub01-lb.techzone.ibm.com/api/v1/agents/wxa4z:cics:agent \
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>--header 'Authorization: !cicsagent@' \
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>--header 'Content-Type: application/json' \
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>--header 'User-Agent: insomnia/11.4.0' \
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>--data '{ "service_endpoint":"https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444" }'
+</span></code></pre></div>
+<p>The expected output should be something similar to:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{"message":"Agent registered successfully","register_at":"2026-05-16T06:47:28Z"}
+</span></code></pre></div>
+</li>
+</ol>
+<h3 id="step-2-retrieve-token">Step 2: Retrieve Token<a class="headerlink" href="#step-2-retrieve-token" title="Permanent link">#</a></h3>
+<p>Next, retrieve the token value that will be used as input for generating a passticket for your user. </p>
+<p>Run the following CURL command from your local mcahine's command terminal/prompt, replacing <code>&lt;auth route&gt;</code> with your authorization service route recorded earlier:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl --request GET \
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>--url &lt;auth route&gt;/api/v1/agents/wxa4z:cics:agent/token \
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>--header 'Authorization: !cicsagent@' \
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>--header 'accept: application/json' 
+</span></code></pre></div>
+<p>The expected output should be the value of an <code>access-token</code> as shown in the example below. Copy and record the value of your token as you'll need it later. </p>
+<div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{"access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9pZCI6Ind4YTR6OmNpY3M6YWdlbnQiLCJpc3MiOiJhdXRob3JpemF0aW9uIiwic3ViIjoid3hhNHo6Y2ljczphZ2VudCIsImV4cCI6MTc3ODkxNzc1NSwiaWF0IjoxNzc4OTE0MTU1fQ.DF_7sg_pbJu3vRen3caqN5izSIBm_grFlgOSDdoU4Hs"}%
+</span></code></pre></div>
+<h3 id="step-3-generate-passticket">Step 3: Generate Passticket<a class="headerlink" href="#step-3-generate-passticket" title="Permanent link">#</a></h3>
+<p>Run the below command to generate a passticket for a user, replacing the following values:</p>
+<ul>
+<li><code>&lt;auth route&gt;</code>: replace with the route of your authorization service recorded earlier</li>
+<li><code>&lt;token&gt;</code>: replace with the token value outputted in previous command</li>
+<li><code>&lt;EMAIL_ID&gt;</code>: replace with one of the email addresses used for mapping the two previous fictitious users to RACF (i.e. <code>johndoe@ibm.com</code> or <code>janesmith@ibm.com</code>).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl --request POST \
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  --url &lt;auth route&gt;/api/v1/agents/wxa4z:cics:agent/passticket \
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  --header 'Authorization: Bearer &lt;token&gt;' \
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  --header 'Content-Type: application/json' \
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  --header 'accept: application/json' \
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  --data '{   "applid": "IZUDFLT",   "emailid": "&lt;EMAIL_ID&gt;" }'
+</span></code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl --request POST \
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  --url https://wxa4z-authorization-route-wxa4z-zad.apps.itz-9m4n0h.hub01-lb.techzone.ibm.com/api/v1/agents/wxa4z:cics:agent/passticket \
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9pZCI6Ind4YTR6OmNpY3M6YWdlbnQiLCJpc3MiOiJhdXRob3JpemF0aW9uIiwic3ViIjoid3hhNHo6Y2ljczphZ2VudCIsImV4cCI6MTc3ODkxNzc1NSwiaWF0IjoxNzc4OTE0MTU1fQ.DF_7sg_pbJu3vRen3caqN5izSIBm_grFlgOSDdoU4Hs' \
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  --header 'Content-Type: application/json' \
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  --header 'accept: application/json' \
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  --data '{   "applid": "IZUDFLT",   "emailid": "johndoe@ibm.com" }'
+</span></code></pre></div>
+<p>The expected output should be something similar to:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{"token":"CKBW9X1S","token_type":"passticket","zos_userid":"IBMUSER","email":"johndoe@ibm.com"}
+</span></code></pre></div>
+<p>If successful, that wraps up the configuration of the Token Exchange Service and you can move on. </p></div>
 
 
 
@@ -3277,6 +3426,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../hands-on/handson/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enabling hands-on client access for supported agents">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Enabling hands-on client access for supported agents
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
