@@ -3245,6 +3245,7 @@
 <p>Within your <code>values.yaml</code> file, locate the <code>env</code> section for the <strong>compiler-fix-finder</strong> Agent as shown below:</p>
 <p></p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>env:
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  WATSONX_MODEL_ID: "meta-llama/llama-3-3-70b-instruct"
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  DEPLOYMENT_TYPE: "cloud"
 </span></code></pre></div>
 Enter the <strong>MODEL ID</strong> corresponding to the LLM for your use case. The suggestion for TechZone cloud-based environments is to use the <code>meta-llama/llama-3-3-70b-instruct</code> model. However, if you've completed the <a href="../../../watsonx-ai/config-granite/">optional setup</a> for configuring the Model Gateway for Granite, you can leave the default <code>ibm/granite-3-3-8b-instruct</code> MODEL_ID. 
 <p>Then ensure you save the file.</p></div>

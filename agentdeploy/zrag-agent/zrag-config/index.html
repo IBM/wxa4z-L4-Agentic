@@ -3373,7 +3373,49 @@
 </li>
 </ol>
 <h3 id="testing-the-configuration_2">Testing the configuration<a class="headerlink" href="#testing-the-configuration_2" title="Permanent link">#</a></h3>
-<h2 id="4-modifying-specific-doc-indices-to-search">4.) Modifying specific doc indices to search<a class="headerlink" href="#4-modifying-specific-doc-indices-to-search" title="Permanent link">#</a></h2></div>
+<p>To verify whether the weights were properly set in the <strong>Draft</strong> environment, prompt your <code>zRAG Agent</code> just as before from the Agent Builder page. </p>
+<p>In the logs of the opensearch-wrapper pod on OpenShift, you should see log messages similar to what's shown below:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/search19.png" data-desc-position="bottom"><img alt="" src="../_attachments/search19.png"></a></p>
+<h2 id="4-modifying-specific-doc-indices-to-search">4.) Modifying specific doc indices to search<a class="headerlink" href="#4-modifying-specific-doc-indices-to-search" title="Permanent link">#</a></h2>
+<p>The last scenario you may face is the need to set the scope of the zRAG searches to very specific documentation sources. This can be a set of default product docs included in the zRAG, or specific customer docs that were ingested. Narrowing index scope can improve both performance and relevance, although the scope of topics available are more limited. The following variables can be used to configure this:</p>
+<ul>
+<li><code>ZRAG_DEFAULT_IBM_INDICES</code>: comma-separated list of IBM documentation indices to search. The default is <code>"*_ibm_docs_slate,*_ibm_redbooks_slate"</code> which searches all default IBM doc indices and IBM Redbook indices</li>
+<li><code>ZRAG_DEFAULT_CUSTOMER_INDICES</code>: comma-separated list of customer ingested indices. The default is <code>""</code> which includes all ingested indices. </li>
+</ul>
+<p>When it comes to narrowing the scope of the IBM indices to search, the list of available indices can be found in 1 of 2 easy ways:</p>
+<ol>
+<li>
+<p>Viewing the official <strong>zRAG Content</strong> Spreadsheet available on Seismic: https://ibm.seismic.com/Link/Content/DCHg9CqFb7CXhG7DVMDQj8qd2PhV</p>
+</li>
+<li>
+<p>Issuing an API call via CURL command using your environment's OpenSearch cluster endpoint: https://www.ibm.com/docs/en/watsonx/waz/3.2.0?topic=cluster-testing-your-zassistantdeploy-connection</p>
+</li>
+</ol>
+<p>For this scenario, let's say you want to narrow the scope of the search on the IBM Documentation indices to only the larger z/OS documentation available. This will exclude documentation on all other topics, products, software, etc. and only include the base z/OS documentation if that's suitable. </p>
+<ol>
+<li>
+<p>First identify the index value of that documentation in the zRAG. From viewing the spreadsheet, we can see the base z/OS doc has an index value of <code>swg90</code> as shown below:</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In order to scope the searched IBM indices to only this document, you'll need to set the <code>ZRAG_DEFAULT_IBM_INDICES</code> connection parameter to <code>"swg90_ibm_docs_slate"</code>. </p>
+<p>Instead of searching all of the ibm doc indices and redbooks (i.e. <code>"*_ibm_docs_slate,*_ibm_redbooks_slate"</code>), it'll only search that single index. </p>
+</li>
+<li>
+<p>When editing the <strong>Draft</strong> version of your connection credentials in the Orchestrate UI, locate the existing parameter for <code>ZRAG_DEFAULT_IBM_INDICES</code> and click the <strong>pencil icon</strong>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>In the <strong>value</strong> field, enter the comma-separated list of ibm indices to search, in our case <code>swg90_ibm_docs_slate</code>.</p>
+<p><strong>IMAGE</strong></p>
+</li>
+<li>
+<p>Once done, click <strong>Save</strong> at the bottom. </p>
+</li>
+</ol>
+<h3 id="testing-the-configuration_3">Testing the configuration<a class="headerlink" href="#testing-the-configuration_3" title="Permanent link">#</a></h3>
+<p>To verify whether only the single or set of indices are being search, prompt the zRAG Agent and view the pod logs. You should see the list of indices you set in the connection parameter:</p>
+<p><strong>IMAGE</strong></p></div>
 
 
 
