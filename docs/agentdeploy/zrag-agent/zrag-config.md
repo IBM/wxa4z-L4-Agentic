@@ -190,8 +190,53 @@ For this scenario, you will configure customer docs to be slightly more prioriti
 
 ### Testing the configuration
 
+To verify whether the weights were properly set in the **Draft** environment, prompt your `zRAG Agent` just as before from the Agent Builder page. 
+
+In the logs of the opensearch-wrapper pod on OpenShift, you should see log messages similar to what's shown below:
+
+![](_attachments/search19.png)
+
 
 
 ## 4.) Modifying specific doc indices to search
 
+The last scenario you may face is the need to set the scope of the zRAG searches to very specific documentation sources. This can be a set of default product docs included in the zRAG, or specific customer docs that were ingested. Narrowing index scope can improve both performance and relevance, although the scope of topics available are more limited. The following variables can be used to configure this:
+
+- `ZRAG_DEFAULT_IBM_INDICES`: comma-separated list of IBM documentation indices to search. The default is `"*_ibm_docs_slate,*_ibm_redbooks_slate"` which searches all default IBM doc indices and IBM Redbook indices
+- `ZRAG_DEFAULT_CUSTOMER_INDICES`: comma-separated list of customer ingested indices. The default is `""` which includes all ingested indices. 
+
+
+When it comes to narrowing the scope of the IBM indices to search, the list of available indices can be found in 1 of 2 easy ways:
+
+1. Viewing the official **zRAG Content** Spreadsheet available on Seismic: https://ibm.seismic.com/Link/Content/DCHg9CqFb7CXhG7DVMDQj8qd2PhV
+   
+
+2. Issuing an API call via CURL command using your environment's OpenSearch cluster endpoint: https://www.ibm.com/docs/en/watsonx/waz/3.2.0?topic=cluster-testing-your-zassistantdeploy-connection
+
+
+For this scenario, let's say you want to narrow the scope of the search on the IBM Documentation indices to only the larger z/OS documentation available. This will exclude documentation on all other topics, products, software, etc. and only include the base z/OS documentation if that's suitable. 
+
+1. First identify the index value of that documentation in the zRAG. From viewing the spreadsheet, we can see the base z/OS doc has an index value of `swg90` as shown below:
+   
+    **IMAGE**
+
+2. In order to scope the searched IBM indices to only this document, you'll need to set the `ZRAG_DEFAULT_IBM_INDICES` connection parameter to `"swg90_ibm_docs_slate"`. 
+   
+    Instead of searching all of the ibm doc indices and redbooks (i.e. `"*_ibm_docs_slate,*_ibm_redbooks_slate"`), it'll only search that single index. 
+
+3. When editing the **Draft** version of your connection credentials in the Orchestrate UI, locate the existing parameter for `ZRAG_DEFAULT_IBM_INDICES` and click the **pencil icon**.
+   
+    **IMAGE**
+
+4. In the **value** field, enter the comma-separated list of ibm indices to search, in our case `swg90_ibm_docs_slate`.
+   
+    **IMAGE**
+
+5. Once done, click **Save** at the bottom. 
+
+### Testing the configuration
+
+To verify whether only the single or set of indices are being search, prompt the zRAG Agent and view the pod logs. You should see the list of indices you set in the connection parameter:
+
+**IMAGE**
 
