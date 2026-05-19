@@ -125,23 +125,23 @@ Once the Token Exchange Service is up and running, you can verify the authentica
 
 2. Secondly record the endpoint URL of your zD&T's running Token Exchange Service. To do this:
    
-   **a.)** Navigate to the environment details for your **zD&T** environment on TechZone.
+    **a.)** Navigate to the environment details for your **zD&T** environment on TechZone.
 
 
-   **b.)** At the bottom of your reservation details, you should see your `Hostname` as shown in the screenshot below. Copy and paste that value to a local notepad.
+    **b.)** At the bottom of your reservation details, you should see your `Hostname` as shown in the screenshot below. Copy and paste that value to a local notepad.
 
     ![](_attachments/auth8.png)
 
 
-   **c.)** Record the following value using the `Hostname` you previously recorded:
+    **c.)** Record the following value using the `Hostname` you previously recorded:
 
-   ```
-   https://<Hostname>.techzone.ibm.com:5444
-   ```
+    ```
+    https://<Hostname>.techzone.ibm.com:5444
+    ```
 
-   In the above example, the final endpoint URL would be:
+    In the above example, the final endpoint URL would be:
 
-   `https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444`
+    `https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444`
 
 3. Register a mock agent using the following CURL command from your local machine's command terminal/prompt, replacing `<auth route>` with your authorization route recorded in step 1, and replacing `<token endpoint>` with the endpoint URL of your zD&T's Token exchange service recorded in step 2 above:
    
