@@ -46,11 +46,11 @@ The **Db2 for z/OS Agent** is a **Prebuilt product agent**, versus the Foundatio
    
     ```
     image:
-      repository: us.icr.io/agents-txc/db2-agent
-      tag: v3.2.0
+      repository: us.icr.io/agents-txc/db2z-agent
+      tag: 1.2.1
     mcpImage:
-      repository: us.icr.io/agents-txc/db2-mcp-server
-      tag: v3.2.0
+      repository: us.icr.io/agents-txc/db2z-mcp-server
+      tag: 1.2.1-release
     ```
 
 5. Underneath that section, you will see a `registry` variable block which looks like the following:

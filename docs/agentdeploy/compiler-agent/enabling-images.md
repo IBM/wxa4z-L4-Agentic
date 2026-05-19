@@ -60,7 +60,7 @@ For Business Partners, please contact your IBM rep.
     ```
     image:
       repository: us.icr.io/agents-txc/ibm-z-compilers-fix-finder-agent
-      tag: 1.2.0
+      tag: 1.1.2
     ```
 
 
