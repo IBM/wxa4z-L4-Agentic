@@ -9496,18 +9496,15 @@ To ensure secure access, the service is not exposed to other services and agents
 </li>
 <li>
 <p>Secondly record the endpoint URL of your zD&amp;T's running Token Exchange Service. To do this:</p>
-</li>
-</ol>
 <p><strong>a.)</strong> Navigate to the environment details for your <strong>zD&amp;T</strong> environment on TechZone.</p>
 <p><strong>b.)</strong> At the bottom of your reservation details, you should see your <code>Hostname</code> as shown in the screenshot below. Copy and paste that value to a local notepad.</p>
-<div class="highlight"><pre><span></span><code>![](_attachments/auth8.png)
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/auth8.png" data-desc-position="bottom"><img alt="" src="../_attachments/auth8.png"></a></p>
 <p><strong>c.)</strong> Record the following value using the <code>Hostname</code> you previously recorded:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#token-exchange-service-__codelineno-6-1"></a>https://&lt;Hostname&gt;.techzone.ibm.com:5444
 </span></code></pre></div>
 <p>In the above example, the final endpoint URL would be:</p>
 <p><code>https://itzvsi-550000kksb-pmjtc8cl.techzone.ibm.com:5444</code></p>
-<ol start="3">
+</li>
 <li>
 <p>Register a mock agent using the following CURL command from your local machine's command terminal/prompt, replacing <code>&lt;auth route&gt;</code> with your authorization route recorded in step 1, and replacing <code>&lt;token endpoint&gt;</code> with the endpoint URL of your zD&amp;T's Token exchange service recorded in step 2 above:</p>
 <div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#token-exchange-service-__codelineno-7-1"></a>curl --request PUT \
