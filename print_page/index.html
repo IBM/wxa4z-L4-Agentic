@@ -4604,7 +4604,7 @@
 </div>
 <p><a href="https://techzone.ibm.com/my/reservations/create/68e815e1c4aad3445dcfe1bc" target="_blank">Watsonx Assistant for Z Pilot – watsonx Orchestrate - reservation page</a></p>
 <p><a href="https://techzone.ibm.com/my/reservations/create/69c99ef33dc0863bd858581c" target="_blank">z/OS Dev &amp; Test Image - reservation page</a></p>
-<p><a href="https://techzone.ibm.com/my/reservations/create/6965075fc23104120139308b" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a></p>
+<p><a href="https://techzone.ibm.com/my/reservations/create/6965075fc23104120139308b" target="_blank">OpenShift (OCP-V on IBM Cloud) - reservation page</a></p>
 </li>
 </ol>
 <div class="admonition important">
@@ -4634,7 +4634,7 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/TZ2.png" data-desc-position="bottom"><img alt="" src="../_attachments/TZ2.png"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Additional fields for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong></p>
-<p>In addition to the preceding fields, the reservation for the <strong>Single Node OpenShift (OCP-V on IBM Cloud)</strong> has these additional fields:</p>
+<p>In addition to the preceding fields, the reservation for the <strong>OpenShift (OCP-V on IBM Cloud)</strong> has these additional fields:</p>
 <p><strong>h</strong>. OCP/Kubernetes cluster network: leave the default setting of <strong>10.128.0.0/14</strong>.</p>
 <p><strong>i</strong>. Enable FIPS security: leave the default setting of <strong>No</strong>. Learn more about the Federal Information Processing Standards (FIPS) <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards#:~:text=The%20Federal%20Information%20Processing%20Standards,States%20government%20agencies%20and%20contractors." target="_blank">here</a>.</p>
 <p><strong>j</strong>. Master single node flavor: select <strong>32 vCPU x 128 GB - 300 GB ephemeral storage</strong>.</p>
@@ -4809,29 +4809,29 @@
             remove_material_navigation();remove_mkdocs_theme_navigation();generate_toc();
         })
         </script>
-        </head><body><div><h1 id="single-node-openshift-cluster">Single Node OpenShift Cluster<a class="headerlink" href="#techzone-sno-single-node-openshift-cluster" title="Permanent link">#</a></h1>
+        </head><body><div><h1 id="openshift-ocp-v-on-ibm-cloud">OpenShift (OCP-V on IBM Cloud)<a class="headerlink" href="#techzone-sno-openshift-ocp-v-on-ibm-cloud" title="Permanent link">#</a></h1>
 <h3 id="techzone-sno-summary-of-the-environment">Summary of the environment<a class="headerlink" href="#techzone-sno-summary-of-the-environment" title="Permanent link">#</a></h3>
-<p>The next Lab environment you will use is the <strong>Single Node OpenShift</strong> cluster deployed on IBM Cloud.</p>
+<p>The next Lab environment you will use is the <strong>OpenShift</strong> cluster deployed on IBM Cloud.</p>
 <p>The very first hands-on exercise in the Lab will be accessing your OpenShift cluster and deploying the <strong>zAssistantDeploy</strong> services with all dependent resources, including OpenSearch with the watsonx Assistant for Z RAG and the Client Ingestion service. This will service as a foundation for later deploying AI Agents onto your cluster that can be imported into watsonx Orchestrate for accessing and testing.</p>
 <p><strong><em>Disclaimer:</em></strong> The various components of watsonx Assistant for Z (i.e. zRAG OpenSearch database) are deployed and collocated alongside the deployment of watsonx Orchestrate. For this Lab, you will use a dedicated OpenShift cluster for the sole purpose of deployed these components, with the exception of watsonx Orchestrate (SaaS version), as well as AI agents which will be made accessible within watsonx Orchestrate SaaS.</p>
 <h3 id="techzone-sno-accessing-the-environment">Accessing the environment<a class="headerlink" href="#techzone-sno-accessing-the-environment" title="Permanent link">#</a></h3>
-<p>Follow the below instructions to access your <strong><em>Single Node OpenShift</em></strong> environment.</p>
+<p>Follow the below instructions to access your <strong><em>OpenShift</em></strong> environment.</p>
 <ol>
 <li>
-<p>Click the following link to open a browser window to your ITZ reservations.</p>
-<p><a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a></p>
+<p>Click the following link to open a browser window to your ITZ requests.</p>
+<p><a href="https://techzone.ibm.com/my/requests" target="_blank">ITZ My requests</a></p>
 </li>
 <li>
-<p>Click the <strong>Single Node OpenShift</strong> tile.</p>
+<p>Click the <strong>OpenShift (OCP-V on IBM Cloud)</strong> tile.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/sno1.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/sno1.png"></a></p>
 </li>
 <li>
-<p>Scroll down and record the <strong>Cluster Admin Username</strong> and <strong>Cluster Admin Password</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/sno2.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/sno2.png"></a></p>
+<p>Expand the environment name, then record the <strong>Cluster Admin Username</strong> and <strong>Cluster Admin Password</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/ocp1.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/ocp1.png"></a></p>
 </li>
 <li>
 <p>Click the <strong>OCP Console</strong> link.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/sno3.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/sno3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../techzone/_attachments/ocp2.png" data-desc-position="bottom"><img alt="" src="../techzone/_attachments/ocp2.png"></a></p>
 </li>
 <li>
 <p>Enter the <strong>Cluster Admin Username</strong> and <strong>Cluster Admin Password</strong> values from step 3 and click <strong>Log in</strong>.</p>
@@ -5304,7 +5304,7 @@ that secret for later use. </p>
 <p>This can be verified by issuing the <code>oc</code> command on your local command-line. If you already installed the <code>oc</code> utility, you can proceed to the next section.</p>
 <ol>
 <li>
-<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by following the instructions <strong><em><a href="#techzone-sno-accessing-the-environment">here</a></em></strong>.</p>
+<p>Log into your <strong><em>OpenShift</em></strong> cluster via web console by following the instructions <strong><em><a href="#techzone-sno-accessing-the-environment">here</a></em></strong>.</p>
 </li>
 <li>
 <p>Click the <strong>Help</strong> icon and then click <strong>Command Line Tools</strong>.</p>
@@ -5326,7 +5326,7 @@ that secret for later use. </p>
 <p><strong>Note:</strong> If you just installed the <code>oc</code> utility, you should already be logged into the cluster and can skip the first couple of steps.</p>
 <ol>
 <li>
-<p>Log into your <strong><em>Single Node OpenShift</em></strong> cluster via web console by following the instructions <strong><em><a href="#techzone-sno-accessing-the-environment">here</a></em></strong>.</p>
+<p>Log into your <strong><em>OpenShift</em></strong> cluster via web console by following the instructions <strong><em><a href="#techzone-sno-accessing-the-environment">here</a></em></strong>.</p>
 </li>
 <li>
 <p>Click the <code>kube:admin</code> profile drop-down and click <strong>Copy login command</strong>.</p>
