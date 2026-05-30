@@ -24,7 +24,7 @@ Follow the instructions to create new reservation requests, extend the reservati
     
     <a href="https://techzone.ibm.com/my/reservations/create/69c99ef33dc0863bd858581c" target="_blank">z/OS Dev & Test Image - reservation page</a>
     
-    <a href="{{itz.snoEnv}}" target="_blank">Single Node OpenShift (OCP-V on IBM Cloud) - reservation page</a>
+    <a href="{{itz.snoEnv}}" target="_blank">OpenShift (OCP-V on IBM Cloud) - reservation page</a>
 
 !!! Important "The next two steps are for one of the three environments. Repeat for all three environments."
 
@@ -62,7 +62,7 @@ Follow the instructions to create new reservation requests, extend the reservati
     
     !!! Tip "Additional fields for the **Single Node OpenShift (OCP-V on IBM Cloud)**"
 
-        In addition to the preceding fields, the reservation for the **Single Node OpenShift (OCP-V on IBM Cloud)** has these additional fields:
+        In addition to the preceding fields, the reservation for the **OpenShift (OCP-V on IBM Cloud)** has these additional fields:
 
         **h**. OCP/Kubernetes cluster network: leave the default setting of **10.128.0.0/14**.
 

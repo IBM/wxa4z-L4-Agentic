@@ -5,7 +5,7 @@ The Red Hat OpenShift command line interface (CLI) utility, which is known as `o
 
 This can be verified by issuing the `oc` command on your local command-line. If you already installed the `oc` utility, you can proceed to the next section.
 
-1. Log into your ***Single Node OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
+1. Log into your ***OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
       
 2. Click the **Help** icon and then click **Command Line Tools**.
    
@@ -29,7 +29,7 @@ This can be verified by issuing the `oc` command on your local command-line. If 
 
 **Note:** If you just installed the `oc` utility, you should already be logged into the cluster and can skip the first couple of steps.
 
-1. Log into your ***Single Node OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
+1. Log into your ***OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
       
 
 2. Click the `kube:admin` profile drop-down and click **Copy login command**.

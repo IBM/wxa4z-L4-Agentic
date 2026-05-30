@@ -1,8 +1,8 @@
-# Single Node OpenShift Cluster
+# OpenShift (OCP-V on IBM Cloud)
 
 ### Summary of the environment
 
-The next Lab environment you will use is the **Single Node OpenShift** cluster deployed on IBM Cloud.
+The next Lab environment you will use is the **OpenShift** cluster deployed on IBM Cloud.
 
 The very first hands-on exercise in the Lab will be accessing your OpenShift cluster and deploying the **zAssistantDeploy** services with all dependent resources, including OpenSearch with the watsonx Assistant for Z RAG and the Client Ingestion service. This will service as a foundation for later deploying AI Agents onto your cluster that can be imported into watsonx Orchestrate for accessing and testing.
 
@@ -11,23 +11,23 @@ The very first hands-on exercise in the Lab will be accessing your OpenShift clu
 
 ### Accessing the environment
 
-Follow the below instructions to access your ***Single Node OpenShift*** environment.
+Follow the below instructions to access your ***OpenShift*** environment.
 
-1. Click the following link to open a browser window to your ITZ reservations.
+1. Click the following link to open a browser window to your ITZ requests.
    
-    <a href="https://techzone.ibm.com/my/reservations" target="_blank">ITZ My reservations</a>
+    <a href="https://techzone.ibm.com/my/requests" target="_blank">ITZ My requests</a>
 
-2. Click the **Single Node OpenShift** tile.
+2. Click the **OpenShift (OCP-V on IBM Cloud)** tile.
    
     ![](_attachments/sno1.png)
 
-3. Scroll down and record the **Cluster Admin Username** and **Cluster Admin Password**.
+3. Expand the environment name, then record the **Cluster Admin Username** and **Cluster Admin Password**.
    
-    ![](_attachments/sno2.png)
+    ![](_attachments/ocp1.png)
 
 4. Click the **OCP Console** link.
    
-    ![](_attachments/sno3.png)
+    ![](_attachments/ocp2.png)
 
 5. Enter the **Cluster Admin Username** and **Cluster Admin Password** values from step 3 and click **Log in**.
    
