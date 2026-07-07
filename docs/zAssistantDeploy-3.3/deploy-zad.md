@@ -27,9 +27,7 @@ Then, kick off the deployment by submitting the following command in your local 
 ./deploy-operator-saas.sh deploy
 ```
 
-Once executed, the script will guide you through the configuration. For example:
-
-
+Once executed, the script will guide you through the configuration. Examples shown below for reference...
 
 1. Once executed, you should firstly see a return message in the Terminal showing:
    
@@ -38,7 +36,9 @@ Once executed, the script will guide you through the configuration. For example:
     Enter your entitlement key for tz-pull-secret: 
     ```
 
-2. Once the operator is successfully deployed, you should see something like what's shown below:
+    Copy and paste the `tz-pull-secret` entitlement key you copied in the previous step. 
+
+2. Later once the operator is successfully deployed, you should see something like what's shown below:
 
     ```
     [OK] Operator has been successfully deployed!
@@ -50,7 +50,8 @@ Once executed, the script will guide you through the configuration. For example:
     Do you want to apply the ZAssistantDeploy CR now? (y/n): 
     ```
 
-    Enter `y` to proceed to the creation of the ZAD core services. 
+    Enter `y` to proceed with the creation of the ZAD core services. 
+
 
 3. Next, the script will create the needed secrets for the **authorization** service as shown below:
    
@@ -83,11 +84,14 @@ Once executed, the script will guide you through the configuration. For example:
     secret/wxa4z-ifm-credentials created
     ```
 
-    - When prompted for your `WATSONX_URL`, provide your **WML Base URL** you recorded in section....or leave the default if us-south. 
-    - When prompted for your....
+    - When prompted for your `WATSONX_URL`, provide your **WML Base URL** you recorded in section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)*** **OR**, client `<enter>` if the default value suffices (depending on region)
+    - When prompted for your `WATSONX_API_KEY`, provide the value of the IBM Cloud API key you generated and recorded in section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
+    - For `WATSONX_SPACE_ID`, copy and paste the value you recorded in section ***[Create Deployment Space](../watsonx-ai/deployment-space.md)***.
+    - Lastly, for `WATSONX_MODEL_ID`, use the default (`openai/gpt-oss-120b`) for best results, otherwise provide the **MODEL_ID** for the desired model. 
 
 
-5. It will then configure secrets for watsonx Orchestrate and zRAG Agent registration:
+
+5. Afterwards, the script will then configure secrets for zRAG Agent registration to the watsonx Orchestrate instance:
    
     ```
     [INFO] Configure watsonx Orchestrate (SaaS) for zRAG agent registration:
@@ -98,8 +102,11 @@ Once executed, the script will guide you through the configuration. For example:
     Save this API key (used for transform config): Ubtujy1s4Km3nJTfjS4GuSwl9qd2+mEiEUPMNcYZuhU=
     ```
 
+    - When prompted for your `WXO_ORCHESTRATE_URL`, copy and paste the full value of your environment's service Instance URL you recorded in section ***[Retrieve watsonx Orchestrate Service Instance URL](../watsonx-ai/service-instance-url.md)***.
+    - And finally for `WXO_TOKEN_URL`, use the default.
 
-6. Finally, you'll begin seeing some output similar to what's shown below. Make sure you don't exit the script execution. Wait until you're prompted to deploy the **AIOpsIntegration CR** - enter `n` as you won't be deploying this resource. 
+
+6. Finally, you'll begin seeing some output similar to what's shown below. Make sure you don't exit the script execution. Wait until you're prompted to deploy the **AIOpsIntegration CR** - then enter `n` as you won't be deploying the AIOpsIntegration resource. 
 
     ```
     [INFO] Creating ZAssistantDeploy CR...
@@ -117,21 +124,34 @@ Once executed, the script will guide you through the configuration. For example:
     Do you want to deploy the AIOpsIntegration CR? (y/n): n
     ```
 
-7. Following the completion of the script, and after waiting a few minutes, navigate to the `wxa4z-zad` namespace in your OpenShift web console and verify all the pods are in a running state as shown below:
+7. Following the completion of the script, and after waiting a few minutes, navigate to the `wxa4z-zad` namespace in your OpenShift web console and verify all the pods are in a **Running** state as shown below:
    
-    **IMAGE**
+    ![](_attachments/tenant1.png)
 
 
-8. Additionally, the bootstrapper process will create a **tenant namespace** on your cluster with the syntax `wxa4z-<tenant-id>` where the zRAG Agent was bootstrapped. 
 
-    Navigate to your tenant namespace and confirm you see the following pods in a **Running** state:
+8. Additionally, the bootstrapper process will create a **tenant namespace** on your cluster with the pattern `wxa4z-<tenant-id>`. 
+   
+    Within the OCP Web console, click on the **Project** drop-down and select the tenant namespace, as shown below as reference:
+
+    ![](_attachments/tenant2.png)
+
+    Then go to the **Pods** view in the tenant namespace and confirm you see the following pods in a **Running** state:
 
     - zrag-agent
     - content-ingestion
     - opensearch-wrapper 
 
 
+    ![](_attachments/tenant3.png)
+    
+
 ### Troubleshooting:
+
+
+
+
+
 
 ------
 

@@ -32,7 +32,60 @@ This shell script targets clusters using watsonx.ai SaaS for inferencing rather 
 Once downloaded, open up the script in a Visual editor of your choice, preferable VS Code. 
 
 
-### Log into OpenShift cluster and install cert-manager
+### Install the `oc` command-line utility
+
+The Red Hat OpenShift command line interface (CLI) utility, which is known as `oc`, must be installed on your local workstation. If you already installed the `oc` utility, you can proceed to the next section.
+
+This can be verified by issuing the `oc` command on your local command-line. If you already installed the `oc` utility, you can proceed to the next section.
+
+1. Log into your ***OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
+      
+2. Click the **Help** icon and then click **Command Line Tools**.
+   
+    ![](_attachments/oc1.png)
+
+3. Click the link under **oc - OpenShift Command Line Interface (CLI)** for the operating system of your local machine.
+   
+    ![](_attachments/oc2.png)
+
+    Clicking the preceding link automatically downloads either a **.zip** or **.tar** file specific to your operating system. Extract the file's content.
+
+    Place the **oc** binary for your operating system (OS) in a directory that is in your default `PATH`, or set the `PATH` environment variable to include the location of the **oc** binary.
+
+4. Verify the installation by running the `oc` command on your local workstation. 
+
+    `oc --help`
+
+    ![](_attachments/oc3.png)
+
+### Log into your OpenShift cluster from your local terminal
+
+**Note:** If you just installed the `oc` utility, you should already be logged into the cluster and can skip the first couple of steps.
+
+1. Log into your ***OpenShift*** cluster via web console by following the instructions ***[here](../techzone/sno.md#accessing-the-environment)***.
+      
+
+2. Click the `kube:admin` profile drop-down and click **Copy login command**.
+   
+    ![](_attachments/oc4.png)
+
+3. Click **Display Token**.
+   
+    ![](_attachments/oc5.png)
+
+4. Select and copy the ***Log in with this token*** string.
+
+    *For most operating systems, double-click the value, then right-click and select **Copy***.
+
+    ![](_attachments/oc6.png)
+
+5. Open a command prompt or terminal window on your local workstation. Then paste the login command and press **enter**.
+   
+    ![](_attachments/oc7.png)
+
+
+### Install `cert-manager` operator
+
 
 Next, log into your OpenShift cluster and install the **Red Hat cert-manager operator**. 
 
@@ -94,7 +147,7 @@ Once completed, you can move on.
 
 Finally, as this is a modified version of the operator deployment for SaaS based deployments, there are a set of images designed specifically for this workflow that you'll use. In order to pull the necessary images, you will need to retrieve the entitlement key to the image registry. You will also be prompted for this during the script execution. 
 
-Retrieve the entitlement key from here: https://ibm.box.com/s/7sm5v6nfzrm7r0vz64zyb81cmgx1x40e
+Retrieve the <a href="https://ibm.box.com/s/7sm5v6nfzrm7r0vz64zyb81cmgx1x40e" target="_blank">entitlement key here</a>.
 
-**Note: ** you will supply this entitlement key when the script prompts you for the `tz-pull-secret` entitlement key. 
 
+**Note:** you will supply this entitlement key when the script prompts you for the `tz-pull-secret` entitlement key. 

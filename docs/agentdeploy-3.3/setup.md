@@ -2,6 +2,11 @@
 
 ## Create `wxa4z-agents` namespace
 
+For the purpose of the TechZone environment, we will create a new namespace, called `wxa4z-agents` which will be used for all other agent deployments, versus deploying in the previously created tenant namespace. 
+
+Create the namespace by running the following command:
+
+`oc create namespace wxa4z-agents`
 
 ## Create Global tenant secret
 
@@ -12,7 +17,7 @@
     kind: Secret
     metadata:
       name: wxa4z-watsonx-credentials
-      namespace: wxa4z-agents
+      namespace: wxa4z-zad
     type: Opaque
     stringData:
       ORCHESTRATE_ENV_TYPE: "ibm_iam" # Set to "cpd" or "ibm_iam" (for IBM Cloud)
@@ -37,15 +42,18 @@
       TENANT_ID: ""
     ```
 
+2. Modify the above values according to your needs, then apply the global secret by running the following command from the same directory:
+   
+    ```
+    oc apply -f global-secrets.yaml
+    ```
+
 ## Setup deployment charts
 
+Finally, download the charts here that contain the agent service CR's for each of the agents you will be deploying. 
 
+For each of the agents you deploy, you must first create the **Agent-specific secret** in the  `wxa4z-agents` namespace. Reference the official `z-ai-agents` Helm charts for details on those values. 
 
+After creating the agent-specific secret, you then create the `AgentService` custom resource, using the `cr.yaml` files provided above. 
 
-- download charts with 
-  - secret
-  - CR
-  - subscription
-- create wxa4z-agents namespace
-- create global-secrets.yaml file
-
+Once the `AgentService` is created, you can **subscribe** the agent which deploys it in watsonx Orchestrate where it is then available for use. These steps will be covered in this section per-agent. 
