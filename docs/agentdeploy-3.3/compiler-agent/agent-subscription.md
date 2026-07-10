@@ -34,10 +34,6 @@ Finally, subscribe the agent to automate the bootstrapping of the **Compiler Fix
 
 5. Verify that the bootstrapper pod is running in the `wxa4z-agents` namespace and has completed successfully.
    
-    ![](_attachments/sub6.png)
-
 6. Once verified, log into your watsonx Orchestrate environment and access your agent for testing.
    
-    ![](_attachments/sub7.png)
-
 

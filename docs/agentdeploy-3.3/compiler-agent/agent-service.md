@@ -20,16 +20,10 @@
     `oc apply -f cr.yaml`
 
 
-3. Verify it was deployed successfully by navigating to the `wxa4z-agents` namespace in your OpenShift cluster .
-   
-    You should see the pod running as shown below:
-
-    ![](_attachments/om1.png)
+3. Verify it was deployed successfully by navigating to the `wxa4z-agents` namespace in your OpenShift cluster.
 
 
 4. Click on the pod logs and make sure you see "agent registered successfully"
-   
-    ![](_attachments/om2.png)
 
     
 

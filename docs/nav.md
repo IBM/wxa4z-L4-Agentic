@@ -27,7 +27,17 @@
         * [Create agent-specific secret](./agentdeploy-3.3/automation-agent/agent-secret.md)
         * [Deploy Agent Service](./agentdeploy-3.3/automation-agent/agent-service.md)
         * [Subscribe Agent](./agentdeploy-3.3/automation-agent/agent-subscription.md)
-    * [OPTIONAL - Config Db2 Agent Post-install](./agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP.md)
+    * Deploy Compilers Fix Finder Agent
+        * [Summary of agent capabilities](./agentdeploy-3.3/compiler-agent/overview.md)
+        * [Create agent-specific secret](./agentdeploy-3.3/compiler-agent/agent-secret.md)
+        * [Deploy Agent Service](./agentdeploy-3.3/compiler-agent/agent-service.md)
+        * [Subscribe Agent](./agentdeploy-3.3/compiler-agent/agent-subscription.md)
+    * Deploy Db2z Agent
+        * [Summary of agent capabilities](./agentdeploy-3.3/db2-agent/overview.md)
+        * [Create agent-specific secret](./agentdeploy-3.3/db2-agent/agent-secret.md)
+        * [Deploy Agent Service](./agentdeploy-3.3/db2-agent/agent-service.md)
+        * [Subscribe Agent](./agentdeploy-3.3/db2-agent/agent-subscription.md)
+        * [Configure Db2 Agent Connections](./agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP.md)
 * Access Agents and Test Demo Scenarios
     * [Access your deployed agents](./demo-scenarios/access-agents.md)
     * [Test the zRAG Agent](./demo-scenarios/zRAG-agent.md)
