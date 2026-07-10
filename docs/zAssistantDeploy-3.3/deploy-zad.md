@@ -128,6 +128,7 @@ Once executed, the script will guide you through the configuration. Examples sho
    
     ![](_attachments/tenant1.png)
 
+    If the `content-ingestion-provider` (first pod shown in screenshot) is failing or not in **Running** state, follow the Troubleshooting steps below [here](./deploy-zad.md#content-ingestion-provider-pod-stuck-in-failing-state).
 
 
 8. Additionally, the bootstrapper process will create a **tenant namespace** on your cluster with the pattern `wxa4z-<tenant-id>`. 
@@ -150,22 +151,31 @@ Once executed, the script will guide you through the configuration. Examples sho
 
 #### Operator pod failing to come up early on
 
-- if `ibm-wxa4z-operator-controller-manager` pod is failing to get pulled, run the following 2 commands:
+If the `ibm-wxa4z-operator-controller-manager` pod in the `wxa4z-operator` namespace is failing to get pulled, run the following 2 commands to pick up the pull secret:
 
+```
 oc secrets link ibm-wxa4z-operator-controller-manager tz-pull-secret --for=pull -n wxa4z-operator
+```
 
+```
 oc rollout restart deployment/ibm-wxa4z-operator-controller-manager -n wxa4z-operator
+```
+
+#### The `content-ingestion-provider` pod stuck in failing state
+
+You may initially see that the `content-ingestion-provider` pod in the `wxa4z-zad` namespace is stuck in a failing state (i.e. **CrashLoopBackOff** or **CreateContainerConfigError**) as shown below:
 
 
-#### `content-ingestion-provider` pod stuck in failing state
+This may be because the OpenSearch creds get dropped when ingestion-manager rewrites the secret. You can merge them back in to resolve the issue by running the following command:
 
-- run `./deploy-operator-saas.sh patch` command
+`./deploy-operator-saas.sh patch`
+
 
 #### Tearing down the cluster
 
-run `
+To clean up the environment and all the related resources that the deploy script created, you can use the same script with the `teardown` argument. This will remove ALL wxa4z resources, including the CRs, operator, tenant namespace, core services namespace, etc...
 
+To perform this, run the following command:
 
-------
-
+`./deploy-operator-saas.sh teardown`
 
