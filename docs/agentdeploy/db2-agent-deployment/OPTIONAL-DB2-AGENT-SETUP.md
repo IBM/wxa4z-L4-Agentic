@@ -20,7 +20,7 @@ Follow the below instructions to mount the license in the deployed agent pod.
 4. In a local notepad, copy and paste the following command block to a local notepad, and replace the `<YOUR DB2 POD NAME>` placeholder with the name of your deployed Db2 agent pod:
    
     ```
-    NS="wxa4z-zad"
+    NS="wxa4z-agents"
     POD="<YOUR DB2 POD NAME>"
     CTR="db2z-agent"
 

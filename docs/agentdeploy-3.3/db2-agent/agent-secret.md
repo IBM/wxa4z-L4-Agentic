@@ -31,3 +31,13 @@
 
 
     `oc apply -f db2-secret.yaml`
+
+3. If not already created, you must create the `tz-pull-secret` secret in the `wxa4z-agents` namespace to deploy this agent. 
+   
+    Retrieve the <a href="https://ibm.box.com/s/7sm5v6nfzrm7r0vz64zyb81cmgx1x40e" target="_blank">entitlement key here</a>.
+
+    Then run the following command, replacing `<entitlement-key>` with the value you copied:
+
+    ```
+    oc -n wxa4z-agents create secret docker-registry tz-pull-secret --docker-server=us.icr.io --docker-username=iamapikey --docker-password=<entitlement-key>
+    ```
