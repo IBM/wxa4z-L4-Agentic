@@ -2,14 +2,68 @@
 
 ### Log into watsonx Orchestrate and test zRAG Agent
 
-Once confirmed that the tenant services are deployed and running, navigate to your **watsonx Orchestrate** service UI and find your deployed **zRAG Agent**. 
+Once confirmed that the tenant services are deployed and running, navigate to your **watsonx Orchestrate** service UI and find your deployed **zRAG Agent** by clicking on the tile for your **zRAG Agent** within the Orchestrate Agent Builder:
+
+![](_attachments/zrag1.png)
+
+Begin testing queries to the zRAG Agent and verifying the responses.
 
 
+## Modifying Search Parameters
 
-## zRAG Agent Configuration
+The deployment of the zRAG Agent uses a set of default search parameters that can be found in the associated **configMap** within your **tenant namespace (`wxa4z-<tenant_id>`)**.
+
+These search parameters can be modified and include **Index filters** and **Document ranking weights**:
+
+***Index filters:***
+- ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern>
+- ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern>
+- ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern>
+- ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern>
+
+***Document ranking weights:***
+- ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight>
+- ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight>
+- ZRAG_METADATA_AGENT_WEIGHT=<agent_weight>
+- ZRAG_METADATA_PROVIDER_WEIGHT=<provider_weight>
+- ZRAG_METADATA_TENANT_WEIGHT=<tenant_weight
+
+To configure these search parameters:
+
+1. Navigate to your `wxa4z-<tenant_id>` tenant namespace and view **ConfigMaps** under the **Workloads** section:
+   
+    ![](_attachments/zrag2.png)
+
+2. Select your `zrag-agent-<tenandid>` configmap:
+   
+    ![](_attachments/zrag3.png)
+
+3. As an example, to modify the **Product Docs Weight** to 0.4 and **Customer Doc Weight** to 0.6, simply edit the ConfigMap:
+   
+    ![](_attachments/zrag4.png)
+
+4. At the bottom of the page, select **Add key/value**.
+   
+    ![](_attachments/zrag5.png)
+
+5. Enter the following
+   
+    - `Key` : `ZRAG_METADATA_PRODUCT_WEIGHT`
+    - `Value` : `0.4`
+  
+    ![](_attachments/zrag6.png)
+
+6. Repeat by adding another key/value and entering:
+   
+    - `Key` : `ZRAG_METADATA_CUSTOMER_WEIGHT`
+    - `Value` : `0.6`
 
 
+7. Then click **Save**. 
+   
+    ![](_attachments/zrag8.png)
 
+    The new search configuration will automatically be picked up by the zRAG Agent in future queries. 
 
 ### Configuring Websearch
 
@@ -53,10 +107,3 @@ After logging in:
 3. Copy the generated key
 That key is your authentication token for all API requests.
 ```
-
-
-------
-    - Testing
-        - go into tenant namespace and check all 3 pods are running
-        - log into wxo and ensure zrag agent is bootstrapped
-        - how to modify zrag web search, etc....

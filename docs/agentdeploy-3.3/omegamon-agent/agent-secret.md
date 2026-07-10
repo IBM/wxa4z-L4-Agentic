@@ -2,6 +2,7 @@
 
 1. Now create the agent-specific secret for the **IBM Z OMEGAMON Insights Agent** by copying the following to a file called `omegamon-secret.yaml`:
 
+
     ```
     apiVersion: v1
     kind: Secret
@@ -10,10 +11,8 @@
       namespace: "" 
     type: Opaque
     stringData:
-      # Agent Authentication (base64-encoded, REQUIRED)
       AGENT_AUTH_TOKEN: "" 
       AIOPS_BASE_URL: ""
-      # AIOps Configuration (base64-encoded, optional)
       AIOPS_TOKEN: ""
     ```
 

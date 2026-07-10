@@ -16,7 +16,7 @@
 
     - `AIOPS_BASE_URL` : *set to same URL value as set in previous section*
     
-    - `ZCHATOPS_MCP_URL` : `https://zchatops-omegamon-zchatops-32.wsc-ocp-watsonx-showcase-b0cdb30d4dd4f32c05cec1804800ef26-0000.us-east.containers.appdomain.cloud`
+    - `ZCHATOPS_MCP_URL` : `https://zchatops-automation-zchatops-32.wsc-ocp-watsonx-showcase-b0cdb30d4dd4f32c05cec1804800ef26-0000.us-east.containers.appdomain.cloud`
 
 
 2. Once modified, deploy the `AgentService` by running the following command:
@@ -28,8 +28,9 @@
    
     You should see the pod running as shown below:
 
-    **IMAGE**
+    ![](_attachments/aut1.png)
 
 
 4. Click on the pod logs and make sure you see "agent registered successfully"
-
+   
+    ![](_attachments/aut2.png)

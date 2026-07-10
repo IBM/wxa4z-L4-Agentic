@@ -28,8 +28,12 @@
    
     You should see the pod running as shown below:
 
-    **IMAGE**
+    ![](_attachments/om1.png)
 
 
 4. Click on the pod logs and make sure you see "agent registered successfully"
+   
+    ![](_attachments/om2.png)
+
+    
 

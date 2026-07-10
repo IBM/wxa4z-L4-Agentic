@@ -11,54 +11,22 @@
     * [Generate IBM Cloud API key](./watsonx-ai/api-key.md)
     * [Retrieve watsonx Orchestrate Service Instance URL](./watsonx-ai/service-instance-url.md)
     * [Locate your WML Base URL](./watsonx-ai/wml-base-url.md)
-* Deploy and configure zAssistantDeploy
-    * [Overview](./zAssistantDeploy/Overview.md)
-    * [Install the **oc** CLI and log into OpenShift](./zAssistantDeploy/install-oc-utility.md)
-    * [Install **RH cert-manager operator**](./zAssistantDeploy/install-cert-manager.md)
-    * [Install the watsonx Assistant for Z **Operator**](./zAssistantDeploy/install-wxa4z-operator.md)
-    * [Deploy **secrets** for OpenSearch and Client Ingestion](./zAssistantDeploy/deploy-secrets.md)
-    * [Deploy **zAssistantDeploy** service](./zAssistantDeploy/deploy-zAssistantDeploy.md)
-    * [Verify deployment and acquire OpenSearch connection details](./zAssistantDeploy/verify-deployment.md)
+* Deploy and configure core ZAD and tenant resources
+    * [Overview](./zAssistantDeploy-3.3/overview.md)
+    * [Deploy ZAD Custom Resource](./zAssistantDeploy-3.3/deploy-zad.md)
+    * [Verify and test](./zAssistantDeploy-3.3/testing.md)
 * Execute Agent Deployment
-    * [Introduction to Agent Deployment](./agentdeploy/Overview.md)
-    * Setup for Agent Deployment
-        * [Setup VS Code workspace](./agentdeploy/setup.md)
-        * [Overview of the wxa4z-agent-suite Helm charts](./agentdeploy/wxa4z-agent-suite.md)
-        * [Configure shared (global) agent variables](./agentdeploy/configure-shared-variables.md)
-    * Prepare for zRAG Agent
-        * [Summary of agent capabilities](./agentdeploy/zrag-agent/overview.md)
-        * [Configure the 'configmap` variables](./agentdeploy/zrag-agent/configmap.md)
-        * [Configure the secrets.data variables](./agentdeploy/zrag-agent/secrets-data.md)
-        * [Additional Setup](./agentdeploy/zrag-agent/additional-setup.md)
-    * Prepare for IBM Z Upgrade Agent
-        * [Summary of agent capabilities](./agentdeploy/upgrade-agent/overview.md)
-        * [Configure the 'env' variables](./agentdeploy/upgrade-agent/env.md)
-        * [Configure the 'ptfJob' variables](./agentdeploy/upgrade-agent/ptfJob.md)
-        * [Configure the 'secrets.data' variables](./agentdeploy/upgrade-agent/secrets-data.md)
-        * [Configure the 'pvc' variable with storageClass](./agentdeploy/upgrade-agent/pvc.md)
-    * Prepare for Compilers Fix Finder Agent
-        * [Summary of agent capabilities](./agentdeploy/compiler-agent/overview.md)
-        * [Entitlement setup for images](./agentdeploy/compiler-agent/enabling-images.md)
-        * [Configure the 'env' variables](./agentdeploy/compiler-agent/env.md)
-        * [Configure the 'secrets.data' variables](./agentdeploy/compiler-agent/secrets-data.md)
-        * [Configure the 'pvc' variable](./agentdeploy/compiler-agent/pvc.md)
-    * Prepare for Db2 for z/OS Agent
-        * [Summary of agent capabilities](./agentdeploy/db2-agent-deployment/overview.md)
-        * [Entitlement setup for images](./agentdeploy/db2-agent-deployment/enabling-images.md)
-        * [Configure the 'env' variables](./agentdeploy/db2-agent-deployment/env.md)
-        * [Configure the 'secrets.data' variables](./agentdeploy/db2-agent-deployment/secrets-data.md)
-        * [Configure the 'pvc' variable](./agentdeploy/db2-agent-deployment/pvc.md)
-    * Prepare for IBM Z Support Agent
-        * [Summary of agent capabilities](./agentdeploy/support-agent/overview.md)
-        * [Configure the 'env' variables](./agentdeploy/support-agent/env.md)
-        * [Configure the 'secrets.data' variables](./agentdeploy/support-agent/secrets-data.md)
-        * [Configure the 'pvc' variable](./agentdeploy/support-agent/pvc.md)
-    * Prepare for IBM Z OMEGAMON Insights Agent
-        * [Summary of agent capabilities](agentdeploy/omegamon-agent/overview.md)
-        * [Configure the 'env' variables](agentdeploy/omegamon-agent/env.md)
-        * [Configure the secrets.data variables](agentdeploy/omegamon-agent/secrets-data.md)
-        * [Configure the 'pvc' variable with storageClass](agentdeploy/omegamon-agent/pvc.md)
-    * [Execute Agent Deployment](./agentdeploy/execute-deploy.md)
+    * [Setup for Agent Deployment](./agentdeploy-3.3/setup.md)
+    * Deploy OMEGAMON Insights Agent
+        * [Summary of agent capabilities](./agentdeploy-3.3/omegamon-agent/overview.md)
+        * [Create agent-specific secret](./agentdeploy-3.3/omegamon-agent/agent-secret.md)
+        * [Deploy Agent Service](./agentdeploy-3.3/omegamon-agent/agent-service.md)
+        * [Subscribe Agent](./agentdeploy-3.3/omegamon-agent/agent-subscription.md)
+    * Deploy Automation Insights Agent
+        * [Summary of agent capabilities](./agentdeploy-3.3/automation-agent/overview.md)
+        * [Create agent-specific secret](./agentdeploy-3.3/automation-agent/agent-secret.md)
+        * [Deploy Agent Service](./agentdeploy-3.3/automation-agent/agent-service.md)
+        * [Subscribe Agent](./agentdeploy-3.3/automation-agent/agent-subscription.md)
     * [OPTIONAL - Config Db2 Agent Post-install](./agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP.md)
 * Access Agents and Test Demo Scenarios
     * [Access your deployed agents](./demo-scenarios/access-agents.md)
@@ -86,4 +54,3 @@
     * [Import and test the agent](adk/05-import-agent.md)
     * [Build 'multi-agent collaboration' agent](adk/06-multi-agent-collaboration.md)
 * [Enabling hands-on client access for supported agents](./hands-on/handson.md)
-* [Deploying the Token Exchange Service](token-exchange-service.md)

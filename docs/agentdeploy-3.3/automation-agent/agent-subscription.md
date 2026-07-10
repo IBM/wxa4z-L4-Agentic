@@ -2,10 +2,41 @@
 
 Finally, subscribe the agent to automate the bootstrapping of the **Automation Insights Agent** to your watsonx Orchestrate environment. 
 
-### BEFORE CREATING AGENT SUBSCRIPTION - REMOVE "VIRTUAL-MODEL" FROM BOOTSTRAP CONFIGMAP
+
+-----
+
+1. Before creating the **Agent Subscription**, first modify the **configMap** for the agent bootstrapper, called `automation-insights-agent-bootstrap-config`.
+   
+    a. Navigate to the `ConfigMaps` section in your `wxa4z-agents` namespace:
+
+    ![](_attachments/sub1.png)
+
+    b. Click on the `automation-insights-agent-bootstrap-config` resource
+
+    ![](_attachments/sub2.png)
+
+    c. Click on **Edit ConfigMap**. 
+
+    ![](_attachments/sub3.png)
+
+    d. In the Editor view, find the first `automation_insights_agent.yaml` key. You will modify the `llm` section.
+
+    ![](_attachments/sub4.png)
+
+    e. If using the `meta-llama/llama-3-3-70b-instruct` **MODEL_ID**, modify the `llm` section by removing the `virtual-model` string. The result should be:
+
+    ```
+    llm: watsonx/meta-llama/llama-3-3-70b-instruct
+    ```
+
+    f. Then click **Save**. 
+
+    ![](_attachments/sub5.png)
+
+    The purpose of this is to properly select the LLM used by the Orchestrator agent when it gets bootstrapped. For watsonx Orchestrate SaaS, the `llm` value should be `watsonx/meta-llama/llama-3-3-70b-instruct` or `groq/openai/gpt-oss-120b` as 2 examples. 
 
 
-1. To do this, copy and paste the following into a file called `automation-subscribe.yaml`:
+2. Once done, copy and paste the following into a file called `automation-subscribe.yaml`:
 
     ```
     apiVersion: wxa4z.watsonx.ibm.com/v1alpha1
@@ -22,10 +53,10 @@ Finally, subscribe the agent to automate the bootstrapping of the **Automation I
       wxa4z-core-services-namespace: wxa4z-zad
     ```
 
-2. Set `tenant_id` to your environment's tenant id that you recorded [here](../setup.md#record-your-tenant_id).
+3. Set `tenant_id` to your environment's tenant id that you recorded [here](../setup.md#record-your-tenant_id).
 
 
-3. After setting that value, subscribe your agent by running the following command:
+4. After setting that value, subscribe your agent by running the following command:
    
     ```
     oc apply -f automation-subscribe.yaml
@@ -33,12 +64,7 @@ Finally, subscribe the agent to automate the bootstrapping of the **Automation I
 
     The result is the bootstrapping of your agent to watsonx Orchestrate where it's then accessible for testing.
 
-4. Verify that the bootstrapper pod is running in the `wxa4z-agents` namespace and has completed successfully.
-
-5. Once verified, log into your watsonx Orchestrate environment and access your agent. Test prompts, i.e.:
+5. Verify that the automation insights agent **bootstrapper** pod is running in the `wxa4z-agents` namespace and has completed successfully.
    
-    - "show all my LPARs"
-    - "Show my Db2 subsystems"
-    - ...
-
-
+6. Once verified, log into your watsonx Orchestrate environment and access your agent for testing.
+   

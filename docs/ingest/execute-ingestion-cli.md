@@ -8,7 +8,7 @@ conducting pilots. Follow the steps below to download and install *zassist*.
 
 1. Click the following link and download the **zassist.zip** file from Box:
    
-    <a href="https://ibm.box.com/s/bm1df1gakz4302vrfd9to3rf221420ze" target="_blank">https://ibm.box.com/s/bm1df1gakz4302vrfd9to3rf221420ze</a>
+    <a href="https://ibm.box.com/s/vdkkyuvwtclbjwj73z6b0jtfg0hnhd8y" target="_blank">https://ibm.box.com/s/vdkkyuvwtclbjwj73z6b0jtfg0hnhd8y</a>
 
 
 
@@ -59,29 +59,15 @@ In this step you will log into your **client ingestion server** and kickoff the 
 
 2. Retrieve the **Server URL** for your Client Ingestion Server.
 
-    ***Mac users:***
-    ```
-    echo https://$(oc -n wxa4z-zad get route wxa4z-client-ingestion -o jsonpath="{.spec.host}")
-    ```
+    You can retrieve the URL in your OCP Web console by navigating to your `wxa4z-<tenant_id>` tenant namespace, clicking on **Networking -> Routes**, and then copy the URL for the **content-ingestion** route as shown below:
 
-    ***Windows users (this method can also be used by Mac users):***
+    ![](_attachments/content1.png)
 
-    You can retrieve the URL in your OCP Web console by navigating to **Networking -> Routes**, and then copy the URL for the **wxa4z-client-ingestion** route as shown below:
-
-    ![](_attachments/zassist16.png)
-
-3. Retrieve the **client-ingestion-authkey** for your Client Ingestion server by running the following command: 
+3. Retrieve your **ingestion API key** for your Content Ingestion server by navigating to the `wxa4z-ingestion-credentials` secret in your `wxa4z-<tenant_id>` tenant namespace, and copying the value of the `INGESTION_API_KEY` as shown below:
    
-    ```
-    oc -n wxa4z-zad get secret client-ingestion-authkey -o jsonpath="{.data.authkey}" | base64 -d
-    ```
-    
-    The output of this command is your unique **auth-key** that you had previously set. You will need the output of both previous commands in the next step.
-
-    !!! Warning "If the command doesn't work for you"
-
-        If the command doesn't work for you, you can find the **authkey** value by viewing the ***client-ingestion-secret.yaml*** file you modified, and copying the value set for the ***authkey*** parameter. 
-
+    ![](_attachments/content2.png)
+   
+   
 
 4. Log into your client ingestion server using the **zassist** utility by running the following command, replacing `<server_url>` with the value from **step 2** above:
 
@@ -89,7 +75,7 @@ In this step you will log into your **client ingestion server** and kickoff the 
     zassist login <server_url>
     ```
 
-5. When prompted, enter the **authkey** value from **step 3** above. Then verify that a **Success** message is returned. 
+5. When prompted, enter the **ingestion api key** value from **step 3** above. Then verify that a **Success** message is returned. 
 
 6. Verify that you're connected by running the following command:
 
