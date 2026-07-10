@@ -1,6 +1,6 @@
 # Deploy Agent Service
 
-1. Next, deploy the `AgentService` by customizing the `omegamon-insight-agent-z/cr.yaml` file that you downloaded. 
+1. Next, deploy the `AgentService` by customizing the `automation-insight-agent-z/cr.yaml` file that you downloaded. 
 
     Modify the following values:
 

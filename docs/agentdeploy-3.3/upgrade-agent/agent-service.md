@@ -1,6 +1,6 @@
 # Deploy Agent Service
 
-1. Next, deploy the `AgentService` by customizing the `omegamon-insight-agent-z/cr.yaml` file that you downloaded. 
+1. Next, deploy the `AgentService` by customizing the `upgrade-agent-cr.yaml` file that you downloaded. 
 
     Modify the following values:
 
@@ -10,13 +10,27 @@
    
     - `spec.tenantId` : *set to your [tenant id](../setup.md#record-your-tenant_id)*
 
-    - `WATSONX_MODEL_ID` : *your model id*
-
-    - `MODEL_RUNTIME` : `cloud`
-
-    - `AIOPS_BASE_URL` : *set to same URL value as set in previous section*
-    
-    - `ZCHATOPS_MCP_URL` : `https://zchatops-omegamon-zchatops-32.wsc-ocp-watsonx-showcase-b0cdb30d4dd4f32c05cec1804800ef26-0000.us-east.containers.appdomain.cloud`
+    - `HOST_NAME`:
+    - `WATSONX_MODEL_ID`
+    - `MODEL_RUNTIME`
+    - `PDS_NAME`
+    - `CLIENT_INGESTION_STARTUP`
+    - `AUTH_TYPE`
+    - `ZOSMF_ENDPOINT`
+    - `LLM_MODEL`
+    - `AGENT_API_KEY`
+    - `ZOSMF_USERNAME`
+    - `ZOSMF_PASSWORD`
+    - `SMPNTS`
+    - `SMPWDIR`
+    - `SMPJHOME`
+    - `SMPCPATH`
+    - `ORDER_SERVER_URL`
+    - `KEYRING`
+    - `CERT_NAME`
+    - `DOWNLOAD_METHOD`
+    - `DOWNLOADKEYRING`
+    - `SIGNATUREKEYRING`
 
 
 2. Once modified, deploy the `AgentService` by running the following command:

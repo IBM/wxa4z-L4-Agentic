@@ -148,20 +148,24 @@ Once executed, the script will guide you through the configuration. Examples sho
 
 ### Troubleshooting:
 
+#### Operator pod failing to come up early on
+
+- if `ibm-wxa4z-operator-controller-manager` pod is failing to get pulled, run the following 2 commands:
+
+oc secrets link ibm-wxa4z-operator-controller-manager tz-pull-secret --for=pull -n wxa4z-operator
+
+oc rollout restart deployment/ibm-wxa4z-operator-controller-manager -n wxa4z-operator
 
 
+#### `content-ingestion-provider` pod stuck in failing state
 
+- run `./deploy-operator-saas.sh patch` command
+
+#### Tearing down the cluster
+
+run `
 
 
 ------
-
-    - Execution / troubleshooting
-        - if service account pod doesn't get fixed - run the following:
-            - oc secrets link ibm-wxa4z-operator-controller-manager tz-pull-secret --for=pull -n wxa4z-operator
-            - oc rollout restart deployment/ibm-wxa4z-operator-controller-manager -n wxa4z-operator
-        - if one of content-ingestion pods in wxa4z-zad is stuck in error/pending status due to OS url secret not being passed, run the particular command
-    - Tearing down the cluster
-
-
 
 
