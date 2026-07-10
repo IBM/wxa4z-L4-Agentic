@@ -122,7 +122,7 @@ Copy and record the `tenant_id` for your environment as this wil be used next.
 
 ## Setup deployment charts
 
-Finally, **download the charts here** that contain the agent service CR's for each of the agents you will be deploying. 
+Finally, down the <a href="https://ibm.box.com/s/5q0bokvtkg1gh0snk0u8axwz4z9jb301" target="_blank">z-ai-agents-v3.3 charts here</a> that contain the agent service CR's for each of the agents you will be deploying. 
 
 For each of the agents you deploy, you must first create the **Agent-specific secret** in the  `wxa4z-agents` namespace. Reference the official `z-ai-agents` Helm charts for details on those values. 
 

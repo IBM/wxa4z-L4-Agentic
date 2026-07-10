@@ -27,5 +27,6 @@
 
 2. Once done, apply the secret by running:
 
-
-    `oc apply -f automation-secret.yaml`
+    ```
+    oc apply -f automation-secret.yaml
+    ```

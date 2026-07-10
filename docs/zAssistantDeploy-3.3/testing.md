@@ -17,18 +17,18 @@ These search parameters can be modified and include **Index filters** and **Docu
 
 ***Index filters:***
 
-- ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern>
-- ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern>
-- ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern>
-- ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern>
+- `ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern>`
+- `ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern>`
+- `ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern>`
+- `ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern>`
 
 ***Document ranking weights:***
 
-- ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight>
-- ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight>
-- ZRAG_METADATA_AGENT_WEIGHT=<agent_weight>
-- ZRAG_METADATA_PROVIDER_WEIGHT=<provider_weight>
-- ZRAG_METADATA_TENANT_WEIGHT=<tenant_weight
+- `ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight>`
+- `ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight>`
+- `ZRAG_METADATA_AGENT_WEIGHT=<agent_weight>`
+- `ZRAG_METADATA_PROVIDER_WEIGHT=<provider_weight>`
+- `ZRAG_METADATA_TENANT_WEIGHT=<tenant_weight`
 
 To configure these search parameters:
 
