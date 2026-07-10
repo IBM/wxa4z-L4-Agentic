@@ -24,8 +24,7 @@ Prior to kicking off the automation script, you will need to gather and record t
 
 ### Download *deploy-operator-saas.sh* script
 
-Next, download the <a href="https://ibm.box.com/s/3v5id2girkzyol9grjicoqj5e07784dp
-" target="_blank">deploy-operator-saas.sh</a> automation script to your local machine. 
+Next, download the <a href="https://ibm.box.com/s/3v5id2girkzyol9grjicoqj5e07784dp" target="_blank">deploy-operator-saas.sh</a> automation script to your local machine. 
 
 This shell script targets clusters using watsonx.ai SaaS for inferencing rather than the on-prem AIO inference gateway. 
 

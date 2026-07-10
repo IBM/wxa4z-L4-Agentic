@@ -16,12 +16,14 @@ The deployment of the zRAG Agent uses a set of default search parameters that ca
 These search parameters can be modified and include **Index filters** and **Document ranking weights**:
 
 ***Index filters:***
+
 - ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern>
 - ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern>
 - ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern>
 - ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern>
 
 ***Document ranking weights:***
+
 - ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight>
 - ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight>
 - ZRAG_METADATA_AGENT_WEIGHT=<agent_weight>

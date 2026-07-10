@@ -5,13 +5,13 @@ With VS Code opened and successfully logged into your cluster via the command-li
 - Install the watsonx assistant for Z operator
 - Create and configure the necessary secrets and image pull secrets
 - Deploy the zAsssistantDeploy Custom Resource which makes the core wxa4z services available, including:
-  - auth service
-  - opensearch cluster
-  - opensearch wrapper
-  - ingestion nodes
-  - tenant manager
-  - topology service
-  - zrag tenant bootstrapper
+    - auth service
+    - opensearch cluster
+    - opensearch wrapper
+    - ingestion nodes
+    - tenant manager
+    - topology service
+    - zrag tenant bootstrapper
 - Deploy a zRAG "tenant" in a new namespace on your cluster, with the automated creation and bootstrapped zRAG Agent deployed onto your watsonx Orchestrate instance
 - Registers the tenant and configures the needed secrets in the tenant namespace
 
@@ -84,7 +84,7 @@ Once executed, the script will guide you through the configuration. Examples sho
     secret/wxa4z-ifm-credentials created
     ```
 
-    - When prompted for your `WATSONX_URL`, provide your **WML Base URL** you recorded in section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)*** **OR**, client `<enter>` if the default value suffices (depending on region)
+    - When prompted for your `WATSONX_URL`, provide your **WML Base URL** you recorded in section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)*** **OR**, click `<enter>` if the default value suffices (depending on region)
     - When prompted for your `WATSONX_API_KEY`, provide the value of the IBM Cloud API key you generated and recorded in section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
     - For `WATSONX_SPACE_ID`, copy and paste the value you recorded in section ***[Create Deployment Space](../watsonx-ai/deployment-space.md)***.
     - Lastly, for `WATSONX_MODEL_ID`, use the default (`openai/gpt-oss-120b`) for best results, otherwise provide the **MODEL_ID** for the desired model. 
@@ -128,7 +128,7 @@ Once executed, the script will guide you through the configuration. Examples sho
    
     ![](_attachments/tenant1.png)
 
-    If the `content-ingestion-provider` (first pod shown in screenshot) is failing or not in **Running** state, follow the Troubleshooting steps below [here](./deploy-zad.md#content-ingestion-provider-pod-stuck-in-failing-state).
+    If the `content-ingestion-provider` (first pod shown in screenshot) is failing or not in **Running** state, follow the Troubleshooting steps below [here](./deploy-zad.md#the-content-ingestion-provider-pod-stuck-in-failing-state).
 
 
 8. Additionally, the bootstrapper process will create a **tenant namespace** on your cluster with the pattern `wxa4z-<tenant-id>`. 

@@ -6,8 +6,9 @@ For the purpose of the TechZone environment, we will create a new namespace, cal
 
 Create the namespace by running the following command:
 
-`oc create namespace wxa4z-agents`
-
+```
+oc create namespace wxa4z-agents
+```
 
 ## Record your `tenant_id`
 
@@ -61,56 +62,56 @@ Copy and record the `tenant_id` for your environment as this wil be used next.
 2. Modify the following values as described below:
    
     - `ORCHESTRATE_ENV_TYPE`
-      - Set to `ibm_iam` for **IBM Cloud**
+        - Set to `ibm_iam` for **IBM Cloud**
 
     - `CPD_INSTANCE_API_KEY`
-      - Set this to the value of your **API key** that you generated in the IBM Cloud console and recorded in Section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
+        - Set this to the value of your **API key** that you generated in the IBM Cloud console and recorded in Section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
 
 
     - `ORCHESTRATE_ENV_URL`
-      - Set this to the full URL of your watsonx Orchestrate Service Instance URL which you recorded in Section ***[Retrieve watsonx Orchestrate Service Instance URL](../watsonx-ai/service-instance-url.md)***.
+        - Set this to the full URL of your watsonx Orchestrate Service Instance URL which you recorded in Section ***[Retrieve watsonx Orchestrate Service Instance URL](../watsonx-ai/service-instance-url.md)***.
 
     - `CPD_USERNAME`
-      - leave empty string
+        - leave empty string
     
     - `WATSONX_DEPLOYMENT_SPACE_ID`
-      - Set this to your **Deployment Space ID** you recorded in Section ***[Create Deployment Space](../watsonx-ai/deployment-space.md)***.
+        - Set this to your **Deployment Space ID** you recorded in Section ***[Create Deployment Space](../watsonx-ai/deployment-space.md)***.
 
     - `WATSONX_ML_URL`
-      - Set this to the URL (region dependent) that you recorded in Section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)***.
+        - Set this to the URL (region dependent) that you recorded in Section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)***.
 
     - `EXTERNAL_WATSONX_API_KEY`
-      - Set this to the value of your **API key** that you generated in the IBM Cloud console and recorded in Section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
+        - Set this to the value of your **API key** that you generated in the IBM Cloud console and recorded in Section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
 
     - `WATSONX_PROJECT_ID`
-      - Set this to your **Project ID** you created and recorded in Section ***[Create watsonx.ai Project](../watsonx-ai/project.md)***.
+        - Set this to your **Project ID** you created and recorded in Section ***[Create watsonx.ai Project](../watsonx-ai/project.md)***.
 
     - `MODEL_RUNTIME`
-      - Set this to `cloud`
+        - Set this to `cloud`
 
     - `LLM_BASE_URL`
-      - Leave empty string
+        - Leave empty string
 
     - `LLM_API_KEY`
-      - Leave empty string
+        - Leave empty string
 
     - `WRAPPER_URL`
-      - Set this to the **network route** of your `opensearch-wrapper-<tenantid>` pod in your tenant namespace (`wxa4z-<tenantid>`), appending `/v1/query` at the end of the URL.
+        - Set this to the **network route** of your `opensearch-wrapper-<tenantid>` pod in your tenant namespace (`wxa4z-<tenantid>`), appending `/v1/query` at the end of the URL.
 
     - `WRAPPER_PASSWORD`
-      - Set this to the value of the `WRAPPER_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
+        - Set this to the value of the `WRAPPER_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
 
     - `WRAPPER_USERNAME`
-      - Set this to the value of the `WRAPPER_USERNAME` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
+        - Set this to the value of the `WRAPPER_USERNAME` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
 
     - `INGESTION_PASSWORD`
-      - Set this to the value of the `INGESTION_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
+        - Set this to the value of the `INGESTION_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
 
     - `INGESTION_URL`
-      - Set this to the value of the `INGESTION_URL` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
+        - Set this to the value of the `INGESTION_URL` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
 
     - `TENANT_ID`
-      - Set this to the `tenant_id` value you recorded [earlier](./setup.md#record-your-tenant_id).
+        - Set this to the `tenant_id` value you recorded [earlier](./setup.md#record-your-tenant_id).
 
 
 3. Once the values have been modified and file saved, apply the global secret by running the following command:
