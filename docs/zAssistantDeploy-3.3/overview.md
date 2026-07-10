@@ -1,8 +1,8 @@
 # Overview
 
-IBM watsonx Assistant for Z, version 3.3, provides multi-tenancy support for isolating core services by tenants. This allows for compliance and security across end-users and the data they interact with. 
+IBM watsonx Assistant for Z, ***version 3.3***, provides multi-tenancy support for isolating core services by tenants. This allows for compliance and security across end-users and the data they interact with. 
 
-As this is an on-prem product, the look and feel won't be exactly as experienced by end-users deploying on-prem, but many of the same capabilities are supported for demo and pilot purposes. 
+As this is an on-prem product, the look and feel won't be exactly as experienced with the full on-prem deployment, but many of the same capabilities are supported for demo and pilot purposes. 
 
 In this section, you will deploy the core services of watsonx Assistant for Z onto your OpenShift cluster, and create a **zRAG Tenant** with automated bootstrapping of the zRAG Agent, along with a dedicated instance of OpenSearch and the Client Ingestion service. 
 
@@ -17,10 +17,10 @@ The ***deploy-operator-saas.sh*** script will automate everything needed to succ
 
 Prior to kicking off the automation script, you will need to gather and record the following information which you would've completed in the previous section. You will be prompted for this during execution.
 
-- **Deployment space id** from Section.....
-- **IBM Cloud API Key**
-- **watsonx Orchestrate Service Instance URL**
-- **WML_URL**
+- **Deployment space id** from Section [Create Deployment Space](../watsonx-ai/deployment-space.md)
+- **IBM Cloud API Key** from Section [Generate IBM Cloud API Key](../watsonx-ai/api-key.md)
+- **watsonx Orchestrate Service Instance URL** from Section [Retrieve watsonx Orchestrate Service Instance URL](../watsonx-ai/service-instance-url.md)
+- **WML URL** from Section [Locate your WML Base URL](../watsonx-ai/wml-base-url.md)
 
 ### Download *deploy-operator-saas.sh* script
 

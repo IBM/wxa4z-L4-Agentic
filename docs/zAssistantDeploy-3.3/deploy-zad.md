@@ -1,6 +1,6 @@
 # Deploy *zAssistantDeploy* service on your cluster
 
-With VS Code opened and successfully logged into your cluster via the command-line in the previous step, you can kick off the script execution. This will automate the following tasks:
+With VS Code opened and successfully logged into your cluster via the command-line (as referenced in [this section](./overview.md#log-into-your-openshift-cluster-from-your-local-terminal)), you can kick off the script execution. This will automate the following tasks:
 
 - Install the watsonx assistant for Z operator
 - Create and configure the necessary secrets and image pull secrets
@@ -160,4 +160,8 @@ Once executed, the script will guide you through the configuration. Examples sho
             - oc secrets link ibm-wxa4z-operator-controller-manager tz-pull-secret --for=pull -n wxa4z-operator
             - oc rollout restart deployment/ibm-wxa4z-operator-controller-manager -n wxa4z-operator
         - if one of content-ingestion pods in wxa4z-zad is stuck in error/pending status due to OS url secret not being passed, run the particular command
+    - Tearing down the cluster
+
+
+
 
