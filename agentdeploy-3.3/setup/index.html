@@ -2185,13 +2185,14 @@
 <h2 id="create-wxa4z-agents-namespace">Create <code>wxa4z-agents</code> namespace<a class="headerlink" href="#create-wxa4z-agents-namespace" title="Permanent link">#</a></h2>
 <p>For the purpose of the TechZone environment, we will create a new namespace, called <code>wxa4z-agents</code> which will be used for all other agent deployments, versus deploying in the previously created tenant namespace. </p>
 <p>Create the namespace by running the following command:</p>
-<p><code>oc create namespace wxa4z-agents</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc create namespace wxa4z-agents
+</span></code></pre></div>
 <h2 id="record-your-tenant_id">Record your <code>tenant_id</code><a class="headerlink" href="#record-your-tenant_id" title="Permanent link">#</a></h2>
 <p>During agent deploying and creating the <strong>Global agent secrets</strong>, you'll need to provide your <code>tenant_id</code>. This can be located in two places:</p>
 <ol>
 <li>
 <p>In your watsonx Orchestrate <strong>Service Instance URL</strong>, the <code>tenant_id</code> appears as the final string at the end of the URL. For example:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://api.us-south.watson-orchestrate.cloud.ibm.com/instances/&lt;tenant_id&gt;
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://api.us-south.watson-orchestrate.cloud.ibm.com/instances/&lt;tenant_id&gt;
 </span></code></pre></div>
 </li>
 <li>
@@ -2203,141 +2204,145 @@
 <ol>
 <li>
 <p>Copy and paste the following into a new file in your current directory, called <code>global-secrets.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apiVersion: v1
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kind: Secret
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>metadata:
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  name: wxa4z-watsonx-credentials
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  namespace: wxa4z-agents
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>type: Opaque
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>stringData:
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  ORCHESTRATE_ENV_TYPE: ""
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  CPD_INSTANCE_API_KEY: "" 
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  ORCHESTRATE_ENV_URL: "" 
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  CPD_USERNAME: "" 
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  WATSONX_DEPLOYMENT_SPACE_ID: "" 
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  WATSONX_ML_URL: "" 
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  EXTERNAL_WATSONX_API_KEY: "" 
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  WATSONX_PROJECT_ID: ""
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  LANGFUSE_HOST: ""
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  LANGFUSE_SECRET_KEY: ""
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  LANGFUSE_PUBLIC_KEY: ""
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  MODEL_RUNTIME: "cloud" 
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  LLM_BASE_URL: ""
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  LLM_API_KEY: "" 
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  WRAPPER_URL: ""
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  WRAPPER_PASSWORD: "" 
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>  WRAPPER_USERNAME: "" 
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  INGESTION_PASSWORD: "" 
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>  INGESTION_URL: ""
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>  TENANT_ID: ""
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>apiVersion: v1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kind: Secret
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>metadata:
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  name: wxa4z-watsonx-credentials
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  namespace: wxa4z-agents
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>type: Opaque
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>stringData:
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  ORCHESTRATE_ENV_TYPE: ""
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  CPD_INSTANCE_API_KEY: "" 
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ORCHESTRATE_ENV_URL: "" 
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  CPD_USERNAME: "" 
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  WATSONX_DEPLOYMENT_SPACE_ID: "" 
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  WATSONX_ML_URL: "" 
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  EXTERNAL_WATSONX_API_KEY: "" 
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  WATSONX_PROJECT_ID: ""
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  LANGFUSE_HOST: ""
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  LANGFUSE_SECRET_KEY: ""
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  LANGFUSE_PUBLIC_KEY: ""
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  MODEL_RUNTIME: "cloud" 
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  LLM_BASE_URL: ""
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  LLM_API_KEY: "" 
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  WRAPPER_URL: ""
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  WRAPPER_PASSWORD: "" 
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  WRAPPER_USERNAME: "" 
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  INGESTION_PASSWORD: "" 
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  INGESTION_URL: ""
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  TENANT_ID: ""
 </span></code></pre></div>
 </li>
 <li>
 <p>Modify the following values as described below:</p>
 <ul>
-<li><code>ORCHESTRATE_ENV_TYPE</code></li>
 <li>
-<p>Set to <code>ibm_iam</code> for <strong>IBM Cloud</strong></p>
+<p><code>ORCHESTRATE_ENV_TYPE</code></p>
+<ul>
+<li>Set to <code>ibm_iam</code> for <strong>IBM Cloud</strong></li>
+</ul>
 </li>
 <li>
 <p><code>CPD_INSTANCE_API_KEY</code></p>
-</li>
-<li>
-<p>Set this to the value of your <strong>API key</strong> that you generated in the IBM Cloud console and recorded in Section <strong><em><a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</p>
+<ul>
+<li>Set this to the value of your <strong>API key</strong> that you generated in the IBM Cloud console and recorded in Section <strong><em><a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>ORCHESTRATE_ENV_URL</code></p>
-</li>
-<li>
-<p>Set this to the full URL of your watsonx Orchestrate Service Instance URL which you recorded in Section <strong><em><a href="../../watsonx-ai/service-instance-url/">Retrieve watsonx Orchestrate Service Instance URL</a></em></strong>.</p>
+<ul>
+<li>Set this to the full URL of your watsonx Orchestrate Service Instance URL which you recorded in Section <strong><em><a href="../../watsonx-ai/service-instance-url/">Retrieve watsonx Orchestrate Service Instance URL</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>CPD_USERNAME</code></p>
-</li>
-<li>
-<p>leave empty string</p>
+<ul>
+<li>leave empty string</li>
+</ul>
 </li>
 <li>
 <p><code>WATSONX_DEPLOYMENT_SPACE_ID</code></p>
-</li>
-<li>
-<p>Set this to your <strong>Deployment Space ID</strong> you recorded in Section <strong><em><a href="../../watsonx-ai/deployment-space/">Create Deployment Space</a></em></strong>.</p>
+<ul>
+<li>Set this to your <strong>Deployment Space ID</strong> you recorded in Section <strong><em><a href="../../watsonx-ai/deployment-space/">Create Deployment Space</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>WATSONX_ML_URL</code></p>
-</li>
-<li>
-<p>Set this to the URL (region dependent) that you recorded in Section <strong><em><a href="../../watsonx-ai/wml-base-url/">Locate your WML Base URL</a></em></strong>.</p>
+<ul>
+<li>Set this to the URL (region dependent) that you recorded in Section <strong><em><a href="../../watsonx-ai/wml-base-url/">Locate your WML Base URL</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>EXTERNAL_WATSONX_API_KEY</code></p>
-</li>
-<li>
-<p>Set this to the value of your <strong>API key</strong> that you generated in the IBM Cloud console and recorded in Section <strong><em><a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</p>
+<ul>
+<li>Set this to the value of your <strong>API key</strong> that you generated in the IBM Cloud console and recorded in Section <strong><em><a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>WATSONX_PROJECT_ID</code></p>
-</li>
-<li>
-<p>Set this to your <strong>Project ID</strong> you created and recorded in Section <strong><em><a href="../../watsonx-ai/project/">Create watsonx.ai Project</a></em></strong>.</p>
+<ul>
+<li>Set this to your <strong>Project ID</strong> you created and recorded in Section <strong><em><a href="../../watsonx-ai/project/">Create watsonx.ai Project</a></em></strong>.</li>
+</ul>
 </li>
 <li>
 <p><code>MODEL_RUNTIME</code></p>
-</li>
-<li>
-<p>Set this to <code>cloud</code></p>
+<ul>
+<li>Set this to <code>cloud</code></li>
+</ul>
 </li>
 <li>
 <p><code>LLM_BASE_URL</code></p>
-</li>
-<li>
-<p>Leave empty string</p>
+<ul>
+<li>Leave empty string</li>
+</ul>
 </li>
 <li>
 <p><code>LLM_API_KEY</code></p>
-</li>
-<li>
-<p>Leave empty string</p>
+<ul>
+<li>Leave empty string</li>
+</ul>
 </li>
 <li>
 <p><code>WRAPPER_URL</code></p>
-</li>
-<li>
-<p>Set this to the <strong>network route</strong> of your <code>opensearch-wrapper-&lt;tenantid&gt;</code> pod in your tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>), appending <code>/v1/query</code> at the end of the URL.</p>
+<ul>
+<li>Set this to the <strong>network route</strong> of your <code>opensearch-wrapper-&lt;tenantid&gt;</code> pod in your tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>), appending <code>/v1/query</code> at the end of the URL.</li>
+</ul>
 </li>
 <li>
 <p><code>WRAPPER_PASSWORD</code></p>
-</li>
-<li>
-<p>Set this to the value of the <code>WRAPPER_PASSWORD</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>)</p>
+<ul>
+<li>Set this to the value of the <code>WRAPPER_PASSWORD</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>)</li>
+</ul>
 </li>
 <li>
 <p><code>WRAPPER_USERNAME</code></p>
-</li>
-<li>
-<p>Set this to the value of the <code>WRAPPER_USERNAME</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>)</p>
+<ul>
+<li>Set this to the value of the <code>WRAPPER_USERNAME</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace (<code>wxa4z-&lt;tenantid&gt;</code>)</li>
+</ul>
 </li>
 <li>
 <p><code>INGESTION_PASSWORD</code></p>
-</li>
-<li>
-<p>Set this to the value of the <code>INGESTION_PASSWORD</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace.</p>
+<ul>
+<li>Set this to the value of the <code>INGESTION_PASSWORD</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace.</li>
+</ul>
 </li>
 <li>
 <p><code>INGESTION_URL</code></p>
-</li>
-<li>
-<p>Set this to the value of the <code>INGESTION_URL</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace.</p>
+<ul>
+<li>Set this to the value of the <code>INGESTION_URL</code> key in the <code>wxa4z-watsonx-credentials</code> secret in the tenant namespace.</li>
+</ul>
 </li>
 <li>
 <p><code>TENANT_ID</code></p>
-</li>
+<ul>
 <li>Set this to the <code>tenant_id</code> value you recorded <a href="./#record-your-tenant_id">earlier</a>.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p>Once the values have been modified and file saved, apply the global secret by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc apply -f global-secrets.yaml
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>oc apply -f global-secrets.yaml
 </span></code></pre></div>
 </li>
 </ol>

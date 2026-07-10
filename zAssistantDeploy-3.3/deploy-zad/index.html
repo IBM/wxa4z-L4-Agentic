@@ -2186,7 +2186,7 @@
 <ul>
 <li>Install the watsonx assistant for Z operator</li>
 <li>Create and configure the necessary secrets and image pull secrets</li>
-<li>Deploy the zAsssistantDeploy Custom Resource which makes the core wxa4z services available, including:</li>
+<li>Deploy the zAsssistantDeploy Custom Resource which makes the core wxa4z services available, including:<ul>
 <li>auth service</li>
 <li>opensearch cluster</li>
 <li>opensearch wrapper</li>
@@ -2194,6 +2194,8 @@
 <li>tenant manager</li>
 <li>topology service</li>
 <li>zrag tenant bootstrapper</li>
+</ul>
+</li>
 <li>Deploy a zRAG "tenant" in a new namespace on your cluster, with the automated creation and bootstrapped zRAG Agent deployed onto your watsonx Orchestrate instance</li>
 <li>Registers the tenant and configures the needed secrets in the tenant namespace</li>
 </ul>
@@ -2251,7 +2253,7 @@
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>secret/wxa4z-ifm-credentials created
 </span></code></pre></div>
 <ul>
-<li>When prompted for your <code>WATSONX_URL</code>, provide your <strong>WML Base URL</strong> you recorded in section <strong><em><a href="../../watsonx-ai/wml-base-url/">Locate your WML Base URL</a></em></strong> <strong>OR</strong>, client <code>&lt;enter&gt;</code> if the default value suffices (depending on region)</li>
+<li>When prompted for your <code>WATSONX_URL</code>, provide your <strong>WML Base URL</strong> you recorded in section <strong><em><a href="../../watsonx-ai/wml-base-url/">Locate your WML Base URL</a></em></strong> <strong>OR</strong>, click <code>&lt;enter&gt;</code> if the default value suffices (depending on region)</li>
 <li>When prompted for your <code>WATSONX_API_KEY</code>, provide the value of the IBM Cloud API key you generated and recorded in section <strong><em><a href="../../watsonx-ai/api-key/">Generate IBM Cloud API key</a></em></strong>.</li>
 <li>For <code>WATSONX_SPACE_ID</code>, copy and paste the value you recorded in section <strong><em><a href="../../watsonx-ai/deployment-space/">Create Deployment Space</a></em></strong>.</li>
 <li>Lastly, for <code>WATSONX_MODEL_ID</code>, use the default (<code>openai/gpt-oss-120b</code>) for best results, otherwise provide the <strong>MODEL_ID</strong> for the desired model. </li>
@@ -2291,7 +2293,7 @@
 <li>
 <p>Following the completion of the script, and after waiting a few minutes, navigate to the <code>wxa4z-zad</code> namespace in your OpenShift web console and verify all the pods are in a <strong>Running</strong> state as shown below:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/tenant1.png" data-desc-position="bottom"><img alt="" src="../_attachments/tenant1.png"></a></p>
-<p>If the <code>content-ingestion-provider</code> (first pod shown in screenshot) is failing or not in <strong>Running</strong> state, follow the Troubleshooting steps below <a href="./#content-ingestion-provider-pod-stuck-in-failing-state">here</a>.</p>
+<p>If the <code>content-ingestion-provider</code> (first pod shown in screenshot) is failing or not in <strong>Running</strong> state, follow the Troubleshooting steps below <a href="./#the-content-ingestion-provider-pod-stuck-in-failing-state">here</a>.</p>
 </li>
 <li>
 <p>Additionally, the bootstrapper process will create a <strong>tenant namespace</strong> on your cluster with the pattern <code>wxa4z-&lt;tenant-id&gt;</code>. </p>
