@@ -4101,18 +4101,18 @@ that secret for later use. </p>
 <p>These search parameters can be modified and include <strong>Index filters</strong> and <strong>Document ranking weights</strong>:</p>
 <p><strong><em>Index filters:</em></strong></p>
 <ul>
-<li>ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern></ibm_indices_pattern></li>
-<li>ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern></customer_indices_pattern></li>
-<li>ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern></provider_indices_pattern></li>
-<li>ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern></tenant_indices_pattern></li>
+<li><code>ZRAG_DEFAULT_IBM_INDICES=&lt;ibm_indices_pattern&gt;</code></li>
+<li><code>ZRAG_DEFAULT_CUSTOMER_INDICES=&lt;customer_indices_pattern&gt;</code></li>
+<li><code>ZRAG_DEFAULT_PROVIDER_INDICES=&lt;provider_indices_pattern&gt;</code></li>
+<li><code>ZRAG_DEFAULT_TENANT_INDICES=&lt;tenant_indices_pattern&gt;</code></li>
 </ul>
 <p><strong><em>Document ranking weights:</em></strong></p>
 <ul>
-<li>ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight></product_weight></li>
-<li>ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight></customer_weight></li>
-<li>ZRAG_METADATA_AGENT_WEIGHT=<agent_weight></agent_weight></li>
-<li>ZRAG_METADATA_PROVIDER_WEIGHT=<provider_weight></provider_weight></li>
-<li>ZRAG_METADATA_TENANT_WEIGHT=&lt;tenant_weight</li>
+<li><code>ZRAG_METADATA_PRODUCT_WEIGHT=&lt;product_weight&gt;</code></li>
+<li><code>ZRAG_METADATA_CUSTOMER_WEIGHT=&lt;customer_weight&gt;</code></li>
+<li><code>ZRAG_METADATA_AGENT_WEIGHT=&lt;agent_weight&gt;</code></li>
+<li><code>ZRAG_METADATA_PROVIDER_WEIGHT=&lt;provider_weight&gt;</code></li>
+<li><code>ZRAG_METADATA_TENANT_WEIGHT=&lt;tenant_weight</code></li>
 </ul>
 <p>To configure these search parameters:</p>
 <ol>
@@ -4365,7 +4365,7 @@ that secret for later use. </p>
 </li>
 </ol>
 <h2 id="agentdeploy-3.3-setup-setup-deployment-charts">Setup deployment charts<a class="headerlink" href="#agentdeploy-3.3-setup-setup-deployment-charts" title="Permanent link">#</a></h2>
-<p>Finally, <strong>download the charts here</strong> that contain the agent service CR's for each of the agents you will be deploying. </p>
+<p>Finally, down the <a href="https://ibm.box.com/s/5q0bokvtkg1gh0snk0u8axwz4z9jb301" target="_blank">z-ai-agents-v3.3 charts here</a> that contain the agent service CR's for each of the agents you will be deploying. </p>
 <p>For each of the agents you deploy, you must first create the <strong>Agent-specific secret</strong> in the  <code>wxa4z-agents</code> namespace. Reference the official <code>z-ai-agents</code> Helm charts for details on those values. </p>
 <p>After creating the agent-specific secret, you then create the <code>AgentService</code> custom resource, using the <code>cr.yaml</code> files provided above. </p>
 <p>Once the <code>AgentService</code> is created, you can <strong>subscribe</strong> the agent which deploys it in watsonx Orchestrate where it is then available for use. These steps will be covered in this section per-agent. </p></div></body></html></section>
@@ -4627,7 +4627,8 @@ that secret for later use. </p>
 </li>
 <li>
 <p>Once done, apply the secret by running:</p>
-<p><code>oc apply -f automation-secret.yaml</code></p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#agentdeploy-3.3-automation-agent-agent-secret-__codelineno-1-1"></a>oc apply -f automation-secret.yaml
+</span></code></pre></div>
 </li>
 </ol></div></body></html></section><section class="print-page" id="agentdeploy-3.3-automation-agent-agent-service" heading-number="6.3.3"><html><head>
         <script type="text/javascript">
