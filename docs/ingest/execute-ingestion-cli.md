@@ -88,7 +88,7 @@ In this step you will log into your **client ingestion server** and kickoff the 
 7. Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (***see below the command on how to retrieve each of the parameters listed***):
 
     ```
-    zassist ingest s3 "<SOURCE_NAME>" "<S3_URL>" "<S3_KEY_ID>" "<S3_SECRET_KEY>" "<BUCKET_NAME>" --watch --skip-pii
+    zassist ingest s3 "<SOURCE_NAME>" "<BUCKET_NAME>" --url="<S3_URL>" --key-id="<S3_KEY_ID>" --access-key="<S3_SECRET_KEY>" --watch --skip-pii
     ```
 
     **a**. **<SOURCE_NAME\>** : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. 
@@ -137,7 +137,7 @@ In this step you will log into your **client ingestion server** and kickoff the 
     The final result of the command (once you've plugged in your unique values) should look something like the example command below (*these values will not work for you*):
 
     ```
-    zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+    zassist ingest s3 "my_source" "demo-byod" --url="https://s3.eu-de.cloud-object-storage.appdomain.cloud" --key-id="7633c87cbcc0484bb9436bb06e70ef08" --access-key="8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" --watch --skip-pii
     ```
 
 8. Execute the previous command from your local command-prompt/terminal. Once executed, the ingestion process will begin. You should see output similar to below:
