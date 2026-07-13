@@ -96,13 +96,13 @@ Copy and record the `tenant_id` for your environment as this wil be used next.
         - Leave empty string
 
     - `WRAPPER_URL`
-        - Set this to the **network route** of your `opensearch-wrapper-<tenantid>` pod in your tenant namespace (`wxa4z-<tenantid>`), appending `/v1/query` at the end of the URL.
+        - Set this to the **network route** of your `wxa4z-opensearch-wrapper` pod in your `wxa4z-zad` namespace, appending `/v1/query` at the end of the URL.
 
     - `WRAPPER_PASSWORD`
-        - Set this to the value of the `WRAPPER_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
+        - Set this to the value of the `password` key in the `wrapper-creds` secret in the `wxa4z-zad` namespace
 
     - `WRAPPER_USERNAME`
-        - Set this to the value of the `WRAPPER_USERNAME` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace (`wxa4z-<tenantid>`)
+        - Set this to the value of the `username` key in the `wrapper-creds` secret in the `wxa4z-zad` namespace
 
     - `INGESTION_PASSWORD`
         - Set this to the value of the `INGESTION_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
