@@ -4467,7 +4467,7 @@ that secret for later use. </p>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-5"></a>WATSONX_URL [https://us-south.ml.cloud.ibm.com]: 
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-6"></a>WATSONX_API_KEY (required): 
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-7"></a>WATSONX_SPACE_ID (required): 71c88097-a690-4e0f-ad5d-9e5667775ba6
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-8"></a>WATSONX_MODEL_ID [openai/gpt-oss-120b]: 
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-8"></a>WATSONX_MODEL_ID: 
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-9"></a>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#zassistantdeploy-3.3-deploy-zad-__codelineno-4-10"></a>secret/wxa4z-ifm-credentials created
 </span></code></pre></div>
@@ -4475,7 +4475,7 @@ that secret for later use. </p>
 <li>When prompted for your <code>WATSONX_URL</code>, provide your <strong>WML Base URL</strong> you recorded in section <strong><em><a href="#watsonx-ai-wml-base-url">Locate your WML Base URL</a></em></strong> <strong>OR</strong>, click <code>&lt;enter&gt;</code> if the default value suffices (depending on region)</li>
 <li>When prompted for your <code>WATSONX_API_KEY</code>, provide the value of the IBM Cloud API key you generated and recorded in section <strong><em><a href="#watsonx-ai-api-key">Generate IBM Cloud API key</a></em></strong>.</li>
 <li>For <code>WATSONX_SPACE_ID</code>, copy and paste the value you recorded in section <strong><em><a href="#watsonx-ai-deployment-space">Create Deployment Space</a></em></strong>.</li>
-<li>Lastly, for <code>WATSONX_MODEL_ID</code>, use the default (<code>openai/gpt-oss-120b</code>) for best results, otherwise provide the <strong>MODEL_ID</strong> for the desired model. </li>
+<li>Lastly, for <code>WATSONX_MODEL_ID</code>, use the desired model id of your choice (i.e. <code>meta-llama/llama-3-3-70b-instruct</code> or <code>openai/gpt-oss-120b</code>).</li>
 </ul>
 </li>
 <li>
@@ -6470,7 +6470,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (<strong><em>see below the command on how to retrieve each of the parameters listed</em></strong>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#ingest-execute-ingestion-cli-__codelineno-6-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#ingest-execute-ingestion-cli-__codelineno-6-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;BUCKET_NAME&gt;" --url="&lt;S3_URL&gt;" --key-id="&lt;S3_KEY_ID&gt;" --access-key="&lt;S3_SECRET_KEY&gt;" --watch --skip-pii
 </span></code></pre></div>
 <p><strong>a</strong>. <strong>&lt;SOURCE_NAME&gt;</strong> : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. </p>
 <p><strong>b</strong>. <strong>&lt;S3_URL&gt;</strong>: </p>
@@ -6506,7 +6506,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../ingest/_attachments/zassist22.png" data-desc-position="bottom"><img alt="" src="../ingest/_attachments/zassist22.png"></a></p>
 <p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
 <p>The final result of the command (once you've plugged in your unique values) should look something like the example command below (<em>these values will not work for you</em>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#ingest-execute-ingestion-cli-__codelineno-8-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#ingest-execute-ingestion-cli-__codelineno-8-1"></a>zassist ingest s3 "my_source" "demo-byod" --url="https://s3.eu-de.cloud-object-storage.appdomain.cloud" --key-id="7633c87cbcc0484bb9436bb06e70ef08" --access-key="8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" --watch --skip-pii
 </span></code></pre></div>
 </li>
 <li>

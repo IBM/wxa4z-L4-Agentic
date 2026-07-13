@@ -2586,7 +2586,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 </li>
 <li>
 <p>Start the ingestion process to connect your remote COS source to the watsonx Assistant for Z data ingestion pipeline by running the following command (<strong><em>see below the command on how to retrieve each of the parameters listed</em></strong>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;S3_URL&gt;" "&lt;S3_KEY_ID&gt;" "&lt;S3_SECRET_KEY&gt;" "&lt;BUCKET_NAME&gt;" --watch --skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>zassist ingest s3 "&lt;SOURCE_NAME&gt;" "&lt;BUCKET_NAME&gt;" --url="&lt;S3_URL&gt;" --key-id="&lt;S3_KEY_ID&gt;" --access-key="&lt;S3_SECRET_KEY&gt;" --watch --skip-pii
 </span></code></pre></div>
 <p><strong>a</strong>. <strong>&lt;SOURCE_NAME&gt;</strong> : replace this with any name of your choice. Make sure the name is in lowercase, uses only underscores, and does not start with a number. </p>
 <p><strong>b</strong>. <strong>&lt;S3_URL&gt;</strong>: </p>
@@ -2622,7 +2622,7 @@ conducting pilots. Follow the steps below to download and install <em>zassist</e
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/zassist22.png" data-desc-position="bottom"><img alt="" src="../_attachments/zassist22.png"></a></p>
 <p><strong>e</strong>. <strong>&lt;BUCKET_NAME&gt;</strong>: replace this with the name of your bucket you originally created in your COS instance.</p>
 <p>The final result of the command (once you've plugged in your unique values) should look something like the example command below (<em>these values will not work for you</em>):</p>
-<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>zassist ingest s3 "my_source" "https://s3.eu-de.cloud-object- storage.appdomain.cloud" "7633c87cbcc0484bb9436bb06e70ef08" "8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" "demo-byod" --watch -- skip-pii
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>zassist ingest s3 "my_source" "demo-byod" --url="https://s3.eu-de.cloud-object-storage.appdomain.cloud" --key-id="7633c87cbcc0484bb9436bb06e70ef08" --access-key="8d326111d26c930a4992ce612eec065e4f11d2234ec96e02" --watch --skip-pii
 </span></code></pre></div>
 </li>
 <li>
