@@ -27,6 +27,11 @@
         * [Create agent-specific secret](./agentdeploy-3.3/automation-agent/agent-secret.md)
         * [Deploy Agent Service](./agentdeploy-3.3/automation-agent/agent-service.md)
         * [Subscribe Agent](./agentdeploy-3.3/automation-agent/agent-subscription.md)
+    * Deploy Workload Scheduler Insights Agent
+        * [Summary of agent capabilities](./agentdeploy-3.3/workload-agent/overview.md)
+        * [Create agent-specific secret](./agentdeploy-3.3/workload-agent/agent-secret.md)
+        * [Deploy Agent Service](./agentdeploy-3.3/workload-agent/agent-service.md)
+        * [Subscribe Agent](./agentdeploy-3.3/workload-agent/agent-subscription.md)
     * Deploy Compilers Fix Finder Agent
         * [Summary of agent capabilities](./agentdeploy-3.3/compiler-agent/overview.md)
         * [Create agent-specific secret](./agentdeploy-3.3/compiler-agent/agent-secret.md)

@@ -16,7 +16,7 @@
 
     - `AIOPS_BASE_URL` : *set to same URL value as set in previous section*
     
-    - `ZCHATOPS_MCP_URL` : `https://zchatops-automation-zchatops-32.wsc-ocp-watsonx-showcase-b0cdb30d4dd4f32c05cec1804800ef26-0000.us-east.containers.appdomain.cloud`
+    - `ZCHATOPS_MCP_URL` : `https://zchatops-automation-wxa4z-aiops-33.wsc-ocp-watsonx-showcase-b0cdb30d4dd4f32c05cec1804800ef26-0000.us-east.containers.appdomain.cloud`
 
 
 2. Once modified, deploy the `AgentService` by running the following command:

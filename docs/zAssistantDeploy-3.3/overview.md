@@ -30,6 +30,12 @@ This shell script targets clusters using watsonx.ai SaaS for inferencing rather 
 
 Once downloaded, open up the script in a Visual editor of your choice, preferable VS Code. 
 
+Download the **deploy-operator-saas.sh** automation script dependent on your operating system:
+
+  - **Mac users**
+
+  - **Windows users**
+
 
 ### Install the `oc` command-line utility
 

@@ -1,4 +1,4 @@
-# Execute Document Ingestion (using UI)
+# Execute Document Ingestion (using UI) [NOT AVAILABLE IN V3.3]
 
 Using the watsonx Assistant for Z **Management Console**, you can upload content stored in a remote S3-compatible location and ingest it into a dedicated collection source. 
 
