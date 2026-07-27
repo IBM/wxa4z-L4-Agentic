@@ -18,17 +18,25 @@ These search parameters can be modified and include **Index filters** and **Docu
 ***Index filters:***
 
 - `ZRAG_DEFAULT_IBM_INDICES=<ibm_indices_pattern>`
-- `ZRAG_DEFAULT_CUSTOMER_INDICES=<customer_indices_pattern>`
 - `ZRAG_DEFAULT_PROVIDER_INDICES=<provider_indices_pattern>`
 - `ZRAG_DEFAULT_TENANT_INDICES=<tenant_indices_pattern>`
+
+!!! Tip "PROVIDER vs TENANT indices"
+
+    It is important to note that both the `PROVIDER_INDICES` and `TENANT_INDICES` are referring to customer ingested doc indices. When ingesting docs using the ingestion service in the **tenant namespace**, the `TENANT_INDICES` variable should be used. The `PROVIDER_INDICES` refers to docs ingested using the ingestion service in the `wxa4z-zad` namespace.
+
 
 ***Document ranking weights:***
 
 - `ZRAG_METADATA_PRODUCT_WEIGHT=<product_weight>`
-- `ZRAG_METADATA_CUSTOMER_WEIGHT=<customer_weight>`
-- `ZRAG_METADATA_AGENT_WEIGHT=<agent_weight>`
 - `ZRAG_METADATA_PROVIDER_WEIGHT=<provider_weight>`
 - `ZRAG_METADATA_TENANT_WEIGHT=<tenant_weight`
+
+!!! Tip "What do these weights mean?"
+
+    `ZRAG_METADATA_PRODUCT_WEIGHT` refers to the weight of the *default* IBM docs. 
+    
+    Both the `ZRAG_METADATA_PROVIDER_WEIGHT` and `ZRAG_METADATA_TENANT_WEIGHT` reference ingested content. While `PROVIDER_WEIGHT` references customer docs ingested in the `wxa4z-zad` namespace, the `TENANT_WEIGHT` references docs ingested using the ingestion service within the **tenant** namespace specifically. In this case, all three weights must sum to 1. For Pilot purposes, you can ingest documents in the tenant namespace and configure the `PRODUCT_WEIGHT` and `TENANT_WEIGHT` exclusively, summing to 1.0.
 
 To configure these search parameters:
 
@@ -40,7 +48,7 @@ To configure these search parameters:
    
     ![](_attachments/zrag3.png)
 
-3. As an example, to modify the **Product Docs Weight** to 0.4 and **Customer Doc Weight** to 0.6, simply edit the ConfigMap:
+3. As an example, to modify the **Product Docs Weight** to 0.4 and **Tenant Doc Weight** to 0.6, simply edit the ConfigMap:
    
     ![](_attachments/zrag4.png)
 
@@ -57,7 +65,7 @@ To configure these search parameters:
 
 6. Repeat by adding another key/value and entering:
    
-    - `Key` : `ZRAG_METADATA_CUSTOMER_WEIGHT`
+    - `Key` : `ZRAG_METADATA_TENANT_WEIGHT`
     - `Value` : `0.6`
 
 

@@ -87,7 +87,7 @@ Once executed, the script will guide you through the configuration. Examples sho
     - When prompted for your `WATSONX_URL`, provide your **WML Base URL** you recorded in section ***[Locate your WML Base URL](../watsonx-ai/wml-base-url.md)*** **OR**, click `<enter>` if the default value suffices (depending on region)
     - When prompted for your `WATSONX_API_KEY`, provide the value of the IBM Cloud API key you generated and recorded in section ***[Generate IBM Cloud API key](../watsonx-ai/api-key.md)***.
     - For `WATSONX_SPACE_ID`, copy and paste the value you recorded in section ***[Create Deployment Space](../watsonx-ai/deployment-space.md)***.
-    - Lastly, for `WATSONX_MODEL_ID`, use the desired model id of your choice (i.e. `meta-llama/llama-3-3-70b-instruct` or `openai/gpt-oss-120b`).
+    - Lastly, for `WATSONX_MODEL_ID`, use the desired model id of your choice (i.e. `meta-llama/llama-3-3-70b-instruct`).
 
 
 
