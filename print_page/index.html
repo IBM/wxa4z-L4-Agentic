@@ -4712,7 +4712,7 @@ that secret for later use. </p>
 <li>When prompted for your <code>WATSONX_URL</code>, provide your <strong>WML Base URL</strong> you recorded in section <strong><em><a href="#watsonx-ai-wml-base-url">Locate your WML Base URL</a></em></strong> <strong>OR</strong>, click <code>&lt;enter&gt;</code> if the default value suffices (depending on region)</li>
 <li>When prompted for your <code>WATSONX_API_KEY</code>, provide the value of the IBM Cloud API key you generated and recorded in section <strong><em><a href="#watsonx-ai-api-key">Generate IBM Cloud API key</a></em></strong>.</li>
 <li>For <code>WATSONX_SPACE_ID</code>, copy and paste the value you recorded in section <strong><em><a href="#watsonx-ai-deployment-space">Create Deployment Space</a></em></strong>.</li>
-<li>Lastly, for <code>WATSONX_MODEL_ID</code>, use the desired model id of your choice (i.e. <code>meta-llama/llama-3-3-70b-instruct</code> or <code>openai/gpt-oss-120b</code>).</li>
+<li>Lastly, for <code>WATSONX_MODEL_ID</code>, use the desired model id of your choice (i.e. <code>meta-llama/llama-3-3-70b-instruct</code>).</li>
 </ul>
 </li>
 <li>
@@ -4795,18 +4795,24 @@ that secret for later use. </p>
 <p><strong><em>Index filters:</em></strong></p>
 <ul>
 <li><code>ZRAG_DEFAULT_IBM_INDICES=&lt;ibm_indices_pattern&gt;</code></li>
-<li><code>ZRAG_DEFAULT_CUSTOMER_INDICES=&lt;customer_indices_pattern&gt;</code></li>
 <li><code>ZRAG_DEFAULT_PROVIDER_INDICES=&lt;provider_indices_pattern&gt;</code></li>
 <li><code>ZRAG_DEFAULT_TENANT_INDICES=&lt;tenant_indices_pattern&gt;</code></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">PROVIDER vs TENANT indices</p>
+<p>It is important to note that both the <code>PROVIDER_INDICES</code> and <code>TENANT_INDICES</code> are referring to customer ingested doc indices. When ingesting docs using the ingestion service in the <strong>tenant namespace</strong>, the <code>TENANT_INDICES</code> variable should be used. The <code>PROVIDER_INDICES</code> refers to docs ingested using the ingestion service in the <code>wxa4z-zad</code> namespace.</p>
+</div>
 <p><strong><em>Document ranking weights:</em></strong></p>
 <ul>
 <li><code>ZRAG_METADATA_PRODUCT_WEIGHT=&lt;product_weight&gt;</code></li>
-<li><code>ZRAG_METADATA_CUSTOMER_WEIGHT=&lt;customer_weight&gt;</code></li>
-<li><code>ZRAG_METADATA_AGENT_WEIGHT=&lt;agent_weight&gt;</code></li>
 <li><code>ZRAG_METADATA_PROVIDER_WEIGHT=&lt;provider_weight&gt;</code></li>
 <li><code>ZRAG_METADATA_TENANT_WEIGHT=&lt;tenant_weight</code></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">What do these weights mean?</p>
+<p><code>ZRAG_METADATA_PRODUCT_WEIGHT</code> refers to the weight of the <em>default</em> IBM docs. </p>
+<p>Both the <code>ZRAG_METADATA_PROVIDER_WEIGHT</code> and <code>ZRAG_METADATA_TENANT_WEIGHT</code> reference ingested content. While <code>PROVIDER_WEIGHT</code> references customer docs ingested in the <code>wxa4z-zad</code> namespace, the <code>TENANT_WEIGHT</code> references docs ingested using the ingestion service within the <strong>tenant</strong> namespace specifically. In this case, all three weights must sum to 1. For Pilot purposes, you can ingest documents in the tenant namespace and configure the <code>PRODUCT_WEIGHT</code> and <code>TENANT_WEIGHT</code> exclusively, summing to 1.0.</p>
+</div>
 <p>To configure these search parameters:</p>
 <ol>
 <li>
@@ -4818,7 +4824,7 @@ that secret for later use. </p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy-3.3/_attachments/zrag3.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy-3.3/_attachments/zrag3.png"></a></p>
 </li>
 <li>
-<p>As an example, to modify the <strong>Product Docs Weight</strong> to 0.4 and <strong>Customer Doc Weight</strong> to 0.6, simply edit the ConfigMap:</p>
+<p>As an example, to modify the <strong>Product Docs Weight</strong> to 0.4 and <strong>Tenant Doc Weight</strong> to 0.6, simply edit the ConfigMap:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../zAssistantDeploy-3.3/_attachments/zrag4.png" data-desc-position="bottom"><img alt="" src="../zAssistantDeploy-3.3/_attachments/zrag4.png"></a></p>
 </li>
 <li>
@@ -4836,7 +4842,7 @@ that secret for later use. </p>
 <li>
 <p>Repeat by adding another key/value and entering:</p>
 <ul>
-<li><code>Key</code> : <code>ZRAG_METADATA_CUSTOMER_WEIGHT</code></li>
+<li><code>Key</code> : <code>ZRAG_METADATA_TENANT_WEIGHT</code></li>
 <li><code>Value</code> : <code>0.6</code></li>
 </ul>
 </li>
