@@ -10,28 +10,24 @@
       
       
       
-        <link rel="prev" href="../agent-service/">
-      
-      
-        <link rel="next" href="../../../agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Subscribe Agent - IBM wxa4z L4 Lab Guide</title>
+        <title>Modifying llm config - IBM wxa4z L4 Lab Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -115,19 +111,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/print-site.css">
+      <link rel="stylesheet" href="../../css/print-site.css">
     
-      <link rel="stylesheet" href="../../../css/print-site-material.css">
+      <link rel="stylesheet" href="../../css/print-site-material.css">
     
-      <link rel="stylesheet" href="../../../style.css">
+      <link rel="stylesheet" href="../../style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -156,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#subscribe-agent-to-tenant" class="md-skip">
+        <a href="#modifying-llm-config" class="md-skip">
           Skip to content
         </a>
       
@@ -172,7 +168,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-header__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -192,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Subscribe Agent
+              Modifying llm config
             
           </span>
         </div>
@@ -296,7 +292,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
+    <a href="../.." title="IBM wxa4z L4 Lab Guide" class="md-nav__button md-logo" aria-label="IBM wxa4z L4 Lab Guide" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -314,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -341,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TechZoneEnvironment/" class="md-nav__link">
+      <a href="../../TechZoneEnvironment/" class="md-nav__link">
         
   
   
@@ -415,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/orchestrate/" class="md-nav__link">
+      <a href="../../techzone/orchestrate/" class="md-nav__link">
         
   
   
@@ -443,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/sno/" class="md-nav__link">
+      <a href="../../techzone/sno/" class="md-nav__link">
         
   
   
@@ -471,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techzone/zdt/" class="md-nav__link">
+      <a href="../../techzone/zdt/" class="md-nav__link">
         
   
   
@@ -553,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/overview/" class="md-nav__link">
+      <a href="../../watsonx-ai/overview/" class="md-nav__link">
         
   
   
@@ -581,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/project/" class="md-nav__link">
+      <a href="../../watsonx-ai/project/" class="md-nav__link">
         
   
   
@@ -609,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/deployment-space/" class="md-nav__link">
+      <a href="../../watsonx-ai/deployment-space/" class="md-nav__link">
         
   
   
@@ -637,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/api-key/" class="md-nav__link">
+      <a href="../../watsonx-ai/api-key/" class="md-nav__link">
         
   
   
@@ -665,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/service-instance-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/service-instance-url/" class="md-nav__link">
         
   
   
@@ -693,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../watsonx-ai/wml-base-url/" class="md-nav__link">
+      <a href="../../watsonx-ai/wml-base-url/" class="md-nav__link">
         
   
   
@@ -775,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy-3.3/overview/" class="md-nav__link">
+      <a href="../../zAssistantDeploy-3.3/overview/" class="md-nav__link">
         
   
   
@@ -803,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy-3.3/deploy-zad/" class="md-nav__link">
+      <a href="../../zAssistantDeploy-3.3/deploy-zad/" class="md-nav__link">
         
   
   
@@ -831,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zAssistantDeploy-3.3/testing/" class="md-nav__link">
+      <a href="../../zAssistantDeploy-3.3/testing/" class="md-nav__link">
         
   
   
@@ -863,20 +859,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -897,7 +891,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -915,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/" class="md-nav__link">
+      <a href="../setup/" class="md-nav__link">
         
   
   
@@ -990,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/overview/" class="md-nav__link">
+      <a href="../omegamon-agent/overview/" class="md-nav__link">
         
   
   
@@ -1018,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/agent-secret/" class="md-nav__link">
+      <a href="../omegamon-agent/agent-secret/" class="md-nav__link">
         
   
   
@@ -1046,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/agent-service/" class="md-nav__link">
+      <a href="../omegamon-agent/agent-service/" class="md-nav__link">
         
   
   
@@ -1074,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../omegamon-agent/agent-subscription/" class="md-nav__link">
+      <a href="../omegamon-agent/agent-subscription/" class="md-nav__link">
         
   
   
@@ -1157,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../automation-agent/overview/" class="md-nav__link">
+      <a href="../automation-agent/overview/" class="md-nav__link">
         
   
   
@@ -1185,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../automation-agent/agent-secret/" class="md-nav__link">
+      <a href="../automation-agent/agent-secret/" class="md-nav__link">
         
   
   
@@ -1213,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../automation-agent/agent-service/" class="md-nav__link">
+      <a href="../automation-agent/agent-service/" class="md-nav__link">
         
   
   
@@ -1241,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../automation-agent/agent-subscription/" class="md-nav__link">
+      <a href="../automation-agent/agent-subscription/" class="md-nav__link">
         
   
   
@@ -1324,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workload-agent/overview/" class="md-nav__link">
+      <a href="../workload-agent/overview/" class="md-nav__link">
         
   
   
@@ -1352,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workload-agent/agent-secret/" class="md-nav__link">
+      <a href="../workload-agent/agent-secret/" class="md-nav__link">
         
   
   
@@ -1380,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workload-agent/agent-service/" class="md-nav__link">
+      <a href="../workload-agent/agent-service/" class="md-nav__link">
         
   
   
@@ -1408,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workload-agent/agent-subscription/" class="md-nav__link">
+      <a href="../workload-agent/agent-subscription/" class="md-nav__link">
         
   
   
@@ -1491,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiler-agent/overview/" class="md-nav__link">
+      <a href="../compiler-agent/overview/" class="md-nav__link">
         
   
   
@@ -1519,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiler-agent/agent-secret/" class="md-nav__link">
+      <a href="../compiler-agent/agent-secret/" class="md-nav__link">
         
   
   
@@ -1547,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiler-agent/agent-service/" class="md-nav__link">
+      <a href="../compiler-agent/agent-service/" class="md-nav__link">
         
   
   
@@ -1575,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiler-agent/agent-subscription/" class="md-nav__link">
+      <a href="../compiler-agent/agent-subscription/" class="md-nav__link">
         
   
   
@@ -1608,20 +1602,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6">
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -1642,7 +1634,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1660,7 +1652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../db2-agent/overview/" class="md-nav__link">
         
   
   
@@ -1688,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-secret/" class="md-nav__link">
+      <a href="../db2-agent/agent-secret/" class="md-nav__link">
         
   
   
@@ -1716,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent-service/" class="md-nav__link">
+      <a href="../db2-agent/agent-service/" class="md-nav__link">
         
   
   
@@ -1741,19 +1733,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../db2-agent/agent-subscription/" class="md-nav__link">
         
   
   
@@ -1769,7 +1752,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1782,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP/" class="md-nav__link">
+      <a href="../../agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP/" class="md-nav__link">
         
   
   
@@ -1872,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../demo-scenarios/access-agents/" class="md-nav__link">
+      <a href="../../demo-scenarios/access-agents/" class="md-nav__link">
         
   
   
@@ -1900,7 +1882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../demo-scenarios/zRAG-agent/" class="md-nav__link">
+      <a href="../../demo-scenarios/zRAG-agent/" class="md-nav__link">
         
   
   
@@ -1928,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../demo-scenarios/support-agent/" class="md-nav__link">
+      <a href="../../demo-scenarios/support-agent/" class="md-nav__link">
         
   
   
@@ -1956,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../demo-scenarios/omegamon-agent/" class="md-nav__link">
+      <a href="../../demo-scenarios/omegamon-agent/" class="md-nav__link">
         
   
   
@@ -1984,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../demo-scenarios/upgrade-agent/" class="md-nav__link">
+      <a href="../../demo-scenarios/upgrade-agent/" class="md-nav__link">
         
   
   
@@ -2066,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/Overview/" class="md-nav__link">
+      <a href="../../ingest/Overview/" class="md-nav__link">
         
   
   
@@ -2094,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/cos-service-credentials/" class="md-nav__link">
+      <a href="../../ingest/cos-service-credentials/" class="md-nav__link">
         
   
   
@@ -2122,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/ibmcloud-utility/" class="md-nav__link">
+      <a href="../../ingest/ibmcloud-utility/" class="md-nav__link">
         
   
   
@@ -2150,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/create-storage-bucket/" class="md-nav__link">
+      <a href="../../ingest/create-storage-bucket/" class="md-nav__link">
         
   
   
@@ -2178,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/upload-docs/" class="md-nav__link">
+      <a href="../../ingest/upload-docs/" class="md-nav__link">
         
   
   
@@ -2253,7 +2235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/execute-ingestion-ui/" class="md-nav__link">
+      <a href="../../ingest/execute-ingestion-ui/" class="md-nav__link">
         
   
   
@@ -2281,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/execute-ingestion-cli/" class="md-nav__link">
+      <a href="../../ingest/execute-ingestion-cli/" class="md-nav__link">
         
   
   
@@ -2317,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ingest/test-q%26a/" class="md-nav__link">
+      <a href="../../ingest/test-q%26a/" class="md-nav__link">
         
   
   
@@ -2352,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../agentdeploy/embed/" class="md-nav__link">
+      <a href="../../agentdeploy/embed/" class="md-nav__link">
         
   
   
@@ -2426,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/00-intro/" class="md-nav__link">
+      <a href="../../adk/00-intro/" class="md-nav__link">
         
   
   
@@ -2454,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/01-install-configure-adk/" class="md-nav__link">
+      <a href="../../adk/01-install-configure-adk/" class="md-nav__link">
         
   
   
@@ -2482,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/02-prepare-vscode/" class="md-nav__link">
+      <a href="../../adk/02-prepare-vscode/" class="md-nav__link">
         
   
   
@@ -2510,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/03-create-connection/" class="md-nav__link">
+      <a href="../../adk/03-create-connection/" class="md-nav__link">
         
   
   
@@ -2538,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/04-import-tools/" class="md-nav__link">
+      <a href="../../adk/04-import-tools/" class="md-nav__link">
         
   
   
@@ -2566,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/05-import-agent/" class="md-nav__link">
+      <a href="../../adk/05-import-agent/" class="md-nav__link">
         
   
   
@@ -2594,7 +2576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../adk/06-multi-agent-collaboration/" class="md-nav__link">
+      <a href="../../adk/06-multi-agent-collaboration/" class="md-nav__link">
         
   
   
@@ -2629,7 +2611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hands-on/handson/" class="md-nav__link">
+      <a href="../../hands-on/handson/" class="md-nav__link">
         
   
   
@@ -2684,43 +2666,37 @@
 
 
 
-<div><h1 id="subscribe-agent-to-tenant">Subscribe agent to tenant<a class="headerlink" href="#subscribe-agent-to-tenant" title="Permanent link">#</a></h1>
-<p>Finally, subscribe the agent to automate the bootstrapping of the <strong>Db2 for z/OS Agent</strong> to your watsonx Orchestrate environment. </p>
-<div class="admonition warning">
-<p class="admonition-title">Prior to subscribing agent....</p>
-<p>Prior to subscribing the agent, ensure you first complete the step outlined <a href="https://ibm.github.io/wxa4z-L4-Agentic/agentdeploy-3.3/llm-config" target="_blank">here.</a></p>
-</div>
+<div><h1 id="modifying-llm-config">Modifying <code>llm</code> config<a class="headerlink" href="#modifying-llm-config" title="Permanent link">#</a></h1>
+<p>There is a manual step that must be done prior to <strong>subscribing</strong> any of the agents (nuance of TechZone environment).</p>
+<p>After applying/creating each agent's <code>custom service</code> (<code>cr.yaml</code>), but before subscribing the agent, perform the following steps:    </p>
 <ol>
 <li>
-<p>Once done, copy and paste the following into a file called <code>db2-subscribe.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>apiVersion: wxa4z.watsonx.ibm.com/v1alpha1
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>kind: AgentSubscription
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>metadata:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  name: db2-agent-z-subscription
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  namespace: wxa4z-agents
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>spec:
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  agent:
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    agent_id: 'wxa4z:db2z-agent:agent'
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    name: db2z-agent
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    type: external
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  tenant_id: ''
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  wxa4z-core-services-namespace: wxa4z-zad
+<p>First modify the <strong>configMap</strong> for the agent bootstrapper. In the case of the <strong>OMEGAMON Insights Agent</strong>, this is labeled as <code>omegamon-insights-agent-bootstrap-config</code>.</p>
+<p>Navigate to the <code>ConfigMaps</code> section in your <code>wxa4z-agents</code> namespace:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/sub1.png" data-desc-position="bottom"><img alt="" src="../_attachments/sub1.png"></a></p>
+</li>
+<li>
+<p>Click on the configMap for the corresponding agent.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/sub2.png" data-desc-position="bottom"><img alt="" src="../_attachments/sub2.png"></a></p>
+</li>
+<li>
+<p>Click on <strong>Edit ConfigMap</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/sub3.png" data-desc-position="bottom"><img alt="" src="../_attachments/sub3.png"></a></p>
+</li>
+<li>
+<p>In the Editor view, find the <code>llm</code> section in the first part of the configMap:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/sub4.png" data-desc-position="bottom"><img alt="" src="../_attachments/sub4.png"></a></p>
+</li>
+<li>
+<p>If using the <code>meta-llama/llama-3-3-70b-instruct</code> <strong>MODEL_ID</strong>, modify the <code>llm</code> section by removing the <code>virtual-model</code> string. The result should be:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>llm: watsonx/meta-llama/llama-3-3-70b-instruct
 </span></code></pre></div>
+<p>Modify to whichever model_id is appropriately defined for your watsonx Orchestrate environment. (TIP: run <code>orchestrate models list --all</code> command in ADK session)</p>
 </li>
 <li>
-<p>Set <code>tenant_id</code> to your environment's tenant id that you recorded <a href="../../setup/#record-your-tenant_id">here</a>.</p>
-</li>
-<li>
-<p>After setting that value, subscribe your agent by running the following command:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc apply -f db2-subscribe.yaml
-</span></code></pre></div>
-<p>The result is the bootstrapping of your agent to watsonx Orchestrate where it's then accessible for testing.</p>
-</li>
-<li>
-<p>Verify that the bootstrapper pod is running in the <code>wxa4z-agents</code> namespace and has completed successfully.</p>
-</li>
-<li>
-<p>Once verified, log into your watsonx Orchestrate environment and access your agent for testing.</p>
+<p>Then click <strong>Save</strong>. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../_attachments/sub5.png" data-desc-position="bottom"><img alt="" src="../_attachments/sub5.png"></a></p>
+<p>The purpose of this is to properly select the LLM used by the Orchestrator agent when it gets bootstrapped. For watsonx Orchestrate SaaS, the <code>llm</code> value should be <code>watsonx/meta-llama/llama-3-3-70b-instruct</code> or <code>groq/openai/gpt-oss-120b</code> as 2 examples. </p>
 </li>
 </ol></div>
 
@@ -2748,44 +2724,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer">
-        
-          
-          <a href="../agent-service/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploy Agent Service">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Deploy Agent Service
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../../agentdeploy/db2-agent-deployment/OPTIONAL-DB2-AGENT-SETUP/" class="md-footer__link md-footer__link--next" aria-label="Next: Configure Db2 Agent Connections">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Configure Db2 Agent Connections
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2811,12 +2749,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer", {"hide": ["toc"]}], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../js/print-site.js"></script>
+        <script src="../../js/print-site.js"></script>
       
     
   
