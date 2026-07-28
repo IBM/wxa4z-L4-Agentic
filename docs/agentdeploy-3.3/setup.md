@@ -105,10 +105,10 @@ Copy and record the `tenant_id` for your environment as this wil be used next.
         - Set this to the value of the `username` key in the `wrapper-creds` secret in the `wxa4z-zad` namespace
 
     - `INGESTION_PASSWORD`
-        - Set this to the value of the `INGESTION_PASSWORD` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
+        - Set this to the value of the `INGESTION_API_KEY` key in the `wxa4z-ingestion-credentials` secret in the `wxa4z-zad` namespace.
 
     - `INGESTION_URL`
-        - Set this to the value of the `INGESTION_URL` key in the `wxa4z-watsonx-credentials` secret in the tenant namespace.
+        - Set this to the **network route** of your `content-ingestion-provider` pod in your `wxa4z-zad` namespace.
 
     - `TENANT_ID`
         - Set this to the `tenant_id` value you recorded [earlier](./setup.md#record-your-tenant_id).

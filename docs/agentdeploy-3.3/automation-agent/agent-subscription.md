@@ -2,6 +2,10 @@
 
 Finally, subscribe the agent to automate the bootstrapping of the **Automation Insights Agent** to your watsonx Orchestrate environment. 
 
+!!! Warning "Prior to subscribing agent...."
+
+    Prior to subscribing the agent, ensure you first complete the step outlined <a href="https://ibm.github.io/wxa4z-L4-Agentic/agentdeploy-3.3/llm-config" target="_blank">here.</a>
+
 
 1. Copy and paste the following into a file called `automation-subscribe.yaml`:
 
